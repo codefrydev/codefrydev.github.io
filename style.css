@@ -38,8 +38,9 @@ button.neumorphic {
     font-size: 31cqi;
   }
   > span {
-    font-family: system-ui, sans-serif;
+    font-family: 'Courier New', Courier, monospace;
     font-size: 16cqi;
+    font-weight: 400;
   }
 }
 
@@ -51,15 +52,25 @@ body {
 h1 {
   text-align: center;
   color: hsl(0 0% 10%);
-  font-family: system-ui, sans-serif;
+  font-family:  'Courier New', Courier, monospace;
   font-size: 3rem;
+  font-weight: bolder;
 }
 h3 {
     text-align: center;
     color: hsl(0 0% 10%);
     font-family: system-ui, sans-serif;
+    font-weight: 400;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  h4 {
+    text-align: center;
+    color: hsl(0 0% 10%);
+    font-family: system-ui, sans-serif;
+    font-weight: 400;
     font-size: 1rem;
-    margin-bottom: 15rem;
+    margin-bottom: 8rem;
   }
 .buttons {
   display: grid;
