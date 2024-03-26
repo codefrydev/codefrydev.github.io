@@ -1,11 +1,11 @@
 body {
     background: #e5e9f4;
     background: linear-gradient(50deg, #e5e9f4 0%, #cfdaf6 67%, #e5e9f4 100%);
-    margin: 30px 0 30px 0;
+    margin: 10px 0 10px 0;
   }
   
   main {
-    width: 750px;
+    max-width: 750px;
     height: auto;
     margin: auto;
     padding: 0px 0px 1px 0px;
@@ -16,7 +16,7 @@ body {
   }
   
   footer {
-    width: 750px;
+    max-width: 750px;
     height: auto;
     margin: auto;
     padding: 5px 0px 30px 0px;
@@ -32,7 +32,7 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     border: none;
-    width: 675px;
+    max-width: 675px;
     padding: 8px;
     display: block;
     margin-top: 0.5em;
@@ -65,7 +65,7 @@ body {
   p {
     color: black;
     text-align: justify;
-    padding: 0rem 4rem 0rem 4rem;
+    padding: 0rem 1.5rem 0rem 1.5rem;
     line-height: 2;
   }
       
