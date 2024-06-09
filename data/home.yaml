@@ -32,9 +32,9 @@ data:
     icon: "fa-light fa-chart-mixed"
     url: "/games"
 
-  - name: "Log"
+  - name: "Updates"
     icon: "fa-solid fa-blog"
-    url: "/blog"
+    url: "https://codefrydev.in/Updates/"
 
   - name: "Credit"
     icon: "fa-regular fa-credit-card"
