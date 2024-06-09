@@ -1,0 +1,12 @@
+cards:
+  - accent_color: "#0f6493"
+    title: "Hugo"
+    content: "This Website is Created Using Hugo"
+    icon: "fa-solid fa-comments"
+    url: "https://gohugo.io/"
+
+  - accent_color: "#0f6493"
+    title: "MarkBoots"
+    content: "Main Web Page Layout Inspiration from his work."
+    icon: "fa-solid fa-comments"
+    url: "https://codepen.io/MarkBoots"

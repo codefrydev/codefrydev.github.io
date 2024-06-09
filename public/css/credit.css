@@ -1,0 +1,67 @@
+ol.cards {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr; /* Single column layout */
+    padding: 2rem;
+    margin: 0;
+    list-style: none;
+    counter-reset: cardCount;
+  }
+  
+  ol.cards > .card {
+    color: hsl(0 0% 40%);
+    background-color: #ffffff;
+    text-align: center;
+    
+    padding: 2rem;
+    border-radius: .5rem;
+    box-shadow: .5rem .5rem 1rem hsl(0 0% 0% / .25);
+    
+    position: relative;
+    counter-increment: cardCount;
+  }
+  
+  ol.cards > .card::before {
+    --top: -1.5rem; /* Adjust top position */
+    --left: 0; /* No left offset needed */
+    
+    /* content: "Option " counter(cardCount, decimal-leading-zero); */
+    color: hsl(0 0% 100%);
+    
+    padding: 0.5rem 1rem;
+    background-color: var(--accent-color);
+    border-radius: .5rem .5rem 0 0; /* Adjust border radius */
+    box-shadow: 0.125rem -0.125rem 0.25rem hsl(0 0% 0% / .25);
+        
+    /* position */
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform-origin: top left;
+    transform: translate(-50%, -100%);
+    white-space: nowrap;
+  }
+  
+  ol.cards > .card > i {
+    color: var(--accent-color);
+    font-size: 2rem;
+  }
+  
+  ol.cards > .card > h2 {
+    font-weight: 400;
+    color: var(--accent-color);
+    margin-top: 0;
+  }
+  
+  header {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically (if needed) */
+    width: 100%; /* Ensure the header takes up full width */
+    padding: 1rem; /* Add some padding if needed */
+}
+
+header h1 {
+    font-weight: 300; /* Set font-weight to a thin value */
+    text-align: center; /* Center the text */
+}

@@ -8,14 +8,13 @@
 </head>
 
 <body style="background-color: #e5e9f4;">
-    <header>
+    <!-- <header>
         <h1>{{ .Title }}</h1>
-    </header>
+    </header> --> 
     <main>
     <div class="d-flex justify-content-center">
     <ul>
-        {{ range .Paginator.Pages }}
-        <li>
+        {{ range .Paginator.Pages }} 
             <div class="d-flex flex-column mb-3">
                 <div class="card">
                     <h5 class="card-header">{{ .Title }}</h5>
@@ -31,8 +30,8 @@
                     </div>
                 </div>
             </div>  
-            {{ end }}
-        </ul>
+        {{ end }}
+    </ul>
 
         <!-- Pagination -->
         <div class="pagination">

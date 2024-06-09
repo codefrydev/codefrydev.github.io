@@ -74,15 +74,33 @@
 }
 </script>
  
-    <link rel="stylesheet" href="/css/games.css">
+    <link rel="stylesheet" href="/css/credit.css">
 </head>
-<body style="background-color: #e5e9f4;">
+<body style="background-color: #e5e9f4;" >
     <header>
-        <h1>Credit</h1>
+        <h1 onclick="window.location.href='/'">
+            <img style="align-items: center;" src="/images/IconCodefrydev.svg" alt="Codefrydev Logo" height="96px">
+            <br/>
+            Credit
+        </h1>
     </header>
     <main>
         <section>
-            
+            <ol class="cards">
+                
+                <li class="card" style="--accent-color: #0f6493" onclick="window.location.href='https:\/\/gohugo.io\/'">
+                    <h2>Hugo</h2>
+                    <p>This Website is Created Using Hugo</p>
+                    <i class="fa-solid fa-comments"></i>
+                </li>
+                
+                <li class="card" style="--accent-color: #0f6493" onclick="window.location.href='https:\/\/codepen.io\/MarkBoots'">
+                    <h2>MarkBoots</h2>
+                    <p>Main Web Page Layout Inspiration from his work.</p>
+                    <i class="fa-solid fa-comments"></i>
+                </li>
+                
+            </ol>
         </section>
     </main>
 </body>
