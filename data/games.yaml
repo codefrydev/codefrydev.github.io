@@ -1,0 +1,15 @@
+# data/buttons.yaml
+data:
+  - name: "Chain Reaction"
+    icon: "fa-brands fa-fantasy-flight-games"
+    url: "https://codefrydev.in/ChainReaction/"
+  - name: "Wordle"
+    icon: "fa-regular fa-file-word"
+    url: "https://codefrydev.in/Wordle/"
+  - name: "Snake"
+    icon: "fa-solid fa-snake"
+    url: "https://codefrydev.in/Snake"
+  - name: "Game"
+    icon: "fa-brands fa-galactic-senate"
+    url: "https://play.google.com/store/apps/details?id=org.codefrydev.developer.abhijeet.galacticgunner"
+    

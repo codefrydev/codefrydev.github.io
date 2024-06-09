@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    {{ partial "header.html" . }} 
+    <link rel="stylesheet" href="/css/history.css">
+</head>
+<body style="background-color: #e5e9f4;">
+    <header> 
+        <h1 onclick="window.location.href='/'">History</h1>
+    </header>
+    <main>
+        <ul>
+            {{ range .Site.Data.history.history }}
+                <li style="--accent-color:{{ .accent_color }}" onclick="window.location.href='{{ .link }}'">
+                    <div class="date">{{ .date }}</div>
+                    <div class="title">{{ .title }}</div>
+                    <div class="descr">{{ .description }}</div>
+                </li>
+            {{ end }}
+        </ul> 
+    </main>
+</body>
+</html>

@@ -1,0 +1,13 @@
+baseURL = 'https://codefrydev.in/'
+languageCode = 'en-us'
+title = 'Code Fry Dev'
+
+[Author]
+  name = "CodeFryDev"
+[Params]
+  description = "Tools, Games, Art, Animation"
+  logo = "favicon-32x32.png"
+  copyright = "codefrydev.in"
+  
+[params]
+  paginate = 10  # Number of posts per page

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    {{ partial "header.html" . }} 
+    <link rel="stylesheet" href="/css/games.css">
+</head>
+<body style="background-color: #e5e9f4;">
+    <header>
+        <h1>{{ .Title }}</h1>
+    </header>
+    <main>
+        <section>
+            {{ .Content }}
+        </section>
+    </main>
+</body>
+</html>
