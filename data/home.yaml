@@ -36,9 +36,9 @@ data:
     icon: "fa-solid fa-blog"
     url: "https://codefrydev.in/Updates/"
 
-  - name: "Credit"
+  - name: "About"
     icon: "fa-regular fa-credit-card"
-    url: "/Credit"
+    url: "/about"
     
   - name: "Timeline"
     icon: "fa-light fa-atom"

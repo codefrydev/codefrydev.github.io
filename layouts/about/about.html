@@ -2,7 +2,7 @@
 <html lang="en">
 <head> 
     {{ partial "header.html" . }} 
-    <link rel="stylesheet" href="/css/credit.css">
+    <link rel="stylesheet" href="/css/about.css">
 </head>
 <body style="background-color: #e5e9f4;" >
     <header>
@@ -15,7 +15,7 @@
     <main>
         <section>
             <ol class="cards">
-                {{ range .Site.Data.credit.cards }}
+                {{ range .Site.Data.about.cards }}
                 <li class="card" style="--accent-color: {{ .accent_color }}" onclick="window.location.href='{{ .url }}'">
                     <h2>{{ .title }}</h2>
                     <p>{{ .content }}</p>
