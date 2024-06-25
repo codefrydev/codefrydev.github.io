@@ -1,0 +1,103 @@
+{{/* layouts/partials/jsonld.html */}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "{{ .Site.BaseURL }}",
+      "name": "{{ .Site.Title }}",
+      "url": "{{ .Site.BaseURL }}",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "{{ .Site.BaseURL }}search?query={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "{{ .Params.app.name }}",
+      "url": "{{ .Params.app.url }}",
+      "image": "{{ .Params.app.image }}",
+      "description": "{{ .Params.app.description }}",
+      "operatingSystem": "{{ delimit .Params.app.operatingSystem ", " }}",
+      "applicationCategory": "{{ .Params.app.category }}",
+      "offers": {
+        "@type": "Offer",
+        "price": "{{ .Params.app.price }}",
+        "priceCurrency": "{{ .Params.app.priceCurrency }}",
+        "url": "{{ .Params.app.buyUrl }}",
+        "availability": "https://schema.org/InStock",
+        "seller": {
+          "@type": "Organization",
+          "name": "{{ .Site.Title }}",
+          "url": "{{ .Site.BaseURL }}"
+        }
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "{{ .Params.app.aggregateRating }}",
+        "reviewCount": "{{ .Params.app.reviewCount }}"
+      },
+      "review": [
+        {{ range $index, $review := .Params.app.reviews }}
+          {{ if $index }},{{ end }}
+          {
+            "@type": "Review",
+            "author": {
+              "@type": "Person",
+              "name": "{{ $review.author }}"
+            },
+            "datePublished": "{{ $review.datePublished }}",
+            "description": "{{ $review.description }}",
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": "{{ $review.ratingValue }}"
+            }
+          }
+        {{ end }}
+      ],
+      "publisher": {
+        "@type": "Organization",
+        "name": "{{ .Site.Title }}",
+        "url": "{{ .Site.BaseURL }}"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {{ range $index, $faq := .Params.faq }}
+          {{ if $index }},{{ end }}
+          {
+            "@type": "Question",
+            "name": "{{ $faq.question }}",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "{{ $faq.answer }}"
+            }
+          }
+        {{ end }}
+      ]
+    },
+    {
+      "@type": "Article",
+      "headline": "{{ .Params.article.headline }}",
+      "author": {
+        "@type": "Person",
+        "name": "{{ .Params.article.author }}"
+      },
+      "datePublished": "{{ .Params.article.datePublished }}",
+      "image": "{{ .Params.article.image }}",
+      "publisher": {
+        "@type": "Organization",
+        "name": "{{ .Site.Title }}",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "{{ .Site.BaseURL }}logo.jpg"
+        }
+      },
+      "description": "{{ .Params.article.description }}"
+    }
+  ]
+}
+</script>
