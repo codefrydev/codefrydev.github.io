@@ -1,4 +1,16 @@
 history:
+  - date: "01 August 2024"
+    title: "Text Tools"
+    description: "Text Tools Introduced for text manipulation"
+    link: "https://codefrydev.in/TextTools/"
+    accent_color: "#5c748a"
+
+  - date: "26 July 2024"
+    title: "Design"
+    description: "Design section Introduced"
+    link: "http://codefrydev.in/design/"
+    accent_color: "#e06cd7"
+
   - date: "09 June 2024"
     title: "Code Fry Dev"
     description: "Now Website dynamically Generated using Hugo"
