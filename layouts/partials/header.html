@@ -22,6 +22,14 @@
 
 <title>{{ .Title }}</title>
 {{ partial "site_schema.html" . }}
+
+<!-- 
+{{partial "seojsonld.html" .}}
+{{partial "aboutseo.html" .}}
+{{partial "historyseo.html" .}}
+{{partial "qaseo.html" .}}
+ -->
+
 {{- template "partials/templates/opengraph.html" . }}
 {{- template "partials/templates/twitter_cards.html" . }}
 <!-- {{- template "partials/templates/schema_json.html" . }} -->
