@@ -4,8 +4,8 @@ data:
     icon: "fa-light fa-chart-mixed"
     url: "/games"
 
-  - name: "Updates"
-    icon: "fa-solid fa-blog"
+  - name: ".NET"
+    icon: "fa-solid fa-code"
     url: "https://codefrydev.in/Updates/"
 
   - name: "Design"
