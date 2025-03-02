@@ -8,7 +8,7 @@ history:
   - date: "01 August 2024"
     title: "Text Tools"
     description: "Text Tools Introduced for text manipulation"
-    link: "TextTools"
+    link: "/TextTools"
     accent_color: "#5c748a"
 
   - date: "26 July 2024"
