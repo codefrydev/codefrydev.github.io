@@ -2,10 +2,8 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ .Title }}</title>
-    <link rel="stylesheet" href="{{ "css/about.css" | relURL }}">
+    {{ partial "header.html" . }} 
+    <link rel="stylesheet" href="{{ "css/userlist.css" | relURL }}">
 </head>
 
 <body style="background-color: #e5e9f4;">
@@ -22,9 +20,9 @@
             {{ range sort .Pages "Weight" }}
                 <li class="card">
                     <a href="{{ .RelPermalink }}">
-                        <img src="{{ .Params.profile_image }}" alt="{{ .Title }}" class="profile-img">
+                        <img src="{{.Params.listProfile_image }}" alt="{{ .Title }}" class="profile-img">
                         <h2>{{ .Title }}</h2>
-                        <p>{{ .Params.subtitle }}</p>  <!-- Added user quote/description -->
+                        <p>{{ .Params.subtitle }}</p>
                     </a>
                 </li>
             {{ end }}
