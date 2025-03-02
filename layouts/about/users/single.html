@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#28966a">
+    <meta name="msapplication-TileColor" content="#28966a">
+    <meta name="theme-color" content="#28966a">
+  <title>{{ .Title }}</title>
+  <link rel="stylesheet" href="{{ "css/usersstyle.css" | relURL }}">
+  <style>
+    :root {
+      --background-color: {{ .Params.colors.background | default "#28966a" }};
+      --container-bg: {{ .Params.colors.container_background | default "#627e4600" }};
+      --link-bg: {{ .Params.colors.link_background | default "#a5be8c8f" }};
+      --link-hover: {{ .Params.colors.link_hover | default "#e09d62" }};
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="container">
+    <img class="profile-img" src="{{ .Params.profile_image }}" alt="Profile Picture">
+    <h1>{{ .Title }}</h1>
+    <h2>{{ .Params.subtitle }}</h2>
+
+    {{ range .Params.links }}
+      <a class="link" href="{{ .url }}" target="_blank">{{ .name }}</a>
+    {{ end }}
+  </div>
+</body>
+
+</html>

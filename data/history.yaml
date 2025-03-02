@@ -1,8 +1,14 @@
 history:
+  - date: "02 March 2025"
+    title: "Contributors List"
+    description: "People who is cotributing to this project"
+    link: "/about/users/"
+    accent_color: "#5c74df"
+
   - date: "01 August 2024"
     title: "Text Tools"
     description: "Text Tools Introduced for text manipulation"
-    link: "https://codefrydev.in/TextTools/"
+    link: "TextTools"
     accent_color: "#5c748a"
 
   - date: "26 July 2024"

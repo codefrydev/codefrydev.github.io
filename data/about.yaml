@@ -1,5 +1,11 @@
 cards:
   - accent_color: "#0f6493"
+    title: "Contributors"
+    content: "Folks who is contribution on this projects"
+    icon: "fa-solid fa-comments"
+    url: "/about/users/"
+
+  - accent_color: "#0f6493"
     title: "Hugo"
     content: "This Website is Created Using Hugo"
     icon: "fa-solid fa-comments"
