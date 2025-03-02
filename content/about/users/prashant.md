@@ -1,6 +1,6 @@
 ---
 title: "Prashant Priyadarshi"
-profile_image: "/prashant.jpg"
+profile_image: "prashant.jpg"
 subtitle: "Coding Painting Gaming"
 layout: "users/single"
 subtitle: "Coding Painting Gaming"
