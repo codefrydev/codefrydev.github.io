@@ -16,3 +16,9 @@ cards:
     content: "Main Web Page Layout Inspiration from his work."
     icon: "fa-solid fa-comments"
     url: "https://codepen.io/MarkBoots"
+
+  - accent_color: "#0f8493"
+    title: "User Profile Generator"
+    content: "Generate Your contribution profile yaml text"
+    icon: "fa-solid fa-comments"
+    url: "/CodefrydevUserDataGenerator/"

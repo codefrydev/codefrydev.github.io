@@ -6,11 +6,11 @@ data:
 
   - name: ".NET"
     icon: "fa-solid fa-code"
-    url: "https://codefrydev.in/Updates/"
+    url: "/Updates/"
 
   - name: "Design"
     icon: "fa-solid fa-pen-nib"
-    url: "https://codefrydev.in/design/"
+    url: "/design/"
 
   - name: "Timeline"
     icon: "fa-light fa-atom"
@@ -22,31 +22,35 @@ data:
 
   - name: "Chain Reaction"
     icon: "fa-brands fa-fantasy-flight-games"
-    url: "https://codefrydev.in/ChainReaction/"
+    url: "/ChainReaction/"
 
   - name: "Wordle"
     icon: "fa-regular fa-file-word"
-    url: "https://codefrydev.in/Wordle/"
+    url: "/Wordle/"
 
   - name: "Tom & Jerry"
     icon: "fa-solid fa-cat"
-    url: "https://codefrydev.in/TomAndJerry/"
+    url: "/TomAndJerry/"
 
   - name: "Snake"
     icon: "fa-solid fa-snake"
-    url: "https://codefrydev.in/Snake"
+    url: "/Snake"
+
+  - name: "CSV"
+    icon: "fa-solid fa-file-csv"
+    url: "/CSV/"
 
   - name: "Wallpaper"
     icon: "fa-solid fa-image"
-    url: "https://codefrydev.in/Wallpaper/"
+    url: "/Wallpaper/"
 
   - name: "Challenge"
     icon: "fa-solid fa-chart-line"
-    url: "https://codefrydev.in/Challenge/"
+    url: "/Challenge/"
 
   - name: "Text Tools"
     icon: "fa-solid fa-screwdriver-wrench"
-    url: "https://codefrydev.in/TextTools/"
+    url: "/TextTools/"
 
   - name: "Application"
     icon: "fa-light fa-dna"

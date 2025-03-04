@@ -1,4 +1,10 @@
 history:
+  - date: "03 March 2025"
+    title: "CSV"
+    description: "Upload, View, Edit and Download CSV File on the go."
+    link: "/CSV/"
+    accent_color: "#5c1cd7"
+
   - date: "02 March 2025"
     title: "Contributors List"
     description: "People who is cotributing to this project"
