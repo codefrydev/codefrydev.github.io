@@ -15,5 +15,12 @@
       <guid>http://localhost:1313/about/users/prashant/</guid>
       <description></description>
     </item>
+    <item>
+      <title>Abhijeet</title>
+      <link>http://localhost:1313/about/users/abhijeet/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/about/users/abhijeet/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>
