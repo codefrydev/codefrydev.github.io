@@ -39,6 +39,10 @@ data:
   - name: "CSV"
     icon: "fa-solid fa-file-csv"
     url: "/CSV/"
+  
+  - name: "Notebook"
+    icon: "fa-solid fa-note-sticky"
+    url: "/YourNoteBook/"
 
   - name: "Wallpaper"
     icon: "fa-solid fa-image"

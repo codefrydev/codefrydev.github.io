@@ -1,4 +1,10 @@
 history:
+  - date: "07 April 2025"
+    title: "NoteBook"
+    description: "Create and Edit your note in your Database"
+    link: "/YourNoteBook/"
+    accent_color: "#034C53"
+
   - date: "03 March 2025"
     title: "CSV"
     description: "Upload, View, Edit and Download CSV File on the go."
