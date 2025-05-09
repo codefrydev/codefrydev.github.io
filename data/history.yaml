@@ -1,4 +1,10 @@
 history:
+  - date: "10 May 2025"
+    title: "Weather App"
+    description: "Get the Weather of your City"
+    link: "/Mausam/"
+    accent_color: "#f9c74f"
+
   - date: "07 April 2025"
     title: "NoteBook"
     description: "Create and Edit your note in your Database"

@@ -44,6 +44,10 @@ data:
     icon: "fa-solid fa-note-sticky"
     url: "/YourNoteBook/"
 
+  - name: "Weather"
+    icon: "fa-solid fa-cloud-sun"
+    url: "/Mausam/"
+
   - name: "Wallpaper"
     icon: "fa-solid fa-image"
     url: "/Wallpaper/"
