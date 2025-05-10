@@ -1,6 +1,12 @@
 history:
   - date: "10 May 2025"
     title: "Weather App"
+    description: "Live preview of all Models"
+    link: "/ThreeDAssets/"
+    accent_color: "#86b582"
+
+  - date: "6 May 2025"
+    title: "Weather App"
     description: "Get the Weather of your City"
     link: "/Mausam/"
     accent_color: "#f9c74f"

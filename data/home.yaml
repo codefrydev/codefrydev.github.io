@@ -44,6 +44,10 @@ data:
     icon: "fa-solid fa-note-sticky"
     url: "/YourNoteBook/"
 
+  - name: "3D Models"
+    icon: "fa-solid fa-cubes"
+    url: "/ThreeDAssets/"
+
   - name: "Weather"
     icon: "fa-solid fa-cloud-sun"
     url: "/Mausam/"
