@@ -20,6 +20,14 @@ data:
     icon: "fa-regular fa-credit-card"
     url: "/about"
 
+  - name: "Agurutwa"
+    icon: "fa-solid fa-book-open"
+    url: "https://agurutwa.github.io/"
+
+  - name: "Pathsala"
+    icon: "fa-solid fa-graduation-cap"
+    url: "https://agurutwa.github.io/Pathsala/"    
+
   - name: "Chain Reaction"
     icon: "fa-brands fa-fantasy-flight-games"
     url: "/ChainReaction/"

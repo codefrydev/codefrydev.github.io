@@ -1,4 +1,10 @@
 history:
+  - date: "1 June 2025"
+    title: "Agurutwa Pathsala"
+    description: "Agurutwa Pathsala is our first step toward free, accessible education for all."
+    link: "https://agurutwa.github.io"
+    accent_color: "#457dde"
+
   - date: "10 May 2025"
     title: "Model View"
     description: "Live preview of all Models"
