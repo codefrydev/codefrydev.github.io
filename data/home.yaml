@@ -8,9 +8,9 @@ data:
     icon: "fa-solid fa-code"
     url: "/Updates/"
 
-  - name: "Design"
-    icon: "fa-solid fa-pen-nib"
-    url: "/design/"
+  - name: "Art"
+    icon: "fa-solid fa-palette"
+    url: "/designlab/"
 
   - name: "Timeline"
     icon: "fa-light fa-atom"

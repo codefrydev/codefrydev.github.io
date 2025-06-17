@@ -1,0 +1,9 @@
+# data/buttons.yaml
+data:
+  - name: "Design"
+    icon: "fa-solid fa-pen-nib"
+    url: "/design/"
+
+  - name: "DSGN.LIB"
+    icon: "fa-solid fa-flask"
+    url: "/dsgnlib/"
