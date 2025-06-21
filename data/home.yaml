@@ -1,5 +1,11 @@
 # data/buttons.yaml
 data:
+
+
+  - name: "AI"
+    icon: "fa-solid fa-brain"
+    url: "/ai"
+
   - name: "Game"
     icon: "fa-light fa-chart-mixed"
     url: "/games"

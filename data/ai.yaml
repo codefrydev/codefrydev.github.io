@@ -1,0 +1,6 @@
+# data/buttons.yaml
+data:
+  - name: "Profile AI"
+    icon: "fa-solid fa-comment-slash"
+    url: "/ProfiledAi/"
+    
