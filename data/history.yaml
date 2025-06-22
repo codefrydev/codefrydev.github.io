@@ -5,6 +5,18 @@ history:
     link: "/metatag/"
     accent_color: "#ff9f43"
 
+  - date: "22 June 2025"
+    title: "Aqua tracker"
+    description: "Track and manage your water usage."
+    link: "https://aquatrack.codefrydev.in/"
+    accent_color: "#00bcd4"
+
+  - date: "21 June 2025"
+    title: "Profiled Ai"
+    description: "Profiled Ai is a chat tool to create and manage AI profiles."
+    link: "/ProfiledAi/"
+    accent_color: "#b388ff"
+
   - date: "18 June 2025"
     title: "Design Lab"
     description: "Design Lab is a place where you can create and share your designs."
