@@ -53,6 +53,10 @@ data:
   - name: "CSV"
     icon: "fa-solid fa-file-csv"
     url: "/CSV/"
+
+  - name: "Meta Tags"
+    icon: "fa-solid fa-cloud-meatball"
+    url: "/metatag/"
   
   - name: "Notebook"
     icon: "fa-solid fa-note-sticky"

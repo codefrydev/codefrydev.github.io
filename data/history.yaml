@@ -1,9 +1,16 @@
 history:
+  - date: "22 June 2025"
+    title: "Metatag Generator"
+    description: "Generate and manage meta tags for your web pages."
+    link: "/metatag/"
+    accent_color: "#ff9f43"
+
   - date: "18 June 2025"
     title: "Design Lab"
     description: "Design Lab is a place where you can create and share your designs."
     link: "/designlab/"
     accent_color: "#ff6f61"
+
   - date: "1 June 2025"
     title: "Agurutwa Pathsala"
     description: "Agurutwa Pathsala is our first step toward free, accessible education for all."
