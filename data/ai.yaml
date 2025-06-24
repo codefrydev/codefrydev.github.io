@@ -4,6 +4,10 @@ data:
     icon: "fa-solid fa-comment-slash"
     url: "/ProfiledAi/"
 
-  - name: "Aqua tracker"
+  - name: "Aqua tracker AI"
     icon: "fa-solid fa-water"
     url: "https://aquatrack.codefrydev.in/"
+
+  - name: "CFD Chat AI"
+    icon: "fa-thin fa-comment"
+    url: "https://chat.codefrydev.in/"

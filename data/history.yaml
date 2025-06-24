@@ -1,4 +1,11 @@
 history:
+
+  - date: "24 June 2025"
+    title: "CFD Chat Ai"
+    description: "CFD Chat Ai is just another chat tool to chat with your loved one and summarize with AI."
+    link: "https://chat.codefrydev.in/"
+    accent_color: "#42a5f5"
+
   - date: "22 June 2025"
     title: "Metatag Generator"
     description: "Generate and manage meta tags for your web pages."
