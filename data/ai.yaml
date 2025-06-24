@@ -11,3 +11,7 @@ data:
   - name: "CFD Chat AI"
     icon: "fa-thin fa-comment"
     url: "https://chat.codefrydev.in/"
+
+  - name: "AI Web Summarize"
+    icon: "fa-thin fa-rectangle-list"
+    url: "https://summarize.codefrydev.in/"

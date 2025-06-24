@@ -1,4 +1,9 @@
 history:
+  - date: "24 June 2025"
+    title: "CFD Chat Ai"
+    description: "CFD Chat Ai is just another chat tool to for web summarize with AI."
+    link: "https://summarize.codefrydev.in/"
+    accent_color: "#26c6da"
 
   - date: "24 June 2025"
     title: "CFD Chat Ai"
