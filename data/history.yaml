@@ -1,7 +1,14 @@
 history:
+
   - date: "24 June 2025"
-    title: "CFD Chat Ai"
-    description: "CFD Chat Ai is just another chat tool to for web summarize with AI."
+    title: "SocialSnap Ai"
+    description: "CFD Socialsnap Ai is just another chat tool to for web create Social Media post snapshot with  AI to helpp in prepopulating."
+    link: "https://summarize.codefrydev.in/"
+    accent_color: "#0077E6"
+
+  - date: "24 June 2025"
+    title: "Website Summarizer Ai"
+    description: "CFD Website Summarizer AI is just another tool to for web summarize with AI."
     link: "https://summarize.codefrydev.in/"
     accent_color: "#26c6da"
 

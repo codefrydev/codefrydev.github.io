@@ -15,3 +15,7 @@ data:
   - name: "AI Web Summarize"
     icon: "fa-thin fa-rectangle-list"
     url: "https://summarize.codefrydev.in/"
+
+  - name: "AI SocialSnap"
+    icon: "fa-thin fa-camera"
+    url: "https://socialsnap.codefrydev.in/"
