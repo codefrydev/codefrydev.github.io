@@ -7,3 +7,7 @@ data:
   - name: "DSGN.LIB"
     icon: "fa-solid fa-flask"
     url: "/dsgnlib/"
+
+  - name: "JUICY HAPTIC"
+    icon: "fa-solid fa-layer-group"
+    url: "https://juicyhapticdesign.codefrydev.in/"
