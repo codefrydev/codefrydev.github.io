@@ -6,6 +6,12 @@ history:
     link: "https://juicyhapticdesign.codefrydev.in/"
     accent_color: "#ff6f61"
 
+  - date: "30 June 2025"
+    title: "AI Meme Generator"
+    description: "Unleash your creativity with our powerful and intuitive meme editor. Go from idea to hilarious meme in seconds. No sign-up required."
+    link: "https://meme.codefrydev.in/"
+    accent_color: "#dff010"
+
   - date: "24 June 2025"
     title: "SocialSnap Ai"
     description: "CFD Socialsnap Ai is just another chat tool to for web create Social Media post snapshot with  AI to helpp in prepopulating."

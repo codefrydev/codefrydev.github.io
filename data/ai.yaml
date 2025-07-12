@@ -19,3 +19,7 @@ data:
   - name: "AI SocialSnap"
     icon: "fa-thin fa-camera"
     url: "https://socialsnap.codefrydev.in/"
+
+  - name: "AI Meme Generator"
+    icon: "fa-solid fa-face-grin-tongue"
+    url: "https://meme.codefrydev.in/"
