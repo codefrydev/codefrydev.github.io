@@ -1,5 +1,11 @@
 history:
 
+  - date: "14 July 2025"
+    title: "Android Asset Generator"
+    description: "Generate android assets for your app for publishing to play store"
+    link: "https://android.codefrydev.in/"
+    accent_color: "#107937"
+
   - date: "12 July 2025"
     title: "Juicy Haptic Design Studio"
     description: "Create delicious tactile feedback patterns for web and mobile. Feel the difference with our comprehensive vibrotactile library."

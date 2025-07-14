@@ -30,6 +30,10 @@ data:
     icon: "fa-solid fa-book-open"
     url: "https://agurutwa.github.io/"
 
+  - name: "Android Assets"
+    icon: "fa-brands fa-android"
+    url: "https://android.codefrydev.in/"
+
   - name: "Pathsala"
     icon: "fa-solid fa-graduation-cap"
     url: "https://agurutwa.github.io/Pathsala/"    
