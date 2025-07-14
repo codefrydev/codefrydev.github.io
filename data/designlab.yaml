@@ -15,3 +15,7 @@ data:
   - name: "DataViz"
     icon: "fa-solid fa-chart-pie"
     url: "https://dataviz.codefrydev.in/"
+
+  - name: "Neural Music Player"
+    icon: "fa-solid fa-music"
+    url: "https://neuralmusicplayer.codefrydev.in"
