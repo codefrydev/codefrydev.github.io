@@ -4,7 +4,7 @@ history:
     title: "Neural Music Player"
     description: "Experience the music with our Neural Music Player. Listen to your favorite tracks with interactive 3D Visualization and Audioreactive features."
     link: "https://neuralmusicplayer.codefrydev.in/"
-    accent_color: "#6799c5"
+    accent_color: "#6799c6"
 
   - date: "14 July 2025"
     title: "DataViz"
