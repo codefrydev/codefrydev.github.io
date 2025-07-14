@@ -4,6 +4,10 @@ data:
     icon: "fa-solid fa-pen-nib"
     url: "/design/"
 
+  - name: "Aurora 3D"
+    icon: "fa-solid fa-cube"
+    url: "https://aurora3d.codefrydev.in"
+
   - name: "DSGN.LIB"
     icon: "fa-solid fa-flask"
     url: "/dsgnlib/"

@@ -1,6 +1,12 @@
 history:
 
   - date: "14 July 2025"
+    title: "Aurora 3D"
+    description: "Where your creations awaken in a living, breathing light‑and‑sound spectacle. Step into Aurora3D and transform static models into dynamic works of art. Upload one—or many—of your favorite GLB or GLTF files and watch as custom lighting schemes sculpt each surface in real time. Choose a soundtrack that moves you, and feel every beam, shadow, and hue pulse to the rhythm."
+    link: "https://aurora3d.codefrydev.in/"
+    accent_color: "#6799c7"
+
+  - date: "14 July 2025"
     title: "Neural Music Player"
     description: "Experience the music with our Neural Music Player. Listen to your favorite tracks with interactive 3D Visualization and Audioreactive features."
     link: "https://neuralmusicplayer.codefrydev.in/"
