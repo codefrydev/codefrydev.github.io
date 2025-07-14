@@ -11,3 +11,7 @@ data:
   - name: "JUICY HAPTIC"
     icon: "fa-solid fa-layer-group"
     url: "https://juicyhapticdesign.codefrydev.in/"
+
+  - name: "DataViz"
+    icon: "fa-solid fa-chart-pie"
+    url: "https://dataviz.codefrydev.in/"
