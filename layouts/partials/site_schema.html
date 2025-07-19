@@ -1,21 +1,14 @@
 {{- /*
   Define a list of data files to include in the schema.
   These are the base names of the files in your /data/ directory (without .yaml).
-  You can easily add or remove items here, e.g., "history", "ai", etc.
 */ -}}
 {{ $dataFilesToInclude := slice "designlab" "games" "ai" "home" }}
 
 {{- /* Create an empty list to hold all items from the files */ -}}
 {{ $allItems := slice }}
 {{- range $fileKey := $dataFilesToInclude -}}
-    {{- /* Check if the data file exists and has content */ -}}
-    {{- /* FIX: Use $.Site.Data instead of .Site.Data.
-      '$' refers to the top-level context, while '.' refers to the current item in the loop.
-    */ -}}
     {{- with index $.Site.Data $fileKey -}}
-        {{- /* Check if the file has a "data" key with a list of items */ -}}
         {{- with .data -}}
-            {{- /* Add the items from this file to our master list */ -}}
             {{ $allItems = $allItems | append . }}
         {{- end -}}
     {{- end -}}
@@ -33,7 +26,6 @@
     "thumbnailUrl": "{{ .Site.Params.Logo | absURL }}",
     "license": "{{ .Site.Params.Copyright }}"{{ if $allItems }},
     "hasPart": [
-        {{- /* Loop through the combined list of all items */ -}}
         {{- range $index, $item := $allItems -}}
             {{ if $index }},{{ end }}
             {
@@ -47,7 +39,7 @@
 }
 </script>
 {{ else -}}
-{{- /* This block for all other pages remains the same */ -}}
+{{- /* This block for all other pages */ -}}
 {{ $author := or (.Params.author) (.Site.Author.name) }}
 {{ $org_name := .Site.Title }}
 <script type="application/ld+json">
@@ -100,5 +92,4 @@
     "keywords" : [ {{ range $index, $keyword := .Params.keywords }}{{ if $index }}, {{ end }}"{{ $keyword }}" {{ end }}]
 }
 </script>
-
 {{ end -}}
