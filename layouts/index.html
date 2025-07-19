@@ -3,7 +3,6 @@
 
 <head>
   {{ partial "header.html" . }}
-  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta1/css/all.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <link rel="stylesheet" href="css/home.css">
 </head>
@@ -19,7 +18,7 @@
     <div class="buttons">
       {{ range .Site.Data.home.data }}
         <button class="neumorphic hapticButton" onclick="window.location.href='{{ .url }}'">
-          <i class="{{ .icon }}"></i>
+          <img src="images/home/{{ .icon }}.svg" alt="{{ .icon }}" class="button-icon">
           <span>{{ .name }}</span>
         </button>
       {{ end }}

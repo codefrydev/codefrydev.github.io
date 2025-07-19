@@ -1,91 +1,90 @@
 # data/buttons.yaml
 data:
 
-
   - name: "AI"
-    icon: "fa-solid fa-brain"
+    icon: "cfd-brain"
     url: "/ai"
 
   - name: "Game"
-    icon: "fa-light fa-chart-mixed"
+    icon: "cfd-games"
     url: "/games"
 
   - name: ".NET"
-    icon: "fa-solid fa-code"
+    icon: "cfd-net"
     url: "/Updates/"
 
   - name: "Art"
-    icon: "fa-solid fa-palette"
+    icon: "cfd-art"
     url: "/designlab/"
 
   - name: "Timeline"
-    icon: "fa-light fa-atom"
+    icon: "cfd-history"
     url: "/history"
 
   - name: "About"
-    icon: "fa-regular fa-credit-card"
+    icon: "cfd-about"
     url: "/about"
 
   - name: "Agurutwa"
-    icon: "fa-solid fa-book-open"
+    icon: "cfd-agurutwa"
     url: "https://agurutwa.github.io/"
 
   - name: "Android Assets"
-    icon: "fa-brands fa-android"
+    icon: "cfd-android"
     url: "https://android.codefrydev.in/"
 
   - name: "Pathsala"
-    icon: "fa-solid fa-graduation-cap"
-    url: "https://agurutwa.github.io/Pathsala/"    
+    icon: "cfd-pathsala"
+    url: "https://agurutwa.github.io/Pathsala/"
 
   - name: "Chain Reaction"
-    icon: "fa-brands fa-fantasy-flight-games"
+    icon: "cfd-chainreaction"
     url: "/ChainReaction/"
 
   - name: "Wordle"
-    icon: "fa-regular fa-file-word"
+    icon: "cfd-wordle"
     url: "/Wordle/"
 
   - name: "Tom & Jerry"
-    icon: "fa-solid fa-cat"
+    icon: "cfd-tomjerry"
     url: "/TomAndJerry/"
 
   - name: "Snake"
-    icon: "fa-solid fa-snake"
+    icon: "cfd-snake"
     url: "/Snake"
 
   - name: "CSV"
-    icon: "fa-solid fa-file-csv"
+    icon: "cfd-csv"
     url: "/CSV/"
 
   - name: "Meta Tags"
-    icon: "fa-solid fa-cloud-meatball"
+    icon: "cfd-metatag"
     url: "/metatag/"
   
   - name: "Notebook"
-    icon: "fa-solid fa-note-sticky"
+    icon: "cfd-notebook"
     url: "/YourNoteBook/"
 
   - name: "3D Models"
-    icon: "fa-solid fa-cubes"
+    icon: "cfd-threedassets"
     url: "/ThreeDAssets/"
 
   - name: "Weather"
-    icon: "fa-solid fa-cloud-sun"
+    icon: "cfd-mausam"
     url: "/Mausam/"
 
   - name: "Wallpaper"
-    icon: "fa-solid fa-image"
+    icon: "cfd-wallpaper"
     url: "/Wallpaper/"
 
   - name: "Challenge"
-    icon: "fa-solid fa-chart-line"
+    icon: "cfd-challenge"
     url: "/Challenge/"
 
-  - name: "Text Tools"
-    icon: "fa-solid fa-screwdriver-wrench"
+  - name: "Text"
+    icon: "cfd-texttools"
     url: "/TextTools/"
 
   - name: "Application"
-    icon: "fa-light fa-dna"
+    icon: "cfd-application"
     url: "https://play.google.com/store/apps/details?id=com.priyadarshi.abhijeet.abintudyog"

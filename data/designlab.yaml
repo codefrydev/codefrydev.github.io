@@ -1,25 +1,25 @@
 # data/buttons.yaml
 data:
   - name: "Design"
-    icon: "fa-solid fa-pen-nib"
+    icon: "cfd-design"
     url: "/design/"
 
   - name: "Aurora 3D"
-    icon: "fa-solid fa-cube"
+    icon: "cfd-aurora"
     url: "https://aurora3d.codefrydev.in"
 
   - name: "DSGN.LIB"
-    icon: "fa-solid fa-flask"
+    icon: "cfd-dsgn"
     url: "/dsgnlib/"
 
   - name: "JUICY HAPTIC"
-    icon: "fa-solid fa-layer-group"
+    icon: "cfd-juicy"
     url: "https://juicyhapticdesign.codefrydev.in/"
 
   - name: "DataViz"
-    icon: "fa-solid fa-chart-pie"
+    icon: "cfd-datavis"
     url: "https://dataviz.codefrydev.in/"
 
   - name: "Neural Music Player"
-    icon: "fa-solid fa-music"
+    icon: "cfd-music"
     url: "https://neuralmusicplayer.codefrydev.in"

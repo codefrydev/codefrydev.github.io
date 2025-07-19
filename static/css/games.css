@@ -1,6 +1,3 @@
-
-
-
 button.neumorphic {
     container-type: inline-size;
     aspect-ratio: 1/1;
@@ -87,3 +84,17 @@ button.neumorphic {
    justify-content: space-evenly; 
    font-size: 3rem; 
   }
+
+.button-icon {
+    width: 54px;  /* Adjust size as needed */
+    height: 54px; /* Adjust size as needed */
+}
+
+/* Your buttons seem to stack icon and text, so ensure they use flexbox */
+.neumorphic {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px; /* Adds space between icon and text */
+}

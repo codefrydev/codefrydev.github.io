@@ -1,18 +1,18 @@
 # data/buttons.yaml
 data:
   - name: "Chain Reaction"
-    icon: "fa-brands fa-fantasy-flight-games"
+    icon: "cfd-chainreaction"
     url: "/ChainReaction/"
 
   - name: "Wordle"
-    icon: "fa-regular fa-file-word"
+    icon: "cfd-wordle"
     url: "/Wordle/"
 
   - name: "Snake"
-    icon: "fa-solid fa-snake"
+    icon: "cfd-snake"
     url: "/Snake"
     
   - name: "Game"
-    icon: "fa-brands fa-galactic-senate"
+    icon: "cfd-games"
     url: "https://play.google.com/store/apps/details?id=org.codefrydev.developer.abhijeet.galacticgunner"
     

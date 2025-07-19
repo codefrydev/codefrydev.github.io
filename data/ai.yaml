@@ -1,25 +1,25 @@
 # data/buttons.yaml
 data:
   - name: "Profile AI"
-    icon: "fa-solid fa-comment-slash"
+    icon: "cfd-chat"
     url: "/ProfiledAi/"
 
   - name: "Aqua tracker AI"
-    icon: "fa-solid fa-water"
+    icon: "cfd-water"
     url: "https://aquatrack.codefrydev.in/"
 
   - name: "CFD Chat AI"
-    icon: "fa-thin fa-comment"
+    icon: "cfd-chat"
     url: "https://chat.codefrydev.in/"
 
   - name: "AI Web Summarize"
-    icon: "fa-thin fa-rectangle-list"
+    icon: "cfd-summarize"
     url: "https://summarize.codefrydev.in/"
 
   - name: "AI SocialSnap"
-    icon: "fa-thin fa-camera"
+    icon: "cfd-social"
     url: "https://socialsnap.codefrydev.in/"
 
   - name: "AI Meme Generator"
-    icon: "fa-solid fa-face-grin-tongue"
+    icon: "cfd-meme"
     url: "https://meme.codefrydev.in/"
