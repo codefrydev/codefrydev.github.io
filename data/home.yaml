@@ -29,6 +29,10 @@ data:
     icon: "cfd-agurutwa"
     url: "https://agurutwa.github.io/"
 
+  - name: "T&C Privacy"
+    icon: "cfd-privacy"
+    url: "/tncprivacy"
+
   - name: "Android Assets"
     icon: "cfd-android"
     url: "https://android.codefrydev.in/"
