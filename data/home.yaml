@@ -60,6 +60,9 @@ data:
   - name: "CSV"
     icon: "cfd-csv"
     url: "/CSV/"
+  - name: "Json2Form"
+    icon: "cfd-json"
+    url: "/Json2Form/"
 
   - name: "Meta Tags"
     icon: "cfd-metatag"
