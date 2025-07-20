@@ -1,8 +1,13 @@
 # data/buttons.yaml
 data:
+
   - name: "Design"
     icon: "cfd-design"
     url: "/design/"
+
+  - name: "3D Musilizer"
+    icon: "cfd-musilizer"
+    url: "/3DMUSILIZER/"
 
   - name: "Aurora 3D"
     icon: "cfd-aurora"
