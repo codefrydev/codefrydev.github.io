@@ -8,22 +8,22 @@
 
 <body style="background-color: #e5e9f4;">
     <main>
-        <div class="MainButtonParent"> 
-            <i  style="align-items: center;" class="fa-solid fa-game-console-handheld" height="96px" onclick="window.location.href='/'"></i>
-          </div>
-          <h3 style="align-items: center;">Play Games</h3>
-          <h4 style="align-items: center;"></h4>
-          
-          <div class="buttons">
-            {{ range .Site.Data.games.data }}
-              <button class="neumorphic hapticButton" onclick="window.location.href='{{ .url }}'">
-                <img src="/images/games/{{ .icon }}.svg" alt="{{ .icon }}" class="button-icon">
-                <span>{{ .name }}</span>
-              </button>
-            {{ end }}
-          </div>
+        <div class="MainButtonParent">
+          <img style="align-items: center;" src="/images/IconCodefrydev.svg" alt="Codefrydev Logo" height="96px">
+        </div>
+        <h3 style="align-items: center;">Play Games</h3>
+        <h4 style="align-items: center;"></h4>
+        
+        <div class="buttons">
+          {{ range .Site.Data.games.data }}
+            <button class="neumorphic hapticButton" onclick="window.location.href='{{ .url }}'">
+              <img src="/images/games/{{ .icon }}.svg" alt="{{ .icon }}" class="button-icon">
+              <span>{{ .name }}</span>
+            </button>
+          {{ end }}
+        </div>
     </main>
-    <script src="js/feedback.js" ></script>
+    <script src="/js/feedback.js" ></script>
 </body>
 
 </html>
