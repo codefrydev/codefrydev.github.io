@@ -1,0 +1,108 @@
+/* General Body and Heading Styles */
+body {
+    background-color: #e5e9f4;
+    padding: 2rem;
+    overflow-x: hidden; /* Prevents horizontal scrollbars from hover effect */
+}
+
+h1, h3, h4 {
+    text-align: center;
+    color: hsl(0 0% 10%);
+    font-family: system-ui, sans-serif;
+}
+
+h1 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 3rem;
+    font-weight: bolder;
+}
+
+h3 {
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+}
+
+h4 {
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 4rem; /* Reduced margin to prevent vertical overflow */
+}
+
+.MainButtonParent {
+   width: 100%;
+   display: flex;
+   justify-content: space-evenly;
+   font-size: 3rem;
+}
+
+/* Button Grid Layout */
+.buttons {
+    display: grid;
+    width: min(75rem, 100%);
+    margin-inline: auto;
+    grid-template-columns: repeat(auto-fit, minmax(min(8rem, 100%), 1fr));
+    gap: 2rem;
+}
+
+/* Neumorphic Button Styles */
+button.neumorphic {
+    /* Layout properties for icon/text alignment */
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+
+    /* Core button styles */
+    container-type: inline-size;
+    aspect-ratio: 1/1;
+    border: 0.5rem solid transparent;
+    border-radius: 1rem;
+    color: hsl(0 0% 10%);
+    background: none;
+    gap: 0.5rem;
+    
+    --shadow: 
+      -.5rem -.5rem 1rem hsl(0 0% 100% / .75),
+      .5rem .5rem 1rem hsl(0 0% 50% / .5);
+    box-shadow: var(--shadow);
+    outline: none;  
+    transition: all 0.1s;
+}
+
+/* Button States: Hover, Focus, Active */
+button.neumorphic:hover, 
+button.neumorphic:focus-visible {
+    color: hsl(10 80% 50%);
+    scale: 1.1;
+}
+
+button.neumorphic:active, 
+button.neumorphic.active {
+    box-shadow:
+        var(--shadow),
+        inset .5rem .5rem 1rem hsl(0 0% 50% / .5),
+        inset -.5rem -.5rem 1rem hsl(0 0% 100% / .75);
+    color: hsl(10 80% 50%);
+}
+
+/* Icon & Text Styling */
+.button-icon {
+    height: 31cqi; /* Use height with container query units */
+}
+
+button.neumorphic > span {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16cqi;
+    font-weight: 400;
+}
+
+/* Icon and text size on active/pressed state */
+button.neumorphic:active > .button-icon,
+button.neumorphic.active > .button-icon {
+    height: 28cqi;
+}
+
+button.neumorphic:active > span,
+button.neumorphic.active > span {
+    font-size: 13cqi;
+}

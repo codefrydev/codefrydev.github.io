@@ -1,108 +1,143 @@
-/* General Body and Heading Styles */
+/* --- General & Typography --- */
 body {
     background-color: #e5e9f4;
     padding: 2rem;
-    overflow-x: hidden; /* Prevents horizontal scrollbars from hover effect */
+    overflow-x: hidden;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif; /* Modern Font */
 }
 
-h1, h3, h4 {
+.page-header {
     text-align: center;
-    color: hsl(0 0% 10%);
-    font-family: system-ui, sans-serif;
+    margin-bottom: 3rem;
 }
 
-h1 {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 3rem;
-    font-weight: bolder;
+.page-header img {
+    margin-bottom: 0.75rem;
 }
 
-h3 {
+.page-header h3, .page-header h4 {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+.page-header h3 {
     font-size: 2rem;
-    font-weight: 400;
-    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: hsl(225, 15%, 25%); /* Softer, darker blue-gray */
 }
 
-h4 {
+.page-header h4 {
     font-size: 1rem;
     font-weight: 400;
-    margin-bottom: 4rem; /* Reduced margin to prevent vertical overflow */
+    color: hsl(225, 10%, 55%); /* Muted color for subtitle */
+    margin-top: 0.25rem;
 }
 
-.MainButtonParent {
-   width: 100%;
-   display: flex;
-   justify-content: space-evenly;
-   font-size: 3rem;
-}
-
-/* Button Grid Layout */
-.buttons {
-    display: grid;
+/* --- Category Layout --- */
+.category-section {
     width: min(75rem, 100%);
     margin-inline: auto;
-    grid-template-columns: repeat(auto-fit, minmax(min(8rem, 100%), 1fr));
-    gap: 2rem;
+    margin-bottom: 3rem;
 }
 
-/* Neumorphic Button Styles */
-button.neumorphic {
-    /* Layout properties for icon/text alignment */
+.category-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: hsl(225, 10%, 60%);
+    text-align: left;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.button-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(7rem, 9rem));
+    gap: 1.25rem;
+}
+
+/* --- Neumorphic Button (<a> tag) --- */
+a.neumorphic-button {
     display: flex;
     flex-direction: column;
     place-content: center;
-
-    /* Core button styles */
+    align-items: center;
+    text-decoration: none;
     container-type: inline-size;
-    aspect-ratio: 1/1;
-    border: 0.5rem solid transparent;
-    border-radius: 1rem;
-    color: hsl(0 0% 10%);
-    background: none;
-    gap: 0.5rem;
+    aspect-ratio: 1 / 1;
+    border: none;
+    border-radius: 0.8rem;
     
-    --shadow: 
-      -.5rem -.5rem 1rem hsl(0 0% 100% / .75),
-      .5rem .5rem 1rem hsl(0 0% 50% / .5);
-    box-shadow: var(--shadow);
-    outline: none;  
-    transition: all 0.1s;
+    /* Refined Color & Shadow */
+    color: hsl(225, 15%, 45%);
+    background: #e5e9f4;
+    --shadow-light: hsl(0 0% 100% / .6);
+    --shadow-dark: hsl(225 15% 70% / .9);
+    box-shadow: 
+      -0.3rem -0.3rem 0.6rem var(--shadow-light),
+      0.3rem 0.3rem 0.6rem var(--shadow-dark);
+    
+    /* Smoother Animation */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    outline: none;
 }
 
-/* Button States: Hover, Focus, Active */
-button.neumorphic:hover, 
-button.neumorphic:focus-visible {
-    color: hsl(10 80% 50%);
-    scale: 1.1;
+/* --- Button States --- */
+a.neumorphic-button:hover, 
+a.neumorphic-button:focus-visible {
+    color: hsl(220, 85%, 60%);
+    transform: translateY(-4px);
+    box-shadow: 
+      -0.4rem -0.4rem 0.8rem var(--shadow-light),
+      0.4rem 0.4rem 0.8rem var(--shadow-dark),
+      inset 0 0 0 transparent,
+      inset 0 0 0 transparent;
 }
 
-button.neumorphic:active, 
-button.neumorphic.active {
+a.neumorphic-button:active, 
+a.neumorphic-button.active {
+    color: hsl(220, 85%, 60%);
+    transform: translateY(0);
     box-shadow:
-        var(--shadow),
-        inset .5rem .5rem 1rem hsl(0 0% 50% / .5),
-        inset -.5rem -.5rem 1rem hsl(0 0% 100% / .75);
-    color: hsl(10 80% 50%);
+        inset 0.2rem 0.2rem 0.4rem var(--shadow-dark),
+        inset -0.2rem -0.2rem 0.4rem var(--shadow-light);
 }
 
-/* Icon & Text Styling */
+/* --- Icon & Text Styling --- */
 .button-icon {
-    height: 31cqi; /* Use height with container query units */
+    height: 30cqi;
+    transition: height 0.2s ease;
 }
 
-button.neumorphic > span {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 16cqi;
-    font-weight: 400;
+a.neumorphic-button > span {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 15cqi;
+    font-weight: 500;
+    margin-top: 0.5rem;
+    text-align: center;
+    line-height: 1.2;
+    transition: font-size 0.2s ease;
 }
 
-/* Icon and text size on active/pressed state */
-button.neumorphic:active > .button-icon,
-button.neumorphic.active > .button-icon {
-    height: 28cqi;
+/* Active state sizing */
+a.neumorphic-button:active > .button-icon,
+a.neumorphic-button.active > .button-icon {
+    height: 27cqi;
 }
 
-button.neumorphic:active > span,
-button.neumorphic.active > span {
-    font-size: 13cqi;
+a.neumorphic-button:active > span,
+a.neumorphic-button.active > span {
+    font-size: 14cqi;
+}
+
+/* --- Responsive Styles for Smaller Devices --- */
+@media (max-width: 650px) {
+    .category-title {
+        text-align: center; /* Center the title on small screens */
+    }
+
+    .button-grid {
+        justify-content: center; /* Center the grid of cards on small screens */
+    }
 }
