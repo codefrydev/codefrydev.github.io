@@ -1,27 +1,24 @@
 categories:
   # Category for all interactive games and fun projects
-  - name: "Games & Fun"
-    items:
-      - name: "Game"
-        icon: "cfd-games"
-        url: "/games"
-      - name: "Chain Reaction"
-        icon: "cfd-chainreaction"
-        url: "/ChainReaction/"
-      - name: "Wordle"
-        icon: "cfd-wordle"
-        url: "/Wordle/"
-      - name: "Tom & Jerry"
-        icon: "cfd-tomjerry"
-        url: "/TomAndJerry/"
-      - name: "Snake"
-        icon: "cfd-snake"
-        url: "/Snake"
-      - name: "Challenge"
-        icon: "cfd-challenge"
-        url: "/Challenge/"
 
   # Category for practical tools and utilities
+
+  # Category for art, design, and creative assets
+  - name: "Creative & Assets"
+    items:
+      - name: "Art"
+        icon: "cfd-art"
+        url: "/designlab/"
+      - name: "Wallpaper"
+        icon: "cfd-wallpaper"
+        url: "/Wallpaper/"
+      - name: "3D Models"
+        icon: "cfd-threedassets"
+        url: "/ThreeDAssets/"
+      - name: "Android Assets"
+        icon: "cfd-android"
+        url: "https://android.codefrydev.in/"
+
   - name: "Tools & Utilities"
     items:
       - name: "AI"
@@ -45,23 +42,26 @@ categories:
       - name: "Weather"
         icon: "cfd-mausam"
         url: "/Mausam/"
-
-  # Category for art, design, and creative assets
-  - name: "Creative & Assets"
+  - name: "Games & Fun"
     items:
-      - name: "Art"
-        icon: "cfd-art"
-        url: "/designlab/"
-      - name: "Wallpaper"
-        icon: "cfd-wallpaper"
-        url: "/Wallpaper/"
-      - name: "3D Models"
-        icon: "cfd-threedassets"
-        url: "/ThreeDAssets/"
-      - name: "Android Assets"
-        icon: "cfd-android"
-        url: "https://android.codefrydev.in/"
-
+      - name: "Game"
+        icon: "cfd-games"
+        url: "/games"
+      - name: "Chain Reaction"
+        icon: "cfd-chainreaction"
+        url: "/ChainReaction/"
+      - name: "Wordle"
+        icon: "cfd-wordle"
+        url: "/Wordle/"
+      - name: "Tom & Jerry"
+        icon: "cfd-tomjerry"
+        url: "/TomAndJerry/"
+      - name: "Snake"
+        icon: "cfd-snake"
+        url: "/Snake"
+      - name: "Challenge"
+        icon: "cfd-challenge"
+        url: "/Challenge/"
   # Category for site-wide information, policies, and external links
   - name: "Site & External Links"
     items:
