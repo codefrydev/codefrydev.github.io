@@ -7,19 +7,21 @@
 <body style="background-color: #e5e9f4;">
 
   <header class="page-header">
-    <img src="images/IconCodefrydev.svg" alt="Codefrydev Logo" height="96px">
-    <h3>Code Fry Dev<sup style="font-size: small; font-weight: bold;"> Alpha</sup></h3>
-    <h4>Tools, Games, Art, Animation</h4>
+    <a href="/" aria-label="Codefrydev Homepage">
+      <img fetchpriority=high src="images/IconCodefrydev.svg" alt="Codefrydev Logo" height="96px">
+    </a>
+    <h1>Code Fry Dev<sup style="font-size: small; font-weight: bold;"> Alpha</sup></h1>
+    <p class="tagline">Tools, Games, Art, Animation</p>
   </header>
 
-  <main>
+  <main id="main-content">
     {{ range .Site.Data.home.categories }}
       <section class="category-section">
         <h2 class="category-title">{{ .name }}</h2>
         <div class="button-grid">
           {{ range .items }}
             <a href="{{ .url }}" class="neumorphic-button hapticButton">
-              <img src="images/home/{{ .icon }}.svg" alt="{{ .name }} icon" class="button-icon">
+              <img src="images/home/{{ .icon }}.svg" alt="{{ .icon }}" class="button-icon" loading="lazy">
               <span>{{ .name }}</span>
             </a>
           {{ end }}
