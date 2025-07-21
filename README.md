@@ -1,39 +1,86 @@
-# Code Fry Dev (CFD)
+# Adding a New Section: **Store**
 
-## Build Using HUGO
+This guide outlines steps to add a new section called **Store** to the website.
 
+---
 
-> Plan to replace font awesome icom with svg
-- Chages will be in two file
+## **Step I. Create Content Folder**
 
-```html
-<button class="neumorphic hapticButton">
-  <!--  <i class="{{ .icon }}"></i> -->
-  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-    <path d="M12 2C6.48 2 2 6.48 2 12s4.48…Z"/>
-  </svg>
-  <span>Dashboard</span>
-</button>
+1. Inside the `content` folder, create a new folder named `store`.
+2. Inside the `store` folder, create a file named `_index.md`.
+
+**Example Structure:**
+
+```sh
+content/
+└── store/
+    └── _index.md
 ```
 
-- Css Changes
+---
 
-```css
-/* replace > i with > .icon */
-button.neumorphic > .icon {
-  width: 31cqi;
-  height: 31cqi;
-  fill: currentColor;     
-  display: block;
-}
+## **Step II. Configure \_index.md**
 
-/* active state—you had > i { font-size:28cqi } */
-button.neumorphic:active > .icon,
-button.neumorphic.active > .icon {
-  width: 28cqi;
-  height: 28cqi;
-}
+Add the following front matter to `_index.md`:
 
-/* text stays same */
-button.neumorphic > span { /* …unchanged… */ }
+```yaml
+---
+title: "Store"
+date: 2025-07-07T00:00:00Z
+---
 ```
+
+---
+
+## **Step III. Create Data File**
+
+1. Inside the `data` folder, create a new file named `store.yaml`.
+
+**Example Structure:**
+
+```sh
+data/
+└── store.yaml
+```
+
+---
+
+## **Step IV. Add Store Data**
+
+Populate `store.yaml` with data in the following format:
+
+```yaml
+data:
+  - name: "Water Reminder"
+    icon: "cfd-waterreminder"
+    url: "https://play.google.com/"
+```
+
+* **name**: Display name of the store item.
+* **icon**: Icon class or identifier for the item.
+* **url**: Link to the item.
+
+---
+
+## **Step V. Create Layout Template**
+
+1. Inside the `layouts` folder, create a new folder named `store`.
+2. Inside the `store` folder, create a file named `store.html`.
+
+**Example Structure:**
+
+```sh
+layouts/
+└── store/
+    └── store.html
+```
+
+2. Add your desired HTML template code in `store.html` to render the Store section on the website.
+
+---
+
+## ✅ **Summary Checklist**
+
+✔️ `content/store/_index.md` created and configured
+✔️ `data/store.yaml` created with store items
+✔️ `layouts/store/store.html` created with the section layout
