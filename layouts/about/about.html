@@ -3,23 +3,25 @@
 <head> 
     {{ partial "header.html" . }} 
     <link rel="stylesheet" href="/css/about.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body style="background-color: #e5e9f4;" >
     <header>
         <h1 onclick="window.location.href='/'">
-            <img style="align-items: center;" src="/images/IconCodefrydev.svg" alt="Codefrydev Logo" height="96px">
-            <br/>
-            {{ .Title }}
+            <img src="/images/IconCodefrydev.svg" alt="Codefrydev Logo" height="80px">
+            <span>{{ .Title }}</span>
         </h1>
     </header>
     <main>
         <section>
             <ol class="cards">
                 {{ range .Site.Data.about.cards }}
-                <li class="card" style="--accent-color: {{ .accent_color }}" onclick="window.location.href='{{ .url }}'">
-                    <h2>{{ .title }}</h2>
-                    <p>{{ .content }}</p>
-                    <i class="{{ .icon }}"></i>
+                <li>
+                    <a class="card" href="{{ .url }}" style="--accent-color: {{ .accent_color }}">
+                        <h2>{{ .title }}</h2>
+                        <p>{{ .content }}</p>
+                        <i class="{{ .icon }}"></i>
+                    </a>
                 </li>
                 {{ end }}
             </ol>
