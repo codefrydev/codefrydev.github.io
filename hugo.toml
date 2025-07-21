@@ -13,7 +13,6 @@ title = 'Code Fry Dev'
   env = "production"
   
   [assets]
-    disableHLJS = true
     favicon = "favicon.ico"
     favicon16x16 = "favicon-16x16.png"
     favicon32x32 = "favicon-32x32.png"

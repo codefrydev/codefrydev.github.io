@@ -1,6 +1,5 @@
 # data/buttons.yaml
 data:
-
   - name: "AI"
     icon: "cfd-brain"
     url: "/ai"
@@ -16,6 +15,10 @@ data:
   - name: "Art"
     icon: "cfd-art"
     url: "/designlab/"
+
+  - name: "Store"
+    icon: "cfd-store"
+    url: "/store/"
 
   - name: "Timeline"
     icon: "cfd-history"
@@ -92,6 +95,3 @@ data:
     icon: "cfd-texttools"
     url: "/TextTools/"
 
-  - name: "Application"
-    icon: "cfd-application"
-    url: "https://play.google.com/store/apps/details?id=com.priyadarshi.abhijeet.abintudyog"

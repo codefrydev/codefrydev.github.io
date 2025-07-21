@@ -1,0 +1,17 @@
+# data/buttons.yaml
+data:
+  - name: "Water Reminder"
+    icon: "cfd-waterreminder"
+    url: "https://play.google.com/store/apps/details?id=com.codefrydev.waterreminder"
+  
+  - name: "abintudyog"
+    icon: "cfd-abint"
+    url: "https://play.google.com/store/apps/details?id=com.priyadarshi.abhijeet.abintudyog"
+
+  - name: "Tiny fish"
+    icon: "cfd-abint"
+    url: "https://play.google.com/store/apps/details?id=in.codefrydev.developer.abhijeet.tinyfish"
+
+  - name: "Galactic gunner"
+    icon: "cfd-abint"
+    url: "https://play.google.com/store/apps/details?id=org.codefrydev.developer.abhijeet.galacticgunner"

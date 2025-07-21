@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {{ partial "header.html" . }}
+    
+    <link rel="stylesheet" href="/css/home.css">
+</head>
+
+<body style="background-color: #e5e9f4;">
+    <main>
+        <div class="MainButtonParent">
+          <img style="align-items: center;" src="/images/IconCodefrydev.svg" alt="Codefrydev Logo" height="96px">
+        </div>
+        <h3 style="align-items: center;">Applications</h3>
+        <h4 style="align-items: center;"></h4>
+        
+        <div class="buttons">
+        {{ range .Site.Data.store.data }}
+            <button class="neumorphic hapticButton" onclick="window.location.href='{{ .url }}'">
+            <img src="/images/store/{{ .icon }}.svg" alt="{{ .icon }}" class="button-icon">
+            <span>{{ .name }}</span>
+            </button>
+        {{ end }}
+        </div>
+    </main>
+    <script src="/js/feedback.js" ></script>
+</body>
+
+</html>

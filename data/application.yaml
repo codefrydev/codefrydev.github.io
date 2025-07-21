@@ -1,5 +1,0 @@
-# data/buttons.yaml
-data:
-  - name: "Water Reminder"
-    icon: "cfd-waterreminder"
-    url: "https://play.google.com/store/apps/details?id=com.codefrydev.waterreminder"
