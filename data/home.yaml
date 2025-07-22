@@ -1,9 +1,4 @@
 categories:
-  # Category for all interactive games and fun projects
-
-  # Category for practical tools and utilities
-
-  # Category for art, design, and creative assets
   - name: "Creative & Assets"
     items:
       - name: "Art"

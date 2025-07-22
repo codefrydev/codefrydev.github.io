@@ -2,7 +2,12 @@
 <html lang="en">
 <head>
   {{ partial "header.html" . }}
-  <link rel="stylesheet" href="css/home.css">
+  {{ with resources.Get "css/home.css" }}
+    {{ $minifiedCSS := . | resources.Minify }}
+    <link rel="stylesheet" href="{{ $minifiedCSS.RelPermalink }}">
+  {{ else }}
+    {{ warnf "The CSS file 'css/home.css' was not found." }}
+  {{ end }}
 </head>
 <body style="background-color: #e5e9f4;">
 

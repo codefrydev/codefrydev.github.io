@@ -1,0 +1,22 @@
+{{ define "main" }}
+  <main class="main-content">
+    <header class="page-header">
+       {{/* This shows the title, like "All Tags" */}}
+      <h1>{{ .Title }}</h1>
+    </header>
+
+    {{/* This creates a simple list */}}
+    <ul>
+      {{/* This loops through all the available tags or categories */}}
+      {{ range .Data.Terms.ByCount }}
+        <li>
+          <a href="{{ .Page.Permalink }}">
+            {{ .Page.Title }}
+            {{/* This shows how many posts have that tag */}}
+            <span>({{ .Count }})</span>
+          </a>
+        </li>
+      {{ end }}
+    </ul>
+  </main>
+{{ end }}
