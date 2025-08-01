@@ -1,8 +1,13 @@
 # data/buttons.yaml
 data:
-  - name: "Profile AI"
-    icon: "cfd-chat"
-    url: "/ProfiledAi/"
+
+  - name: "AI SocialSnap"
+    icon: "cfd-social"
+    url: "https://socialsnap.codefrydev.in/"
+
+  - name: "AI Meme Generator"
+    icon: "cfd-meme"
+    url: "https://meme.codefrydev.in/"
 
   - name: "Visual Note AI"
     icon: "cfd-vnote"
@@ -12,18 +17,14 @@ data:
     icon: "cfd-water"
     url: "https://aquatrack.codefrydev.in/"
 
-  - name: "CFD Chat AI"
-    icon: "cfd-chat"
-    url: "https://chat.codefrydev.in/"
-
   - name: "AI Web Summarize"
     icon: "cfd-summarize"
     url: "https://summarize.codefrydev.in/"
 
-  - name: "AI SocialSnap"
-    icon: "cfd-social"
-    url: "https://socialsnap.codefrydev.in/"
+  - name: "Profile AI"
+    icon: "cfd-chat"
+    url: "/ProfiledAi/"
 
-  - name: "AI Meme Generator"
-    icon: "cfd-meme"
-    url: "https://meme.codefrydev.in/"
+  - name: "CFD Chat AI"
+    icon: "cfd-chat"
+    url: "https://chat.codefrydev.in/"
