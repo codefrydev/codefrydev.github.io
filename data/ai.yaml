@@ -4,6 +4,10 @@ data:
     icon: "cfd-chat"
     url: "/ProfiledAi/"
 
+  - name: "Visual Note AI"
+    icon: "cfd-vnote"
+    url: "https://visualnote.codefrydev.in/"
+
   - name: "Aqua tracker AI"
     icon: "cfd-water"
     url: "https://aquatrack.codefrydev.in/"
