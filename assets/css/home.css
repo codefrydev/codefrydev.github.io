@@ -52,7 +52,7 @@ body {
 
 .button-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(6rem, 6rem));
+    grid-template-columns: repeat(auto-fit, minmax(6rem, 8rem));
     gap: 1.25rem
 }
 
