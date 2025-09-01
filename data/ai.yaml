@@ -11,7 +11,7 @@ data:
 
   - name: "Visual Note AI"
     icon: "cfd-vnote"
-    url: "https://visualnote.codefrydev.in/"
+    url: "https://appsuit.codefrydev.in/apps/visualnoteai/"
 
   - name: "Aqua tracker AI"
     icon: "cfd-water"
