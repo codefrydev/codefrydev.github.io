@@ -1,4 +1,10 @@
 history:
+  - date: "07 Sept 2025"
+    title: "Text Hub"
+    description: "Updated the Text Tools section to Text Hub with more features and tools. with modern UI."
+    link: "/"
+    accent_color: "#e53935" # July Base: Red
+
   - date: "1 August 2025"
     title: "Visual Note AI"
     description: "Capture your world, transform it into smart notes. Your visual memory, reimagined."
