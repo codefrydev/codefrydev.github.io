@@ -1,0 +1,106 @@
+{{/* Enhanced JSON-LD that auto-generates from Hugo content and page data using jsonify to ensure valid JSON */}}
+{{- $graph := slice -}}
+
+{{- /* Organization */ -}}
+{{- $org := dict
+  "@type" "Organization"
+  "@id" (print .Site.BaseURL "#organization")
+  "name" .Site.Title
+  "url" .Site.BaseURL
+  "logo" (dict "@type" "ImageObject" "url" (print .Site.BaseURL "images/IconCodefrydev.svg") "width" 96 "height" 96)
+  "description" .Site.Params.description
+  "foundingDate" "2023"
+  "founder" (dict "@type" "Person" "name" .Site.Author.name)
+  "sameAs" (slice "https://github.com/codefrydev" "https://play.google.com/store/apps/developer?id=CodeFryDev")
+  "contactPoint" (dict "@type" "ContactPoint" "contactType" "customer service" "url" (print .Site.BaseURL "about"))
+  "areaServed" "Worldwide"
+  "knowsAbout" (slice "Web Development" "Mobile App Development" "Game Development" "AI Tools" "Creative Design" "Productivity Tools")
+-}}
+{{- $graph = $graph | append $org -}}
+
+{{- /* Website */ -}}
+{{- $website := dict
+  "@type" "WebSite"
+  "@id" (print .Site.BaseURL "#website")
+  "name" .Site.Title
+  "url" .Site.BaseURL
+  "description" .Site.Params.description
+  "publisher" (dict "@id" (print .Site.BaseURL "#organization"))
+  "potentialAction" (dict "@type" "SearchAction" "target" (dict "@type" "EntryPoint" "urlTemplate" (print .Site.BaseURL "search?q={search_term_string}")) "query-input" "required name=search_term_string")
+  "inLanguage" (.Site.LanguageCode | default "en-us")
+  "copyrightYear" (now.Format "2006")
+  "copyrightHolder" (dict "@id" (print .Site.BaseURL "#organization"))
+-}}
+{{- $graph = $graph | append $website -}}
+
+{{- /* FAQ */ -}}
+{{- $faqItems := slice -}}
+{{- range .Site.Data.faq.faqs -}}
+  {{- $faqItems = $faqItems | append (dict "@type" "Question" "name" .question "acceptedAnswer" (dict "@type" "Answer" "text" .answer)) -}}
+{{- end -}}
+{{- $faq := dict "@type" "FAQPage" "mainEntity" $faqItems -}}
+{{- $graph = $graph | append $faq -}}
+
+{{- /* Home ItemList */ -}}
+{{- if .IsHome -}}
+  {{- $homeLists := slice -}}
+  {{- range .Site.Data.home.categories -}}
+    {{- $catName := .name -}}
+    {{- $items := slice -}}
+    {{- range $idx, $it := .items -}}
+      {{- $items = $items | append (dict "@type" "ListItem" "position" (add $idx 1) "item" (dict "@type" "WebApplication" "name" $it.name "url" ($it.url | absURL) "description" (print $it.name " - " $catName " tool by CodeFryDev") "applicationCategory" $catName "operatingSystem" "Web Browser" "offers" (dict "@type" "Offer" "price" "0" "priceCurrency" "USD" "availability" "https://schema.org/InStock") "publisher" (dict "@id" (print $.Site.BaseURL "#organization")))) -}}
+    {{- end -}}
+    {{- $homeLists = $homeLists | append (dict "@type" "ItemList" "name" .name "description" (print .name " tools and resources") "numberOfItems" (len .items) "itemListElement" $items) -}}
+  {{- end -}}
+  {{- $home := dict "@type" "ItemList" "name" "CodeFryDev Tools and Games Collection" "description" "Complete collection of creative tools, games, and utilities" "url" .Site.BaseURL "numberOfItems" (len .Site.Data.home.categories) "itemListElement" $homeLists -}}
+  {{- $graph = $graph | append $home -}}
+{{- end -}}
+
+{{- /* Games page */ -}}
+{{- if eq .Section "games" -}}
+  {{- $gameItems := slice -}}
+  {{- range $idx, $g := .Site.Data.games.data -}}
+    {{- $gameItems = $gameItems | append (dict "@type" "ListItem" "position" (add $idx 1) "item" (dict "@type" "VideoGame" "name" $g.name "url" ($g.url | absURL) "description" (print $g.name " - A fun game by CodeFryDev") "genre" "Casual Game" "gamePlatform" "Web Browser" "operatingSystem" "Any" "applicationCategory" "Game" "offers" (dict "@type" "Offer" "price" "0" "priceCurrency" "USD" "availability" "https://schema.org/InStock") "publisher" (dict "@id" (print $.Site.BaseURL "#organization")))) -}}
+  {{- end -}}
+  {{- $games := dict "@type" "ItemList" "name" "CodeFryDev Games Collection" "description" "Collection of fun and engaging games developed by CodeFryDev" "url" .Permalink "numberOfItems" (len .Site.Data.games.data) "itemListElement" $gameItems -}}
+  {{- $graph = $graph | append $games -}}
+{{- end -}}
+
+{{- /* AI page */ -}}
+{{- if eq .Section "ai" -}}
+  {{- $toolItems := slice -}}
+  {{- range $idx, $t := .Site.Data.ai.data -}}
+    {{- $toolItems = $toolItems | append (dict "@type" "ListItem" "position" (add $idx 1) "item" (dict "@type" "SoftwareApplication" "name" $t.name "url" ($t.url | absURL) "description" (print $t.name " - AI-powered tool by CodeFryDev") "applicationCategory" "AI Tool" "operatingSystem" "Web Browser" "softwareVersion" "1.0" "offers" (dict "@type" "Offer" "price" "0" "priceCurrency" "USD" "availability" "https://schema.org/InStock") "publisher" (dict "@id" (print $.Site.BaseURL "#organization")) "featureList" (slice "AI-powered functionality" "Easy to use interface" "No installation required" "Cross-platform compatibility"))) -}}
+  {{- end -}}
+  {{- $ai := dict "@type" "ItemList" "name" "CodeFryDev AI Tools Collection" "description" "Collection of AI-powered tools and utilities for productivity and creativity" "url" .Permalink "numberOfItems" (len .Site.Data.ai.data) "itemListElement" $toolItems -}}
+  {{- $graph = $graph | append $ai -}}
+{{- end -}}
+
+{{- /* About page */ -}}
+{{- if eq .Section "about" -}}
+  {{- $about := dict "@type" "AboutPage" "name" .Title "description" (.Description | default "Learn more about CodeFryDev and our mission") "url" .Permalink "mainEntity" (dict "@id" (print .Site.BaseURL "#organization")) "breadcrumb" (dict "@type" "BreadcrumbList" "itemListElement" (slice (dict "@type" "ListItem" "position" 1 "name" "Home" "item" .Site.BaseURL) (dict "@type" "ListItem" "position" 2 "name" "About" "item" .Permalink))) -}}
+  {{- $graph = $graph | append $about -}}
+{{- end -}}
+
+{{- /* Store page */ -}}
+{{- if eq .Section "store" -}}
+  {{- $store := dict "@type" "Store" "name" "CodeFryDev Store" "description" "Official store for CodeFryDev products and applications" "url" .Permalink "seller" (dict "@id" (print .Site.BaseURL "#organization")) "paymentAccepted" "Free" "currenciesAccepted" "USD" -}}
+  {{- $graph = $graph | append $store -}}
+{{- end -}}
+
+{{- /* Breadcrumb for all non-home pages */ -}}
+{{- if not .IsHome -}}
+  {{- $crumbs := slice (dict "@type" "ListItem" "position" 1 "name" "Home" "item" .Site.BaseURL) -}}
+  {{- if .Section -}}
+    {{- $crumbs = $crumbs | append (dict "@type" "ListItem" "position" 2 "name" (.Section | title) "item" (print .Site.BaseURL .Section "/")) -}}
+  {{- end -}}
+  {{- if .Title -}}
+    {{- $crumbs = $crumbs | append (dict "@type" "ListItem" "position" (cond (ne .Section "") 3 2) "name" .Title "item" .Permalink) -}}
+  {{- end -}}
+  {{- $breadcrumb := dict "@type" "BreadcrumbList" "itemListElement" $crumbs -}}
+  {{- $graph = $graph | append $breadcrumb -}}
+{{- end -}}
+
+<script type="application/ld+json">
+{{ dict "@context" "https://schema.org" "@graph" $graph | jsonify | safeJS }}
+</script>

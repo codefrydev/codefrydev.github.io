@@ -2,6 +2,10 @@
 <html lang="en">
 <head>
   {{ partial "header.html" . }}
+  <meta name="description" content="CodeFryDev - Your ultimate destination for diverse digital content and tools. Enjoy our extensive game collection, innovative productivity apps, and comprehensive tutorials for all skill levels.">
+  <meta name="keywords" content="codefrydev, digital tools, games, productivity apps, tutorials, design resources, AI tools, creative tools, web development">
+  <title>CodeFryDev | Games, Apps, Tutorials, and Design Tools</title>
+  <link rel="canonical" href="{{ .Permalink }}">
   {{ with resources.Get "css/home.css" }}
     {{ $minifiedCSS := . | resources.Minify }}
     <link rel="stylesheet" href="{{ $minifiedCSS.RelPermalink }}">

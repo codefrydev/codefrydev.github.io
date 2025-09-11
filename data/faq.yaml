@@ -1,0 +1,36 @@
+faqs:
+  - question: "What is CodeFryDev?"
+    answer: "CodeFryDev is your ultimate destination for diverse digital content and tools. We offer an extensive game collection, innovative productivity apps, micro applications for quick solutions, educational materials, interactive courses, and comprehensive tutorials for all skill levels."
+  
+  - question: "What types of tools does CodeFryDev offer?"
+    answer: "CodeFryDev offers four main categories: Creative & Assets (art, text tools, wallpapers, 3D models), Tools & Utilities (AI tools, CSV tools, JSON formatters, meta tag generators), Games & Fun (various games including Chain Reaction, Wordle, Snake), and Site & External Links (about, timeline, store, privacy)."
+  
+  - question: "Are the tools and games free to use?"
+    answer: "Most of our web-based tools and games are free to use. Some premium features or mobile apps may have different pricing models. Check individual tool pages for specific details."
+  
+  - question: "Do I need to create an account to use the tools?"
+    answer: "Most of our tools can be used without creating an account. Simply visit the tool page and start using it immediately. Some advanced features may require registration."
+  
+  - question: "What AI tools are available?"
+    answer: "We offer several AI-powered tools including AI SocialSnap, AI Meme Generator, Visual Note AI, Aqua Tracker AI, AI Web Summarizer, Profile AI, and CFD Chat AI. These tools help with content creation, summarization, and productivity."
+  
+  - question: "Can I use these tools on mobile devices?"
+    answer: "Yes, most of our tools are responsive and work on mobile devices. We also have dedicated mobile apps available on the Google Play Store for enhanced mobile experience."
+  
+  - question: "How can I contact CodeFryDev for support?"
+    answer: "You can reach us through our about page or contact us via the information provided on our website. We're committed to providing excellent support for all our users."
+  
+  - question: "Is my data secure when using CodeFryDev tools?"
+    answer: "Yes, we take data security seriously. Most of our tools process data locally in your browser, and we follow best practices for data protection. Please review our privacy policy for detailed information."
+  
+  - question: "What programming languages and technologies does CodeFryDev use?"
+    answer: "CodeFryDev uses modern web technologies including HTML5, CSS3, JavaScript, and various frameworks. Our backend services are built with .NET, and we also develop mobile apps using Unity and other cross-platform technologies."
+  
+  - question: "Can I contribute to CodeFryDev projects?"
+    answer: "Yes! CodeFryDev is open to contributions. You can find our projects on GitHub and contribute through pull requests, bug reports, or feature suggestions. Check our about page for more information on how to get involved."
+  
+  - question: "How often are new tools and games added?"
+    answer: "We regularly update our collection with new tools and games. Follow our updates section or social media channels to stay informed about the latest additions and improvements."
+  
+  - question: "Do you offer tutorials for learning web development?"
+    answer: "Yes, CodeFryDev provides comprehensive tutorials and educational materials for web development, covering topics from basic HTML/CSS to advanced frameworks and best practices. Our tutorials are designed for all skill levels."
