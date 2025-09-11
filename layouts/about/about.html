@@ -6,30 +6,25 @@
     <meta name="keywords" content="about codefrydev, codefrydev team, digital tools, web development, mobile apps, games, tutorials">
     <title>About - CodeFryDev | Learn More About Us</title>
     
-    <link rel="stylesheet" href="/css/about.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="/css/internal.css">
+    {{ partial "aboutseo.html" . }}
 </head>
-<body style="background-color: #e5e9f4;" >
-    <header>
-        <h1 onclick="window.location.href='/'">
-            <img src="/images/IconCodefrydev.svg" alt="Codefrydev Logo" height="80px">
-            <span>{{ .Title }}</span>
-        </h1>
-    </header>
+<body style="background-color: #e5e9f4;">
     <main>
-        <section>
-            <ol class="cards">
-                {{ range .Site.Data.about.cards }}
-                <li>
-                    <a class="card" href="{{ .url }}" style="--accent-color: {{ .accent_color }}">
-                        <h2>{{ .title }}</h2>
-                        <p>{{ .content }}</p>
-                        <i class="{{ .icon }}"></i>
-                    </a>
-                </li>
-                {{ end }}
-            </ol>
-        </section>
+        <div class="MainButtonParent">
+          <img style="align-items: center;" src="/images/IconCodefrydev.svg" alt="Codefrydev Logo" height="96px">
+        </div>
+        <h3 style="align-items: center;">About CodeFryDev</h3>
+        <h4 style="align-items: center;">Learn more, meet contributors, and explore links</h4>
+        
+        <div class="buttons">
+          {{ range .Site.Data.about.cards }}
+            <button class="neumorphic hapticButton" onclick="window.location.href='{{ .url }}'">
+              <span>{{ .title }}</span>
+            </button>
+          {{ end }}
+        </div>
     </main>
+    <script src="/js/feedback.js" ></script>
 </body>
 </html>
