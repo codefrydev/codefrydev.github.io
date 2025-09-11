@@ -3,190 +3,190 @@ history:
     title: "Text Hub"
     description: "Updated the Text Tools section to Text Hub with more features and tools. with modern UI."
     link: "/"
-    accent_color: "#e53935" # July Base: Red
+    accent_color: "#e53935"
 
   - date: "1 August 2025"
     title: "Visual Note AI"
     description: "Capture your world, transform it into smart notes. Your visual memory, reimagined."
     link: "https://visualnote.codefrydev.in/"
-    accent_color: "#e53935" # July Base: Pink
+    accent_color: "#D81B60"
 
   - date: "19 July 2025"
     title: "To Svg"
     description: "Switched from font icons to SVG icons for better performance and customization."
     link: "/"
-    accent_color: "#e53935" # July Base: Red
+    accent_color: "#8E24AA"
 
   - date: "14 July 2025"
     title: "Aurora 3D"
     description: "View your 3D models with custom lighting and sound that reacts to music."
     link: "https://aurora3d.codefrydev.in/"
-    accent_color: "#e8403a" # July Base: Red
+    accent_color: "#5E35B1"
 
   - date: "14 July 2025"
     title: "Neural Music Player"
     description: "Listen to music with a 3D visualizer that reacts to the sound."
     link: "https://neuralmusicplayer.codefrydev.in/"
-    accent_color: "#ef4f44" # July Base: Red
+    accent_color: "#3949AB"
 
   - date: "14 July 2025"
     title: "DataViz"
     description: "An interactive guide to help you learn and create data visualization charts."
     link: "https://dataviz.codefrydev.in/"
-    accent_color: "#f4584f" # July Base: Red
+    accent_color: "#1E88E5"
 
   - date: "14 July 2025"
     title: "Android Asset Generator"
     description: "Easily create all the image assets needed for an Android app."
     link: "https://android.codefrydev.in/"
-    accent_color: "#f86259" # July Base: Red
+    accent_color: "#039BE5"
 
   - date: "12 July 2025"
     title: "Juicy Haptic Design Studio"
     description: "A tool to design and test vibration patterns (haptics) for apps."
     link: "https://juicyhapticdesign.codefrydev.in/"
-    accent_color: "#fb6c63" # July Base: Red
+    accent_color: "#00ACC1"
 
   - date: "30 June 2025"
     title: "AI Meme Generator"
     description: "A simple editor to quickly create memes with AI assistance."
     link: "https://meme.codefrydev.in/"
-    accent_color: "#00796b" # June Base: Teal
+    accent_color: "#00897B"
 
   - date: "24 June 2025"
     title: "SocialSnap Ai"
     description: "An AI tool to help write and create snapshots of social media posts."
     link: "https://summarize.codefrydev.in/"
-    accent_color: "#007e70" # June Base: Teal
+    accent_color: "#43A047"
 
   - date: "24 June 2025"
     title: "Website Summarizer Ai"
     description: "An AI tool that reads and summarizes any website page for you."
     link: "https://summarize.codefrydev.in/"
-    accent_color: "#008375" # June Base: Teal
+    accent_color: "#7CB342"
 
   - date: "24 June 2025"
     title: "CFD Chat Ai"
     description: "A simple and straightforward AI chat tool."
     link: "https://chat.codefrydev.in/"
-    accent_color: "#00887a" # June Base: Teal
+    accent_color: "#C0CA33"
 
   - date: "22 June 2025"
     title: "Metatag Generator"
     description: "Create the right meta tags to improve your website's SEO."
     link: "/metatag/"
-    accent_color: "#008d7f" # June Base: Teal
+    accent_color: "#FDD835"
 
   - date: "22 June 2025"
     title: "Aqua tracker"
     description: "A simple app to help you track your daily water intake."
     link: "https://aquatrack.codefrydev.in/"
-    accent_color: "#009284" # June Base: Teal
+    accent_color: "#FFB300"
 
   - date: "21 June 2025"
     title: "Profiled Ai"
     description: "Create and chat with different AI personalities and profiles."
     link: "/ProfiledAi/"
-    accent_color: "#009688" # June Base: Teal
+    accent_color: "#FB8C00"
 
   - date: "18 June 2025"
     title: "Design Lab"
     description: "A space for creating and sharing your design work."
     link: "/designlab/"
-    accent_color: "#009b8d" # June Base: Teal
+    accent_color: "#F4511E"
 
   - date: "1 June 2025"
     title: "Agurutwa Pathsala"
     description: "Our first project for providing free and accessible education to everyone."
     link: "https://agurutwa.github.io"
-    accent_color: "#00a092" # June Base: Teal
+    accent_color: "#6D4C41"
 
   - date: "10 May 2025"
     title: "Model View"
     description: "A live previewer for your 3D models."
     link: "/ThreeDAssets/"
-    accent_color: "#ffb902" # May Base: Amber
+    accent_color: "#8D6E63"
 
   - date: "6 May 2025"
     title: "Weather App"
     description: "Check the current weather for any city."
     link: "/Mausam/"
-    accent_color: "#ffc90c" # May Base: Amber
+    accent_color: "#546E7A"
 
   - date: "07 April 2025"
     title: "NoteBook"
     description: "A simple online notebook to quickly write down and save your notes."
     link: "/YourNoteBook/"
-    accent_color: "#2196F3" # April Base: Blue
+    accent_color: "#26A69A"
 
   - date: "03 March 2025"
     title: "CSV"
     description: "A tool to quickly view, edit, and download CSV spreadsheet files."
     link: "/CSV/"
-    accent_color: "#43a047" # March Base: Green
+    accent_color: "#2E7D32"
 
   - date: "02 March 2025"
     title: "Contributors List"
     description: "A list of all the amazing people contributing to this project."
     link: "/about/users/"
-    accent_color: "#54b258" # March Base: Green
+    accent_color: "#9CCC65"
 
   - date: "01 August 2024"
     title: "Text Tools"
     description: "A collection of useful tools for formatting and working with text."
     link: "/TextTools"
-    accent_color: "#673AB7" # August Base: Deep Purple
+    accent_color: "#D4E157"
 
   - date: "26 July 2024"
     title: "Design"
     description: "The new design section of the website was launched."
     link: "/design/"
-    accent_color: "#F44336" # July Base: Red
+    accent_color: "#FFEE58"
 
   - date: "09 June 2024"
     title: "Code Fry Dev"
     description: "The website is now built using the Hugo static site generator."
     link: "https://gohugo.io/"
-    accent_color: "#008375" # June Base: Teal
+    accent_color: "#FFCA28"
 
   - date: "08 June 2024"
     title: "Snake Game"
     description: "A fun and chaotic version of the classic Snake game."
     link: "/Snake"
-    accent_color: "#009688" # June Base: Teal
+    accent_color: "#FFA726"
 
   - date: "05 June 2024"
     title: "Tom & Jerry"
     description: "Watch classic Tom and Jerry episodes from the 1940s."
     link: "/TomAndJerry/"
-    accent_color: "#00a092" # June Base: Teal
+    accent_color: "#EF5350"
 
   - date: "19 May 2024"
     title: "Wordle"
     description: "A fun and challenging word-guessing game."
     link: "/Wordle/"
-    accent_color: "#ffb902" # May Base: Amber
+    accent_color: "#EC407A"
 
   - date: "06 May 2024"
     title: "Chain Reaction"
     description: "A strategic multiplayer game of capturing orbs and starting chain reactions."
     link: "/ChainReaction/"
-    accent_color: "#ffc90c" # May Base: Amber
+    accent_color: "#AB47BC"
 
   - date: "12 April 2024"
     title: "Wallpaper App"
     description: "A collection of wallpapers, either made by hand or generated by code."
     link: "/projects/Wallpaper/Index.html"
-    accent_color: "#2196F3" # April Base: Blue
+    accent_color: "#7E57C2"
 
   - date: "26 March 2024"
     title: "Challenge App"
     description: "An app to help you track your habits and stay consistent."
     link: "/projects/Challenge/Index.html"
-    accent_color: "#43a047" # March Base: Green
+    accent_color: "#5C6BC0"
     
   - date: "01 March 2024"
     title: "Crispy Launch, Dinner 🍻"
     description: "The very first version of the website was launched."
     link: "/"
-    accent_color: "#54b258" # March Base: Green
+    accent_color: "#42A5F5"
