@@ -37,6 +37,9 @@ categories:
       - name: "Weather"
         icon: "cfd-mausam"
         url: "/Mausam/"
+      - name: "Crop & Resize"
+        icon: "cfd-picwrap"
+        url: "https://picwrap.codefrydev.in"
   - name: "Games & Fun"
     items:
       - name: "Game"

@@ -123,3 +123,66 @@ a.neumorphic-button:active>span {
         justify-content: center
     }
 }
+
+/* Layout tiers: Mobile, Tablet, Desktop */
+@media (max-width: 480px) {
+body {
+    padding: 1rem;
+}
+
+.page-header img {
+    height: 72px;
+}
+
+.page-header h3 {
+    font-size: 1.25rem;
+}
+
+.category-section {
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+.button-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: .75rem;
+    justify-content: center;
+}
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+body {
+    padding: 1.25rem;
+}
+
+.category-section {
+    width: min(40rem, 100%);
+}
+
+.button-grid {
+    grid-template-columns: repeat(auto-fit, minmax(6.5rem, 1fr));
+    gap: 1rem;
+}
+}
+
+@media (min-width: 769px) and (max-width: 1199px) {
+.category-section {
+    width: min(68rem, 100%);
+}
+
+.button-grid {
+    grid-template-columns: repeat(auto-fit, minmax(7.5rem, 1fr));
+    gap: 1.25rem;
+}
+}
+
+@media (min-width: 1200px) {
+.category-section {
+    width: min(80rem, 100%);
+}
+
+.button-grid {
+    grid-template-columns: repeat(auto-fit, minmax(8.5rem, 1fr));
+    gap: 1.5rem;
+}
+}

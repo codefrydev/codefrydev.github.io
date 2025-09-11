@@ -106,3 +106,54 @@ button.neumorphic:active > span,
 button.neumorphic.active > span {
     font-size: 13cqi;
 }
+
+/* Layout tiers: Mobile, Tablet, Desktop */
+@media (max-width: 480px) {
+body {
+    padding: 1rem;
+}
+
+.buttons {
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+button.neumorphic {
+    border-width: 0.4rem;
+    border-radius: 0.8rem;
+}
+
+.button-icon {
+    height: 33cqi;
+}
+
+button.neumorphic > span {
+    font-size: 16cqi;
+}
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+body {
+    padding: 1.25rem;
+}
+
+.buttons {
+    width: min(40rem, 100%);
+    grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr));
+}
+}
+
+@media (min-width: 769px) and (max-width: 1199px) {
+.buttons {
+    width: min(68rem, 100%);
+    grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+}
+}
+
+@media (min-width: 1200px) {
+.buttons {
+    width: min(80rem, 100%);
+    grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+}
+}
