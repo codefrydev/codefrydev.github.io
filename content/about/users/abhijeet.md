@@ -15,4 +15,10 @@ colors:
 links:
   - name: "Portfolio"
     url: "https://abhijeet.codefrydev.in"
+
+  - name: "LinkedIn"
+    url: "https://www.linkedin.com/in/abhijeetunreal/"
+
+  - name: "GitHub"
+    url: "https://github.com/abhijeetunreal"
 ---
