@@ -14,5 +14,5 @@ colors:
 
 links:
   - name: "Portfolio"
-    url: "https://abhijeetunreal.github.io/"
+    url: "https://abhijeet.codefrydev.in"
 ---
