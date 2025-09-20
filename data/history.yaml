@@ -1,4 +1,11 @@
 history:
+
+  - date: "20 Sept 2025"
+    title: "Prompt Library"
+    description: "A curated collection of AI prompts for various tasks and applications."
+    link: "/PromptsValut/"
+    accent_color: "#d32f2f"
+
   - date: "07 Sept 2025"
     title: "Text Hub"
     description: "Updated the Text Tools section to Text Hub with more features and tools. with modern UI."
