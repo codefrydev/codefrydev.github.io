@@ -1,5 +1,11 @@
 history:
 
+  - date: "21 October 2025"
+    title: "willbebacksoon"
+    description: "A live site scene for showing youtube viewer that 'will be back soon' message. using modern UI."
+    link: "/willbeback/"
+    accent_color: "#C62828"
+
   - date: "20 Sept 2025"
     title: "Prompt Library"
     description: "A curated collection of AI prompts for various tasks and applications."

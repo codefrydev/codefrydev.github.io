@@ -43,6 +43,9 @@ categories:
       - name: "Crop & Resize"
         icon: "cfd-picwrap"
         url: "https://picwrap.codefrydev.in"
+      - name: "willbebacksoon"
+        icon: "cfd-willbeback"
+        url: "/willbeback/"
   - name: "Games & Fun"
     items:
       - name: "Game"
