@@ -1,4 +1,9 @@
 history:
+  - date: "08 November 2025"
+    title: "WordDice"
+    description: "WordDice is a modern, interactive web application designed to help users learn and practice new vocabulary words through engaging exercises and real-time feedback."
+    link: "https://worddice.codefrydev.in/"
+    accent_color: "#C62829"
 
   - date: "21 October 2025"
     title: "willbebacksoon"
