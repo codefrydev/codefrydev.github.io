@@ -52,7 +52,7 @@ categories:
         icon: "cfd-games"
         url: "/games"
       - name: "WordDice"
-        icon: "cfd-worddices"
+        icon: "cfd-worddice"
         url: "https://worddice.codefrydev.in/"
       - name: "Chain Reaction"
         icon: "cfd-chainreaction"

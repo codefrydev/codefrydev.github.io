@@ -1,7 +1,7 @@
 # data/buttons.yaml
 data:
   - name: "WordDice"
-    icon: "cfd-worddices"
+    icon: "cfd-worddice"
     url: "https://worddice.codefrydev.in/"
 
   - name: "Chain Reaction"
