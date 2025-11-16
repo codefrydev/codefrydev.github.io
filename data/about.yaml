@@ -1,6 +1,6 @@
 cards:
   - accent_color: "#0f6493"
-    title: "Contributors"
+    title: "Devs and Designers"
     content: "Folks who is contribution on this projects"
     icon: "fa-solid fa-comments"
     url: "/about/users/"
