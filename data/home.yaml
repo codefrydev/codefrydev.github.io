@@ -1,6 +1,9 @@
 categories:
   - name: "Creative & Assets"
     items:
+      - name: "Muraly"
+        icon: "cfd-muraly"
+        url: "https://muraly.codefrydev.in/"
       - name: "Art"
         icon: "cfd-art"
         url: "/designlab/"

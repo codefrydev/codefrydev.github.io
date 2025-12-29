@@ -1,4 +1,10 @@
 history:
+  - date: "29 December 2025"
+    title: "Muraly"
+    description: "Visualize murals and wall art in real spaces using augmented reality. Create, preview, and design with confidence."
+    link: "https://muraly.codefrydev.in/"
+    accent_color: "#FF005C"
+
   - date: "08 November 2025"
     title: "WordDice"
     description: "WordDice is a modern, interactive web application designed to help users learn and practice new vocabulary words through engaging exercises and real-time feedback."
