@@ -1,4 +1,11 @@
 history:
+
+  - date: "29 December 2025"
+    title: "Blue Screen of Death :)"
+    description: "Blue screen of death for different screen saver and solid background."
+    link: "https://bluescreenofdeath.codefrydev.in/"
+    accent_color: "#FF005C"
+
   - date: "29 December 2025"
     title: "Celebrating 2026's Birth!"
     description: "Happy Birthday 2026! Hope you grow every second."
