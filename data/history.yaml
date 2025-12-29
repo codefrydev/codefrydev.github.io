@@ -1,5 +1,11 @@
 history:
   - date: "29 December 2025"
+    title: "Celebrating 2026's Birth!"
+    description: "Happy Birthday 2026! Hope you grow every second."
+    link: "https://happy.codefrydev.in/"
+    accent_color: "#FF005C"
+
+  - date: "29 December 2025"
     title: "Muraly"
     description: "Visualize murals and wall art in real spaces using augmented reality. Create, preview, and design with confidence."
     link: "https://muraly.codefrydev.in/"
