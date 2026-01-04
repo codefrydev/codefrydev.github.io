@@ -1,5 +1,11 @@
 history:
 
+  - date: "04 January 2026"
+    title: "White Board Collabration"
+    description: "A white board screen which can be shared for collbration of ideas and stuff by sharing common screen canvass, board or etc"
+    link: "https://codefrydev.in/CFDPenney/"
+    accent_color: "#60a5fa"
+
   - date: "29 December 2025"
     title: "Blue Screen of Death :)"
     description: "Blue screen of death for different screen saver and solid background."
