@@ -52,7 +52,7 @@ categories:
       - name: "Be Back"
         icon: "cfd-willbeback"
         url: "/willbeback/"
-      - name: "CFD Penney"
+      - name: "Board"
         icon: "cfd-cfdpenney"
         url: "/CFDPenney/"
 
