@@ -22,7 +22,7 @@ categories:
 
   - name: "Tools & Utilities"
     items:
-      - name: "CFD &nbsp; Penney"
+      - name: "CFD's Penney"
         icon: "cfd-cfdpenney"
         url: "/CFDPenney/"
       - name: "AI"
