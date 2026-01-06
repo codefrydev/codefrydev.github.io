@@ -22,6 +22,9 @@ categories:
 
   - name: "Tools & Utilities"
     items:
+      - name: "CFD &nbsp; Penney"
+        icon: "cfd-cfdpenney"
+        url: "/CFDPenney/"
       - name: "AI"
         icon: "cfd-brain"
         url: "/ai"
@@ -52,9 +55,7 @@ categories:
       - name: "Be Back"
         icon: "cfd-willbeback"
         url: "/willbeback/"
-      - name: "Board"
-        icon: "cfd-cfdpenney"
-        url: "/CFDPenney/"
+
 
   - name: "Games & Fun"
     items:
