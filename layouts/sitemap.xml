@@ -196,9 +196,16 @@
 {{- /* Add content pages */ -}}
 {{- range where .Site.AllPages "Kind" "page" -}}
   {{- if and (ne .Permalink "") (ne .Draft true) -}}
+  {{- $lastmodDate := $currentDate -}}
+  {{- if .Lastmod -}}
+    {{- $formatted := .Lastmod.Format "2006-01-02T15:04:05-07:00" -}}
+    {{- if not (hasPrefix $formatted "0001-01-01") -}}
+      {{- $lastmodDate = $formatted -}}
+    {{- end -}}
+  {{- end -}}
   <url>
     <loc>{{ .Permalink }}</loc>
-    <lastmod>{{ .Lastmod.Format "2006-01-02T15:04:05-07:00" | default $currentDate }}</lastmod>
+    <lastmod>{{ $lastmodDate }}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
