@@ -1,31 +1,90 @@
 {{partial "googlegtag.html" .}}
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CodeFryDev | Games, Apps, Tutorials, and Design Tools</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<meta name="description" content="CodeFryDev is your ultimate destination for diverse digital content and tools. Enjoy our extensive game collection, innovative productivity apps, and comprehensive tutorials.">
-<meta name="author" content="CodeFryDev">
-<meta name="keywords" content="Codefrydev,CFD,NET,Tutorials,Design,Games,unity,c#,godot">
+{{- /* Page-specific title */ -}}
+{{- $pageTitle := .Title -}}
+{{- if .IsHome -}}
+  {{- $pageTitle = "CodeFryDev | Games, Apps, Tutorials, and Design Tools" -}}
+{{- else if ne .Title "" -}}
+  {{- $pageTitle = printf "%s | CodeFryDev" .Title -}}
+{{- else -}}
+  {{- $pageTitle = "CodeFryDev | Games, Apps, Tutorials, and Design Tools" -}}
+{{- end -}}
+<title>{{ $pageTitle }}</title>
+
+{{- /* Page-specific description */ -}}
+{{- $description := .Description -}}
+{{- if not $description -}}
+  {{- if .IsPage -}}
+    {{- $description = .Summary | plainify | truncate 160 -}}
+  {{- else -}}
+    {{- $description = .Site.Params.description -}}
+  {{- end -}}
+{{- end -}}
+<meta name="description" content="{{ $description }}">
+<meta name="author" content="{{ .Site.Author.name | default "CodeFryDev" }}">
+{{- if .Params.keywords -}}
+<meta name="keywords" content="{{ delimit .Params.keywords ", " }}">
+{{- else -}}
+<meta name="keywords" content="Codefrydev, CFD, NET, Tutorials, Design, Games, unity, c#, godot, web development, productivity apps, AI tools">
+{{- end -}}
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="{{ .Permalink }}">
+<link rel="canonical" href="{{ .Permalink | absURL }}">
 
-<meta property="og:title" content="CodeFryDev | Games, Apps, Tutorials, and Design Tools">
-<meta property="og:description" content="Your ultimate destination for diverse digital content, including games, productivity apps, educational tutorials, and design resources.">
-<meta property="og:image" content="{{ .Site.BaseURL }}og-image.png"> <meta property="og:url" content="{{ .Permalink }}">
-<meta property="og:type" content="website">
+{{- /* Open Graph meta tags */ -}}
+{{- $ogTitle := $pageTitle -}}
+{{- $ogDescription := $description -}}
+{{- $ogImage := "" -}}
+{{- if .Params.og_image -}}
+  {{- $ogImage = .Params.og_image | absURL -}}
+{{- else if .Params.cover.image -}}
+  {{- if (ne .Params.cover.relative true) -}}
+    {{- $ogImage = .Params.cover.image | absURL -}}
+  {{- else -}}
+    {{- $ogImage = (path.Join .RelPermalink .Params.cover.image) | absURL -}}
+  {{- end -}}
+{{- else -}}
+  {{- $ogImage = printf "%s%s" .Site.BaseURL "images/IconCodefrydev.svg" -}}
+{{- end -}}
+<meta property="og:title" content="{{ $ogTitle }}">
+<meta property="og:description" content="{{ $ogDescription }}">
+<meta property="og:image" content="{{ $ogImage }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="{{ .Title | default "CodeFryDev" }}">
+<meta property="og:url" content="{{ .Permalink | absURL }}">
+<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+<meta property="og:site_name" content="{{ .Site.Title }}">
+<meta property="og:locale" content="{{ .Site.LanguageCode | default "en_US" }}">
 
+{{- /* Twitter Card meta tags */ -}}
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="CodeFryDev | Games, Apps, Tutorials, and Design Tools">
-<meta name="twitter:description" content="Your ultimate destination for diverse digital content, including games, productivity apps, educational tutorials, and design resources.">
-<meta name="twitter:image" content="{{ .Site.BaseURL }}mstile-310x310.png"> 
+<meta name="twitter:title" content="{{ $ogTitle }}">
+<meta name="twitter:description" content="{{ $ogDescription }}">
+<meta name="twitter:image" content="{{ $ogImage }}">
+<meta name="twitter:image:alt" content="{{ .Title | default "CodeFryDev" }}">
+{{- with .Site.Params.social.twitter -}}
+<meta name="twitter:site" content="@{{ . }}">
+{{- end -}}
+
+{{- /* Favicons and app icons */ -}}
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#e5e9f4">
-
-<title>{{ .Title }}</title>
 <meta name="msapplication-TileColor" content="#e5e9f4">
 <meta name="theme-color" content="#e5e9f4">
+
+{{- /* Language and locale */ -}}
+<meta name="language" content="{{ .Site.LanguageCode | default "en-US" }}">
+<link rel="alternate" hreflang="{{ .Site.LanguageCode | default "en" }}" href="{{ .Permalink | absURL }}">
+
+{{- /* Accessibility CSS */ -}}
+<link rel="stylesheet" href="/css/accessibility.css">
+
+{{- /* Structured data */ -}}
 {{ partial "site_schema.html" . }}
 
 <!-- 
@@ -35,6 +94,7 @@
 {{partial "qaseo.html" .}}
  -->
 
+{{- /* Additional Open Graph and Twitter Card templates (fallback) */ -}}
 {{- template "partials/templates/opengraph.html" . }}
 {{- template "partials/templates/twitter_cards.html" . }}
 <!-- {{- template "partials/templates/schema_json.html" . }} -->

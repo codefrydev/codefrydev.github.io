@@ -12,25 +12,27 @@
   {{ else }}
     {{ warnf "The CSS file 'css/home.css' was not found." }}
   {{ end }}
+  <link rel="stylesheet" href="/css/internal.css">
 </head>
 <body style="background-color: #e5e9f4;">
+  {{ partial "skip-link.html" . }}
 
-  <header class="page-header">
-    <a href="/" aria-label="Codefrydev Homepage">
-      <img fetchpriority=high src="images/IconCodefrydev.svg" alt="Codefrydev Logo" height="96px">
+  <header class="page-header" role="banner">
+    <a href="/" aria-label="CodeFryDev Homepage">
+      <img fetchpriority="high" src="images/IconCodefrydev.svg" alt="CodeFryDev logo - Tools, Games, Art, Animation" height="96" width="96">
     </a>
     <h1>Code Fry Dev<sup style="font-size: small; font-weight: bold;"> Alpha</sup></h1>
     <p class="tagline">Tools, Games, Art, Animation</p>
   </header>
 
-  <main id="main-content">
+  <main id="main-content" role="main">
     {{ range .Site.Data.home.categories }}
       <section class="category-section">
         <h2 class="category-title">{{ .name }}</h2>
         <div class="button-grid">
           {{ range .items }}
-            <a href="{{ .url }}" class="neumorphic-button hapticButton">
-              <img src="images/home/{{ .icon }}.svg" alt="{{ .icon }}" class="button-icon" loading="lazy">
+            <a href="{{ .url }}" class="neumorphic-button hapticButton" aria-label="{{ .name }} - {{ .name | lower }} tool">
+              <img src="images/home/{{ .icon }}.svg" alt="{{ .name }} icon" class="button-icon" loading="lazy">
               <span>{{ .name }}</span>
             </a>
           {{ end }}
@@ -39,6 +41,7 @@
     {{ end }}
   </main>
   
+  {{ partial "footer.html" . }}
   <script src="js/feedback.js" ></script>
 </body>
 </html>

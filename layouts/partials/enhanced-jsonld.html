@@ -1,45 +1,244 @@
 {{/* Enhanced JSON-LD that auto-generates from Hugo content and page data using jsonify to ensure valid JSON */}}
-{{- $graph := slice -}}
 
-{{- /* Organization */ -}}
-{{- $org := dict
-  "@type" "Organization"
-  "@id" (print .Site.BaseURL "#organization")
-  "name" .Site.Title
-  "url" .Site.BaseURL
-  "logo" (dict "@type" "ImageObject" "url" (print .Site.BaseURL "images/IconCodefrydev.svg") "width" 96 "height" 96)
-  "description" .Site.Params.description
-  "foundingDate" "2023"
-  "founder" (dict "@type" "Person" "name" .Site.Author.name)
-  "sameAs" (slice "https://github.com/codefrydev" "https://play.google.com/store/apps/developer?id=CodeFryDev")
-  "contactPoint" (dict "@type" "ContactPoint" "contactType" "customer service" "url" (print .Site.BaseURL "about"))
-  "areaServed" "Worldwide"
-  "knowsAbout" (slice "Web Development" "Mobile App Development" "Game Development" "AI Tools" "Creative Design" "Productivity Tools")
--}}
-{{- $graph = $graph | append $org -}}
+{{- /* ============================================ */ -}}
+{{- /* Core Site Information (Organization + Website) */ -}}
+{{- /* ============================================ */ -}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "{{ .Site.BaseURL }}#organization",
+      "name": "{{ .Site.Title }}",
+      "url": "{{ .Site.BaseURL }}",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "{{ .Site.BaseURL }}images/IconCodefrydev.svg",
+        "width": 96,
+        "height": 96,
+        "contentUrl": "{{ .Site.BaseURL }}images/IconCodefrydev.svg"
+      },
+      "description": "{{ .Site.Params.description }}",
+      "foundingDate": "2023",
+      "founder": {
+        "@type": "Person",
+        "name": "{{ .Site.Author.name }}"
+      },
+      "sameAs": [
+        "https://github.com/codefrydev",
+        "https://play.google.com/store/apps/developer?id=CodeFryDev"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "url": "{{ .Site.BaseURL }}about"
+      },
+      "areaServed": "Worldwide",
+      "knowsAbout": [
+        "Web Development",
+        "Mobile App Development",
+        "Game Development",
+        "AI Tools",
+        "Creative Design",
+        "Productivity Tools"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "{{ .Site.BaseURL }}#website",
+      "name": "{{ .Site.Title }}",
+      "url": "{{ .Site.BaseURL }}",
+      "description": "{{ .Site.Params.description }}",
+      "publisher": {
+        "@id": "{{ .Site.BaseURL }}#organization"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "{{ .Site.BaseURL }}search?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      },
+      "inLanguage": "{{ .Site.LanguageCode | default "en-us" }}",
+      "copyrightYear": "{{ now.Format "2006" }}",
+      "copyrightHolder": {
+        "@id": "{{ .Site.BaseURL }}#organization"
+      },
+      "mainEntity": {
+        "@id": "{{ .Site.BaseURL }}#organization"
+      },
+      "sitemap": "{{ .Site.BaseURL }}sitemap.xml"
+    }
+  ]
+}
+</script>
 
-{{- /* Website */ -}}
-{{- $website := dict
-  "@type" "WebSite"
-  "@id" (print .Site.BaseURL "#website")
-  "name" .Site.Title
-  "url" .Site.BaseURL
-  "description" .Site.Params.description
-  "publisher" (dict "@id" (print .Site.BaseURL "#organization"))
-  "potentialAction" (dict "@type" "SearchAction" "target" (dict "@type" "EntryPoint" "urlTemplate" (print .Site.BaseURL "search?q={search_term_string}")) "query-input" "required name=search_term_string")
-  "inLanguage" (.Site.LanguageCode | default "en-us")
-  "copyrightYear" (now.Format "2006")
-  "copyrightHolder" (dict "@id" (print .Site.BaseURL "#organization"))
--}}
-{{- $graph = $graph | append $website -}}
-
-{{- /* FAQ */ -}}
-{{- $faqItems := slice -}}
-{{- range .Site.Data.faq.faqs -}}
-  {{- $faqItems = $faqItems | append (dict "@type" "Question" "name" .question "acceptedAnswer" (dict "@type" "Answer" "text" .answer)) -}}
+{{- /* ============================================ */ -}}
+{{- /* FAQ Schema */ -}}
+{{- /* ============================================ */ -}}
+{{- if .Site.Data.faq -}}
+  {{- if .Site.Data.faq.faqs -}}
+    {{- $faqItems := slice -}}
+    {{- range .Site.Data.faq.faqs -}}
+      {{- $faqItems = $faqItems | append (dict "@type" "Question" "name" .question "acceptedAnswer" (dict "@type" "Answer" "text" .answer)) -}}
+    {{- end -}}
+    {{- if gt (len $faqItems) 0 -}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": {{ $faqItems | jsonify | safeJS }}
+}
+</script>
+    {{- end -}}
+  {{- end -}}
 {{- end -}}
-{{- $faq := dict "@type" "FAQPage" "mainEntity" $faqItems -}}
-{{- $graph = $graph | append $faq -}}
+
+{{- /* ============================================ */ -}}
+{{- /* Products/Apps/Tools Schema - All Applications */ -}}
+{{- /* ============================================ */ -}}
+{{- $allProducts := slice -}}
+
+{{- /* Products from home.yaml */ -}}
+{{- range .Site.Data.home.categories -}}
+  {{- $catName := .name -}}
+  {{- range .items -}}
+    {{- if .url -}}
+      {{- $appType := "WebApplication" -}}
+      {{- if or (eq $catName "Games & Fun") (hasPrefix .name "Game") -}}
+        {{- $appType = "VideoGame" -}}
+      {{- else if or (hasPrefix $catName "Tools") (hasPrefix $catName "AI") -}}
+        {{- $appType = "SoftwareApplication" -}}
+      {{- end -}}
+      {{- $appUrl := .url -}}
+      {{- if hasPrefix $appUrl "/" -}}
+        {{- $appUrl = printf "%s%s" $.Site.BaseURL (strings.TrimPrefix "/" $appUrl) -}}
+      {{- else if not (or (hasPrefix $appUrl "http://") (hasPrefix $appUrl "https://")) -}}
+        {{- $appUrl = printf "%s%s" $.Site.BaseURL $appUrl -}}
+      {{- end -}}
+      {{- $app := dict
+        "@type" $appType
+        "@id" (print $.Site.BaseURL "#" (.name | urlize))
+        "name" .name
+        "url" $appUrl
+        "description" (printf "%s - %s tool by CodeFryDev" .name $catName)
+        "applicationCategory" $catName
+        "operatingSystem" "Web Browser"
+        "offers" (dict "@type" "Offer" "price" "0" "priceCurrency" "USD" "availability" "https://schema.org/InStock")
+        "publisher" (dict "@id" (print $.Site.BaseURL "#organization"))
+      -}}
+      {{- if eq $appType "VideoGame" -}}
+        {{- $app = merge $app (dict "genre" "Casual Game" "gamePlatform" "Web Browser") -}}
+      {{- end -}}
+      {{- $allProducts = $allProducts | append $app -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- /* AI Tools from ai.yaml */ -}}
+{{- if .Site.Data.ai -}}
+  {{- if .Site.Data.ai.data -}}
+    {{- range .Site.Data.ai.data -}}
+      {{- if .url -}}
+        {{- $appUrl := .url -}}
+        {{- if hasPrefix $appUrl "/" -}}
+          {{- $appUrl = printf "%s%s" $.Site.BaseURL (strings.TrimPrefix "/" $appUrl) -}}
+        {{- else if not (or (hasPrefix $appUrl "http://") (hasPrefix $appUrl "https://")) -}}
+          {{- $appUrl = printf "%s%s" $.Site.BaseURL $appUrl -}}
+        {{- end -}}
+        {{- $app := dict
+          "@type" "SoftwareApplication"
+          "@id" (print $.Site.BaseURL "#" (.name | urlize))
+          "name" .name
+          "url" $appUrl
+          "description" (printf "%s - AI-powered tool by CodeFryDev" .name)
+          "applicationCategory" "AI Tool"
+          "operatingSystem" "Web Browser"
+          "softwareVersion" "1.0"
+          "offers" (dict "@type" "Offer" "price" "0" "priceCurrency" "USD" "availability" "https://schema.org/InStock")
+          "publisher" (dict "@id" (print $.Site.BaseURL "#organization"))
+          "featureList" (slice "AI-powered functionality" "Easy to use interface" "No installation required" "Cross-platform compatibility")
+        -}}
+        {{- $allProducts = $allProducts | append $app -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- /* Games from games.yaml */ -}}
+{{- if .Site.Data.games -}}
+  {{- if .Site.Data.games.data -}}
+    {{- range .Site.Data.games.data -}}
+      {{- if .url -}}
+        {{- $appUrl := .url -}}
+        {{- if hasPrefix $appUrl "/" -}}
+          {{- $appUrl = printf "%s%s" $.Site.BaseURL (strings.TrimPrefix "/" $appUrl) -}}
+        {{- else if not (or (hasPrefix $appUrl "http://") (hasPrefix $appUrl "https://")) -}}
+          {{- $appUrl = printf "%s%s" $.Site.BaseURL $appUrl -}}
+        {{- end -}}
+        {{- $game := dict
+          "@type" "VideoGame"
+          "@id" (print $.Site.BaseURL "#" (.name | urlize))
+          "name" .name
+          "url" $appUrl
+          "description" (printf "%s - A fun game by CodeFryDev" .name)
+          "genre" "Casual Game"
+          "gamePlatform" "Web Browser"
+          "operatingSystem" "Any"
+          "applicationCategory" "Game"
+          "offers" (dict "@type" "Offer" "price" "0" "priceCurrency" "USD" "availability" "https://schema.org/InStock")
+          "publisher" (dict "@id" (print $.Site.BaseURL "#organization"))
+        -}}
+        {{- $allProducts = $allProducts | append $game -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- /* Design Tools from designlab.yaml */ -}}
+{{- if .Site.Data.designlab -}}
+  {{- if .Site.Data.designlab.data -}}
+    {{- range .Site.Data.designlab.data -}}
+      {{- if .url -}}
+        {{- $appUrl := .url -}}
+        {{- if hasPrefix $appUrl "/" -}}
+          {{- $appUrl = printf "%s%s" $.Site.BaseURL (strings.TrimPrefix "/" $appUrl) -}}
+        {{- else if not (or (hasPrefix $appUrl "http://") (hasPrefix $appUrl "https://")) -}}
+          {{- $appUrl = printf "%s%s" $.Site.BaseURL $appUrl -}}
+        {{- end -}}
+        {{- $app := dict
+          "@type" "WebApplication"
+          "@id" (print $.Site.BaseURL "#" (.name | urlize))
+          "name" .name
+          "url" $appUrl
+          "description" (printf "%s - Creative design tool by CodeFryDev" .name)
+          "applicationCategory" "Design Tool"
+          "operatingSystem" "Web Browser"
+          "offers" (dict "@type" "Offer" "price" "0" "priceCurrency" "USD" "availability" "https://schema.org/InStock")
+          "publisher" (dict "@id" (print $.Site.BaseURL "#organization"))
+        -}}
+        {{- $allProducts = $allProducts | append $app -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- /* Output all products in a single graph */ -}}
+{{- if gt (len $allProducts) 0 -}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": {{ $allProducts | jsonify | safeJS }}
+}
+</script>
+{{- end -}}
+
+{{- /* ============================================ */ -}}
+{{- /* Page-Specific Schema (ItemLists, Breadcrumbs, etc.) */ -}}
+{{- /* ============================================ */ -}}
+{{- $pageSchema := slice -}}
 
 {{- /* Home ItemList */ -}}
 {{- if .IsHome -}}
@@ -53,39 +252,39 @@
     {{- $homeLists = $homeLists | append (dict "@type" "ItemList" "name" .name "description" (print .name " tools and resources") "numberOfItems" (len .items) "itemListElement" $items) -}}
   {{- end -}}
   {{- $home := dict "@type" "ItemList" "name" "CodeFryDev Tools and Games Collection" "description" "Complete collection of creative tools, games, and utilities" "url" .Site.BaseURL "numberOfItems" (len .Site.Data.home.categories) "itemListElement" $homeLists -}}
-  {{- $graph = $graph | append $home -}}
+  {{- $pageSchema = $pageSchema | append $home -}}
 {{- end -}}
 
-{{- /* Games page */ -}}
+{{- /* Games page ItemList */ -}}
 {{- if eq .Section "games" -}}
   {{- $gameItems := slice -}}
   {{- range $idx, $g := .Site.Data.games.data -}}
     {{- $gameItems = $gameItems | append (dict "@type" "ListItem" "position" (add $idx 1) "item" (dict "@type" "VideoGame" "name" $g.name "url" ($g.url | absURL) "description" (print $g.name " - A fun game by CodeFryDev") "genre" "Casual Game" "gamePlatform" "Web Browser" "operatingSystem" "Any" "applicationCategory" "Game" "offers" (dict "@type" "Offer" "price" "0" "priceCurrency" "USD" "availability" "https://schema.org/InStock") "publisher" (dict "@id" (print $.Site.BaseURL "#organization")))) -}}
   {{- end -}}
   {{- $games := dict "@type" "ItemList" "name" "CodeFryDev Games Collection" "description" "Collection of fun and engaging games developed by CodeFryDev" "url" .Permalink "numberOfItems" (len .Site.Data.games.data) "itemListElement" $gameItems -}}
-  {{- $graph = $graph | append $games -}}
+  {{- $pageSchema = $pageSchema | append $games -}}
 {{- end -}}
 
-{{- /* AI page */ -}}
+{{- /* AI page ItemList */ -}}
 {{- if eq .Section "ai" -}}
   {{- $toolItems := slice -}}
   {{- range $idx, $t := .Site.Data.ai.data -}}
     {{- $toolItems = $toolItems | append (dict "@type" "ListItem" "position" (add $idx 1) "item" (dict "@type" "SoftwareApplication" "name" $t.name "url" ($t.url | absURL) "description" (print $t.name " - AI-powered tool by CodeFryDev") "applicationCategory" "AI Tool" "operatingSystem" "Web Browser" "softwareVersion" "1.0" "offers" (dict "@type" "Offer" "price" "0" "priceCurrency" "USD" "availability" "https://schema.org/InStock") "publisher" (dict "@id" (print $.Site.BaseURL "#organization")) "featureList" (slice "AI-powered functionality" "Easy to use interface" "No installation required" "Cross-platform compatibility"))) -}}
   {{- end -}}
   {{- $ai := dict "@type" "ItemList" "name" "CodeFryDev AI Tools Collection" "description" "Collection of AI-powered tools and utilities for productivity and creativity" "url" .Permalink "numberOfItems" (len .Site.Data.ai.data) "itemListElement" $toolItems -}}
-  {{- $graph = $graph | append $ai -}}
+  {{- $pageSchema = $pageSchema | append $ai -}}
 {{- end -}}
 
 {{- /* About page */ -}}
 {{- if eq .Section "about" -}}
   {{- $about := dict "@type" "AboutPage" "name" .Title "description" (.Description | default "Learn more about CodeFryDev and our mission") "url" .Permalink "mainEntity" (dict "@id" (print .Site.BaseURL "#organization")) "breadcrumb" (dict "@type" "BreadcrumbList" "itemListElement" (slice (dict "@type" "ListItem" "position" 1 "name" "Home" "item" .Site.BaseURL) (dict "@type" "ListItem" "position" 2 "name" "About" "item" .Permalink))) -}}
-  {{- $graph = $graph | append $about -}}
+  {{- $pageSchema = $pageSchema | append $about -}}
 {{- end -}}
 
 {{- /* Store page */ -}}
 {{- if eq .Section "store" -}}
   {{- $store := dict "@type" "Store" "name" "CodeFryDev Store" "description" "Official store for CodeFryDev products and applications" "url" .Permalink "seller" (dict "@id" (print .Site.BaseURL "#organization")) "paymentAccepted" "Free" "currenciesAccepted" "USD" -}}
-  {{- $graph = $graph | append $store -}}
+  {{- $pageSchema = $pageSchema | append $store -}}
 {{- end -}}
 
 {{- /* Breadcrumb for all non-home pages */ -}}
@@ -98,9 +297,15 @@
     {{- $crumbs = $crumbs | append (dict "@type" "ListItem" "position" (cond (ne .Section "") 3 2) "name" .Title "item" .Permalink) -}}
   {{- end -}}
   {{- $breadcrumb := dict "@type" "BreadcrumbList" "itemListElement" $crumbs -}}
-  {{- $graph = $graph | append $breadcrumb -}}
+  {{- $pageSchema = $pageSchema | append $breadcrumb -}}
 {{- end -}}
 
+{{- /* Output page-specific schema */ -}}
+{{- if gt (len $pageSchema) 0 -}}
 <script type="application/ld+json">
-{{ dict "@context" "https://schema.org" "@graph" $graph | jsonify | safeJS }}
+{
+  "@context": "https://schema.org",
+  "@graph": {{ $pageSchema | jsonify | safeJS }}
+}
 </script>
+{{- end -}}

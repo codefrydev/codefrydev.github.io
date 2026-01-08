@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Disallow test pages
+Disallow: /test/
+
+# Sitemap location
+Sitemap: https://codefrydev.in/sitemap.xml
+

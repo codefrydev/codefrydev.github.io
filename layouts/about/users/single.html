@@ -13,6 +13,7 @@
     <meta name="theme-color" content="#28966a">
   <title>{{ .Title }}</title>
   <link rel="stylesheet" href="{{ "css/usersstyle.css" | relURL }}">
+  <link rel="stylesheet" href="/css/internal.css">
   <style>
     :root {
       --background-color: {{ .Params.colors.background | default "#28966a" }};
@@ -34,6 +35,7 @@
       <a class="link" href="{{ .url }}" target="_blank">{{ .name }}</a>
     {{ end }}
   </div>
+  {{ partial "footer.html" . }}
 </body>
 
 </html>

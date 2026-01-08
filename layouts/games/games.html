@@ -11,22 +11,25 @@
 </head>
 
 <body style="background-color: #e5e9f4;">
-    <main>
+  {{ partial "skip-link.html" . }}
+    <main id="main-content" role="main">
         <div class="MainButtonParent">
-          <img style="align-items: center;" src="/images/IconCodefrydev.svg" alt="Codefrydev Logo" height="96px">
+          <a href="/" aria-label="CodeFryDev Homepage">
+            <img style="align-items: center;" src="/images/IconCodefrydev.svg" alt="CodeFryDev logo" height="96" width="96">
+          </a>
         </div>
-        <h3 style="align-items: center;">Play Games</h3>
-        <h4 style="align-items: center;"></h4>
+        <h1 style="align-items: center;">Play Games</h1>
         
-        <div class="buttons">
+        <div class="buttons" role="list">
           {{ range .Site.Data.games.data }}
-            <button class="neumorphic hapticButton" onclick="window.location.href='{{ .url }}'">
-              <img src="/images/games/{{ .icon }}.svg" alt="{{ .icon }}" class="button-icon">
+            <a href="{{ .url }}" class="neumorphic hapticButton" role="listitem" aria-label="{{ .name }} - Play game">
+              <img src="/images/games/{{ .icon }}.svg" alt="{{ .name }} game icon" class="button-icon">
               <span>{{ .name }}</span>
-            </button>
+            </a>
           {{ end }}
         </div>
     </main>
+    {{ partial "footer.html" . }}
     <script src="/js/feedback.js" ></script>
 </body>
 

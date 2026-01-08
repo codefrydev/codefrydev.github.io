@@ -3,27 +3,33 @@
 
 <head>
     {{ partial "header.html" . }}
+    <meta name="description" content="Explore creative design tools and resources by CodeFryDev. Access design utilities, visualizations, music tools, and artistic applications for your creative projects.">
+    <meta name="keywords" content="design tools, creative resources, design lab, visualizations, music tools, artistic applications, codefrydev design">
+    <title>Design Lab - CodeFryDev | Creative Design Tools & Resources</title>
     
     <link rel="stylesheet" href="/css/internal.css">
 </head>
 
 <body style="background-color: #e5e9f4;">
-    <main>
+  {{ partial "skip-link.html" . }}
+    <main id="main-content" role="main">
         <div class="MainButtonParent">
-          <img style="align-items: center;" src="/images/IconCodefrydev.svg" alt="Codefrydev Logo" height="96px">
+          <a href="/" aria-label="CodeFryDev Homepage">
+            <img style="align-items: center;" src="/images/IconCodefrydev.svg" alt="CodeFryDev logo" height="96" width="96">
+          </a>
         </div>
-        <h3 style="align-items: center;">Chitra Kala</h3>
-        <h4 style="align-items: center;"></h4>
+        <h1 style="align-items: center;">Chitra Kala</h1>
         
-        <div class="buttons">
+        <div class="buttons" role="list">
           {{ range .Site.Data.designlab.data }}
-            <button class="neumorphic hapticButton" onclick="window.location.href='{{ .url }}'">
-              <img src="/images/designlab/{{ .icon }}.svg" alt="{{ .icon }}" class="button-icon">
+            <a href="{{ .url }}" class="neumorphic hapticButton" role="listitem" aria-label="{{ .name }} - Design tool">
+              <img src="/images/designlab/{{ .icon }}.svg" alt="{{ .name }} design tool icon" class="button-icon">
               <span>{{ .name }}</span>
-            </button>
+            </a>
           {{ end }}
         </div>
     </main>
+    {{ partial "footer.html" . }}
     <script src="/js/feedback.js" ></script>
 </body>
 

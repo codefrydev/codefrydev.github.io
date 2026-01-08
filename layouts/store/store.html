@@ -3,27 +3,33 @@
 
 <head>
     {{ partial "header.html" . }}
+    <meta name="description" content="Discover mobile applications by CodeFryDev. Download productivity apps, games, and utilities from the Google Play Store.">
+    <meta name="keywords" content="mobile apps, android apps, codefrydev apps, productivity apps, play store, applications">
+    <title>Store - CodeFryDev | Mobile Applications</title>
     
     <link rel="stylesheet" href="/css/internal.css">
 </head>
 
 <body style="background-color: #e5e9f4;">
-    <main>
+  {{ partial "skip-link.html" . }}
+    <main id="main-content" role="main">
         <div class="MainButtonParent">
-          <img style="align-items: center;" src="/images/IconCodefrydev.svg" alt="Codefrydev Logo" height="96px">
+          <a href="/" aria-label="CodeFryDev Homepage">
+            <img style="align-items: center;" src="/images/IconCodefrydev.svg" alt="CodeFryDev logo" height="96" width="96">
+          </a>
         </div>
-        <h3 style="align-items: center;">Applications</h3>
-        <h4 style="align-items: center;"></h4>
+        <h1 style="align-items: center;">Applications</h1>
         
-        <div class="buttons">
+        <div class="buttons" role="list">
         {{ range .Site.Data.store.data }}
-            <button class="neumorphic hapticButton" onclick="window.location.href='{{ .url }}'">
-            <img src="/images/store/{{ .icon }}.svg" alt="{{ .icon }}" class="button-icon">
+            <a href="{{ .url }}" class="neumorphic hapticButton" role="listitem" aria-label="{{ .name }} - Mobile application" rel="noopener noreferrer">
+            <img src="/images/store/{{ .icon }}.svg" alt="{{ .name }} application icon" class="button-icon">
             <span>{{ .name }}</span>
-            </button>
+            </a>
         {{ end }}
         </div>
     </main>
+    {{ partial "footer.html" . }}
     <script src="/js/feedback.js" ></script>
 </body>
 

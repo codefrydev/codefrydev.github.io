@@ -7,24 +7,457 @@
     <title>About - CodeFryDev | Learn More About Us</title>
     
     <link rel="stylesheet" href="/css/internal.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .about-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .about-header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin: 1rem 0 0.75rem 0;
+            letter-spacing: -0.5px;
+        }
+        
+        .about-header .tagline {
+            font-size: 1.25rem;
+            color: #6b7280;
+            margin: 0;
+            font-weight: 400;
+        }
+        
+        .about-intro {
+            background: #e5e9f4;
+            padding: 3rem;
+            border-radius: 24px;
+            margin-bottom: 4rem;
+            box-shadow: 
+                inset 8px 8px 16px #d1d5db,
+                inset -8px -8px 16px #ffffff;
+        }
+        
+        .about-intro p {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            color: #374151;
+            margin: 0;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+        
+        .stat-card {
+            background: #e5e9f4;
+            padding: 2.5rem 2rem;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 
+                8px 8px 16px #d1d5db,
+                -8px -8px 16px #ffffff;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(102, 126, 234, 0.1) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .stat-card:hover::before {
+            opacity: 1;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 
+                12px 12px 24px #d1d5db,
+                -12px -12px 24px #ffffff;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 0 0 0.75rem 0;
+            line-height: 1;
+        }
+        
+        .stat-label {
+            font-size: 0.95rem;
+            color: #6b7280;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+        
+        .about-cards-section {
+            margin-bottom: 4rem;
+        }
+        
+        .section-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 2.5rem;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 2px;
+        }
+        
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .about-card {
+            background: #e5e9f4;
+            padding: 2.5rem;
+            border-radius: 24px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: #1f2937;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 
+                8px 8px 16px #d1d5db,
+                -8px -8px 16px #ffffff;
+        }
+        
+        .about-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-color, #667eea), var(--accent-color, #764ba2));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .about-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .about-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 
+                16px 16px 32px #d1d5db,
+                -16px -16px 32px #ffffff;
+        }
+        
+        .about-card:active {
+            transform: translateY(-2px);
+            box-shadow: 
+                inset 4px 4px 8px #d1d5db,
+                inset -4px -4px 8px #ffffff;
+        }
+        
+        .card-icon {
+            width: 64px;
+            height: 64px;
+            background: #fff;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.75rem auto;
+            box-shadow: 
+                4px 4px 8px #d1d5db,
+                -4px -4px 8px #ffffff;
+            font-size: 1.75rem;
+            color: var(--accent-color, #667eea);
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+        
+        .about-card:hover .card-icon {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 
+                6px 6px 12px #d1d5db,
+                -6px -6px 12px #ffffff;
+        }
+        
+        .about-card {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .card-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin: 0 0 1rem 0;
+            line-height: 1.3;
+        }
+        
+        .card-content {
+            font-size: 1rem;
+            color: #6b7280;
+            line-height: 1.7;
+            margin: 0;
+        }
+        
+        .features-section {
+            margin-bottom: 4rem;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature-item {
+            background: #e5e9f4;
+            padding: 2.5rem 2rem;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 
+                8px 8px 16px #d1d5db,
+                -8px -8px 16px #ffffff;
+        }
+        
+        .feature-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 
+                12px 12px 24px #d1d5db,
+                -12px -12px 24px #ffffff;
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1.25rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-item:hover .feature-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+        
+        .feature-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1f2937;
+            margin: 0 0 0.5rem 0;
+        }
+        
+        .feature-desc {
+            font-size: 0.95rem;
+            color: #6b7280;
+            line-height: 1.6;
+            margin: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .about-container {
+                padding: 1rem;
+            }
+            
+            .about-header h1 {
+                font-size: 2.25rem;
+            }
+            
+            .about-header .tagline {
+                font-size: 1.1rem;
+            }
+            
+            .about-intro {
+                padding: 2rem 1.5rem;
+            }
+            
+            .about-intro p {
+                font-size: 1rem;
+            }
+            
+            .about-stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+            
+            .stat-card {
+                padding: 1.5rem 1rem;
+            }
+            
+            .stat-number {
+                font-size: 2.25rem;
+            }
+            
+            .cards-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
     {{ partial "aboutseo.html" . }}
 </head>
 <body style="background-color: #e5e9f4;">
-    <main>
+  {{ partial "skip-link.html" . }}
+    <main id="main-content" role="main">
         <div class="MainButtonParent">
-          <img style="align-items: center;" src="/images/IconCodefrydev.svg" alt="Codefrydev Logo" height="96px">
+            <a href="/" aria-label="CodeFryDev Homepage">
+                <img style="align-items: center;" src="/images/IconCodefrydev.svg" alt="CodeFryDev logo" height="96" width="96">
+            </a>
         </div>
-        <h3 style="align-items: center;">About CodeFryDev</h3>
-        <h4 style="align-items: center;">Learn more, meet contributors, and explore links</h4>
         
-        <div class="buttons">
-          {{ range .Site.Data.about.cards }}
-            <button class="neumorphic hapticButton" onclick="window.location.href='{{ .url }}'">
-              <span>{{ .title }}</span>
-            </button>
-          {{ end }}
+        <div class="about-container">
+            <div class="about-header">
+                <h1>About CodeFryDev</h1>
+                <p class="tagline">Your Ultimate Destination for Digital Tools, Games & Creative Resources</p>
+            </div>
+            
+            <div class="about-intro">
+                <p>
+                    CodeFryDev is a comprehensive platform offering diverse digital content and innovative tools. 
+                    From creative assets and design resources to productivity apps, AI-powered tools, and engaging games, 
+                    we provide solutions for developers, designers, and digital enthusiasts. Our mission is to make 
+                    high-quality digital tools and resources accessible to everyone.
+                </p>
+            </div>
+            
+            {{- $totalTools := 0 -}}
+            {{- range .Site.Data.home.categories -}}
+                {{- $totalTools = add $totalTools (len .items) -}}
+            {{- end -}}
+            {{- $aiCount := 0 -}}
+            {{- if .Site.Data.ai -}}
+                {{- if .Site.Data.ai.data -}}
+                    {{- $aiCount = len .Site.Data.ai.data -}}
+                {{- end -}}
+            {{- end -}}
+            {{- $gamesCount := 0 -}}
+            {{- if .Site.Data.games -}}
+                {{- if .Site.Data.games.data -}}
+                    {{- $gamesCount = len .Site.Data.games.data -}}
+                {{- end -}}
+            {{- end -}}
+            {{- $designCount := 0 -}}
+            {{- if .Site.Data.designlab -}}
+                {{- if .Site.Data.designlab.data -}}
+                    {{- $designCount = len .Site.Data.designlab.data -}}
+                {{- end -}}
+            {{- end -}}
+            
+            <div class="about-stats">
+                <div class="stat-card">
+                    <div class="stat-number">{{ $totalTools }}</div>
+                    <div class="stat-label">Tools & Apps</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">{{ $aiCount }}</div>
+                    <div class="stat-label">AI Tools</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">{{ $gamesCount }}</div>
+                    <div class="stat-label">Games</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">{{ $designCount }}</div>
+                    <div class="stat-label">Design Tools</div>
+                </div>
+            </div>
+            
+            <div class="features-section">
+                <h2 class="section-title">What We Offer</h2>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon">🛠️</div>
+                        <h3 class="feature-title">Productivity Tools</h3>
+                        <p class="feature-desc">Streamline your workflow with our collection of utility tools and applications</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🤖</div>
+                        <h3 class="feature-title">AI-Powered Solutions</h3>
+                        <p class="feature-desc">Leverage artificial intelligence for enhanced productivity and creativity</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🎮</div>
+                        <h3 class="feature-title">Entertainment</h3>
+                        <p class="feature-desc">Enjoy fun and engaging games for relaxation and entertainment</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🎨</div>
+                        <h3 class="feature-title">Creative Resources</h3>
+                        <p class="feature-desc">Access design tools, assets, and creative resources for your projects</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="about-cards-section">
+                <h2 class="section-title">Explore & Connect</h2>
+                <div class="cards-grid">
+                    {{ range .Site.Data.about.cards }}
+                    {{- $accentColor := .accent_color | default "667eea" -}}
+                    {{- if not (hasPrefix $accentColor "#") -}}
+                        {{- $accentColor = printf "#%s" $accentColor -}}
+                    {{- end -}}
+                    <a href="{{ .url }}" class="about-card hapticButton" style="--accent-color: {{ $accentColor }};">
+                        <div class="card-icon">
+                            {{ if .icon }}
+                                <i class="{{ .icon }}"></i>
+                            {{ else }}
+                                <i class="fa-solid fa-link"></i>
+                            {{ end }}
+                        </div>
+                        <h3 class="card-title">{{ .title }}</h3>
+                        <p class="card-content">{{ .content }}</p>
+                    </a>
+                    {{ end }}
+                </div>
+            </div>
         </div>
     </main>
-    <script src="/js/feedback.js" ></script>
+    {{ partial "footer.html" . }}
+    <script src="/js/feedback.js"></script>
 </body>
 </html>

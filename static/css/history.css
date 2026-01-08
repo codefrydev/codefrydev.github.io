@@ -63,6 +63,22 @@ ul li {
   grid-template-rows: min-content min-content min-content;
 }
 
+/* history item link */
+.history-item-link {
+  display: grid;
+  grid-template-rows: min-content min-content min-content;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease;
+}
+
+.history-item-link:hover,
+.history-item-link:focus {
+  transform: translateY(-2px);
+  text-decoration: none;
+  color: inherit;
+}
+
 /* date */
 ul li .date {
   --dateH: 3rem;

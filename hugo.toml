@@ -1,13 +1,16 @@
 baseURL = 'https://codefrydev.in/'
 languageCode = 'en-us'
+defaultContentLanguage = 'en'
 title = 'Code Fry Dev'
 
 [Author]
   name = "CodeFryDev"
+
 [Params]
   description = "CodeFryDev is your ultimate destination for diverse digital content and tools. Enjoy our extensive game collection, innovative productivity apps, and micro applications for quick solutions. Access educational materials, interactive courses, and comprehensive tutorials for all skill levels. Fuel your creativity with design resources and versatile tools for efficient project completion. Visit CodeFryDev today and explore all we have to offer!"
   logo = "favicon-32x32.png"
   copyright = "codefrydev.in"
+
 [params]
   paginate = 10  # Number of posts per page
   env = "production"
@@ -23,4 +26,15 @@ title = 'Code Fry Dev'
     text = "CodeFryDev"
     icon = "favicon.ico"
     iconHeight = 35
+
+  [sitemap]
+    changefreq = "monthly"
+    priority = 0.5
+    filename = "sitemap.xml"
+
+[languages]
+  [languages.en]
+    languageName = "English"
+    weight = 1
+    contentDir = "content"
 
