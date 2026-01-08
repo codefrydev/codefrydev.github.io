@@ -1,4 +1,9 @@
 history:
+  - date: "08 January 2026"
+    title: "Day vs Night"
+    description: "Added feature to switch between light and dark mode."
+    link: "https://codefrydev.in"
+    accent_color: "#dd3415"
 
   - date: "04 January 2026"
     title: "White Board Collabration"
