@@ -1,0 +1,29 @@
+# CodeFryDev
+
+## About
+CodeFryDev is your ultimate destination for diverse digital content and tools. We offer an extensive game collection, innovative productivity apps, micro applications for quick solutions, educational materials, interactive courses, and comprehensive tutorials for all skill levels.
+
+## Website
+- URL: https://codefrydev.in/
+- Built with: Hugo static site generator
+- Language: English
+
+## Main Sections
+- Home: Main landing page with categorized tools and resources
+- About: Information about the project, contributors, and technology stack
+- AI: Collection of AI-powered tools and applications
+- Games: Interactive games and entertainment
+- Design Lab: Creative design tools and resources
+- Store: Mobile apps and downloadable products
+- History: Timeline of project milestones and updates
+- Search: Site-wide search functionality
+
+## Key Categories
+1. **Creative & Assets**: Muraly, Art, Text tools, Wallpapers, 3D Models, Android Assets
+2. **Tools & Utilities**: AI tools, Prompt Library, BSOD, CSV tools, Json2Form, Meta Tags, Notebook, Weather, Crop & Resize, and more
+3. **Games & Fun**: WordDice, Chain Reaction, Wordle, Snake, Tom & Jerry, and more
+4. **Site & External Links**: About, Timeline, Store, Privacy, and external resources
+
+## Mission
+Make high-quality digital tools and resources accessible to everyone, providing solutions for developers, designers, and digital enthusiasts.
+

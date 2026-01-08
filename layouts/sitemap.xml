@@ -53,6 +53,19 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
+{{- /* Add LLM documentation files */ -}}
+  <url>
+    <loc>{{ $baseURL }}llms.txt</loc>
+    <lastmod>{{ $currentDate }}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>{{ $baseURL }}llms-full.txt</loc>
+    <lastmod>{{ $currentDate }}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
 {{- /* Add all URLs from home.yaml */ -}}
 {{- range .Site.Data.home.categories -}}
   {{- range .items -}}

@@ -7,3 +7,8 @@ Disallow: /test/
 # Sitemap location
 Sitemap: https://codefrydev.in/sitemap.xml
 
+# LLM documentation files
+# For AI systems to understand the website structure and content
+# https://codefrydev.in/llms.txt - Concise summary
+# https://codefrydev.in/llms-full.txt - Comprehensive documentation
+
