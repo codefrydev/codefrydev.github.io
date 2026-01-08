@@ -21,6 +21,7 @@
     <meta name="theme-color" content="#28966a">
     <title>Code fried</title>
     <link rel="stylesheet" href="/css/internal.css">
+    <link rel="stylesheet" href="/css/theme.css">
     <style>
         * {
             transition: all 0.6s;
@@ -31,9 +32,9 @@
         }
 
         body {
-            background-color: #e5e9f4;
+            background-color: var(--bg-primary);
             font-family: 'Courier New', Courier, monospace;
-            color: #000000;
+            color: var(--text-primary);
             margin: 0;
         }
 
@@ -58,7 +59,7 @@
 
         @keyframes type {
             from {
-                box-shadow: inset -3px 0px 0px #000000;
+                box-shadow: inset -3px 0px 0px var(--text-primary);
             }
 
             to {
@@ -75,5 +76,6 @@
         </div> 
     </div>
     {{ partial "footer.html" . }}
+    <script src="/js/theme.js"></script>
 </body>
 </html>

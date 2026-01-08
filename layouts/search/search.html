@@ -43,24 +43,24 @@
             font-size: 1.1rem;
             border: none;
             border-radius: 16px;
-            background: #e5e9f4;
+            background: var(--bg-primary);
             box-shadow: 
-                inset 8px 8px 16px #d1d5db,
-                inset -8px -8px 16px #ffffff;
+                inset 8px 8px 16px var(--shadow-dark),
+                inset -8px -8px 16px var(--shadow-light);
             transition: all 0.3s ease;
-            color: #1f2937;
+            color: var(--text-primary);
         }
         
         .search-box:focus {
             outline: none;
             box-shadow: 
-                inset 4px 4px 8px #d1d5db,
-                inset -4px -4px 8px #ffffff,
-                0 0 0 3px rgba(59, 130, 246, 0.1);
+                inset 4px 4px 8px var(--shadow-dark),
+                inset -4px -4px 8px var(--shadow-light),
+                0 0 0 3px color-mix(in srgb, var(--link-color) 10%, transparent);
         }
         
         .search-box::placeholder {
-            color: #9ca3af;
+            color: var(--text-quaternary);
         }
         
         .search-icon {
@@ -75,7 +75,7 @@
         }
         
         .search-stats {
-            color: #6b7280;
+            color: var(--text-tertiary);
             margin-bottom: 1.5rem;
             font-size: 0.95rem;
             padding-left: 0.5rem;
@@ -93,7 +93,7 @@
         
         .suggestions-title {
             font-size: 0.9rem;
-            color: #6b7280;
+            color: var(--text-tertiary);
             margin-bottom: 1rem;
             padding-left: 0.5rem;
             font-weight: 600;
@@ -117,10 +117,10 @@
             aspect-ratio: 1/1;
             border: none;
             border-radius: 0.8rem;
-            color: #334155;
-            background: #e5e9f4;
-            --shadow-light: hsl(0 0% 100% / .6);
-            --shadow-dark: hsl(225 15% 70% / .9);
+            color: var(--button-text);
+            background: var(--button-bg);
+            --shadow-light: var(--shadow-light-alt);
+            --shadow-dark: var(--shadow-dark-alt);
             box-shadow: -.3rem -.3rem .6rem var(--shadow-light), .3rem .3rem .6rem var(--shadow-dark);
             transition: transform .2s, box-shadow .2s, color .2s;
             outline: 0;
@@ -129,14 +129,14 @@
         
         .suggestion-button:focus-visible,
         .suggestion-button:hover {
-            color: #1d4ed8;
+            color: var(--button-text-hover);
             transform: translateY(-4px);
             box-shadow: -.4rem -.4rem .8rem var(--shadow-light), .4rem .4rem .8rem var(--shadow-dark), inset 0 0 0 transparent, inset 0 0 0 transparent;
         }
         
         .suggestion-button.active,
         .suggestion-button:active {
-            color: #1d4ed8;
+            color: var(--button-text-hover);
             transform: translateY(0);
             box-shadow: inset .2rem .2rem .4rem var(--shadow-dark), inset -.2rem -.2rem .4rem var(--shadow-light);
         }
@@ -177,11 +177,12 @@
         }
         
         .suggestion-name mark {
-            background: #fef08a;
-            color: #1f2937;
+            background: var(--accent-color);
+            color: var(--text-on-accent);
             padding: 0.1rem 0.2rem;
             border-radius: 3px;
             font-weight: 700;
+            opacity: 0.8;
         }
         
         .search-results {
@@ -194,7 +195,7 @@
         }
         
         .result-item {
-            background: #e5e9f4;
+            background: var(--bg-primary);
             padding: 1.5rem;
             border-radius: 16px;
             cursor: pointer;
@@ -202,23 +203,25 @@
             display: flex;
             align-items: center;
             gap: 1.25rem;
+            --shadow-light: var(--shadow-light-alt);
+            --shadow-dark: var(--shadow-dark-alt);
             box-shadow: 
-                8px 8px 16px #d1d5db,
-                -8px -8px 16px #ffffff;
+                8px 8px 16px var(--shadow-dark),
+                -8px -8px 16px var(--shadow-light);
         }
         
         .result-item:hover {
             transform: translateY(-2px);
             box-shadow: 
-                12px 12px 24px #d1d5db,
-                -12px -12px 24px #ffffff;
+                12px 12px 24px var(--shadow-dark),
+                -12px -12px 24px var(--shadow-light);
         }
         
         .result-item:active {
             transform: translateY(0);
             box-shadow: 
-                inset 4px 4px 8px #d1d5db,
-                inset -4px -4px 8px #ffffff;
+                inset 4px 4px 8px var(--shadow-dark),
+                inset -4px -4px 8px var(--shadow-light);
         }
         
         .result-icon {
@@ -226,13 +229,13 @@
             height: 48px;
             flex-shrink: 0;
             border-radius: 12px;
-            background: #fff;
+            background: var(--bg-tertiary);
             display: flex;
             align-items: center;
             justify-content: center;
             box-shadow: 
-                4px 4px 8px #d1d5db,
-                -4px -4px 8px #ffffff;
+                4px 4px 8px var(--shadow-dark),
+                -4px -4px 8px var(--shadow-light);
         }
         
         .result-icon img {
@@ -247,18 +250,19 @@
         
         .result-item h3 {
             margin: 0 0 0.5rem 0;
-            color: #1f2937;
+            color: var(--text-primary);
             font-size: 1.1rem;
             font-weight: 600;
             line-height: 1.4;
         }
         
         .result-item h3 mark {
-            background: #fef08a;
-            color: #1f2937;
+            background: var(--accent-color);
+            color: var(--text-on-accent);
             padding: 0.1rem 0.2rem;
             border-radius: 3px;
             font-weight: 700;
+            opacity: 0.8;
         }
         
         .result-meta {
@@ -269,7 +273,7 @@
         }
         
         .result-category {
-            color: #6b7280;
+            color: var(--text-tertiary);
             font-size: 0.9rem;
         }
         
@@ -285,29 +289,29 @@
         }
         
         .result-badge.tool {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: #fff;
+            background: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-hover) 100%);
+            color: var(--text-on-accent);
         }
         
         .result-badge.ai {
             background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            color: #fff;
+            color: var(--text-on-accent);
         }
         
         .result-badge.game {
             background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            color: #fff;
+            color: var(--text-on-accent);
         }
         
         .result-badge.design {
             background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
-            color: #fff;
+            color: var(--text-on-accent);
         }
         
         .no-results {
             text-align: center;
             padding: 4rem 2rem;
-            color: #6b7280;
+            color: var(--text-tertiary);
         }
         
         .no-results-icon {
@@ -318,13 +322,13 @@
         
         .no-results h4 {
             margin: 0 0 0.5rem 0;
-            color: #4b5563;
+            color: var(--text-tertiary);
             font-size: 1.2rem;
         }
         
         .no-results p {
             margin: 0;
-            color: #9ca3af;
+            color: var(--text-quaternary);
         }
         
         @media (max-width: 768px) {
@@ -350,7 +354,7 @@
     </style>
 </head>
 
-<body style="background-color: #e5e9f4;">
+<body>
     <main>
         <div class="MainButtonParent">
             <a href="/" aria-label="CodeFryDev Homepage">
@@ -672,6 +676,7 @@
         });
     </script>
     <script src="/js/feedback.js"></script>
+    <script src="/js/theme.js"></script>
     {{ partial "footer.html" . }}
 </body>
 

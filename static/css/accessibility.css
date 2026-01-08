@@ -25,7 +25,7 @@ input:focus,
 select:focus,
 textarea:focus,
 [tabindex]:focus {
-  outline: 3px solid #667eea;
+  outline: 3px solid var(--link-color);
   outline-offset: 2px;
   outline-style: solid;
 }
@@ -46,15 +46,15 @@ input:focus-visible,
 select:focus-visible,
 textarea:focus-visible,
 [tabindex]:focus-visible {
-  outline: 3px solid #667eea;
+  outline: 3px solid var(--link-color);
   outline-offset: 2px;
-  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.2);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--link-color) 20%, transparent);
 }
 
 /* Ensure sufficient color contrast for text */
 body {
-  color: #1f2937;
-  background-color: #e5e9f4;
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
 }
 
 /* Improve visibility of interactive elements */

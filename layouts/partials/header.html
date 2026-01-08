@@ -81,6 +81,16 @@
 <meta name="language" content="{{ .Site.LanguageCode | default "en-US" }}">
 <link rel="alternate" hreflang="{{ .Site.LanguageCode | default "en" }}" href="{{ .Permalink | absURL }}">
 
+{{- /* Theme CSS */ -}}
+<link rel="stylesheet" href="/css/theme.css">
+{{- /* Prevent theme flash - inline script to set theme immediately */ -}}
+<script>
+(function() {
+    const theme = localStorage.getItem('theme-preference') || 'light';
+    document.documentElement.setAttribute('data-theme', theme);
+})();
+</script>
+
 {{- /* Accessibility CSS */ -}}
 <link rel="stylesheet" href="/css/accessibility.css">
 

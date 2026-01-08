@@ -20,13 +20,13 @@ ol.cards {
     max-width: 300px; /* Ensures cards don't get too wide */
     min-width: 250px; /* Prevents them from getting too small */
     
-    color: hsl(0 0% 40%);
-    background-color: #ffffff;
+    color: var(--text-secondary);
+    background-color: var(--bg-card);
     text-align: center;
     
     padding: 2rem;
     border-radius: .5rem;
-    box-shadow: .5rem .5rem 1rem hsl(0 0% 0% / .25);
+    box-shadow: .5rem .5rem 1rem var(--shadow-card);
     
     position: relative;
     counter-increment: cardCount;
@@ -93,13 +93,13 @@ ol.cards > .card {
     flex: 1 1 calc(33.333% - 2rem);
     max-width: 300px;
     min-width: 250px;
-    color: hsl(0 0% 40%);
-    background-color: #ffffff;
+    color: var(--text-secondary);
+    background-color: var(--bg-card);
     text-align: center;
     
     padding: 2rem;
     border-radius: 1rem; /* Rounded corners */
-    box-shadow: .5rem .5rem 1rem hsl(0 0% 0% / .25);
+    box-shadow: .5rem .5rem 1rem var(--shadow-card);
     
     position: relative;
     counter-increment: cardCount;

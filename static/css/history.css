@@ -8,16 +8,14 @@
 }
 
 body {
-  --color: rgba(30, 30, 30);
-  --bgColor: rgba(245, 245, 245);
   min-height: 100vh;
   display: grid;
   align-content: center;
   gap: 2rem;
   padding: 2rem;
   font-family: "Poppins", sans-serif;
-  color: var(--color);
-  background: var(--bgColor);
+  color: var(--text-primary);
+  background: var(--bg-primary);
 }
 
 h1 {
@@ -42,7 +40,7 @@ ul::before {
   content: "";
   grid-column: 1;
   grid-row: 1 / span 20;
-  background: rgb(225, 225, 225);
+  background: var(--timeline-line);
   border-radius: calc(var(--line-w) / 2);
 }
 
@@ -88,7 +86,7 @@ ul li .date {
   text-align: center;
   background-color: var(--accent-color);
 
-  color: white;
+  color: var(--text-on-accent);
   font-size: 1.25rem;
   font-weight: 700;
 
@@ -105,7 +103,7 @@ ul li .date::before {
   width: var(--inlineP);
   aspect-ratio: 1;
   background: var(--accent-color);
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2) 100%, transparent);
+  background-image: linear-gradient(var(--timeline-shadow) 100%, transparent);
   position: absolute;
   top: 100%;
 
@@ -113,13 +111,13 @@ ul li .date::before {
   right: 0;
 }
 
-/* circle */
+  /* circle */
 ul li .date::after {
   content: "";
   position: absolute;
   width: 2rem;
   aspect-ratio: 1;
-  background: var(--bgColor);
+  background: var(--bg-primary);
   border: 0.3rem solid var(--accent-color);
   border-radius: 50%;
   top: 50%;
@@ -131,7 +129,7 @@ ul li .date::after {
 /* title descr */
 ul li .title,
 ul li .descr {
-  background: var(--bgColor);
+  background: var(--bg-primary);
   position: relative;
   padding-inline: 1.5rem;
 }
@@ -153,7 +151,7 @@ ul li .descr::before {
   position: absolute;
   width: 90%;
   height: 0.5rem;
-  background: rgba(0, 0, 0, 0.5);
+  background: var(--timeline-shadow);
   left: 50%;
   border-radius: 50%;
   filter: blur(4px);
@@ -206,5 +204,5 @@ ul li .descr::before {
   text-align: right;
 }
 .credits a {
-  color: var(--color);
+  color: var(--text-primary);
 }

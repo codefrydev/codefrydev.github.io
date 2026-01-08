@@ -1,9 +1,9 @@
 body {
-    background-color: #e5e9f4;
+    background-color: var(--bg-primary);
     padding: 2rem;
     overflow-x: hidden;
     font-family: Inter, system-ui, -apple-system, sans-serif;
-    color: #1f2937
+    color: var(--text-primary)
 }
 
 .page-header {
@@ -24,13 +24,13 @@ body {
 .page-header h3 {
     font-size: 2rem;
     font-weight: 500;
-    color: #1f2937
+    color: var(--text-primary)
 }
 
 .page-header h4 {
     font-size: 1rem;
     font-weight: 400;
-    color: #4b5563;
+    color: var(--text-tertiary);
     margin-top: .25rem
 }
 
@@ -44,7 +44,7 @@ body {
     font-family: Inter, sans-serif;
     font-size: 1.1rem;
     font-weight: 600;
-    color: #374151;
+    color: var(--text-secondary);
     text-align: left;
     margin-bottom: 2rem;
     text-transform: uppercase;
@@ -67,10 +67,10 @@ a.neumorphic-button {
     aspect-ratio: 1/1;
     border: none;
     border-radius: .8rem;
-    color: #334155;
-    background: #e5e9f4;
-    --shadow-light: hsl(0 0% 100% / .6);
-    --shadow-dark: hsl(225 15% 70% / .9);
+    color: var(--button-text);
+    background: var(--button-bg);
+    --shadow-light: var(--shadow-light-alt);
+    --shadow-dark: var(--shadow-dark-alt);
     box-shadow: -.3rem -.3rem .6rem var(--shadow-light), .3rem .3rem .6rem var(--shadow-dark);
     transition: transform .2s, box-shadow .2s;
     outline: 0
@@ -78,14 +78,14 @@ a.neumorphic-button {
 
 a.neumorphic-button:focus-visible,
 a.neumorphic-button:hover {
-    color: #1d4ed8;
+    color: var(--button-text-hover);
     transform: translateY(-4px);
     box-shadow: -.4rem -.4rem .8rem var(--shadow-light), .4rem .4rem .8rem var(--shadow-dark), inset 0 0 0 transparent, inset 0 0 0 transparent
 }
 
 a.neumorphic-button.active,
 a.neumorphic-button:active {
-    color: #1d4ed8;
+    color: var(--button-text-hover);
     transform: translateY(0);
     box-shadow: inset .2rem .2rem .4rem var(--shadow-dark), inset -.2rem -.2rem .4rem var(--shadow-light)
 }

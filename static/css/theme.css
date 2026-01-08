@@ -1,0 +1,162 @@
+/**
+ * Theme CSS Variables
+ * Defines color schemes for light and dark themes
+ */
+
+/* Light Theme (Default) */
+:root,
+[data-theme="light"] {
+    /* Background Colors */
+    --bg-primary: #e5e9f4;
+    --bg-secondary: #dee3f2;
+    --bg-tertiary: #ffffff;
+    --bg-card: #ffffff;
+    
+    /* Text Colors */
+    --text-primary: #1f2937;
+    --text-secondary: #334155;
+    --text-tertiary: #4b5563;
+    --text-quaternary: #6b7280;
+    
+    /* Link Colors */
+    --link-color: #1d4ed8;
+    --link-hover: #1e40af;
+    
+    /* Border Colors */
+    --border-light: rgba(0, 0, 0, 0.1);
+    --border-medium: #d1d9e6;
+    --border-dark: #cbd5e1;
+    
+    /* Shadow Colors */
+    --shadow-light: hsl(0 0% 100% / 0.75);
+    --shadow-dark: hsl(0 0% 50% / 0.5);
+    --shadow-light-alt: hsl(0 0% 100% / 0.6);
+    --shadow-dark-alt: hsl(225 15% 70% / 0.9);
+    --shadow-card: rgba(0, 0, 0, 0.12);
+    --shadow-card-hover: rgba(0, 0, 0, 0.15);
+    
+    /* Accent Colors */
+    --accent-color: #1d4ed8;
+    --accent-hover: #1e40af;
+    
+    /* Button Colors */
+    --button-text: #334155;
+    --button-text-hover: #1d4ed8;
+    --button-bg: #e5e9f4;
+    
+    /* Timeline/History Colors */
+    --timeline-line: rgb(225, 225, 225);
+    --timeline-shadow: rgba(0, 0, 0, 0.5);
+    
+    /* Text on Accent Colors */
+    --text-on-accent: #ffffff;
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+    /* Background Colors */
+    --bg-primary: #1a1d29;
+    --bg-secondary: #252936;
+    --bg-tertiary: #2d3142;
+    --bg-card: #252936;
+    
+    /* Text Colors */
+    --text-primary: #e5e9f4;
+    --text-secondary: #cbd5e1;
+    --text-tertiary: #94a3b8;
+    --text-quaternary: #64748b;
+    
+    /* Link Colors */
+    --link-color: #60a5fa;
+    --link-hover: #3b82f6;
+    
+    /* Border Colors */
+    --border-light: rgba(255, 255, 255, 0.1);
+    --border-medium: #3d4254;
+    --border-dark: #2d3142;
+    
+    /* Shadow Colors */
+    --shadow-light: hsl(0 0% 100% / 0.15);
+    --shadow-dark: hsl(0 0% 0% / 0.6);
+    --shadow-light-alt: hsl(0 0% 100% / 0.12);
+    --shadow-dark-alt: hsl(0 0% 0% / 0.7);
+    --shadow-card: rgba(0, 0, 0, 0.3);
+    --shadow-card-hover: rgba(0, 0, 0, 0.4);
+    
+    /* Accent Colors */
+    --accent-color: #60a5fa;
+    --accent-hover: #3b82f6;
+    
+    /* Button Colors */
+    --button-text: #cbd5e1;
+    --button-text-hover: #60a5fa;
+    --button-bg: #1a1d29;
+    
+    /* Timeline/History Colors */
+    --timeline-line: rgb(60, 60, 60);
+    --timeline-shadow: rgba(0, 0, 0, 0.7);
+    
+    /* Text on Accent Colors */
+    --text-on-accent: #ffffff;
+}
+
+/* Theme Toggle Button Styles */
+.theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px var(--shadow-card);
+}
+
+.theme-toggle:hover,
+.theme-toggle:focus-visible {
+    background-color: var(--bg-tertiary);
+    transform: scale(1.1);
+    outline: 2px solid var(--link-color);
+    outline-offset: 2px;
+}
+
+.theme-toggle:active {
+    transform: scale(0.95);
+}
+
+.theme-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    stroke: currentColor;
+    fill: none;
+    transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover .theme-icon {
+    transform: rotate(15deg);
+}
+
+/* Smooth theme transitions */
+* {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Disable transitions during initial load to prevent flash */
+html:not([data-theme]) * {
+    transition: none !important;
+}
+
+/* Logo theme adaptation - Invert logo colors in dark mode */
+[data-theme="dark"] img[src*="IconCodefrydev"],
+[data-theme="dark"] .footer-logo,
+[data-theme="dark"] img[src*="iconcodefrydev"],
+[data-theme="dark"] .site-logo {
+    filter: invert(1) brightness(1.1);
+    transition: filter 0.3s ease;
+}
+

@@ -23,32 +23,32 @@
         .about-header h1 {
             font-size: 3rem;
             font-weight: 700;
-            color: #1f2937;
+            color: var(--text-primary);
             margin: 1rem 0 0.75rem 0;
             letter-spacing: -0.5px;
         }
         
         .about-header .tagline {
             font-size: 1.25rem;
-            color: #6b7280;
+            color: var(--text-tertiary);
             margin: 0;
             font-weight: 400;
         }
         
         .about-intro {
-            background: #e5e9f4;
+            background: var(--bg-primary);
             padding: 3rem;
             border-radius: 24px;
             margin-bottom: 4rem;
             box-shadow: 
-                inset 8px 8px 16px #d1d5db,
-                inset -8px -8px 16px #ffffff;
+                inset 8px 8px 16px var(--shadow-dark),
+                inset -8px -8px 16px var(--shadow-light);
         }
         
         .about-intro p {
             font-size: 1.15rem;
             line-height: 1.9;
-            color: #374151;
+            color: var(--text-secondary);
             margin: 0;
             text-align: center;
             max-width: 900px;
@@ -63,14 +63,14 @@
         }
         
         .stat-card {
-            background: #e5e9f4;
+            background: var(--bg-primary);
             padding: 2.5rem 2rem;
             border-radius: 20px;
             text-align: center;
             transition: all 0.3s ease;
             box-shadow: 
-                8px 8px 16px #d1d5db,
-                -8px -8px 16px #ffffff;
+                8px 8px 16px var(--shadow-dark),
+                -8px -8px 16px var(--shadow-light);
             position: relative;
             overflow: hidden;
         }
@@ -82,8 +82,8 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: radial-gradient(circle, rgba(102, 126, 234, 0.1) 0%, transparent 70%);
-            opacity: 0;
+            background: radial-gradient(circle, var(--accent-color) 0%, transparent 70%);
+            opacity: 0.1;
             transition: opacity 0.3s ease;
         }
         
@@ -94,14 +94,14 @@
         .stat-card:hover {
             transform: translateY(-4px) scale(1.02);
             box-shadow: 
-                12px 12px 24px #d1d5db,
-                -12px -12px 24px #ffffff;
+                12px 12px 24px var(--shadow-dark),
+                -12px -12px 24px var(--shadow-light);
         }
         
         .stat-number {
             font-size: 3rem;
             font-weight: 800;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-hover) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -111,7 +111,7 @@
         
         .stat-label {
             font-size: 0.95rem;
-            color: #6b7280;
+            color: var(--text-tertiary);
             text-transform: uppercase;
             letter-spacing: 1px;
             font-weight: 600;
@@ -124,7 +124,7 @@
         .section-title {
             font-size: 1.75rem;
             font-weight: 700;
-            color: #1f2937;
+            color: var(--text-primary);
             margin-bottom: 2.5rem;
             text-align: center;
             text-transform: uppercase;
@@ -141,7 +141,7 @@
             transform: translateX(-50%);
             width: 60px;
             height: 3px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-hover) 100%);
             border-radius: 2px;
         }
         
@@ -152,20 +152,20 @@
         }
         
         .about-card {
-            background: #e5e9f4;
+            background: var(--bg-primary);
             padding: 2.5rem;
             border-radius: 24px;
             cursor: pointer;
             transition: all 0.3s ease;
             text-decoration: none;
-            color: #1f2937;
+            color: var(--text-primary);
             display: flex;
             flex-direction: column;
             position: relative;
             overflow: hidden;
             box-shadow: 
-                8px 8px 16px #d1d5db,
-                -8px -8px 16px #ffffff;
+                8px 8px 16px var(--shadow-dark),
+                -8px -8px 16px var(--shadow-light);
         }
         
         .about-card::before {
@@ -175,7 +175,7 @@
             left: 0;
             right: 0;
             height: 4px;
-            background: linear-gradient(90deg, var(--accent-color, #667eea), var(--accent-color, #764ba2));
+            background: linear-gradient(90deg, var(--accent-color), var(--accent-hover));
             transform: scaleX(0);
             transition: transform 0.3s ease;
         }
@@ -187,31 +187,31 @@
         .about-card:hover {
             transform: translateY(-6px);
             box-shadow: 
-                16px 16px 32px #d1d5db,
-                -16px -16px 32px #ffffff;
+                16px 16px 32px var(--shadow-dark),
+                -16px -16px 32px var(--shadow-light);
         }
         
         .about-card:active {
             transform: translateY(-2px);
             box-shadow: 
-                inset 4px 4px 8px #d1d5db,
-                inset -4px -4px 8px #ffffff;
+                inset 4px 4px 8px var(--shadow-dark),
+                inset -4px -4px 8px var(--shadow-light);
         }
         
         .card-icon {
             width: 64px;
             height: 64px;
-            background: #fff;
+            background: var(--bg-tertiary);
             border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0 auto 1.75rem auto;
             box-shadow: 
-                4px 4px 8px #d1d5db,
-                -4px -4px 8px #ffffff;
+                4px 4px 8px var(--shadow-dark),
+                -4px -4px 8px var(--shadow-light);
             font-size: 1.75rem;
-            color: var(--accent-color, #667eea);
+            color: var(--accent-color);
             transition: all 0.3s ease;
             flex-shrink: 0;
         }
@@ -219,8 +219,8 @@
         .about-card:hover .card-icon {
             transform: scale(1.1) rotate(5deg);
             box-shadow: 
-                6px 6px 12px #d1d5db,
-                -6px -6px 12px #ffffff;
+                6px 6px 12px var(--shadow-dark),
+                -6px -6px 12px var(--shadow-light);
         }
         
         .about-card {
@@ -231,14 +231,14 @@
         .card-title {
             font-size: 1.35rem;
             font-weight: 700;
-            color: #1f2937;
+            color: var(--text-primary);
             margin: 0 0 1rem 0;
             line-height: 1.3;
         }
         
         .card-content {
             font-size: 1rem;
-            color: #6b7280;
+            color: var(--text-tertiary);
             line-height: 1.7;
             margin: 0;
         }
@@ -254,21 +254,21 @@
         }
         
         .feature-item {
-            background: #e5e9f4;
+            background: var(--bg-primary);
             padding: 2.5rem 2rem;
             border-radius: 20px;
             text-align: center;
             transition: all 0.3s ease;
             box-shadow: 
-                8px 8px 16px #d1d5db,
-                -8px -8px 16px #ffffff;
+                8px 8px 16px var(--shadow-dark),
+                -8px -8px 16px var(--shadow-light);
         }
         
         .feature-item:hover {
             transform: translateY(-4px);
             box-shadow: 
-                12px 12px 24px #d1d5db,
-                -12px -12px 24px #ffffff;
+                12px 12px 24px var(--shadow-dark),
+                -12px -12px 24px var(--shadow-light);
         }
         
         .feature-icon {
@@ -284,13 +284,13 @@
         .feature-title {
             font-size: 1.1rem;
             font-weight: 600;
-            color: #1f2937;
+            color: var(--text-primary);
             margin: 0 0 0.5rem 0;
         }
         
         .feature-desc {
             font-size: 0.95rem;
-            color: #6b7280;
+            color: var(--text-tertiary);
             line-height: 1.6;
             margin: 0;
         }
@@ -341,7 +341,7 @@
     </style>
     {{ partial "aboutseo.html" . }}
 </head>
-<body style="background-color: #e5e9f4;">
+<body>
   {{ partial "skip-link.html" . }}
     <main id="main-content" role="main">
         <div class="MainButtonParent">
@@ -459,5 +459,6 @@
     </main>
     {{ partial "footer.html" . }}
     <script src="/js/feedback.js"></script>
+    <script src="/js/theme.js"></script>
 </body>
 </html>
