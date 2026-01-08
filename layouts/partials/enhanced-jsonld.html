@@ -19,6 +19,13 @@
         "height": 96,
         "contentUrl": "{{ .Site.BaseURL }}images/IconCodefrydev.svg"
       },
+      "image": {
+        "@type": "ImageObject",
+        "url": "{{ .Site.BaseURL }}images/IconCodefrydev.svg",
+        "width": 96,
+        "height": 96,
+        "contentUrl": "{{ .Site.BaseURL }}images/IconCodefrydev.svg"
+      },
       "description": "{{ .Site.Params.description }}",
       "foundingDate": "2023",
       "founder": {
@@ -32,7 +39,11 @@
       "contactPoint": {
         "@type": "ContactPoint",
         "contactType": "customer service",
-        "url": "{{ .Site.BaseURL }}about"
+        "url": "{{ .Site.BaseURL }}about-us"
+      },
+      "about": {
+        "@type": "AboutPage",
+        "url": "{{ .Site.BaseURL }}about-us"
       },
       "areaServed": "Worldwide",
       "knowsAbout": [
@@ -50,6 +61,12 @@
       "name": "{{ .Site.Title }}",
       "url": "{{ .Site.BaseURL }}",
       "description": "{{ .Site.Params.description }}",
+      "image": {
+        "@type": "ImageObject",
+        "url": "{{ .Site.BaseURL }}images/IconCodefrydev.svg",
+        "width": 96,
+        "height": 96
+      },
       "publisher": {
         "@id": "{{ .Site.BaseURL }}#organization"
       },
@@ -279,6 +296,12 @@
 {{- if eq .Section "about" -}}
   {{- $about := dict "@type" "AboutPage" "name" .Title "description" (.Description | default "Learn more about CodeFryDev and our mission") "url" .Permalink "mainEntity" (dict "@id" (print .Site.BaseURL "#organization")) "breadcrumb" (dict "@type" "BreadcrumbList" "itemListElement" (slice (dict "@type" "ListItem" "position" 1 "name" "Home" "item" .Site.BaseURL) (dict "@type" "ListItem" "position" 2 "name" "About" "item" .Permalink))) -}}
   {{- $pageSchema = $pageSchema | append $about -}}
+{{- end -}}
+
+{{- /* About-us page */ -}}
+{{- if eq .Section "about-us" -}}
+  {{- $aboutUs := dict "@type" "AboutPage" "name" "About us" "description" "About us - CodeFryDev is a comprehensive digital platform providing diverse tools, applications, and resources for developers, designers, and digital enthusiasts." "url" .Permalink "image" (dict "@type" "ImageObject" "url" (print .Site.BaseURL "images/IconCodefrydev.svg") "width" 96 "height" 96) "mainEntity" (dict "@id" (print .Site.BaseURL "#organization")) "breadcrumb" (dict "@type" "BreadcrumbList" "itemListElement" (slice (dict "@type" "ListItem" "position" 1 "name" "Home" "item" .Site.BaseURL) (dict "@type" "ListItem" "position" 2 "name" "About us" "item" .Permalink))) -}}
+  {{- $pageSchema = $pageSchema | append $aboutUs -}}
 {{- end -}}
 
 {{- /* Store page */ -}}

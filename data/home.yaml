@@ -83,9 +83,9 @@ categories:
   # Category for site-wide information, policies, and external links
   - name: "Site & External Links"
     items:
-      - name: "About"
+      - name: "About us"
         icon: "cfd-about"
-        url: "/about"
+        url: "/about-us"
       - name: "Timeline"
         icon: "cfd-history"
         url: "/history"

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    {{ partial "header.html" . }} 
+    <meta name="description" content="About us - CodeFryDev is a comprehensive digital platform providing diverse tools, applications, and resources for developers, designers, and digital enthusiasts.">
+    <meta name="keywords" content="about us, codefrydev, digital tools, productivity apps, AI tools, games, design resources">
+    <title>About us - CodeFryDev | Learn More About Our Platform</title>
+    
+    {{- /* Additional Open Graph tags for better image display */ -}}
+    <meta property="og:image" content="{{ .Site.BaseURL }}images/IconCodefrydev.svg">
+    <meta property="og:image:width" content="96">
+    <meta property="og:image:height" content="96">
+    <meta property="og:image:alt" content="CodeFryDev Logo">
+    <meta property="og:type" content="website">
+    
+    <link rel="stylesheet" href="/css/internal.css">
+    <style>
+        .about-us-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .about-us-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .about-us-header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin: 1rem 0 0.75rem 0;
+            letter-spacing: -0.5px;
+        }
+        
+        .about-us-content {
+            background: var(--bg-primary);
+            padding: 3rem;
+            border-radius: 24px;
+            margin-bottom: 2rem;
+            box-shadow: 
+                inset 8px 8px 16px var(--shadow-dark),
+                inset -8px -8px 16px var(--shadow-light);
+        }
+        
+        .about-us-content h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin: 0 0 1.5rem 0;
+        }
+        
+        .about-us-content p {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            color: var(--text-secondary);
+            margin: 0 0 1.5rem 0;
+        }
+        
+        .about-us-content p:last-child {
+            margin-bottom: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .about-us-container {
+                padding: 1rem;
+            }
+            
+            .about-us-header h1 {
+                font-size: 2.25rem;
+            }
+            
+            .about-us-content {
+                padding: 2rem 1.5rem;
+            }
+            
+            .about-us-content h2 {
+                font-size: 1.75rem;
+            }
+            
+            .about-us-content p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "url": "{{ .Permalink }}",
+      "name": "About us",
+      "description": "About us - CodeFryDev is a comprehensive digital platform providing diverse tools, applications, and resources for developers, designers, and digital enthusiasts.",
+      "publisher": {
+        "@type": "Organization",
+        "name": {{ printf "%q" .Site.Title }},
+        "url": "{{ .Site.BaseURL }}",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "{{ printf "%simages/IconCodefrydev.svg" .Site.BaseURL }}"
+        }
+      },
+      "image": {
+        "@type": "ImageObject",
+        "url": "{{ printf "%simages/IconCodefrydev.svg" .Site.BaseURL }}",
+        "width": 96,
+        "height": 96
+      },
+      "mainEntity": {
+        "@type": "Organization",
+        "name": {{ printf "%q" .Site.Title }},
+        "url": "{{ .Site.BaseURL }}",
+        "description": "{{ .Site.Params.description }}",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "{{ printf "%simages/IconCodefrydev.svg" .Site.BaseURL }}",
+          "width": 96,
+          "height": 96
+        },
+        "image": {
+          "@type": "ImageObject",
+          "url": "{{ printf "%simages/IconCodefrydev.svg" .Site.BaseURL }}",
+          "width": 96,
+          "height": 96
+        }
+      }
+    }
+    </script>
+</head>
+<body>
+  {{ partial "skip-link.html" . }}
+    <main id="main-content" role="main">
+        <div class="MainButtonParent">
+            <a href="/" aria-label="CodeFryDev Homepage">
+                <img style="align-items: center;" src="/images/IconCodefrydev.svg" alt="CodeFryDev logo" height="96" width="96">
+            </a>
+        </div>
+        
+        <div class="about-us-container">
+            <div class="about-us-header">
+                <img src="/images/IconCodefrydev.svg" alt="CodeFryDev logo" width="120" height="120" style="margin-bottom: 1.5rem;">
+                <h1>About us</h1>
+            </div>
+            
+            <div class="about-us-content">
+                {{ .Content }}
+            </div>
+        </div>
+    </main>
+    {{ partial "footer.html" . }}
+    <script src="/js/feedback.js"></script>
+    <script src="/js/theme.js"></script>
+</body>
+</html>
+
