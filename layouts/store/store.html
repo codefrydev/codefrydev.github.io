@@ -18,7 +18,7 @@
 
   <header class="page-header" role="banner">
     <a href="/" aria-label="CodeFryDev Homepage">
-      <img fetchpriority="high" src="/images/IconCodefrydev.svg" alt="CodeFryDev logo - Tools, Games, Art, Animation" height="96" width="96">
+      <img fetchpriority="high" src="/images/IconCodefrydev.svg" srcset="/images/IconCodefrydev.svg" alt="CodeFryDev logo - Tools, Games, Art, Animation" height="96" width="96">
     </a>
     <h1>CodeFryDev<sup style="font-size: small; font-weight: bold;"> Alpha</sup></h1>
     <p class="tagline">Tools, Games, Art, Animation</p>
@@ -31,7 +31,7 @@
       <div class="button-grid">
         {{ range .Site.Data.store.data }}
           <a href="{{ .url }}" class="neumorphic-button hapticButton" aria-label="{{ .name }} - Mobile application" rel="noopener noreferrer">
-            <img src="/images/store/{{ .icon }}.svg" alt="{{ .name }} application icon" class="button-icon" loading="lazy">
+            <img src="/images/store/{{ .icon }}.svg" srcset="/images/store/{{ .icon }}.svg" alt="{{ .name }} application icon" class="button-icon" loading="lazy">
             <span>{{ .name }}</span>
           </a>
         {{ end }}

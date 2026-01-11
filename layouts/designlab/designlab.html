@@ -18,7 +18,7 @@
 
   <header class="page-header" role="banner">
     <a href="/" aria-label="CodeFryDev Homepage">
-      <img fetchpriority="high" src="/images/IconCodefrydev.svg" alt="CodeFryDev logo - Tools, Games, Art, Animation" height="96" width="96">
+      <img fetchpriority="high" src="/images/IconCodefrydev.svg" srcset="/images/IconCodefrydev.svg" alt="CodeFryDev logo - Tools, Games, Art, Animation" height="96" width="96">
     </a>
     <h1>CodeFryDev<sup style="font-size: small; font-weight: bold;"> Alpha</sup></h1>
     <p class="tagline">Tools, Games, Art, Animation</p>
@@ -35,7 +35,7 @@
              class="neumorphic-button hapticButton" 
              aria-label="{{ .name }} - Design tool"
              {{ if $isExternal }}target="_blank" rel="noopener noreferrer"{{ end }}>
-            <img src="/images/designlab/{{ .icon }}.svg" alt="{{ .name }} design tool icon" class="button-icon" loading="lazy">
+            <img src="/images/designlab/{{ .icon }}.svg" srcset="/images/designlab/{{ .icon }}.svg" alt="{{ .name }} design tool icon" class="button-icon" loading="lazy">
             <span>{{ .name }}</span>
           </a>
         {{ end }}

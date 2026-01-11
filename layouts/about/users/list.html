@@ -183,7 +183,7 @@
 <body>
     <main>
         <div class="MainButtonParent">
-            <img style="align-items: center;" src="/images/IconCodefrydev.svg" alt="Codefrydev Logo" height="96px">
+            <img style="align-items: center;" src="/images/IconCodefrydev.svg" srcset="/images/IconCodefrydev.svg" alt="Codefrydev Logo" height="96px">
         </div>
         
         <div class="users-container">
@@ -197,7 +197,7 @@
                 <li class="member-card-wrapper">
                     <a href="{{ .RelPermalink }}" class="member-card hapticButton">
                         <div class="profile-img-wrapper">
-                            <img src="{{ .Params.listProfile_image }}" alt="{{ .Title }}" class="profile-img" loading="lazy">
+                            <img src="{{ .Params.listProfile_image }}" srcset="{{ .Params.listProfile_image }}" alt="{{ .Title }}" class="profile-img" loading="lazy">
                         </div>
                         <h2 class="member-name">{{ .Title }}</h2>
                         <p class="member-subtitle">{{ .Params.subtitle }}</p>

@@ -20,7 +20,7 @@
    {{ if $rel }}rel="{{ $rel }}"{{ end }}
    aria-label="{{ $ariaLabel }}">
   {{- if .icon -}}
-    <img src="{{ .icon }}" alt="{{ $name }} icon" class="button-icon" loading="lazy">
+    <img src="{{ .icon }}" srcset="{{ .icon }}" alt="{{ $name }} icon" class="button-icon" loading="lazy">
   {{- end -}}
   {{- if .content -}}
     {{ .content }}
