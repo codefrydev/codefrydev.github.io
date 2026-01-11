@@ -1,0 +1,27 @@
+{{- /* Cookie Consent Banner for GDPR/CCPA Compliance */ -}}
+{{- $gaId := .Site.Params.google_analytics_id | default "" -}}
+{{- if not $gaId -}}
+  {{- warnf "google_analytics_id not set in hugo.toml params. Please configure it." -}}
+  {{- $gaId = "G-VM01Q3R43D" -}}
+{{- end -}}
+<div id="cookie-consent-banner" class="cookie-consent-banner" role="dialog" aria-labelledby="cookie-consent-title" aria-live="polite" style="display: none;" data-ga-id="{{ $gaId }}">
+  <div class="cookie-consent-content">
+    <div class="cookie-consent-text">
+      <h2 id="cookie-consent-title" class="cookie-consent-title">Cookie Consent</h2>
+      <p class="cookie-consent-message">
+        We use cookies to enhance your browsing experience and analyze site traffic. By clicking "Accept", you consent to our use of cookies. 
+        <a href="/tncprivacy" class="cookie-consent-link">Learn more about our privacy policy</a>.
+      </p>
+    </div>
+    <div class="cookie-consent-buttons">
+      <button type="button" id="cookie-consent-accept" class="cookie-consent-button cookie-consent-accept" aria-label="Accept cookies">
+        Accept
+      </button>
+      <button type="button" id="cookie-consent-decline" class="cookie-consent-button cookie-consent-decline" aria-label="Decline cookies">
+        Decline
+      </button>
+    </div>
+  </div>
+</div>
+<link rel="stylesheet" href="/css/cookie-consent.css">
+<script src="/js/cookie-consent.js" defer></script>

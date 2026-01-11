@@ -14,6 +14,7 @@ title = 'Code Fry Dev'
 [params]
   paginate = 10  # Number of posts per page
   env = "production"
+  google_analytics_id = "G-VM01Q3R43D"
   
   [assets]
     favicon = "favicon.ico"
