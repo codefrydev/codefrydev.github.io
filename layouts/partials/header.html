@@ -6,11 +6,17 @@
 {{- /* Page-specific title */ -}}
 {{- $pageTitle := .Title -}}
 {{- if .IsHome -}}
-  {{- $pageTitle = "CodeFryDev | Games, Apps, Tutorials, and Design Tools" -}}
+  {{- $pageTitle = "Free Online Tools, Games & AI Apps | CodeFryDev - No Signup Required" -}}
+{{- else if eq .Section "ai" -}}
+  {{- $pageTitle = "Free AI Tools & Generators | CodeFryDev - AI-Powered Utilities" -}}
+{{- else if eq .Section "games" -}}
+  {{- $pageTitle = "Free Online Games - Play Now | CodeFryDev" -}}
+{{- else if eq .Section "designlab" -}}
+  {{- $pageTitle = "Design Tools & Creative Resources | CodeFryDev Design Lab" -}}
 {{- else if ne .Title "" -}}
   {{- $pageTitle = printf "%s | CodeFryDev" .Title -}}
 {{- else -}}
-  {{- $pageTitle = "CodeFryDev | Games, Apps, Tutorials, and Design Tools" -}}
+  {{- $pageTitle = "Free Online Tools, Games & AI Apps | CodeFryDev" -}}
 {{- end -}}
 <title>{{ $pageTitle }}</title>
 
@@ -80,6 +86,7 @@
 {{- /* Language and locale */ -}}
 <meta name="language" content="{{ .Site.LanguageCode | default "en-US" }}">
 <link rel="alternate" hreflang="{{ .Site.LanguageCode | default "en" }}" href="{{ .Permalink | absURL }}">
+<link rel="alternate" hreflang="x-default" href="{{ .Permalink | absURL }}">
 
 {{- /* Theme CSS */ -}}
 <link rel="stylesheet" href="/css/theme.css">
@@ -97,14 +104,6 @@
 {{- /* Structured data */ -}}
 {{ partial "site_schema.html" . }}
 
-<!-- 
-{{partial "seojsonld.html" .}}
-{{partial "aboutseo.html" .}}
-{{partial "historyseo.html" .}}
-{{partial "qaseo.html" .}}
- -->
-
 {{- /* Additional Open Graph and Twitter Card templates (fallback) */ -}}
 {{- template "partials/templates/opengraph.html" . }}
 {{- template "partials/templates/twitter_cards.html" . }}
-<!-- {{- template "partials/templates/schema_json.html" . }} -->

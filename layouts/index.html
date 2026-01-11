@@ -2,9 +2,8 @@
 <html lang="en">
 <head>
   {{ partial "header.html" . }}
-  <meta name="description" content="CodeFryDev - Your ultimate destination for diverse digital content and tools. Enjoy our extensive game collection, innovative productivity apps, and comprehensive tutorials for all skill levels.">
-  <meta name="keywords" content="codefrydev, digital tools, games, productivity apps, tutorials, design resources, AI tools, creative tools, web development">
-  <title>CodeFryDev | Games, Apps, Tutorials, and Design Tools</title>
+  <meta name="description" content="Discover free online tools, games, and AI apps at CodeFryDev. No signup required. Access productivity apps, design resources, web-based games, and AI-powered utilities instantly.">
+  <meta name="keywords" content="free online tools, web-based applications, no signup tools, free games, AI tools, design tools, productivity apps, web development tools, codefrydev">
   
   {{ with resources.Get "css/home.css" }}
     {{ $minifiedCSS := . | resources.Minify }}
@@ -32,7 +31,11 @@
         <h2 class="category-title">{{ .name }}</h2>
         <div class="button-grid">
           {{ range .items }}
-            <a href="{{ .url }}" class="neumorphic-button hapticButton" aria-label="{{ .name }} - {{ .name | lower }} tool">
+            {{- $isExternal := or (hasPrefix .url "http://") (hasPrefix .url "https://") -}}
+            <a href="{{ .url }}" 
+               class="neumorphic-button hapticButton" 
+               aria-label="{{ .name }} - {{ .name | lower }} tool"
+               {{ if $isExternal }}target="_blank" rel="noopener noreferrer"{{ end }}>
               <img src="images/home/{{ .icon }}.svg" alt="{{ .name }} icon" class="button-icon" loading="lazy">
               <span>{{ .name }}</span>
             </a>

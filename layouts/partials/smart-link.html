@@ -1,0 +1,33 @@
+{{- /* Smart link helper: Handles external links with proper attributes */ -}}
+{{- $url := .url -}}
+{{- $name := .name -}}
+{{- $class := .class | default "" -}}
+{{- $ariaLabel := .ariaLabel | default $name -}}
+{{- $isExternal := false -}}
+{{- $target := "" -}}
+{{- $rel := "" -}}
+
+{{- /* Check if URL is external */ -}}
+{{- if or (hasPrefix $url "http://") (hasPrefix $url "https://") -}}
+  {{- $isExternal = true -}}
+  {{- $target = "_blank" -}}
+  {{- $rel = "noopener noreferrer" -}}
+{{- end -}}
+
+<a href="{{ $url }}" 
+   class="{{ $class }}{{ if $isExternal }} external-link{{ end }}" 
+   {{ if $target }}target="{{ $target }}"{{ end }}
+   {{ if $rel }}rel="{{ $rel }}"{{ end }}
+   aria-label="{{ $ariaLabel }}">
+  {{- if .icon -}}
+    <img src="{{ .icon }}" alt="{{ $name }} icon" class="button-icon" loading="lazy">
+  {{- end -}}
+  {{- if .content -}}
+    {{ .content }}
+  {{- else -}}
+    <span>{{ $name }}</span>
+  {{- end -}}
+  {{- if $isExternal -}}
+    <span class="external-link-indicator" aria-hidden="true" title="Opens in new tab">↗</span>
+  {{- end -}}
+</a>

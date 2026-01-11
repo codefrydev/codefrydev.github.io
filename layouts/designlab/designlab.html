@@ -2,9 +2,8 @@
 <html lang="en">
 <head>
   {{ partial "header.html" . }}
-  <meta name="description" content="Explore creative design tools and resources by CodeFryDev. Access design utilities, visualizations, music tools, and artistic applications for your creative projects.">
-  <meta name="keywords" content="design tools, creative resources, design lab, visualizations, music tools, artistic applications, codefrydev design">
-  <title>Design Lab - CodeFryDev | Creative Design Tools & Resources</title>
+  <meta name="description" content="Free design tools and creative resources by CodeFryDev. Access 3D visualizations, music players, design utilities, and artistic applications. No signup required.">
+  <meta name="keywords" content="free design tools, creative resources, design lab, 3D visualizations, music visualization tools, design utilities, artistic applications, web-based design tools, codefrydev design">
   
   {{ with resources.Get "css/home.css" }}
     {{ $minifiedCSS := . | resources.Minify }}
@@ -31,7 +30,11 @@
       <h2 class="category-title">Design Lab</h2>
       <div class="button-grid">
         {{ range .Site.Data.designlab.data }}
-          <a href="{{ .url }}" class="neumorphic-button hapticButton" aria-label="{{ .name }} - Design tool">
+          {{- $isExternal := or (hasPrefix .url "http://") (hasPrefix .url "https://") -}}
+          <a href="{{ .url }}" 
+             class="neumorphic-button hapticButton" 
+             aria-label="{{ .name }} - Design tool"
+             {{ if $isExternal }}target="_blank" rel="noopener noreferrer"{{ end }}>
             <img src="/images/designlab/{{ .icon }}.svg" alt="{{ .name }} design tool icon" class="button-icon" loading="lazy">
             <span>{{ .name }}</span>
           </a>

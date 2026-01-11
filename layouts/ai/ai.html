@@ -2,9 +2,8 @@
 <html lang="en">
 <head>
   {{ partial "header.html" . }}
-  <meta name="description" content="Discover powerful AI tools by CodeFryDev. Use AI SocialSnap, Meme Generator, Visual Note AI, Aqua Tracker, and more AI-powered utilities.">
-  <meta name="keywords" content="AI tools, artificial intelligence, AI generator, social media AI, meme generator, visual notes, AI summarize, codefrydev AI">
-  <title>AI Tools - CodeFryDev | AI-Powered Utilities</title>
+  <meta name="description" content="Free AI tools and generators by CodeFryDev. Create memes, summarize websites, generate social media content, and more with our AI-powered utilities. No signup required.">
+  <meta name="keywords" content="free AI tools, AI generator, artificial intelligence tools, AI meme generator, website summarizer, social media AI, visual notes AI, codefrydev AI">
   
   {{ with resources.Get "css/home.css" }}
     {{ $minifiedCSS := . | resources.Minify }}
@@ -31,7 +30,11 @@
       <h2 class="category-title">AI Tools</h2>
       <div class="button-grid">
         {{ range .Site.Data.ai.data }}
-          <a href="{{ .url }}" class="neumorphic-button hapticButton" aria-label="{{ .name }} - AI tool">
+          {{- $isExternal := or (hasPrefix .url "http://") (hasPrefix .url "https://") -}}
+          <a href="{{ .url }}" 
+             class="neumorphic-button hapticButton" 
+             aria-label="{{ .name }} - AI tool"
+             {{ if $isExternal }}target="_blank" rel="noopener noreferrer"{{ end }}>
             <img src="/images/ai/{{ .icon }}.svg" alt="{{ .name }} icon" class="button-icon" loading="lazy">
             <span>{{ .name }}</span>
           </a>

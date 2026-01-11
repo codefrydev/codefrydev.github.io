@@ -1,0 +1,10 @@
+<nav class="main-navigation" role="navigation" aria-label="Main navigation">
+  <ul class="nav-list">
+    <li class="nav-item"><a href="/" class="nav-link{{ if .IsHome }} active{{ end }}">Home</a></li>
+    <li class="nav-item"><a href="/games" class="nav-link{{ if eq .Section "games" }} active{{ end }}">Games</a></li>
+    <li class="nav-item"><a href="/ai" class="nav-link{{ if eq .Section "ai" }} active{{ end }}">AI Tools</a></li>
+    <li class="nav-item"><a href="/designlab" class="nav-link{{ if eq .Section "designlab" }} active{{ end }}">Design Lab</a></li>
+    <li class="nav-item"><a href="/store" class="nav-link{{ if eq .Section "store" }} active{{ end }}">Store</a></li>
+    <li class="nav-item"><a href="/about-us" class="nav-link{{ if eq .Section "about-us" }} active{{ end }}">About</a></li>
+  </ul>
+</nav>
