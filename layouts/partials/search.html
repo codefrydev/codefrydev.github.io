@@ -1,0 +1,73 @@
+{{- /* Generate unique ID for this search instance to avoid conflicts */ -}}
+{{- $searchID := "" -}}
+{{- if .Scratch -}}
+  {{- $searchID = .Scratch.Get "searchID" -}}
+  {{- if not $searchID -}}
+    {{- $searchID = printf "search-%d" (now.UnixNano) -}}
+    {{- .Scratch.Set "searchID" $searchID -}}
+  {{- end -}}
+{{- else -}}
+  {{- $searchID = printf "search-%d" (now.UnixNano) -}}
+{{- end -}}
+
+{{- /* Get optional parameters with defaults */ -}}
+{{- $containerClass := .containerClass | default "search-container" -}}
+{{- $placeholder := .placeholder | default "Search for tools, games, AI apps, design resources..." -}}
+{{- $autofocus := .autofocus | default false -}}
+
+{{- /* Load search CSS - only load once per page */ -}}
+{{- if not (.Scratch.Get "searchCSSLoaded") -}}
+  {{- .Scratch.Set "searchCSSLoaded" true -}}
+  <link rel="stylesheet" href="/css/search.css">
+{{- end -}}
+
+<div class="{{ $containerClass }}" data-search-id="{{ $searchID }}">
+    <div class="search-box-wrapper">
+        <svg class="search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+        </svg>
+        <input type="text" 
+               id="{{ $searchID }}-searchInput" 
+               class="search-box" 
+               placeholder="{{ $placeholder }}" 
+               {{ if $autofocus }}autofocus{{ end }}
+               autocomplete="off">
+    </div>
+    
+    <div id="{{ $searchID }}-searchStats" class="search-stats" style="display: none;"></div>
+    
+    <div id="{{ $searchID }}-searchSuggestions" class="search-suggestions">
+        <div class="suggestions-title">Suggestions</div>
+        <div id="{{ $searchID }}-suggestionsGrid" class="suggestions-grid"></div>
+    </div>
+    
+    <div id="{{ $searchID }}-searchResults" class="search-results"></div>
+    
+    <div id="{{ $searchID }}-noResults" class="no-results" style="display: none;">
+        <div class="no-results-icon">🔍</div>
+        <h4>No results found</h4>
+        <p>Try different keywords or browse our categories</p>
+    </div>
+</div>
+
+{{- /* Pass search data and configuration to JavaScript */ -}}
+<script>
+    (function() {
+        const searchConfig = {
+            searchID: "{{ $searchID }}",
+            searchData: {
+                home: {{ if .Site.Data.home }}{{ .Site.Data.home | jsonify | safeJS }}{{ else }}null{{ end }},
+                ai: {{ if .Site.Data.ai }}{{ .Site.Data.ai | jsonify | safeJS }}{{ else }}null{{ end }},
+                games: {{ if .Site.Data.games }}{{ .Site.Data.games | jsonify | safeJS }}{{ else }}null{{ end }},
+                designlab: {{ if .Site.Data.designlab }}{{ .Site.Data.designlab | jsonify | safeJS }}{{ else }}null{{ end }}
+            },
+            baseURL: "{{ .Site.BaseURL }}"
+        };
+        
+        // Store config for this search instance
+        if (!window.searchInstances) {
+            window.searchInstances = {};
+        }
+        window.searchInstances["{{ $searchID }}"] = searchConfig;
+    })();
+</script>

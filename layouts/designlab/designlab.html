@@ -1,37 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    {{ partial "header.html" . }}
-    <meta name="description" content="Explore creative design tools and resources by CodeFryDev. Access design utilities, visualizations, music tools, and artistic applications for your creative projects.">
-    <meta name="keywords" content="design tools, creative resources, design lab, visualizations, music tools, artistic applications, codefrydev design">
-    <title>Design Lab - CodeFryDev | Creative Design Tools & Resources</title>
-    
-    <link rel="stylesheet" href="/css/internal.css">
+  {{ partial "header.html" . }}
+  <meta name="description" content="Explore creative design tools and resources by CodeFryDev. Access design utilities, visualizations, music tools, and artistic applications for your creative projects.">
+  <meta name="keywords" content="design tools, creative resources, design lab, visualizations, music tools, artistic applications, codefrydev design">
+  <title>Design Lab - CodeFryDev | Creative Design Tools & Resources</title>
+  
+  {{ with resources.Get "css/home.css" }}
+    {{ $minifiedCSS := . | resources.Minify }}
+    <link rel="stylesheet" href="{{ $minifiedCSS.RelPermalink }}">
+  {{ else }}
+    {{ warnf "The CSS file 'css/home.css' was not found." }}
+  {{ end }}
+  <link rel="stylesheet" href="/css/internal.css">
 </head>
-
 <body>
   {{ partial "skip-link.html" . }}
-    <main id="main-content" role="main">
-        <div class="MainButtonParent">
-          <a href="/" aria-label="CodeFryDev Homepage">
-            <img style="align-items: center;" src="/images/IconCodefrydev.svg" alt="CodeFryDev logo" height="96" width="96">
-          </a>
-        </div>
-        <h1 style="align-items: center;">Chitra Kala</h1>
-        
-        <div class="buttons" role="list">
-          {{ range .Site.Data.designlab.data }}
-            <a href="{{ .url }}" class="neumorphic hapticButton" role="listitem" aria-label="{{ .name }} - Design tool">
-              <img src="/images/designlab/{{ .icon }}.svg" alt="{{ .name }} design tool icon" class="button-icon">
-              <span>{{ .name }}</span>
-            </a>
-          {{ end }}
-        </div>
-    </main>
-    {{ partial "footer.html" . }}
-    <script src="/js/feedback.js" ></script>
-    <script src="/js/theme.js"></script>
-</body>
 
+  <header class="page-header" role="banner">
+    <a href="/" aria-label="CodeFryDev Homepage">
+      <img fetchpriority="high" src="/images/IconCodefrydev.svg" alt="CodeFryDev logo - Tools, Games, Art, Animation" height="96" width="96">
+    </a>
+    <h1>CodeFryDev<sup style="font-size: small; font-weight: bold;"> Alpha</sup></h1>
+    <p class="tagline">Tools, Games, Art, Animation</p>
+  </header>
+
+  <main id="main-content" role="main">
+    {{ partial "search.html" (dict "containerClass" "search-container" "placeholder" "Search for design tools, visualizations, and creative resources..." "autofocus" false "Site" .Site "Scratch" .Scratch) }}
+    <section class="category-section">
+      <h2 class="category-title">Design Lab</h2>
+      <div class="button-grid">
+        {{ range .Site.Data.designlab.data }}
+          <a href="{{ .url }}" class="neumorphic-button hapticButton" aria-label="{{ .name }} - Design tool">
+            <img src="/images/designlab/{{ .icon }}.svg" alt="{{ .name }} design tool icon" class="button-icon" loading="lazy">
+            <span>{{ .name }}</span>
+          </a>
+        {{ end }}
+      </div>
+    </section>
+  </main>
+  
+  {{ partial "footer.html" . }}
+  <script src="/js/search.js"></script>
+  <script src="/js/feedback.js" ></script>
+  <script src="/js/theme.js"></script>
+</body>
 </html>

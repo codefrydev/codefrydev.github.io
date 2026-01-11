@@ -9,9 +9,9 @@ data:
     url: "https://play.google.com/store/apps/details?id=com.priyadarshi.abhijeet.abintudyog"
 
   - name: "Tiny fish"
-    icon: "cfd-abint"
+    icon: "cfd-tinyfish"
     url: "https://play.google.com/store/apps/details?id=in.codefrydev.developer.abhijeet.tinyfish"
 
   - name: "Galactic gunner"
-    icon: "cfd-abint"
+    icon: "cfd-galacticgunner"
     url: "https://play.google.com/store/apps/details?id=org.codefrydev.developer.abhijeet.galacticgunner"
