@@ -1,4 +1,10 @@
 history:
+  - date: "16 January 2026"
+    title: "InstaImage"
+    description: "InstaImage is a free, browser-based tool that allows you to split any image into a customizable grid of tiles. Perfect for creating social media grids, puzzles, collages, or any project that requires dividing an image into multiple sections."
+    link: "https://instaimage.codefrydev.in/"
+    accent_color: "#6366F1"
+
   - date: "08 January 2026"
     title: "Day vs Night"
     description: "Added feature to switch between light and dark mode."
