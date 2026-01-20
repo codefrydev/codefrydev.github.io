@@ -1,4 +1,10 @@
 history:
+  - date: "20 January 2026"
+    title: "Fish"
+    description: "Live koi fish wallpaper"
+    link: "/fish/"
+    accent_color: "#00ACC1"
+
   - date: "16 January 2026"
     title: "InstaImage"
     description: "InstaImage is a free, browser-based tool that allows you to split any image into a customizable grid of tiles. Perfect for creating social media grids, puzzles, collages, or any project that requires dividing an image into multiple sections."

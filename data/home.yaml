@@ -19,6 +19,9 @@ categories:
       - name: "Android Assets"
         icon: "cfd-android"
         url: "https://android.codefrydev.in/"
+      - name: "Fish"
+        icon: "cfd-fish"
+        url: "/fish/"
 
   - name: "Tools & Utilities"
     items:
