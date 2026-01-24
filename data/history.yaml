@@ -1,4 +1,10 @@
 history:
+  - date: "24 January 2026"
+    title: "ESP32CAM"
+    description: "A WiFi-enabled photo management system for ESP32-CAM with REST API, SD Card storage, live streaming, and web control panel."
+    link: "/Esp32cam/"
+    accent_color: "#0288D1"
+
   - date: "20 January 2026"
     title: "Fish"
     description: "Live koi fish wallpaper"
