@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+  <defs>
+    <linearGradient id="jsonPlayGrad" x1="0" y1="0" x2="384" y2="512">
+      <stop offset="0%" stop-color="#F9A825"/>
+      <stop offset="100%" stop-color="#F57C00"/>
+    </linearGradient>
+  </defs>
+  <!-- Left curly brace { -->
+  <path d="M 116 128 v 56 c 0 24 -32 44 -56 48 24 4 56 24 56 48 v 56"
+        fill="none"
+        stroke="url(#jsonPlayGrad)"
+        stroke-width="22"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        pathLength="100"
+        stroke-dasharray="100"
+        stroke-dashoffset="100">
+    <animate attributeName="stroke-dashoffset"
+             values="100;0;0;100"
+             keyTimes="0;0.2;0.6;1"
+             dur="2s"
+             repeatCount="indefinite"/>
+  </path>
+  <!-- Right curly brace } -->
+  <path d="M 268 128 v 56 c 0 24 32 44 56 48 -24 4 -56 24 -56 48 v 56"
+        fill="none"
+        stroke="url(#jsonPlayGrad)"
+        stroke-width="22"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        pathLength="100"
+        stroke-dasharray="100"
+        stroke-dashoffset="100">
+    <animate attributeName="stroke-dashoffset"
+             values="100;0;0;100"
+             keyTimes="0;0.2;0.6;1"
+             dur="2s"
+             repeatCount="indefinite"/>
+  </path>
+  <!-- Play triangle (filled, pulse) - nested group so scale animates without additive -->
+  <g transform="translate(192 256)">
+    <g>
+      <animateTransform attributeName="transform"
+                        type="scale"
+                        values="1;1.12;1"
+                        keyTimes="0;0.5;1"
+                        dur="1.5s"
+                        repeatCount="indefinite"/>
+      <path d="M -24 -32 L -24 32 L 24 0 Z" fill="url(#jsonPlayGrad)"/>
+    </g>
+  </g>
+</svg>
