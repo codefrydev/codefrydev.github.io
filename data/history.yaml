@@ -1,8 +1,14 @@
 history:
+  - date: "07 February 2026"
+    title: "NodeFlow"
+    description: "Visual computing platform—create and connect nodes in a visual editor."
+    link: "/NodeEditor/"
+    accent_color: "#009688"
+
   - date: "06 February 2026"
     title: "JSON Playground"
     description: "Explore and edit JSON with a visual JSON Explorer and playground."
-    link: "https://codefrydev.in/JsonPlayground/"
+    link: "/JsonPlayground/"
     accent_color: "#F9A825"
 
   - date: "27 January 2026"

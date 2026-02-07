@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" fill="none" stroke="#00897B" stroke-width="20" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Connection lines: draw-in animation (teal) -->
+  <path d="M 96 160 L 192 256 L 96 352 M 192 256 L 288 256"
+        pathLength="100"
+        stroke-dasharray="100"
+        stroke-dashoffset="100">
+    <animate attributeName="stroke-dashoffset"
+             values="100;0;0;100"
+             keyTimes="0;0.25;0.7;1"
+             dur="2.2s"
+             repeatCount="indefinite"/>
+  </path>
+  <!-- Nodes: color cycle teal ↔ orange/amber -->
+  <circle cx="96" cy="160" r="36">
+    <animate attributeName="fill"
+             values="#009688;#26A69A;#FF9800;#F9A825;#009688"
+             dur="2.5s"
+             repeatCount="indefinite"/>
+  </circle>
+  <circle cx="192" cy="256" r="36">
+    <animate attributeName="fill"
+             values="#009688;#26A69A;#FF9800;#F9A825;#009688"
+             dur="2.5s"
+             repeatCount="indefinite"/>
+  </circle>
+  <circle cx="96" cy="352" r="36">
+    <animate attributeName="fill"
+             values="#009688;#26A69A;#FF9800;#F9A825;#009688"
+             dur="2.5s"
+             repeatCount="indefinite"/>
+  </circle>
+  <circle cx="288" cy="256" r="36">
+    <animate attributeName="fill"
+             values="#009688;#26A69A;#FF9800;#F9A825;#009688"
+             dur="2.5s"
+             repeatCount="indefinite"/>
+  </circle>
+</svg>
