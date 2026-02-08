@@ -7,7 +7,7 @@ title = 'Code Fry Dev'
   name = "CodeFryDev"
 
 [Params]
-  description = "CodeFryDev is your ultimate destination for diverse digital content and tools. Enjoy our extensive game collection, innovative productivity apps, and micro applications for quick solutions. Access educational materials, interactive courses, and comprehensive tutorials for all skill levels. Fuel your creativity with design resources and versatile tools for efficient project completion. Visit CodeFryDev today and explore all we have to offer!"
+  description = "Building software products, apps, and developer tools for web, mobile, and desktop, providing AI-ready boilerplate code to accelerate feature implementation."
   logo = "favicon-32x32.png"
   copyright = "codefrydev.in"
 

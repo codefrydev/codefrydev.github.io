@@ -2,7 +2,6 @@
 <html lang="en">
 <head> 
     {{ partial "header.html" . }} 
-    <meta name="description" content="Learn about CodeFryDev - a free platform offering web-based tools, games, AI applications, and design resources. No signup required. Discover our mission and offerings.">
     <meta name="keywords" content="about codefrydev, free online tools platform, web-based applications, digital tools, productivity apps, AI tools, games, design resources, codefrydev mission">
     <title>About Us - CodeFryDev | Free Online Tools & Resources Platform</title>
     
@@ -90,7 +89,7 @@
       "@type": "AboutPage",
       "url": "{{ .Permalink }}",
       "name": "About us",
-      "description": "About us - CodeFryDev is a comprehensive digital platform providing diverse tools, applications, and resources for developers, designers, and digital enthusiasts.",
+      "description": {{ printf "%q" .Site.Params.description }},
       "publisher": {
         "@type": "Organization",
         "name": {{ printf "%q" .Site.Title }},

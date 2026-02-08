@@ -16,7 +16,7 @@
     <meta name="msapplication-TileColor" content="#28966a">
     <meta name="theme-color" content="#28966a">
     <title>404 - Page Not Found | CodeFryDev</title>
-    <meta name="description" content="The page you're looking for doesn't exist. Return to CodeFryDev homepage to explore our free online tools, games, AI apps, and design resources.">
+    <meta name="description" content="Building software products, apps, and developer tools for web, mobile, and desktop, providing AI-ready boilerplate code to accelerate feature implementation.">
     <meta name="robots" content="noindex, follow">
     <link rel="canonical" href="{{ .Site.BaseURL }}404.html">
     <link rel="stylesheet" href="/css/internal.css">
@@ -72,7 +72,7 @@
       "@context": "https://schema.org",
       "@type": "WebPage",
       "name": "404 - Page Not Found",
-      "description": "The page you're looking for doesn't exist. Return to CodeFryDev homepage to explore our free online tools, games, AI apps, and design resources.",
+      "description": {{ printf "%q" .Site.Params.description }},
       "url": "{{ .Site.BaseURL }}404.html",
       "mainEntity": {
         "@type": "ErrorPage",
