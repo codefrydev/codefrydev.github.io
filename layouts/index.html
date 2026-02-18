@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
   {{ partial "header.html" . }}
-  <meta name="keywords" content="free online tools, web-based applications, no signup tools, free games, AI tools, design tools, productivity apps, web development tools, codefrydev">
-  
+
   {{ with resources.Get "css/home.css" }}
     {{ $minifiedCSS := . | resources.Minify }}
     <link rel="stylesheet" href="{{ $minifiedCSS.RelPermalink }}">
@@ -15,13 +14,8 @@
 <body>
   {{ partial "skip-link.html" . }}
 
-  <header class="page-header" role="banner">
-    <a href="/" aria-label="CodeFryDev Homepage">
-      <img fetchpriority="high" src="images/IconCodefrydev.svg" srcset="images/IconCodefrydev.svg" alt="CodeFryDev logo - Tools, Games, Art, Animation" height="96" width="96">
-    </a>
-    <h1>CodeFryDev<sup style="font-size: small; font-weight: bold;"> Alpha</sup></h1>
-    <p class="tagline">Tools, Games, Art, Animation</p>
-  </header>
+  {{- $homeTitle := `CodeFryDev<sup style="font-size: small; font-weight: bold;"> Alpha</sup>` -}}
+  {{ partial "page-header.html" (dict "context" . "title" $homeTitle "tagline" "Tools, Games, Art, Animation" "ctas" (slice (dict "label" "Browse AI tools" "url" "/ai" "primary" true) (dict "label" "Games" "url" "/games" "primary" false) (dict "label" "Design lab" "url" "/designlab" "primary" false))) }}
 
   <main id="main-content" role="main">
     {{ partial "search.html" (dict "containerClass" "search-container" "placeholder" "Search for tools, games, AI apps, design resources..." "autofocus" false "Site" .Site "Scratch" .Scratch) }}
@@ -42,6 +36,19 @@
         </div>
       </section>
     {{ end }}
+    {{- if .Content }}
+    <section class="home-intro" aria-label="Introduction">
+      <div class="home-intro-content">
+        {{ .Content }}
+      </div>
+    </section>
+    <p class="home-cta-wrapper">
+      <a href="/ai" class="home-cta-secondary">Browse AI tools</a>
+      <a href="/games" class="home-cta-secondary">Play games</a>
+      <a href="/designlab" class="home-cta-secondary">Design lab</a>
+    </p>
+    {{- end }}
+    {{ partial "faq-section.html" . }}
   </main>
   
   {{ partial "footer.html" . }}

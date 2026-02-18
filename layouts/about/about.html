@@ -3,24 +3,24 @@
 <head> 
     {{ partial "header.html" . }} 
     <meta name="keywords" content="about codefrydev, codefrydev team, digital tools, web development, mobile apps, games, tutorials">
-    <title>About - CodeFryDev | Learn More About Us</title>
     
     <link rel="stylesheet" href="/css/internal.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         .about-container {
-            max-width: 1200px;
+            max-width: min(1200px, 100%);
             margin: 0 auto;
-            padding: 2rem;
+            padding: clamp(1rem, 4vw, 2rem);
+            box-sizing: border-box;
         }
         
         .about-header {
             text-align: center;
-            margin-bottom: 4rem;
+            margin-bottom: clamp(2rem, 5vw, 4rem);
         }
         
         .about-header h1 {
-            font-size: 3rem;
+            font-size: clamp(1.75rem, 5vw, 3rem);
             font-weight: 700;
             color: var(--text-primary);
             margin: 1rem 0 0.75rem 0;
@@ -28,7 +28,7 @@
         }
         
         .about-header .tagline {
-            font-size: 1.25rem;
+            font-size: clamp(1rem, 2vw, 1.25rem);
             color: var(--text-tertiary);
             margin: 0;
             font-weight: 400;
@@ -36,29 +36,28 @@
         
         .about-intro {
             background: var(--bg-primary);
-            padding: 3rem;
+            padding: clamp(1.5rem, 4vw, 3rem);
             border-radius: 24px;
-            margin-bottom: 4rem;
+            margin-bottom: clamp(2rem, 5vw, 4rem);
             box-shadow: 
                 inset 8px 8px 16px var(--shadow-dark),
                 inset -8px -8px 16px var(--shadow-light);
         }
         
         .about-intro p {
-            font-size: 1.15rem;
+            font-size: clamp(1rem, 1.5vw, 1.15rem);
             line-height: 1.9;
             color: var(--text-secondary);
-            margin: 0;
-            text-align: center;
-            max-width: 900px;
             margin: 0 auto;
+            text-align: center;
+            max-width: min(900px, 100%);
         }
         
         .about-stats {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 2rem;
-            margin-bottom: 4rem;
+            grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+            gap: clamp(1rem, 3vw, 2rem);
+            margin-bottom: clamp(2rem, 5vw, 4rem);
         }
         
         .stat-card {
@@ -98,7 +97,7 @@
         }
         
         .stat-number {
-            font-size: 3rem;
+            font-size: clamp(2rem, 5vw, 3rem);
             font-weight: 800;
             background: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-hover) 100%);
             -webkit-background-clip: text;
@@ -146,8 +145,8 @@
         
         .cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+            gap: clamp(1rem, 3vw, 2rem);
         }
         
         .about-card {
@@ -248,8 +247,8 @@
         
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+            gap: clamp(1rem, 3vw, 2rem);
         }
         
         .feature-item {
@@ -295,45 +294,22 @@
         }
         
         @media (max-width: 768px) {
-            .about-container {
-                padding: 1rem;
-            }
-            
-            .about-header h1 {
-                font-size: 2.25rem;
-            }
-            
-            .about-header .tagline {
-                font-size: 1.1rem;
-            }
-            
-            .about-intro {
-                padding: 2rem 1.5rem;
-            }
-            
-            .about-intro p {
-                font-size: 1rem;
-            }
-            
             .about-stats {
                 grid-template-columns: repeat(2, 1fr);
-                gap: 1rem;
             }
             
             .stat-card {
                 padding: 1.5rem 1rem;
             }
             
-            .stat-number {
-                font-size: 2.25rem;
-            }
-            
-            .cards-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-            
+            .cards-grid,
             .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .about-stats {
                 grid-template-columns: 1fr;
             }
         }

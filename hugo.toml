@@ -1,20 +1,26 @@
 baseURL = 'https://codefrydev.in/'
-languageCode = 'en-us'
+languageCode = 'en-US'
 defaultContentLanguage = 'en'
 title = 'Code Fry Dev'
+
+[outputs]
+  home = ["HTML", "RSS"]
 
 [Author]
   name = "CodeFryDev"
 
-[Params]
-  description = "Building software products, apps, and developer tools for web, mobile, and desktop, providing AI-ready boilerplate code to accelerate feature implementation."
+[params]
+  description = "Free online tools, games, and AI apps—no signup required. CodeFryDev offers web-based utilities, design resources, and productivity apps for everyone."
   logo = "favicon-32x32.png"
   copyright = "codefrydev.in"
-
-[params]
-  paginate = 10  # Number of posts per page
+  paginate = 10
   env = "production"
   google_analytics_id = "G-VM01Q3R43D"
+  # Add static/images/og-default.png (1200×630) for better social sharing; omit or leave empty to use logo
+  default_og_image = "images/og-default.png"
+  
+  [params.social]
+    twitter = "codefrydev"
   
   [assets]
     favicon = "favicon.ico"

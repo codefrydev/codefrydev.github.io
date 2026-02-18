@@ -3,7 +3,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-{{- /* Page-specific title */ -}}
+{{- /* Page-specific title (single source of truth; do not add <title> in section layouts) */ -}}
 {{- $pageTitle := .Title -}}
 {{- if .IsHome -}}
   {{- $pageTitle = "Free Online Tools, Games & AI Apps | CodeFryDev - No Signup Required" -}}
@@ -13,6 +13,16 @@
   {{- $pageTitle = "Free Online Games - Play Now | CodeFryDev" -}}
 {{- else if eq .Section "designlab" -}}
   {{- $pageTitle = "Design Tools & Creative Resources | CodeFryDev Design Lab" -}}
+{{- else if eq .Section "about-us" -}}
+  {{- $pageTitle = "About Us - CodeFryDev | Free Online Tools & Resources Platform" -}}
+{{- else if eq .Section "about" -}}
+  {{- $pageTitle = "About - CodeFryDev | Learn More About Us" -}}
+{{- else if eq .Section "search" -}}
+  {{- $pageTitle = "Search - CodeFryDev | Find Tools, Games & Apps" -}}
+{{- else if eq .Section "history" -}}
+  {{- $pageTitle = "History - CodeFryDev | Timeline & Milestones" -}}
+{{- else if strings.HasSuffix .RelPermalink "/about/users/" -}}
+  {{- $pageTitle = "Devs and Designers - CodeFryDev | Meet Our Team" -}}
 {{- else if ne .Title "" -}}
   {{- $pageTitle = printf "%s | CodeFryDev" .Title -}}
 {{- else -}}
@@ -36,13 +46,21 @@
 {{- else -}}
 <meta name="keywords" content="Codefrydev, CFD, NET, Tutorials, Design, Games, unity, c#, godot, web development, productivity apps, AI tools">
 {{- end -}}
-<meta name="robots" content="index, follow">
+{{- $robots := "index, follow" -}}
+{{- if eq .Section "search" -}}
+  {{- $robots = "noindex, follow" -}}
+{{- else if .Params.robots -}}
+  {{- $robots = .Params.robots -}}
+{{- end -}}
+<meta name="robots" content="{{ $robots }}">
 <link rel="canonical" href="{{ .Permalink | absURL }}">
 
 {{- /* Open Graph meta tags */ -}}
 {{- $ogTitle := $pageTitle -}}
 {{- $ogDescription := $description -}}
 {{- $ogImage := "" -}}
+{{- $ogWidth := "1200" -}}
+{{- $ogHeight := "630" -}}
 {{- if .Params.og_image -}}
   {{- $ogImage = .Params.og_image | absURL -}}
 {{- else if .Params.cover.image -}}
@@ -51,19 +69,24 @@
   {{- else -}}
     {{- $ogImage = (path.Join .RelPermalink .Params.cover.image) | absURL -}}
   {{- end -}}
+{{- else if .Site.Params.default_og_image -}}
+  {{- $ogImage = printf "%s%s" .Site.BaseURL (strings.TrimPrefix "/" .Site.Params.default_og_image) -}}
+  {{- /* Use 1200x630 when default OG image is set (expected social preview size) */ -}}
 {{- else -}}
   {{- $ogImage = printf "%s%s" .Site.BaseURL "images/IconCodefrydev.svg" -}}
+  {{- $ogWidth = "96" -}}
+  {{- $ogHeight = "96" -}}
 {{- end -}}
 <meta property="og:title" content="{{ $ogTitle }}">
 <meta property="og:description" content="{{ $ogDescription }}">
 <meta property="og:image" content="{{ $ogImage }}">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
+<meta property="og:image:width" content="{{ $ogWidth }}">
+<meta property="og:image:height" content="{{ $ogHeight }}">
 <meta property="og:image:alt" content="{{ .Title | default "CodeFryDev" }}">
 <meta property="og:url" content="{{ .Permalink | absURL }}">
 <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
 <meta property="og:site_name" content="{{ .Site.Title }}">
-<meta property="og:locale" content="{{ .Site.LanguageCode | default "en_US" }}">
+<meta property="og:locale" content="{{ .Site.LanguageCode | default "en-US" | replace "en_US" "en-US" }}">
 
 {{- /* Twitter Card meta tags */ -}}
 <meta name="twitter:card" content="summary_large_image">
@@ -73,6 +96,7 @@
 <meta name="twitter:image:alt" content="{{ .Title | default "CodeFryDev" }}">
 {{- with .Site.Params.social.twitter -}}
 <meta name="twitter:site" content="@{{ . }}">
+<meta name="twitter:creator" content="@{{ . }}">
 {{- end -}}
 
 {{- /* Favicons and app icons */ -}}
@@ -83,9 +107,10 @@
 <meta name="msapplication-TileColor" content="#e5e9f4">
 <meta name="theme-color" content="#e5e9f4">
 
-{{- /* Language and locale */ -}}
-<meta name="language" content="{{ .Site.LanguageCode | default "en-US" }}">
-<link rel="alternate" hreflang="{{ .Site.LanguageCode | default "en" }}" href="{{ .Permalink | absURL }}">
+{{- /* Language and locale (BCP 47); single-language site */ -}}
+{{- $locale := .Site.LanguageCode | default "en-US" | replace "en_us" "en-US" | replace "en_US" "en-US" -}}
+<meta name="language" content="{{ $locale }}">
+<link rel="alternate" hreflang="{{ $locale }}" href="{{ .Permalink | absURL }}">
 <link rel="alternate" hreflang="x-default" href="{{ .Permalink | absURL }}">
 
 {{- /* Theme CSS */ -}}
@@ -103,7 +128,3 @@
 
 {{- /* Structured data */ -}}
 {{ partial "site_schema.html" . }}
-
-{{- /* Additional Open Graph and Twitter Card templates (fallback) */ -}}
-{{- template "partials/templates/opengraph.html" . }}
-{{- template "partials/templates/twitter_cards.html" . }}

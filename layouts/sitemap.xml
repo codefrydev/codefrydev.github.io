@@ -10,9 +10,9 @@
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
-{{- /* Add main section pages */ -}}
+{{- /* Add main section pages (about redirects to about-us via alias) */ -}}
   <url>
-    <loc>{{ $baseURL }}about/</loc>
+    <loc>{{ $baseURL }}about-us/</loc>
     <lastmod>{{ $currentDate }}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -47,12 +47,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
-    <loc>{{ $baseURL }}search/</loc>
-    <lastmod>{{ $currentDate }}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
+{{- /* Search page excluded from sitemap (noindex) */ -}}
 {{- /* Add LLM documentation files */ -}}
   <url>
     <loc>{{ $baseURL }}llms.txt</loc>

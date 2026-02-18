@@ -15,16 +15,17 @@
 <body>
   {{ partial "skip-link.html" . }}
 
-  <header class="page-header" role="banner">
-    <a href="/" aria-label="CodeFryDev Homepage">
-      <img fetchpriority="high" src="/images/IconCodefrydev.svg" srcset="/images/IconCodefrydev.svg" alt="CodeFryDev logo - Tools, Games, Art, Animation" height="96" width="96">
-    </a>
-    <h1>CodeFryDev<sup style="font-size: small; font-weight: bold;"> Alpha</sup></h1>
-    <p class="tagline">Tools, Games, Art, Animation</p>
-  </header>
+  {{ partial "page-header.html" (dict "context" . "title" "Free online games—play in your browser" "tagline" "CodeFryDev") }}
 
   <main id="main-content" role="main">
     {{ partial "search.html" (dict "containerClass" "search-container" "placeholder" "Search for games, puzzles, and fun activities..." "autofocus" false "Site" .Site "Scratch" .Scratch) }}
+    {{- if .Content }}
+    <section class="home-intro" aria-label="Introduction">
+      <div class="home-intro-content">
+        {{ .Content }}
+      </div>
+    </section>
+    {{- end }}
     <section class="category-section">
       <h2 class="category-title">Games</h2>
       <div class="button-grid">

@@ -34,6 +34,14 @@ body {
     margin-top: .25rem
 }
 
+.home-cta-hero {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1rem;
+    justify-content: center;
+    margin: 1rem auto 0;
+}
+
 .category-section {
     width: min(75rem, 100%);
     margin-inline: auto;
@@ -115,13 +123,264 @@ a.neumorphic-button:active>span {
     font-size: 14cqi
 }
 
-@media (max-width:650px) {
+/* Home intro – neumorphic panel matching site style (category-section + search) */
+.home-intro {
+    width: min(75rem, 100%);
+    margin-inline: auto;
+    margin-bottom: 3rem;
+    margin-top: 1rem;
+    padding: 2rem;
+    border-radius: 0.8rem;
+    background: var(--bg-primary);
+    box-shadow: inset 0.2rem 0.2rem 0.4rem var(--shadow-dark), inset -0.2rem -0.2rem 0.4rem var(--shadow-light);
+}
+
+.home-intro-content {
+    font-size: 1rem;
+    line-height: 1.65;
+    color: var(--text-primary);
+    font-family: Inter, system-ui, -apple-system, sans-serif;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem 1.5rem;
+}
+
+/* Welcome – matches page-header feel */
+.home-intro-content > h1:first-child {
+    font-size: clamp(1.35rem, 3.5vw, 1.75rem);
+    font-weight: 600;
+    margin: 0 0 0.5rem 0;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+}
+
+.home-intro-content > p:first-of-type {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin: 0 0 1.5rem 0;
+    max-width: 48ch;
+}
+
+/* Section labels – match .category-title; span full width in grid */
+.home-intro-content h2 {
+    font-family: Inter, sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--text-secondary);
+    margin: 2rem 0 1rem 0;
+    grid-column: 1 / -1;
+}
+
+.home-intro-content h2:first-of-type {
+    margin-top: 0;
+}
+
+.home-intro-content > h1:first-child,
+.home-intro-content > p:first-of-type {
+    grid-column: 1 / -1;
+}
+
+.home-intro-content ul,
+.home-intro-content h2 + p,
+.home-intro-content h2 + p + p {
+    grid-column: 1 / -1;
+}
+
+/* What We Offer – raised neumorphic cards, responsive card grid (one card per cell, 2 cols on tablet+) */
+.offer-card {
+    border-radius: 0.8rem;
+    background: var(--button-bg);
+    --shadow-light: var(--shadow-light-alt);
+    --shadow-dark: var(--shadow-dark-alt);
+    box-shadow: -0.25rem -0.25rem 0.5rem var(--shadow-light), 0.25rem 0.25rem 0.5rem var(--shadow-dark);
+    padding: 0;
+    min-width: 0;
+    align-self: start;
+    min-height: 0;
+}
+
+.offer-card-title {
+    margin: 0;
+    padding: 0.9rem 1.1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.offer-card-body {
+    padding: 0 1.1rem 1rem 0.9rem;
+    font-size: 0.9rem;
+    line-height: 1.55;
+    color: var(--text-secondary);
+}
+
+.offer-card-body p {
+    margin: 0;
+}
+
+/* Why Choose – raised neumorphic pills (same shadow as category buttons) */
+.home-intro-content ul {
+    list-style: none;
+    margin: 1rem 0 1.5rem 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+
+.home-intro-content ul li {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 0.8rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    background: var(--button-bg);
+    color: var(--button-text);
+    --shadow-light: var(--shadow-light-alt);
+    --shadow-dark: var(--shadow-dark-alt);
+    box-shadow: -0.2rem -0.2rem 0.4rem var(--shadow-light), 0.2rem 0.2rem 0.4rem var(--shadow-dark);
+}
+
+/* Get Started text */
+.home-intro-content h2 + p,
+.home-intro-content h2 + p + p {
+    margin: 0.5rem 0 0;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.home-intro-content a {
+    color: var(--button-text-hover);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color .15s;
+}
+
+.home-intro-content a:hover {
+    color: var(--text-primary);
+}
+
+/* CTA strip – primary = same neumorphic as category buttons */
+.home-cta-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin: 0 auto 2.5rem;
+    width: min(75rem, 100%);
+}
+
+.home-cta-primary,
+.home-cta-secondary {
+    display: inline-block;
+    padding: 0.65rem 1.35rem;
+    min-height: 44px;
+    min-width: 44px;
+    box-sizing: border-box;
+    border-radius: 0.8rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: transform .2s, box-shadow .2s;
+}
+
+.home-cta-primary {
+    background: var(--button-bg);
+    color: var(--button-text);
+    --shadow-light: var(--shadow-light-alt);
+    --shadow-dark: var(--shadow-dark-alt);
+    box-shadow: -0.3rem -0.3rem 0.6rem var(--shadow-light), 0.3rem 0.3rem 0.6rem var(--shadow-dark);
+}
+
+.home-cta-primary:hover {
+    color: var(--button-text-hover);
+    transform: translateY(-4px);
+    box-shadow: -0.4rem -0.4rem 0.8rem var(--shadow-light), 0.4rem 0.4rem 0.8rem var(--shadow-dark);
+}
+
+.home-cta-secondary {
+    background: var(--bg-primary);
+    color: var(--text-secondary);
+    --shadow-light: var(--shadow-light-alt);
+    --shadow-dark: var(--shadow-dark-alt);
+    box-shadow: -0.2rem -0.2rem 0.4rem var(--shadow-light), 0.2rem 0.2rem 0.4rem var(--shadow-dark);
+}
+
+.home-cta-secondary:hover {
+    color: var(--button-text-hover);
+    transform: translateY(-4px);
+    box-shadow: -0.3rem -0.3rem 0.6rem var(--shadow-light), 0.3rem 0.3rem 0.6rem var(--shadow-dark);
+}
+
+/* FAQ section */
+.faq-section {
+    width: min(75rem, 100%);
+    margin-inline: auto;
+    margin-top: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.faq-section-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+.faq-list {
+    margin: 0;
+}
+
+.faq-item {
+    margin-bottom: 1rem;
+}
+
+.faq-question {
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0 0 0.25rem 0;
+}
+
+.faq-answer {
+    margin: 0 0 1rem 0;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+/* What We Offer: 2-column layout on tablet+; keep row gap to avoid card overlap */
+@media (min-width: 600px) {
+    .home-intro-content {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
     .category-title {
         text-align: center
     }
 
     .button-grid {
         justify-content: center
+    }
+
+    .home-intro {
+        padding: 1.25rem;
+    }
+
+    .offer-card-title {
+        padding: 0.75rem 1rem;
+    }
+
+    .offer-card-body {
+        padding: 0 1rem 0.75rem 0.75rem;
+    }
+
+    .home-intro-content ul li {
+        font-size: 0.8rem;
+        padding: 0.45rem 0.8rem;
     }
 }
 

@@ -1,13 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> 
+<head>
     {{ partial "header.html" . }}
-    {{- if .Description -}}
-    <meta name="description" content="{{ .Description }}">
-    {{- else if .Summary -}}
-    <meta name="description" content="{{ .Summary | plainify | truncate 160 }}">
-    {{- end -}}
-    <title>{{ if .Title }}{{ .Title }} | CodeFryDev{{ else }}CodeFryDev{{ end }}</title>
 </head>
 <body>
     {{ partial "skip-link.html" . }}

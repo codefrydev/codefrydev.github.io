@@ -9,6 +9,16 @@
           <h2 class="footer-brand-title">{{ .Site.Title }}</h2>
         </div>
         <p class="footer-description">{{ .Site.Params.description | truncate 140 }}</p>
+        {{- $totalTools := 0 -}}
+        {{- range .Site.Data.home.categories }}{{ $totalTools = add $totalTools (len .items) }}{{ end -}}
+        {{- $aiCount := 0 }}{{ with .Site.Data.ai.data }}{{ $aiCount = len . }}{{ end -}}
+        {{- $gamesCount := 0 }}{{ with .Site.Data.games.data }}{{ $gamesCount = len . }}{{ end -}}
+        {{- $designCount := 0 }}{{ with .Site.Data.designlab.data }}{{ $designCount = len . }}{{ end -}}
+        <p class="footer-stats" aria-label="Platform stats">{{ $totalTools }}+ tools · {{ $gamesCount }} games · {{ $aiCount }} AI apps · {{ $designCount }} design tools</p>
+        <div class="footer-lead">
+          <p class="footer-lead-text">Get updates and support</p>
+          <a href="/tncprivacy" class="footer-lead-cta">Contact &amp; support</a>
+        </div>
       </div>
 
       <div class="footer-nav-section">
@@ -28,22 +38,10 @@
           <h3 class="footer-nav-title">Resources</h3>
           <nav aria-label="Resources navigation">
             <ul class="footer-nav-list">
-              <li><a href="/about" class="footer-nav-link">About</a></li>
+              <li><a href="/about-us" class="footer-nav-link">About</a></li>
               <li><a href="/history" class="footer-nav-link">History</a></li>
               <li><a href="/search" class="footer-nav-link">Search</a></li>
-              <li><a href="/tncprivacy" class="footer-nav-link">Support</a></li>
-            </ul>
-          </nav>
-        </div>
-
-        <div class="footer-nav-column">
-          <h3 class="footer-nav-title">Company</h3>
-          <nav aria-label="Company navigation">
-            <ul class="footer-nav-list">
-              <li><a href="/about-us" class="footer-nav-link">About us</a></li>
-              <li><a href="/history" class="footer-nav-link">Timeline</a></li>
-              <li><a href="/tncprivacy" class="footer-nav-link">Contact</a></li>
-              <li><a href="/tncprivacy" class="footer-nav-link">Privacy Policy</a></li>
+              <li><a href="/tncprivacy" class="footer-nav-link">Terms, Privacy &amp; Contact</a></li>
             </ul>
           </nav>
         </div>

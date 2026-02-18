@@ -1,0 +1,20 @@
+{{- /* Reusable page header: logo, title, tagline, optional CTA row, main nav. Pass dict "context" . "title" "..." "tagline" "..." "ctas" (slice of dict "label" "..." "url" "..." "primary" true|false) */ -}}
+{{- $ctx := .context -}}
+{{- $title := .title | default "CodeFryDev" -}}
+{{- $tagline := .tagline | default "CodeFryDev" -}}
+{{- $ctas := .ctas -}}
+<header class="page-header" role="banner">
+  <a href="/" aria-label="CodeFryDev Homepage">
+    <img fetchpriority="high" src="/images/IconCodefrydev.svg" srcset="/images/IconCodefrydev.svg" alt="CodeFryDev logo - Tools, Games, Art, Animation" width="96" height="96">
+  </a>
+  <h1>{{ $title | safeHTML }}</h1>
+  <p class="tagline">{{ $tagline }}</p>
+  {{- if $ctas }}
+  <p class="home-cta-hero">
+    {{- range $ctas }}
+    <a href="{{ .url }}" class="home-cta-{{ if .primary }}primary{{ else }}secondary{{ end }}">{{ .label }}</a>
+    {{- end }}
+  </p>
+  {{- end }}
+  {{ partial "navigation.html" $ctx }}
+</header>

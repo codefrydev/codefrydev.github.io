@@ -1,0 +1,9 @@
+{{- /* Optional: reusable hero CTA row. Pass dict "ctas" (slice of dict "label" "..." "url" "..." "primary" true|false). Used by page-header when "ctas" is set. */ -}}
+{{- /* This partial is for use outside page-header if needed; page-header embeds the same markup when .ctas is provided. */ -}}
+{{- with .ctas }}
+<p class="home-cta-hero">
+  {{- range . }}
+  <a href="{{ .url }}" class="home-cta-{{ if .primary }}primary{{ else }}secondary{{ end }}">{{ .label }}</a>
+  {{- end }}
+</p>
+{{- end }}

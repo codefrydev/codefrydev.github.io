@@ -1,0 +1,13 @@
+{{- if .Site.Data.faq.faqs -}}
+<section class="faq-section" aria-labelledby="faq-heading">
+  <h2 id="faq-heading" class="faq-section-title">Frequently asked questions</h2>
+  <dl class="faq-list">
+    {{- range .Site.Data.faq.faqs -}}
+    <div class="faq-item">
+      <dt class="faq-question">{{ .question }}</dt>
+      <dd class="faq-answer">{{ .answer }}</dd>
+    </div>
+    {{- end -}}
+  </dl>
+</section>
+{{- end -}}

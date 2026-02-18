@@ -238,6 +238,40 @@ body {
     max-width: 100%;
 }
 
+.footer-stats {
+    font-size: 0.875rem;
+    color: var(--text-tertiary);
+    margin: 0.5rem 0 0;
+}
+
+.footer-lead {
+    margin-top: 1.25rem;
+}
+
+.footer-lead-text {
+    font-size: 0.9375rem;
+    color: var(--text-secondary);
+    margin: 0 0 0.5rem 0;
+}
+
+.footer-lead-cta {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    color: var(--link-color);
+    text-decoration: none;
+    border-radius: 0.5rem;
+    transition: color 0.2s ease, background 0.2s ease;
+}
+
+.footer-lead-cta:hover,
+.footer-lead-cta:focus {
+    color: var(--text-primary);
+    outline: 2px solid var(--link-color);
+    outline-offset: 2px;
+}
+
 /* Navigation Section - Right */
 .footer-nav-section {
     display: grid;

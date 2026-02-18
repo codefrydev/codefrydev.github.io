@@ -4,38 +4,38 @@
 <head>
     {{ partial "header.html" . }}
     <meta name="keywords" content="codefrydev team, developers, designers, contributors, about team">
-    <title>Devs and Designers - CodeFryDev | Meet Our Team</title>
     
     <link rel="stylesheet" href="/css/internal.css">
     <style>
         .users-container {
-            max-width: 1200px;
+            max-width: min(1200px, 100%);
             margin: 0 auto;
-            padding: 2rem;
+            padding: clamp(1rem, 4vw, 2rem);
+            box-sizing: border-box;
         }
         
         .users-header {
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: clamp(2rem, 5vw, 3rem);
         }
         
         .users-header h1 {
-            font-size: 2.5rem;
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
             font-weight: 700;
             color: var(--text-primary);
             margin: 1rem 0 0.5rem 0;
         }
         
         .users-header .subtitle {
-            font-size: 1.1rem;
+            font-size: clamp(1rem, 2vw, 1.1rem);
             color: var(--text-tertiary);
             margin: 0;
         }
         
         .users-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr));
+            gap: clamp(1rem, 3vw, 2rem);
             list-style: none;
             padding: 0;
             margin: 0;
@@ -182,7 +182,7 @@
 <body>
     <main>
         <div class="MainButtonParent">
-            <img style="align-items: center;" src="/images/IconCodefrydev.svg" srcset="/images/IconCodefrydev.svg" alt="Codefrydev Logo" height="96px">
+            <img style="align-items: center;" src="/images/IconCodefrydev.svg" srcset="/images/IconCodefrydev.svg" alt="CodeFryDev Logo" width="96" height="96">
         </div>
         
         <div class="users-container">

@@ -18,7 +18,7 @@ ol.cards {
   ol.cards > .card {
     flex: 1 1 calc(33.333% - 2rem); /* Adjust width, considering gap */
     max-width: 300px; /* Ensures cards don't get too wide */
-    min-width: 250px; /* Prevents them from getting too small */
+    min-width: min(250px, 100%); /* Prevents overflow on narrow viewports */
     
     color: var(--text-secondary);
     background-color: var(--bg-card);
@@ -92,7 +92,7 @@ ol.cards {
 ol.cards > .card {
     flex: 1 1 calc(33.333% - 2rem);
     max-width: 300px;
-    min-width: 250px;
+    min-width: min(250px, 100%);
     color: var(--text-secondary);
     background-color: var(--bg-card);
     text-align: center;
