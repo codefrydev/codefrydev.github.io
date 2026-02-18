@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <!-- Soft radial gradients for blob-like nodes -->
+    <radialGradient id="nodeRoot" cx="30%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#64B5F6"/>
+      <stop offset="70%" stop-color="#1E88E5"/>
+      <stop offset="100%" stop-color="#1E88E5" stop-opacity="0.4"/>
+    </radialGradient>
+    <radialGradient id="nodeLeft" cx="30%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#4DD0E1"/>
+      <stop offset="70%" stop-color="#26A69A"/>
+      <stop offset="100%" stop-color="#26A69A" stop-opacity="0.4"/>
+    </radialGradient>
+    <radialGradient id="nodeRight" cx="30%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#FFAB91"/>
+      <stop offset="70%" stop-color="#FF7043"/>
+      <stop offset="100%" stop-color="#FF7043" stop-opacity="0.4"/>
+    </radialGradient>
+    <!-- Soft curved edges: gradient stroke -->
+    <linearGradient id="edgeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#64B5F6"/>
+      <stop offset="50%" stop-color="#26A69A"/>
+      <stop offset="100%" stop-color="#FF7043"/>
+    </linearGradient>
+  </defs>
+  <!-- Curves morph: control points shift for fluid shape change -->
+  <path d="M 256 120 Q 226 165 256 200 M 256 200 Q 185 262 156 320 M 256 200 Q 327 262 356 320"
+        fill="none"
+        stroke="url(#edgeGrad)"
+        stroke-width="28"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        pathLength="100"
+        stroke-dasharray="100"
+        stroke-dashoffset="100">
+    <animate attributeName="d"
+             dur="4s"
+             repeatCount="indefinite"
+             values="M 256 120 Q 226 165 256 200 M 256 200 Q 185 262 156 320 M 256 200 Q 327 262 356 320;
+                     M 256 120 Q 286 165 256 200 M 256 200 Q 185 242 156 320 M 256 200 Q 327 242 356 320;
+                     M 256 120 Q 256 145 256 200 M 256 200 Q 200 278 156 320 M 256 200 Q 312 278 356 320;
+                     M 256 120 Q 226 165 256 200 M 256 200 Q 185 262 156 320 M 256 200 Q 327 262 356 320"
+             keyTimes="0;0.33;0.66;1"/>
+    <animate attributeName="stroke-dashoffset"
+             values="100;0;0;100"
+             keyTimes="0;0.2;0.85;1"
+             dur="3s"
+             repeatCount="indefinite"/>
+  </path>
+  <!-- Nodes morph: gentle position and size shift -->
+  <circle cx="256" cy="120" r="52" fill="url(#nodeRoot)">
+    <animate attributeName="cx" values="256;258;254;256" dur="3.5s" repeatCount="indefinite"/>
+    <animate attributeName="cy" values="120;118;122;120" dur="3.5s" repeatCount="indefinite"/>
+    <animate attributeName="r" values="52;48;56;52" dur="3.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="156" cy="320" r="52" fill="url(#nodeLeft)">
+    <animate attributeName="cx" values="156;154;158;156" dur="3.5s" repeatCount="indefinite" begin="0.15s"/>
+    <animate attributeName="cy" values="320;318;322;320" dur="3.5s" repeatCount="indefinite" begin="0.15s"/>
+    <animate attributeName="r" values="52;48;56;52" dur="3.5s" repeatCount="indefinite" begin="0.15s"/>
+  </circle>
+  <circle cx="356" cy="320" r="52" fill="url(#nodeRight)">
+    <animate attributeName="cx" values="356;358;354;356" dur="3.5s" repeatCount="indefinite" begin="0.3s"/>
+    <animate attributeName="cy" values="320;318;322;320" dur="3.5s" repeatCount="indefinite" begin="0.3s"/>
+    <animate attributeName="r" values="52;48;56;52" dur="3.5s" repeatCount="indefinite" begin="0.3s"/>
+  </circle>
+</svg>

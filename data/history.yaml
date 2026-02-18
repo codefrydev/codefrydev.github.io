@@ -1,4 +1,10 @@
 history:
+  - date: "18 February 2026"
+    title: "DSA Lab"
+    description: "Interactive learning platform to master data structures with visualizations, code examples, and practice problems in multiple languages."
+    link: "/LearnDS/"
+    accent_color: "#1E88E5"
+
   - date: "07 February 2026"
     title: "NodeFlow"
     description: "Visual computing platform—create and connect nodes in a visual editor."

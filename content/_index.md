@@ -10,7 +10,7 @@ Your ultimate destination for **free online tools, games, AI applications, and c
 ## What We Offer
 
 ### 🎨 Creative & Assets
-Explore our extensive collection of creative resources including digital art tools, text utilities, wallpapers, 3D models, and Android assets. Whether you're a designer, developer, or creative enthusiast, find the assets you need to bring your projects to life.
+Explore our extensive collection of creative resources including digital art tools, text utilities, wallpapers, 3D models, Android assets, and DSA Lab for learning data structures. Whether you're a designer, developer, or creative enthusiast, find the assets you need to bring your projects to life.
 
 ### 🛠️ Tools & Utilities
 Boost your productivity with our suite of free online tools. From AI-powered applications and prompt libraries to CSV processors, JSON formatters, meta tag generators, and weather services—we've got the utilities you need for everyday tasks and professional projects.
