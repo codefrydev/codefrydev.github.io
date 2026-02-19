@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none" stroke="#0288D1" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Document outline -->
+  <path d="M 96 64 L 416 64 Q 448 64 448 96 L 448 416 Q 448 448 416 448 L 96 448 Q 64 448 64 416 L 64 96 Q 64 64 96 64 Z" stroke-width="28"/>
+  <!-- Text lines -->
+  <path d="M 112 160 L 336 160 M 112 224 L 288 224 M 112 288 L 320 288 M 112 352 L 256 352" stroke-width="22"/>
+  <!-- Cursor / caret -->
+  <path d="M 200 224 L 200 288" stroke-width="18"/>
+</svg>

@@ -1,5 +1,11 @@
 history:
   - date: "18 February 2026"
+    title: "Text Editor"
+    description: "A simple, browser-based text editor for writing and editing text online—no signup required."
+    link: "/TextEditor/"
+    accent_color: "#5D4037"
+
+  - date: "18 February 2026"
     title: "DSA Lab"
     description: "Interactive learning platform to master data structures with visualizations, code examples, and practice problems in multiple languages."
     link: "/LearnDS/"

@@ -12,7 +12,7 @@ Explore our extensive collection of creative resources including digital art too
 {{< /offer-card >}}
 
 {{< offer-card "Tools & Utilities" "🛠️" >}}
-Boost your productivity with our suite of free online tools. From AI-powered applications and prompt libraries to CSV processors, JSON formatters, meta tag generators, and weather services—we've got the utilities you need for everyday tasks and professional projects.
+Boost your productivity with our suite of free online tools. From AI-powered applications and prompt libraries to text editor, CSV processors, JSON formatters, meta tag generators, and weather services—we've got the utilities you need for everyday tasks and professional projects.
 {{< /offer-card >}}
 
 {{< offer-card "Games & Fun" "🎮" >}}
