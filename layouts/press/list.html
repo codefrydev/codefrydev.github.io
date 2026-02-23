@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
   {{ partial "header.html" . }}
-  <meta name="keywords" content="CodeFryDev press, media kit, press kit, boilerplate, logo, contact">
   {{ with resources.Get "css/home.css" }}
     {{ $minifiedCSS := . | resources.Minify }}
     <link rel="stylesheet" href="{{ $minifiedCSS.RelPermalink }}">

@@ -3,6 +3,8 @@ title: "About us"
 date: 2023-01-01T00:00:00Z
 draft: false
 aliases: ["/about"]
+description: "About CodeFryDev—free online tools, games, and AI apps platform. Our mission, team, and resources for developers and designers. No signup required."
+keywords: ["CodeFryDev", "about us", "free online tools platform", "tools and games"]
 ---
 
 ## About us

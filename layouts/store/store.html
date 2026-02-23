@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
   {{ partial "header.html" . }}
-  <meta name="keywords" content="free mobile apps, android apps, codefrydev apps, productivity apps, play store apps, android applications, mobile games">
-  
+
   {{ with resources.Get "css/home.css" }}
     {{ $minifiedCSS := . | resources.Minify }}
     <link rel="stylesheet" href="{{ $minifiedCSS.RelPermalink }}">

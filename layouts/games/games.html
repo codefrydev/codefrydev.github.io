@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
   {{ partial "header.html" . }}
-  <meta name="keywords" content="free online games, browser games, web games, chain reaction game, wordle game, snake game, puzzle games, codefrydev games">
-  
+
   {{ with resources.Get "css/home.css" }}
     {{ $minifiedCSS := . | resources.Minify }}
     <link rel="stylesheet" href="{{ $minifiedCSS.RelPermalink }}">

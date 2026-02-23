@@ -23,6 +23,8 @@
   {{- $pageTitle = "History - CodeFryDev | Timeline & Milestones" -}}
 {{- else if eq .Section "press" -}}
   {{- $pageTitle = "Press & Media - CodeFryDev | Press Kit & Contact" -}}
+{{- else if eq .Section "store" -}}
+  {{- $pageTitle = "Free Mobile Apps | CodeFryDev Store" -}}
 {{- else if strings.HasSuffix .RelPermalink "/about/users/" -}}
   {{- $pageTitle = "Devs and Designers - CodeFryDev | Meet Our Team" -}}
 {{- else if ne .Title "" -}}

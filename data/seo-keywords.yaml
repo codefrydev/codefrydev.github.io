@@ -1,0 +1,73 @@
+# Target keywords per section for on-page SEO (titles, descriptions, meta keywords).
+# Primary: 1 main phrase for title/description; secondary: 2-3 for meta and content.
+
+home:
+  primary:
+    - "free online tools"
+    - "free AI tools"
+  secondary:
+    - "free games no signup"
+    - "web-based utilities"
+    - "free productivity apps"
+
+ai:
+  primary:
+    - "free AI tools"
+    - "AI-powered utilities"
+  secondary:
+    - "AI meme generator"
+    - "website summarizer"
+    - "free AI generator no signup"
+
+games:
+  primary:
+    - "free online games"
+    - "browser games"
+  secondary:
+    - "Wordle"
+    - "Snake game"
+    - "Chain Reaction game"
+    - "play free games no download"
+
+designlab:
+  primary:
+    - "free design tools"
+    - "creative resources"
+  secondary:
+    - "design lab"
+    - "music visualization"
+    - "web-based design tools"
+
+store:
+  primary:
+    - "free mobile apps"
+    - "CodeFryDev apps"
+  secondary:
+    - "Android apps"
+    - "Play Store"
+    - "productivity apps"
+
+about_us:
+  primary:
+    - "CodeFryDev"
+    - "free online tools platform"
+  secondary:
+    - "about us"
+    - "tools and games"
+
+history:
+  primary:
+    - "CodeFryDev history"
+    - "timeline"
+  secondary:
+    - "milestones"
+    - "updates"
+
+press:
+  primary:
+    - "CodeFryDev press"
+    - "press kit"
+  secondary:
+    - "media kit"
+    - "logo"
+    - "contact"

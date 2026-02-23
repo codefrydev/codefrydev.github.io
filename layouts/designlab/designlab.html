@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
   {{ partial "header.html" . }}
-  <meta name="keywords" content="free design tools, creative resources, design lab, 3D visualizations, music visualization tools, design utilities, artistic applications, web-based design tools, codefrydev design">
-  
+
   {{ with resources.Get "css/home.css" }}
     {{ $minifiedCSS := . | resources.Minify }}
     <link rel="stylesheet" href="{{ $minifiedCSS.RelPermalink }}">

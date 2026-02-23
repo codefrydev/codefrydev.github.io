@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     {{ partial "header.html" . }}
-    <meta name="keywords" content="codefrydev history, timeline, milestones, updates, company history">
     {{ with resources.Get "css/home.css" }}
       {{ $minifiedCSS := . | resources.Minify }}
       <link rel="stylesheet" href="{{ $minifiedCSS.RelPermalink }}">
@@ -14,6 +13,11 @@
   {{ partial "skip-link.html" . }}
   {{ partial "page-header.html" . }}
   <main id="main-content" class="page-history" role="main">
+    {{- if .Content }}
+    <section class="home-intro" aria-label="Introduction">
+      <div class="home-intro-content">{{ .Content }}</div>
+    </section>
+    {{- end }}
         <ul class="history-timeline" role="list">
             {{ range .Site.Data.history.history }}
                 <li style="--accent-color:{{ .accent_color }}" role="listitem">

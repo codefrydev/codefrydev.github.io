@@ -2,6 +2,8 @@
 title: "Press & Media"
 date: 2025-02-23T00:00:00Z
 draft: false
+description: "CodeFryDev press and media kit—logo, boilerplate, contact. Free online tools, games, and AI apps platform. Media inquiries welcome."
+keywords: ["CodeFryDev press", "media kit", "press kit", "logo", "contact"]
 ---
 
 ## Boilerplate
