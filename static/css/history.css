@@ -1,64 +1,66 @@
+/* History timeline – scoped so body/main layout from internal.css and home.css is preserved */
 
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* Mobile: prevent timeline line and circles from being clipped by main */
+@media (max-width: 767px) {
+  #main-content.page-history {
+    padding-inline: 1.5rem;
+    overflow-x: visible;
+  }
+  .history-timeline {
+    --col-gap: 1.25rem;
+    min-width: 0;
+  }
+  .history-timeline li {
+    --inlineP: 1rem;
+  }
 }
 
-body {
-  min-height: 100vh;
-  display: grid;
-  align-content: center;
-  gap: 2rem;
-  padding: 2rem;
-  font-family: "Poppins", sans-serif;
-  color: var(--text-primary);
-  background: var(--bg-primary);
-}
-
-h1 {
-  text-align: center;
-}
-
-ul {
+.history-timeline {
   --col-gap: 2rem;
   --row-gap: 2rem;
   --line-w: 0.25rem;
+  position: relative;
   display: grid;
   grid-template-columns: var(--line-w) 1fr;
   grid-auto-columns: max-content;
   column-gap: var(--col-gap);
   list-style: none;
-  width: min(60rem, 90%);
+  width: min(60rem, 100%);
+  max-width: 100%;
   margin-inline: auto;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* line */
-ul::before {
+/* line – full height via absolute positioning so it connects all circles */
+.history-timeline::before {
   content: "";
-  grid-column: 1;
-  grid-row: 1 / span 20;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: calc(var(--line-w) / 2);
+  width: var(--line-w);
+  margin-left: calc(-1 * var(--line-w) / 2);
   background: var(--timeline-line);
   border-radius: calc(var(--line-w) / 2);
+  z-index: 0;
 }
 
-/* columns*/
-
 /* row gaps */
-ul li:not(:last-child) {
+.history-timeline li:not(:last-child) {
   margin-bottom: var(--row-gap);
 }
 
 /* card */
-ul li {
+.history-timeline li {
   grid-column: 2;
   --inlineP: 1.5rem;
   margin-inline: var(--inlineP);
   grid-row: span 2;
   display: grid;
   grid-template-rows: min-content min-content min-content;
+  position: relative;
+  z-index: 1;
 }
 
 /* history item link */
@@ -78,7 +80,7 @@ ul li {
 }
 
 /* date */
-ul li .date {
+.history-timeline li .date {
   --dateH: 3rem;
   height: var(--dateH);
   margin-inline: calc(var(--inlineP) * -1);
@@ -98,7 +100,7 @@ ul li .date {
 }
 
 /* date flap */
-ul li .date::before {
+.history-timeline li .date::before {
   content: "";
   width: var(--inlineP);
   aspect-ratio: 1;
@@ -112,7 +114,7 @@ ul li .date::before {
 }
 
   /* circle */
-ul li .date::after {
+.history-timeline li .date::after {
   content: "";
   position: absolute;
   width: 2rem;
@@ -127,26 +129,26 @@ ul li .date::after {
 }
 
 /* title descr */
-ul li .title,
-ul li .descr {
+.history-timeline li .title,
+.history-timeline li .descr {
   background: var(--bg-primary);
   position: relative;
   padding-inline: 1.5rem;
 }
-ul li .title {
+.history-timeline li .title {
   overflow: hidden;
   padding-block-start: 1.5rem;
   padding-block-end: 1rem;
   font-weight: 500;
 }
-ul li .descr {
+.history-timeline li .descr {
   padding-block-end: 1.5rem;
   font-weight: 300;
 }
 
 /* shadows */
-ul li .title::before,
-ul li .descr::before {
+.history-timeline li .title::before,
+.history-timeline li .descr::before {
   content: "";
   position: absolute;
   width: 90%;
@@ -157,44 +159,46 @@ ul li .descr::before {
   filter: blur(4px);
   transform: translate(-50%, 50%);
 }
-ul li .title::before {
+.history-timeline li .title::before {
   bottom: calc(100% + 0.125rem);
 }
 
-ul li .descr::before {
+.history-timeline li .descr::before {
   z-index: -1;
   bottom: 0.25rem;
 }
 
 @media (min-width: 768px) {
-  ul {
+  .history-timeline {
     grid-template-columns: 1fr var(--line-w) 1fr;
   }
-  ul::before {
-    grid-column: 2;
+  /* center line in middle column */
+  .history-timeline::before {
+    left: 50%;
+    margin-left: calc(-1 * var(--line-w) / 2);
   }
-  ul li:nth-child(odd) {
+  .history-timeline li:nth-child(odd) {
     grid-column: 1;
   }
-  ul li:nth-child(even) {
+  .history-timeline li:nth-child(even) {
     grid-column: 3;
   }
 
   /* start second card */
-  ul li:nth-child(2) {
+  .history-timeline li:nth-child(2) {
     grid-row: 2/4;
   }
 
-  ul li:nth-child(odd) .date::before {
+  .history-timeline li:nth-child(odd) .date::before {
     clip-path: polygon(0 0, 100% 0, 100% 100%);
     left: 0;
   }
 
-  ul li:nth-child(odd) .date::after {
+  .history-timeline li:nth-child(odd) .date::after {
     transform: translate(-50%, -50%);
     left: calc(100% + var(--col-gap) + var(--line-w) / 2);
   }
-  ul li:nth-child(odd) .date {
+  .history-timeline li:nth-child(odd) .date {
     border-radius: 0 calc(var(--dateH) / 2) calc(var(--dateH) / 2) 0;
   }
 }

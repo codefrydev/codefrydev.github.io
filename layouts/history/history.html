@@ -13,8 +13,8 @@
 <body>
   {{ partial "skip-link.html" . }}
   {{ partial "page-header.html" . }}
-  <main id="main-content" role="main">
-        <ul role="list">
+  <main id="main-content" class="page-history" role="main">
+        <ul class="history-timeline" role="list">
             {{ range .Site.Data.history.history }}
                 <li style="--accent-color:{{ .accent_color }}" role="listitem">
                     <a href="{{ .link }}" aria-label="History item: {{ .title }}" class="history-item-link">
