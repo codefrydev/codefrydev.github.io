@@ -1,4 +1,10 @@
 history:
+  - date: "23 February 2026"
+    title: "Git Commit Generator"
+    description: "Forge commit history by generating commands with custom timestamps."
+    link: "/git/"
+    accent_color: "#F05032"
+
   - date: "18 February 2026"
     title: "Text Editor"
     description: "A simple, browser-based text editor for writing and editing text online—no signup required."
