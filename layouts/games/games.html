@@ -15,7 +15,7 @@
 <body>
   {{ partial "skip-link.html" . }}
 
-  {{ partial "page-header.html" (dict "context" . "title" "Free online games—play in your browser" "tagline" "CodeFryDev") }}
+  {{ partial "page-header.html" . }}
 
   <main id="main-content" role="main">
     {{ partial "search.html" (dict "containerClass" "search-container" "placeholder" "Search for games, puzzles, and fun activities..." "autofocus" false "Site" .Site "Scratch" .Scratch) }}

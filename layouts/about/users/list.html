@@ -5,6 +5,10 @@
     {{ partial "header.html" . }}
     <meta name="keywords" content="codefrydev team, developers, designers, contributors, about team">
     
+    {{ with resources.Get "css/home.css" }}
+      {{ $minifiedCSS := . | resources.Minify }}
+      <link rel="stylesheet" href="{{ $minifiedCSS.RelPermalink }}">
+    {{ end }}
     <link rel="stylesheet" href="/css/internal.css">
     <style>
         .users-container {
@@ -180,17 +184,14 @@
 </head>
 
 <body>
-    <main>
-        <div class="MainButtonParent">
-            <img style="align-items: center;" src="/images/IconCodefrydev.svg" srcset="/images/IconCodefrydev.svg" alt="CodeFryDev Logo" width="96" height="96">
-        </div>
-        
+  {{ partial "skip-link.html" . }}
+  {{ partial "page-header.html" . }}
+  <main id="main-content" role="main">
         <div class="users-container">
             <div class="users-header">
                 <h1>{{ .Title }}</h1>
                 <p class="subtitle">Meet the talented folks who contribute to this project</p>
             </div>
-            
             <ol class="users-grid">
                 {{ range sort .Pages "Weight" }}
                 <li class="member-card-wrapper">

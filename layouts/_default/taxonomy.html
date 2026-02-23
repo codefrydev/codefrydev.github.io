@@ -1,22 +1,30 @@
-{{ define "main" }}
-  <main class="main-content">
-    <header class="page-header">
-       {{/* This shows the title, like "All Tags" */}}
-      <h1>{{ .Title }}</h1>
-    </header>
-
-    {{/* This creates a simple list */}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{ partial "header.html" . }}
+    {{ with resources.Get "css/home.css" }}
+      {{ $minifiedCSS := . | resources.Minify }}
+      <link rel="stylesheet" href="{{ $minifiedCSS.RelPermalink }}">
+    {{ end }}
+    <link rel="stylesheet" href="/css/internal.css">
+</head>
+<body>
+  {{ partial "skip-link.html" . }}
+  {{ partial "page-header.html" . }}
+  <main id="main-content" role="main">
+    <h1>{{ .Title }}</h1>
     <ul>
-      {{/* This loops through all the available tags or categories */}}
       {{ range .Data.Terms.ByCount }}
         <li>
           <a href="{{ .Page.Permalink }}">
             {{ .Page.Title }}
-            {{/* This shows how many posts have that tag */}}
             <span>({{ .Count }})</span>
           </a>
         </li>
       {{ end }}
     </ul>
   </main>
-{{ end }}
+  {{ partial "footer.html" . }}
+  <script src="/js/theme.js"></script>
+</body>
+</html>

@@ -13,9 +13,7 @@
 </head>
 <body>
   {{ partial "skip-link.html" . }}
-
-  {{- $homeTitle := `CodeFryDev<sup style="font-size: small; font-weight: bold;"> Alpha</sup>` -}}
-  {{ partial "page-header.html" (dict "context" . "title" $homeTitle "tagline" "Tools, Games, Art, Animation" "ctas" (slice (dict "label" "Browse AI tools" "url" "/ai" "primary" true) (dict "label" "Games" "url" "/games" "primary" false) (dict "label" "Design lab" "url" "/designlab" "primary" false))) }}
+  {{ partial "page-header.html" . }}
 
   <main id="main-content" role="main">
     {{ partial "search.html" (dict "containerClass" "search-container" "placeholder" "Search for tools, games, AI apps, design resources..." "autofocus" false "Site" .Site "Scratch" .Scratch) }}

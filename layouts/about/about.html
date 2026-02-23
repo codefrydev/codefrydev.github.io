@@ -4,6 +4,10 @@
     {{ partial "header.html" . }} 
     <meta name="keywords" content="about codefrydev, codefrydev team, digital tools, web development, mobile apps, games, tutorials">
     
+    {{ with resources.Get "css/home.css" }}
+      {{ $minifiedCSS := . | resources.Minify }}
+      <link rel="stylesheet" href="{{ $minifiedCSS.RelPermalink }}">
+    {{ end }}
     <link rel="stylesheet" href="/css/internal.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -318,13 +322,8 @@
 </head>
 <body>
   {{ partial "skip-link.html" . }}
-    <main id="main-content" role="main">
-        <div class="MainButtonParent">
-            <a href="/" aria-label="CodeFryDev Homepage">
-                <img style="align-items: center;" src="/images/IconCodefrydev.svg" srcset="/images/IconCodefrydev.svg" alt="CodeFryDev logo" height="96" width="96">
-            </a>
-        </div>
-        
+  {{ partial "page-header.html" . }}
+  <main id="main-content" role="main">
         <div class="about-container">
             <div class="about-header">
                 <h1>About CodeFryDev</h1>

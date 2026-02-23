@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> 
+<head>
     {{ partial "header.html" . }}
     <meta name="keywords" content="codefrydev history, timeline, milestones, updates, company history">
+    {{ with resources.Get "css/home.css" }}
+      {{ $minifiedCSS := . | resources.Minify }}
+      <link rel="stylesheet" href="{{ $minifiedCSS.RelPermalink }}">
+    {{ end }}
     <link rel="stylesheet" href="/css/history.css">
     <link rel="stylesheet" href="/css/internal.css">
 </head>
 <body>
   {{ partial "skip-link.html" . }}
-    <header role="banner"> 
-        <h1><a href="/" aria-label="Return to homepage">History</a></h1>
-    </header>
-    <main id="main-content" role="main">
+  {{ partial "page-header.html" . }}
+  <main id="main-content" role="main">
         <ul role="list">
             {{ range .Site.Data.history.history }}
                 <li style="--accent-color:{{ .accent_color }}" role="listitem">

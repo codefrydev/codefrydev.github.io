@@ -15,7 +15,7 @@
 <body>
   {{ partial "skip-link.html" . }}
 
-  {{ partial "page-header.html" (dict "context" . "title" "Free AI tools &amp; generators" "tagline" "CodeFryDev") }}
+  {{ partial "page-header.html" . }}
 
   <main id="main-content" role="main">
     {{ partial "search.html" (dict "containerClass" "search-container" "placeholder" "Search for AI tools, generators, and utilities..." "autofocus" false "Site" .Site "Scratch" .Scratch) }}
