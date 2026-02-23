@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {{ partial "header.html" . }}
+  <meta name="keywords" content="CodeFryDev press, media kit, press kit, boilerplate, logo, contact">
+  {{ with resources.Get "css/home.css" }}
+    {{ $minifiedCSS := . | resources.Minify }}
+    <link rel="stylesheet" href="{{ $minifiedCSS.RelPermalink }}">
+  {{ end }}
+  <link rel="stylesheet" href="/css/internal.css">
+  <style>
+    .press-container { max-width: min(900px, 100%); margin: 0 auto; padding: clamp(1rem, 4vw, 2rem); box-sizing: border-box; }
+    .press-header { text-align: center; margin-bottom: clamp(2rem, 5vw, 3rem); }
+    .press-header h1 { font-size: clamp(1.75rem, 5vw, 3rem); font-weight: 700; color: var(--text-primary); margin: 1rem 0 0.75rem 0; letter-spacing: -0.5px; }
+    .press-content { background: var(--bg-primary); padding: clamp(1.5rem, 4vw, 3rem); border-radius: 24px; margin-bottom: 2rem; box-shadow: inset 8px 8px 16px var(--shadow-dark), inset -8px -8px 16px var(--shadow-light); }
+    .press-content h2 { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 700; color: var(--text-primary); margin: 0 0 1rem 0; }
+    .press-content p, .press-content ul { font-size: clamp(1rem, 1.5vw, 1.15rem); line-height: 1.9; color: var(--text-secondary); margin: 0 0 1.5rem 0; }
+    .press-content a { color: var(--link-color, #0a7ea4); }
+    .press-content ul { padding-left: 1.5rem; }
+  </style>
+</head>
+<body>
+  {{ partial "skip-link.html" . }}
+  {{ partial "page-header.html" . }}
+  <main id="main-content" role="main">
+    <div class="press-container">
+      <div class="press-header">
+        <h1>Press &amp; Media</h1>
+      </div>
+      <div class="press-content">
+        {{ .Content }}
+      </div>
+    </div>
+  </main>
+  {{ partial "footer.html" . }}
+  <script src="/js/theme.js"></script>
+</body>
+</html>

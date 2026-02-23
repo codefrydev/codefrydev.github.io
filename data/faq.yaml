@@ -20,6 +20,9 @@ faqs:
   - question: "How can I contact CodeFryDev for support?"
     answer: "You can reach us through our about page or contact us via the information provided on our website. We're committed to providing excellent support for all our users."
   
+  - question: "Where can I read your terms and privacy policy and find contact details?"
+    answer: "Our Terms of Use, Privacy Policy, and contact information are on our Terms, Privacy & Contact page—you can find the link in the site footer under Resources."
+  
   - question: "Is my data secure when using CodeFryDev tools?"
     answer: "Yes, we take data security seriously. Most of our tools process data locally in your browser, and we follow best practices for data protection. Please review our privacy policy for detailed information."
   

@@ -47,6 +47,12 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>{{ $baseURL }}press/</loc>
+    <lastmod>{{ $currentDate }}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 {{- /* Search page excluded from sitemap (noindex) */ -}}
 {{- /* Add LLM documentation files */ -}}
   <url>

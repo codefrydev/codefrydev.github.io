@@ -1,7 +1,7 @@
 baseURL = 'https://codefrydev.in/'
 languageCode = 'en-US'
 defaultContentLanguage = 'en'
-title = 'Code Fry Dev'
+title = 'CodeFryDev'
 
 [outputs]
   home = ["HTML", "RSS"]

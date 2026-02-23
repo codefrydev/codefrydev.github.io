@@ -21,6 +21,8 @@
   {{- $pageTitle = "Search - CodeFryDev | Find Tools, Games & Apps" -}}
 {{- else if eq .Section "history" -}}
   {{- $pageTitle = "History - CodeFryDev | Timeline & Milestones" -}}
+{{- else if eq .Section "press" -}}
+  {{- $pageTitle = "Press & Media - CodeFryDev | Press Kit & Contact" -}}
 {{- else if strings.HasSuffix .RelPermalink "/about/users/" -}}
   {{- $pageTitle = "Devs and Designers - CodeFryDev | Meet Our Team" -}}
 {{- else if ne .Title "" -}}

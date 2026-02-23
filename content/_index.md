@@ -1,5 +1,5 @@
 ---
-title: "Code Fry Dev"
+title: "CodeFryDev"
 date: 2023-01-01T00:00:00Z
 ---
 
@@ -34,6 +34,8 @@ Unleash your creativity with our design tools and resources. Access professional
 - **No Installation**: Everything runs in your web browser
 - **Regular Updates**: We continuously add new tools and features
 - **Privacy-Focused**: Your data stays private and secure
+
+Our growing collection is used by developers, designers, and educators worldwide.
 
 ## Get Started
 
