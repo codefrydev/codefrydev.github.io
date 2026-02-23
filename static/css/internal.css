@@ -1,4 +1,8 @@
 /* General Body and Heading Styles */
+html {
+    overflow-x: hidden; /* Prevent horizontal overflow on search and other pages */
+}
+
 body {
     background-color: var(--bg-primary);
     padding: 2rem;
