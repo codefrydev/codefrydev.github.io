@@ -41,6 +41,7 @@ title = 'CodeFryDev'
 
 [languages]
   [languages.en]
+    languageCode = "en-US"
     languageName = "English"
     weight = 1
     contentDir = "content"
