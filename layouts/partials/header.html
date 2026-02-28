@@ -59,6 +59,11 @@
 <meta name="robots" content="{{ $robots }}">
 <link rel="canonical" href="{{ .Permalink | absURL }}">
 
+{{- /* Language and locale (BCP 47); single source for og:locale and hreflang */ -}}
+{{- $localeRaw := .Site.Language.LanguageCode | default .Site.LanguageCode | default "en-US" -}}
+{{- $localeNorm := $localeRaw | replace "_" "-" -}}
+{{- $locale := cond (or (not $localeNorm) (lt (len $localeNorm) 2)) "en-US" $localeNorm -}}
+
 {{- /* Open Graph meta tags */ -}}
 {{- $ogTitle := $pageTitle -}}
 {{- $ogDescription := $description -}}
@@ -90,7 +95,7 @@
 <meta property="og:url" content="{{ .Permalink | absURL }}">
 <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
 <meta property="og:site_name" content="{{ .Site.Title }}">
-<meta property="og:locale" content="{{ .Site.LanguageCode | default "en-US" | replace "_" "-" }}">
+<meta property="og:locale" content="{{ $locale }}">
 
 {{- /* Twitter Card meta tags */ -}}
 <meta name="twitter:card" content="summary_large_image">
@@ -111,8 +116,7 @@
 <meta name="msapplication-TileColor" content="#e5e9f4">
 <meta name="theme-color" content="#e5e9f4">
 
-{{- /* Language and locale (BCP 47); single-language site */ -}}
-{{- $locale := .Site.LanguageCode | default "en-US" | replace "_" "-" -}}
+{{- /* Language meta and hreflang (use $locale from top of head) */ -}}
 <meta name="language" content="{{ $locale }}">
 <link rel="alternate" hreflang="{{ $locale }}" href="{{ .Permalink | absURL }}">
 <link rel="alternate" hreflang="x-default" href="{{ .Permalink | absURL }}">
