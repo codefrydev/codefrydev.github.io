@@ -1,4 +1,10 @@
 history:
+  - date: "01 March 2026"
+    title: "Overdose"
+    description: "Simple and easy to play using Mouse only. Overcolored platformer ragdoll based games"
+    link: "/Overdose"
+    accent_color: "#ff0033"
+
   - date: "23 February 2026"
     title: "Git Commit Generator"
     description: "Forge commit history by generating commands with custom timestamps."
@@ -286,7 +292,7 @@ history:
     description: "An app to help you track your habits and stay consistent."
     link: "/projects/Challenge/Index.html"
     accent_color: "#5C6BC0"
-    
+
   - date: "01 March 2024"
     title: "Crispy Launch, Dinner 🍻"
     description: "The very first version of the website was launched."

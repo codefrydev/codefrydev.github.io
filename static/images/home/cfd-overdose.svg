@@ -1,0 +1,23 @@
+<svg width="600" height="200" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="#0f0f0f"/>
+
+  <!-- Text -->
+  <text x="50%" y="55%" text-anchor="middle"
+        font-family="Arial Black, Impact, sans-serif"
+        font-size="72"
+        fill="white"
+        letter-spacing="4">
+    OVERDOSE
+  </text>
+
+  <!-- Pulse line through text -->
+  <polyline points="80,110 150,110 170,80 190,140 210,90 230,110 520,110"
+            fill="none"
+            stroke="#ff0033"
+            stroke-width="6"
+            stroke-linejoin="round"
+            stroke-linecap="round"/>
+
+</svg>

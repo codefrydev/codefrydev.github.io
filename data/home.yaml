@@ -83,12 +83,14 @@ categories:
         icon: "cfd-git"
         url: "/git/"
 
-
   - name: "Games & Fun"
     items:
       - name: "Game"
         icon: "cfd-games"
         url: "/games"
+      - name: "Overdose"
+        icon: "cfd-overdose"
+        url: "/Overdose"
       - name: "WordDice"
         icon: "cfd-worddice"
         url: "https://worddice.codefrydev.in/"
