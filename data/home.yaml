@@ -48,7 +48,7 @@ categories:
         url: "/PromptsValut/"
       - name: "BSOD"
         icon: "cfd-bsod"
-        url: "https://bluescreenofdeath.codefrydev.in/"
+        url: "/bluescreenofdeath/"
       - name: "CSV"
         icon: "cfd-csv"
         url: "/CSV/"
