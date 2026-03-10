@@ -118,6 +118,18 @@ categories:
       - name: "2048"
         icon: "cfd-games"
         url: "/2048/"
+      - name: "Archery"
+        icon: "cfd-games"
+        url: "/Archery/"
+      - name: "Ludo"
+        icon: "cfd-games"
+        url: "/Ludo/"
+      - name: "Billiards"
+        icon: "cfd-games"
+        url: "/Billiards/"
+      - name: "Carrom"
+        icon: "cfd-games"
+        url: "/Carrom/"
   # Category for site-wide information, policies, and external links
   - name: "Site & External Links"
     items:
