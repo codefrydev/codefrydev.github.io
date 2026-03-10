@@ -109,6 +109,15 @@ categories:
       - name: "Challenge"
         icon: "cfd-challenge"
         url: "/Challenge/"
+      - name: "Dot Box"
+        icon: "cfd-games"
+        url: "/DotsAndBox/"
+      - name: "TTT"
+        icon: "cfd-games"
+        url: "/TicTacToe/"
+      - name: "2048"
+        icon: "cfd-games"
+        url: "/2048/"
   # Category for site-wide information, policies, and external links
   - name: "Site & External Links"
     items:
