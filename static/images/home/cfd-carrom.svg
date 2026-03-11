@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" width="240" height="240">
+
+<style>
+.coin{
+  animation:pulse 2.5s infinite ease-in-out;
+}
+
+.striker{
+  animation:slide 3s infinite ease-in-out;
+}
+
+.white{fill:#f5f5f5;}
+.black{fill:#2c3e50;}
+.red{fill:#e74c3c;}
+
+@keyframes pulse{
+  0%,100%{transform:scale(1);}
+  50%{transform:scale(1.08);}
+}
+
+@keyframes slide{
+  0%,100%{transform:translateX(0);}
+  50%{transform:translateX(10px);}
+}
+</style>
+
+<defs>
+  <linearGradient id="board" x1="0" x2="1" y1="0" y2="1">
+    <stop offset="0%" stop-color="#f7d794"/>
+    <stop offset="100%" stop-color="#f3a683"/>
+  </linearGradient>
+</defs>
+
+<!-- board -->
+<rect x="10" y="10" width="200" height="200" rx="18" fill="url(#board)" stroke="#8b5a2b" stroke-width="6"/>
+
+<!-- center circle -->
+<circle cx="110" cy="110" r="40" fill="none" stroke="#8b5a2b" stroke-width="3"/>
+
+<!-- queen -->
+<circle class="coin red" cx="110" cy="110" r="10"/>
+
+<!-- white coins -->
+<circle class="coin white" cx="85" cy="110" r="8"/>
+<circle class="coin white" cx="135" cy="110" r="8"/>
+
+<!-- black coins -->
+<circle class="coin black" cx="110" cy="85" r="8"/>
+<circle class="coin black" cx="110" cy="135" r="8"/>
+
+<!-- striker -->
+<circle class="striker white" cx="110" cy="175" r="12" stroke="#333" stroke-width="2"/>
+
+</svg>

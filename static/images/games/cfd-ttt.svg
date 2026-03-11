@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="240" height="240">
+
+<style>
+.grid line{
+  stroke:#ffffff;
+  stroke-width:6;
+  stroke-linecap:round;
+  opacity:0;
+  animation:gridFade 1.5s forwards;
+}
+
+.x line{
+  stroke:#ffffff;
+  stroke-width:6;
+  stroke-linecap:round;
+  stroke-dasharray:40;
+  stroke-dashoffset:40;
+  animation:drawX 1.5s ease forwards;
+}
+
+.o{
+  fill:none;
+  stroke:#ffffff;
+  stroke-width:6;
+  stroke-dasharray:100;
+  stroke-dashoffset:100;
+  animation:drawO 1.5s ease forwards, spin 6s linear infinite;
+}
+
+@keyframes gridFade{
+  to{opacity:1;}
+}
+
+@keyframes drawX{
+  to{stroke-dashoffset:0;}
+}
+
+@keyframes drawO{
+  to{stroke-dashoffset:0;}
+}
+
+@keyframes spin{
+  from{transform:rotate(0deg); transform-origin:80px 80px;}
+  to{transform:rotate(360deg); transform-origin:80px 80px;}
+}
+</style>
+
+<defs>
+  <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+    <stop offset="0%" stop-color="#00D9A5"/>
+    <stop offset="100%" stop-color="#8B5CF6"/>
+  </linearGradient>
+</defs>
+
+<!-- background -->
+<rect x="5" y="5" width="150" height="150" rx="28" fill="url(#bg)"/>
+
+<!-- grid -->
+<g class="grid">
+  <line x1="55" y1="25" x2="55" y2="135"/>
+  <line x1="105" y1="25" x2="105" y2="135"/>
+  <line x1="25" y1="55" x2="135" y2="55"/>
+  <line x1="25" y1="105" x2="135" y2="105"/>
+</g>
+
+<!-- X -->
+<g class="x">
+  <line x1="30" y1="30" x2="50" y2="50"/>
+  <line x1="50" y1="30" x2="30" y2="50"/>
+</g>
+
+<!-- O -->
+<circle class="o" cx="110" cy="110" r="12"/>
+
+</svg>

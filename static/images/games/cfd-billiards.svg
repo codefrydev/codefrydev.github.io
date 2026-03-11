@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" width="240" height="240">
+
+<style>
+.ball{
+  transform-origin:center;
+}
+
+.cueball{
+  animation:shot 3s infinite ease-in-out;
+}
+
+@keyframes shot{
+  0%,100%{transform:translateX(0);}
+  50%{transform:translateX(25px);}
+}
+</style>
+
+<defs>
+  <linearGradient id="table" x1="0" x2="1" y1="0" y2="1">
+    <stop offset="0%" stop-color="#0f9b0f"/>
+    <stop offset="100%" stop-color="#006400"/>
+  </linearGradient>
+</defs>
+
+<!-- table -->
+<rect x="10" y="10" width="200" height="200" rx="18" fill="url(#table)" stroke="#4e342e" stroke-width="8"/>
+
+<!-- 8 ball -->
+<circle class="ball" cx="150" cy="110" r="16" fill="#111"/>
+<circle cx="150" cy="110" r="7" fill="#ffffff"/>
+<text x="150" y="113" font-size="8" text-anchor="middle" fill="#000" font-family="Arial">8</text>
+
+<!-- cue ball -->
+<circle class="ball cueball" cx="80" cy="110" r="14" fill="#ffffff" stroke="#ccc" stroke-width="2"/>
+
+<!-- cue stick -->
+<line x1="30" y1="110" x2="70" y2="110" stroke="#c69c6d" stroke-width="6" stroke-linecap="round"/>
+
+</svg>
