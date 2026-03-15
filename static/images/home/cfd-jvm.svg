@@ -1,0 +1,47 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+
+  <style>
+    .node { fill:#4f46e5; }
+    .json { fill:#10b981; }
+    .line { stroke:#64748b; stroke-width:2; }
+    .pulse {
+      stroke-dasharray:6 6;
+      animation: flow 2s linear infinite;
+    }
+
+    @keyframes flow {
+      from { stroke-dashoffset:0; }
+      to { stroke-dashoffset:-12; }
+    }
+
+    text {
+      font-family: monospace;
+      font-size:12px;
+      fill:#1e293b;
+    }
+  </style>
+
+  <!-- JSON block -->
+  <rect x="20" y="60" width="60" height="80" rx="10" class="json"/>
+  <text x="35" y="105">{ }</text>
+
+  <!-- mapper nodes -->
+  <circle cx="120" cy="60" r="10" class="node"/>
+  <circle cx="120" cy="100" r="10" class="node"/>
+  <circle cx="120" cy="140" r="10" class="node"/>
+
+  <!-- output nodes -->
+  <rect x="160" y="45" width="20" height="20" rx="4" fill="#f59e0b"/>
+  <rect x="160" y="85" width="20" height="20" rx="4" fill="#f59e0b"/>
+  <rect x="160" y="125" width="20" height="20" rx="4" fill="#f59e0b"/>
+
+  <!-- connections -->
+  <line x1="80" y1="80" x2="110" y2="60" class="line pulse"/>
+  <line x1="80" y1="100" x2="110" y2="100" class="line pulse"/>
+  <line x1="80" y1="120" x2="110" y2="140" class="line pulse"/>
+
+  <line x1="130" y1="60" x2="160" y2="55" class="line"/>
+  <line x1="130" y1="100" x2="160" y2="95" class="line"/>
+  <line x1="130" y1="140" x2="160" y2="135" class="line"/>
+
+</svg>

@@ -1,5 +1,10 @@
 history:
   - date: "15 March 2026"
+    title: "Json Visual Mapper Experiment"
+    description: "Playing with json mapper where there is input json data output json date and the visual mapping relationship using interactive ui"
+    link: "/VisualMapper/"
+    accent_color: "#ff0055"
+  - date: "15 March 2026"
     title: "PI"
     description: "Just Pi Day Application"
     link: "/PI/"
