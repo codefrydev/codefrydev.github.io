@@ -1,4 +1,9 @@
 history:
+  - date: "16 March 2026"
+    title: "Website Profiling"
+    description: "A simple python based tools to analyse website SEO , Performace , Webvitals ....."
+    link: "/WebsiteProfiling/"
+    accent_color: "#ff0055"
   - date: "15 March 2026"
     title: "Json Visual Mapper Experiment"
     description: "Playing with json mapper where there is input json data output json date and the visual mapping relationship using interactive ui"
