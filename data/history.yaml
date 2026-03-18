@@ -1,4 +1,9 @@
 history:
+  - date: "18 March 2026"
+    title: "DSA Animaiton Hard Ways"
+    description: "See Step by step How flow Is happening in datastructure"
+    link: "/AnimateDatastructure/"
+    accent_color: "#ff0055"
   - date: "16 March 2026"
     title: "Sql Practice"
     description: "Practice Sql On Browser"

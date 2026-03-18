@@ -1,0 +1,70 @@
+<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .cell {
+        fill: #4F46E5;
+        opacity: 0;
+        animation: fadeIn 4s infinite;
+      }
+
+      .c1 { animation-delay: 0s; }
+      .c2 { animation-delay: 0.5s; }
+      .c3 { animation-delay: 1s; }
+      .c4 { animation-delay: 1.5s; }
+
+      @keyframes fadeIn {
+        0% { opacity: 0; }
+        20% { opacity: 1; }
+        80% { opacity: 1; }
+        100% { opacity: 0; }
+      }
+
+      .pulse {
+        animation: pulse 2s infinite;
+      }
+
+      @keyframes pulse {
+        0%, 100% { r: 10; }
+        50% { r: 14; }
+      }
+
+      .arrow {
+        animation: moveArrow 2s infinite linear;
+      }
+
+      @keyframes moveArrow {
+        0% { transform: translateX(0); }
+        50% { transform: translateX(10px); }
+        100% { transform: translateX(0); }
+      }
+    </style>
+  </defs>
+
+  <!-- Grid -->
+  <g stroke="#CBD5F5" stroke-width="2">
+    <line x1="64" y1="32" x2="64" y2="224"/>
+    <line x1="128" y1="32" x2="128" y2="224"/>
+    <line x1="192" y1="32" x2="192" y2="224"/>
+
+    <line x1="32" y1="64" x2="224" y2="64"/>
+    <line x1="32" y1="128" x2="224" y2="128"/>
+    <line x1="32" y1="192" x2="224" y2="192"/>
+  </g>
+
+  <!-- Animated path cells -->
+  <rect class="cell c1" x="32" y="32" width="64" height="64" rx="8"/>
+  <rect class="cell c2" x="96" y="32" width="64" height="64" rx="8"/>
+  <rect class="cell c3" x="96" y="96" width="64" height="64" rx="8"/>
+  <rect class="cell c4" x="160" y="96" width="64" height="64" rx="8"/>
+
+  <!-- Start (pulsing) -->
+  <circle cx="64" cy="64" r="10" fill="#22C55E" class="pulse"/>
+
+  <!-- End -->
+  <circle cx="192" cy="128" r="10" fill="#EF4444"/>
+
+  <!-- Moving arrow -->
+  <g class="arrow">
+    <path d="M180 40 L200 40 L190 60 Z" fill="#22C55E"/>
+  </g>
+</svg>
