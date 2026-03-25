@@ -1,4 +1,9 @@
 history:
+  - date: "25 March 2026"
+    title: "Size Matters"
+    description: "Size Explorer — visually compare the scale of numbers on a strip with presets, custom items, and zoom."
+    link: "/SizeMatters/"
+    accent_color: "#ff0055"
   - date: "18 March 2026"
     title: "DSA Animaiton Hard Ways"
     description: "See Step by step How flow Is happening in datastructure"

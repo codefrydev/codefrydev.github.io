@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="240" height="240">
+  <style>
+    .bar {
+      fill: #ffffff;
+      animation: grow 2.4s ease-in-out infinite;
+      transform-box: fill-box;
+      transform-origin: bottom center;
+    }
+    .b1 { animation-delay: 0s; }
+    .b2 { animation-delay: 0.15s; }
+    .b3 { animation-delay: 0.3s; }
+    .b4 { animation-delay: 0.45s; }
+    @keyframes grow {
+      0%, 100% { transform: scaleY(1); opacity: 0.85; }
+      50% { transform: scaleY(1.12); opacity: 1; }
+    }
+    .tick {
+      stroke: rgba(255, 255, 255, 0.45);
+      stroke-width: 2;
+      stroke-linecap: round;
+    }
+  </style>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#00C6FF"/>
+      <stop offset="100%" stop-color="#8E44FF"/>
+    </linearGradient>
+  </defs>
+  <rect x="5" y="5" width="150" height="150" rx="28" fill="url(#bg)"/>
+  <!-- baseline -->
+  <line class="tick" x1="28" y1="118" x2="132" y2="118"/>
+  <!-- scale ticks -->
+  <line class="tick" x1="28" y1="95" x2="36" y2="95"/>
+  <line class="tick" x1="28" y1="72" x2="36" y2="72"/>
+  <line class="tick" x1="28" y1="49" x2="36" y2="49"/>
+  <!-- bars: increasing height = scale comparison -->
+  <rect class="bar b1" x="38" y="102" width="16" height="16" rx="4"/>
+  <rect class="bar b2" x="60" y="90" width="16" height="28" rx="4"/>
+  <rect class="bar b3" x="82" y="74" width="16" height="44" rx="4"/>
+  <rect class="bar b4" x="104" y="54" width="16" height="64" rx="4"/>
+</svg>
