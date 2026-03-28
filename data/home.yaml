@@ -105,7 +105,10 @@ categories:
         url: "/willbeback/"
       - name: "Commit"
         icon: "cfd-git"
-        url: "/git/"
+        url: "/CodeSnippt/"
+      - name: "Snippt"
+        icon: "cfd-snippt"
+        url: "/CodeSnippt/"
 
   - name: "Games & Fun"
     items:

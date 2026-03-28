@@ -1,4 +1,9 @@
 history:
+  - date: "28 March 2026"
+    title: "Code Snippet"
+    description: "Common Snippet i use daily"
+    link: "/CodeSnippt/"
+    accent_color: "#ff0055"
   - date: "25 March 2026"
     title: "Size Matters"
     description: "Size Explorer — visually compare the scale of numbers on a strip with presets, custom items, and zoom."
