@@ -12,7 +12,7 @@ categories:
         url: "/font/"
       - name: "Tomatoes"
         icon: "cfd-tomatoes"
-        url: "https://codefrydev.in/Tomatoes/"
+        url: "/Tomatoes/"
       - name: "NodeFlow"
         icon: "cfd-nodeflow"
         url: "/NodeEditor/"
