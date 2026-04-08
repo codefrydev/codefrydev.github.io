@@ -1,0 +1,22 @@
+<svg width="120" height="120" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <!-- Outer arc -->
+  <path d="M10 70 A40 40 0 0 1 90 70" stroke="#4CAF50" stroke-width="6" fill="none" stroke-linecap="round">
+    <animate attributeName="opacity" values="1;0.75;1" dur="2.5s" repeatCount="indefinite"/>
+  </path>
+
+  <!-- Tick marks -->
+  <line x1="20" y1="65" x2="25" y2="60" stroke="#333" stroke-width="2"/>
+  <line x1="50" y1="55" x2="50" y2="48" stroke="#333" stroke-width="2"/>
+  <line x1="80" y1="65" x2="75" y2="60" stroke="#333" stroke-width="2"/>
+
+  <!-- Needle (pivots at center) -->
+  <g>
+    <animateTransform attributeName="transform" type="rotate" attributeType="XML"
+      values="-18 50 70; 42 50 70; -18 50 70" dur="3.5s" repeatCount="indefinite" calcMode="spline"
+      keySplines="0.4 0 0.2 1;0.4 0 0.2 1" keyTimes="0;0.5;1"/>
+    <line x1="50" y1="70" x2="75" y2="50" stroke="#FF5722" stroke-width="3" stroke-linecap="round"/>
+  </g>
+
+  <!-- Center -->
+  <circle cx="50" cy="70" r="4" fill="#333"/>
+</svg>
