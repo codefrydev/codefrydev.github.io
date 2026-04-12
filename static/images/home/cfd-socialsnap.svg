@@ -1,0 +1,53 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background: very subtle “breathing” brightness -->
+  <rect width="200" height="200" rx="40" fill="#FFFC00">
+    <animate attributeName="opacity" values="1;0.94;1" dur="5s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+  </rect>
+
+  <!-- Whole ghost: soft float -->
+  <g>
+      <animateTransform attributeName="transform" type="translate" values="0 0; 0 -3; 0 0" dur="4s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+
+      <!-- Ghost shape -->
+      <path d="
+        M100 40
+        C75 40, 55 65, 55 95
+        L55 135
+        Q60 125, 70 135
+        Q80 125, 90 135
+        Q100 125, 110 135
+        Q120 125, 130 135
+        Q140 125, 145 135
+        L145 95
+        C145 65, 125 40, 100 40
+        Z"
+        fill="white"
+        stroke="black"
+        stroke-width="3"
+      />
+
+      <!-- Eyes: slow blink -->
+      <ellipse cx="80" cy="95" rx="6" ry="8" fill="black">
+        <animate attributeName="ry" values="8;8;8;1;8;8" keyTimes="0;0.45;0.88;0.9;0.93;1" dur="5s" repeatCount="indefinite"/>
+      </ellipse>
+      <ellipse cx="120" cy="95" rx="6" ry="8" fill="black">
+        <animate attributeName="ry" values="8;8;8;1;8;8" keyTimes="0;0.45;0.88;0.9;0.93;1" dur="5s" repeatCount="indefinite"/>
+      </ellipse>
+
+      <!-- Mouth: smile morph (curve deepens / softens) -->
+      <path d="M85 115 Q100 125 115 115" stroke="black" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <animate attributeName="d"
+          values="
+            M85 115 Q100 125 115 115;
+            M85 115 Q100 132 115 115;
+            M85 115 Q100 125 115 115;
+            M85 115 Q100 128 115 115;
+            M85 115 Q100 125 115 115"
+          keyTimes="0;0.28;0.45;0.72;1"
+          dur="3.8s"
+          repeatCount="indefinite"
+          calcMode="spline"
+          keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+      </path>
+    </g>
+</svg>

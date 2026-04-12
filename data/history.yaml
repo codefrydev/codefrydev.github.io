@@ -1,4 +1,9 @@
 history:
+  - date: "12 April 2026"
+    title: "SocialSnap"
+    description: "Mockup studio for social feeds—edit, preview, and export polished posts as PNG for decks and portfolios."
+    link: "/SocialMedia/"
+    accent_color: "#0EA5E9"
   - date: "28 March 2026"
     title: "Code Snippet"
     description: "Common Snippet i use daily"
