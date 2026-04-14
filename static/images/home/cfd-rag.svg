@@ -1,14 +1,32 @@
-<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
 
   <!-- Background -->
-  <rect width="512" height="512" rx="96" fill="#0b1220"/>
+  <rect width="100" height="100" fill="#0b1220"/>
 
-  <!-- Rings -->
-  <circle cx="256" cy="256" r="150" fill="none" stroke="#1e293b" stroke-width="3"/>
-  <circle cx="256" cy="256" r="120" fill="none" stroke="#1e293b" stroke-width="3" stroke-dasharray="6 10"/>
-  <circle cx="256" cy="256" r="90" fill="none" stroke="#1e293b" stroke-width="3"/>
+  <!-- Outer boundary -->
+  <circle cx="50" cy="50" r="49" fill="none" stroke="#1e293b" stroke-width="2"/>
 
-  <!-- Center core (GRAPHITE / GLASS LOOK) -->
+  <!-- Orbit paths (USED for both drawing + motion) -->
+  <defs>
+    <!-- Orbit 1 -->
+    <path id="orbit1"
+          d="M14 50 A36 18 0 1 1 86 50 A36 18 0 1 1 14 50"/>
+
+    <!-- Orbit 2 -->
+    <path id="orbit2"
+          d="M22 30 A28 26 0 1 1 78 70 A28 26 0 1 1 22 30"/>
+
+    <!-- Orbit 3 -->
+    <path id="orbit3"
+          d="M30 20 A20 34 0 1 1 70 80 A20 34 0 1 1 30 20"/>
+  </defs>
+
+  <!-- Draw same paths -->
+  <use href="#orbit1" fill="none" stroke="#1e293b" stroke-width="1.5"/>
+  <use href="#orbit2" fill="none" stroke="#1e293b" stroke-width="1.5"/>
+  <use href="#orbit3" fill="none" stroke="#1e293b" stroke-width="1.5"/>
+
+  <!-- Core -->
   <defs>
     <radialGradient id="coreGrad" cx="50%" cy="50%" r="50%">
       <stop offset="0%" stop-color="#1f2937"/>
@@ -16,40 +34,35 @@
     </radialGradient>
   </defs>
 
-  <circle cx="256" cy="256" r="50" fill="url(#coreGrad)"/>
-
-  <!-- Subtle glow (neutral white/blue tint) -->
-  <circle cx="256" cy="256" r="50" fill="#ffffff" opacity="0.08">
-    <animate attributeName="r" values="50;60;50" dur="3s" repeatCount="indefinite"/>
-    <animate attributeName="opacity" values="0.08;0.02;0.08" dur="3s" repeatCount="indefinite"/>
-  </circle>
+  <circle cx="50" cy="50" r="14" fill="url(#coreGrad)"/>
 
   <!-- Genie -->
-  <text x="256" y="272"
+  <text x="50" y="54"
         text-anchor="middle"
-        font-size="42"
+        font-size="13"
         font-family="Apple Color Emoji, Segoe UI Emoji, Noto Color Emoji">
     🧞‍♂️
   </text>
 
-  <!-- Shuttle 1 -->
-  <circle r="9" fill="#85ea2d">
-    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto">
+  <!-- Electron 1 -->
+  <circle r="2.5" fill="#85ea2d">
+    <animateMotion dur="3s" repeatCount="indefinite">
       <mpath href="#orbit1"/>
     </animateMotion>
   </circle>
 
-  <!-- Shuttle 2 -->
-  <circle r="6" fill="#38bdf8">
-    <animateMotion dur="5s" repeatCount="indefinite" rotate="auto">
+  <!-- Electron 2 -->
+  <circle r="2.5" fill="#38bdf8">
+    <animateMotion dur="4s" repeatCount="indefinite">
       <mpath href="#orbit2"/>
     </animateMotion>
   </circle>
 
-  <!-- Paths -->
-  <defs>
-    <path id="orbit1" d="M256 106 A150 150 0 1 1 255.9 106"/>
-    <path id="orbit2" d="M256 166 A90 90 0 1 1 255.9 166"/>
-  </defs>
+  <!-- Electron 3 -->
+  <circle r="2.5" fill="#f59e0b">
+    <animateMotion dur="5s" repeatCount="indefinite">
+      <mpath href="#orbit3"/>
+    </animateMotion>
+  </circle>
 
 </svg>
