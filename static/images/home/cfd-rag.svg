@@ -1,0 +1,55 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- Background -->
+  <rect width="512" height="512" rx="96" fill="#0b1220"/>
+
+  <!-- Rings -->
+  <circle cx="256" cy="256" r="150" fill="none" stroke="#1e293b" stroke-width="3"/>
+  <circle cx="256" cy="256" r="120" fill="none" stroke="#1e293b" stroke-width="3" stroke-dasharray="6 10"/>
+  <circle cx="256" cy="256" r="90" fill="none" stroke="#1e293b" stroke-width="3"/>
+
+  <!-- Center core (GRAPHITE / GLASS LOOK) -->
+  <defs>
+    <radialGradient id="coreGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#1f2937"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </radialGradient>
+  </defs>
+
+  <circle cx="256" cy="256" r="50" fill="url(#coreGrad)"/>
+
+  <!-- Subtle glow (neutral white/blue tint) -->
+  <circle cx="256" cy="256" r="50" fill="#ffffff" opacity="0.08">
+    <animate attributeName="r" values="50;60;50" dur="3s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.08;0.02;0.08" dur="3s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Genie -->
+  <text x="256" y="272"
+        text-anchor="middle"
+        font-size="42"
+        font-family="Apple Color Emoji, Segoe UI Emoji, Noto Color Emoji">
+    🧞‍♂️
+  </text>
+
+  <!-- Shuttle 1 -->
+  <circle r="9" fill="#85ea2d">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto">
+      <mpath href="#orbit1"/>
+    </animateMotion>
+  </circle>
+
+  <!-- Shuttle 2 -->
+  <circle r="6" fill="#38bdf8">
+    <animateMotion dur="5s" repeatCount="indefinite" rotate="auto">
+      <mpath href="#orbit2"/>
+    </animateMotion>
+  </circle>
+
+  <!-- Paths -->
+  <defs>
+    <path id="orbit1" d="M256 106 A150 150 0 1 1 255.9 106"/>
+    <path id="orbit2" d="M256 166 A90 90 0 1 1 255.9 166"/>
+  </defs>
+
+</svg>
