@@ -1,4 +1,9 @@
 history:
+  - date: "16 April 2026"
+    title: "3D Printer"
+    description: "Procedurally generate 3D printable models with customizable parameters and export them in STL format. And can be 3d printed using any 3D printer."
+    link: "https://codefrydev.in/3DPrinter/"
+    accent_color: "#020617"
   - date: "14 April 2026"
     title: "RAG"
     description: "Random api Generator Desktop app"

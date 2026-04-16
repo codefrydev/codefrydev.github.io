@@ -1,0 +1,93 @@
+<svg viewBox="0 0 400 450" xmlns="http://www.w3.org/2000/svg">
+
+  <style>
+    .line-art {
+      stroke: #4a4a4a;
+      stroke-width: 6;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .draw-filament {
+      stroke-dasharray: 700;
+      stroke-dashoffset: 700;
+      animation: printFilament 6s ease-in-out infinite;
+    }
+
+    .draw-d {
+      stroke-dasharray: 300;
+      stroke-dashoffset: 300;
+      animation: printD 6s ease-in-out infinite;
+    }
+
+    .fade-text {
+      opacity: 0;
+      animation: textReveal 6s ease-in-out infinite;
+    }
+
+    @keyframes printFilament {
+      0% { stroke-dashoffset: 700; opacity: 1; }
+      35% { stroke-dashoffset: 0; opacity: 1; }
+      85% { stroke-dashoffset: 0; opacity: 1; }
+      95% { stroke-dashoffset: 0; opacity: 0; }
+      100% { stroke-dashoffset: 700; opacity: 0; }
+    }
+
+    @keyframes printD {
+      0% { stroke-dashoffset: 300; opacity: 1; }
+      32% { stroke-dashoffset: 300; opacity: 1; }
+      50% { stroke-dashoffset: 0; opacity: 1; }
+      85% { stroke-dashoffset: 0; opacity: 1; }
+      95% { stroke-dashoffset: 0; opacity: 0; }
+      100% { stroke-dashoffset: 300; opacity: 0; }
+    }
+
+    @keyframes textReveal {
+      0% { opacity: 0; transform: translateY(5px); }
+      45% { opacity: 0; transform: translateY(5px); }
+      55% { opacity: 1; transform: translateY(0); }
+      85% { opacity: 1; transform: translateY(0); }
+      95% { opacity: 0; transform: translateY(-5px); }
+      100% { opacity: 0; transform: translateY(5px); }
+    }
+  </style>
+
+  <g class="line-art">
+    <!-- Rails -->
+    <path d="M 80 60 L 170 60" />
+    <path d="M 230 60 L 320 60" />
+    <path d="M 80 85 L 170 85" />
+    <path d="M 230 85 L 320 85" />
+
+    <!-- Extruder -->
+    <rect x="170" y="60" width="60" height="40" />
+
+    <!-- Nozzle -->
+    <path d="M 190 100 L 190 110 L 200 125 L 210 110 L 210 100 Z" />
+
+    <!-- Filament / "3" -->
+    <path class="draw-filament"
+      d="M 200 135 
+         L 200 160 
+         A 15 15 0 0 0 215 175 
+         L 245 175 
+         A 20 20 0 0 1 245 215 
+         L 155 215 
+         A 20 20 0 0 0 155 255 
+         L 170 255 
+         C 200 255, 200 292.5, 175 292.5 
+         C 210 292.5, 210 330, 165 330" />
+
+    <!-- "D" -->
+    <path class="draw-d"
+      d="M 220 255 
+         L 220 330 
+         L 227.5 330 
+         A 37.5 37.5 0 0 0 227.5 255 
+         Z" />
+  </g>
+
+
+
+</svg>
