@@ -1,6 +1,6 @@
 history:
   - date: "24 April 2026"
-    title: "JS Web IDE"
+    title: "JS LIDE"
     description: "In-browser JavaScript workspace—file explorer, editor, and console output for quick experiments."
     link: "/Javascript/"
     accent_color: "#F7DF1E"

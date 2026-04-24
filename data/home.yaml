@@ -70,7 +70,7 @@ categories:
       - name: "JSON Playground"
         icon: "cfd-jsonplayground"
         url: "/JsonPlayground/"
-      - name: "JS Web IDE"
+      - name: "JS LIDE"
         icon: "cfd-jswebide"
         url: "/Javascript/"
       - name: "Speed Test"
