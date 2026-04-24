@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="300" height="300" aria-hidden="true">
+  <defs>
+    <linearGradient id="jsIdeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#323330"/>
+      <stop offset="100%" stop-color="#1a1b1a"/>
+    </linearGradient>
+  </defs>
+  <!-- IDE window -->
+  <rect x="36" y="48" width="228" height="204" rx="14" fill="url(#jsIdeGrad)" stroke="#F7DF1E" stroke-width="6"/>
+  <!-- Title bar -->
+  <rect x="36" y="48" width="228" height="36" rx="14" fill="#2d2d2d"/>
+  <rect x="36" y="66" width="228" height="18" fill="#2d2d2d"/>
+  <circle cx="58" cy="66" r="7" fill="#ff5f57"/>
+  <circle cx="82" cy="66" r="7" fill="#febc2e"/>
+  <circle cx="106" cy="66" r="7" fill="#28c840"/>
+  <!-- JS badge -->
+  <rect x="210" y="54" width="44" height="24" rx="5" fill="#F7DF1E"/>
+  <text x="232" y="72" text-anchor="middle" font-family="system-ui,Segoe UI,sans-serif" font-size="14" font-weight="700" fill="#323330">JS</text>
+  <!-- Code lines -->
+  <g stroke-linecap="round" stroke-width="7">
+    <line x1="56" y1="118" x2="120" y2="118" stroke="#7cb342"/>
+    <line x1="56" y1="142" x2="200" y2="142" stroke="#9ccc65"/>
+    <line x1="56" y1="166" x2="160" y2="166" stroke="#81c784"/>
+    <line x1="56" y1="190" x2="180" y2="190" stroke="#66bb6a"/>
+    <line x1="56" y1="214" x2="140" y2="214" stroke="#4caf50"/>
+  </g>
+  <!-- Console hint -->
+  <rect x="48" y="232" width="204" height="12" rx="4" fill="#1e1e1e" stroke="#F7DF1E" stroke-width="3" opacity="0.9"/>
+</svg>
