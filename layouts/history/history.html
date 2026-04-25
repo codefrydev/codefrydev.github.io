@@ -19,7 +19,7 @@
     </section>
     {{- end }}
         <ul class="history-timeline" role="list">
-            {{ range .Site.Data.history.history }}
+            {{ range hugo.Data.history.history }}
                 <li style="--accent-color:{{ .accent_color }}" role="listitem">
                     <a href="{{ .link }}" aria-label="History item: {{ .title }}" class="history-item-link">
                         <div class="date">{{ .date }}</div>

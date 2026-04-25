@@ -56,10 +56,10 @@
         const searchConfig = {
             searchID: "{{ $searchID }}",
             searchData: {
-                home: {{ if .Site.Data.home }}{{ .Site.Data.home | jsonify | safeJS }}{{ else }}null{{ end }},
-                ai: {{ if .Site.Data.ai }}{{ .Site.Data.ai | jsonify | safeJS }}{{ else }}null{{ end }},
-                games: {{ if .Site.Data.games }}{{ .Site.Data.games | jsonify | safeJS }}{{ else }}null{{ end }},
-                designlab: {{ if .Site.Data.designlab }}{{ .Site.Data.designlab | jsonify | safeJS }}{{ else }}null{{ end }}
+                home: {{ if hugo.Data.home }}{{ hugo.Data.home | jsonify | safeJS }}{{ else }}null{{ end }},
+                ai: {{ if hugo.Data.ai }}{{ hugo.Data.ai | jsonify | safeJS }}{{ else }}null{{ end }},
+                games: {{ if hugo.Data.games }}{{ hugo.Data.games | jsonify | safeJS }}{{ else }}null{{ end }},
+                designlab: {{ if hugo.Data.designlab }}{{ hugo.Data.designlab | jsonify | safeJS }}{{ else }}null{{ end }}
             },
             baseURL: "{{ .Site.BaseURL }}"
         };

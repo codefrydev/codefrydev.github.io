@@ -1,0 +1,57 @@
+{{- /* Ladybug easter egg — home page only */ -}}
+<div id="ladybug-container" aria-hidden="true" role="presentation">
+    <svg viewBox="0 0 100 100" width="100%" height="100%">
+        <!-- Legs (behind body) -->
+        <path d="M 20 30 L -5 20 M 80 30 L 105 20" stroke="#1e293b" stroke-width="4" stroke-linecap="round" fill="none" />
+        <path d="M 15 50 L -10 50 M 85 50 L 110 50" stroke="#1e293b" stroke-width="4" stroke-linecap="round" fill="none" />
+        <path d="M 20 70 L -5 80 M 80 70 L 105 80" stroke="#1e293b" stroke-width="4" stroke-linecap="round" fill="none" />
+
+        <!-- Head -->
+        <circle cx="50" cy="15" r="14" fill="#1e293b" />
+        <circle cx="45" cy="12.5" r="1.3" fill="#f8fafc" opacity="0.6" />
+        <circle cx="55" cy="12.5" r="1.3" fill="#f8fafc" opacity="0.6" />
+
+        <!-- Antennae -->
+        <path d="M 43 5 Q 35 -10 20 -5" stroke="#1e293b" stroke-width="2.5" fill="none" stroke-linecap="round" />
+        <path d="M 57 5 Q 65 -10 80 -5" stroke="#1e293b" stroke-width="2.5" fill="none" stroke-linecap="round" />
+
+        <!-- Abdomen (visible when wings open) -->
+        <ellipse cx="50" cy="60" rx="30" ry="38" fill="#0f172a" />
+
+        <!-- Wings (flap when flying) -->
+        <g class="ladybug-wing ladybug-wing-left">
+            <path d="M 50 30 C -10 30, 0 110, 50 100 Z" fill="#cbd5e1" />
+            <path d="M 50 34 C 10 40, 18 90, 49 95 Z" fill="#94a3b8" opacity="0.14" />
+        </g>
+        <g class="ladybug-wing ladybug-wing-right">
+            <path d="M 50 30 C 110 30, 100 110, 50 100 Z" fill="#cbd5e1" />
+            <path d="M 50 34 C 90 40, 82 90, 51 95 Z" fill="#94a3b8" opacity="0.14" />
+        </g>
+
+        <!-- Pronotum (black patch behind head) -->
+        <path d="M 25 35 Q 50 20 75 35 Z" fill="#1e293b" />
+
+        <!-- Left shell -->
+        <g class="ladybug-shell ladybug-shell-left">
+            <path d="M 50 12 A 36 43 0 0 0 50 98 Z" fill="#dc2626" />
+            <path d="M 46.5 15 A 31 38 0 0 0 46.5 93" stroke="#991b1b" stroke-width="1.2" fill="none" opacity="0.25" />
+            <circle cx="30" cy="45" r="6" fill="#1e293b" />
+            <circle cx="25" cy="70" r="7.5" fill="#1e293b" />
+            <circle cx="40" cy="85" r="5" fill="#1e293b" />
+            <path d="M 14 55 Q 32 35 50 35 L 50 55 Z" fill="#f8fafc" opacity="0.15" />
+        </g>
+
+        <!-- Right shell -->
+        <g class="ladybug-shell ladybug-shell-right">
+            <path d="M 50 12 A 36 43 0 0 1 50 98 Z" fill="#dc2626" />
+            <path d="M 53.5 15 A 31 38 0 0 1 53.5 93" stroke="#991b1b" stroke-width="1.2" fill="none" opacity="0.25" />
+            <circle cx="70" cy="45" r="6" fill="#1e293b" />
+            <circle cx="75" cy="70" r="7.5" fill="#1e293b" />
+            <circle cx="60" cy="85" r="5" fill="#1e293b" />
+            <path d="M 86 55 Q 68 35 50 35 L 50 55 Z" fill="#f8fafc" opacity="0.15" />
+        </g>
+    </svg>
+</div>
+
+<div id="ladybug-particles-host" aria-hidden="true" role="presentation"></div>
+<div id="ladybug-message" aria-hidden="true" role="presentation"></div>

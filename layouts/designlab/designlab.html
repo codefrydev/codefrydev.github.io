@@ -28,7 +28,7 @@
     <section class="category-section">
       <h2 class="category-title">Design Lab</h2>
       <div class="button-grid">
-        {{ range .Site.Data.designlab.data }}
+        {{ range hugo.Data.designlab.data }}
           {{- $isExternal := or (hasPrefix .url "http://") (hasPrefix .url "https://") -}}
           <a href="{{ .url }}" 
              class="neumorphic-button hapticButton" 

@@ -340,25 +340,25 @@
             </div>
             
             {{- $totalTools := 0 -}}
-            {{- range .Site.Data.home.categories -}}
+            {{- range hugo.Data.home.categories -}}
                 {{- $totalTools = add $totalTools (len .items) -}}
             {{- end -}}
             {{- $aiCount := 0 -}}
-            {{- if .Site.Data.ai -}}
-                {{- if .Site.Data.ai.data -}}
-                    {{- $aiCount = len .Site.Data.ai.data -}}
+            {{- if hugo.Data.ai -}}
+                {{- if hugo.Data.ai.data -}}
+                    {{- $aiCount = len hugo.Data.ai.data -}}
                 {{- end -}}
             {{- end -}}
             {{- $gamesCount := 0 -}}
-            {{- if .Site.Data.games -}}
-                {{- if .Site.Data.games.data -}}
-                    {{- $gamesCount = len .Site.Data.games.data -}}
+            {{- if hugo.Data.games -}}
+                {{- if hugo.Data.games.data -}}
+                    {{- $gamesCount = len hugo.Data.games.data -}}
                 {{- end -}}
             {{- end -}}
             {{- $designCount := 0 -}}
-            {{- if .Site.Data.designlab -}}
-                {{- if .Site.Data.designlab.data -}}
-                    {{- $designCount = len .Site.Data.designlab.data -}}
+            {{- if hugo.Data.designlab -}}
+                {{- if hugo.Data.designlab.data -}}
+                    {{- $designCount = len hugo.Data.designlab.data -}}
                 {{- end -}}
             {{- end -}}
             
@@ -410,7 +410,7 @@
             <div class="about-cards-section">
                 <h2 class="section-title">Explore & Connect</h2>
                 <div class="cards-grid">
-                    {{ range .Site.Data.about.cards }}
+                    {{ range hugo.Data.about.cards }}
                     {{- $accentColor := .accent_color | default "667eea" -}}
                     {{- if not (hasPrefix $accentColor "#") -}}
                         {{- $accentColor = printf "#%s" $accentColor -}}

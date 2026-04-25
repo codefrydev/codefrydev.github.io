@@ -44,7 +44,7 @@
   {{- end -}}
 {{- end -}}
 <meta name="description" content="{{ $description }}">
-<meta name="author" content="{{ .Site.Author.name | default "CodeFryDev" }}">
+<meta name="author" content="{{ .Site.Params.author | default .Site.Title | default "CodeFryDev" }}">
 {{- if .Params.keywords -}}
 <meta name="keywords" content="{{ delimit .Params.keywords ", " }}">
 {{- else -}}
