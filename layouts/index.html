@@ -10,6 +10,7 @@
     {{ warnf "The CSS file 'css/home.css' was not found." }}
   {{ end }}
   <link rel="stylesheet" href="/css/internal.css">
+  <link rel="stylesheet" href="/css/ladybug.css">
 </head>
 <body>
   {{ partial "skip-link.html" . }}
@@ -17,7 +18,7 @@
 
   <main id="main-content" role="main">
     {{ partial "search.html" (dict "containerClass" "search-container" "placeholder" "Search for tools, games, AI apps, design resources..." "autofocus" false "Site" .Site "Scratch" .Scratch) }}
-    {{ range .Site.Data.home.categories }}
+    {{ range hugo.Data.home.categories }}
       <section class="category-section">
         <h2 class="category-title">{{ .name }}</h2>
         <div class="button-grid">
@@ -53,5 +54,7 @@
   <script src="/js/search.js"></script>
   <script src="js/feedback.js" ></script>
   <script src="/js/theme.js"></script>
+  {{ partial "ladybug.html" . }}
+  <script src="/js/ladybug.js" defer></script>
 </body>
 </html>

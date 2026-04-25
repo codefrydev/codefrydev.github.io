@@ -10,10 +10,10 @@
         </div>
         <p class="footer-description">{{ .Site.Params.description | truncate 140 }}</p>
         {{- $totalTools := 0 -}}
-        {{- range .Site.Data.home.categories }}{{ $totalTools = add $totalTools (len .items) }}{{ end -}}
-        {{- $aiCount := 0 }}{{ with .Site.Data.ai.data }}{{ $aiCount = len . }}{{ end -}}
-        {{- $gamesCount := 0 }}{{ with .Site.Data.games.data }}{{ $gamesCount = len . }}{{ end -}}
-        {{- $designCount := 0 }}{{ with .Site.Data.designlab.data }}{{ $designCount = len . }}{{ end -}}
+        {{- range hugo.Data.home.categories }}{{ $totalTools = add $totalTools (len .items) }}{{ end -}}
+        {{- $aiCount := 0 }}{{ with hugo.Data.ai.data }}{{ $aiCount = len . }}{{ end -}}
+        {{- $gamesCount := 0 }}{{ with hugo.Data.games.data }}{{ $gamesCount = len . }}{{ end -}}
+        {{- $designCount := 0 }}{{ with hugo.Data.designlab.data }}{{ $designCount = len . }}{{ end -}}
         <p class="footer-stats" aria-label="Platform stats">{{ $totalTools }}+ tools · {{ $gamesCount }} games · {{ $aiCount }} AI apps · {{ $designCount }} design tools</p>
         <div class="footer-lead">
           <p class="footer-lead-text">Get updates and support</p>

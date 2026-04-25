@@ -30,7 +30,7 @@
       "foundingDate": "2023",
       "founder": {
         "@type": "Person",
-        "name": "{{ .Site.Author.name }}"
+        "name": "{{ .Site.Params.author | default .Site.Title | default "CodeFryDev" }}"
       },
       "sameAs": [
         "https://github.com/codefrydev",
@@ -95,10 +95,10 @@
 {{- /* ============================================ */ -}}
 {{- /* FAQ Schema */ -}}
 {{- /* ============================================ */ -}}
-{{- if .Site.Data.faq -}}
-  {{- if .Site.Data.faq.faqs -}}
+{{- if hugo.Data.faq -}}
+  {{- if hugo.Data.faq.faqs -}}
     {{- $faqItems := slice -}}
-    {{- range .Site.Data.faq.faqs -}}
+    {{- range hugo.Data.faq.faqs -}}
       {{- $faqItems = $faqItems | append (dict "@type" "Question" "name" .question "acceptedAnswer" (dict "@type" "Answer" "text" .answer)) -}}
     {{- end -}}
     {{- if gt (len $faqItems) 0 -}}
@@ -119,7 +119,7 @@
 {{- $allProducts := slice -}}
 
 {{- /* Products from home.yaml */ -}}
-{{- range .Site.Data.home.categories -}}
+{{- range hugo.Data.home.categories -}}
   {{- $catName := .name -}}
   {{- range .items -}}
     {{- if .url -}}
@@ -155,9 +155,9 @@
 {{- end -}}
 
 {{- /* AI Tools from ai.yaml */ -}}
-{{- if .Site.Data.ai -}}
-  {{- if .Site.Data.ai.data -}}
-    {{- range .Site.Data.ai.data -}}
+{{- if hugo.Data.ai -}}
+  {{- if hugo.Data.ai.data -}}
+    {{- range hugo.Data.ai.data -}}
       {{- if .url -}}
         {{- $appUrl := .url -}}
         {{- if hasPrefix $appUrl "/" -}}
@@ -185,9 +185,9 @@
 {{- end -}}
 
 {{- /* Games from games.yaml */ -}}
-{{- if .Site.Data.games -}}
-  {{- if .Site.Data.games.data -}}
-    {{- range .Site.Data.games.data -}}
+{{- if hugo.Data.games -}}
+  {{- if hugo.Data.games.data -}}
+    {{- range hugo.Data.games.data -}}
       {{- if .url -}}
         {{- $appUrl := .url -}}
         {{- if hasPrefix $appUrl "/" -}}
@@ -215,9 +215,9 @@
 {{- end -}}
 
 {{- /* Design Tools from designlab.yaml */ -}}
-{{- if .Site.Data.designlab -}}
-  {{- if .Site.Data.designlab.data -}}
-    {{- range .Site.Data.designlab.data -}}
+{{- if hugo.Data.designlab -}}
+  {{- if hugo.Data.designlab.data -}}
+    {{- range hugo.Data.designlab.data -}}
       {{- if .url -}}
         {{- $appUrl := .url -}}
         {{- if hasPrefix $appUrl "/" -}}
@@ -260,7 +260,7 @@
 {{- /* Home ItemList */ -}}
 {{- if .IsHome -}}
   {{- $homeLists := slice -}}
-  {{- range .Site.Data.home.categories -}}
+  {{- range hugo.Data.home.categories -}}
     {{- $catName := .name -}}
     {{- $items := slice -}}
     {{- range $idx, $it := .items -}}
@@ -268,27 +268,27 @@
     {{- end -}}
     {{- $homeLists = $homeLists | append (dict "@type" "ItemList" "name" .name "description" (print .name " tools and resources") "numberOfItems" (len .items) "itemListElement" $items) -}}
   {{- end -}}
-  {{- $home := dict "@type" "ItemList" "name" "CodeFryDev Tools and Games Collection" "description" "Complete collection of creative tools, games, and utilities" "url" .Site.BaseURL "numberOfItems" (len .Site.Data.home.categories) "itemListElement" $homeLists -}}
+  {{- $home := dict "@type" "ItemList" "name" "CodeFryDev Tools and Games Collection" "description" "Complete collection of creative tools, games, and utilities" "url" .Site.BaseURL "numberOfItems" (len hugo.Data.home.categories) "itemListElement" $homeLists -}}
   {{- $pageSchema = $pageSchema | append $home -}}
 {{- end -}}
 
 {{- /* Games page ItemList */ -}}
 {{- if eq .Section "games" -}}
   {{- $gameItems := slice -}}
-  {{- range $idx, $g := .Site.Data.games.data -}}
+  {{- range $idx, $g := hugo.Data.games.data -}}
     {{- $gameItems = $gameItems | append (dict "@type" "ListItem" "position" (add $idx 1) "item" (dict "@type" "VideoGame" "name" $g.name "url" ($g.url | absURL) "description" (print $g.name " - A fun game by CodeFryDev") "genre" "Casual Game" "gamePlatform" "Web Browser" "operatingSystem" "Any" "applicationCategory" "Game" "offers" (dict "@type" "Offer" "price" "0" "priceCurrency" "USD" "availability" "https://schema.org/InStock") "publisher" (dict "@id" (print $.Site.BaseURL "#organization")))) -}}
   {{- end -}}
-  {{- $games := dict "@type" "ItemList" "name" "CodeFryDev Games Collection" "description" "Collection of fun and engaging games developed by CodeFryDev" "url" .Permalink "numberOfItems" (len .Site.Data.games.data) "itemListElement" $gameItems -}}
+  {{- $games := dict "@type" "ItemList" "name" "CodeFryDev Games Collection" "description" "Collection of fun and engaging games developed by CodeFryDev" "url" .Permalink "numberOfItems" (len hugo.Data.games.data) "itemListElement" $gameItems -}}
   {{- $pageSchema = $pageSchema | append $games -}}
 {{- end -}}
 
 {{- /* AI page ItemList */ -}}
 {{- if eq .Section "ai" -}}
   {{- $toolItems := slice -}}
-  {{- range $idx, $t := .Site.Data.ai.data -}}
+  {{- range $idx, $t := hugo.Data.ai.data -}}
     {{- $toolItems = $toolItems | append (dict "@type" "ListItem" "position" (add $idx 1) "item" (dict "@type" "SoftwareApplication" "name" $t.name "url" ($t.url | absURL) "description" (print $t.name " - AI-powered tool by CodeFryDev") "applicationCategory" "AI Tool" "operatingSystem" "Web Browser" "softwareVersion" "1.0" "offers" (dict "@type" "Offer" "price" "0" "priceCurrency" "USD" "availability" "https://schema.org/InStock") "publisher" (dict "@id" (print $.Site.BaseURL "#organization")) "featureList" (slice "AI-powered functionality" "Easy to use interface" "No installation required" "Cross-platform compatibility"))) -}}
   {{- end -}}
-  {{- $ai := dict "@type" "ItemList" "name" "CodeFryDev AI Tools Collection" "description" "Collection of AI-powered tools and utilities for productivity and creativity" "url" .Permalink "numberOfItems" (len .Site.Data.ai.data) "itemListElement" $toolItems -}}
+  {{- $ai := dict "@type" "ItemList" "name" "CodeFryDev AI Tools Collection" "description" "Collection of AI-powered tools and utilities for productivity and creativity" "url" .Permalink "numberOfItems" (len hugo.Data.ai.data) "itemListElement" $toolItems -}}
   {{- $pageSchema = $pageSchema | append $ai -}}
 {{- end -}}
 

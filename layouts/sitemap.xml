@@ -68,7 +68,7 @@
     <priority>0.6</priority>
   </url>
 {{- /* Add all URLs from home.yaml */ -}}
-{{- range .Site.Data.home.categories -}}
+{{- range hugo.Data.home.categories -}}
   {{- range .items -}}
     {{- $url := .url -}}
     {{- $absoluteURL := "" -}}
@@ -91,9 +91,9 @@
   {{- end -}}
 {{- end -}}
 {{- /* Add all URLs from ai.yaml */ -}}
-{{- if .Site.Data.ai -}}
-  {{- if .Site.Data.ai.data -}}
-    {{- range .Site.Data.ai.data -}}
+{{- if hugo.Data.ai -}}
+  {{- if hugo.Data.ai.data -}}
+    {{- range hugo.Data.ai.data -}}
       {{- if .url -}}
         {{- $url := .url -}}
         {{- $absoluteURL := "" -}}
@@ -117,9 +117,9 @@
   {{- end -}}
 {{- end -}}
 {{- /* Add all URLs from games.yaml */ -}}
-{{- if .Site.Data.games -}}
-  {{- if .Site.Data.games.data -}}
-    {{- range .Site.Data.games.data -}}
+{{- if hugo.Data.games -}}
+  {{- if hugo.Data.games.data -}}
+    {{- range hugo.Data.games.data -}}
       {{- if .url -}}
         {{- $url := .url -}}
         {{- $absoluteURL := "" -}}
@@ -143,9 +143,9 @@
   {{- end -}}
 {{- end -}}
 {{- /* Add all URLs from designlab.yaml */ -}}
-{{- if .Site.Data.designlab -}}
-  {{- if .Site.Data.designlab.data -}}
-    {{- range .Site.Data.designlab.data -}}
+{{- if hugo.Data.designlab -}}
+  {{- if hugo.Data.designlab.data -}}
+    {{- range hugo.Data.designlab.data -}}
       {{- if .url -}}
         {{- $url := .url -}}
         {{- $absoluteURL := "" -}}
@@ -169,9 +169,9 @@
   {{- end -}}
 {{- end -}}
 {{- /* Add all URLs from store.yaml */ -}}
-{{- if .Site.Data.store -}}
-  {{- if .Site.Data.store.data -}}
-    {{- range .Site.Data.store.data -}}
+{{- if hugo.Data.store -}}
+  {{- if hugo.Data.store.data -}}
+    {{- range hugo.Data.store.data -}}
       {{- if .url -}}
         {{- $url := .url -}}
         {{- $absoluteURL := "" -}}
@@ -195,7 +195,7 @@
   {{- end -}}
 {{- end -}}
 {{- /* Add content pages */ -}}
-{{- range where .Site.AllPages "Kind" "page" -}}
+{{- range where site.Pages "Kind" "page" -}}
   {{- if and (ne .Permalink "") (ne .Draft true) -}}
   {{- $lastmodDate := $currentDate -}}
   {{- if .Lastmod -}}

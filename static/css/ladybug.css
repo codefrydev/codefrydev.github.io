@@ -1,0 +1,336 @@
+/* ============================================================
+   Ladybug Feature — Home Page Only
+   ============================================================ */
+
+/* Bug container: fixed overlay, full-page movement space */
+#ladybug-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    pointer-events: none;
+    z-index: 9999;
+    transform-origin: center center;
+    transform: translate(-100px, -100px);
+    filter: drop-shadow(2px 4px 3px rgba(0, 0, 0, 0.4));
+    transition: filter 0.35s ease;
+    will-change: transform, filter;
+}
+
+/* Larger shadow when flying (higher altitude) */
+#ladybug-container.ladybug-flying {
+    filter: drop-shadow(15px 25px 8px rgba(0, 0, 0, 0.3));
+}
+
+/* State-based depth cues */
+#ladybug-container.ladybug-state-moving {
+    filter: drop-shadow(3px 6px 4px rgba(0, 0, 0, 0.3));
+}
+
+#ladybug-container.ladybug-state-flying {
+    filter: drop-shadow(14px 22px 8px rgba(0, 0, 0, 0.26));
+}
+
+#ladybug-container.ladybug-state-angry {
+    filter: drop-shadow(18px 26px 10px rgba(0, 0, 0, 0.28));
+}
+
+/* Wings: hidden at rest */
+#ladybug-container .ladybug-wing {
+    opacity: 0;
+    transform-origin: 50px 30px;
+    transition: opacity 0.2s;
+}
+
+/* Wing-case shells: hinged near the head */
+#ladybug-container .ladybug-shell {
+    transform-origin: 50px 30px;
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Open shells when flying */
+#ladybug-container.ladybug-flying .ladybug-shell-left  { transform: rotate(-35deg); }
+#ladybug-container.ladybug-flying .ladybug-shell-right { transform: rotate(35deg); }
+
+/* Reveal and flap wings when flying */
+#ladybug-container.ladybug-flying .ladybug-wing {
+    opacity: 0.9;
+    animation: ladybug-flap 0.05s infinite alternate ease-in-out;
+}
+
+@keyframes ladybug-flap {
+    0% {
+        transform: scaleX(1) scaleY(0.92);
+        opacity: 0.78;
+    }
+    100% {
+        transform: scaleX(0.38) scaleY(1.07);
+        opacity: 0.95;
+    }
+}
+
+@keyframes ladybug-shell-vibe {
+    0%   { transform: translateY(0) rotate(0deg); }
+    100% { transform: translateY(-0.4px) rotate(1deg); }
+}
+
+/* Fine-tune animation intensity by state */
+#ladybug-container.ladybug-state-flying .ladybug-wing {
+    animation-duration: 0.045s;
+}
+
+#ladybug-container.ladybug-state-angry .ladybug-wing {
+    animation-duration: 0.032s;
+    opacity: 1;
+}
+
+#ladybug-container.ladybug-state-flying .ladybug-shell,
+#ladybug-container.ladybug-state-angry .ladybug-shell {
+    animation: ladybug-shell-vibe 0.085s infinite alternate ease-in-out;
+}
+
+/* Scared posture: slight tilt + punchier shadow */
+#ladybug-container.ladybug-state-scared {
+    filter: drop-shadow(8px 12px 7px rgba(0, 0, 0, 0.27));
+}
+
+/* Angry: deep red glow */
+#ladybug-container.ladybug-angry {
+    filter: drop-shadow(0 0 12px rgba(220, 38, 38, 0.9))
+            hue-rotate(-20deg)
+            saturate(2.5) !important;
+}
+
+/* Subtle shell polish and contrast boost */
+#ladybug-container .ladybug-shell path:first-child {
+    filter: saturate(1.05) contrast(1.03);
+}
+
+/* Eaten-cursor state: hide the real cursor everywhere */
+body.ladybug-no-cursor,
+body.ladybug-no-cursor * {
+    cursor: none !important;
+}
+
+/* H1 “leaf nibble” — characters the ladybug eats bit by bit */
+#ladybug-h1-bite-target {
+    position: relative;
+    z-index: 1;
+}
+
+#ladybug-h1-bite-target .ladybug-h1-char {
+    display: inline-block;
+    position: relative;
+    transition: opacity 0.45s ease, color 0.4s ease, transform 0.4s ease,
+                clip-path 0.4s ease;
+    vertical-align: baseline;
+    will-change: opacity, transform, clip-path;
+}
+
+#ladybug-h1-bite-target .ladybug-h1-char-sup {
+    font-size: inherit;
+}
+
+#ladybug-h1-bite-target .ladybug-h1-char.ladybug-h1-char-eaten {
+    opacity: 0.1;
+    color: transparent;
+    transform: scale(0.15) translateY(2px) rotate(-8deg);
+    clip-path: polygon(
+        10% 35%,
+        45% 0%,
+        88% 22%,
+        100% 60%,
+        72% 100%,
+        28% 88%,
+        0% 45%
+    );
+    pointer-events: none;
+    text-shadow: none;
+}
+
+/* ============================================================
+   Message Pill
+   ============================================================ */
+#ladybug-message {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    padding: 0.625rem 1.25rem;
+    border-radius: 9999px;
+    font-weight: 700;
+    font-size: 0.875rem;
+    letter-spacing: 0.025em;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+                0 4px 6px -4px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(1rem);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+    z-index: 50;
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+}
+
+#ladybug-message.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#ladybug-message.is-warning {
+    background: #fbbf24;
+    color: #451a03;
+}
+
+#ladybug-message.is-danger {
+    background: #dc2626;
+    color: #ffffff;
+}
+
+/* ============================================================
+   Cursor "eaten" particle burst (namespaced)
+   ============================================================ */
+#ladybug-particles-host {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 9998;
+    overflow: hidden;
+}
+
+.ladybug-chomp-particle {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 5px;
+    height: 5px;
+    margin-left: -2.5px;
+    margin-top: -2.5px;
+    border-radius: 50%;
+    --lb-tx: 0px;
+    --lb-ty: 0px;
+    animation: ladybug-chomp-fly 0.7s ease-out forwards;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.25);
+}
+
+.ladybug-chomp-particle.ladybug-chomp-crumb {
+    width: 4px;
+    height: 7px;
+    border-radius: 2px;
+    margin-left: -2px;
+    margin-top: -3.5px;
+}
+
+@keyframes ladybug-chomp-fly {
+    0% {
+        transform: translate(0, 0) scale(1) rotate(0deg);
+        opacity: 1;
+    }
+    55% {
+        opacity: 0.95;
+    }
+    100% {
+        transform: translate(var(--lb-tx), var(--lb-ty)) scale(0.15) rotate(180deg);
+        opacity: 0;
+    }
+}
+
+.ladybug-chomp-shock {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 8px;
+    height: 8px;
+    margin-left: -4px;
+    margin-top: -4px;
+    border: 3px solid rgba(220, 38, 38, 0.65);
+    border-radius: 50%;
+    animation: ladybug-chomp-shock-expand 0.45s ease-out forwards;
+    box-shadow: 0 0 12px rgba(220, 38, 38, 0.35);
+}
+
+@keyframes ladybug-chomp-shock-expand {
+    0% {
+        transform: scale(0.4);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(14);
+        opacity: 0;
+    }
+}
+
+/* ============================================================
+   Header logo: perch + scratch (ladybug easter egg)
+   ============================================================ */
+.page-header-logo-link {
+    display: inline-block;
+    transform-origin: center 92%;
+    transition: transform 0.25s ease;
+}
+
+#ladybug-logo-anchor.ladybug-logo-perched {
+    animation: ladybug-logo-breathe 3s ease-in-out infinite;
+}
+
+#ladybug-logo-anchor.ladybug-logo-imbalance {
+    animation: ladybug-logo-wobble 0.28s ease-in-out infinite;
+}
+
+@keyframes ladybug-logo-breathe {
+    0%, 100% { transform: rotate(0deg); }
+    50% { transform: rotate(-0.6deg); }
+}
+
+@keyframes ladybug-logo-wobble {
+    0%, 100% { transform: rotate(-2.2deg); }
+    50% { transform: rotate(2.2deg); }
+}
+
+#ladybug-container.ladybug-scratching {
+    z-index: 10000;
+}
+
+#ladybug-container.ladybug-scratching .ladybug-wing {
+    animation-duration: 0.1s;
+}
+
+/* ============================================================
+   Home tool tiles: perch + silly wobble (neumorphic buttons)
+   ============================================================ */
+main#main-content .button-grid a.neumorphic-button.ladybug-sat-tile {
+    transform: scale(0.98);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+main#main-content .button-grid a.neumorphic-button.ladybug-tile-boogie {
+    animation: ladybug-tile-boogie 0.3s ease-in-out infinite;
+}
+
+@keyframes ladybug-tile-boogie {
+    0%, 100% { transform: scale(0.97) rotate(-1.4deg); }
+    50% { transform: scale(0.99) rotate(1.3deg); }
+}
+
+.ladybug-tool-mote {
+    position: fixed;
+    z-index: 9997;
+    pointer-events: none;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    color: var(--text-secondary, #64748b);
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.45);
+    animation: ladybug-mote-float 0.95s ease-out forwards;
+}
+
+@keyframes ladybug-mote-float {
+    0% {
+        opacity: 1;
+        transform: translate(0, 0) rotate(0deg) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(var(--lb-tmx), var(--lb-tmy)) rotate(16deg) scale(0.85);
+    }
+}

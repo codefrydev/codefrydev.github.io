@@ -28,7 +28,7 @@
     <section class="category-section">
       <h2 class="category-title">AI Tools</h2>
       <div class="button-grid">
-        {{ range .Site.Data.ai.data }}
+        {{ range hugo.Data.ai.data }}
           {{- $isExternal := or (hasPrefix .url "http://") (hasPrefix .url "https://") -}}
           <a href="{{ .url }}" 
              class="neumorphic-button hapticButton" 

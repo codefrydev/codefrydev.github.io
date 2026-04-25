@@ -1,4 +1,9 @@
 history:
+  - date: "25 April 2026"
+    title: "Homepage ladybug easter egg"
+    description: "Interactive ladybug on the home page: wanders, gets scared, takes flight, can get angry; cursor-eat moment with particles; sometimes perches on the header logo, nibbles the main title when hungry, and visits random tool tiles with playful messages and confetti text—namespaced styles and scripts so it does not clash with the rest of the site."
+    link: "/"
+    accent_color: "#dc2626"
   - date: "24 April 2026"
     title: "JS LIDE"
     description: "In-browser JavaScript workspace—file explorer, editor, and console output for quick experiments."

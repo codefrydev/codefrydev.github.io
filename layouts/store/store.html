@@ -28,7 +28,7 @@
     <section class="category-section">
       <h2 class="category-title">Store</h2>
       <div class="button-grid">
-        {{ range .Site.Data.store.data }}
+        {{ range hugo.Data.store.data }}
           <a href="{{ .url }}" class="neumorphic-button hapticButton" aria-label="{{ .name }} - Mobile application" rel="noopener noreferrer">
             <img src="/images/store/{{ .icon }}.svg" srcset="/images/store/{{ .icon }}.svg" alt="{{ .name }} application icon" class="button-icon" loading="lazy">
             <span>{{ .name }}</span>
