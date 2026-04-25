@@ -170,30 +170,36 @@
     50%     { transform: rotate(-3.5deg); }
 }
 
-/* On-logo / tool-sit with shells closed: slow fidgety feet (same tripod as walk) */
+/* On-logo / tool-sit / hibernate sleep: slow fidgety feet (same tripod as walk) */
 #ladybug-container.ladybug-state-logo:not(.ladybug-flying) .ladybug-leg-l1,
-#ladybug-container.ladybug-state-tooltile:not(.ladybug-flying) .ladybug-leg-l1 {
+#ladybug-container.ladybug-state-tooltile:not(.ladybug-flying) .ladybug-leg-l1,
+#ladybug-container.ladybug-state-hibernate.ladybug-sleeping .ladybug-leg-l1 {
     animation: ladybug-leg-idle 1.1s ease-in-out infinite;
 }
 #ladybug-container.ladybug-state-logo:not(.ladybug-flying) .ladybug-leg-r2,
-#ladybug-container.ladybug-state-tooltile:not(.ladybug-flying) .ladybug-leg-r2 {
+#ladybug-container.ladybug-state-tooltile:not(.ladybug-flying) .ladybug-leg-r2,
+#ladybug-container.ladybug-state-hibernate.ladybug-sleeping .ladybug-leg-r2 {
     animation: ladybug-leg-idle-r 1.1s ease-in-out infinite;
 }
 #ladybug-container.ladybug-state-logo:not(.ladybug-flying) .ladybug-leg-l3,
-#ladybug-container.ladybug-state-tooltile:not(.ladybug-flying) .ladybug-leg-l3 {
+#ladybug-container.ladybug-state-tooltile:not(.ladybug-flying) .ladybug-leg-l3,
+#ladybug-container.ladybug-state-hibernate.ladybug-sleeping .ladybug-leg-l3 {
     animation: ladybug-leg-idle 1.1s ease-in-out infinite;
 }
 
 #ladybug-container.ladybug-state-logo:not(.ladybug-flying) .ladybug-leg-l2,
-#ladybug-container.ladybug-state-tooltile:not(.ladybug-flying) .ladybug-leg-l2 {
+#ladybug-container.ladybug-state-tooltile:not(.ladybug-flying) .ladybug-leg-l2,
+#ladybug-container.ladybug-state-hibernate.ladybug-sleeping .ladybug-leg-l2 {
     animation: ladybug-leg-idle 1.1s ease-in-out infinite 0.55s;
 }
 #ladybug-container.ladybug-state-logo:not(.ladybug-flying) .ladybug-leg-r1,
-#ladybug-container.ladybug-state-tooltile:not(.ladybug-flying) .ladybug-leg-r1 {
+#ladybug-container.ladybug-state-tooltile:not(.ladybug-flying) .ladybug-leg-r1,
+#ladybug-container.ladybug-state-hibernate.ladybug-sleeping .ladybug-leg-r1 {
     animation: ladybug-leg-idle-r 1.1s ease-in-out infinite 0.55s;
 }
 #ladybug-container.ladybug-state-logo:not(.ladybug-flying) .ladybug-leg-r3,
-#ladybug-container.ladybug-state-tooltile:not(.ladybug-flying) .ladybug-leg-r3 {
+#ladybug-container.ladybug-state-tooltile:not(.ladybug-flying) .ladybug-leg-r3,
+#ladybug-container.ladybug-state-hibernate.ladybug-sleeping .ladybug-leg-r3 {
     animation: ladybug-leg-idle-r 1.1s ease-in-out infinite 0.55s;
 }
 
@@ -397,6 +403,24 @@ body.ladybug-no-cursor * {
     animation-duration: 0.1s;
 }
 
+/* Dark theme: long nap on logo — softer glow, slightly dimmed */
+#ladybug-container.ladybug-sleeping {
+    opacity: 0.96;
+    transition: opacity 0.45s ease, filter 0.45s ease;
+}
+
+[data-theme="dark"] #ladybug-container.ladybug-state-hibernate.ladybug-sleeping {
+    filter:
+        drop-shadow(0 0 8px rgba(148, 163, 184, 0.32))
+        drop-shadow(0 0 20px rgba(30, 41, 59, 0.35))
+        drop-shadow(2px 4px 5px rgba(0, 0, 0, 0.52));
+}
+
+/* Theme toggle while bug is snoozing beside it (dark mode hibernate) */
+[data-theme="dark"] #theme-toggle.ladybug-theme-snoozing {
+    box-shadow: 0 0 0 2px rgba(148, 163, 184, 0.35), 0 0 12px rgba(100, 116, 139, 0.25);
+}
+
 /* ============================================================
    Home tool tiles: perch + silly wobble (neumorphic buttons)
    ============================================================ */
@@ -482,6 +506,7 @@ main#main-content .button-grid a.neumorphic-button.ladybug-tile-boogie {
 }
 
 [data-theme="dark"] #ladybug-container.ladybug-state-logo,
+[data-theme="dark"] #ladybug-container.ladybug-state-hibernate,
 [data-theme="dark"] #ladybug-container.ladybug-state-h1feast,
 [data-theme="dark"] #ladybug-container.ladybug-state-tooltile {
     filter:
