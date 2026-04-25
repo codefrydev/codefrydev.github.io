@@ -107,6 +107,108 @@
     filter: saturate(1.05) contrast(1.03);
 }
 
+/* Legs: pivot at body; swing only on walk / dangle in flight / idle on perch */
+#ladybug-container .ladybug-leg-swing {
+    transform-origin: 0 0;
+    transform-box: fill-box;
+}
+
+#ladybug-container .ladybug-leg-swing {
+    animation: none;
+}
+
+/* Tripod gait: (L1, R2, L3) and (L2, R1, R3) alternate; mirrored L/R keyframes */
+#ladybug-container.ladybug-state-moving .ladybug-leg-l1 { animation: ladybug-leg-stride-l 0.3s ease-in-out infinite; }
+#ladybug-container.ladybug-state-moving .ladybug-leg-r2 { animation: ladybug-leg-stride-r 0.3s ease-in-out infinite; }
+#ladybug-container.ladybug-state-moving .ladybug-leg-l3 { animation: ladybug-leg-stride-l 0.3s ease-in-out infinite; }
+
+#ladybug-container.ladybug-state-moving .ladybug-leg-l2 { animation: ladybug-leg-stride-l 0.3s ease-in-out infinite 0.15s; }
+#ladybug-container.ladybug-state-moving .ladybug-leg-r1 { animation: ladybug-leg-stride-r 0.3s ease-in-out infinite 0.15s; }
+#ladybug-container.ladybug-state-moving .ladybug-leg-r3 { animation: ladybug-leg-stride-r 0.3s ease-in-out infinite 0.15s; }
+
+@keyframes ladybug-leg-stride-l {
+    0%,
+    100% { transform: rotate(-6deg); }
+    50%     { transform: rotate(10deg); }
+}
+
+@keyframes ladybug-leg-stride-r {
+    0%,
+    100% { transform: rotate(6deg); }
+    50%     { transform: rotate(-10deg); }
+}
+
+/* Slightly faster, tighter stride when also scared (still “moving” in script) */
+#ladybug-container.ladybug-state-moving.ladybug-state-scared .ladybug-leg-swing {
+    animation-duration: 0.2s;
+}
+
+#ladybug-container.ladybug-state-moving.ladybug-state-scared .ladybug-leg-l2,
+#ladybug-container.ladybug-state-moving.ladybug-state-scared .ladybug-leg-r1,
+#ladybug-container.ladybug-state-moving.ladybug-state-scared .ladybug-leg-r3 {
+    animation-delay: 0.1s;
+}
+
+/* Shells open: small alternating dangle (overrides walk when .ladybug-flying is set) */
+#ladybug-container.ladybug-flying .ladybug-leg-l1 { animation: ladybug-leg-dangle 0.38s ease-in-out infinite; }
+#ladybug-container.ladybug-flying .ladybug-leg-r2 { animation: ladybug-leg-dangle-r 0.38s ease-in-out infinite; }
+#ladybug-container.ladybug-flying .ladybug-leg-l3 { animation: ladybug-leg-dangle 0.38s ease-in-out infinite; }
+
+#ladybug-container.ladybug-flying .ladybug-leg-l2 { animation: ladybug-leg-dangle 0.38s ease-in-out infinite 0.19s; }
+#ladybug-container.ladybug-flying .ladybug-leg-r1 { animation: ladybug-leg-dangle-r 0.38s ease-in-out infinite 0.19s; }
+#ladybug-container.ladybug-flying .ladybug-leg-r3 { animation: ladybug-leg-dangle-r 0.38s ease-in-out infinite 0.19s; }
+
+@keyframes ladybug-leg-dangle {
+    0%,
+    100% { transform: rotate(-2.5deg); }
+    50%     { transform: rotate(3.5deg); }
+}
+
+@keyframes ladybug-leg-dangle-r {
+    0%,
+    100% { transform: rotate(2.5deg); }
+    50%     { transform: rotate(-3.5deg); }
+}
+
+/* On-logo / tool-sit with shells closed: slow fidgety feet (same tripod as walk) */
+#ladybug-container.ladybug-state-logo:not(.ladybug-flying) .ladybug-leg-l1,
+#ladybug-container.ladybug-state-tooltile:not(.ladybug-flying) .ladybug-leg-l1 {
+    animation: ladybug-leg-idle 1.1s ease-in-out infinite;
+}
+#ladybug-container.ladybug-state-logo:not(.ladybug-flying) .ladybug-leg-r2,
+#ladybug-container.ladybug-state-tooltile:not(.ladybug-flying) .ladybug-leg-r2 {
+    animation: ladybug-leg-idle-r 1.1s ease-in-out infinite;
+}
+#ladybug-container.ladybug-state-logo:not(.ladybug-flying) .ladybug-leg-l3,
+#ladybug-container.ladybug-state-tooltile:not(.ladybug-flying) .ladybug-leg-l3 {
+    animation: ladybug-leg-idle 1.1s ease-in-out infinite;
+}
+
+#ladybug-container.ladybug-state-logo:not(.ladybug-flying) .ladybug-leg-l2,
+#ladybug-container.ladybug-state-tooltile:not(.ladybug-flying) .ladybug-leg-l2 {
+    animation: ladybug-leg-idle 1.1s ease-in-out infinite 0.55s;
+}
+#ladybug-container.ladybug-state-logo:not(.ladybug-flying) .ladybug-leg-r1,
+#ladybug-container.ladybug-state-tooltile:not(.ladybug-flying) .ladybug-leg-r1 {
+    animation: ladybug-leg-idle-r 1.1s ease-in-out infinite 0.55s;
+}
+#ladybug-container.ladybug-state-logo:not(.ladybug-flying) .ladybug-leg-r3,
+#ladybug-container.ladybug-state-tooltile:not(.ladybug-flying) .ladybug-leg-r3 {
+    animation: ladybug-leg-idle-r 1.1s ease-in-out infinite 0.55s;
+}
+
+@keyframes ladybug-leg-idle {
+    0%,
+    100% { transform: rotate(-2deg); }
+    50%     { transform: rotate(2.5deg); }
+}
+
+@keyframes ladybug-leg-idle-r {
+    0%,
+    100% { transform: rotate(2deg); }
+    50%     { transform: rotate(-2.5deg); }
+}
+
 /* Eaten-cursor state: hide the real cursor everywhere */
 body.ladybug-no-cursor,
 body.ladybug-no-cursor * {
@@ -333,4 +435,80 @@ main#main-content .button-grid a.neumorphic-button.ladybug-tile-boogie {
         opacity: 0;
         transform: translate(var(--lb-tmx), var(--lb-tmy)) rotate(16deg) scale(0.85);
     }
+}
+
+/* ============================================================
+   Dark theme: soft “glow” so the bug stays visible on dark UI
+   ============================================================ */
+[data-theme="dark"] #ladybug-container {
+    filter:
+        drop-shadow(0 0 10px rgba(252, 165, 165, 0.55))
+        drop-shadow(0 0 24px rgba(220, 38, 38, 0.2))
+        drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.55));
+}
+
+[data-theme="dark"] #ladybug-container.ladybug-flying {
+    filter:
+        drop-shadow(0 0 12px rgba(254, 202, 202, 0.5))
+        drop-shadow(0 0 22px rgba(248, 113, 113, 0.16))
+        drop-shadow(15px 25px 10px rgba(0, 0, 0, 0.5));
+}
+
+[data-theme="dark"] #ladybug-container.ladybug-state-moving {
+    filter:
+        drop-shadow(0 0 8px rgba(252, 165, 165, 0.45))
+        drop-shadow(0 0 18px rgba(220, 38, 38, 0.16))
+        drop-shadow(3px 6px 5px rgba(0, 0, 0, 0.5));
+}
+
+[data-theme="dark"] #ladybug-container.ladybug-state-flying {
+    filter:
+        drop-shadow(0 0 11px rgba(254, 202, 202, 0.48))
+        drop-shadow(0 0 20px rgba(248, 113, 113, 0.12))
+        drop-shadow(14px 22px 9px rgba(0, 0, 0, 0.48));
+}
+
+[data-theme="dark"] #ladybug-container.ladybug-state-angry {
+    filter:
+        drop-shadow(0 0 10px rgba(252, 165, 165, 0.4))
+        drop-shadow(0 0 20px rgba(220, 38, 38, 0.24))
+        drop-shadow(18px 26px 10px rgba(0, 0, 0, 0.45));
+}
+
+[data-theme="dark"] #ladybug-container.ladybug-state-scared {
+    filter:
+        drop-shadow(0 0 10px rgba(252, 165, 165, 0.5))
+        drop-shadow(8px 12px 8px rgba(0, 0, 0, 0.45));
+}
+
+[data-theme="dark"] #ladybug-container.ladybug-state-logo,
+[data-theme="dark"] #ladybug-container.ladybug-state-h1feast,
+[data-theme="dark"] #ladybug-container.ladybug-state-tooltile {
+    filter:
+        drop-shadow(0 0 9px rgba(252, 165, 165, 0.5))
+        drop-shadow(0 0 20px rgba(220, 38, 38, 0.15))
+        drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.55));
+}
+
+[data-theme="dark"] #ladybug-container.ladybug-angry {
+    filter:
+        drop-shadow(0 0 6px rgba(254, 202, 202, 0.45))
+        drop-shadow(0 0 12px rgba(220, 38, 38, 0.95))
+        drop-shadow(0 0 20px rgba(220, 38, 38, 0.35))
+        hue-rotate(-20deg)
+        saturate(2.5) !important;
+}
+
+[data-theme="dark"] #ladybug-container .ladybug-shell path:first-child {
+    filter: saturate(1.1) contrast(1.1) brightness(1.1);
+}
+
+[data-theme="dark"] #ladybug-container .ladybug-legs,
+[data-theme="dark"] #ladybug-container .ladybug-legs rect {
+    fill: #94a3b8;
+}
+
+[data-theme="dark"] .ladybug-tool-mote {
+    color: #fca5a5;
+    text-shadow: 0 0 8px rgba(220, 38, 38, 0.4);
 }
