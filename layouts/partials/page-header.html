@@ -3,7 +3,13 @@
   <a href="/" id="ladybug-logo-anchor" class="page-header-logo-link" aria-label="CodeFryDev Homepage">
     <img fetchpriority="high" src="/images/IconCodefrydev.svg" srcset="/images/IconCodefrydev.svg" alt="CodeFryDev logo - Tools, Games, Art, Animation" width="96" height="96">
   </a>
-  <h1 id="ladybug-h1-bite-target">CodeFryDev<sup style="font-size: small; font-weight: bold;"> Alpha</sup></h1>
+  <h1 id="ladybug-h1-bite-target">CodeFryDev
+    {{- if .IsHome -}}
+    <sup class="page-header-alpha-sup" style="font-size: small; font-weight: bold;"> <button type="button" id="ladybug-reveal-alpha" class="ladybug-alpha-reveal" aria-label="Show the interactive ladybug" title="Click to show the home page easter egg">Alpha</button></sup>
+    {{- else -}}
+    <sup style="font-size: small; font-weight: bold;"> Alpha</sup>
+    {{- end -}}
+  </h1>
   <p class="tagline">Tools, Games, Art, Animation</p>
   <p class="home-cta-hero">
     <a href="/Updates/" class="home-cta-secondary">.NET</a>

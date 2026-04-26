@@ -2,6 +2,15 @@
    Ladybug Feature — Home Page Only
    ============================================================ */
 
+/* Gated: hidden until user clicks “Alpha” (home) */
+#ladybug-container.ladybug-gate-hidden,
+#ladybug-particles-host.ladybug-gate-hidden,
+#ladybug-message.ladybug-gate-hidden {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+}
+
 /* Bug container: fixed overlay, full-page movement space */
 #ladybug-container {
     position: fixed;
@@ -14,7 +23,7 @@
     transform-origin: center center;
     transform: translate(-100px, -100px);
     filter: drop-shadow(2px 4px 3px rgba(0, 0, 0, 0.4));
-    transition: filter 0.35s ease;
+    transition: filter 0.35s ease, opacity 0.35s ease, visibility 0.35s ease;
     will-change: transform, filter;
 }
 
@@ -225,6 +234,28 @@ body.ladybug-no-cursor * {
 #ladybug-h1-bite-target {
     position: relative;
     z-index: 1;
+}
+
+#ladybug-h1-bite-target .ladybug-alpha-reveal {
+    font: inherit;
+    font-size: small;
+    font-weight: bold;
+    line-height: inherit;
+    color: inherit;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    font-family: inherit;
+    border-radius: 0.2em;
+}
+#ladybug-h1-bite-target .ladybug-alpha-reveal:hover {
+    opacity: 0.88;
+}
+#ladybug-h1-bite-target .ladybug-alpha-reveal:focus-visible {
+    outline: 2px solid var(--text-secondary, #64748b);
+    outline-offset: 2px;
 }
 
 #ladybug-h1-bite-target .ladybug-h1-char {

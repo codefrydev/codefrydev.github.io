@@ -1,5 +1,5 @@
-{{- /* Ladybug easter egg — home page only */ -}}
-<div id="ladybug-container" aria-hidden="true" role="presentation">
+{{- /* Ladybug easter egg — home page only; hidden until “Alpha” is used (see ladybug.js) */ -}}
+<div id="ladybug-container" class="ladybug-gate-hidden" aria-hidden="true" role="presentation">
     <svg viewBox="0 0 100 100" width="100%" height="100%">
         <!-- Legs: 3 pill segments / side (inspired by horizontal “elbow” stack); CSS animates .ladybug-leg-swing -->
         <g class="ladybug-legs" fill="#0f172a">
@@ -110,5 +110,5 @@
     </svg>
 </div>
 
-<div id="ladybug-particles-host" aria-hidden="true" role="presentation"></div>
-<div id="ladybug-message" aria-hidden="true" role="presentation"></div>
+<div id="ladybug-particles-host" class="ladybug-gate-hidden" aria-hidden="true" role="presentation"></div>
+<div id="ladybug-message" class="ladybug-gate-hidden" aria-hidden="true" role="presentation"></div>
