@@ -3,38 +3,37 @@
     <div class="footer-main">
       <div class="footer-brand-section">
         <div class="footer-brand">
-          <a href="/" aria-label="CodeFryDev Homepage">
-            <img src="/images/IconCodefrydev.svg" srcset="/images/IconCodefrydev.svg" alt="CodeFryDev Logo" width="48" height="48" loading="lazy" class="footer-logo">
+          <a href="/" class="footer-logo-link" aria-label="CodeFryDev Homepage">
+            <img src="/images/IconCodefrydev.svg" srcset="/images/IconCodefrydev.svg" alt="" width="48" height="48" loading="lazy" class="footer-logo" decoding="async">
           </a>
-          <h2 class="footer-brand-title">{{ .Site.Title }}</h2>
+          <p class="footer-brand-title">{{ .Site.Title }}</p>
         </div>
-        <p class="footer-description">{{ .Site.Params.description | truncate 140 }}</p>
+        <p class="footer-description">
+          {{- with .Site.Params.footer_tagline }}{{ . }}{{ else }}{{ .Site.Params.description | truncate 95 }}{{ end -}}
+        </p>
         {{- $totalTools := 0 -}}
         {{- range hugo.Data.home.categories }}{{ $totalTools = add $totalTools (len .items) }}{{ end -}}
         {{- $aiCount := 0 }}{{ with hugo.Data.ai.data }}{{ $aiCount = len . }}{{ end -}}
         {{- $gamesCount := 0 }}{{ with hugo.Data.games.data }}{{ $gamesCount = len . }}{{ end -}}
         {{- $designCount := 0 }}{{ with hugo.Data.designlab.data }}{{ $designCount = len . }}{{ end -}}
-        <p class="footer-stats" aria-label="Platform stats">{{ $totalTools }}+ tools · {{ $gamesCount }} games · {{ $aiCount }} AI apps · {{ $designCount }} design tools</p>
-        <div class="footer-lead">
-          <p class="footer-lead-text">Get updates and support</p>
-          <a href="/Updates/" class="footer-lead-cta">Get product updates</a>
-          <a href="/tncprivacy" class="footer-lead-cta">Contact &amp; support</a>
+        <div class="footer-meta-panel">
+          <ul class="footer-stats" aria-label="Platform stats">
+            <li class="footer-stat"><span class="footer-stat-value">{{ $totalTools }}+</span> <span class="footer-stat-label">tools</span></li>
+            <li class="footer-stat"><span class="footer-stat-value">{{ $gamesCount }}</span> <span class="footer-stat-label">games</span></li>
+            <li class="footer-stat"><span class="footer-stat-value">{{ $aiCount }}</span> <span class="footer-stat-label">AI</span></li>
+            <li class="footer-stat"><span class="footer-stat-value">{{ $designCount }}</span> <span class="footer-stat-label">design</span></li>
+          </ul>
+          <div class="footer-lead" role="group" aria-labelledby="footer-lead-label">
+            <p id="footer-lead-label" class="footer-lead-text">Updates &amp; support</p>
+            <div class="footer-lead-actions">
+              <a href="/Updates/" class="footer-lead-cta">Updates</a>
+              <a href="/tncprivacy" class="footer-lead-cta">Contact</a>
+            </div>
+          </div>
         </div>
       </div>
 
       <div class="footer-nav-section">
-        <div class="footer-nav-column">
-          <h3 class="footer-nav-title">Product</h3>
-          <nav aria-label="Product navigation">
-            <ul class="footer-nav-list">
-              <li><a href="/games" class="footer-nav-link">Games</a></li>
-              <li><a href="/ai" class="footer-nav-link">AI Tools</a></li>
-              <li><a href="/designlab" class="footer-nav-link">Design Lab</a></li>
-              <li><a href="/store" class="footer-nav-link">Store</a></li>
-            </ul>
-          </nav>
-        </div>
-
         <div class="footer-nav-column">
           <h3 class="footer-nav-title">Resources</h3>
           <nav aria-label="Resources navigation">
@@ -44,6 +43,18 @@
               <li><a href="/history" class="footer-nav-link">History</a></li>
               <li><a href="/search" class="footer-nav-link">Search</a></li>
               <li><a href="/tncprivacy" class="footer-nav-link">Terms, Privacy &amp; Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="footer-nav-column">
+          <h3 class="footer-nav-title">Product</h3>
+          <nav aria-label="Product navigation">
+            <ul class="footer-nav-list">
+              <li><a href="/games" class="footer-nav-link">Games</a></li>
+              <li><a href="/ai" class="footer-nav-link">AI Tools</a></li>
+              <li><a href="/designlab" class="footer-nav-link">Design Lab</a></li>
+              <li><a href="/store" class="footer-nav-link">Store</a></li>
             </ul>
           </nav>
         </div>

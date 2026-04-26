@@ -76,6 +76,16 @@ body {
     min-width: 0;
 }
 
+ul.button-grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.button-grid>li {
+    display: contents;
+}
+
 a.neumorphic-button {
     display: flex;
     flex-direction: column;
@@ -145,7 +155,7 @@ a.neumorphic-button:active>span {
     padding: 2rem;
     border-radius: 0.8rem;
     background: var(--bg-primary);
-    box-shadow: inset 0.2rem 0.2rem 0.4rem var(--shadow-dark), inset -0.2rem -0.2rem 0.4rem var(--shadow-light);
+    box-shadow: none;
 }
 
 .home-intro-content {
@@ -190,6 +200,14 @@ a.neumorphic-button:active>span {
 
 .home-intro-content h2:first-of-type {
     margin-top: 0;
+    /* Match FAQ section title — calmer than uppercase category-style labels */
+    font-family: Inter, system-ui, -apple-system, sans-serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-transform: none;
+    letter-spacing: 0.02em;
+    margin-bottom: 1rem;
 }
 
 .home-intro-content > h1:first-child,
@@ -203,36 +221,101 @@ a.neumorphic-button:active>span {
     grid-column: 1 / -1;
 }
 
-/* What We Offer – raised neumorphic cards, responsive card grid (one card per cell, 2 cols on tablet+) */
-.offer-card {
-    border-radius: 0.8rem;
-    background: var(--button-bg);
-    --shadow-light: var(--shadow-light-alt);
-    --shadow-dark: var(--shadow-dark-alt);
-    box-shadow: -0.25rem -0.25rem 0.5rem var(--shadow-light), 0.25rem 0.25rem 0.5rem var(--shadow-dark);
-    padding: 0;
+/* What We Offer – same accordion stack pattern as homepage FAQ */
+.home-intro-content .offer-list {
+    grid-column: 1 / -1;
+    margin: 0;
     min-width: 0;
-    display: flex;
-    flex-direction: column;
+    border: 1px solid var(--border-light);
+    border-radius: 0.6rem;
+    overflow: hidden;
+    background: var(--bg-primary);
 }
 
-.offer-card-title {
+.home-intro-content details.offer-card {
     margin: 0;
-    padding: 0.9rem 1.1rem;
-    font-size: 1rem;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.home-intro-content details.offer-card:last-child {
+    border-bottom: none;
+}
+
+.home-intro-content details.offer-card[open] {
+    background: var(--button-bg);
+    box-shadow: inset 0 1px 0 var(--shadow-light-alt);
+}
+
+.home-intro-content details.offer-card summary.offer-card-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    min-height: 44px;
+    padding: 0.75rem 2.25rem 0.75rem 1rem;
+    font-family: Inter, system-ui, -apple-system, sans-serif;
+    font-size: 0.98rem;
     font-weight: 600;
     color: var(--text-primary);
+    margin: 0;
+    cursor: pointer;
+    list-style: none;
+    overflow-wrap: break-word;
+    word-break: break-word;
 }
 
-.offer-card-body {
-    padding: 0 1.1rem 1rem 0.9rem;
+.home-intro-content details.offer-card summary.offer-card-title::-webkit-details-marker {
+    display: none;
+}
+
+.home-intro-content details.offer-card summary.offer-card-title::after {
+    content: "";
+    flex-shrink: 0;
+    width: 0.45rem;
+    height: 0.45rem;
+    margin-left: auto;
+    border-right: 2px solid var(--text-secondary);
+    border-bottom: 2px solid var(--text-secondary);
+    transform: rotate(45deg);
+    opacity: 0.75;
+    transition: transform 0.2s ease, opacity 0.15s ease;
+}
+
+.home-intro-content details.offer-card[open] summary.offer-card-title::after {
+    transform: rotate(-135deg);
+    margin-top: 0.25rem;
+}
+
+.home-intro-content details.offer-card summary.offer-card-title:hover::after {
+    opacity: 1;
+}
+
+.home-intro-content details.offer-card summary.offer-card-title:focus {
+    outline: none;
+}
+
+.home-intro-content details.offer-card summary.offer-card-title:focus-visible {
+    outline: none;
+    box-shadow: inset 0 0 0 2px var(--button-text-hover);
+}
+
+.home-intro-content details.offer-card .offer-card-body {
+    font-family: Inter, system-ui, -apple-system, sans-serif;
     font-size: 0.9rem;
     line-height: 1.55;
     color: var(--text-secondary);
-    flex: 1;
+    margin: 0;
+    padding: 0 1rem 1rem 1rem;
+    overflow-wrap: break-word;
+    word-break: break-word;
 }
 
-.offer-card-body p {
+.home-intro-content details.offer-card .offer-card-body p {
     margin: 0;
 }
 
@@ -332,7 +415,7 @@ a.neumorphic-button:active>span {
     box-shadow: -0.3rem -0.3rem 0.6rem var(--shadow-light), 0.3rem 0.3rem 0.6rem var(--shadow-dark);
 }
 
-/* FAQ section – same width and padding as category-section so it aligns above/below */
+/* FAQ section – width aligns with category-section; accordion list (no per-row neumorphic) */
 .faq-section {
     box-sizing: border-box;
     width: min(75rem, 100%);
@@ -342,50 +425,117 @@ a.neumorphic-button:active>span {
     margin-bottom: 2rem;
 }
 
-/* Homepage: FAQ follows same design as content above (width, padding, neumorphic cards) */
+/* Homepage FAQ: spacing beats global internal.css .faq-section */
 #main-content .faq-section {
+    box-sizing: border-box;
+    width: min(75rem, 100%);
+    max-width: 100%;
+    margin-inline: auto;
+    margin-top: 2.5rem;
+    margin-bottom: 2rem;
     padding-inline: 0.35rem;
 }
 
 #main-content .faq-section-title {
-    font-family: Inter, sans-serif;
-    font-size: 1.1rem;
+    font-family: Inter, system-ui, -apple-system, sans-serif;
+    font-size: 1.05rem;
     font-weight: 600;
     color: var(--text-secondary);
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    margin-bottom: 2rem;
+    text-transform: none;
+    letter-spacing: 0.02em;
+    margin: 0 0 1rem 0;
 }
 
-#main-content .faq-item {
-    background: var(--button-bg);
-    padding: 1.25rem 1.1rem;
-    border-radius: 0.8rem;
+#main-content .faq-list {
+    margin: 0;
     border: 1px solid var(--border-light);
-    --shadow-light: var(--shadow-light-alt);
-    --shadow-dark: var(--shadow-dark-alt);
-    box-shadow: -0.25rem -0.25rem 0.5rem var(--shadow-light), 0.25rem 0.25rem 0.5rem var(--shadow-dark);
-    margin-bottom: 1.25rem;
+    border-radius: 0.6rem;
+    overflow: hidden;
+    background: var(--bg-primary);
 }
 
-#main-content .faq-item:last-child {
+#main-content details.faq-item {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    border-bottom: 1px solid var(--border-light);
+}
+
+#main-content details.faq-item:last-child {
     margin-bottom: 0;
+    border-bottom: none;
 }
 
-#main-content .faq-question {
+#main-content details.faq-item[open] {
+    background: var(--button-bg);
+    box-shadow: inset 0 1px 0 var(--shadow-light-alt);
+}
+
+#main-content details.faq-item summary.faq-question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    min-height: 44px;
+    padding: 0.75rem 2.25rem 0.75rem 1rem;
     font-family: Inter, system-ui, -apple-system, sans-serif;
-    font-size: 1rem;
+    font-size: 0.98rem;
     font-weight: 600;
     color: var(--text-primary);
-    margin: 0 0 0.5rem 0;
+    margin: 0;
+    cursor: pointer;
+    list-style: none;
+    overflow-wrap: break-word;
+    word-break: break-word;
 }
 
-#main-content .faq-answer {
+#main-content details.faq-item summary.faq-question::-webkit-details-marker {
+    display: none;
+}
+
+#main-content details.faq-item summary.faq-question::after {
+    content: "";
+    flex-shrink: 0;
+    width: 0.45rem;
+    height: 0.45rem;
+    margin-left: auto;
+    border-right: 2px solid var(--text-secondary);
+    border-bottom: 2px solid var(--text-secondary);
+    transform: rotate(45deg);
+    opacity: 0.75;
+    transition: transform 0.2s ease, opacity 0.15s ease;
+}
+
+#main-content details.faq-item[open] summary.faq-question::after {
+    transform: rotate(-135deg);
+    margin-top: 0.25rem;
+}
+
+#main-content details.faq-item summary.faq-question:hover::after {
+    opacity: 1;
+}
+
+#main-content details.faq-item summary.faq-question:focus {
+    outline: none;
+}
+
+#main-content details.faq-item summary.faq-question:focus-visible {
+    outline: none;
+    box-shadow: inset 0 0 0 2px var(--button-text-hover);
+}
+
+#main-content details.faq-item .faq-answer {
     font-family: Inter, system-ui, -apple-system, sans-serif;
     font-size: 0.9rem;
     line-height: 1.55;
     color: var(--text-secondary);
     margin: 0;
+    padding: 0 1rem 1rem 1rem;
+    overflow-wrap: break-word;
+    word-break: break-word;
 }
 
 .faq-section-title {
@@ -400,17 +550,17 @@ a.neumorphic-button:active>span {
 }
 
 .faq-item {
-    margin-bottom: 1rem;
+    margin-bottom: 0;
 }
 
 .faq-question {
     font-weight: 600;
     color: var(--text-primary);
-    margin: 0 0 0.25rem 0;
+    margin: 0;
 }
 
 .faq-answer {
-    margin: 0 0 1rem 0;
+    margin: 0;
     color: var(--text-secondary);
     line-height: 1.5;
 }
@@ -436,16 +586,22 @@ a.neumorphic-button:active>span {
         padding: 1.25rem;
     }
 
-    .offer-card-title {
-        padding: 0.75rem 1rem;
+    .home-intro-content details.offer-card summary.offer-card-title {
+        padding: 0.65rem 2rem 0.65rem 0.85rem;
+        font-size: 0.95rem;
     }
 
-    .offer-card-body {
-        padding: 0 1rem 0.75rem 0.75rem;
+    .home-intro-content details.offer-card .offer-card-body {
+        padding: 0 0.85rem 0.9rem 0.85rem;
     }
 
-    #main-content .faq-item {
-        padding: 1rem 1rem;
+    #main-content details.faq-item summary.faq-question {
+        padding: 0.65rem 2rem 0.65rem 0.85rem;
+        font-size: 0.95rem;
+    }
+
+    #main-content details.faq-item .faq-answer {
+        padding: 0 0.85rem 0.9rem 0.85rem;
     }
 
     .home-intro-content ul li {
@@ -481,8 +637,24 @@ body {
     padding: 1rem;
 }
 
-#main-content .faq-item {
-    padding: 0.875rem 0.9rem;
+#main-content details.faq-item summary.faq-question {
+    padding: 0.6rem 1.85rem 0.6rem 0.75rem;
+    font-size: 0.92rem;
+}
+
+#main-content details.faq-item .faq-answer {
+    padding: 0 0.75rem 0.85rem 0.75rem;
+    font-size: 0.875rem;
+}
+
+.home-intro-content details.offer-card summary.offer-card-title {
+    padding: 0.6rem 1.85rem 0.6rem 0.75rem;
+    font-size: 0.92rem;
+}
+
+.home-intro-content details.offer-card .offer-card-body {
+    padding: 0 0.75rem 0.85rem 0.75rem;
+    font-size: 0.875rem;
 }
 
 .faq-section {

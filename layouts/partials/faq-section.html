@@ -1,13 +1,13 @@
 {{- if hugo.Data.faq.faqs -}}
 <section class="faq-section" aria-labelledby="faq-heading">
   <h2 id="faq-heading" class="faq-section-title">Frequently asked questions</h2>
-  <dl class="faq-list">
+  <div class="faq-list">
     {{- range hugo.Data.faq.faqs -}}
-    <div class="faq-item">
-      <dt class="faq-question">{{ .question }}</dt>
-      <dd class="faq-answer">{{ .answer }}</dd>
-    </div>
+    <details class="faq-item">
+      <summary class="faq-question">{{ .question }}</summary>
+      <div class="faq-answer">{{ .answer }}</div>
+    </details>
     {{- end -}}
-  </dl>
+  </div>
 </section>
 {{- end -}}

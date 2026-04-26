@@ -1,0 +1,10 @@
+{{- with hugo.Data.offers.entries -}}
+<div class="offer-list">
+{{- range . -}}
+<details class="offer-card">
+  <summary class="offer-card-title">{{ with .icon }}{{ . }} {{ end }}{{ .title }}</summary>
+  <div class="offer-card-body">{{ .text | markdownify }}</div>
+</details>
+{{- end -}}
+</div>
+{{- end -}}

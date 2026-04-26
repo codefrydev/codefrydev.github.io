@@ -3,8 +3,10 @@
     box-sizing: border-box;
     width: min(75rem, 100%);
     max-width: 100%;
+    min-width: 0;
     margin-inline: auto;
     margin-bottom: 3rem;
+    padding-inline: 0.35rem;
     overflow-x: clip;
 }
 
@@ -15,11 +17,13 @@
     max-width: 100%;
     box-sizing: border-box;
     min-width: 0;
+    overflow-x: clip;
 }
 
 .search-container .search-box {
     width: 100%;
     max-width: 100%;
+    min-width: 0;
     padding: 1rem 1rem 1rem 3rem;
     font-size: 1rem;
     border: none;
@@ -55,11 +59,18 @@
     left: 1rem;
     top: 50%;
     transform: translateY(-50%);
-    width: 18px;
-    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.125rem;
+    height: 1.125rem;
+    font-size: 1.125rem;
+    line-height: 1;
     opacity: 0.5;
     pointer-events: none;
     transition: opacity 0.2s ease;
+    user-select: none;
+    overflow: hidden;
 }
 
 .search-container .search-box-wrapper:focus-within .search-icon {
@@ -68,9 +79,12 @@
 
 .search-container .search-stats {
     color: var(--text-tertiary);
-    margin-bottom: 1.5rem;
+    margin: 0 0 1.5rem 0;
     font-size: 0.95rem;
     padding-left: 0.5rem;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    word-break: break-word;
 }
 
 .search-container .search-suggestions {
@@ -93,11 +107,23 @@
     letter-spacing: 0.5px;
 }
 
+.search-container .search-form {
+    margin: 0;
+}
+
 .search-container .suggestions-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(7rem, 100%), 1fr));
-    gap: 1.25rem;
+    grid-template-columns: repeat(auto-fit, minmax(min(6rem, 100%), 1fr));
+    gap: clamp(0.65rem, 2.5vw, 1.25rem);
     min-width: 0;
+    width: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.search-container .suggestions-grid > li {
+    display: contents;
 }
 
 .search-container .suggestion-button {
@@ -197,11 +223,21 @@
     display: flex;
     align-items: center;
     gap: 1.25rem;
+    min-width: 0;
+    max-width: 100%;
+    text-decoration: none;
+    color: inherit;
+    box-sizing: border-box;
     --shadow-light: var(--shadow-light-alt);
     --shadow-dark: var(--shadow-dark-alt);
     box-shadow: 
         8px 8px 16px var(--shadow-dark),
         -8px -8px 16px var(--shadow-light);
+}
+
+.search-container .result-item:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
 }
 
 .search-container .result-item:hover {
@@ -334,6 +370,8 @@
     .search-container {
         width: 100%;
         margin-bottom: 2rem;
+        padding-inline: max(0.35rem, env(safe-area-inset-left, 0px))
+            max(0.35rem, env(safe-area-inset-right, 0px));
     }
     
     .search-container .search-box {
@@ -341,10 +379,24 @@
         font-size: 0.95rem;
     }
     
+    .search-container .search-box:focus-visible {
+        outline-offset: 1px;
+    }
+    
     .search-container .search-icon {
         left: 0.875rem;
-        width: 16px;
-        height: 16px;
+        width: 1rem;
+        height: 1rem;
+        font-size: 1rem;
+    }
+    
+    .search-container .suggestions-grid {
+        grid-template-columns: repeat(auto-fit, minmax(min(5.25rem, 100%), 1fr));
+        gap: 0.65rem;
+    }
+    
+    .search-container .suggestion-button {
+        padding: 0.65rem;
     }
     
     .search-container .result-item {
@@ -367,6 +419,7 @@
 @media (min-width: 481px) and (max-width: 768px) {
     .search-container {
         width: min(40rem, 100%);
+        min-width: 0;
     }
 }
 
@@ -374,6 +427,7 @@
 @media (min-width: 769px) and (max-width: 1199px) {
     .search-container {
         width: min(68rem, 100%);
+        min-width: 0;
     }
 }
 
@@ -381,5 +435,6 @@
 @media (min-width: 1200px) {
     .search-container {
         width: min(80rem, 100%);
+        min-width: 0;
     }
 }

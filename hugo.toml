@@ -11,6 +11,8 @@ title = 'CodeFryDev'
 
 [params]
   description = "Free online tools, games, and AI apps—no signup required. CodeFryDev offers web-based utilities, design resources, and productivity apps for everyone."
+  # Shorter line for the site footer (optional; falls back to truncated description)
+  footer_tagline = "Free tools, games, and AI in your browser. No signup."
   logo = "favicon-32x32.png"
   copyright = "codefrydev.in"
   paginate = 10

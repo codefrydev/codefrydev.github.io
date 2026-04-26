@@ -181,13 +181,15 @@ body {
 }
 }
 
-/* Footer Styles - Clean Minimal Design */
+/* Footer — neutral only (surfaces + borders; link hover uses global --link-color) */
 .site-footer {
-    margin-top: 2rem;
-    padding: 1rem 0;
+    margin-top: 0;
+    padding: 0;
     background-color: var(--bg-primary);
     color: var(--text-secondary);
     font-family: Inter, system-ui, -apple-system, sans-serif;
+    border-top: 1px solid var(--border-light);
+    box-shadow: 0 -0.35rem 0.9rem -0.5rem var(--shadow-card);
 }
 
 .footer-container {
@@ -195,8 +197,7 @@ body {
     max-width: 100%;
     margin-inline: auto;
     background-color: var(--bg-primary);
-    padding: 2rem 2rem 1.25rem 2rem;
-    padding-right: 2.5rem;
+    padding: 1.75rem 1.25rem 1.25rem;
     box-sizing: border-box;
     overflow: visible;
 }
@@ -204,77 +205,211 @@ body {
 .footer-main {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 2rem;
-    margin-bottom: 1.5rem;
+    gap: 1.5rem;
+    margin-bottom: 1.25rem;
 }
 
 /* Brand Section - Left */
 .footer-brand-section {
     display: flex;
     flex-direction: column;
-    gap: 1.25rem;
+    gap: 0.65rem;
 }
 
 .footer-brand {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 0.85rem;
+}
+
+.footer-logo-link {
+    display: flex;
+    flex-shrink: 0;
+    border-radius: 0.65rem;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.footer-logo-link:hover,
+.footer-logo-link:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--border-medium);
 }
 
 .footer-logo {
-    width: 56px;
-    height: 56px;
+    width: 48px;
+    height: 48px;
     flex-shrink: 0;
+    display: block;
 }
 
 .footer-brand-title {
     font-family: Inter, system-ui, -apple-system, sans-serif;
-    font-size: 1.75rem;
+    font-size: 1.35rem;
     font-weight: 700;
     color: var(--text-primary);
     margin: 0;
-    line-height: 1.3;
+    line-height: 1.2;
     letter-spacing: -0.02em;
 }
 
 .footer-description {
-    font-size: 1rem;
+    font-size: 0.875rem;
     color: var(--text-tertiary);
-    line-height: 1.7;
+    line-height: 1.5;
     margin: 0;
-    max-width: 100%;
+    max-width: 36rem;
+}
+
+/* Stats + CTAs in one inset panel — less vertical stack, clearer grouping */
+.footer-meta-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+    margin-top: 0.35rem;
+    padding: 0.7rem 0.75rem;
+    border-radius: 0.55rem;
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-medium);
+    box-shadow:
+        inset 0 1px 0 0 var(--shadow-light-alt),
+        0 0.06rem 0.35rem -0.06rem var(--shadow-card);
 }
 
 .footer-stats {
-    font-size: 0.875rem;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.35rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+@media (min-width: 380px) {
+    .footer-stats {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+
+.footer-stat {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.2rem;
+    min-height: 2rem;
+    padding: 0.3rem 0.35rem;
+    border-radius: 0.4rem;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-medium);
+    box-shadow:
+        inset 0 1px 0 0 var(--shadow-light-alt),
+        0 0.04rem 0.2rem -0.04rem var(--shadow-card);
+    font-size: 0.75rem;
+    line-height: 1.15;
+    text-align: center;
+    color: var(--text-secondary);
+}
+
+.footer-stat-value {
+    font-weight: 700;
+    color: var(--text-primary);
+    font-variant-numeric: tabular-nums;
+}
+
+.footer-stat-label {
     color: var(--text-tertiary);
-    margin: 0.5rem 0 0;
+    font-weight: 500;
+    text-transform: lowercase;
 }
 
 .footer-lead {
-    margin-top: 1.25rem;
+    margin: 0;
+    padding: 0.5rem 0 0;
+    border-top: 1px solid var(--border-medium);
+    flex: 1;
+    min-width: min(100%, 11rem);
 }
 
 .footer-lead-text {
-    font-size: 0.9375rem;
-    color: var(--text-secondary);
-    margin: 0 0 0.5rem 0;
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--text-quaternary);
+    margin: 0 0 0.4rem 0;
+}
+
+.footer-lead-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
 }
 
 .footer-lead-cta {
-    display: inline-block;
-    padding: 0.5rem 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 36px;
+    padding: 0.3rem 0.75rem;
     font-weight: 600;
-    font-size: 0.9375rem;
+    font-size: 0.8125rem;
     color: var(--link-color);
     text-decoration: none;
-    border-radius: 0.5rem;
-    transition: color 0.2s ease, background 0.2s ease;
+    border-radius: 0.45rem;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-medium);
+    --shadow-light: var(--shadow-light-alt);
+    --shadow-dark: var(--shadow-dark-alt);
+    box-shadow:
+        inset 0 1px 0 0 var(--shadow-light-alt),
+        -0.08rem -0.08rem 0.2rem var(--shadow-light),
+        0.08rem 0.08rem 0.25rem var(--shadow-dark);
+    transition: color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+@media (min-width: 520px) {
+    .footer-meta-panel {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 0.65rem 1rem;
+        padding: 0.65rem 0.85rem;
+    }
+
+    .footer-stats {
+        flex: 1 1 12rem;
+        min-width: min(100%, 20rem);
+    }
+
+    .footer-lead {
+        padding: 0;
+        border-top: 0;
+        border-left: 1px solid var(--border-medium);
+        margin: 0;
+        padding-left: 0.85rem;
+        flex: 0 1 auto;
+        min-width: unset;
+    }
+
+    .footer-lead-text {
+        margin: 0 0 0.35rem 0;
+    }
 }
 
 .footer-lead-cta:hover,
 .footer-lead-cta:focus {
-    color: var(--text-primary);
+    color: var(--link-hover);
+    background-color: var(--bg-secondary);
+    transform: translateY(-1px);
+    box-shadow:
+        inset 0 1px 0 0 var(--shadow-light-alt),
+        -0.18rem -0.18rem 0.35rem var(--shadow-light),
+        0.18rem 0.18rem 0.4rem var(--shadow-dark);
+    outline: none;
+}
+
+.footer-lead-cta:focus-visible {
     outline: 2px solid var(--link-color);
     outline-offset: 2px;
 }
@@ -283,7 +418,7 @@ body {
 .footer-nav-section {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 2.5rem;
+    gap: 1.25rem 2rem;
 }
 
 .footer-nav-column {
@@ -294,12 +429,12 @@ body {
 
 .footer-nav-title {
     font-family: Inter, system-ui, -apple-system, sans-serif;
-    font-size: 0.9375rem;
-    font-weight: 700;
-    color: var(--text-secondary);
-    margin: 0 0 1.25rem 0;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--text-quaternary);
+    margin: 0 0 0.5rem 0;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.1em;
     text-align: left;
 }
 
@@ -309,17 +444,17 @@ body {
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 0.875rem;
+    gap: 0.45rem;
 }
 
 .footer-nav-link {
     color: var(--text-secondary);
     text-decoration: none;
-    font-size: 0.9375rem;
-    font-weight: 400;
+    font-size: 0.84rem;
+    font-weight: 500;
     transition: color 0.2s ease;
     display: inline-block;
-    line-height: 1.5;
+    line-height: 1.4;
 }
 
 .footer-nav-link:hover,
@@ -328,10 +463,16 @@ body {
     outline: none;
 }
 
+.footer-nav-link:focus-visible {
+    outline: 2px solid var(--link-color);
+    outline-offset: 3px;
+    border-radius: 2px;
+}
+
 /* Footer Bottom */
 .footer-bottom {
-    padding-top: 1.25rem;
-    margin-top: 1.25rem;
+    padding-top: 0.85rem;
+    margin-top: 0;
     border-top: 1px solid var(--border-light);
     text-align: center;
 }
@@ -345,52 +486,56 @@ body {
 }
 
 .footer-copyright {
-    font-size: 0.9375rem;
-    color: var(--text-tertiary);
+    font-size: 0.78rem;
+    color: var(--text-quaternary);
     margin: 0;
     font-weight: 400;
-    line-height: 1.6;
+    line-height: 1.5;
 }
 
 /* Responsive Footer */
 @media (min-width: 600px) {
     .footer-nav-section {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
 @media (min-width: 992px) {
     .footer-main {
-        grid-template-columns: 1.2fr 2fr;
-        gap: 3rem;
+        grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+        gap: 2.5rem;
+        align-items: start;
     }
     
     .footer-description {
-        max-width: 360px;
+        max-width: 22rem;
     }
     
     .footer-container {
-        padding: 2.5rem 3rem 1.5rem 3rem;
-        padding-right: 3rem;
+        padding: 2rem 2rem 1.5rem;
         width: min(80rem, 100%);
     }
     
     .footer-nav-section {
-        gap: 3rem;
+        gap: 1.5rem 2.5rem;
+    }
+
+    .footer-meta-panel {
+        max-width: 28rem;
     }
 }
 
 @media (max-width: 768px) {
     .footer-container {
-        padding: 1.5rem 2rem 1.25rem 2rem;
+        padding: 1.5rem 1.15rem 1.2rem;
     }
-    
+
     .footer-brand-title {
-        font-size: 1.5rem;
+        font-size: 1.25rem;
     }
-    
+
     .footer-description {
-        font-size: 0.9375rem;
+        font-size: 0.84rem;
     }
 }
 
@@ -589,48 +734,7 @@ header h1 a:focus {
     opacity: 1;
 }
 
-/* FAQ Section Styles */
-.faq-section {
-    box-sizing: border-box;
-    max-width: min(75rem, 100%);
-    margin: 4rem auto 3rem;
-    padding: 0 1rem;
-}
-
-.faq-container {
-    display: grid;
-    gap: 1.5rem;
-    margin-top: 2rem;
-}
-
-.faq-item {
-    background: var(--bg-primary);
-    padding: 1.5rem;
-    border-radius: 0.75rem;
-    box-shadow: 
-        inset 4px 4px 8px var(--shadow-dark),
-        inset -4px -4px 8px var(--shadow-light);
-}
-
-.faq-question {
-    font-family: system-ui, -apple-system, sans-serif;
-    font-size: 1.125rem;
-    font-weight: 600;
-    color: var(--text-primary);
-    margin: 0 0 0.75rem 0;
-    overflow-wrap: break-word;
-    word-break: break-word;
-}
-
-.faq-answer {
-    font-family: system-ui, -apple-system, sans-serif;
-    font-size: 1rem;
-    line-height: 1.7;
-    color: var(--text-secondary);
-    margin: 0;
-    overflow-wrap: break-word;
-    word-break: break-word;
-}
+/* FAQ: homepage accordion styles live in home.css (#main-content) */
 
 /* Responsive Navigation */
 @media (max-width: 768px) {
@@ -661,19 +765,4 @@ header h1 a:focus {
         font-size: 0.8125rem;
     }
     
-    .faq-section {
-        margin: 3rem auto 2rem;
-    }
-    
-    .faq-item {
-        padding: 1.25rem;
-    }
-    
-    .faq-question {
-        font-size: 1rem;
-    }
-    
-    .faq-answer {
-        font-size: 0.9375rem;
-    }
 }

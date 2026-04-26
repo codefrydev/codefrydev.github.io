@@ -164,11 +164,11 @@
             suggestionsContainer.innerHTML = '';
             
             suggestions.forEach(item => {
+                const li = document.createElement('li');
                 const button = document.createElement('a');
                 button.href = getAbsoluteURL(item.url);
                 button.className = 'suggestion-button hapticButton';
-                
-                // Determine icon path
+
                 let iconPath = '';
                 if (item.icon) {
                     if (item.type === 'ai') {
@@ -181,15 +181,16 @@
                         iconPath = `/images/home/${item.icon}.svg`;
                     }
                 }
-                
+
                 button.innerHTML = `
                     <div class="suggestion-icon">
                         <img src="${iconPath}" alt="${item.name}" loading="lazy" onerror="this.style.display='none'">
                     </div>
                     <span class="suggestion-name">${highlightMatch(item.name, query)}</span>
                 `;
-                
-                suggestionsContainer.appendChild(button);
+
+                li.appendChild(button);
+                suggestionsContainer.appendChild(li);
             });
         }
         
@@ -218,13 +219,11 @@
             resultsContainer.classList.add('active');
             
             results.forEach(item => {
-                const resultDiv = document.createElement('div');
-                resultDiv.className = 'result-item';
-                resultDiv.onclick = () => {
-                    window.location.href = getAbsoluteURL(item.url);
-                };
-                
-                // Determine icon path based on type
+                const href = getAbsoluteURL(item.url);
+                const resultLink = document.createElement('a');
+                resultLink.className = 'result-item hapticButton';
+                resultLink.href = href;
+
                 let iconPath = '';
                 if (item.icon) {
                     if (item.type === 'ai') {
@@ -237,14 +236,14 @@
                         iconPath = `/images/home/${item.icon}.svg`;
                     }
                 }
-                
+
                 const iconHTML = iconPath ? `
                     <div class="result-icon">
-                        <img src="${iconPath}" alt="${item.name}" onerror="this.parentElement.style.display='none'">
+                        <img src="${iconPath}" alt="" onerror="this.parentElement.style.display='none'">
                     </div>
                 ` : '<div class="result-icon" style="display:none;"></div>';
-                
-                resultDiv.innerHTML = `
+
+                resultLink.innerHTML = `
                     ${iconHTML}
                     <div class="result-content">
                         <h3>${highlightMatch(item.name, query)}</h3>
@@ -254,8 +253,8 @@
                         </div>
                     </div>
                 `;
-                
-                resultsContainer.appendChild(resultDiv);
+
+                resultsContainer.appendChild(resultLink);
             });
         }
         

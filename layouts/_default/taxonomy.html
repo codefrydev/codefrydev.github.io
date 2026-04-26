@@ -11,7 +11,7 @@
 <body>
   {{ partial "skip-link.html" . }}
   {{ partial "page-header.html" . }}
-  <main id="main-content" role="main">
+  <main id="main-content">
     <h1>{{ .Title }}</h1>
     <ul>
       {{ range .Data.Terms.ByCount }}

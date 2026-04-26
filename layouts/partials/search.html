@@ -21,34 +21,37 @@
   <link rel="stylesheet" href="/css/search.css">
 {{- end -}}
 
-<div class="{{ $containerClass }}" data-search-id="{{ $searchID }}">
-    <div class="search-box-wrapper">
-        <svg class="search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-        </svg>
-        <input type="text" 
-               id="{{ $searchID }}-searchInput" 
-               class="search-box" 
-               placeholder="{{ $placeholder }}" 
-               {{ if $autofocus }}autofocus{{ end }}
-               autocomplete="off">
-    </div>
-    
-    <div id="{{ $searchID }}-searchStats" class="search-stats" style="display: none;"></div>
-    
-    <div id="{{ $searchID }}-searchSuggestions" class="search-suggestions">
-        <div class="suggestions-title">Suggestions</div>
-        <div id="{{ $searchID }}-suggestionsGrid" class="suggestions-grid"></div>
-    </div>
-    
-    <div id="{{ $searchID }}-searchResults" class="search-results"></div>
-    
-    <div id="{{ $searchID }}-noResults" class="no-results" style="display: none;">
-        <div class="no-results-icon">🔍</div>
+<search class="{{ $containerClass }}" data-search-id="{{ $searchID }}">
+    <form role="search" class="search-form" aria-label="Site search" onsubmit="return false;">
+        <div class="search-box-wrapper">
+            <label for="{{ $searchID }}-searchInput" class="sr-only">Search tools, games, AI apps, and design resources</label>
+            <span class="search-icon" aria-hidden="true">🔍</span>
+            <input type="search"
+                   name="q"
+                   id="{{ $searchID }}-searchInput"
+                   class="search-box"
+                   placeholder="{{ $placeholder }}"
+                   {{ if $autofocus }}autofocus{{ end }}
+                   autocomplete="off"
+                   enterkeyhint="search">
+        </div>
+    </form>
+
+    <p id="{{ $searchID }}-searchStats" class="search-stats" style="display: none;"></p>
+
+    <section id="{{ $searchID }}-searchSuggestions" class="search-suggestions" aria-labelledby="{{ $searchID }}-suggestions-heading">
+        <p id="{{ $searchID }}-suggestions-heading" class="suggestions-title">Suggestions</p>
+        <ul id="{{ $searchID }}-suggestionsGrid" class="suggestions-grid"></ul>
+    </section>
+
+    <section id="{{ $searchID }}-searchResults" class="search-results" aria-label="Search results"></section>
+
+    <section id="{{ $searchID }}-noResults" class="no-results" style="display: none;" aria-label="No matching results">
+        <div class="no-results-icon" aria-hidden="true">🔍</div>
         <h4>No results found</h4>
         <p>Try different keywords or browse our categories</p>
-    </div>
-</div>
+    </section>
+</search>
 
 {{- /* Pass search data and configuration to JavaScript */ -}}
 <script>
@@ -63,8 +66,7 @@
             },
             baseURL: "{{ .Site.BaseURL }}"
         };
-        
-        // Store config for this search instance
+
         if (!window.searchInstances) {
             window.searchInstances = {};
         }

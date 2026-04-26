@@ -510,19 +510,28 @@
         pill.classList.remove('is-visible', 'is-warning', 'is-danger');
     }
 
+    /** Home gate: visible only after “Alpha”. While hidden, skip all simulation so clicks/scroll/theme do not affect state. */
+    function isLadybugGateHidden() {
+        return bug.classList.contains('ladybug-gate-hidden');
+    }
+
     // ---------- Mouse / click listeners ----------
 
     window.addEventListener('mousemove', function (e) {
+        if (isLadybugGateHidden()) return;
         mouseX = e.clientX;
         mouseY = e.clientY;
     });
 
     document.addEventListener('mouseleave', function () {
+        if (isLadybugGateHidden()) return;
         mouseX = -1000;
         mouseY = -1000;
     });
 
     window.addEventListener('click', function (e) {
+        if (isLadybugGateHidden()) return;
+        if (e.target && e.target.closest && e.target.closest('#ladybug-reveal-alpha')) return;
         if (state === 'h1feast') {
             endH1Feast(true);
         }
@@ -562,6 +571,7 @@
     });
 
     function onScrollDrag() {
+        if (isLadybugGateHidden()) return;
         var cx = window.scrollX || window.pageXOffset || 0;
         var cy = window.scrollY || window.pageYOffset || 0;
         var deltaX = cx - lastScrollX;
@@ -615,6 +625,7 @@
 
     if (typeof MutationObserver !== 'undefined') {
         (new MutationObserver(function () {
+            if (isLadybugGateHidden()) return;
             var t = document.documentElement.getAttribute('data-theme');
             if (t === 'dark') {
                 beginHibernateFromTheme();
@@ -629,6 +640,10 @@
     // ---------- Animation loop ----------
 
     function animateLoop() {
+        if (isLadybugGateHidden()) {
+            requestAnimationFrame(animateLoop);
+            return;
+        }
         ambientTime += 1;
         if (hibernateRelocateCooldown > 0) {
             hibernateRelocateCooldown--;
@@ -1273,6 +1288,11 @@
         bug.setAttribute('aria-hidden', 'false');
         var revealBtn = document.getElementById('ladybug-reveal-alpha');
         if (revealBtn) revealBtn.setAttribute('aria-pressed', 'true');
+        setTimeout(function () {
+            if (isDarkTheme()) {
+                beginHibernateFromTheme();
+            }
+        }, 0);
     }
 
     function bindLadybugRevealControl() {
@@ -1295,7 +1315,7 @@
         bindLadybugRevealControl();
         requestAnimationFrame(animateLoop);
         setTimeout(function () {
-            if (isDarkTheme()) {
+            if (!isLadybugGateHidden() && isDarkTheme()) {
                 beginHibernateFromTheme();
             }
         }, 0);

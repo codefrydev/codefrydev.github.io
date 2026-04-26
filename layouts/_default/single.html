@@ -11,8 +11,10 @@
 <body>
     {{ partial "skip-link.html" . }}
     {{ partial "page-header.html" . }}
-    <main id="main-content" role="main">
+    <main id="main-content">
+        <article class="single-article">
         {{ .Content }}
+        </article>
     </main>
     {{ partial "footer.html" . }}
     <script src="/js/theme.js"></script>

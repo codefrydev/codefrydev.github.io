@@ -16,23 +16,26 @@
   {{ partial "skip-link.html" . }}
   {{ partial "page-header.html" . }}
 
-  <main id="main-content" role="main">
+  <main id="main-content">
     {{ partial "search.html" (dict "containerClass" "search-container" "placeholder" "Search for tools, games, AI apps, design resources..." "autofocus" false "Site" .Site "Scratch" .Scratch) }}
     {{ range hugo.Data.home.categories }}
-      <section class="category-section">
-        <h2 class="category-title">{{ .name }}</h2>
-        <div class="button-grid">
+      {{- $catHeadingId := printf "category-heading-%s" (.name | anchorize) -}}
+      <section class="category-section" aria-labelledby="{{ $catHeadingId }}">
+        <h2 id="{{ $catHeadingId }}" class="category-title">{{ .name }}</h2>
+        <ul class="button-grid">
           {{ range .items }}
+            <li>
             {{- $isExternal := or (hasPrefix .url "http://") (hasPrefix .url "https://") -}}
-            <a href="{{ .url }}" 
-               class="neumorphic-button hapticButton" 
+            <a href="{{ .url }}"
+               class="neumorphic-button hapticButton"
                aria-label="{{ .name }} - {{ .name | lower }} tool"
                {{ if $isExternal }}target="_blank" rel="noopener noreferrer"{{ end }}>
               <img src="images/home/{{ .icon }}.svg" srcset="images/home/{{ .icon }}.svg" alt="{{ .name }} icon" class="button-icon" loading="lazy">
               <span>{{ .name }}</span>
             </a>
+            </li>
           {{ end }}
-        </div>
+        </ul>
       </section>
     {{ end }}
     {{- if .Content }}
