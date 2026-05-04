@@ -1,4 +1,9 @@
 history:
+  - date: "26 April 2026"
+    title: "CIN"
+    description: "Company Identification Number helper—validate 21-character CIN format, split into listing type, industry, year, state, and registration components, and browse from the home tools grid."
+    link: "/CIN/"
+    accent_color: "#0d9488"
   - date: "25 April 2026"
     title: "Homepage ladybug easter egg"
     description: "Interactive ladybug on the home page: wanders, gets scared, takes flight, can get angry; cursor-eat moment with particles; sometimes perches on the header logo, nibbles the main title when hungry, and visits random tool tiles with playful messages and confetti text—namespaced styles and scripts so it does not clash with the rest of the site."

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="cinTitle">
+  <title id="cinTitle">CIN</title>
+  <defs>
+    <linearGradient id="cinBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d9488"/>
+      <stop offset="100%" stop-color="#0f766e"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="108" fill="url(#cinBg)"/>
+  <rect x="72" y="88" width="368" height="336" rx="32" fill="#f0fdfa"/>
+  <rect x="96" y="120" width="120" height="120" rx="20" fill="#ccfbf1"/>
+  <circle cx="156" cy="168" r="32" fill="#0f766e" opacity="0.25"/>
+  <rect x="112" y="208" width="88" height="14" rx="4" fill="#0f766e" opacity="0.2"/>
+  <rect x="112" y="232" width="72" height="14" rx="4" fill="#0f766e" opacity="0.2"/>
+  <rect x="240" y="124" width="176" height="22" rx="8" fill="#99f6e4"/>
+  <rect x="240" y="162" width="152" height="18" rx="7" fill="#5eead4"/>
+  <rect x="240" y="194" width="168" height="18" rx="7" fill="#5eead4"/>
+  <rect x="240" y="226" width="128" height="18" rx="7" fill="#5eead4"/>
+  <!-- C I N -->
+  <g fill="#134e4a" transform="translate(0 292)">
+    <path d="M118 120c-35 0-64 29-64 64s29 64 64 64c16 0 31-6 42-16l-28-28c-4 4-10 6-16 6-18 0-32-14-32-32s14-32 32-32c6 0 12 2 16 6l28-28c-11-10-26-16-42-16z"/>
+    <rect x="210" y="88" width="36" height="128" rx="8"/>
+    <path d="M306 88h40l56 88V88h36v128h-40l-56-88v88h-36V88z"/>
+  </g>
+</svg>
