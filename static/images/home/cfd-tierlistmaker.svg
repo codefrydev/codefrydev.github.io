@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="tlmTitle">
+  <title id="tlmTitle">Tier List Maker</title>
+  <defs>
+    <linearGradient id="tlmPanel" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="96" fill="#312e81"/>
+  <rect x="48" y="56" width="416" height="400" rx="36" fill="url(#tlmPanel)"/>
+  <rect x="72" y="84" width="368" height="44" rx="12" fill="#6366f1" opacity="0.9"/>
+  <!-- tier rows: classic S/A/B/C palette -->
+  <rect x="72" y="148" width="368" height="56" rx="10" fill="#fbbf24"/>
+  <rect x="72" y="216" width="320" height="56" rx="10" fill="#e2e8f0"/>
+  <rect x="72" y="284" width="280" height="56" rx="10" fill="#f97316"/>
+  <rect x="72" y="352" width="240" height="56" rx="10" fill="#ef4444"/>
+  <!-- drag handle dots -->
+  <g fill="#0f172a" opacity="0.35">
+    <circle cx="100" cy="176" r="6"/>
+    <circle cx="100" cy="244" r="6"/>
+    <circle cx="100" cy="312" r="6"/>
+    <circle cx="100" cy="380" r="6"/>
+  </g>
+  <!-- top-tier star (no webfonts) -->
+  <path fill="#78350f" d="M108 156l8 16 18 3-13 12 3 18-16-9-16 9 3-18-13-12 18-3z"/>
+</svg>

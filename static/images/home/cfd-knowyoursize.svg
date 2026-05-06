@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="kysTitle">
+  <title id="kysTitle">Know Your Size</title>
+  <defs>
+    <linearGradient id="kysBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0ea5e9"/>
+      <stop offset="100%" stop-color="#0369a1"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="96" fill="url(#kysBg)"/>
+  <rect x="52" y="76" width="408" height="360" rx="32" fill="#e0f2fe"/>
+
+  <!-- left: text/character block -->
+  <rect x="84" y="112" width="152" height="288" rx="20" fill="#f8fdff"/>
+  <rect x="104" y="136" width="78" height="20" rx="6" fill="#0ea5e9" opacity="0.9"/>
+  <rect x="104" y="170" width="112" height="14" rx="5" fill="#38bdf8" opacity="0.9"/>
+  <rect x="104" y="194" width="96" height="14" rx="5" fill="#38bdf8" opacity="0.9"/>
+  <rect x="104" y="218" width="104" height="14" rx="5" fill="#38bdf8" opacity="0.9"/>
+  <rect x="104" y="250" width="40" height="40" rx="8" fill="#0284c7"/>
+  <rect x="152" y="250" width="40" height="40" rx="8" fill="#0ea5e9"/>
+  <rect x="104" y="298" width="40" height="40" rx="8" fill="#38bdf8"/>
+  <rect x="152" y="298" width="40" height="40" rx="8" fill="#7dd3fc"/>
+
+  <!-- right: file size cards -->
+  <rect x="264" y="112" width="164" height="132" rx="16" fill="#f8fdff"/>
+  <path fill="#0284c7" d="M286 134h64l30 30v58h-94z"/>
+  <path fill="#7dd3fc" d="M350 134v30h30z"/>
+  <rect x="390" y="146" width="24" height="8" rx="4" fill="#0ea5e9"/>
+  <rect x="390" y="162" width="32" height="8" rx="4" fill="#38bdf8"/>
+  <rect x="390" y="178" width="20" height="8" rx="4" fill="#7dd3fc"/>
+
+  <rect x="264" y="268" width="164" height="132" rx="16" fill="#f8fdff"/>
+  <rect x="286" y="294" width="120" height="20" rx="8" fill="#0ea5e9" opacity="0.9"/>
+  <rect x="286" y="326" width="92" height="16" rx="6" fill="#38bdf8"/>
+  <rect x="286" y="350" width="64" height="16" rx="6" fill="#7dd3fc"/>
+  <path fill="#075985" d="M390 328h24v46h-24z"/>
+  <path fill="#ffffff" d="M402 336l-8 8h16zM402 366l8-8h-16z"/>
+</svg>
