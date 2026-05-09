@@ -1,4 +1,9 @@
 history:
+  - date: "09 May 2026"
+    title: "SVG Engine"
+    description: "Custom SVG Engine built from scratch with a non-conventional editor flow, different from typical SVG editors; now available at /svgengine/ and listed in Creative & Assets."
+    link: "/svgengine/"
+    accent_color: "#8b5cf6"
   - date: "28 April 2026"
     title: "Know Your Size"
     description: "Compare sizes of text, character counts, files, and similar data quickly in /KnowYourSize/ with a simple side-by-side view; now listed in the home tools grid."
