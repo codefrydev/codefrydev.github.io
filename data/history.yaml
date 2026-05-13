@@ -1,4 +1,9 @@
 history:
+  - date: "13 May 2026"
+    title: "Website Resolution Tester"
+    description: "Preview and compare layouts at common viewport widths from /WebsiteResolutionTester/; added to Tools & Utilities on the home page."
+    link: "/WebsiteResolutionTester/"
+    accent_color: "#6366f1"
   - date: "09 May 2026"
     title: "SVG Engine"
     description: "Custom SVG Engine built from scratch with a non-conventional editor flow, different from typical SVG editors; now available at /svgengine/ and listed in Creative & Assets."
