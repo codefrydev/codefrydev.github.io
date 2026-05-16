@@ -23,7 +23,7 @@
     filter: invert(1) brightness(1.1);
   }
 
-  /* Gentle snap on homepage when a section is near the viewport (no forced wheel paging) */
+  /* Hero-only snap: gentle align when scrolling back to the top panel */
   @media (prefers-reduced-motion: no-preference) {
     html:has(body.home-page) {
       scroll-behavior: smooth;
@@ -31,15 +31,13 @@
     }
   }
 
-  .home-sections > section {
+  .home-sections > section#hero {
     scroll-snap-align: start;
     scroll-snap-stop: normal;
     scroll-margin-top: var(--home-nav-height, 73px);
   }
 
-  .home-sections > footer.site-footer {
-    scroll-snap-align: end;
-    scroll-snap-stop: normal;
+  .home-sections > section:not(#hero) {
     scroll-margin-top: var(--home-nav-height, 73px);
   }
 
@@ -1012,16 +1010,58 @@
     transition: opacity 0.4s ease;
   }
 
-  .home-section-nav__dot {
-    @apply w-2 h-2 rounded-full bg-slate-300 border-0 p-0 cursor-pointer transition-all duration-300;
+  /* Why us section (#why) */
+  .home-why {
+    @apply bg-white;
   }
 
-  .home-section-nav__dot:hover {
-    @apply bg-slate-500 scale-125;
+  .home-why__eyebrow {
+    @apply inline-block px-4 py-1.5 mb-6 text-sm font-medium text-slate-700 bg-white rounded-full border border-gray-200 shadow-sm;
   }
 
-  .home-section-nav__dot.is-active {
-    @apply bg-brand;
+  .home-why__title {
+    @apply text-4xl font-bold tracking-tight text-slate-900 mb-6 md:text-[44px];
+  }
+
+  .home-why__intro {
+    @apply mx-auto mb-12 max-w-2xl text-lg leading-relaxed text-slate-500;
+  }
+
+  .home-why__card {
+    @apply rounded-2xl border border-gray-100 bg-gray-50/80 p-6 text-left transition-colors md:p-8;
+    @apply hover:border-slate-200 hover:bg-white;
+  }
+
+  .home-why__card-icon {
+    @apply mb-3 block text-2xl leading-none;
+  }
+
+  .home-why__card-title {
+    @apply mb-2 text-lg font-bold text-slate-900;
+  }
+
+  .home-why__card-text {
+    @apply text-[14px] leading-relaxed text-slate-500;
+  }
+
+  .home-why__card-text a {
+    @apply font-medium text-brand no-underline hover:underline;
+  }
+
+  .home-why__perks {
+    @apply mx-auto mt-10 grid max-w-5xl grid-cols-1 gap-3 px-4 sm:grid-cols-2;
+  }
+
+  .home-why__perk {
+    @apply flex items-center gap-3 rounded-xl border border-gray-100 bg-slate-50/90 px-4 py-3.5 text-left text-sm leading-snug text-slate-600;
+  }
+
+  .home-why__perk-icon {
+    @apply shrink-0 text-lg text-emerald-500;
+  }
+
+  .home-why__perk-text {
+    @apply min-w-0 flex-1;
   }
 
   .home-faq-scroll {

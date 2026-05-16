@@ -640,22 +640,50 @@
   background: rgb(71 85 105);
 }
 
-/* —— Section nav dots —— */
-[data-theme="dark"] body.home-page .home-section-nav__dot {
-  background-color: rgb(71 85 105);
+/* —— Why us section —— */
+[data-theme="dark"] body.home-page .home-why {
+  background-color: rgb(15 23 42) !important;
 }
 
-[data-theme="dark"] body.home-page .home-section-nav__dot:hover {
-  background-color: rgb(148 163 184);
+[data-theme="dark"] body.home-page .home-why__eyebrow {
+  background-color: rgb(30 41 59) !important;
+  border-color: rgb(51 65 85) !important;
+  color: rgb(203 213 225) !important;
+  box-shadow: none;
 }
 
-[data-theme="dark"] body.home-page .home-section-nav__dot.is-active {
-  background-color: rgb(226 232 240);
+[data-theme="dark"] body.home-page .home-why__title,
+[data-theme="dark"] body.home-page .home-why__card-title {
+  color: rgb(241 245 249) !important;
 }
 
-/* —— Why section bullet area —— */
-[data-theme="dark"] body.home-page #why .bg-gray-50\/80 {
-  background-color: rgb(30 41 59 / 0.8) !important;
+[data-theme="dark"] body.home-page .home-why__intro,
+[data-theme="dark"] body.home-page .home-why__card-text {
+  color: rgb(148 163 184) !important;
+}
+
+[data-theme="dark"] body.home-page .home-why__card-text a {
+  color: rgb(125 211 252) !important;
+}
+
+[data-theme="dark"] body.home-page .home-why__card {
+  background-color: rgb(30 41 59) !important;
+  border-color: rgb(51 65 85) !important;
+}
+
+[data-theme="dark"] body.home-page .home-why__card:hover {
+  background-color: rgb(51 65 85 / 0.45) !important;
+  border-color: rgb(71 85 105) !important;
+}
+
+[data-theme="dark"] body.home-page .home-why__perk {
+  background-color: rgb(30 41 59) !important;
+  border-color: rgb(51 65 85) !important;
+  color: rgb(203 213 225) !important;
+}
+
+[data-theme="dark"] body.home-page .home-why__perk-icon {
+  color: rgb(52 211 153) !important;
 }
 
 /* —— Breadcrumbs —— */

@@ -1,6 +1,6 @@
 {{- $marquee := hugo.Data.homepage.marquee -}}
 {{- if and $marquee $marquee.enabled $marquee.items -}}
-<section id="partners" data-section-label="Partners" class="snap-start py-12 border-t border-gray-200 bg-white overflow-hidden relative group" aria-label="{{ $marquee.label | default "Partners" }}">
+<section id="partners" data-section-label="Partners" class="py-12 border-t border-gray-200 bg-white overflow-hidden relative group" aria-label="{{ $marquee.label | default "Partners" }}">
   <div class="text-center mb-8">
     <p class="text-sm font-semibold tracking-widest text-slate-400 uppercase m-0">{{ $marquee.label }}</p>
   </div>

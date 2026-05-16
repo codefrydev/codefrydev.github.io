@@ -16,8 +16,6 @@
   syncNavHeight();
   window.addEventListener('resize', syncNavHeight, { passive: true });
 
-  const NAV_OFFSET = navHeader ? navHeader.offsetHeight : 73;
-  const sectionNav = document.getElementById('home-section-nav');
   const scrollHint = document.querySelector('.home-scroll-hint');
 
   let lastActiveId = window.location.hash ? window.location.hash.slice(1) : null;
@@ -27,12 +25,14 @@
     return window.location.pathname + window.location.search;
   }
 
-  function getSnapTargets() {
-    return Array.from(container.querySelectorAll(':scope > section.snap-start, :scope > footer.snap-start'));
+  function getSections() {
+    return Array.from(
+      container.querySelectorAll(':scope > section[data-section-label], :scope > footer.site-footer[data-section-label]')
+    );
   }
 
   function nearestSectionIndex(targets) {
-    const scrollY = window.scrollY + NAV_OFFSET;
+    const scrollY = window.scrollY + (navHeader ? navHeader.offsetHeight : 73);
     let best = 0;
     let bestDist = Infinity;
     targets.forEach(function (el, i) {
@@ -47,7 +47,7 @@
   }
 
   function activeSectionElement() {
-    const targets = getSnapTargets();
+    const targets = getSections();
     return targets[nearestSectionIndex(targets)] || null;
   }
 
@@ -94,36 +94,6 @@
     scrollToSection(target, behavior || 'smooth', updateHistory);
   }
 
-  function updateSectionNav() {
-    if (!sectionNav) return;
-    const targets = getSnapTargets();
-    const active = nearestSectionIndex(targets);
-    Array.from(sectionNav.children).forEach(function (btn, i) {
-      const on = i === active;
-      btn.classList.toggle('is-active', on);
-      btn.setAttribute('aria-current', on ? 'true' : 'false');
-    });
-  }
-
-  function buildSectionNav() {
-    if (!sectionNav) return;
-    const targets = getSnapTargets();
-    sectionNav.innerHTML = '';
-    targets.forEach(function (el) {
-      const label = el.getAttribute('data-section-label') || el.id || 'Section';
-      const btn = document.createElement('button');
-      btn.type = 'button';
-      btn.className = 'home-section-nav__dot';
-      btn.title = label;
-      btn.setAttribute('aria-label', label);
-      btn.addEventListener('click', function () {
-        scrollToSection(el, prefersReducedMotion ? 'auto' : 'smooth', 'push');
-      });
-      sectionNav.appendChild(btn);
-    });
-    updateSectionNav();
-  }
-
   document.querySelectorAll('.home-hash-link').forEach(function (link) {
     link.addEventListener('click', function (e) {
       const href = link.getAttribute('href');
@@ -162,15 +132,11 @@
       if (hero) scrollToSection(hero, prefersReducedMotion ? 'auto' : 'smooth', false);
     }
     syncingFromHash = false;
-    updateSectionNav();
   });
-
-  buildSectionNav();
 
   window.addEventListener(
     'scroll',
     function () {
-      updateSectionNav();
       syncHashFromScroll();
       if (scrollHint && window.scrollY > 40) scrollHint.style.opacity = '0';
     },

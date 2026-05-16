@@ -10,7 +10,7 @@
   const THEME_ATTRIBUTE = 'data-theme';
 
   function getInitialTheme() {
-    return localStorage.getItem(THEME_STORAGE_KEY) || 'light';
+    return localStorage.getItem(THEME_STORAGE_KEY) || 'dark';
   }
 
   function applyTheme(theme) {
@@ -23,10 +23,13 @@
 
     localStorage.setItem(THEME_STORAGE_KEY, theme);
     updateToggleButtons(theme);
+    document.dispatchEvent(
+      new CustomEvent('cfd:theme-change', { detail: { theme: theme } })
+    );
   }
 
   function toggleTheme() {
-    const currentTheme = document.documentElement.getAttribute(THEME_ATTRIBUTE) || 'light';
+    const currentTheme = document.documentElement.getAttribute(THEME_ATTRIBUTE) || 'dark';
     applyTheme(currentTheme === 'light' ? 'dark' : 'light');
   }
 

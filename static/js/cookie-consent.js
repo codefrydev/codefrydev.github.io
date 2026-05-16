@@ -86,6 +86,8 @@
       anonymize_ip: true,
       send_page_view: true,
       cookie_flags: 'SameSite=None;Secure',
+      allow_google_signals: false,
+      allow_ad_personalization_signals: false,
     });
     gtag('consent', 'update', { analytics_storage: 'granted' });
 
@@ -99,6 +101,9 @@
     window.__cfdGaLoadedId = gaMeasurementId;
 
     document.dispatchEvent(new CustomEvent('cfd:analytics-ready'));
+    if (typeof window.cfdApplyAnalyticsConfig === 'function') {
+      window.cfdApplyAnalyticsConfig();
+    }
     if (typeof window.cfdTrack === 'function') {
       window.cfdTrack('cookie_consent', {
         consent_status: 'accepted',
@@ -153,7 +158,6 @@
       showCookieBanner();
     } else if (consentStatus === COOKIE_CONSENT_ACCEPTED) {
       loadGoogleAnalytics();
-      document.dispatchEvent(new CustomEvent('cfd:analytics-ready'));
     }
     // If declined, do nothing
 

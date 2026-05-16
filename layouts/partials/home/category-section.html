@@ -18,7 +18,7 @@
 {{- end -}}
 {{- $headingId := printf "category-heading-%s" $slug -}}
 
-<section id="{{ $slug }}" data-section-label="{{ $cat.name }}" class="snap-start min-h-screen flex flex-col justify-start bg-gray-50/50 relative py-16" aria-labelledby="{{ $headingId }}">
+<section id="{{ $slug }}" data-section-label="{{ $cat.name }}" class="min-h-0 flex flex-col justify-start bg-gray-50/50 relative py-12 md:py-16" aria-labelledby="{{ $headingId }}">
   <div class="max-w-7xl mx-auto px-4 w-full h-full flex flex-col min-h-0">
     <div class="flex items-center justify-between mb-6 md:mb-8 pb-4 border-b border-gray-200 shrink-0">
       <div>
@@ -33,9 +33,9 @@
       </div>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 flex-1 min-h-0 content-center">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 flex-1 min-h-0 items-start md:content-center">
       {{- range $i, $item := $previewItems -}}
-      <div class="{{ if ge $i 3 }}hidden md:block{{ end }} min-h-0">
+      <div class="{{ if ge $i 6 }}hidden md:block{{ end }} min-h-0">
         {{ partial "home/tool-card.html" (dict "item" $item "defaultPhosphorIcon" $defaultIcon "categoryName" $cat.name "source" (printf "home_%s" $slug)) }}
       </div>
       {{- end -}}

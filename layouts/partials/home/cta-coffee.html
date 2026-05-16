@@ -1,6 +1,6 @@
 {{- $cta := hugo.Data.homepage.cta.coffee -}}
 {{- if $cta -}}
-<section id="support" data-section-label="Support" class="snap-start min-h-[70vh] flex flex-col justify-center bg-gray-50 text-center relative pt-24 pb-16" aria-labelledby="coffee-heading">
+<section id="support" data-section-label="Support" class="flex flex-col justify-center bg-gray-50 text-center relative pt-24 pb-16" aria-labelledby="coffee-heading">
   <div class="max-w-2xl mx-auto px-4 flex flex-col items-center w-full">
     <h2 id="coffee-heading" class="text-4xl md:text-5xl font-bold text-slate-900 mb-6 m-0">{{ $cta.title | default "Buy us a Coffee" }}</h2>
     <p class="text-lg text-slate-500 mb-10 m-0">{{ $cta.description }}</p>

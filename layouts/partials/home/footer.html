@@ -1,12 +1,11 @@
 {{- $totalTools := 0 -}}
 {{- range hugo.Data.home.categories }}{{ $totalTools = add $totalTools (len .items) }}{{ end -}}
 
-{{- $snap := .Scratch.Get "homeFooterSnap" | default true -}}
 <footer
   id="footer"
   data-section-label="Footer"
-  class="site-footer {{ if $snap }}snap-start {{ end }}"
-  data-footer-home="{{ if $snap }}true{{ else }}false{{ end }}"
+  class="site-footer"
+  data-footer-home="true"
 >
   <div class="site-footer__inner">
     <div class="site-footer__mast">
@@ -66,7 +65,7 @@
       </details>
     </nav>
 
-    {{- if $snap -}}
+    {{- if .IsHome -}}
     <button type="button" class="site-footer__back-top" data-footer-back-top hidden>
       Back to top
       <i class="ph-bold ph-arrow-up" aria-hidden="true"></i>
