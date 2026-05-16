@@ -1021,7 +1021,7 @@
   }
 
   .home-section-nav__dot.is-active {
-    @apply bg-brand w-6;
+    @apply bg-brand;
   }
 
   .home-faq-scroll {

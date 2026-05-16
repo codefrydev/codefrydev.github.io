@@ -29,7 +29,7 @@
     dot.type = 'button';
     dot.className =
       index === 0
-        ? 'w-6 h-2 rounded-full transition-all duration-300 bg-slate-800'
+        ? 'w-2 h-2 rounded-full transition-all duration-300 bg-slate-800'
         : 'w-2 h-2 rounded-full transition-all duration-300 bg-slate-300 hover:bg-slate-400';
     dot.setAttribute('aria-label', 'Go to slide ' + (index + 1));
     dot.addEventListener('click', function () {
@@ -60,7 +60,7 @@
   function updateIndicators(index) {
     Array.from(indicatorsContainer.children).forEach(function (dot, i) {
       if (i === index) {
-        dot.className = 'w-6 h-2 rounded-full transition-all duration-300 bg-slate-800';
+        dot.className = 'w-2 h-2 rounded-full transition-all duration-300 bg-slate-800';
       } else {
         dot.className = 'w-2 h-2 rounded-full transition-all duration-300 bg-slate-300 hover:bg-slate-400';
       }
