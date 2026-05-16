@@ -16,12 +16,8 @@
 {{- else if eq .Section "about-us" -}}
   {{- $pageTitle = "About Us - CodeFryDev | Free Online Tools & Resources Platform" -}}
 {{- else if eq .Section "about" -}}
-  {{- if strings.HasSuffix .RelPermalink "/users/" -}}
-    {{- $pageTitle = "Team Members - CodeFryDev" -}}
-  {{- else if strings.Contains .RelPermalink "/about/users/" -}}
+  {{- if strings.Contains .RelPermalink "/about/users/" -}}
     {{- $pageTitle = printf "%s - CodeFryDev Team" .Title -}}
-  {{- else -}}
-    {{- $pageTitle = "Team - CodeFryDev | Developers & Contributors" -}}
   {{- end -}}
 {{- else if eq .Section "search" -}}
   {{- $pageTitle = "Search - CodeFryDev | Find Tools, Games & Apps" -}}

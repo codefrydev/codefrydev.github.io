@@ -562,6 +562,247 @@
     @apply mt-2;
   }
 
+  /* About us (/about-us/) */
+  .about-hero__panel {
+    @apply relative overflow-hidden rounded-2xl border border-gray-200/80 bg-gradient-to-br from-white via-slate-50/90 to-sky-50/50 shadow-sm sm:rounded-3xl;
+  }
+
+  .about-hero__glow {
+    @apply pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-sky-400/20 blur-3xl sm:h-72 sm:w-72;
+  }
+
+  .about-hero__inner {
+    @apply relative z-10 px-6 py-9 sm:px-10 sm:py-12 md:max-w-3xl;
+  }
+
+  .about-hero__eyebrow {
+    @apply m-0 mb-3 text-[11px] font-bold uppercase tracking-widest text-sky-600;
+  }
+
+  .about-hero__title {
+    @apply text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl md:text-[2.75rem] md:leading-tight;
+  }
+
+  .about-hero__quote {
+    @apply mt-4 text-base leading-relaxed text-slate-600 sm:text-lg;
+  }
+
+  .about-hero__actions {
+    @apply mt-7 flex flex-wrap gap-3;
+  }
+
+  .about-btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold transition-all duration-200;
+  }
+
+  .about-btn--primary {
+    @apply border border-transparent bg-brand text-white shadow-sm hover:bg-brand/90 hover:shadow-md;
+  }
+
+  .about-btn--ghost {
+    @apply border border-slate-200/90 bg-white/80 text-slate-700 hover:border-slate-300 hover:bg-white;
+  }
+
+  .about-btn--on-dark.about-btn--primary {
+    @apply bg-white text-slate-900 hover:bg-slate-100;
+  }
+
+  .about-btn--on-dark.about-btn--ghost {
+    @apply border-white/25 bg-white/10 text-white hover:border-white/40 hover:bg-white/15;
+  }
+
+  .about-mission-grid {
+    @apply grid gap-5 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:gap-6;
+  }
+
+  .about-card {
+    @apply rounded-2xl border border-gray-200/90 bg-white p-6 shadow-sm sm:p-8;
+  }
+
+  .about-section-label {
+    @apply mb-4 text-xs font-bold uppercase tracking-widest text-slate-400;
+  }
+
+  .about-prose {
+    @apply text-[15px] leading-relaxed;
+  }
+
+  .about-prose p {
+    @apply m-0;
+  }
+
+  .about-prose p + p {
+    @apply mt-4;
+  }
+
+  .about-values-list {
+    @apply space-y-3;
+  }
+
+  .about-values-list__item {
+    @apply flex items-start gap-3 text-sm leading-relaxed text-slate-600;
+  }
+
+  .about-values-list__icon {
+    @apply mt-0.5 shrink-0 text-lg text-emerald-500;
+  }
+
+  .about-pillars {
+    @apply mt-6 grid gap-3 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3;
+  }
+
+  .about-pillar {
+    @apply rounded-xl border border-slate-100 bg-slate-50/80 p-4;
+  }
+
+  .about-pillar__emoji {
+    @apply mb-2 block text-2xl leading-none;
+  }
+
+  .about-pillar__title {
+    @apply text-sm font-semibold text-slate-900;
+  }
+
+  .about-pillar__text {
+    @apply mt-1.5 text-xs leading-relaxed text-slate-500;
+  }
+
+  .about-stats__grid {
+    @apply grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4;
+  }
+
+  .about-stat {
+    @apply flex flex-col items-center rounded-2xl border border-gray-200/90 bg-white px-4 py-6 text-center shadow-sm transition-shadow hover:shadow-md;
+  }
+
+  .about-stat__icon {
+    @apply mb-3 flex h-11 w-11 items-center justify-center rounded-xl bg-sky-50 text-sky-600;
+  }
+
+  .about-stat__icon i {
+    @apply text-2xl leading-none;
+  }
+
+  .about-stat__value {
+    @apply text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl;
+  }
+
+  .about-stat__label {
+    @apply mt-1 text-xs font-medium text-slate-500 sm:text-sm;
+  }
+
+  .about-section-head {
+    @apply mb-6 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between;
+  }
+
+  .about-section-head--stack {
+    @apply sm:flex-col sm:items-start;
+  }
+
+  .about-heading {
+    @apply text-2xl font-bold tracking-tight text-slate-900 sm:text-[1.65rem];
+  }
+
+  .about-subhead {
+    @apply mt-2 max-w-2xl text-sm leading-relaxed text-slate-500 sm:text-base;
+  }
+
+  .about-link-arrow {
+    @apply inline-flex shrink-0 items-center gap-1.5 text-sm font-semibold text-brand transition-colors hover:text-brand/80;
+  }
+
+  .about-link-arrow i {
+    @apply text-xs transition-transform duration-200;
+  }
+
+  .about-link-arrow:hover i {
+    @apply translate-x-0.5;
+  }
+
+  .about-team-grid {
+    @apply grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3;
+  }
+
+  .about-team-card {
+    @apply relative flex flex-col items-center rounded-2xl border border-gray-200/90 bg-white p-6 text-center shadow-sm transition-all duration-200;
+    @apply hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-md;
+  }
+
+  .about-team-card__avatar-wrap {
+    @apply mb-4 flex h-28 w-28 items-center justify-center rounded-full bg-gradient-to-br from-sky-100 to-slate-100 p-1 ring-2 ring-white shadow-inner;
+  }
+
+  .about-team-card__avatar {
+    @apply h-full w-full rounded-full object-cover;
+  }
+
+  .about-team-card__body {
+    @apply flex flex-col gap-1;
+  }
+
+  .about-team-card__name {
+    @apply text-lg font-semibold text-slate-900 transition-colors group-hover:text-brand;
+  }
+
+  .about-team-card__role {
+    @apply text-sm text-slate-500;
+  }
+
+  .about-team-card__cta {
+    @apply mt-4 inline-flex items-center gap-1 text-xs font-semibold text-slate-400 transition-colors group-hover:text-brand;
+  }
+
+  .about-connect-grid {
+    @apply grid grid-cols-1 gap-3 sm:grid-cols-2;
+  }
+
+  .about-connect-card {
+    @apply flex items-start gap-4 rounded-2xl border border-gray-200/90 bg-white p-5 shadow-sm transition-all duration-200;
+    @apply hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-md;
+  }
+
+  .about-connect-card__icon {
+    @apply flex h-12 w-12 shrink-0 items-center justify-center rounded-xl text-2xl;
+    background-color: color-mix(in srgb, var(--about-accent, #0ea5e9) 12%, white);
+    color: var(--about-accent, #0ea5e9);
+  }
+
+  .about-connect-card__text {
+    @apply flex min-w-0 flex-1 flex-col gap-1;
+  }
+
+  .about-connect-card__title {
+    @apply block text-base font-semibold text-slate-900 transition-colors group-hover:text-brand;
+  }
+
+  .about-connect-card__desc {
+    @apply block text-sm leading-snug text-slate-500;
+  }
+
+  .about-connect-card__arrow {
+    @apply mt-1 shrink-0 text-slate-300 transition-all duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-brand;
+  }
+
+  .about-cta {
+    @apply relative overflow-hidden rounded-2xl border border-slate-800 bg-gradient-to-br from-slate-900 via-slate-800 to-sky-950 shadow-lg sm:rounded-3xl;
+  }
+
+  .about-cta__inner {
+    @apply relative z-10 px-6 py-10 text-center sm:px-10 sm:py-12 md:px-14;
+  }
+
+  .about-cta__title {
+    @apply text-2xl font-bold tracking-tight text-white sm:text-3xl;
+  }
+
+  .about-cta__text {
+    @apply mx-auto mt-3 max-w-lg text-sm leading-relaxed text-slate-300 sm:text-base;
+  }
+
+  .about-cta__actions {
+    @apply mt-7 flex flex-wrap items-center justify-center gap-3;
+  }
+
   .home-hero-search {
     @apply relative z-10 w-full max-w-md mx-auto;
   }

@@ -19,15 +19,13 @@
     {{- end -}}
   {{- else if eq $section "about" -}}
     {{- if strings.Contains $path "/about/users/" -}}
-      {{- $items = $items | append (dict "name" "Team" "url" "/about/") -}}
+      {{- $items = $items | append (dict "name" "About us" "url" "/about-us/") -}}
       {{- if $page.IsPage -}}
         {{- $items = $items | append (dict "name" "Members" "url" "/about/users/") -}}
         {{- $items = $items | append (dict "name" $page.Title "current" true) -}}
       {{- else -}}
         {{- $items = $items | append (dict "name" "Members" "current" true) -}}
       {{- end -}}
-    {{- else -}}
-      {{- $items = $items | append (dict "name" "Team" "current" true) -}}
     {{- end -}}
   {{- else if eq $section "about-us" -}}
     {{- $items = $items | append (dict "name" "About us" "current" true) -}}

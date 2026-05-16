@@ -39,17 +39,8 @@
         <li><a href="/ai" class="{{ if eq $navActive "ai" }}{{ $linkActive }}{{ else }}{{ $linkIdle }}{{ end }}">AI</a></li>
         <li><a href="/designlab" class="{{ if eq $navActive "designlab" }}{{ $linkActive }}{{ else }}{{ $linkIdle }}{{ end }}">Design</a></li>
 
-        <li class="nav-item-about group/about relative flex items-center">
-          <button type="button" class="{{ if or (eq $navActive "about") (eq $navActive "team") }}{{ $linkActive }}{{ else }}{{ $linkIdle }}{{ end }} border-0 cursor-pointer bg-transparent" aria-haspopup="true" aria-expanded="false">
-            About
-            <i class="ph-bold ph-caret-down text-[10px] opacity-60 group-hover/about:rotate-180 transition-transform duration-200" aria-hidden="true"></i>
-          </button>
-          <div class="nav-dropdown nav-dropdown--about absolute left-1/2 -translate-x-1/2 top-full z-50 pt-2 w-max">
-            <ul class="min-w-[11rem] rounded-xl border border-gray-200/80 bg-white/95 backdrop-blur-xl shadow-lg py-1.5 list-none m-0">
-              <li><a href="/about-us/" class="block px-4 py-2.5 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-brand no-underline{{ if eq $navActive "about" }} text-brand bg-slate-50{{ end }}">About us</a></li>
-              <li><a href="/about/" class="block px-4 py-2.5 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-brand no-underline{{ if eq $navActive "team" }} text-brand bg-slate-50{{ end }}">Team</a></li>
-            </ul>
-          </div>
+        <li>
+          <a href="/about-us/" class="{{ if or (eq $navActive "about") (eq $navActive "team") }}{{ $linkActive }}{{ else }}{{ $linkIdle }}{{ end }}">About us</a>
         </li>
 
         <li>
@@ -170,7 +161,6 @@
       <li><a href="/ai" class="block px-4 py-3 rounded-xl font-medium text-slate-800 hover:bg-slate-50 no-underline">AI Tools</a></li>
       <li><a href="/designlab" class="block px-4 py-3 rounded-xl font-medium text-slate-800 hover:bg-slate-50 no-underline">Design Lab</a></li>
       <li><a href="/about-us/" class="block px-4 py-3 rounded-xl font-medium text-slate-800 hover:bg-slate-50 no-underline">About us</a></li>
-      <li><a href="/about/" class="block px-4 py-3 rounded-xl font-medium text-slate-800 hover:bg-slate-50 no-underline">Team</a></li>
       <li><a href="{{ if .IsHome }}#faq{{ else }}/#faq{{ end }}" class="block px-4 py-3 rounded-xl font-medium text-slate-800 hover:bg-slate-50 no-underline home-hash-link">FAQ</a></li>
     </ul>
   </div>

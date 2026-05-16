@@ -84,5 +84,4 @@
   }
 
   wireDropdown('.nav-item-browse > a', '#nav-browse-mega', 120);
-  wireDropdown('.nav-item-about > button', '.nav-dropdown--about', 120);
 })();

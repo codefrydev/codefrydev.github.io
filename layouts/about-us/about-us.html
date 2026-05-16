@@ -1,13 +1,169 @@
-{{ partial "home/modern-page-start.html" (dict "page" . "navActive" "about" "headExtra" `<meta name="keywords" content="about codefrydev, free online tools platform, web-based applications, digital tools, productivity apps, AI tools, games, design resources, codefrydev mission">`) }}
-    <article class="max-w-3xl mx-auto px-4 py-12 w-full">
-      <h1 class="text-4xl font-bold text-slate-900 mb-4 m-0">About us</h1>
-      <p class="text-slate-500 mb-8 m-0">
-        <a href="/about/" class="text-blue-600 hover:text-blue-700 font-medium no-underline">Meet the team</a>
-        <span class="mx-2 text-slate-300" aria-hidden="true">·</span>
-        <a href="/about/users/" class="text-blue-600 hover:text-blue-700 font-medium no-underline">View all members</a>
-      </p>
-      <div class="prose prose-slate max-w-none text-slate-600 bg-white rounded-2xl border border-gray-100 p-8 md:p-10 shadow-sm">
-        {{ .Content }}
+{{ partial "home/modern-page-start.html" (dict "page" . "navActive" "about" "headExtra" `<meta name="keywords" content="about codefrydev, team, developers, designers, contributors, free online tools platform">`) }}
+
+{{- $quote := hugo.Data.homepage.quote | default .Site.Params.footer_tagline -}}
+{{- $why := hugo.Data.homepage.why -}}
+{{- $totalTools := 0 -}}
+{{- range hugo.Data.home.categories }}{{ $totalTools = add $totalTools (len .items) }}{{ end -}}
+{{- $aiCount := 0 }}{{ with hugo.Data.ai.data }}{{ $aiCount = len . }}{{ end -}}
+{{- $gamesCount := 0 }}{{ with hugo.Data.games.data }}{{ $gamesCount = len . }}{{ end -}}
+{{- $designCount := 0 }}{{ with hugo.Data.designlab.data }}{{ $designCount = len . }}{{ end -}}
+{{- $members := site.GetPage "/about/users" -}}
+
+<article class="about-page pt-6 pb-20 sm:pt-10 sm:pb-24">
+  <header class="about-hero max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-14 sm:mb-16">
+    <div class="about-hero__panel">
+      <div class="about-hero__glow" aria-hidden="true"></div>
+      <div class="about-hero__inner">
+        <p class="about-hero__eyebrow">About CodeFryDev</p>
+        <h1 class="about-hero__title m-0">{{ .Title }}</h1>
+        <p class="about-hero__quote m-0">{{ $quote }}</p>
+        <div class="about-hero__actions">
+          <a href="/browse/" class="about-btn about-btn--primary no-underline">
+            Browse tools <i class="ph-bold ph-arrow-right" aria-hidden="true"></i>
+          </a>
+          <a href="/press/" class="about-btn about-btn--ghost no-underline">Press &amp; media</a>
+        </div>
       </div>
-    </article>
+    </div>
+  </header>
+
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="about-mission-grid mb-14 sm:mb-16">
+      {{- if .Content -}}
+      <div class="about-card about-card--prose">
+        <h2 class="about-section-label m-0">Our story</h2>
+        <div class="about-prose text-slate-600">
+          {{ .Content }}
+        </div>
+      </div>
+      {{- end -}}
+
+      {{- with $why -}}
+      <aside class="about-card about-card--values" aria-labelledby="about-values-heading">
+        <h2 id="about-values-heading" class="about-section-label m-0">What we stand for</h2>
+        {{- with .bullets -}}
+        <ul class="about-values-list list-none m-0 p-0">
+          {{- range . -}}
+          <li class="about-values-list__item">
+            <span class="about-values-list__icon" aria-hidden="true"><i class="ph-fill ph-check-circle"></i></span>
+            <span>{{ . }}</span>
+          </li>
+          {{- end -}}
+        </ul>
+        {{- end -}}
+        {{- with .highlights -}}
+        <div class="about-pillars">
+          {{- range . | first 3 -}}
+          <div class="about-pillar">
+            {{- with .icon -}}<span class="about-pillar__emoji" aria-hidden="true">{{ . }}</span>{{ end -}}
+            <h3 class="about-pillar__title m-0">{{ .title }}</h3>
+            <p class="about-pillar__text m-0">{{ .text | plainify | truncate 100 }}</p>
+          </div>
+          {{- end -}}
+        </div>
+        {{- end -}}
+      </aside>
+      {{- end -}}
+    </div>
+
+    <section class="about-stats mb-14 sm:mb-16" aria-label="Platform at a glance">
+      <ul class="about-stats__grid list-none m-0 p-0">
+        <li class="about-stat">
+          <span class="about-stat__icon" aria-hidden="true"><i class="ph-duotone ph-app-window"></i></span>
+          <span class="about-stat__value">{{ $totalTools }}+</span>
+          <span class="about-stat__label">Tools &amp; apps</span>
+        </li>
+        <li class="about-stat">
+          <span class="about-stat__icon" aria-hidden="true"><i class="ph-duotone ph-robot"></i></span>
+          <span class="about-stat__value">{{ $aiCount }}</span>
+          <span class="about-stat__label">AI projects</span>
+        </li>
+        <li class="about-stat">
+          <span class="about-stat__icon" aria-hidden="true"><i class="ph-duotone ph-game-controller"></i></span>
+          <span class="about-stat__value">{{ $gamesCount }}</span>
+          <span class="about-stat__label">Games</span>
+        </li>
+        <li class="about-stat">
+          <span class="about-stat__icon" aria-hidden="true"><i class="ph-duotone ph-palette"></i></span>
+          <span class="about-stat__value">{{ $designCount }}</span>
+          <span class="about-stat__label">Design tools</span>
+        </li>
+      </ul>
+    </section>
+
+    {{- if $members -}}
+    <section class="mb-14 sm:mb-16" aria-labelledby="about-team-heading">
+      <div class="about-section-head">
+        <div>
+          <h2 id="about-team-heading" class="about-heading m-0">Our team</h2>
+          <p class="about-subhead m-0">The people building tools, games, and experiments in the open.</p>
+        </div>
+        <a href="{{ $members.RelPermalink }}" class="about-link-arrow no-underline">
+          All members <i class="ph-bold ph-arrow-right" aria-hidden="true"></i>
+        </a>
+      </div>
+      <ul class="about-team-grid list-none m-0 p-0">
+        {{- range sort $members.Pages "Weight" -}}
+        <li>
+          <a href="{{ .RelPermalink }}" class="about-team-card no-underline group">
+            <span class="about-team-card__avatar-wrap">
+              <img src="{{ .Params.listProfile_image }}" alt="" width="112" height="112" class="about-team-card__avatar" loading="lazy">
+            </span>
+            <span class="about-team-card__body">
+              <span class="about-team-card__name">{{ .Title }}</span>
+              {{- with .Params.subtitle -}}
+              <span class="about-team-card__role">{{ . }}</span>
+              {{- end -}}
+            </span>
+            <span class="about-team-card__cta">View profile <i class="ph-bold ph-arrow-up-right" aria-hidden="true"></i></span>
+          </a>
+        </li>
+        {{- end -}}
+      </ul>
+    </section>
+    {{- end -}}
+
+    {{- with hugo.Data.about.cards -}}
+    <section class="mb-14 sm:mb-16" aria-labelledby="about-connect-heading">
+      <div class="about-section-head about-section-head--stack">
+        <h2 id="about-connect-heading" class="about-heading m-0">Explore &amp; connect</h2>
+        <p class="about-subhead m-0">Credits, community, and resources behind the platform.</p>
+      </div>
+      <ul class="about-connect-grid list-none m-0 p-0">
+        {{- range . -}}
+        <li>
+          <a
+            href="{{ .url }}"
+            class="about-connect-card no-underline group"
+            {{- with .accent_color -}}style="--about-accent: {{ . }}"{{- end -}}
+            {{- if strings.HasPrefix .url "http" -}} target="_blank" rel="noopener noreferrer"{{- end -}}
+          >
+            <span class="about-connect-card__icon" aria-hidden="true">
+              <i class="ph-duotone ph-{{ .phosphorIcon | default "link" }}"></i>
+            </span>
+            <span class="about-connect-card__text">
+              <span class="about-connect-card__title">{{ .title }}</span>
+              <span class="about-connect-card__desc">{{ .content }}</span>
+            </span>
+            <i class="ph-bold ph-arrow-up-right about-connect-card__arrow" aria-hidden="true"></i>
+          </a>
+        </li>
+        {{- end -}}
+      </ul>
+    </section>
+    {{- end -}}
+
+    <section class="about-cta" aria-label="Get started">
+      <div class="about-cta__inner">
+        <h2 class="about-cta__title m-0">Ready to explore?</h2>
+        <p class="about-cta__text m-0">Jump into tools, games, or AI apps—everything runs in your browser.</p>
+        <div class="about-cta__actions">
+          <a href="/" class="about-btn about-btn--primary about-btn--on-dark no-underline">Go to homepage</a>
+          <a href="/history/" class="about-btn about-btn--ghost about-btn--on-dark no-underline">Our timeline</a>
+        </div>
+      </div>
+    </section>
+  </div>
+</article>
+
 {{ partial "home/modern-page-end.html" (dict "page" .) }}

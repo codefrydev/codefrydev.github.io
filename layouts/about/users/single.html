@@ -3,7 +3,7 @@
 {{- $linkBg := .Params.colors.link_background | default "rgba(165, 190, 140, 0.56)" -}}
 {{- $linkHover := .Params.colors.link_hover | default "#e09d62" -}}
 
-{{ partial "home/modern-page-start.html" (dict "page" . "navActive" "team") }}
+{{ partial "home/modern-page-start.html" (dict "page" . "navActive" "about") }}
     <section class="pt-8 pb-16 max-w-lg mx-auto px-4 w-full">
       <div class="rounded-3xl border border-gray-100 shadow-lg overflow-hidden text-center p-8 md:p-10" style="background-color: {{ $bg }};">
         {{- $img := .Params.listProfile_image | default .Params.profile_image -}}

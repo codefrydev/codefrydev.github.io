@@ -1,8 +1,8 @@
-{{ partial "home/modern-page-start.html" (dict "page" . "navActive" "team" "headExtra" `<meta name="keywords" content="codefrydev team, developers, designers, contributors, about team">`) }}
+{{ partial "home/modern-page-start.html" (dict "page" . "navActive" "about" "headExtra" `<meta name="keywords" content="codefrydev team, developers, designers, contributors, about team">`) }}
     <section class="pt-8 pb-16 max-w-5xl mx-auto px-4 w-full">
       <div class="text-center mb-10">
         <h1 class="text-4xl font-bold text-slate-900 mb-3 m-0">{{ .Title }}</h1>
-        <p class="text-lg text-slate-500 m-0">Meet the talented folks who contribute to CodeFryDev</p>
+        <p class="text-lg text-slate-500 m-0">Meet the talented folks who contribute to CodeFryDev. <a href="/about-us/" class="text-blue-600 hover:text-blue-700 font-medium no-underline">About us</a></p>
       </div>
       <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 list-none m-0 p-0">
         {{- range sort .Pages "Weight" -}}

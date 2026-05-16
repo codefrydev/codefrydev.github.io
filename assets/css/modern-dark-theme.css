@@ -484,6 +484,93 @@
   border-color: rgb(51 65 85);
 }
 
+/* —— About us —— */
+[data-theme="dark"] body.home-page .about-hero__panel {
+  border-color: rgb(71 85 105 / 0.8);
+  background-image: linear-gradient(to bottom right, rgb(30 41 59), rgb(15 23 42), rgb(30 58 95 / 0.35));
+}
+
+[data-theme="dark"] body.home-page .about-hero__glow {
+  background-color: rgb(56 189 248 / 0.15);
+}
+
+[data-theme="dark"] body.home-page .about-hero__eyebrow {
+  color: rgb(56 189 248);
+}
+
+[data-theme="dark"] body.home-page .about-hero__title,
+[data-theme="dark"] body.home-page .about-heading,
+[data-theme="dark"] body.home-page .about-stat__value,
+[data-theme="dark"] body.home-page .about-team-card__name,
+[data-theme="dark"] body.home-page .about-connect-card__title,
+[data-theme="dark"] body.home-page .about-pillar__title {
+  color: rgb(241 245 249);
+}
+
+[data-theme="dark"] body.home-page .about-hero__quote,
+[data-theme="dark"] body.home-page .about-subhead,
+[data-theme="dark"] body.home-page .about-prose,
+[data-theme="dark"] body.home-page .about-values-list__item,
+[data-theme="dark"] body.home-page .about-pillar__text,
+[data-theme="dark"] body.home-page .about-stat__label,
+[data-theme="dark"] body.home-page .about-team-card__role,
+[data-theme="dark"] body.home-page .about-connect-card__desc {
+  color: rgb(148 163 184);
+}
+
+[data-theme="dark"] body.home-page .about-btn--ghost {
+  border-color: rgb(71 85 105 / 0.9);
+  background-color: rgb(30 41 59 / 0.8);
+  color: rgb(226 232 240);
+}
+
+[data-theme="dark"] body.home-page .about-btn--ghost:hover {
+  border-color: rgb(100 116 139);
+  background-color: rgb(51 65 85);
+}
+
+[data-theme="dark"] body.home-page .about-card,
+[data-theme="dark"] body.home-page .about-stat,
+[data-theme="dark"] body.home-page .about-team-card,
+[data-theme="dark"] body.home-page .about-connect-card {
+  border-color: rgb(71 85 105 / 0.8);
+  background-color: rgb(30 41 59);
+}
+
+[data-theme="dark"] body.home-page .about-pillar {
+  border-color: rgb(51 65 85);
+  background-color: rgb(15 23 42 / 0.6);
+}
+
+[data-theme="dark"] body.home-page .about-stat__icon {
+  background-color: rgb(12 74 110 / 0.35);
+  color: rgb(56 189 248);
+}
+
+[data-theme="dark"] body.home-page .about-team-card__avatar-wrap {
+  background-image: linear-gradient(to bottom right, rgb(30 58 95), rgb(51 65 85));
+  box-shadow: inset 0 0 0 2px rgb(30 41 59);
+}
+
+[data-theme="dark"] body.home-page .about-team-card:hover,
+[data-theme="dark"] body.home-page .about-connect-card:hover,
+[data-theme="dark"] body.home-page .about-stat:hover {
+  border-color: rgb(100 116 139);
+}
+
+[data-theme="dark"] body.home-page .about-connect-card__icon {
+  background-color: color-mix(in srgb, var(--about-accent, #38bdf8) 18%, rgb(15 23 42));
+}
+
+[data-theme="dark"] body.home-page .about-cta {
+  border-color: rgb(51 65 85);
+  background-image: linear-gradient(to bottom right, rgb(15 23 42), rgb(30 41 59), rgb(12 74 110 / 0.5));
+}
+
+[data-theme="dark"] body.home-page .about-section-label {
+  color: rgb(100 116 139);
+}
+
 /* —— Category banner —— */
 [data-theme="dark"] body.home-page .category-banner {
   border-color: rgb(71 85 105);
