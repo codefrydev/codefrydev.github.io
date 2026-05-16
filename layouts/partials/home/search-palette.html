@@ -67,16 +67,16 @@
   </div>
 </div>
 <script>
-window.CFD_SEARCH = {
-  baseURL: {{ .Site.BaseURL | jsonify }},
-  data: {
-    home: {{ hugo.Data.home | jsonify | safeJS }},
-    ai: {{ hugo.Data.ai | jsonify | safeJS }},
-    games: {{ hugo.Data.games | jsonify | safeJS }},
-    designlab: {{ hugo.Data.designlab | jsonify | safeJS }},
-    store: {{ hugo.Data.store | jsonify | safeJS }}
-  }
-};
+window.CFD_SEARCH = {{- dict
+  "baseURL" .Site.BaseURL
+  "data" (dict
+    "home" hugo.Data.home
+    "ai" hugo.Data.ai
+    "games" hugo.Data.games
+    "designlab" hugo.Data.designlab
+    "store" hugo.Data.store
+  )
+| jsonify | safeJS -}};
 </script>
 <script src="/js/search-palette.js" defer></script>
 {{- end -}}

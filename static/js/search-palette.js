@@ -5,6 +5,7 @@
   var allItems = [];
   var isEmbedded = false;
   var isOpen = false;
+  var triggersBound = false;
 
   function $(sel, root) {
     return (root || document).querySelector(sel);
@@ -72,9 +73,10 @@
 
   function absUrl(url, base) {
     if (!url) return '#';
+    var root = (base || '/').replace(/"/g, '').replace(/\/+$/, '');
     if (/^https?:\/\//.test(url)) return url;
-    if (url.charAt(0) === '/') return base.replace(/\/?$/, '') + url;
-    return base + url;
+    if (url.charAt(0) === '/') return root + url;
+    return root + '/' + url;
   }
 
   function highlight(text, q) {
@@ -127,7 +129,7 @@
     resultsList.hidden = false;
 
     var base = (window.CFD_SEARCH && window.CFD_SEARCH.baseURL) || '/';
-    matches.slice(0, 24).forEach(function (item, i) {
+    matches.slice(0, 24).forEach(function (item) {
       var li = document.createElement('li');
       li.setAttribute('role', 'option');
       var a = document.createElement('a');
@@ -183,27 +185,39 @@
     }
   }
 
+  function closeMobileMenu() {
+    var menuBtn = document.getElementById('mobile-menu-btn');
+    var menu = document.getElementById('mobile-menu');
+    if (menuBtn && menu && menuBtn.getAttribute('aria-expanded') === 'true') {
+      menuBtn.click();
+    }
+  }
+
   function open(query) {
-    if (!palette || isOpen) return;
+    if (!palette) return;
+    if (isEmbedded) {
+      if (input) {
+        input.focus();
+        runSearch(query || input.value || '');
+      }
+      return;
+    }
+    if (isOpen) return;
+
+    closeMobileMenu();
     isOpen = true;
+    palette.removeAttribute('hidden');
     palette.hidden = false;
     palette.setAttribute('aria-hidden', 'false');
     document.body.classList.add('search-palette-open');
-    if (!isEmbedded) {
-      requestAnimationFrame(function () {
-        palette.classList.add('is-visible');
-      });
-    } else {
-      palette.classList.add('is-visible', 'search-palette--embedded');
-    }
+    requestAnimationFrame(function () {
+      palette.classList.add('is-visible');
+    });
     if (input) {
       input.value = query || '';
       input.focus();
       runSearch(input.value);
     }
-    var url = new URL(window.location.href);
-    if (query) url.searchParams.set('q', query);
-    if (isEmbedded) window.history.replaceState({}, '', url);
   }
 
   function close() {
@@ -214,6 +228,7 @@
     document.body.classList.remove('search-palette-open');
     setTimeout(function () {
       palette.hidden = true;
+      palette.setAttribute('hidden', '');
       if (input) input.value = '';
       renderResults([], '');
     }, 200);
@@ -237,36 +252,34 @@
   }
 
   function bindTriggers() {
-    document.querySelectorAll('[data-search-open]').forEach(function (btn) {
-      btn.addEventListener('click', function (e) {
-        e.preventDefault();
-        open('');
-      });
-    });
+    if (triggersBound) return;
+    triggersBound = true;
+
+    document.addEventListener(
+      'click',
+      function (e) {
+        var openBtn = e.target.closest('[data-search-open]');
+        if (openBtn) {
+          e.preventDefault();
+          e.stopPropagation();
+          open('');
+          return;
+        }
+        if (e.target.closest('[data-search-close]')) {
+          e.preventDefault();
+          close();
+        }
+      },
+      true
+    );
+  }
+
+  function bindPalette() {
+    if (!palette) return;
+
     document.querySelectorAll('[data-search-close]').forEach(function (el) {
       el.addEventListener('click', close);
     });
-  }
-
-  function init() {
-    if (!window.CFD_SEARCH) return;
-
-    palette = document.getElementById('search-palette');
-    if (!palette) return;
-
-    backdrop = $('.search-palette__backdrop', palette);
-    dialog = $('.search-palette__dialog', palette);
-    input = document.getElementById('search-palette-input');
-    resultsList = document.getElementById('search-palette-results');
-    defaultPanel = document.getElementById('search-palette-default');
-    emptyPanel = document.getElementById('search-palette-empty');
-    isEmbedded =
-      document.body.classList.contains('search-palette-page') ||
-      /^\/search\/?$/.test(window.location.pathname);
-
-    allItems = buildIndex(window.CFD_SEARCH.data);
-    initKbdLabels();
-    bindTriggers();
 
     if (input) {
       var debounce;
@@ -300,6 +313,32 @@
         }
       });
     }
+  }
+
+  function init() {
+    if (!window.CFD_SEARCH || !window.CFD_SEARCH.data) {
+      return false;
+    }
+
+    palette = document.getElementById('search-palette');
+    if (!palette) {
+      return false;
+    }
+
+    backdrop = $('.search-palette__backdrop', palette);
+    dialog = $('.search-palette__dialog', palette);
+    input = document.getElementById('search-palette-input');
+    resultsList = document.getElementById('search-palette-results');
+    defaultPanel = document.getElementById('search-palette-default');
+    emptyPanel = document.getElementById('search-palette-empty');
+    isEmbedded =
+      document.body.classList.contains('search-palette-page') ||
+      /^\/search\/?$/.test(window.location.pathname);
+
+    allItems = buildIndex(window.CFD_SEARCH.data);
+    initKbdLabels();
+    bindTriggers();
+    bindPalette();
 
     document.addEventListener('keydown', function (e) {
       if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
@@ -312,6 +351,7 @@
     });
 
     if (isEmbedded) {
+      palette.removeAttribute('hidden');
       palette.hidden = false;
       palette.classList.add('is-visible', 'search-palette--embedded');
       isOpen = true;
@@ -324,11 +364,22 @@
     }
 
     window.cfdSearchPalette = { open: open, close: close };
+    return true;
+  }
+
+  function boot() {
+    bindTriggers();
+    if (init()) return;
+    var attempts = 0;
+    var timer = setInterval(function () {
+      attempts += 1;
+      if (init() || attempts > 40) clearInterval(timer);
+    }, 50);
   }
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
+    document.addEventListener('DOMContentLoaded', boot);
   } else {
-    init();
+    boot();
   }
 })();

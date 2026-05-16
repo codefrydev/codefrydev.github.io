@@ -553,7 +553,7 @@
 
     window.addEventListener('click', function (e) {
         if (isLadybugGateHidden()) return;
-        if (e.target && e.target.closest && e.target.closest('#ladybug-reveal-alpha, #ladybug-reveal-beta')) return;
+        if (e.target && e.target.closest && e.target.closest('#ladybug-reveal-alpha, #ladybug-reveal-beta, [data-search-open], #search-palette, .search-palette')) return;
         if (state === 'h1feast') {
             endH1Feast(true);
         }

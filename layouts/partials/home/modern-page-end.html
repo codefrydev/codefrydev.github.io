@@ -17,7 +17,9 @@
     {{ partial "home/footer.html" $page }}
   </main>
   {{ partial "cookie-consent.html" $page }}
+  {{- if not ($page.Scratch.Get "searchPaletteLoaded") -}}
   {{ partial "home/search-palette.html" $page }}
+  {{- end -}}
   <script src="/js/home-nav.js" defer></script>
   <script src="/js/theme.js" defer></script>
 </body>
