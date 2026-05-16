@@ -56,33 +56,55 @@
     }
   }
 
-  // Load Google Analytics
+  // Load Google Analytics (GA4 + Consent Mode v2)
   function loadGoogleAnalytics() {
-    // Check if GA is already loaded
-    if (window.gtag && window.dataLayer) {
+    const gaMeasurementId = getGAMeasurementId();
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      window.dataLayer.push(arguments);
+    }
+    window.gtag = gtag;
+
+    if (!window.__cfdGaInitialized) {
+      gtag('consent', 'default', {
+        analytics_storage: 'denied',
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        wait_for_update: 500,
+      });
+      window.__cfdGaInitialized = true;
+    }
+
+    if (window.__cfdGaLoadedId === gaMeasurementId) {
+      gtag('consent', 'update', { analytics_storage: 'granted' });
       return;
     }
 
-    // Get GA ID from config (via data attribute)
-    const gaMeasurementId = getGAMeasurementId();
-
-    // Initialize dataLayer
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    window.gtag = gtag;
     gtag('js', new Date());
     gtag('config', gaMeasurementId, {
-      'anonymize_ip': true
+      anonymize_ip: true,
+      send_page_view: true,
+      cookie_flags: 'SameSite=None;Secure',
     });
+    gtag('consent', 'update', { analytics_storage: 'granted' });
 
-    // Load GA script
-    const script = document.createElement('script');
-    script.async = true;
-    script.src = 'https://www.googletagmanager.com/gtag/js?id=' + gaMeasurementId;
-    script.type = 'text/javascript';
-    document.head.appendChild(script);
+    if (!document.querySelector('script[src*="googletagmanager.com/gtag/js"]')) {
+      const script = document.createElement('script');
+      script.async = true;
+      script.src = 'https://www.googletagmanager.com/gtag/js?id=' + gaMeasurementId;
+      document.head.appendChild(script);
+    }
+
+    window.__cfdGaLoadedId = gaMeasurementId;
+
+    document.dispatchEvent(new CustomEvent('cfd:analytics-ready'));
+    if (typeof window.cfdTrack === 'function') {
+      window.cfdTrack('cookie_consent', {
+        consent_status: 'accepted',
+        event_category: 'privacy',
+      });
+    }
   }
 
   // Handle accept button click
@@ -96,19 +118,42 @@
   function handleDecline() {
     setConsentStatus(COOKIE_CONSENT_DECLINED);
     hideCookieBanner();
-    // Don't load Google Analytics
+    if (typeof window.gtag === 'function') {
+      window.gtag('consent', 'update', { analytics_storage: 'denied' });
+    }
+  }
+
+  // Consent Mode default before user choice (deny until accept)
+  function initConsentDefaults() {
+    window.dataLayer = window.dataLayer || [];
+    window.gtag =
+      window.gtag ||
+      function () {
+        window.dataLayer.push(arguments);
+      };
+    if (!window.__cfdGaInitialized) {
+      window.gtag('consent', 'default', {
+        analytics_storage: 'denied',
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        wait_for_update: 500,
+      });
+      window.__cfdGaInitialized = true;
+    }
   }
 
   // Initialize on DOM ready
   function init() {
+    initConsentDefaults();
     const consentStatus = getConsentStatus();
 
     if (!consentStatus) {
       // No consent given yet, show banner
       showCookieBanner();
     } else if (consentStatus === COOKIE_CONSENT_ACCEPTED) {
-      // Consent was given, load GA
       loadGoogleAnalytics();
+      document.dispatchEvent(new CustomEvent('cfd:analytics-ready'));
     }
     // If declined, do nothing
 

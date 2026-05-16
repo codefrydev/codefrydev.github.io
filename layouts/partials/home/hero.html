@@ -1,0 +1,42 @@
+{{- $hp := hugo.Data.homepage -}}
+{{- $hero := $hp.hero -}}
+{{- $badge := $hero.badge | default "Free tools — no signup" -}}
+{{- $placeholder := $hero.searchPlaceholder | default "Search tools, games, AI apps..." -}}
+{{- $autoplay := $hero.autoplayMs | default 6000 -}}
+{{- $slides := $hero.slides -}}
+{{- $firstSlide := index $slides 0 -}}
+
+<section id="hero" data-section-label="Home" class="home-hero snap-start relative text-center flex flex-col items-center justify-center px-4 py-8 overflow-hidden bg-[#edf2f8]">
+  <div class="absolute inset-0 z-0 opacity-[0.22] mix-blend-multiply pointer-events-none" aria-hidden="true">
+    <div id="bg-layer-1" class="absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ease-in-out opacity-100" style="background-image: url('{{ $firstSlide.image }}');"></div>
+    <div id="bg-layer-2" class="absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ease-in-out opacity-0"></div>
+  </div>
+  <div class="absolute inset-0 z-[1] bg-gradient-to-b from-[#e0ebf5]/95 via-[#edf2f8]/90 to-white/95 pointer-events-none" aria-hidden="true"></div>
+
+  <div class="relative z-10 inline-flex items-center gap-2 px-3 py-1 mb-6 text-xs font-semibold tracking-wide text-slate-600 uppercase bg-white border border-gray-200 rounded-full shadow-sm">
+    {{ $badge }}
+  </div>
+
+  <div id="hero-content" class="relative z-10 transition-opacity duration-500 ease-in-out opacity-100">
+    <h1 id="ladybug-h1-bite-target" class="max-w-4xl mx-auto text-5xl md:text-6xl font-bold tracking-tight text-[#0B162C] mb-6 m-0">
+      <span id="hero-title" class="hero-slide-title block">{{ $firstSlide.title }}</span>
+    </h1>
+    <p id="hero-desc" class="max-w-2xl mx-auto text-lg text-slate-500 mb-10 leading-relaxed font-medium m-0">
+      {{ $firstSlide.description }}
+    </p>
+  </div>
+
+  {{ partial "home/search-trigger.html" (dict "placeholder" $placeholder "size" "lg") }}
+
+  <div class="absolute bottom-8 flex gap-2 z-10" id="carousel-indicators" role="tablist" aria-label="Hero slides"></div>
+
+  <p class="absolute bottom-24 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-slate-400 text-xs font-medium pointer-events-none m-0 home-scroll-hint" aria-hidden="true">
+    <span>Scroll to explore</span>
+    <i class="ph-bold ph-caret-down text-sm animate-bounce"></i>
+  </p>
+
+  <script>
+    window.heroSlides = {{ $slides | jsonify | safeJS }};
+    window.heroAutoplayMs = {{ $autoplay }};
+  </script>
+</section>

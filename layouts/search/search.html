@@ -1,24 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    {{ partial "header.html" . }}
-    <meta name="robots" content="noindex, follow">
-    <meta name="keywords" content="search, codefrydev search, tools search, games search">
-    {{ with resources.Get "css/home.css" }}
-      {{ $minifiedCSS := . | resources.Minify }}
-      <link rel="stylesheet" href="{{ $minifiedCSS.RelPermalink }}">
-    {{ end }}
-    <link rel="stylesheet" href="/css/internal.css">
-</head>
-<body>
-  {{ partial "skip-link.html" . }}
-  {{ partial "page-header.html" . }}
-  <main id="main-content">
-    {{ partial "search.html" (dict "containerClass" "search-container" "placeholder" "Search for tools, games, AI apps, design resources..." "autofocus" true "Site" .Site "Scratch" .Scratch) }}
-  </main>
-  {{ partial "footer.html" . }}
-  <script src="/js/search.js"></script>
-  <script src="/js/feedback.js"></script>
-  <script src="/js/theme.js"></script>
-</body>
-</html>
+{{ partial "home/modern-page-start.html" (dict "page" . "navActive" "search" "bodyClass" "search-palette-page") }}
+    {{- .Scratch.Set "breadcrumbLabel" "Search" -}}
+    <section class="pt-8 pb-16 max-w-3xl mx-auto px-4 w-full">
+      <header class="text-center mb-8">
+        <h1 class="text-3xl md:text-4xl font-bold text-slate-900 mb-3 m-0">Search</h1>
+        <p class="text-slate-500 text-base m-0">Find any tool, game, or app on CodeFryDev. Use <kbd class="px-1.5 py-0.5 text-xs bg-slate-100 border border-slate-200 rounded">⌘K</kbd> from anywhere.</p>
+      </header>
+      {{ partial "home/search-palette.html" . }}
+    </section>
+{{ partial "home/modern-page-end.html" (dict "page" .) }}

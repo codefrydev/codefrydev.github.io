@@ -1,100 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-
-    {{- /* Preconnect to Google Analytics for improved performance */ -}}
-    {{- /* Note: Google Analytics will only load after user consent via cookie-consent.js */ -}}
-    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
-    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"> 
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#28966a">
-    <meta name="msapplication-TileColor" content="#28966a">
-    <meta name="theme-color" content="#28966a">
-    <title>404 - Page Not Found | CodeFryDev</title>
-    <meta name="description" content="Building software products, apps, and developer tools for web, mobile, and desktop, providing AI-ready boilerplate code to accelerate feature implementation.">
-    <meta name="robots" content="noindex, follow">
-    <link rel="canonical" href="{{ .Site.BaseURL }}404.html">
-    <link rel="stylesheet" href="/css/internal.css">
-    <link rel="stylesheet" href="/css/theme.css">
-    <style>
-        * {
-            transition: all 0.6s;
-        }
-
-        html {
-            height: 100%;
-        }
-
-        body {
-            background-color: var(--bg-primary);
-            font-family: 'Courier New', Courier, monospace;
-            color: var(--text-primary);
-            margin: 0;
-        }
-
-        #main {
-            display: table;
-            width: 100%;
-            height: 100vh;
-            text-align: center;
-        }
-
-        .fof {
-            display: table-cell;
-            vertical-align: middle;
-        }
-
-            .fof h1 {
-                font-size: 50px;
-                display: inline-block;
-                padding-right: 12px;
-                animation: type .5s alternate infinite;
-            }
-
-        @keyframes type {
-            from {
-                box-shadow: inset -3px 0px 0px var(--text-primary);
-            }
-
-            to {
-                box-shadow: inset -3px 0px 0px transparent;
-            }
-        }
-    </style>
-    {{- /* Structured data for 404 page */ -}}
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      "name": "404 - Page Not Found",
-      "description": {{ printf "%q" .Site.Params.description }},
-      "url": "{{ .Site.BaseURL }}404.html",
-      "mainEntity": {
-        "@type": "ErrorPage",
-        "name": "404 Error",
-        "description": "Page not found"
-      },
-      "isPartOf": {
-        "@type": "WebSite",
-        "name": "{{ .Site.Title }}",
-        "url": "{{ .Site.BaseURL }}"
-      }
-    }
-    </script>
-</head>
-<body>  
-    <div id="main">
-        <div class="fof" onclick="window.location.href='/'">
-            <h1>Error 404 </h1>
-            <h4>Nothing to COOK🔥here! </h4>
-        </div> 
-    </div>
-    {{ partial "footer.html" . }}
-    <script src="/js/theme.js"></script>
-</body>
-</html>
+{{- .Scratch.Set "modernLayout" true -}}
+{{- .Scratch.Set "navActive" "" -}}
+{{- .Scratch.Set "breadcrumbItems" (slice (dict "name" "Home" "url" "/") (dict "name" "Page not found" "current" true)) -}}
+{{ partial "home/modern-page-start.html" (dict "page" . "headExtra" `<meta name="robots" content="noindex, follow">`) }}
+    <section class="pt-8 pb-16 max-w-2xl mx-auto px-4 w-full">
+      <div class="text-center min-h-[50vh] flex flex-col items-center justify-center">
+        <p class="text-6xl font-bold text-slate-200 m-0 mb-4" aria-hidden="true">404</p>
+        <h1 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4 m-0">Page not found</h1>
+        <p class="text-lg text-slate-500 mb-10 m-0 max-w-md">Nothing to cook here. The page may have moved or the link might be wrong.</p>
+        <div class="flex flex-wrap items-center justify-center gap-4">
+          <a href="/" class="inline-flex items-center justify-center px-6 py-3 bg-slate-900 text-white rounded-xl font-medium hover:bg-slate-800 transition-colors no-underline">
+            Go to homepage
+          </a>
+          <a href="/search/" class="inline-flex items-center justify-center px-6 py-3 bg-white border border-gray-200 text-slate-700 rounded-xl font-medium hover:text-blue-600 transition-colors no-underline">
+            Search tools
+          </a>
+          <a href="/games/" class="inline-flex items-center justify-center px-6 py-3 bg-white border border-gray-200 text-slate-700 rounded-xl font-medium hover:text-blue-600 transition-colors no-underline">
+            Play games
+          </a>
+        </div>
+      </div>
+    </section>
+{{ partial "home/modern-page-end.html" (dict "page" .) }}

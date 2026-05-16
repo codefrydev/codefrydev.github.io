@@ -1,0 +1,17 @@
+{{- $t := . -}}
+<div class="home-testimonial-card bg-white p-8 rounded-3xl border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-shadow shrink-0">
+  <p class="text-slate-500 text-[15px] mb-8 leading-relaxed m-0">&ldquo;{{ $t.quote }}&rdquo;</p>
+  <div class="flex items-center gap-3">
+    {{- if $t.avatar -}}
+    <img src="{{ $t.avatar }}" alt="{{ $t.author }}" class="w-11 h-11 rounded-full object-cover" loading="lazy" width="44" height="44">
+    {{- else -}}
+    <div class="w-11 h-11 rounded-full bg-slate-200 flex items-center justify-center text-sm font-semibold text-slate-600" aria-hidden="true">{{ substr $t.author 0 1 }}</div>
+    {{- end -}}
+    <div>
+      <h5 class="text-[15px] font-semibold text-slate-900 leading-tight m-0">{{ $t.author }}</h5>
+      {{- with $t.handle -}}
+      <p class="text-[13px] text-slate-500 m-0">{{ . }}</p>
+      {{- end -}}
+    </div>
+  </div>
+</div>

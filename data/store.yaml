@@ -1,17 +1,33 @@
-# data/buttons.yaml
 data:
-  - name: "Water Reminder"
-    icon: "cfd-waterreminder"
-    url: "https://play.google.com/store/apps/details?id=com.codefrydev.waterreminder"
-  
-  - name: "abintudyog"
-    icon: "cfd-abint"
-    url: "https://play.google.com/store/apps/details?id=com.priyadarshi.abhijeet.abintudyog"
-
-  - name: "Tiny fish"
-    icon: "cfd-tinyfish"
-    url: "https://play.google.com/store/apps/details?id=in.codefrydev.developer.abhijeet.tinyfish"
-
-  - name: "Galactic gunner"
-    icon: "cfd-galacticgunner"
-    url: "https://play.google.com/store/apps/details?id=org.codefrydev.developer.abhijeet.galacticgunner"
+  - name: Water Reminder
+    icon: cfd-waterreminder
+    url: https://play.google.com/store/apps/details?id=com.codefrydev.waterreminder
+    description: Stay hydrated—Android app on Google Play.
+    date: "2025-01-01"
+    phosphorIcon: drop
+    featured: true
+    external: true
+  - name: abintudyog
+    icon: cfd-abint
+    url: https://play.google.com/store/apps/details?id=com.priyadarshi.abhijeet.abintudyog
+    description: Educational Android app on Google Play.
+    date: "2025-02-02"
+    phosphorIcon: student
+    featured: true
+    external: true
+  - name: Tiny fish
+    icon: cfd-tinyfish
+    url: https://play.google.com/store/apps/details?id=in.codefrydev.developer.abhijeet.tinyfish
+    description: Casual fish game—Android app on Google Play.
+    date: "2025-03-03"
+    phosphorIcon: fish
+    featured: true
+    external: true
+  - name: Galactic gunner
+    icon: cfd-galacticgunner
+    url: https://play.google.com/store/apps/details?id=org.codefrydev.developer.abhijeet.galacticgunner
+    description: Space shooter—Android app on Google Play.
+    date: "2025-04-04"
+    phosphorIcon: rocket
+    featured: true
+    external: true

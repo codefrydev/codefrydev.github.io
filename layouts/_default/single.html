@@ -1,22 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    {{ partial "header.html" . }}
-    {{ with resources.Get "css/home.css" }}
-      {{ $minifiedCSS := . | resources.Minify }}
-      <link rel="stylesheet" href="{{ $minifiedCSS.RelPermalink }}">
-    {{ end }}
-    <link rel="stylesheet" href="/css/internal.css">
-</head>
-<body>
-    {{ partial "skip-link.html" . }}
-    {{ partial "page-header.html" . }}
-    <main id="main-content">
-        <article class="single-article">
+{{ partial "home/modern-page-start.html" (dict "page" .) }}
+    <article class="max-w-3xl mx-auto px-4 py-12 w-full">
+      <h1 class="text-4xl font-bold text-slate-900 mb-8 m-0">{{ .Title }}</h1>
+      <div class="prose prose-slate max-w-none text-slate-600 bg-white rounded-2xl border border-gray-100 p-8 md:p-10 shadow-sm">
         {{ .Content }}
-        </article>
-    </main>
-    {{ partial "footer.html" . }}
-    <script src="/js/theme.js"></script>
-</body>
-</html>
+      </div>
+    </article>
+{{ partial "home/modern-page-end.html" (dict "page" .) }}

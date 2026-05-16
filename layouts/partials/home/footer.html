@@ -1,0 +1,87 @@
+{{- $totalTools := 0 -}}
+{{- range hugo.Data.home.categories }}{{ $totalTools = add $totalTools (len .items) }}{{ end -}}
+
+{{- $snap := .Scratch.Get "homeFooterSnap" | default true -}}
+<footer
+  id="footer"
+  data-section-label="Footer"
+  class="site-footer {{ if $snap }}snap-start {{ end }}"
+  data-footer-home="{{ if $snap }}true{{ else }}false{{ end }}"
+>
+  <div class="site-footer__inner">
+    <div class="site-footer__mast">
+      <a href="/" class="site-footer__brand" aria-label="CodeFryDev home">
+        <img src="/images/IconCodefrydev.svg" alt="" width="28" height="28" class="site-footer__logo" loading="lazy">
+        <span class="site-footer__name">CodeFryDev</span>
+      </a>
+      <p class="site-footer__tagline">
+        {{- with hugo.Data.homepage.quote }}{{ . }}{{ else }}{{ with .Site.Params.footer_tagline }}{{ . }}{{ else }}{{ .Site.Params.description | truncate 100 }}{{ end }}{{ end -}}
+      </p>
+      <div class="site-footer__mast-actions">
+        <a href="/browse/" class="site-footer__cta">Browse all tools</a>
+        <span class="site-footer__stat">{{ $totalTools }}+ free in your browser</span>
+      </div>
+    </div>
+
+    <nav class="site-footer__nav" aria-label="Footer">
+      <details class="site-footer__accordion">
+        <summary class="site-footer__summary">
+          <span>Product</span>
+          <i class="ph-bold ph-caret-down site-footer__chevron" aria-hidden="true"></i>
+        </summary>
+        <ul class="site-footer__links">
+          <li><a href="/games/">Games</a></li>
+          <li><a href="/ai/">AI Tools</a></li>
+          <li><a href="/designlab/">Design Lab</a></li>
+          <li><a href="/store/">Store</a></li>
+          <li><a href="/browse/">All categories</a></li>
+        </ul>
+      </details>
+
+      <details class="site-footer__accordion">
+        <summary class="site-footer__summary">
+          <span>Company</span>
+          <i class="ph-bold ph-caret-down site-footer__chevron" aria-hidden="true"></i>
+        </summary>
+        <ul class="site-footer__links">
+          <li><a href="/about-us/">About us</a></li>
+          <li><a href="/about/">Team</a></li>
+          <li><a href="/history/">History</a></li>
+          <li><a href="/press/">Press</a></li>
+          <li><a href="/cfddc/">CFDDC</a></li>
+        </ul>
+      </details>
+
+      <details class="site-footer__accordion">
+        <summary class="site-footer__summary">
+          <span>Help &amp; legal</span>
+          <i class="ph-bold ph-caret-down site-footer__chevron" aria-hidden="true"></i>
+        </summary>
+        <ul class="site-footer__links">
+          <li><a href="/search/">Search</a></li>
+          <li><a href="/#faq">FAQ</a></li>
+          <li><a href="/Updates/">Updates</a></li>
+          <li><a href="/tncprivacy">Privacy &amp; Terms</a></li>
+          <li><a href="/tncprivacy">Contact</a></li>
+        </ul>
+      </details>
+    </nav>
+
+    {{- if $snap -}}
+    <button type="button" class="site-footer__back-top" data-footer-back-top hidden>
+      Back to top
+      <i class="ph-bold ph-arrow-up" aria-hidden="true"></i>
+    </button>
+    {{- end -}}
+
+    <div class="site-footer__bar">
+      <p class="site-footer__copy">&copy; {{ now.Year }} {{ .Site.Params.copyright | default .Site.Title }}</p>
+      <ul class="site-footer__legal" aria-label="Legal links">
+        <li><a href="/tncprivacy">Privacy</a></li>
+        <li><a href="/tncprivacy">Terms</a></li>
+        <li><a href="/about-us/">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <script src="/js/site-footer.js" defer></script>
+</footer>

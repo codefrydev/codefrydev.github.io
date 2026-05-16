@@ -1,0 +1,69 @@
+{{- $year := .Params.year | default (path.Base .File.Dir) -}}
+{{- partial "cfddc/history-for-year.html" (dict "page" . "year" $year) -}}
+{{- $items := .Scratch.Get "cfddcItems" -}}
+{{- $shortYear := .Scratch.Get "cfddcShortYear" -}}
+{{- $count := .Scratch.Get "cfddcCount" -}}
+{{- $meta := index (hugo.Data.cfddc.years | default dict) $year | default dict -}}
+{{- $tagline := $meta.tagline | default "A year of technology, creativity, and community" -}}
+{{- $dates := $meta.dates | default $year -}}
+{{- $allYears := .Scratch.Get "cfddcAllYears" -}}
+
+{{- .Scratch.Set "breadcrumbItems" (slice (dict "name" "Home" "url" "/") (dict "name" "CFDDC" "url" "/cfddc/") (dict "name" (printf "CFDDC %s" $shortYear) "current" true)) -}}
+
+<div class="cfddc-root max-w-6xl mx-auto px-4 w-full pt-8 pb-16">
+  <section class="cfddc-hero-panel cfddc-year-hero flex flex-col items-center justify-center text-center" id="hero-section" aria-labelledby="cfddc-year-title">
+    <div class="cfddc-year-hero__inner w-full">
+      <div class="wwdc-container" id="wwdc-logo">
+        <div class="aura-layer" aria-hidden="true">
+          <div class="aura-orange" id="aura1"></div>
+          <div class="aura-white" id="aura2"></div>
+          <div class="aura-blue" id="aura3"></div>
+        </div>
+        <h1 id="cfddc-year-title" class="wwdc-text m-0">
+          <span class="wwdc-dark">CFDDC</span>
+          <span class="wwdc-glow">{{ $shortYear }}</span>
+        </h1>
+      </div>
+      <div class="mt-4 z-10 relative px-4">
+        <h2 class="hero-sub m-0">{{ $tagline }}</h2>
+        <p class="hero-dates m-0">{{ $dates }} · {{ $count }} {{ if eq $count 1 }}announcement{{ else }}announcements{{ end }}</p>
+      </div>
+      {{- if gt (len $allYears) 1 -}}
+      <nav class="cfddc-year-switcher mt-8 flex flex-wrap justify-center gap-2 px-4" aria-label="Other conference years">
+        {{- range $allYears -}}
+        {{- if ne . $year -}}
+        <a href="/cfddc/{{ . }}/" class="cfddc-year-pill no-underline">CFDDC {{ substr . 2 2 }}</a>
+        {{- end -}}
+        {{- end -}}
+      </nav>
+      {{- end -}}
+    </div>
+  </section>
+
+  <section class="cfddc-announcements pb-4" aria-labelledby="cfddc-announcements-heading">
+    <h2 id="cfddc-announcements-heading" class="cfddc-section-title m-0 mb-6 text-center">Announcements</h2>
+
+    {{- if gt $count 0 -}}
+    <ul class="cfddc-announce-grid list-none m-0 p-0" role="list">
+      {{- range $items -}}
+      <li>
+        <a href="{{ .link }}" class="cfddc-announce-card group no-underline">
+          <span class="cfddc-announce-card__date">{{ .date }}</span>
+          <span class="cfddc-announce-card__title">{{ .title }}</span>
+          <span class="cfddc-announce-card__descr">{{ .description }}</span>
+          <span class="cfddc-announce-card__cta">Learn more <i class="ph-bold ph-arrow-right text-xs" aria-hidden="true"></i></span>
+        </a>
+      </li>
+      {{- end -}}
+    </ul>
+    {{- else -}}
+    <p class="cfddc-empty text-center m-0">No announcements for CFDDC {{ $shortYear }} yet.</p>
+    {{- end -}}
+
+    <p class="cfddc-footer-links text-center mt-12 mb-0">
+      <a href="/history/" class="cfddc-link no-underline">View full timeline <i class="ph-bold ph-arrow-right text-xs" aria-hidden="true"></i></a>
+      <span class="mx-2" aria-hidden="true">·</span>
+      <a href="/cfddc/" class="cfddc-link no-underline">All editions <i class="ph-bold ph-arrow-right text-xs" aria-hidden="true"></i></a>
+    </p>
+  </section>
+</div>

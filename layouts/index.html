@@ -1,63 +1,44 @@
+{{- .Scratch.Set "modernLayout" true -}}
 <!DOCTYPE html>
 <html lang="en">
 <head>
   {{ partial "header.html" . }}
-
-  {{ with resources.Get "css/home.css" }}
-    {{ $minifiedCSS := . | resources.Minify }}
-    <link rel="stylesheet" href="{{ $minifiedCSS.RelPermalink }}">
-  {{ else }}
-    {{ warnf "The CSS file 'css/home.css' was not found." }}
-  {{ end }}
-  <link rel="stylesheet" href="/css/internal.css">
+  {{ partial "home/head.html" . }}
   <link rel="stylesheet" href="/css/ladybug.css">
 </head>
-<body>
+<body class="home-page bg-gray-50/50 text-slate-800 font-sans antialiased">
   {{ partial "skip-link.html" . }}
-  {{ partial "page-header.html" . }}
+  {{ partial "home/section-nav.html" . }}
+  {{ partial "home/nav.html" . }}
+  <script>
+    (function () {
+      var header = document.querySelector('body.home-page > header');
+      if (header) {
+        document.documentElement.style.setProperty('--home-nav-height', header.offsetHeight + 'px');
+      }
+    })();
+  </script>
 
-  <main id="main-content">
-    {{ partial "search.html" (dict "containerClass" "search-container" "placeholder" "Search for tools, games, AI apps, design resources..." "autofocus" false "Site" .Site "Scratch" .Scratch) }}
-    {{ range hugo.Data.home.categories }}
-      {{- $catHeadingId := printf "category-heading-%s" (.name | anchorize) -}}
-      <section class="category-section" aria-labelledby="{{ $catHeadingId }}">
-        <h2 id="{{ $catHeadingId }}" class="category-title">{{ .name }}</h2>
-        <ul class="button-grid">
-          {{ range .items }}
-            <li>
-            {{- $isExternal := or (hasPrefix .url "http://") (hasPrefix .url "https://") -}}
-            <a href="{{ .url }}"
-               class="neumorphic-button hapticButton"
-               aria-label="{{ .name }} - {{ .name | lower }} tool"
-               {{ if $isExternal }}target="_blank" rel="noopener noreferrer"{{ end }}>
-              <img src="images/home/{{ .icon }}.svg" srcset="images/home/{{ .icon }}.svg" alt="{{ .name }} icon" class="button-icon" loading="lazy">
-              <span>{{ .name }}</span>
-            </a>
-            </li>
-          {{ end }}
-        </ul>
-      </section>
-    {{ end }}
-    {{- if .Content }}
-    <section class="home-intro" aria-label="Introduction">
-      <div class="home-intro-content">
-        {{ .Content }}
-      </div>
-    </section>
-    <p class="home-cta-wrapper">
-      <a href="/ai" class="home-cta-secondary">Browse AI tools</a>
-      <a href="/games" class="home-cta-secondary">Play games</a>
-      <a href="/designlab" class="home-cta-secondary">Design lab</a>
-    </p>
-    {{- end }}
-    {{ partial "faq-section.html" . }}
+  <main id="main-content" class="home-sections">
+    {{ partial "home/hero.html" . }}
+    {{- range hugo.Data.home.categories -}}
+      {{ partial "home/category-section.html" (dict "category" . "Site" $.Site) }}
+    {{- end -}}
+    {{ partial "home/testimonials.html" . }}
+    {{ partial "home/cta-coffee.html" . }}
+    {{ partial "home/marquee.html" . }}
+    {{ partial "home/why.html" . }}
+    {{ partial "home/faq.html" . }}
+    {{ partial "home/footer.html" . }}
   </main>
-  
-  {{ partial "footer.html" . }}
-  <script src="/js/search.js"></script>
-  <script src="js/feedback.js" ></script>
-  <script src="/js/theme.js"></script>
+
   {{ partial "ladybug.html" . }}
+  {{ partial "cookie-consent.html" . }}
+  {{ partial "home/search-palette.html" . }}
+  <script src="/js/home-hero.js" defer></script>
+  <script src="/js/home-nav.js" defer></script>
+  <script src="/js/home-scroll.js" defer></script>
+  <script src="/js/theme.js" defer></script>
   <script src="/js/ladybug.js" defer></script>
 </body>
 </html>

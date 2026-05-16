@@ -16,13 +16,25 @@
 {{- else if eq .Section "about-us" -}}
   {{- $pageTitle = "About Us - CodeFryDev | Free Online Tools & Resources Platform" -}}
 {{- else if eq .Section "about" -}}
-  {{- $pageTitle = "About - CodeFryDev | Learn More About Us" -}}
+  {{- if strings.HasSuffix .RelPermalink "/users/" -}}
+    {{- $pageTitle = "Team Members - CodeFryDev" -}}
+  {{- else if strings.Contains .RelPermalink "/about/users/" -}}
+    {{- $pageTitle = printf "%s - CodeFryDev Team" .Title -}}
+  {{- else -}}
+    {{- $pageTitle = "Team - CodeFryDev | Developers & Contributors" -}}
+  {{- end -}}
 {{- else if eq .Section "search" -}}
   {{- $pageTitle = "Search - CodeFryDev | Find Tools, Games & Apps" -}}
 {{- else if eq .Section "history" -}}
   {{- $pageTitle = "History - CodeFryDev | Timeline & Milestones" -}}
 {{- else if eq .Section "press" -}}
   {{- $pageTitle = "Press & Media - CodeFryDev | Press Kit & Contact" -}}
+{{- else if eq .Section "cfddc" -}}
+  {{- if .Params.year -}}
+    {{- $pageTitle = printf "CFDDC %s (%s) | CodeFryDev Developer Conference" (substr .Params.year 2 2) .Params.year -}}
+  {{- else -}}
+    {{- $pageTitle = "CFDDC | CodeFryDev Developer Conference" -}}
+  {{- end -}}
 {{- else if eq .Section "store" -}}
   {{- $pageTitle = "Free Mobile Apps | CodeFryDev Store" -}}
 {{- else if strings.HasSuffix .RelPermalink "/about/users/" -}}
@@ -121,15 +133,23 @@
 <link rel="alternate" hreflang="{{ $locale }}" href="{{ .Permalink | absURL }}">
 <link rel="alternate" hreflang="x-default" href="{{ .Permalink | absURL }}">
 
-{{- /* Theme CSS */ -}}
+{{- if not (.Scratch.Get "modernLayout") -}}
+{{- /* Theme CSS (legacy pages only; modern home/hub uses Tailwind) */ -}}
 <link rel="stylesheet" href="/css/theme.css">
-{{- /* Prevent theme flash - inline script to set theme immediately */ -}}
 <script>
 (function() {
     const theme = localStorage.getItem('theme-preference') || 'light';
     document.documentElement.setAttribute('data-theme', theme);
 })();
 </script>
+{{- else -}}
+<script>
+(function() {
+  var theme = localStorage.getItem('theme-preference') || 'light';
+  document.documentElement.setAttribute('data-theme', theme);
+})();
+</script>
+{{- end -}}
 
 {{- /* Accessibility CSS */ -}}
 <link rel="stylesheet" href="/css/accessibility.css">

@@ -1,0 +1,33 @@
+{{- $why := hugo.Data.homepage.why -}}
+{{- if $why -}}
+<section id="why" data-section-label="Why us" class="snap-start min-h-[70vh] flex flex-col justify-center bg-white relative pt-24 pb-16" aria-labelledby="why-heading">
+  <div class="max-w-4xl mx-auto px-4 w-full text-center">
+    <span class="inline-block px-4 py-1.5 mb-6 text-sm font-medium text-slate-700 bg-white rounded-full border border-gray-200 shadow-sm">Why CodeFryDev</span>
+    <h2 id="why-heading" class="text-4xl md:text-[44px] font-bold text-[#0B162C] tracking-tight mb-6 m-0">{{ $why.title | default "Why Choose CodeFryDev?" }}</h2>
+    {{- with $why.intro -}}
+    <p class="text-lg text-slate-500 mb-12 m-0 max-w-2xl mx-auto">{{ . }}</p>
+    {{- end -}}
+  </div>
+
+  <div class="max-w-5xl mx-auto px-4 w-full grid grid-cols-1 md:grid-cols-2 gap-6">
+    {{- range $why.highlights -}}
+    <div class="bg-gray-50/80 rounded-2xl border border-gray-100 p-6 md:p-8 text-left">
+      {{- with .icon -}}<span class="text-2xl mb-3 block" aria-hidden="true">{{ . }}</span>{{ end -}}
+      <h3 class="text-lg font-bold text-[#0B162C] mb-2 m-0">{{ .title }}</h3>
+      <p class="text-slate-500 text-[14px] leading-relaxed m-0">{{ .text | markdownify }}</p>
+    </div>
+    {{- end -}}
+  </div>
+
+  {{- with $why.bullets -}}
+  <ul class="max-w-2xl mx-auto px-4 mt-10 flex flex-col gap-3 text-left list-none m-0 p-0">
+    {{- range . -}}
+    <li class="flex items-start gap-3 text-slate-600 text-[15px]">
+      <i class="ph-fill ph-check-circle text-brand text-lg shrink-0 mt-0.5" aria-hidden="true"></i>
+      <span>{{ . }}</span>
+    </li>
+    {{- end -}}
+  </ul>
+  {{- end -}}
+</section>
+{{- end -}}

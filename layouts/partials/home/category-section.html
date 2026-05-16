@@ -1,0 +1,50 @@
+{{- $cat := .category -}}
+{{- $slug := $cat.slug | default ($cat.name | anchorize) -}}
+{{- $subtitle := $cat.subtitle | default $cat.name -}}
+{{- $seeAll := $cat.seeAllUrl | default (printf "/#%s" $slug) -}}
+{{- $previewCount := $cat.previewCount | default 12 -}}
+{{- $defaultIcon := $cat.phosphorIcon | default "app-window" -}}
+{{- $visible := where $cat.items "hidden" "!=" true -}}
+{{- $previewItems := slice -}}
+{{- range $visible -}}
+  {{- if and .featured (lt (len $previewItems) $previewCount) -}}
+    {{- $previewItems = $previewItems | append . -}}
+  {{- end -}}
+{{- end -}}
+{{- range $visible -}}
+  {{- if and (not .featured) (lt (len $previewItems) $previewCount) -}}
+    {{- $previewItems = $previewItems | append . -}}
+  {{- end -}}
+{{- end -}}
+{{- $headingId := printf "category-heading-%s" $slug -}}
+
+<section id="{{ $slug }}" data-section-label="{{ $cat.name }}" class="snap-start min-h-screen flex flex-col justify-start bg-gray-50/50 relative py-16" aria-labelledby="{{ $headingId }}">
+  <div class="max-w-7xl mx-auto px-4 w-full h-full flex flex-col min-h-0">
+    <div class="flex items-center justify-between mb-6 md:mb-8 pb-4 border-b border-gray-200 shrink-0">
+      <div>
+        <h2 id="{{ $headingId }}" class="text-3xl font-bold text-slate-900 mb-2 m-0">{{ $cat.name }}</h2>
+        <h3 class="text-xs font-bold tracking-widest text-slate-500 uppercase m-0">{{ $subtitle }}</h3>
+      </div>
+      <div class="flex items-center gap-3 shrink-0">
+        <span class="hidden sm:inline-flex text-xs font-medium text-slate-500 bg-white border border-gray-200 rounded-full px-3 py-1">{{ len $visible }} tools</span>
+        <a href="{{ $seeAll }}" class="hidden md:flex text-sm font-medium text-slate-600 hover:text-brand items-center gap-1 transition-colors no-underline" data-cfd-cta="see_all_{{ $slug }}">
+          See all <i class="ph-bold ph-caret-right text-xs" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 flex-1 min-h-0 content-center">
+      {{- range $i, $item := $previewItems -}}
+      <div class="{{ if ge $i 3 }}hidden md:block{{ end }} min-h-0">
+        {{ partial "home/tool-card.html" (dict "item" $item "defaultPhosphorIcon" $defaultIcon "categoryName" $cat.name "source" (printf "home_%s" $slug)) }}
+      </div>
+      {{- end -}}
+    </div>
+
+    <p class="mt-6 text-center md:hidden shrink-0">
+      <a href="{{ $seeAll }}" class="text-sm font-medium text-slate-600 hover:text-brand inline-flex items-center gap-1 no-underline">
+        See all {{ $cat.name }} ({{ len $visible }}) <i class="ph-bold ph-caret-right text-xs" aria-hidden="true"></i>
+      </a>
+    </p>
+  </div>
+</section>

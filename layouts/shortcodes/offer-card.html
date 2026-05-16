@@ -1,6 +1,0 @@
-{{ $title := .Get 0 }}
-{{ $icon := .Get 1 | default "" }}
-<details class="offer-card">
-  <summary class="offer-card-title">{{ with $icon }}{{ . }} {{ end }}{{ $title }}</summary>
-  <div class="offer-card-body">{{ .Inner | markdownify }}</div>
-</details>

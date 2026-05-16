@@ -1,7 +1,7 @@
 # CodeFryDev
 
 ## About
-CodeFryDev is your ultimate destination for diverse digital content and tools. We offer an extensive game collection, innovative productivity apps, micro applications for quick solutions, educational materials, interactive courses, and comprehensive tutorials for all skill levels.
+This is a platform where we learn, work on experimental projects, play games, come up with innovative ideas, and build many more...
 
 ## Website
 - URL: https://codefrydev.in/
@@ -25,5 +25,5 @@ CodeFryDev is your ultimate destination for diverse digital content and tools. W
 4. **Site & External Links**: About, Timeline, Store, Privacy, and external resources
 
 ## Mission
-Make high-quality digital tools and resources accessible to everyone, providing solutions for developers, designers, and digital enthusiasts.
+This is a platform where we learn, work on experimental projects, play games, come up with innovative ideas, and build many more...
 

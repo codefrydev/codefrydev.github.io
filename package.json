@@ -1,0 +1,11 @@
+{
+  "name": "codefrydev-site",
+  "private": true,
+  "scripts": {
+    "build:css": "tailwindcss -i ./assets/css/tailwind-input.css -o ./static/css/home-tailwind.css --minify && cp ./assets/css/modern-dark-theme.css ./static/css/modern-dark-theme.css",
+    "watch:css": "tailwindcss -i ./assets/css/tailwind-input.css -o ./static/css/home-tailwind.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}

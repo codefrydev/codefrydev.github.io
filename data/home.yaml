@@ -1,219 +1,589 @@
 categories:
-  - name: "Creative & Assets"
+  - name: Creative & Assets
+    slug: creative-assets
+    subtitle: Art, assets & learning
+    seeAllUrl: /browse/creative-assets/
+    previewCount: 12
+    phosphorIcon: palette
     items:
-      - name: "Muraly"
-        icon: "cfd-muraly"
-        url: "https://muraly.codefrydev.in/"
-      - name: "SVG Engine"
-        icon: "cfd-svgengine"
-        url: "/svgengine/"
-      - name: "3D Printer"
-        icon: "cfd-3dprinter"
-        url: "https://codefrydev.in/3DPrinter/"
-      - name: "ESP32CAM"
-        icon: "cfd-esp32cam"
-        url: "/Esp32cam/"
-      - name: "Noob FONT"
-        icon: "cfd-font"
-        url: "/font/"
-      - name: "RAG"
-        icon: "cfd-rag"
-        url: "/RandomApiGenerator/docs/"
-      - name: "Tomatoes"
-        icon: "cfd-tomatoes"
-        url: "/Tomatoes/"
-      - name: "NodeFlow"
-        icon: "cfd-nodeflow"
-        url: "/NodeEditor/"
-      - name: "SqLite"
-        icon: "cfd-sql"
-        url: "/SqLite/"
-      - name: "Art"
-        icon: "cfd-art"
-        url: "/designlab/"
-      - name: "SocialSnap"
-        icon: "cfd-socialsnap"
-        url: "/SocialMedia/"
-      - name: "Text"
-        icon: "cfd-texttools"
-        url: "/TextHub/"
-      - name: "Wallpaper"
-        icon: "cfd-wallpaper"
-        url: "/Wallpaper/"
-      - name: "3D Models"
-        icon: "cfd-threedassets"
-        url: "/ThreeDAssets/"
-      - name: "Android Assets"
-        icon: "cfd-android"
-        url: "https://android.codefrydev.in/"
-      - name: "DSAAnim"
-        icon: "cfd-dsanim"
-        url: "/AnimateDatastructure/"
-      - name: "DSA Lab"
-        icon: "cfd-learnds"
-        url: "/LearnDS/"
-      - name: "Size Matters"
-        icon: "cfd-sizematters"
-        url: "/SizeMatters/"
-      - name: "Fish"
-        icon: "cfd-fish"
-        url: "/fish/"
-
-  - name: "Tools & Utilities"
+      - name: Muraly
+        icon: cfd-muraly
+        url: https://muraly.codefrydev.in/
+        description: Collaborative mural canvas for drawing together in the browser.
+        date: "2025-06-01"
+        phosphorIcon: paint-brush
+        featured: true
+        external: true
+      - name: SVG Engine
+        icon: cfd-svgengine
+        url: /svgengine/
+        description: Create and edit SVG graphics with a visual editor.
+        date: "2025-05-12"
+        phosphorIcon: pen-nib
+        featured: true
+        external: false
+      - name: 3D Printer
+        icon: cfd-3dprinter
+        url: https://codefrydev.in/3DPrinter/
+        description: 3D printing utilities and model helpers for makers.
+        date: "2025-04-20"
+        phosphorIcon: cube
+        featured: true
+        external: true
+      - name: ESP32CAM
+        icon: cfd-esp32cam
+        url: /Esp32cam/
+        description: ESP32 camera utilities and guides for IoT projects.
+        date: "2025-04-04"
+        phosphorIcon: cpu
+        featured: true
+        external: false
+      - name: Noob FONT
+        icon: cfd-font
+        url: /font/
+        description: Preview and download the Noob font family for your projects.
+        date: "2025-05-05"
+        phosphorIcon: text-aa
+        featured: true
+        external: false
+      - name: RAG
+        icon: cfd-rag
+        url: /RandomApiGenerator/docs/
+        description: Random API generator docs and playground for mock APIs.
+        date: "2025-03-08"
+        phosphorIcon: shuffle
+        featured: true
+        external: false
+      - name: Tomatoes
+        icon: cfd-tomatoes
+        url: /Tomatoes/
+        description: Pomodoro-style timer to boost focus and productivity.
+        date: "2025-07-07"
+        phosphorIcon: plant
+        featured: false
+        external: false
+      - name: NodeFlow
+        icon: cfd-nodeflow
+        url: /NodeEditor/
+        description: Visual node editor for flows and diagrams in the browser.
+        date: "2025-02-14"
+        phosphorIcon: graph
+        featured: false
+        external: false
+      - name: SqLite
+        icon: cfd-sql
+        url: /SqLite/
+        description: Run and explore SQLite databases in the browser.
+        date: "2025-09-09"
+        phosphorIcon: database
+        featured: false
+        external: false
+      - name: Art
+        icon: cfd-art
+        url: /designlab/
+        description: Design lab hub for creative tools and visual resources.
+        date: "2025-01-10"
+        phosphorIcon: palette
+        featured: false
+        external: false
+      - name: SocialSnap
+        icon: cfd-socialsnap
+        url: /SocialMedia/
+        description: Create and preview social media layouts and snippets.
+        date: "2025-11-11"
+        phosphorIcon: share-network
+        featured: false
+        external: false
+      - name: Text
+        icon: cfd-texttools
+        url: /TextHub/
+        description: Text tools hub—format, transform, and edit text online.
+        date: "2025-12-12"
+        phosphorIcon: text-t
+        featured: false
+        external: false
+      - name: Wallpaper
+        icon: cfd-wallpaper
+        url: /Wallpaper/
+        description: Browse and download wallpapers for desktop and mobile.
+        date: "2025-01-13"
+        phosphorIcon: image
+        featured: false
+        external: false
+      - name: 3D Models
+        icon: cfd-threedassets
+        url: /ThreeDAssets/
+        description: Explore and preview 3D models and assets.
+        date: "2025-02-14"
+        phosphorIcon: cube
+        featured: false
+        external: false
+      - name: Android Assets
+        icon: cfd-android
+        url: https://android.codefrydev.in/
+        description: Android design assets, icons, and resources.
+        date: "2025-03-15"
+        phosphorIcon: android-logo
+        featured: false
+        external: true
+      - name: DSAAnim
+        icon: cfd-dsanim
+        url: /AnimateDatastructure/
+        description: Animated visualizations for data structures and algorithms.
+        date: "2025-04-16"
+        phosphorIcon: graduation-cap
+        featured: false
+        external: false
+      - name: DSA Lab
+        icon: cfd-learnds
+        url: /LearnDS/
+        description: Interactive lab for learning data structures step by step.
+        date: "2025-05-17"
+        phosphorIcon: book-open
+        featured: false
+        external: false
+      - name: Size Matters
+        icon: cfd-sizematters
+        url: /SizeMatters/
+        description: Compare and understand file and image dimensions.
+        date: "2025-06-18"
+        phosphorIcon: ruler
+        featured: false
+        external: false
+      - name: Fish
+        icon: cfd-fish
+        url: /fish/
+        description: Relaxing aquarium simulation in your browser.
+        date: "2025-07-19"
+        phosphorIcon: fish
+        featured: false
+        external: false
+  - name: Tools & Utilities
+    slug: tools-utilities
+    subtitle: Productivity & dev tools
+    seeAllUrl: /browse/tools-utilities/
+    previewCount: 12
+    phosphorIcon: wrench
     items:
-      - name: "CFD's Penney"
-        icon: "cfd-cfdpenney"
-        url: "/CFDPenney/"
-      - name: "Web SEO"
-        icon: "cfd-seo"
-        url: "/WebsiteProfiling/"
-      - name: "Resolution Tester"
-        icon: "cfd-resolutiontester"
-        url: "/WebsiteResolutionTester/"
-      - name: "Prompt Library"
-        icon: "cfd-prompt"
-        url: "/PromptsValut/"
-      - name: "JSON Playground"
-        icon: "cfd-jsonplayground"
-        url: "/JsonPlayground/"
-      - name: "JS LIDE"
-        icon: "cfd-jswebide"
-        url: "/Javascript/"
-      - name: "Speed Test"
-        icon: "cfd-speedtest"
-        url: "/Wifi-Speed-Test/"
-      - name: "BSOD"
-        icon: "cfd-bsod"
-        url: "/bluescreenofdeath/"
-      - name: "Json V M"
-        icon : "cfd-jvm"
-        url: "/VisualMapper/"
-      - name: "CSV"
-        icon: "cfd-csv"
-        url: "/CSV/"
-      - name: "CIN"
-        icon: "cfd-cin"
-        url: "/CIN/"
-      - name: "Tier List Maker"
-        icon: "cfd-tierlistmaker"
-        url: "/TierListMaker/"
-      - name: "Know Your Size"
-        icon: "cfd-knowyoursize"
-        url: "/KnowYourSize/"
-      - name : "TXT Diff"
-        icon : "cfd-txtdiff"
-        url : "/TextDifference/"
-      - name : "Mifier"
-        icon : "cfd-mifier"
-        url : "/Mifier/"
-      - name: "Json2Form"
-        icon: "cfd-json"
-        url: "/Json2Form/"
-      - name: "Meta Tags"
-        icon: "cfd-metatag"
-        url: "/metatag/"
-      - name: "Notebook"
-        icon: "cfd-notebook"
-        url: "/YourNoteBook/"
-      - name: "Text Editor"
-        icon: "cfd-texteditor"
-        url: "/TextEditor/"
-      - name: "Weather"
-        icon: "cfd-mausam"
-        url: "/Mausam/"
-      - name: "AI"
-        icon: "cfd-brain"
-        url: "/ai"
-      - name: "Crop & Resize"
-        icon: "cfd-picwrap"
-        url: "https://picwrap.codefrydev.in"
-      - name: "InstaImage"
-        icon: "cfd-instaimage"
-        url: "https://instaimage.codefrydev.in/"
-      - name: "Be Back"
-        icon: "cfd-willbeback"
-        url: "/willbeback/"
-      - name: "Commit"
-        icon: "cfd-git"
-        url: "/CodeSnippt/"
-      - name: "Snippt"
-        icon: "cfd-snippt"
-        url: "/CodeSnippt/"
-
-  - name: "Games & Fun"
+      - name: CFD's Penney
+        icon: cfd-cfdpenney
+        url: /CFDPenney/
+        description: Penny auction demo and learning tool.
+        date: "2025-01-01"
+        phosphorIcon: coins
+        featured: true
+        external: false
+      - name: Web SEO
+        icon: cfd-seo
+        url: /WebsiteProfiling/
+        description: Analyze and profile websites for SEO insights.
+        date: "2025-08-01"
+        phosphorIcon: chart-line-up
+        featured: true
+        external: false
+      - name: Resolution Tester
+        icon: cfd-resolutiontester
+        url: /WebsiteResolutionTester/
+        description: Preview your site at common viewport resolutions.
+        date: "2025-03-03"
+        phosphorIcon: monitor
+        featured: true
+        external: false
+      - name: Prompt Library
+        icon: cfd-prompt
+        url: /PromptsValut/
+        description: Curated AI prompts for writing, code, and creativity.
+        date: "2025-04-04"
+        phosphorIcon: book-open
+        featured: true
+        external: false
+      - name: JSON Playground
+        icon: cfd-jsonplayground
+        url: /JsonPlayground/
+        description: Format, validate, and experiment with JSON in real time.
+        date: "2025-07-15"
+        phosphorIcon: brackets-curly
+        featured: true
+        external: false
+      - name: JS LIDE
+        icon: cfd-jswebide
+        url: /Javascript/
+        description: Lightweight JavaScript IDE in the browser.
+        date: "2025-06-06"
+        phosphorIcon: code
+        featured: true
+        external: false
+      - name: Speed Test
+        icon: cfd-speedtest
+        url: /Wifi-Speed-Test/
+        description: Test your network speed directly in the browser.
+        date: "2025-06-20"
+        phosphorIcon: gauge
+        featured: false
+        external: false
+      - name: BSOD
+        icon: cfd-bsod
+        url: /bluescreenofdeath/
+        description: Blue screen simulator for pranks and presentations.
+        date: "2025-08-08"
+        phosphorIcon: warning
+        featured: false
+        external: false
+      - name: Json V M
+        icon: cfd-jvm
+        url: /VisualMapper/
+        description: Visualize and map JSON data structures.
+        date: "2025-09-09"
+        phosphorIcon: brackets-curly
+        featured: false
+        external: false
+      - name: CSV
+        icon: cfd-csv
+        url: /CSV/
+        description: View, edit, and convert CSV files online.
+        date: "2025-10-10"
+        phosphorIcon: table
+        featured: false
+        external: false
+      - name: CIN
+        icon: cfd-cin
+        url: /CIN/
+        description: Corporate identification and business lookup utilities.
+        date: "2025-11-11"
+        phosphorIcon: identification-card
+        featured: false
+        external: false
+      - name: Tier List Maker
+        icon: cfd-tierlistmaker
+        url: /TierListMaker/
+        description: Create shareable tier lists with drag and drop.
+        date: "2025-12-12"
+        phosphorIcon: list-numbers
+        featured: false
+        external: false
+      - name: Know Your Size
+        icon: cfd-knowyoursize
+        url: /KnowYourSize/
+        description: Screen and viewport size reference for developers.
+        date: "2025-01-13"
+        phosphorIcon: ruler
+        featured: false
+        external: false
+      - name: TXT Diff
+        icon: cfd-txtdiff
+        url: /TextDifference/
+        description: Compare two text files side by side.
+        date: "2025-02-14"
+        phosphorIcon: files
+        featured: false
+        external: false
+      - name: Mifier
+        icon: cfd-mifier
+        url: /Mifier/
+        description: Minify and beautify code and markup.
+        date: "2025-03-15"
+        phosphorIcon: sparkle
+        featured: false
+        external: false
+      - name: Json2Form
+        icon: cfd-json
+        url: /Json2Form/
+        description: Generate HTML forms from JSON schema.
+        date: "2025-04-16"
+        phosphorIcon: brackets-curly
+        featured: false
+        external: false
+      - name: Meta Tags
+        icon: cfd-metatag
+        url: /metatag/
+        description: Generate and preview HTML meta tags for sharing and SEO.
+        date: "2025-05-01"
+        phosphorIcon: tag
+        featured: false
+        external: false
+      - name: Notebook
+        icon: cfd-notebook
+        url: /YourNoteBook/
+        description: Simple online notebook for quick notes.
+        date: "2025-06-18"
+        phosphorIcon: notebook
+        featured: false
+        external: false
+      - name: Text Editor
+        icon: cfd-texteditor
+        url: /TextEditor/
+        description: Fast in-browser text editor with essentials.
+        date: "2025-07-19"
+        phosphorIcon: pencil
+        featured: false
+        external: false
+      - name: Weather
+        icon: cfd-mausam
+        url: /Mausam/
+        description: Check weather conditions with a simple, fast interface.
+        date: "2025-04-10"
+        phosphorIcon: cloud-sun
+        featured: false
+        external: false
+      - name: AI
+        icon: cfd-brain
+        url: /ai
+        description: Browse AI-powered tools—memes, summarizers, chat, and more.
+        date: "2025-09-01"
+        phosphorIcon: brain
+        featured: false
+        external: false
+      - name: Crop & Resize
+        icon: cfd-picwrap
+        url: https://picwrap.codefrydev.in
+        description: Crop and resize images without installing software.
+        date: "2025-10-22"
+        phosphorIcon: crop
+        featured: false
+        external: true
+      - name: InstaImage
+        icon: cfd-instaimage
+        url: https://instaimage.codefrydev.in/
+        description: Prepare images sized for Instagram and social posts.
+        date: "2025-11-23"
+        phosphorIcon: instagram-logo
+        featured: false
+        external: true
+      - name: Be Back
+        icon: cfd-willbeback
+        url: /willbeback/
+        description: Custom “be right back” screen for streams and meetings.
+        date: "2025-12-24"
+        phosphorIcon: clock
+        featured: false
+        external: false
+      - name: Commit
+        icon: cfd-git
+        url: /CodeSnippt/
+        description: Generate commit messages and code snippets.
+        date: "2025-01-25"
+        phosphorIcon: git-branch
+        featured: false
+        external: false
+      - name: Snippt
+        icon: cfd-snippt
+        url: /CodeSnippt/
+        description: Save and organize code snippets in the browser.
+        date: "2025-02-26"
+        phosphorIcon: scissors
+        featured: false
+        external: false
+  - name: Games & Fun
+    slug: games-fun
+    subtitle: Play in your browser
+    seeAllUrl: /browse/games-fun/
+    previewCount: 12
+    phosphorIcon: game-controller
     items:
-      - name: "Game"
-        icon: "cfd-games"
-        url: "/games"
-      - name: "Overdose"
-        icon: "cfd-overdose"
-        url: "/Overdose"
-      - name: "WordDice"
-        icon: "cfd-worddice"
-        url: "https://worddice.codefrydev.in/"
-      - name: "Chain Reaction"
-        icon: "cfd-chainreaction"
-        url: "/ChainReaction/"
-      - name: "Wordle"
-        icon: "cfd-wordle"
-        url: "/Wordle/"
-      - name: "Tom & Jerry"
-        icon: "cfd-tomjerry"
-        url: "/TomAndJerry/"
-      - name: "Snake"
-        icon: "cfd-snake"
-        url: "/Snake"
-      - name: "Challenge"
-        icon: "cfd-challenge"
-        url: "/Challenge/"
-      - name: "Dot Box"
-        icon: "cfd-dotbox"
-        url: "/DotsAndBox/"
-      - name: "TTT"
-        icon: "cfd-ttt"
-        url: "/TicTacToe/"
+      - name: Game
+        icon: cfd-games
+        url: /games
+        description: Full games hub—puzzles, classics, and arcade favorites.
+        date: "2025-01-01"
+        phosphorIcon: game-controller
+        featured: true
+        external: false
+      - name: Overdose
+        icon: cfd-overdose
+        url: /Overdose
+        description: Fast-paced arcade game—test your reflexes.
+        date: "2025-02-02"
+        phosphorIcon: pill
+        featured: true
+        external: false
+      - name: WordDice
+        icon: cfd-worddice
+        url: https://worddice.codefrydev.in/
+        description: Word puzzle game with dice-driven challenges.
+        date: "2025-03-03"
+        phosphorIcon: dice-five
+        featured: true
+        external: true
+      - name: Chain Reaction
+        icon: cfd-chainreaction
+        url: /ChainReaction/
+        description: Strategic board game—expand cells and dominate the grid.
+        date: "2025-03-01"
+        phosphorIcon: circles-three
+        featured: true
+        external: false
+      - name: Wordle
+        icon: cfd-wordle
+        url: /Wordle/
+        description: Guess the five-letter word in six tries.
+        date: "2025-02-01"
+        phosphorIcon: text-aa
+        featured: true
+        external: false
+      - name: Tom & Jerry
+        icon: cfd-tomjerry
+        url: /TomAndJerry/
+        description: Classic chase game fun in the browser.
+        date: "2025-06-06"
+        phosphorIcon: cat
+        featured: true
+        external: false
+      - name: Snake
+        icon: cfd-snake
+        url: /Snake
+        description: Classic snake game—eat, grow, and avoid the walls.
+        date: "2025-01-15"
+        phosphorIcon: snake
+        featured: false
+        external: false
+      - name: Challenge
+        icon: cfd-challenge
+        url: /Challenge/
+        description: Daily challenges and mini-games to play online.
+        date: "2025-08-08"
+        phosphorIcon: trophy
+        featured: false
+        external: false
+      - name: Dot Box
+        icon: cfd-dotbox
+        url: /DotsAndBox/
+        description: Dots and boxes strategy game for two players.
+        date: "2025-09-09"
+        phosphorIcon: grid-four
+        featured: false
+        external: false
+      - name: TTT
+        icon: cfd-ttt
+        url: /TicTacToe/
+        description: Tic-tac-toe—play against a friend or the computer.
+        date: "2025-10-10"
+        phosphorIcon: x
+        featured: false
+        external: false
       - name: "2048"
-        icon: "cfd-2048"
-        url: "/2048/"
-      - name: "Archery"
-        icon: "cfd-archery"
-        url: "/Archery/"
-      - name: "Ludo"
-        icon: "cfd-ludo"
-        url: "/Ludo/"
-      - name: "Billiards"
-        icon: "cfd-billiards"
-        url: "/Billiards/"
-      - name: "Carrom"
-        icon: "cfd-carrom"
-        url: "/Carrom/"
-  # Category for site-wide information, policies, and external links
-  - name: "Site & External Links"
+        icon: cfd-2048
+        url: /2048/
+        description: Slide tiles and combine numbers to reach 2048.
+        date: "2025-01-20"
+        phosphorIcon: grid-four
+        featured: false
+        external: false
+      - name: Archery
+        icon: cfd-archery
+        url: /Archery/
+        description: Aim and shoot in this browser archery challenge.
+        date: "2025-04-01"
+        phosphorIcon: target
+        featured: false
+        external: false
+      - name: Ludo
+        icon: cfd-ludo
+        url: /Ludo/
+        description: Classic Ludo board game online.
+        date: "2025-01-13"
+        phosphorIcon: dice-six
+        featured: false
+        external: false
+      - name: Billiards
+        icon: cfd-billiards
+        url: /Billiards/
+        description: Browser billiards with realistic physics.
+        date: "2025-02-14"
+        phosphorIcon: circle
+        featured: false
+        external: false
+      - name: Carrom
+        icon: cfd-carrom
+        url: /Carrom/
+        description: Play carrom online with smooth controls.
+        date: "2025-03-15"
+        phosphorIcon: target
+        featured: false
+        external: false
+  - name: Site & External Links
+    slug: site-links
+    subtitle: About, updates & more
+    seeAllUrl: /browse/site-links/
+    previewCount: 12
+    phosphorIcon: link
     items:
-      - name: "About us"
-        icon: "cfd-about"
-        url: "/about-us"
-      - name: "Timeline"
-        icon: "cfd-history"
-        url: "/history"
-      - name: "PI"
-        icon: "cfd-pi"
-        url: "/PI/"
-      - name: "RL"
-        icon: "cfd-rl"
-        url: "/Reinforcement/"
-      - name: ".NET"
-        icon: "cfd-net"
-        url: "/Updates/"
-      - name: "Store"
-        icon: "cfd-store"
-        url: "/store/"
-      - name: "T&C Privacy"
-        icon: "cfd-privacy"
-        url: "/tncprivacy"
-      - name: "Agurutwa"
-        icon: "cfd-agurutwa"
-        url: "https://agurutwa.github.io/"
-      - name: "Pathsala"
-        icon: "cfd-pathsala"
-        url: "https://agurutwa.github.io/Pathsala/"
+      - name: About us
+        icon: cfd-about
+        url: /about-us
+        description: Learn about CodeFryDev and the team behind the tools.
+        date: "2025-01-01"
+        phosphorIcon: users
+        featured: true
+        external: false
+      - name: Timeline
+        icon: cfd-history
+        url: /history
+        description: Explore our history and project milestones.
+        date: "2025-02-01"
+        phosphorIcon: clock-counter-clockwise
+        featured: true
+        external: false
+      - name: CFDDC
+        icon: cfd-games
+        url: /cfddc/
+        description: CodeFryDev Developer Conference — year-by-year announcements from our timeline.
+        date: "2026-05-16"
+        phosphorIcon: presentation
+        featured: true
+        external: false
+      - name: PI
+        icon: cfd-pi
+        url: /PI/
+        description: Explore Pi digits, facts, and visualizations.
+        date: "2025-03-03"
+        phosphorIcon: pi
+        featured: true
+        external: false
+      - name: RL
+        icon: cfd-rl
+        url: /Reinforcement/
+        description: Reinforcement learning demos and experiments.
+        date: "2025-04-04"
+        phosphorIcon: brain
+        featured: true
+        external: false
+      - name: .NET
+        icon: cfd-net
+        url: /Updates/
+        description: Latest updates and .NET-related releases.
+        date: "2025-05-01"
+        phosphorIcon: code
+        featured: true
+        external: false
+      - name: Store
+        icon: cfd-store
+        url: /store/
+        description: Mobile apps and downloads from the CodeFryDev store.
+        date: "2025-03-15"
+        phosphorIcon: device-mobile
+        featured: true
+        external: false
+      - name: T&C Privacy
+        icon: cfd-privacy
+        url: /tncprivacy
+        description: Terms, privacy policy, and contact information.
+        date: "2025-01-01"
+        phosphorIcon: shield-check
+        featured: false
+        external: false
+      - name: Agurutwa
+        icon: cfd-agurutwa
+        url: https://agurutwa.github.io/
+        description: External project by Agurutwa—community resources.
+        date: "2025-08-08"
+        phosphorIcon: link
+        featured: false
+        external: true
+      - name: Pathsala
+        icon: cfd-pathsala
+        url: https://agurutwa.github.io/Pathsala/
+        description: Educational paths and learning resources.
+        date: "2025-09-09"
+        phosphorIcon: book
+        featured: false
+        external: true

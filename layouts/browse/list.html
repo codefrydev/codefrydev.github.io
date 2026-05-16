@@ -1,0 +1,8 @@
+{{ partial "home/modern-page-start.html" (dict "page" . "navActive" "browse") }}
+{{- if eq .RelPermalink "/browse/" -}}
+  {{- .Scratch.Set "breadcrumbLabel" (.Title | default "Browse") -}}
+  {{ partial "home/browse-index.html" (dict "page" .) }}
+{{- else -}}
+  {{ partial "home/browse-category.html" (dict "page" .) }}
+{{- end -}}
+{{ partial "home/modern-page-end.html" (dict "page" .) }}
