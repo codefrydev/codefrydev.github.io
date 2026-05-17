@@ -11,6 +11,7 @@
       isOpen = open;
       btn.setAttribute('aria-expanded', open ? 'true' : 'false');
       menu.setAttribute('aria-hidden', open ? 'false' : 'true');
+      document.body.classList.toggle('mobile-menu-open', open);
 
       if (open) {
         menu.classList.remove('translate-x-full', 'opacity-0', 'pointer-events-none');
@@ -40,6 +41,13 @@
         setOpen(false);
       });
     });
+
+    window.cfdMobileMenu = {
+      setOpen: setOpen,
+      close: function () {
+        setOpen(false);
+      },
+    };
   }
 
   /** Keep desktop dropdowns open while moving pointer from trigger to panel */

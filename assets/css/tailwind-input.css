@@ -23,20 +23,7 @@
     filter: invert(1) brightness(1.1);
   }
 
-  /* Hero-only snap: gentle align when scrolling back to the top panel */
-  @media (prefers-reduced-motion: no-preference) {
-    html:has(body.home-page) {
-      scroll-behavior: smooth;
-      scroll-snap-type: y proximity;
-    }
-  }
-
-  .home-sections > section#hero {
-    scroll-snap-align: start;
-    scroll-snap-stop: normal;
-    scroll-margin-top: var(--home-nav-height, 73px);
-  }
-
+  .home-sections > section#hero,
   .home-sections > section:not(#hero) {
     scroll-margin-top: var(--home-nav-height, 73px);
   }
@@ -180,7 +167,8 @@
     @apply hidden;
   }
 
-  body.search-palette-open {
+  body.search-palette-open,
+  body.mobile-menu-open {
     @apply overflow-hidden;
   }
 
@@ -342,7 +330,15 @@
   .nav-dropdown--mega:hover,
   .nav-dropdown--mega:focus-within,
   .nav-dropdown--mega.is-open {
-    @apply opacity-100 visible pointer-events-auto;
+    @apply opacity-100 visible pointer-events-none;
+  }
+
+  .nav-shell:has(.nav-item-browse:hover) .nav-dropdown--mega .nav-mega__panel,
+  .nav-shell:has(.nav-item-browse:focus-within) .nav-dropdown--mega .nav-mega__panel,
+  .nav-dropdown--mega:hover .nav-mega__panel,
+  .nav-dropdown--mega:focus-within .nav-mega__panel,
+  .nav-dropdown--mega.is-open .nav-mega__panel {
+    @apply pointer-events-auto;
   }
 
   .nav-shell:has(.nav-item-about:hover) .nav-dropdown--about,

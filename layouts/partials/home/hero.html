@@ -6,7 +6,7 @@
 {{- $slides := $hero.slides -}}
 {{- $firstSlide := index $slides 0 -}}
 
-<section id="hero" data-section-label="Home" class="home-hero snap-start relative text-center flex flex-col items-center justify-center px-4 py-8 overflow-hidden bg-[#edf2f8]">
+<section id="hero" data-section-label="Home" class="home-hero relative text-center flex flex-col items-center justify-center px-4 py-8 overflow-hidden bg-[#edf2f8]">
   <div class="home-hero__bg" aria-hidden="true">
     <div id="bg-layer-1" class="home-hero__bg-layer opacity-100" style="background-image: url('{{ $firstSlide.image }}');"></div>
     <div id="bg-layer-2" class="home-hero__bg-layer opacity-0"></div>

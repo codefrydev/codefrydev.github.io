@@ -246,11 +246,14 @@
     }
   }
 
+  function setBodyScrollLocked(locked) {
+    if (isEmbedded) return;
+    document.body.classList.toggle('search-palette-open', locked);
+  }
+
   function closeMobileMenu() {
-    var menuBtn = document.getElementById('mobile-menu-btn');
-    var menu = document.getElementById('mobile-menu');
-    if (menuBtn && menu && menuBtn.getAttribute('aria-expanded') === 'true') {
-      menuBtn.click();
+    if (window.cfdMobileMenu && typeof window.cfdMobileMenu.close === 'function') {
+      window.cfdMobileMenu.close();
     }
   }
 
@@ -286,6 +289,7 @@
     }
     if (isOpen && !isPaletteVisible()) {
       isOpen = false;
+      setBodyScrollLocked(false);
     }
 
     closeMobileMenu();
@@ -294,7 +298,7 @@
     palette.removeAttribute('hidden');
     palette.hidden = false;
     palette.setAttribute('aria-hidden', 'false');
-    document.body.classList.add('search-palette-open');
+    setBodyScrollLocked(true);
     palette.classList.add('is-visible');
     if (input) {
       input.value = query || '';
@@ -304,20 +308,25 @@
   }
 
   function close(opts) {
-    if (!palette || !isOpen || isEmbedded) return;
+    if (isEmbedded) return;
+    setBodyScrollLocked(false);
+    if (!palette || !isOpen) return;
     if (!(opts && opts.force) && Date.now() - openedAt < OPEN_GUARD_MS) return;
     isOpen = false;
     activeCategory = null;
     activeCategorySlug = null;
     palette.classList.remove('is-visible');
     palette.setAttribute('aria-hidden', 'true');
-    document.body.classList.remove('search-palette-open');
     setTimeout(function () {
       palette.hidden = true;
       palette.setAttribute('hidden', '');
       if (input) input.value = '';
       renderResults([], '');
     }, 200);
+  }
+
+  function unlockBodyOnExit() {
+    setBodyScrollLocked(false);
   }
 
   function openSelected() {
@@ -354,7 +363,7 @@
         }
         if (e.target.closest('[data-search-close]')) {
           e.preventDefault();
-          close();
+          close({ force: true });
         }
       },
       true
@@ -365,7 +374,14 @@
     if (!palette) return;
 
     document.querySelectorAll('[data-search-close]').forEach(function (el) {
-      el.addEventListener('click', close);
+      el.addEventListener('click', function () {
+        close({ force: true });
+      });
+    });
+
+    window.addEventListener('pagehide', unlockBodyOnExit);
+    document.addEventListener('visibilitychange', function () {
+      if (document.visibilityState === 'hidden') unlockBodyOnExit();
     });
 
     if (input) {

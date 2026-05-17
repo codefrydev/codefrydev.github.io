@@ -102,12 +102,8 @@
       if (!target || !container.contains(target)) return;
       e.preventDefault();
       scrollToHash(href, 'smooth', 'push');
-      const mobileMenu = document.getElementById('mobile-menu');
-      const menuBtn = document.getElementById('mobile-menu-btn');
-      if (mobileMenu && !mobileMenu.classList.contains('translate-x-full')) {
-        mobileMenu.classList.add('translate-x-full', 'opacity-0', 'pointer-events-none');
-        mobileMenu.setAttribute('aria-hidden', 'true');
-        if (menuBtn) menuBtn.setAttribute('aria-expanded', 'false');
+      if (window.cfdMobileMenu && typeof window.cfdMobileMenu.close === 'function') {
+        window.cfdMobileMenu.close();
       }
     });
   });

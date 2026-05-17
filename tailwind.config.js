@@ -75,6 +75,7 @@ module.exports = {
     'group-hover/cat:bg-brand/10',
     'line-clamp-1',
     'search-palette-open',
+    'mobile-menu-open',
     'search-palette-page',
     'search-palette--embedded',
     'is-visible',
