@@ -33,9 +33,9 @@
         </li>
         {{- end -}}
 
-        <li><a href="/games" class="{{ if eq $navActive "games" }}{{ $linkActive }}{{ else }}{{ $linkIdle }}{{ end }}">Games</a></li>
-        <li><a href="/ai" class="{{ if eq $navActive "ai" }}{{ $linkActive }}{{ else }}{{ $linkIdle }}{{ end }}">AI</a></li>
-        <li><a href="/designlab" class="{{ if eq $navActive "designlab" }}{{ $linkActive }}{{ else }}{{ $linkIdle }}{{ end }}">Design</a></li>
+        <li><a href="/games/" class="{{ if eq $navActive "games" }}{{ $linkActive }}{{ else }}{{ $linkIdle }}{{ end }}">Games</a></li>
+        <li><a href="/ai/" class="{{ if eq $navActive "ai" }}{{ $linkActive }}{{ else }}{{ $linkIdle }}{{ end }}">AI</a></li>
+        <li><a href="/designlab/" class="{{ if eq $navActive "designlab" }}{{ $linkActive }}{{ else }}{{ $linkIdle }}{{ end }}">Design</a></li>
 
         <li>
           <a href="/about-us/" class="{{ if or (eq $navActive "about") (eq $navActive "team") }}{{ $linkActive }}{{ else }}{{ $linkIdle }}{{ end }}">About us</a>
@@ -91,11 +91,11 @@
             <p class="nav-mega__label">{{ $mega.secondaryTitle | default "Hubs" }}</p>
             <ul class="nav-mega__list nav-mega__list--hubs" role="list">
               {{- range $mega.hubs | default (slice
-                (dict "label" "Games" "url" "/games" "icon" "game-controller")
-                (dict "label" "AI Tools" "url" "/ai" "icon" "robot")
-                (dict "label" "Design Lab" "url" "/designlab" "icon" "palette")
-                (dict "label" "Store" "url" "/store" "icon" "shopping-bag")
-                (dict "label" "Search all tools" "url" "/search" "icon" "magnifying-glass")
+                (dict "label" "Games" "url" "/games/" "icon" "game-controller")
+                (dict "label" "AI Tools" "url" "/ai/" "icon" "robot")
+                (dict "label" "Design Lab" "url" "/designlab/" "icon" "palette")
+                (dict "label" "Store" "url" "/store/" "icon" "shopping-bag")
+                (dict "label" "Search all tools" "url" "/search/" "icon" "magnifying-glass")
               ) -}}
               <li role="listitem">
                 <a href="{{ .url }}" class="nav-mega__hub-link">
@@ -155,9 +155,9 @@
 
     <p class="text-[11px] font-bold tracking-widest text-slate-400 uppercase mb-2 px-4 m-0">More</p>
     <ul class="flex flex-col gap-0.5 list-none m-0 p-0">
-      <li><a href="/games" class="block px-4 py-3 rounded-xl font-medium text-slate-800 hover:bg-slate-50 no-underline">Games</a></li>
-      <li><a href="/ai" class="block px-4 py-3 rounded-xl font-medium text-slate-800 hover:bg-slate-50 no-underline">AI Tools</a></li>
-      <li><a href="/designlab" class="block px-4 py-3 rounded-xl font-medium text-slate-800 hover:bg-slate-50 no-underline">Design Lab</a></li>
+      <li><a href="/games/" class="block px-4 py-3 rounded-xl font-medium text-slate-800 hover:bg-slate-50 no-underline">Games</a></li>
+      <li><a href="/ai/" class="block px-4 py-3 rounded-xl font-medium text-slate-800 hover:bg-slate-50 no-underline">AI Tools</a></li>
+      <li><a href="/designlab/" class="block px-4 py-3 rounded-xl font-medium text-slate-800 hover:bg-slate-50 no-underline">Design Lab</a></li>
       <li><a href="/about-us/" class="block px-4 py-3 rounded-xl font-medium text-slate-800 hover:bg-slate-50 no-underline">About us</a></li>
       <li><a href="{{ if .IsHome }}#faq{{ else }}/#faq{{ end }}" class="block px-4 py-3 rounded-xl font-medium text-slate-800 hover:bg-slate-50 no-underline home-hash-link">FAQ</a></li>
     </ul>

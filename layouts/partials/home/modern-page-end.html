@@ -13,12 +13,13 @@
       {{ partial "home/breadcrumbs.html" $bc }}
     </div>
     {{- end -}}
-    {{ partial "home/footer.html" $page }}
   </main>
+  {{ partial "home/footer.html" $page }}
   {{ partial "cookie-consent.html" $page }}
   {{- if not ($page.Scratch.Get "searchPaletteLoaded") -}}
   {{ partial "home/search-palette.html" $page }}
   {{- end -}}
+  <script src="/js/a11y.js" defer></script>
   <script src="/js/home-nav.js" defer></script>
   <script src="/js/theme.js" defer></script>
 </body>

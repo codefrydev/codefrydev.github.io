@@ -1,7 +1,7 @@
-{{partial "googlegtag.html" .}}
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
+{{ partial "googlegtag.html" . }}
 
 {{- /* Page-specific title (single source of truth; do not add <title> in section layouts) */ -}}
 {{- $pageTitle := .Title -}}
@@ -55,8 +55,6 @@
 <meta name="author" content="{{ .Site.Params.author | default .Site.Title | default "CodeFryDev" }}">
 {{- if .Params.keywords -}}
 <meta name="keywords" content="{{ delimit .Params.keywords ", " }}">
-{{- else -}}
-<meta name="keywords" content="Codefrydev, CFD, NET, Tutorials, Design, Games, unity, c#, godot, web development, productivity apps, AI tools">
 {{- end -}}
 {{- $robots := "index, follow" -}}
 {{- if eq .Section "search" -}}
@@ -88,7 +86,8 @@
   {{- end -}}
 {{- else if .Site.Params.default_og_image -}}
   {{- $ogImage = printf "%s%s" .Site.BaseURL (strings.TrimPrefix "/" .Site.Params.default_og_image) -}}
-  {{- /* Use 1200x630 when default OG image is set (expected social preview size) */ -}}
+  {{- $ogWidth = "1200" -}}
+  {{- $ogHeight = "630" -}}
 {{- else -}}
   {{- $ogImage = printf "%s%s" .Site.BaseURL "images/IconCodefrydev.svg" -}}
   {{- $ogWidth = "96" -}}
@@ -99,7 +98,13 @@
 <meta property="og:image" content="{{ $ogImage }}">
 <meta property="og:image:width" content="{{ $ogWidth }}">
 <meta property="og:image:height" content="{{ $ogHeight }}">
-<meta property="og:image:alt" content="{{ .Title | default "CodeFryDev" }}">
+{{- $ogImageAlt := .Site.Params.description | default "CodeFryDev — free online tools, games, and AI apps in your browser" | truncate 120 -}}
+{{- if .Params.og_image_alt -}}
+  {{- $ogImageAlt = .Params.og_image_alt -}}
+{{- else if and (not .IsHome) .Title -}}
+  {{- $ogImageAlt = printf "%s | CodeFryDev" .Title -}}
+{{- end -}}
+<meta property="og:image:alt" content="{{ $ogImageAlt }}">
 <meta property="og:url" content="{{ .Permalink | absURL }}">
 <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
 <meta property="og:site_name" content="{{ .Site.Title }}">
@@ -110,7 +115,7 @@
 <meta name="twitter:title" content="{{ $ogTitle }}">
 <meta name="twitter:description" content="{{ $ogDescription }}">
 <meta name="twitter:image" content="{{ $ogImage }}">
-<meta name="twitter:image:alt" content="{{ .Title | default "CodeFryDev" }}">
+<meta name="twitter:image:alt" content="{{ $ogImageAlt }}">
 {{- with .Site.Params.social.twitter -}}
 <meta name="twitter:site" content="@{{ . }}">
 <meta name="twitter:creator" content="@{{ . }}">
@@ -121,6 +126,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#e5e9f4">
+<link rel="manifest" href="/site.webmanifest">
 <meta name="msapplication-TileColor" content="#0f172a">
 <meta name="theme-color" content="#0f172a">
 

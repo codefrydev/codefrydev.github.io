@@ -3,6 +3,7 @@
 {{- $defaultIcon := .defaultPhosphorIcon | default "app-window" -}}
 {{- $categoryName := .categoryName | default "" -}}
 {{- $source := .source | default "site" -}}
+{{- $headingLevel := .headingLevel | default 3 -}}
 {{- $phosphor := $item.phosphorIcon | default $defaultIcon -}}
 {{- $desc := $item.description | default (printf "Open %s — free in your browser." $item.name) -}}
 {{- $isExternal := false -}}
@@ -11,35 +12,48 @@
 {{- else -}}
   {{- $isExternal = or (hasPrefix $item.url "http://") (hasPrefix $item.url "https://") -}}
 {{- end -}}
+{{- $titleClass := "text-lg xl:text-xl font-semibold text-slate-900 tracking-tight leading-tight truncate m-0 min-w-0" -}}
+{{- $linkClass := "tool-card__link text-inherit no-underline hover:text-brand after:absolute after:inset-0 after:rounded-2xl after:z-10 after:content-['']" -}}
 
-<a href="{{ $item.url }}"
-   class="bg-white border border-gray-100 p-3.5 rounded-2xl flex gap-3 hover:-translate-y-1 hover:shadow-md transition-all cursor-pointer group no-underline"
-   aria-label="{{ $item.name }}"
-   data-cfd-tool="{{ $item.name }}"
-   data-cfd-category="{{ $categoryName }}"
-   data-cfd-source="{{ $source }}"
-   data-cfd-external="{{ $isExternal }}"
-   {{ if $isExternal }}target="_blank" rel="noopener noreferrer"{{ end }}>
+<article
+  class="relative bg-white border border-gray-100 p-3.5 rounded-2xl flex gap-3 hover:-translate-y-1 hover:shadow-md transition-all group"
+  data-cfd-tool="{{ $item.name }}"
+  data-cfd-category="{{ $categoryName }}"
+  data-cfd-source="{{ $source }}"
+  data-cfd-external="{{ $isExternal }}">
   <div class="flex-1 flex flex-col justify-between pt-1 min-w-0">
-    <div>
-      <div class="flex justify-between items-start gap-1">
-        <h4 class="text-lg xl:text-xl font-semibold text-slate-900 tracking-tight leading-tight truncate m-0">
-          {{ $item.name }}
-          {{- if $isExternal -}}
-          <i class="ph-bold ph-arrow-square-out text-sm text-slate-400 inline-block ml-0.5 align-middle" aria-hidden="true" title="Opens in new tab"></i>
-          {{- end -}}
-        </h4>
-        <i class="ph-fill ph-{{ $phosphor }} text-2xl xl:text-[28px] text-slate-400 group-hover:text-brand transition-colors shrink-0" aria-hidden="true"></i>
+    <div class="flex justify-between items-start gap-1">
+        {{- if eq $headingLevel 2 -}}
+        <h2 class="{{ $titleClass }}">
+          <a href="{{ $item.url }}" class="{{ $linkClass }}"{{ if $isExternal }} target="_blank" rel="noopener noreferrer"{{ end }}>
+            {{ $item.name }}
+            {{- if $isExternal -}}
+            <i class="ph-bold ph-arrow-square-out text-sm text-slate-400 inline-block ml-0.5 align-middle relative z-20" aria-hidden="true"></i>
+            <span class="sr-only"> (opens in new tab)</span>
+            {{- end -}}
+          </a>
+        </h2>
+        {{- else -}}
+        <h3 class="{{ $titleClass }}">
+          <a href="{{ $item.url }}" class="{{ $linkClass }}"{{ if $isExternal }} target="_blank" rel="noopener noreferrer"{{ end }}>
+            {{ $item.name }}
+            {{- if $isExternal -}}
+            <i class="ph-bold ph-arrow-square-out text-sm text-slate-400 inline-block ml-0.5 align-middle relative z-20" aria-hidden="true"></i>
+            <span class="sr-only"> (opens in new tab)</span>
+            {{- end -}}
+          </a>
+        </h3>
+        {{- end -}}
+        <i class="ph-fill ph-{{ $phosphor }} text-2xl xl:text-[28px] text-slate-400 group-hover:text-brand transition-colors shrink-0 relative z-0" aria-hidden="true"></i>
       </div>
-      <p class="text-xs xl:text-[13px] text-slate-500 leading-snug mt-2 line-clamp-3 m-0">{{ $desc }}</p>
-    </div>
+    <p class="text-xs xl:text-[13px] text-slate-500 leading-snug mt-2 line-clamp-3 m-0">{{ $desc }}</p>
     {{- with $item.date -}}
     <div class="mt-4">
       <span class="inline-block bg-gray-50 px-2 py-0.5 rounded-md text-[10px] xl:text-[11px] font-medium text-slate-500 border border-gray-100">{{ . | time.Format "02 Jan 2006" }}</span>
     </div>
     {{- end -}}
   </div>
-  <div class="w-20 h-20 xl:w-[104px] xl:h-[104px] bg-gray-50/80 rounded-xl shrink-0 flex items-center justify-center p-2 border border-gray-50 group-hover:border-gray-100 transition-colors">
+  <div class="w-20 h-20 xl:w-[104px] xl:h-[104px] bg-gray-50/80 rounded-xl shrink-0 flex items-center justify-center p-2 border border-gray-50 group-hover:border-gray-100 transition-colors relative z-0">
     <img src="/images/{{ $iconDir }}/{{ $item.icon }}.svg" alt="" class="w-full h-full object-contain opacity-80 group-hover:opacity-100 transition-opacity" loading="lazy" width="80" height="80">
   </div>
-</a>
+</article>

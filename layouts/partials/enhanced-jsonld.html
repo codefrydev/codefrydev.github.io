@@ -93,9 +93,9 @@
 </script>
 
 {{- /* ============================================ */ -}}
-{{- /* FAQ Schema */ -}}
+{{- /* FAQ Schema (home only) */ -}}
 {{- /* ============================================ */ -}}
-{{- if hugo.Data.faq -}}
+{{- if and .IsHome hugo.Data.faq -}}
   {{- if hugo.Data.faq.faqs -}}
     {{- $faqItems := slice -}}
     {{- range hugo.Data.faq.faqs -}}
@@ -111,145 +111,6 @@
 </script>
     {{- end -}}
   {{- end -}}
-{{- end -}}
-
-{{- /* ============================================ */ -}}
-{{- /* Products/Apps/Tools Schema - All Applications */ -}}
-{{- /* ============================================ */ -}}
-{{- $allProducts := slice -}}
-
-{{- /* Products from home.yaml */ -}}
-{{- range hugo.Data.home.categories -}}
-  {{- $catName := .name -}}
-  {{- range .items -}}
-    {{- if .url -}}
-      {{- $appType := "WebApplication" -}}
-      {{- if or (eq $catName "Games & Fun") (hasPrefix .name "Game") -}}
-        {{- $appType = "VideoGame" -}}
-      {{- else if or (hasPrefix $catName "Tools") (hasPrefix $catName "AI") -}}
-        {{- $appType = "SoftwareApplication" -}}
-      {{- end -}}
-      {{- $appUrl := .url -}}
-      {{- if hasPrefix $appUrl "/" -}}
-        {{- $appUrl = printf "%s%s" $.Site.BaseURL (strings.TrimPrefix "/" $appUrl) -}}
-      {{- else if not (or (hasPrefix $appUrl "http://") (hasPrefix $appUrl "https://")) -}}
-        {{- $appUrl = printf "%s%s" $.Site.BaseURL $appUrl -}}
-      {{- end -}}
-      {{- $app := dict
-        "@type" $appType
-        "@id" (print $.Site.BaseURL "#" (.name | urlize))
-        "name" .name
-        "url" $appUrl
-        "description" (printf "%s - %s tool by CodeFryDev" .name $catName)
-        "applicationCategory" $catName
-        "operatingSystem" "Web Browser"
-        "offers" (dict "@type" "Offer" "price" "0" "priceCurrency" "USD" "availability" "https://schema.org/InStock")
-        "publisher" (dict "@id" (print $.Site.BaseURL "#organization"))
-      -}}
-      {{- if eq $appType "VideoGame" -}}
-        {{- $app = merge $app (dict "genre" "Casual Game" "gamePlatform" "Web Browser") -}}
-      {{- end -}}
-      {{- $allProducts = $allProducts | append $app -}}
-    {{- end -}}
-  {{- end -}}
-{{- end -}}
-
-{{- /* AI Tools from ai.yaml */ -}}
-{{- if hugo.Data.ai -}}
-  {{- if hugo.Data.ai.data -}}
-    {{- range hugo.Data.ai.data -}}
-      {{- if .url -}}
-        {{- $appUrl := .url -}}
-        {{- if hasPrefix $appUrl "/" -}}
-          {{- $appUrl = printf "%s%s" $.Site.BaseURL (strings.TrimPrefix "/" $appUrl) -}}
-        {{- else if not (or (hasPrefix $appUrl "http://") (hasPrefix $appUrl "https://")) -}}
-          {{- $appUrl = printf "%s%s" $.Site.BaseURL $appUrl -}}
-        {{- end -}}
-        {{- $app := dict
-          "@type" "SoftwareApplication"
-          "@id" (print $.Site.BaseURL "#" (.name | urlize))
-          "name" .name
-          "url" $appUrl
-          "description" (printf "%s - AI-powered tool by CodeFryDev" .name)
-          "applicationCategory" "AI Tool"
-          "operatingSystem" "Web Browser"
-          "softwareVersion" "1.0"
-          "offers" (dict "@type" "Offer" "price" "0" "priceCurrency" "USD" "availability" "https://schema.org/InStock")
-          "publisher" (dict "@id" (print $.Site.BaseURL "#organization"))
-          "featureList" (slice "AI-powered functionality" "Easy to use interface" "No installation required" "Cross-platform compatibility")
-        -}}
-        {{- $allProducts = $allProducts | append $app -}}
-      {{- end -}}
-    {{- end -}}
-  {{- end -}}
-{{- end -}}
-
-{{- /* Games from games.yaml */ -}}
-{{- if hugo.Data.games -}}
-  {{- if hugo.Data.games.data -}}
-    {{- range hugo.Data.games.data -}}
-      {{- if .url -}}
-        {{- $appUrl := .url -}}
-        {{- if hasPrefix $appUrl "/" -}}
-          {{- $appUrl = printf "%s%s" $.Site.BaseURL (strings.TrimPrefix "/" $appUrl) -}}
-        {{- else if not (or (hasPrefix $appUrl "http://") (hasPrefix $appUrl "https://")) -}}
-          {{- $appUrl = printf "%s%s" $.Site.BaseURL $appUrl -}}
-        {{- end -}}
-        {{- $game := dict
-          "@type" "VideoGame"
-          "@id" (print $.Site.BaseURL "#" (.name | urlize))
-          "name" .name
-          "url" $appUrl
-          "description" (printf "%s - A fun game by CodeFryDev" .name)
-          "genre" "Casual Game"
-          "gamePlatform" "Web Browser"
-          "operatingSystem" "Any"
-          "applicationCategory" "Game"
-          "offers" (dict "@type" "Offer" "price" "0" "priceCurrency" "USD" "availability" "https://schema.org/InStock")
-          "publisher" (dict "@id" (print $.Site.BaseURL "#organization"))
-        -}}
-        {{- $allProducts = $allProducts | append $game -}}
-      {{- end -}}
-    {{- end -}}
-  {{- end -}}
-{{- end -}}
-
-{{- /* Design Tools from designlab.yaml */ -}}
-{{- if hugo.Data.designlab -}}
-  {{- if hugo.Data.designlab.data -}}
-    {{- range hugo.Data.designlab.data -}}
-      {{- if .url -}}
-        {{- $appUrl := .url -}}
-        {{- if hasPrefix $appUrl "/" -}}
-          {{- $appUrl = printf "%s%s" $.Site.BaseURL (strings.TrimPrefix "/" $appUrl) -}}
-        {{- else if not (or (hasPrefix $appUrl "http://") (hasPrefix $appUrl "https://")) -}}
-          {{- $appUrl = printf "%s%s" $.Site.BaseURL $appUrl -}}
-        {{- end -}}
-        {{- $app := dict
-          "@type" "WebApplication"
-          "@id" (print $.Site.BaseURL "#" (.name | urlize))
-          "name" .name
-          "url" $appUrl
-          "description" (printf "%s - Creative design tool by CodeFryDev" .name)
-          "applicationCategory" "Design Tool"
-          "operatingSystem" "Web Browser"
-          "offers" (dict "@type" "Offer" "price" "0" "priceCurrency" "USD" "availability" "https://schema.org/InStock")
-          "publisher" (dict "@id" (print $.Site.BaseURL "#organization"))
-        -}}
-        {{- $allProducts = $allProducts | append $app -}}
-      {{- end -}}
-    {{- end -}}
-  {{- end -}}
-{{- end -}}
-
-{{- /* Output all products in a single graph */ -}}
-{{- if gt (len $allProducts) 0 -}}
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": {{ $allProducts | jsonify | safeJS }}
-}
-</script>
 {{- end -}}
 
 {{- /* ============================================ */ -}}
@@ -292,6 +153,37 @@
   {{- $pageSchema = $pageSchema | append $ai -}}
 {{- end -}}
 
+{{- /* Design Lab page ItemList */ -}}
+{{- if eq .Section "designlab" -}}
+  {{- $designItems := slice -}}
+  {{- range $idx, $d := hugo.Data.designlab.data -}}
+    {{- $designItems = $designItems | append (dict "@type" "ListItem" "position" (add $idx 1) "item" (dict "@type" "WebApplication" "name" $d.name "url" ($d.url | absURL) "description" (print $d.name " - Creative design tool by CodeFryDev") "applicationCategory" "Design Tool" "operatingSystem" "Web Browser" "offers" (dict "@type" "Offer" "price" "0" "priceCurrency" "USD" "availability" "https://schema.org/InStock") "publisher" (dict "@id" (print $.Site.BaseURL "#organization")))) -}}
+  {{- end -}}
+  {{- $designlab := dict "@type" "ItemList" "name" "CodeFryDev Design Lab Collection" "description" "Collection of creative design tools and resources" "url" .Permalink "numberOfItems" (len hugo.Data.designlab.data) "itemListElement" $designItems -}}
+  {{- $pageSchema = $pageSchema | append $designlab -}}
+{{- end -}}
+
+{{- /* Browse category ItemList */ -}}
+{{- if and (eq .Section "browse") (ne .RelPermalink "/browse/") -}}
+  {{- $browseSlug := .Params.category_slug -}}
+  {{- with .File -}}
+    {{- if not $browseSlug -}}{{- $browseSlug = .ContentBaseName -}}{{- end -}}
+  {{- end -}}
+  {{- range hugo.Data.home.categories -}}
+    {{- $catSlug := .slug | default (.name | anchorize) -}}
+    {{- if eq $catSlug $browseSlug -}}
+      {{- $catName := .name -}}
+      {{- $catItems := slice -}}
+      {{- $visible := where .items "hidden" "!=" true -}}
+      {{- range $idx, $it := $visible -}}
+        {{- $catItems = $catItems | append (dict "@type" "ListItem" "position" (add $idx 1) "item" (dict "@type" "WebApplication" "name" $it.name "url" ($it.url | absURL) "description" (print $it.name " - " $catName " tool by CodeFryDev") "applicationCategory" $catName "operatingSystem" "Web Browser" "offers" (dict "@type" "Offer" "price" "0" "priceCurrency" "USD" "availability" "https://schema.org/InStock") "publisher" (dict "@id" (print $.Site.BaseURL "#organization")))) -}}
+      {{- end -}}
+      {{- $browseList := dict "@type" "ItemList" "name" $catName "description" (print $catName " tools and resources on CodeFryDev") "url" $.Permalink "numberOfItems" (len $visible) "itemListElement" $catItems -}}
+      {{- $pageSchema = $pageSchema | append $browseList -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
 {{- /* About page */ -}}
 {{- if eq .Section "about" -}}
   {{- $about := dict "@type" "AboutPage" "name" .Title "description" (.Description | default "Learn more about CodeFryDev and our mission") "url" .Permalink "mainEntity" (dict "@id" (print .Site.BaseURL "#organization")) "breadcrumb" (dict "@type" "BreadcrumbList" "itemListElement" (slice (dict "@type" "ListItem" "position" 1 "name" "Home" "item" .Site.BaseURL) (dict "@type" "ListItem" "position" 2 "name" "About" "item" .Permalink))) -}}
@@ -310,17 +202,74 @@
   {{- $pageSchema = $pageSchema | append $store -}}
 {{- end -}}
 
-{{- /* Breadcrumb for all non-home pages */ -}}
+{{- /* Breadcrumb for non-home pages (aligned with breadcrumbs.html) */ -}}
 {{- if not .IsHome -}}
   {{- $crumbs := slice (dict "@type" "ListItem" "position" 1 "name" "Home" "item" .Site.BaseURL) -}}
-  {{- if .Section -}}
-    {{- $crumbs = $crumbs | append (dict "@type" "ListItem" "position" 2 "name" (.Section | title) "item" (print .Site.BaseURL .Section "/")) -}}
+  {{- $path := .RelPermalink -}}
+  {{- $section := .Section | lower -}}
+  {{- $pos := 2 -}}
+  {{- if eq $section "browse" -}}
+    {{- if ne $path "/browse/" -}}
+      {{- $crumbs = $crumbs | append (dict "@type" "ListItem" "position" $pos "name" "Browse" "item" (print .Site.BaseURL "browse/")) -}}
+      {{- $pos = add $pos 1 -}}
+      {{- $crumbs = $crumbs | append (dict "@type" "ListItem" "position" $pos "name" .Title "item" .Permalink) -}}
+    {{- else -}}
+      {{- $crumbs = $crumbs | append (dict "@type" "ListItem" "position" $pos "name" "Browse" "item" .Permalink) -}}
+    {{- end -}}
+  {{- else if eq $section "about" -}}
+    {{- if strings.Contains $path "/about/users/" -}}
+      {{- $crumbs = $crumbs | append (dict "@type" "ListItem" "position" $pos "name" "About us" "item" (print .Site.BaseURL "about-us/")) -}}
+      {{- $pos = add $pos 1 -}}
+      {{- if .IsPage -}}
+        {{- $crumbs = $crumbs | append (dict "@type" "ListItem" "position" $pos "name" "Members" "item" (print .Site.BaseURL "about/users/")) -}}
+        {{- $pos = add $pos 1 -}}
+        {{- $crumbs = $crumbs | append (dict "@type" "ListItem" "position" $pos "name" .Title "item" .Permalink) -}}
+      {{- else -}}
+        {{- $crumbs = $crumbs | append (dict "@type" "ListItem" "position" $pos "name" "Members" "item" .Permalink) -}}
+      {{- end -}}
+    {{- end -}}
+  {{- else if eq $section "about-us" -}}
+    {{- $crumbs = $crumbs | append (dict "@type" "ListItem" "position" $pos "name" "About us" "item" .Permalink) -}}
+  {{- else if or (eq $section "history") -}}
+    {{- $crumbs = $crumbs | append (dict "@type" "ListItem" "position" $pos "name" "History" "item" .Permalink) -}}
+  {{- else if eq $section "press" -}}
+    {{- $crumbs = $crumbs | append (dict "@type" "ListItem" "position" $pos "name" "Press & Media" "item" .Permalink) -}}
+  {{- else if eq $section "cfddc" -}}
+    {{- if ne $path "/cfddc/" -}}
+      {{- $crumbs = $crumbs | append (dict "@type" "ListItem" "position" $pos "name" "CFDDC" "item" (print .Site.BaseURL "cfddc/")) -}}
+      {{- $pos = add $pos 1 -}}
+      {{- $crumbs = $crumbs | append (dict "@type" "ListItem" "position" $pos "name" .Title "item" .Permalink) -}}
+    {{- else -}}
+      {{- $crumbs = $crumbs | append (dict "@type" "ListItem" "position" $pos "name" "CFDDC" "item" .Permalink) -}}
+    {{- end -}}
+  {{- else if eq $section "games" -}}
+    {{- $crumbs = $crumbs | append (dict "@type" "ListItem" "position" $pos "name" "Games & Fun" "item" .Permalink) -}}
+  {{- else if eq $section "ai" -}}
+    {{- $crumbs = $crumbs | append (dict "@type" "ListItem" "position" $pos "name" "AI Tools" "item" .Permalink) -}}
+  {{- else if eq $section "designlab" -}}
+    {{- $crumbs = $crumbs | append (dict "@type" "ListItem" "position" $pos "name" "Design Lab" "item" .Permalink) -}}
+  {{- else if eq $section "store" -}}
+    {{- $crumbs = $crumbs | append (dict "@type" "ListItem" "position" $pos "name" "Store" "item" .Permalink) -}}
+  {{- else if eq $section "search" -}}
+    {{- $crumbs = $crumbs | append (dict "@type" "ListItem" "position" $pos "name" "Search" "item" .Permalink) -}}
+  {{- else if $section -}}
+    {{- $sectionTitle := .Section | title -}}
+    {{- if ne $path (printf "/%s/" $section) -}}
+      {{- $crumbs = $crumbs | append (dict "@type" "ListItem" "position" $pos "name" $sectionTitle "item" (print .Site.BaseURL $section "/")) -}}
+      {{- $pos = add $pos 1 -}}
+    {{- end -}}
+    {{- if .Title -}}
+      {{- $crumbs = $crumbs | append (dict "@type" "ListItem" "position" $pos "name" .Title "item" .Permalink) -}}
+    {{- else -}}
+      {{- $crumbs = $crumbs | append (dict "@type" "ListItem" "position" $pos "name" $sectionTitle "item" .Permalink) -}}
+    {{- end -}}
+  {{- else if .Title -}}
+    {{- $crumbs = $crumbs | append (dict "@type" "ListItem" "position" $pos "name" .Title "item" .Permalink) -}}
   {{- end -}}
-  {{- if .Title -}}
-    {{- $crumbs = $crumbs | append (dict "@type" "ListItem" "position" (cond (ne .Section "") 3 2) "name" .Title "item" .Permalink) -}}
+  {{- if gt (len $crumbs) 1 -}}
+    {{- $breadcrumb := dict "@type" "BreadcrumbList" "itemListElement" $crumbs -}}
+    {{- $pageSchema = $pageSchema | append $breadcrumb -}}
   {{- end -}}
-  {{- $breadcrumb := dict "@type" "BreadcrumbList" "itemListElement" $crumbs -}}
-  {{- $pageSchema = $pageSchema | append $breadcrumb -}}
 {{- end -}}
 
 {{- /* Output page-specific schema */ -}}

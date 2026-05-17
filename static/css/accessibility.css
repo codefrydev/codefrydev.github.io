@@ -1,69 +1,82 @@
+/* Focus ring tokens (modern layout does not load theme.css) */
+:root,
+body.home-page {
+  --link-color: #2563eb;
+  --focus-ring: #2563eb;
+}
+
+[data-theme="dark"] body.home-page {
+  --link-color: #38bdf8;
+  --focus-ring: #38bdf8;
+}
+
 /* Skip to main content link */
 .skip-link {
   position: absolute;
   top: -40px;
   left: 0;
-  background: #000;
+  background: #0f172a;
   color: #fff;
   padding: 8px 16px;
   text-decoration: none;
-  z-index: 100;
+  z-index: 10000;
   font-weight: 600;
   border-radius: 0 0 4px 0;
 }
 
-.skip-link:focus {
+.skip-link:focus,
+.skip-link:focus-visible {
   top: 0;
   outline: 3px solid #fff;
   outline-offset: 2px;
 }
 
-/* Focus indicators for all interactive elements */
-a:focus,
-button:focus,
-input:focus,
-select:focus,
-textarea:focus,
-[tabindex]:focus {
-  outline: 3px solid var(--link-color);
-  outline-offset: 2px;
-  outline-style: solid;
-}
-
-/* Remove default outline for mouse users, keep for keyboard users */
-a:focus:not(:focus-visible),
-button:focus:not(:focus-visible),
-input:focus:not(:focus-visible),
-select:focus:not(:focus-visible),
-textarea:focus:not(:focus-visible) {
+/* Programmatic focus target for skip link */
+#main-content:focus {
   outline: none;
 }
 
-/* Enhanced focus for keyboard navigation */
+#main-content:focus-visible {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: -3px;
+}
+
+/* Focus indicators for interactive elements */
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
 select:focus-visible,
 textarea:focus-visible,
-[tabindex]:focus-visible {
-  outline: 3px solid var(--link-color);
+summary:focus-visible,
+[tabindex]:not([tabindex="-1"]):focus-visible {
+  outline: 3px solid var(--focus-ring);
   outline-offset: 2px;
-  box-shadow: 0 0 0 4px color-mix(in srgb, var(--link-color) 20%, transparent);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--focus-ring) 22%, transparent);
 }
 
-/* Ensure sufficient color contrast for text */
-body {
-  color: var(--text-primary);
-  background-color: var(--bg-primary);
+/* Stretched-link cards: show ring on the card when link is focused */
+article:has(.tool-card__link:focus-visible) {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 2px;
+  border-radius: 1rem;
 }
 
-/* Improve visibility of interactive elements */
-button,
-a {
-  transition: outline 0.2s ease;
+article:has(.tool-card__link:focus-visible) .tool-card__link:focus-visible {
+  outline: none;
+  box-shadow: none;
 }
 
-/* Screen reader only class */
+/* Remove default outline for mouse users */
+a:focus:not(:focus-visible),
+button:focus:not(:focus-visible),
+input:focus:not(:focus-visible),
+select:focus:not(:focus-visible),
+textarea:focus:not(:focus-visible),
+summary:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Screen reader only */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -73,10 +86,11 @@ a {
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
-  border-width: 0;
+  border: 0;
 }
 
-.sr-only-focusable:focus {
+.sr-only-focusable:focus,
+.sr-only-focusable:focus-visible {
   position: static;
   width: auto;
   height: auto;
@@ -87,3 +101,59 @@ a {
   white-space: normal;
 }
 
+/* FAQ accordion */
+.home-faq details > summary {
+  list-style: none;
+}
+
+.home-faq details > summary::-webkit-details-marker {
+  display: none;
+}
+
+.home-faq details > summary::marker {
+  content: "";
+}
+
+/* Footer accordion summaries */
+.site-footer__summary {
+  list-style: none;
+}
+
+.site-footer__summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .home-hero__bg-layer,
+  #hero-content {
+    transition: none !important;
+  }
+}
+
+/* Modal open: prevent background scroll */
+body.mobile-menu-open {
+  overflow: hidden;
+}
+
+/* Visually hidden but available to AT */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}

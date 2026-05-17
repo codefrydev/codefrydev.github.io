@@ -1,0 +1,21 @@
+{
+  "name": "CodeFryDev",
+  "short_name": "CodeFryDev",
+  "description": "Free browser tools, games, and AI apps by CodeFryDev.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#edf2f8",
+  "theme_color": "#0f172a",
+  "icons": [
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}

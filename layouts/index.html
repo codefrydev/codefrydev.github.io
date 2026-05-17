@@ -4,6 +4,7 @@
 <head>
   {{ partial "header.html" . }}
   {{ partial "home/head.html" . }}
+  <link rel="preload" as="image" href="/images/hero/slide-1.jpg" fetchpriority="high">
   <link rel="stylesheet" href="/css/ladybug.css">
 </head>
 <body class="home-page bg-gray-50/50 text-slate-800 font-sans antialiased">
@@ -18,7 +19,7 @@
     })();
   </script>
 
-  <main id="main-content" class="home-sections">
+  <main id="main-content" class="home-sections" tabindex="-1">
     {{ partial "home/hero.html" . }}
     {{- range hugo.Data.home.categories -}}
       {{ partial "home/category-section.html" (dict "category" . "Site" $.Site) }}
@@ -28,12 +29,13 @@
     {{ partial "home/marquee.html" . }}
     {{ partial "home/why.html" . }}
     {{ partial "home/faq.html" . }}
-    {{ partial "home/footer.html" . }}
   </main>
 
+  {{ partial "home/footer.html" . }}
   {{ partial "ladybug.html" . }}
   {{ partial "cookie-consent.html" . }}
   {{ partial "home/search-palette.html" . }}
+  <script src="/js/a11y.js" defer></script>
   <script src="/js/home-hero.js" defer></script>
   <script src="/js/home-nav.js" defer></script>
   <script src="/js/home-scroll.js" defer></script>

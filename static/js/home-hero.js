@@ -27,9 +27,14 @@
   const autoplayMs = prefersReducedMotion ? 0 : Number(window.heroAutoplayMs) || 6000;
   const fadeMs = prefersReducedMotion ? 0 : 500;
 
-  function bgImageUrl(url) {
-    if (!url) return 'none';
-    return "url('" + String(url).replace(/'/g, "\\'") + "')";
+  function setLayerImage(layerEl, url) {
+    if (!layerEl || !url) return;
+    var img = layerEl.querySelector('img');
+    if (img) {
+      img.src = url;
+      return;
+    }
+    layerEl.style.backgroundImage = "url('" + String(url).replace(/'/g, "\\'") + "')";
   }
 
   function syncLadybugBackup() {
@@ -108,7 +113,7 @@
     const nextLayer = activeLayer === 1 ? bgLayer2 : bgLayer1;
     const currentLayerEl = activeLayer === 1 ? bgLayer1 : bgLayer2;
 
-    nextLayer.style.backgroundImage = bgImageUrl(slide.image);
+    setLayerImage(nextLayer, slide.image);
 
     if (fadeMs === 0) {
       applySlideContent(slide);

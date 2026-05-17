@@ -7,19 +7,19 @@ nav:
     secondaryTitle: "Hubs"
     hubs:
       - label: "Games"
-        url: "/games"
+        url: "/games/"
         icon: "game-controller"
       - label: "AI Tools"
-        url: "/ai"
+        url: "/ai/"
         icon: "robot"
       - label: "Design Lab"
-        url: "/designlab"
+        url: "/designlab/"
         icon: "palette"
       - label: "Store"
-        url: "/store"
+        url: "/store/"
         icon: "shopping-bag"
       - label: "Search all tools"
-        url: "/search"
+        url: "/search/"
         icon: "magnifying-glass"
 
 why:
@@ -46,37 +46,37 @@ why:
 
 hubBanners:
   games:
-    image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=1600&q=80"
+    image: "/images/banners/games.jpg"
     title: "Games & Fun"
     description: "Puzzles, classics, and arcade games—play instantly in your browser."
   ai:
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1600&q=80"
+    image: "/images/banners/ai.jpg"
     title: "AI Tools"
     description: "Meme generators, summarizers, chat, and more—no signup required."
   designlab:
-    image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=1600&q=80"
+    image: "/images/banners/designlab.jpg"
     title: "Design Lab"
     description: "Creative design tools, visualizers, and resources for makers."
   store:
-    image: "https://images.unsplash.com/photo-1556745753-2903312f440c?auto=format&fit=crop&w=1600&q=80"
+    image: "/images/banners/store.jpg"
     title: "CodeFryDev Store"
     description: "Mobile apps and downloads on Google Play."
 
 categoryBanners:
   creative-assets:
-    image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=1600&q=80"
+    image: "/images/banners/creative-assets.jpg"
     title: "Explore Creative & Assets"
     description: "Art tools, wallpapers, 3D models, and learning resources for makers."
   tools-utilities:
-    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1600&q=80"
+    image: "/images/banners/tools-utilities.jpg"
     title: "Tools & Utilities Collection"
     description: "Productivity apps, formatters, SEO tools, and dev utilities in your browser."
   games-fun:
-    image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=1600&q=80"
+    image: "/images/banners/games-fun.jpg"
     title: "Games & Fun"
     description: "Wordle, Snake, Chain Reaction, and more—play instantly in your browser."
   site-links:
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80"
+    image: "/images/banners/site-links.jpg"
     title: "Site & Resources"
     description: "About, updates, store, privacy, and external links."
 
@@ -85,13 +85,16 @@ hero:
   searchPlaceholder: "Search tools, games, AI apps..."
   autoplayMs: 6000
   slides:
-    - image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=2850&q=80"
+    - image: "/images/hero/slide-1.jpg"
+      imageAlt: "Team collaborating on laptops"
       title: "Tools, games & AI in your browser"
       description: "This is a platform where we learn, work on experimental projects, play games, come up with innovative ideas, and build many more..."
-    - image: "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=2850&q=80"
+    - image: "/images/hero/slide-2.jpg"
+      imageAlt: "Developers working together at a desk"
       title: "Build faster with CodeFryDev"
       description: "From JSON playgrounds to design lab resources—everything runs in your browser."
-    - image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=2852&q=80"
+    - image: "/images/hero/slide-3.jpg"
+      imageAlt: "Laptop showing code on a desk"
       title: "No install. Just open and use."
       description: "Explore creative assets, productivity tools, games, and AI helpers in one place."
 

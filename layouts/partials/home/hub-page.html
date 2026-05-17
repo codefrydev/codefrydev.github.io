@@ -59,7 +59,7 @@
               {{- $item = merge . $item -}}
             {{- end -}}
           {{- end -}}
-          {{ partial "home/tool-card.html" (dict "item" $item "defaultPhosphorIcon" $defaultIcon "iconDir" $iconDir "categoryName" $title "source" (printf "hub_%s" ($homeCategorySlug | default "hub"))) }}
+          {{ partial "home/tool-card.html" (dict "item" $item "defaultPhosphorIcon" $defaultIcon "iconDir" $iconDir "categoryName" $title "headingLevel" 2 "source" (printf "hub_%s" ($homeCategorySlug | default "hub"))) }}
         {{- end -}}
       </div>
       {{- end -}}

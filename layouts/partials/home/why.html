@@ -1,30 +1,40 @@
 {{- $why := hugo.Data.homepage.why -}}
 {{- if $why -}}
-<section id="why" data-section-label="Why us" class="home-why flex flex-col justify-center relative pt-24 pb-16" aria-labelledby="why-heading">
-  <div class="max-w-4xl mx-auto px-4 w-full text-center">
-    <span class="home-why__eyebrow">Why CodeFryDev</span>
+<section id="why" data-section-label="Why us" class="home-why flex flex-col justify-center gap-12 relative pt-24 pb-16" aria-labelledby="why-heading">
+  <header class="home-why__header max-w-4xl mx-auto px-4 w-full text-center">
+    <p class="home-why__eyebrow m-0">Why CodeFryDev</p>
     <h2 id="why-heading" class="home-why__title m-0">{{ $why.title | default "Why Choose CodeFryDev?" }}</h2>
     {{- with $why.intro -}}
     <p class="home-why__intro m-0">{{ . }}</p>
     {{- end -}}
-  </div>
+  </header>
 
-  <div class="max-w-5xl mx-auto px-4 w-full grid grid-cols-1 md:grid-cols-2 gap-6">
-    {{- range $why.highlights -}}
-    <div class="home-why__card">
-      {{- with .icon -}}<span class="home-why__card-icon" aria-hidden="true">{{ . }}</span>{{ end -}}
-      <h3 class="home-why__card-title m-0">{{ .title }}</h3>
-      <p class="home-why__card-text m-0">{{ .text | markdownify }}</p>
+  {{- with $why.highlights -}}
+  <div
+    class="home-why__grid max-w-5xl mx-auto px-4 w-full grid grid-cols-1 md:grid-cols-2 gap-6"
+    role="list"
+    aria-label="What we offer">
+    {{- range . -}}
+    <div class="min-h-0" role="listitem">
+      <article class="home-why__card h-full">
+        {{- with .icon -}}<span class="home-why__card-icon" aria-hidden="true">{{ . }}</span>{{ end -}}
+        <h3 class="home-why__card-title m-0">{{ .title }}</h3>
+        <p class="home-why__card-text m-0">{{ .text | markdownify }}</p>
+      </article>
     </div>
     {{- end -}}
   </div>
+  {{- end -}}
 
   {{- with $why.bullets -}}
-  <div class="home-why__perks" role="list">
+  <div
+    class="home-why__perks w-full"
+    role="list"
+    aria-label="Platform benefits">
     {{- range . -}}
     <div class="home-why__perk" role="listitem">
       <i class="ph-fill ph-check-circle home-why__perk-icon" aria-hidden="true"></i>
-      <span class="home-why__perk-text">{{ . }}</span>
+      <p class="home-why__perk-text m-0">{{ . }}</p>
     </div>
     {{- end -}}
   </div>

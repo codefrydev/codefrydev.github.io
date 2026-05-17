@@ -62,7 +62,11 @@
   }
 
   .home-hero__bg-layer {
-    @apply absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ease-in-out;
+    @apply absolute inset-0 overflow-hidden transition-opacity duration-1000 ease-in-out;
+  }
+
+  .home-hero__bg-img {
+    @apply h-full w-full object-cover object-center;
   }
 
   .home-hero__overlay {
@@ -1064,6 +1068,10 @@
     @apply bg-white;
   }
 
+  .home-why__header {
+    @apply shrink-0;
+  }
+
   .home-why__eyebrow {
     @apply inline-block px-4 py-1.5 mb-6 text-sm font-medium text-slate-700 bg-white rounded-full border border-gray-200 shadow-sm;
   }
@@ -1073,7 +1081,11 @@
   }
 
   .home-why__intro {
-    @apply mx-auto mb-12 max-w-2xl text-lg leading-relaxed text-slate-500;
+    @apply mx-auto max-w-2xl text-lg leading-relaxed text-slate-500;
+  }
+
+  .home-why__grid {
+    @apply shrink-0;
   }
 
   .home-why__card {
@@ -1110,7 +1122,7 @@
   }
 
   .home-why__perk-text {
-    @apply min-w-0 flex-1;
+    @apply min-w-0 flex-1 text-sm leading-snug text-slate-600;
   }
 
   .home-faq-scroll {

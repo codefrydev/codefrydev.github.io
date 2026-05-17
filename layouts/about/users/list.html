@@ -8,7 +8,7 @@
         {{- range sort .Pages "Weight" -}}
         <li>
           <a href="{{ .RelPermalink }}" class="bg-white border border-gray-100 rounded-2xl p-8 text-center hover:-translate-y-1 hover:shadow-md transition-all no-underline block group">
-            <img src="{{ .Params.listProfile_image }}" alt="" width="120" height="120" class="w-[120px] h-[120px] rounded-full object-cover border-4 border-gray-100 mx-auto mb-4 group-hover:border-blue-100 transition-colors" loading="lazy">
+            <img src="{{ .Params.listProfile_image }}" alt="{{ .Title }}" width="120" height="120" class="w-[120px] h-[120px] rounded-full object-cover border-4 border-gray-100 mx-auto mb-4 group-hover:border-blue-100 transition-colors" loading="lazy">
             <h2 class="text-xl font-bold text-slate-900 m-0 mb-2">{{ .Title }}</h2>
             <p class="text-sm text-slate-500 m-0 mb-4">{{ .Params.subtitle }}</p>
             <span class="inline-block text-xs font-semibold uppercase tracking-wide text-blue-600 bg-blue-50 px-3 py-1 rounded-full">View profile</span>

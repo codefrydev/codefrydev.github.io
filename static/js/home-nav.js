@@ -10,6 +10,7 @@
     function setOpen(open) {
       isOpen = open;
       btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
       menu.setAttribute('aria-hidden', open ? 'false' : 'true');
       document.body.classList.toggle('mobile-menu-open', open);
 
