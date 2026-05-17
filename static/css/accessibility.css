@@ -66,6 +66,13 @@ article:has(.tool-card__link:focus-visible) .tool-card__link:focus-visible {
   box-shadow: none;
 }
 
+/* Search palette: input lives inside a dedicated bar; skip global focus ring */
+.search-palette__input:focus,
+.search-palette__input:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
 /* Remove default outline for mouse users */
 a:focus:not(:focus-visible),
 button:focus:not(:focus-visible),
