@@ -387,6 +387,31 @@
   color: rgb(125 211 252);
 }
 
+[data-theme="dark"] body.home-page .search-palette__result-name {
+  color: rgb(241 245 249);
+}
+
+[data-theme="dark"] body.home-page .search-palette__result-desc,
+[data-theme="dark"] body.home-page .search-palette__result-meta {
+  color: rgb(148 163 184);
+}
+
+[data-theme="dark"] body.home-page .search-palette__result-arrow {
+  color: rgb(71 85 105);
+}
+
+[data-theme="dark"] body.home-page .search-palette__result.is-active .search-palette__result-arrow {
+  color: rgb(125 211 252);
+}
+
+[data-theme="dark"] body.home-page .search-palette__empty-title {
+  color: rgb(241 245 249);
+}
+
+[data-theme="dark"] body.home-page .search-palette__empty-hint {
+  color: rgb(148 163 184);
+}
+
 [data-theme="dark"] body.home-page .search-palette__result-name mark,
 [data-theme="dark"] body.home-page .search-palette__result-desc mark {
   background-color: rgb(120 53 15 / 0.5);
