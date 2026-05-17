@@ -1,10 +1,14 @@
 {{- $placeholder := .placeholder | default "Search tools, games, AI apps…" -}}
 {{- $class := .class | default "" -}}
 {{- $size := .size | default "md" -}}
+{{- $category := .category | default "" -}}
+{{- $categorySlug := .categorySlug | default "" -}}
 <button
   type="button"
   class="search-trigger search-trigger--{{ $size }} {{ $class }}"
   data-search-open
+  {{- with $category }} data-search-category="{{ . }}"{{ end }}
+  {{- with $categorySlug }} data-search-category-slug="{{ . }}"{{ end }}
   aria-label="Open search"
   aria-keyshortcuts="Control+K Meta+K"
 >

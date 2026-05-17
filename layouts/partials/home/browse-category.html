@@ -25,7 +25,7 @@
   <div class="browse-category__header">
     <p class="browse-category__count m-0">{{ len $items }} tools in this category</p>
     <div class="browse-category__actions">
-      {{ partial "home/search-trigger.html" (dict "placeholder" (printf "Search in %s…" $cat.name) "size" "md" "class" "browse-index__search-trigger w-full sm:w-auto") }}
+      {{ partial "home/search-trigger.html" (dict "placeholder" (printf "Search in %s…" $cat.name) "size" "md" "class" "browse-index__search-trigger w-full sm:w-auto" "category" $cat.name "categorySlug" $slug) }}
     </div>
   </div>
 

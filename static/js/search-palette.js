@@ -9,6 +9,8 @@
   var initialized = false;
   var pendingOpen = false;
   var openedAt = 0;
+  var activeCategory = null;
+  var activeCategorySlug = null;
   var OPEN_GUARD_MS = 350;
 
   function $(sel, root) {
@@ -89,6 +91,54 @@
     return text.replace(new RegExp('(' + esc + ')', 'gi'), '<mark>$1</mark>');
   }
 
+  function slugify(value) {
+    return (value || '')
+      .toLowerCase()
+      .replace(/&/g, 'and')
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-+|-+$/g, '');
+  }
+
+  function itemMatchesScope(item) {
+    if (!activeCategory && !activeCategorySlug) return true;
+    if (activeCategory && item.category === activeCategory) return true;
+    if (activeCategorySlug && slugify(item.category) === activeCategorySlug) return true;
+    if (activeCategorySlug === 'games-fun') {
+      return item.type === 'game' || item.category === 'Games & Fun' || item.category === 'Games';
+    }
+    if (activeCategorySlug === 'tools-utilities') {
+      return item.type === 'tool' && (item.category === 'Tools & Utilities' || slugify(item.category) === 'tools-utilities');
+    }
+    if (activeCategorySlug === 'creative-assets') {
+      return item.type === 'tool' && (item.category === 'Creative & Assets' || slugify(item.category) === 'creative-assets');
+    }
+    if (activeCategorySlug === 'site-links') {
+      return item.category === 'Site & External Links' || slugify(item.category) === 'site-links';
+    }
+    return false;
+  }
+
+  function readScopeFromButton(btn) {
+    if (!btn) {
+      activeCategory = null;
+      activeCategorySlug = null;
+      return;
+    }
+    activeCategory = btn.getAttribute('data-search-category') || null;
+    activeCategorySlug = btn.getAttribute('data-search-category-slug') || null;
+  }
+
+  function goToSearchPage(query) {
+    var url = '/search/';
+    var params = new URLSearchParams();
+    if (query) params.set('q', query);
+    if (activeCategory) params.set('category', activeCategory);
+    if (activeCategorySlug) params.set('category_slug', activeCategorySlug);
+    var qs = params.toString();
+    if (qs) url += '?' + qs;
+    window.location.href = url;
+  }
+
   function getInteractives() {
     if (!resultsList || resultsList.hidden) {
       return Array.prototype.slice.call(
@@ -115,7 +165,8 @@
   function renderResults(matches, query) {
     if (!resultsList) return;
     resultsList.innerHTML = '';
-    if (!query) {
+    var hasQuery = !!(query && query.trim());
+    if (!hasQuery && matches.length === 0) {
       resultsList.hidden = true;
       if (defaultPanel) defaultPanel.hidden = false;
       if (emptyPanel) emptyPanel.hidden = true;
@@ -173,10 +224,16 @@
   function runSearch(q) {
     var term = q.trim().toLowerCase();
     if (!term) {
-      renderResults([], '');
+      if (activeCategory || activeCategorySlug) {
+        var scoped = allItems.filter(itemMatchesScope);
+        renderResults(scoped, '');
+      } else {
+        renderResults([], '');
+      }
       return;
     }
     var matches = allItems.filter(function (item) {
+      if (!itemMatchesScope(item)) return false;
       return (
         item.name.toLowerCase().indexOf(term) !== -1 ||
         item.category.toLowerCase().indexOf(term) !== -1 ||
@@ -203,7 +260,11 @@
 
   function open(query) {
     if (!palette) {
-      pendingOpen = true;
+      if (!initialized) {
+        pendingOpen = true;
+        return;
+      }
+      goToSearchPage(query || '');
       return;
     }
     if (isEmbedded) {
@@ -216,6 +277,9 @@
     if (isOpen && isPaletteVisible()) {
       close({ force: true });
       return;
+    }
+    if (isOpen && !isPaletteVisible()) {
+      isOpen = false;
     }
 
     closeMobileMenu();
@@ -237,6 +301,8 @@
     if (!palette || !isOpen || isEmbedded) return;
     if (!(opts && opts.force) && Date.now() - openedAt < OPEN_GUARD_MS) return;
     isOpen = false;
+    activeCategory = null;
+    activeCategorySlug = null;
     palette.classList.remove('is-visible');
     palette.setAttribute('aria-hidden', 'true');
     document.body.classList.remove('search-palette-open');
@@ -276,6 +342,7 @@
         if (openBtn) {
           e.preventDefault();
           e.stopPropagation();
+          readScopeFromButton(openBtn);
           if (isOpen && isPaletteVisible()) {
             close({ force: true });
           } else {
@@ -357,12 +424,13 @@
 
     allItems = buildIndex(window.CFD_SEARCH.data);
     initKbdLabels();
-    bindTriggers();
     bindPalette();
 
     document.addEventListener('keydown', function (e) {
       if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
         e.preventDefault();
+        activeCategory = null;
+        activeCategorySlug = null;
         if (isOpen && !isEmbedded) close({ force: true });
         else open('');
         return;
@@ -375,21 +443,34 @@
       palette.hidden = false;
       palette.classList.add('is-visible', 'search-palette--embedded');
       isOpen = true;
-      var q = new URLSearchParams(window.location.search).get('q') || '';
+      var params = new URLSearchParams(window.location.search);
+      activeCategory = params.get('category') || null;
+      activeCategorySlug = params.get('category_slug') || null;
+      var q = params.get('q') || '';
       if (input) {
         input.value = q;
         runSearch(q);
-        if (q) input.focus();
+        input.focus();
       }
     }
 
-    window.cfdSearchPalette = { open: open, close: close };
+    window.cfdSearchPalette = { open: open, close: close, goToSearchPage: goToSearchPage };
     if (pendingOpen) {
       pendingOpen = false;
       open('');
     }
     return true;
   }
+
+  window.cfdSearchPalette = {
+    open: function (q) {
+      open(q || '');
+    },
+    close: function (opts) {
+      close(opts);
+    },
+    goToSearchPage: goToSearchPage,
+  };
 
   function boot() {
     bindTriggers();

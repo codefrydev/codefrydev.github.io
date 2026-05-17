@@ -1,14 +1,14 @@
 {{- $marquee := hugo.Data.homepage.marquee -}}
 {{- if and $marquee $marquee.enabled $marquee.items -}}
-<section id="partners" data-section-label="Partners" class="py-12 border-t border-gray-200 bg-white overflow-hidden relative group" aria-label="{{ $marquee.label | default "Partners" }}">
+<section id="partners" data-section-label="Partners" class="home-partners py-12 border-t border-gray-200 bg-white overflow-hidden relative group" aria-label="{{ $marquee.label | default "Partners" }}">
   <div class="text-center mb-8">
-    <p class="text-sm font-semibold tracking-widest text-slate-400 uppercase m-0">{{ $marquee.label }}</p>
+    <p class="home-partners__label text-sm font-semibold tracking-widest text-slate-400 uppercase m-0">{{ $marquee.label }}</p>
   </div>
 
-  <div class="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" aria-hidden="true"></div>
-  <div class="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" aria-hidden="true"></div>
+  <div class="home-partners__fade home-partners__fade--left absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" aria-hidden="true"></div>
+  <div class="home-partners__fade home-partners__fade--right absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" aria-hidden="true"></div>
 
-  <div class="flex w-max animate-marquee group-hover:[animation-play-state:paused] opacity-60 grayscale items-center py-4">
+  <div class="home-partners__track flex w-max animate-marquee group-hover:[animation-play-state:paused] opacity-60 grayscale items-center py-4">
     {{- range seq 1 2 -}}
     <div class="flex items-center gap-12 md:gap-24 px-6 md:px-12">
       {{- range $marquee.items -}}

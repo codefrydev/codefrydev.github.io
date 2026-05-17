@@ -22,7 +22,7 @@
 {{- end -}}
 
 {{ partial "home/modern-page-start.html" (dict "page" $page "navActive" (.navActive | default "")) }}
-    <section class="pt-8 pb-16 max-w-7xl mx-auto px-4 w-full">
+    <section class="browse-category pt-8 pb-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
       {{- $page.Scratch.Set "breadcrumbLabel" $title -}}
       {{- if $banner.image -}}
         {{ partial "home/category-banner.html" (dict "category" (dict "name" $title "subtitle" $subtitle) "banner" $banner) }}
@@ -32,26 +32,26 @@
           {{- with $subtitle -}}
           <p class="text-xs font-bold tracking-widest text-slate-500 uppercase m-0">{{ . }}</p>
           {{- end -}}
-          {{- if gt (len $items) 0 -}}
-          <p class="text-sm text-slate-500 mt-3 m-0">{{ len $items }} tools</p>
-          {{- end -}}
         </div>
       {{- end -}}
 
-      {{- if $page.Content -}}
-      <div class="prose prose-slate max-w-none mb-10 text-slate-600">
-        {{ $page.Content }}
-      </div>
-      {{- end -}}
-
-      {{- if $showSearch -}}
-      <div class="mb-10 max-w-xl">
-        {{ partial "home/search-trigger.html" (dict "placeholder" $searchPlaceholder) }}
+      {{- if or $showSearch (gt (len $items) 0) -}}
+      <div class="browse-category__header">
+        {{- if gt (len $items) 0 -}}
+        <p class="browse-category__count m-0">{{ len $items }} {{ .countLabel | default "tools" }}</p>
+        {{- else -}}
+        <p class="browse-category__count m-0"></p>
+        {{- end -}}
+        {{- if $showSearch -}}
+        <div class="browse-category__actions">
+          {{ partial "home/search-trigger.html" (dict "placeholder" $searchPlaceholder "size" "md" "class" "browse-index__search-trigger w-full sm:w-auto" "category" $title "categorySlug" $homeCategorySlug) }}
+        </div>
+        {{- end -}}
       </div>
       {{- end -}}
 
       {{- if gt (len $items) 0 -}}
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 browse-category__grid">
         {{- range $items -}}
           {{- $item := . -}}
           {{- range $homeItems -}}
@@ -61,6 +61,12 @@
           {{- end -}}
           {{ partial "home/tool-card.html" (dict "item" $item "defaultPhosphorIcon" $defaultIcon "iconDir" $iconDir "categoryName" $title "source" (printf "hub_%s" ($homeCategorySlug | default "hub"))) }}
         {{- end -}}
+      </div>
+      {{- end -}}
+
+      {{- if $page.Content -}}
+      <div class="prose prose-slate max-w-none mt-10 text-slate-600">
+        {{ $page.Content }}
       </div>
       {{- end -}}
     </section>
