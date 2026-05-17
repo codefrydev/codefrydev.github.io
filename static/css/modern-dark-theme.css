@@ -271,18 +271,72 @@
   background-color: rgb(15 23 42) !important;
 }
 
-[data-theme="dark"] body.home-page .home-hero > .bg-gradient-to-b {
-  background-image: linear-gradient(
-    to bottom,
-    rgb(15 23 42 / 0.97),
-    rgb(15 23 42 / 0.92),
-    rgb(15 23 42 / 0.98)
-  ) !important;
+[data-theme="dark"] body.home-page .home-hero__bg-layer {
+  filter: saturate(1.05) contrast(1.05) brightness(0.85) !important;
 }
 
-[data-theme="dark"] body.home-page .home-hero .mix-blend-multiply {
-  mix-blend-mode: soft-light;
-  opacity: 0.35;
+[data-theme="dark"] body.home-page .home-hero__overlay {
+  background:
+    linear-gradient(
+      180deg,
+      rgb(15 23 42 / 0.45) 0%,
+      rgb(15 23 42 / 0.72) 40%,
+      rgb(15 23 42 / 0.85) 65%,
+      rgb(15 23 42 / 0.55) 100%
+    ),
+    radial-gradient(ellipse 90% 70% at 50% 42%, rgb(15 23 42 / 0.5) 0%, transparent 70%) !important;
+}
+
+[data-theme="dark"] body.home-page .home-hero__badge {
+  background: rgb(30 41 59) !important;
+  border-color: rgb(51 65 85) !important;
+  color: rgb(226 232 240) !important;
+}
+
+[data-theme="dark"] body.home-page .home-hero__title {
+  color: rgb(248 250 252) !important;
+}
+
+[data-theme="dark"] body.home-page .home-hero__desc {
+  color: rgb(203 213 225) !important;
+}
+
+[data-theme="dark"] body.home-page .home-hero__search.search-trigger {
+  background: rgb(30 41 59) !important;
+  border-color: rgb(51 65 85) !important;
+  box-shadow: 0 4px 20px rgb(0 0 0 / 0.25) !important;
+}
+
+[data-theme="dark"] body.home-page .home-hero__search .search-trigger__label {
+  color: rgb(203 213 225) !important;
+}
+
+[data-theme="dark"] body.home-page .home-hero__search .search-trigger__icon {
+  color: rgb(148 163 184) !important;
+}
+
+[data-theme="dark"] body.home-page .home-hero__scroll-hint {
+  color: rgb(148 163 184) !important;
+}
+
+[data-theme="dark"] body.home-page .home-hero__nav-btn {
+  background-color: rgb(30 41 59 / 0.95) !important;
+  border-color: rgb(71 85 105 / 0.9) !important;
+  color: rgb(226 232 240) !important;
+  box-shadow: 0 4px 16px rgb(0 0 0 / 0.35) !important;
+}
+
+[data-theme="dark"] body.home-page .home-hero__nav-btn:hover {
+  background-color: rgb(51 65 85) !important;
+  color: rgb(248 250 252) !important;
+}
+
+[data-theme="dark"] body.home-page .home-hero__dot {
+  background-color: rgb(100 116 139) !important;
+}
+
+[data-theme="dark"] body.home-page .home-hero__dot--active {
+  background-color: rgb(226 232 240) !important;
 }
 
 /* —— Marquee fades —— */

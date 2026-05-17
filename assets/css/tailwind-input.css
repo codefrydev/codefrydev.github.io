@@ -70,6 +70,59 @@
 }
 
 @layer components {
+  .home-hero__bg {
+    @apply absolute inset-0 z-0 pointer-events-none;
+  }
+
+  .home-hero__bg-layer {
+    @apply absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ease-in-out;
+  }
+
+  .home-hero__overlay {
+    @apply absolute inset-0 z-[1] pointer-events-none;
+    background: linear-gradient(
+      to bottom,
+      rgba(224, 235, 245, 0.45),
+      rgba(237, 242, 248, 0.62),
+      rgba(255, 255, 255, 0.78)
+    );
+  }
+
+  .home-hero__indicators {
+    @apply absolute bottom-8 left-1/2 z-10 flex -translate-x-1/2 items-center gap-2;
+  }
+
+  .home-hero__nav-btn--side {
+    @apply absolute top-1/2 z-10 -translate-y-1/2;
+  }
+
+  .home-hero__nav-btn--prev {
+    @apply left-3 sm:left-5 md:left-8;
+  }
+
+  .home-hero__nav-btn--next {
+    @apply right-3 sm:right-5 md:right-8;
+  }
+
+  .home-hero__dot {
+    @apply h-2 w-2 rounded-full bg-slate-300 transition-all duration-300 hover:bg-slate-400;
+  }
+
+  .home-hero__dot--active {
+    @apply w-6 bg-slate-800 hover:bg-slate-800;
+  }
+
+  .home-hero__nav-btn {
+    @apply flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-slate-200/90 bg-white/90 text-slate-600 shadow-sm transition-colors;
+    @apply hover:border-slate-300 hover:bg-white hover:text-slate-900 focus:outline-none focus:ring-2 focus:ring-brand/20;
+  }
+
+  .home-hero__nav-btn i {
+    @apply text-base leading-none;
+  }
+}
+
+@layer components {
   /* Theme toggle (modern nav) */
   .theme-toggle-nav__icon {
     @apply text-lg leading-none;
