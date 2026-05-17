@@ -74,8 +74,6 @@ module.exports = {
     'group-hover/cat:text-brand',
     'group-hover/cat:bg-brand/10',
     'line-clamp-1',
-    'bg-brand/[0.06]',
-    'group-hover/logo:bg-brand/10',
     'search-palette-open',
     'search-palette-page',
     'search-palette--embedded',
