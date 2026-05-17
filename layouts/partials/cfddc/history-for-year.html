@@ -1,0 +1,56 @@
+{{- /* Populates page Scratch with CFDDC history data.
+     Hub:  partial "cfddc/history-for-year.html" (dict "page" .)
+     Year: partial "cfddc/history-for-year.html" (dict "page" . "year" "2026")
+     Reads: cfddcYearCards, cfddcLatestYear, cfddcAllYears (hub)
+            cfddcItems, cfddcYear, cfddcShortYear, cfddcCount (year)
+*/ -}}
+{{- $page := .page -}}
+{{- $yearFilter := .year | default "" -}}
+{{- $all := hugo.Data.history.history | default slice -}}
+
+{{- $years := slice -}}
+{{- $seen := dict -}}
+{{- range $all -}}
+  {{- $match := findRE `\d{4}` .date -}}
+  {{- if $match -}}
+    {{- $y := index $match 0 -}}
+    {{- if not (isset $seen $y) -}}
+      {{- $seen = merge $seen (dict $y true) -}}
+      {{- $years = $years | append $y -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- $years = sort $years "value" "desc" -}}
+
+{{- if $yearFilter -}}
+  {{- $items := slice -}}
+  {{- range $all -}}
+    {{- if in .date $yearFilter -}}
+      {{- $items = $items | append . -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $page.Scratch.Set "cfddcItems" $items -}}
+  {{- $page.Scratch.Set "cfddcYear" $yearFilter -}}
+  {{- $page.Scratch.Set "cfddcShortYear" (substr $yearFilter 2 2) -}}
+  {{- $page.Scratch.Set "cfddcCount" (len $items) -}}
+  {{- $page.Scratch.Set "cfddcAllYears" $years -}}
+{{- else -}}
+  {{- $yearCards := slice -}}
+  {{- range $years -}}
+    {{- $y := . -}}
+    {{- $items := slice -}}
+    {{- range $all -}}
+      {{- if in .date $y -}}
+        {{- $items = $items | append . -}}
+      {{- end -}}
+    {{- end -}}
+    {{- $yearCards = $yearCards | append (dict "year" $y "shortYear" (substr $y 2 2) "count" (len $items)) -}}
+  {{- end -}}
+  {{- $latest := "" -}}
+  {{- if gt (len $years) 0 -}}
+    {{- $latest = index $years 0 -}}
+  {{- end -}}
+  {{- $page.Scratch.Set "cfddcYearCards" $yearCards -}}
+  {{- $page.Scratch.Set "cfddcLatestYear" $latest -}}
+  {{- $page.Scratch.Set "cfddcAllYears" $years -}}
+{{- end -}}

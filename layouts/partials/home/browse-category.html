@@ -1,0 +1,38 @@
+{{- $page := .page -}}
+{{- $slug := $page.Params.category_slug -}}
+{{- with $page.File -}}
+  {{- if not $slug -}}{{- $slug = .ContentBaseName -}}{{- end -}}
+{{- end -}}
+{{- $cat := false -}}
+{{- range hugo.Data.home.categories -}}
+  {{- if eq (.slug | default (.name | anchorize)) $slug -}}
+    {{- $cat = . -}}
+  {{- end -}}
+{{- end -}}
+{{- if not $cat -}}
+  <section class="max-w-7xl mx-auto px-4 py-16">
+    <p class="text-slate-600">Category not found. <a href="/browse/" class="text-brand font-medium">Browse all categories</a></p>
+  </section>
+{{- else -}}
+{{- $banner := index hugo.Data.homepage.categoryBanners $slug | default dict -}}
+{{- $defaultIcon := $cat.phosphorIcon | default "app-window" -}}
+{{- $items := where $cat.items "hidden" "!=" true -}}
+{{- $page.Scratch.Set "breadcrumbItems" (slice (dict "name" "Home" "url" "/") (dict "name" "Browse" "url" "/browse/") (dict "name" $cat.name "current" true)) -}}
+
+<section class="browse-category pt-8 pb-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+  {{ partial "home/category-banner.html" (dict "category" $cat "banner" $banner) }}
+
+  <div class="browse-category__header">
+    <p class="browse-category__count m-0">{{ len $items }} tools in this category</p>
+    <div class="browse-category__actions">
+      {{ partial "home/search-trigger.html" (dict "placeholder" (printf "Search in %s…" $cat.name) "size" "md" "class" "browse-index__search-trigger w-full sm:w-auto" "category" $cat.name "categorySlug" $slug) }}
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 browse-category__grid">
+    {{- range $items -}}
+      {{ partial "home/tool-card.html" (dict "item" . "defaultPhosphorIcon" $defaultIcon "categoryName" $cat.name "source" (printf "browse_%s" $slug)) }}
+    {{- end -}}
+  </div>
+</section>
+{{- end -}}

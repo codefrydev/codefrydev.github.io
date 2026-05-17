@@ -1,0 +1,25 @@
+{{- $page := .page -}}
+{{- $includeSearch := .includeSearch | default false -}}
+
+    {{- if not $page.IsHome -}}
+    {{- $bc := dict "page" $page -}}
+    {{- with $page.Scratch.Get "breadcrumbItems" -}}
+      {{- $bc = merge $bc (dict "items" .) -}}
+    {{- end -}}
+    {{- with $page.Scratch.Get "breadcrumbLabel" -}}
+      {{- $bc = merge $bc (dict "label" .) -}}
+    {{- end -}}
+    <div class="max-w-7xl mx-auto px-4 w-full py-8 border-t border-gray-200">
+      {{ partial "home/breadcrumbs.html" $bc }}
+    </div>
+    {{- end -}}
+    {{ partial "home/footer.html" $page }}
+  </main>
+  {{ partial "cookie-consent.html" $page }}
+  {{- if not ($page.Scratch.Get "searchPaletteLoaded") -}}
+  {{ partial "home/search-palette.html" $page }}
+  {{- end -}}
+  <script src="/js/home-nav.js" defer></script>
+  <script src="/js/theme.js" defer></script>
+</body>
+</html>

@@ -8,7 +8,9 @@ keywords: ["CodeFryDev press", "media kit", "press kit", "logo", "contact"]
 
 ## Boilerplate
 
-**CodeFryDev** is a free platform of online tools, games, and AI apps—no signup required. We offer web-based utilities, design resources, and productivity apps for developers, designers, and digital enthusiasts. Our mission is to make high-quality digital tools accessible to everyone. CodeFryDev has been building and shipping free tools since 2023, with a growing collection of games, AI utilities, and design lab resources.
+**CodeFryDev** — *This is a platform where we learn, work on experimental projects, play games, come up with innovative ideas, and build many more...*
+
+We offer free online tools, games, and AI apps—no signup required. CodeFryDev has been building and shipping in the browser since 2023, with a growing collection of utilities, games, AI helpers, and design lab resources.
 
 ## Logo & assets
 

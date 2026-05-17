@@ -2,16 +2,11 @@
 title: "About us"
 date: 2023-01-01T00:00:00Z
 draft: false
-aliases: ["/about"]
-description: "About CodeFryDev—free online tools, games, and AI apps platform. Our mission, team, and resources for developers and designers. No signup required."
-keywords: ["CodeFryDev", "about us", "free online tools platform", "tools and games"]
+aliases: ["/about", "/about/"]
+description: "About CodeFryDev—our mission, team, and free online tools, games, and AI apps. Meet the developers and designers behind the platform."
+keywords: ["CodeFryDev", "about us", "team", "developers", "designers", "free online tools platform"]
 ---
 
-## About us
+CodeFryDev offers free online tools, games, and AI apps—no signup required. We build productivity apps, AI-powered utilities, engaging games, and creative design resources for developers, designers, and anyone curious to experiment in the browser.
 
-CodeFryDev offers free online tools, games, and AI apps—no signup required. We provide diverse tools, applications, and resources for developers, designers, and digital enthusiasts: productivity apps, AI-powered tools, engaging games, and creative design resources.
-
-Our mission is to make high-quality digital tools and resources accessible to everyone, regardless of their technical skill level. We believe in empowering users with innovative solutions that enhance productivity, creativity, and digital experiences.
-
-Since 2023 we have been building and shipping a growing collection: from utility applications and educational tutorials to entertainment games and design assets. We are committed to continuously expanding our offerings and improving the user experience across all our platforms. For press and media information, see our [Press & Media](/press) page.
-
+Since 2023 we have been shipping a growing collection—from utility apps and learning tools to games and design assets. We are committed to expanding what you can do in a single tab, with no install and no account for most tools.

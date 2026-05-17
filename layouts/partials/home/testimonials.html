@@ -1,0 +1,39 @@
+{{- $testimonials := hugo.Data.homepage.testimonials -}}
+{{- if $testimonials -}}
+<section id="testimonials" data-section-label="Testimonials" class="home-testimonials flex flex-col justify-center bg-gray-50/50 relative pt-28 pb-16" aria-labelledby="testimonials-heading">
+  <div class="max-w-6xl mx-auto px-4 w-full">
+    <div class="text-center mb-12">
+      <span class="home-testimonials__eyebrow inline-block px-4 py-1.5 mb-6 text-sm font-medium text-slate-700 bg-white rounded-full border border-gray-200 shadow-sm">Testimonials</span>
+      <h2 id="testimonials-heading" class="text-4xl md:text-[44px] font-bold text-[#0B162C] tracking-tight m-0">What our users say</h2>
+    </div>
+
+    <div class="home-testimonials__scroller relative h-[600px] max-h-[60vh] overflow-hidden group">
+      <div class="home-testimonials__fade home-testimonials__fade--top absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-gray-50/50 to-transparent z-10 pointer-events-none" aria-hidden="true"></div>
+      <div class="home-testimonials__fade home-testimonials__fade--bottom absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-gray-50/50 to-transparent z-10 pointer-events-none" aria-hidden="true"></div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 h-full">
+        {{- $animations := slice "scroll-up" "scroll-down" "scroll-up" -}}
+        {{- $colClasses := slice "" "hidden md:block" "hidden lg:block" -}}
+        {{- range $colIndex := seq 0 2 -}}
+        {{- $colItems := slice -}}
+        {{- range $i, $t := $testimonials -}}
+          {{- if eq (mod $i 3) $colIndex -}}
+            {{- $colItems = $colItems | append $t -}}
+          {{- end -}}
+        {{- end -}}
+        <div class="h-full overflow-hidden {{ index $colClasses $colIndex }}">
+          <div class="flex flex-col gap-6 animate-{{ index $animations $colIndex }} group-hover:[animation-play-state:paused]">
+            {{- range $colItems -}}
+              {{ partial "home/testimonial-card.html" . }}
+            {{- end -}}
+            {{- range $colItems -}}
+              {{ partial "home/testimonial-card.html" . }}
+            {{- end -}}
+          </div>
+        </div>
+        {{- end -}}
+      </div>
+    </div>
+  </div>
+</section>
+{{- end -}}

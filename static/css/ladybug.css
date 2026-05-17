@@ -455,11 +455,13 @@ body.ladybug-no-cursor * {
 /* ============================================================
    Home tool tiles: perch + silly wobble (neumorphic buttons)
    ============================================================ */
+main.home-sections a[data-cfd-tool].ladybug-sat-tile,
 main#main-content .button-grid a.neumorphic-button.ladybug-sat-tile {
     transform: scale(0.98);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+main.home-sections a[data-cfd-tool].ladybug-tile-boogie,
 main#main-content .button-grid a.neumorphic-button.ladybug-tile-boogie {
     animation: ladybug-tile-boogie 0.3s ease-in-out infinite;
 }

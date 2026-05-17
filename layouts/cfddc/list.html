@@ -1,0 +1,8 @@
+{{ partial "home/modern-page-start.html" (dict "page" . "navActive" "" "mainClass" "min-h-screen" "headExtra" `<link rel="stylesheet" href="/css/cfddc.css"><script src="/js/cfddc.js" defer></script>`) }}
+{{- if eq .RelPermalink "/cfddc/" -}}
+  {{- .Scratch.Set "breadcrumbLabel" "CFDDC" -}}
+  {{ partial "cfddc/hub.html" . }}
+{{- else -}}
+  {{ partial "cfddc/year.html" . }}
+{{- end -}}
+{{ partial "home/modern-page-end.html" (dict "page" .) }}

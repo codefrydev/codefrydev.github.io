@@ -1,0 +1,167 @@
+{{- $hp := hugo.Data.homepage -}}
+{{- $mega := $hp.nav.megaMenu -}}
+{{- $navActive := .Scratch.Get "navActive" -}}
+{{- $linkIdle := "inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-white/80 transition-all duration-200 no-underline" -}}
+{{- $linkActive := "inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full text-sm font-semibold text-brand bg-white shadow-sm ring-1 ring-gray-200/80 transition-all duration-200 no-underline" -}}
+
+<header class="nav-shell sticky top-0 z-50 shrink-0 snap-none relative border-b border-gray-200/60 bg-white/80 backdrop-blur-xl shadow-[0_1px_2px_rgba(15,23,42,0.04)]">
+  <div class="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8">
+    <nav class="flex items-center justify-between gap-4 h-[73px]" aria-label="Main navigation">
+      <div class="flex items-center gap-2 shrink-0 z-20">
+        <a href="/" id="ladybug-logo-anchor" class="flex items-center gap-2.5 group/logo no-underline" aria-label="CodeFryDev home">
+          <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-brand/[0.06] ring-1 ring-gray-200/80 transition group-hover/logo:bg-brand/10">
+            <img src="/images/IconCodefrydev.svg" alt="" width="28" height="28" class="h-7 w-7 shrink-0" fetchpriority="high">
+          </span>
+          <span class="hidden sm:inline font-bold text-lg tracking-tight text-brand">CODEFRYDEV</span>
+        </a>
+        {{- if .IsHome -}}
+        <button type="button" id="ladybug-reveal-beta" class="site-beta-tag" aria-label="Show the interactive ladybug easter egg" title="Click to meet the ladybug">Beta</button>
+        {{- else -}}
+        <span class="site-beta-tag site-beta-tag--static" aria-label="Site status: beta">Beta</span>
+        {{- end -}}
+      </div>
+
+      <ul class="hidden lg:flex items-center gap-0.5 absolute left-1/2 -translate-x-1/2 rounded-full bg-slate-100/90 p-1 ring-1 ring-slate-200/60 list-none m-0">
+        <li>
+          <a href="/" class="{{ if .IsHome }}{{ $linkActive }}{{ else }}{{ $linkIdle }}{{ end }}">Home</a>
+        </li>
+
+        {{- if $mega -}}
+        <li class="nav-item-browse group/browse relative flex items-center">
+          <a href="/browse/" class="{{ if eq $navActive "browse" }}{{ $linkActive }}{{ else }}{{ $linkIdle }}{{ end }}" aria-haspopup="true" aria-expanded="false" aria-controls="nav-browse-mega">
+            {{ $mega.label | default "Browse" }}
+            <i class="ph-bold ph-caret-down text-[10px] opacity-60 group-hover/browse:rotate-180 transition-transform duration-200" aria-hidden="true"></i>
+          </a>
+        </li>
+        {{- end -}}
+
+        <li><a href="/games" class="{{ if eq $navActive "games" }}{{ $linkActive }}{{ else }}{{ $linkIdle }}{{ end }}">Games</a></li>
+        <li><a href="/ai" class="{{ if eq $navActive "ai" }}{{ $linkActive }}{{ else }}{{ $linkIdle }}{{ end }}">AI</a></li>
+        <li><a href="/designlab" class="{{ if eq $navActive "designlab" }}{{ $linkActive }}{{ else }}{{ $linkIdle }}{{ end }}">Design</a></li>
+
+        <li>
+          <a href="/about-us/" class="{{ if or (eq $navActive "about") (eq $navActive "team") }}{{ $linkActive }}{{ else }}{{ $linkIdle }}{{ end }}">About us</a>
+        </li>
+
+        <li>
+          <a href="{{ if .IsHome }}#faq{{ else }}/#faq{{ end }}" class="{{ $linkIdle }} home-hash-link">FAQ</a>
+        </li>
+      </ul>
+
+      <div class="flex items-center gap-2 sm:gap-3 shrink-0 z-20">
+        <button type="button" class="hidden md:inline-flex h-10 w-10 items-center justify-center rounded-full text-slate-500 hover:text-brand hover:bg-slate-100 transition-colors border-0 cursor-pointer bg-transparent" data-search-open aria-label="Open search">
+          <i class="ph-bold ph-magnifying-glass text-lg" aria-hidden="true"></i>
+        </button>
+        <button type="button" id="theme-toggle" class="theme-toggle-nav hidden md:inline-flex h-10 w-10 items-center justify-center rounded-full text-slate-500 hover:text-brand hover:bg-slate-100 transition-colors border-0 cursor-pointer bg-transparent" aria-label="Switch to dark theme" title="Switch to dark theme">
+          <i class="ph-bold ph-moon theme-toggle-nav__icon theme-toggle-nav__icon--dark" aria-hidden="true"></i>
+          <i class="ph-bold ph-sun theme-toggle-nav__icon theme-toggle-nav__icon--light" aria-hidden="true"></i>
+        </button>
+        <button type="button" id="mobile-menu-btn" class="lg:hidden inline-flex h-10 w-10 items-center justify-center rounded-full text-slate-600 hover:bg-slate-100 transition-colors relative" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span class="absolute w-5 h-0.5 bg-current rounded-full transition-all duration-300 -translate-y-1.5"></span>
+          <span class="absolute w-5 h-0.5 bg-current rounded-full transition-opacity duration-300"></span>
+          <span class="absolute w-5 h-0.5 bg-current rounded-full transition-all duration-300 translate-y-1.5"></span>
+        </button>
+      </div>
+    </nav>
+
+    {{- if $mega -}}
+    <div id="nav-browse-mega" class="nav-mega nav-dropdown nav-dropdown--mega fixed inset-x-0 top-[57px] z-50 pt-4 px-4 sm:px-6 lg:px-8" role="region" aria-label="{{ $mega.label | default "Browse" }} menu">
+      <div class="nav-mega__panel mx-auto w-full max-w-3xl rounded-2xl border border-gray-200/90 bg-white shadow-xl shadow-slate-300/25 overflow-hidden">
+        <div class="nav-mega__grid">
+          <div class="nav-mega__col">
+            <p class="nav-mega__label">{{ $mega.primaryTitle | default "Browse categories" }}</p>
+            <ul class="nav-mega__list" role="list">
+              {{- range hugo.Data.home.categories -}}
+              {{- $catSlug := .slug | default (.name | anchorize) -}}
+              {{- $icon := .phosphorIcon | default "squares-four" -}}
+              <li role="listitem">
+                <a href="{{ if $.IsHome }}#{{ $catSlug }}{{ else }}{{ .seeAllUrl | default (printf "/browse/%s/" $catSlug) }}{{ end }}" class="nav-mega__cat-link group/cat{{ if $.IsHome }} home-hash-link{{ end }}">
+                  <span class="nav-mega__cat-icon" aria-hidden="true">
+                    <i class="ph-duotone ph-{{ $icon }}"></i>
+                  </span>
+                  <span class="nav-mega__cat-text">
+                    <span class="nav-mega__cat-name">{{ .name }}</span>
+                    {{- with .subtitle -}}<span class="nav-mega__cat-sub">{{ . }}</span>{{- end -}}
+                  </span>
+                  <i class="ph-bold ph-caret-right nav-mega__cat-arrow" aria-hidden="true"></i>
+                </a>
+              </li>
+              {{- end -}}
+            </ul>
+          </div>
+          <div class="nav-mega__col nav-mega__col--hubs">
+            <p class="nav-mega__label">{{ $mega.secondaryTitle | default "Hubs" }}</p>
+            <ul class="nav-mega__list nav-mega__list--hubs" role="list">
+              {{- range $mega.hubs | default (slice
+                (dict "label" "Games" "url" "/games" "icon" "game-controller")
+                (dict "label" "AI Tools" "url" "/ai" "icon" "robot")
+                (dict "label" "Design Lab" "url" "/designlab" "icon" "palette")
+                (dict "label" "Store" "url" "/store" "icon" "shopping-bag")
+                (dict "label" "Search all tools" "url" "/search" "icon" "magnifying-glass")
+              ) -}}
+              <li role="listitem">
+                <a href="{{ .url }}" class="nav-mega__hub-link">
+                  <i class="ph-duotone ph-{{ .icon | default "arrow-right" }}" aria-hidden="true"></i>
+                  <span>{{ .label }}</span>
+                </a>
+              </li>
+              {{- end -}}
+            </ul>
+            <a href="/browse/" class="nav-mega__view-all">View all categories <i class="ph-bold ph-arrow-right text-xs" aria-hidden="true"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    {{- end -}}
+  </div>
+</header>
+
+<div id="mobile-menu" class="fixed inset-0 top-[73px] z-40 lg:hidden bg-white/95 backdrop-blur-xl translate-x-full opacity-0 pointer-events-none transition-all duration-300 ease-out overflow-y-auto" aria-hidden="true">
+  <div class="max-w-lg mx-auto px-5 py-6 pb-10">
+    <div class="flex gap-2 mb-6">
+      <button type="button" class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-slate-100 text-sm font-medium text-slate-700 hover:bg-slate-200/80 border-0 cursor-pointer" data-search-open>
+        <i class="ph-bold ph-magnifying-glass" aria-hidden="true"></i> Search
+      </button>
+      <button type="button" data-theme-toggle class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-slate-100 text-sm font-medium text-slate-700 hover:bg-slate-200/80 border-0 cursor-pointer" aria-label="Switch theme">
+        <i class="ph-bold ph-moon theme-toggle-nav__icon theme-toggle-nav__icon--dark" aria-hidden="true"></i>
+        <i class="ph-bold ph-sun theme-toggle-nav__icon theme-toggle-nav__icon--light" aria-hidden="true"></i>
+        Theme
+      </button>
+    </div>
+
+    <ul class="flex flex-col gap-0.5 list-none m-0 p-0">
+      <li><a href="/" class="block px-4 py-3 rounded-xl text-base font-medium text-slate-900 hover:bg-slate-50 no-underline">Home</a></li>
+    </ul>
+
+    {{- if $mega -}}
+    <p class="text-[11px] font-bold tracking-widest text-slate-400 uppercase mt-6 mb-2 px-4 m-0">{{ $mega.primaryTitle | default "Categories" }}</p>
+    <ul class="flex flex-col gap-0.5 list-none m-0 p-0 mb-4">
+      {{- range hugo.Data.home.categories -}}
+      {{- $catSlug := .slug | default (.name | anchorize) -}}
+      <li>
+        <a href="{{ if $.IsHome }}#{{ $catSlug }}{{ else }}{{ .seeAllUrl | default (printf "/browse/%s/" $catSlug) }}{{ end }}" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-800 hover:bg-slate-50 no-underline{{ if $.IsHome }} home-hash-link{{ end }}">
+          <i class="ph-duotone ph-{{ .phosphorIcon | default "squares-four" }} text-xl text-slate-500 shrink-0" aria-hidden="true"></i>
+          <span class="font-medium">{{ .name }}</span>
+        </a>
+      </li>
+      {{- end -}}
+    </ul>
+
+    <p class="text-[11px] font-bold tracking-widest text-slate-400 uppercase mb-2 px-4 m-0">{{ $mega.secondaryTitle | default "Hubs" }}</p>
+    <ul class="flex flex-col gap-0.5 list-none m-0 p-0 mb-4">
+      {{- range $mega.hubs | default (slice) -}}
+      <li><a href="{{ .url }}" class="block px-4 py-3 rounded-xl font-medium text-slate-800 hover:bg-slate-50 no-underline">{{ .label }}</a></li>
+      {{- end -}}
+    </ul>
+    {{- end -}}
+
+    <p class="text-[11px] font-bold tracking-widest text-slate-400 uppercase mb-2 px-4 m-0">More</p>
+    <ul class="flex flex-col gap-0.5 list-none m-0 p-0">
+      <li><a href="/games" class="block px-4 py-3 rounded-xl font-medium text-slate-800 hover:bg-slate-50 no-underline">Games</a></li>
+      <li><a href="/ai" class="block px-4 py-3 rounded-xl font-medium text-slate-800 hover:bg-slate-50 no-underline">AI Tools</a></li>
+      <li><a href="/designlab" class="block px-4 py-3 rounded-xl font-medium text-slate-800 hover:bg-slate-50 no-underline">Design Lab</a></li>
+      <li><a href="/about-us/" class="block px-4 py-3 rounded-xl font-medium text-slate-800 hover:bg-slate-50 no-underline">About us</a></li>
+      <li><a href="{{ if .IsHome }}#faq{{ else }}/#faq{{ end }}" class="block px-4 py-3 rounded-xl font-medium text-slate-800 hover:bg-slate-50 no-underline home-hash-link">FAQ</a></li>
+    </ul>
+  </div>
+</div>

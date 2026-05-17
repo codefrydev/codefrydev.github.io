@@ -1,0 +1,142 @@
+quote: "This is a platform where we learn, work on experimental projects, play games, come up with innovative ideas, and build many more..."
+
+nav:
+  megaMenu:
+    label: "Browse"
+    primaryTitle: "Browse categories"
+    secondaryTitle: "Hubs"
+    hubs:
+      - label: "Games"
+        url: "/games"
+        icon: "game-controller"
+      - label: "AI Tools"
+        url: "/ai"
+        icon: "robot"
+      - label: "Design Lab"
+        url: "/designlab"
+        icon: "palette"
+      - label: "Store"
+        url: "/store"
+        icon: "shopping-bag"
+      - label: "Search all tools"
+        url: "/search"
+        icon: "magnifying-glass"
+
+why:
+  title: "Why Choose CodeFryDev?"
+  intro: "This is a platform where we learn, work on experimental projects, play games, come up with innovative ideas, and build many more..."
+  bullets:
+    - "100% free — most tools need no signup"
+    - "Runs in your browser — no install required"
+    - "Regular updates with new tools and games"
+    - "Privacy-focused — your work stays on your device"
+  highlights:
+    - title: "Creative & Assets"
+      icon: "🎨"
+      text: "Digital art tools, wallpapers, 3D models, DSA learning resources, and more for designers and developers."
+    - title: "Tools & Utilities"
+      icon: "🛠️"
+      text: "JSON formatters, SEO tools, meta tag generators, text editors, and everyday productivity utilities."
+    - title: "Games & Fun"
+      icon: "🎮"
+      text: "Wordle, Snake, Chain Reaction, and arcade classics—play instantly in your browser."
+    - title: "AI & Design Lab"
+      icon: "🤖"
+      text: "AI-powered apps plus design utilities, visualizers, and creative workflows in one place."
+
+hubBanners:
+  games:
+    image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=1600&q=80"
+    title: "Games & Fun"
+    description: "Puzzles, classics, and arcade games—play instantly in your browser."
+  ai:
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1600&q=80"
+    title: "AI Tools"
+    description: "Meme generators, summarizers, chat, and more—no signup required."
+  designlab:
+    image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=1600&q=80"
+    title: "Design Lab"
+    description: "Creative design tools, visualizers, and resources for makers."
+  store:
+    image: "https://images.unsplash.com/photo-1556745753-2903312f440c?auto=format&fit=crop&w=1600&q=80"
+    title: "CodeFryDev Store"
+    description: "Mobile apps and downloads on Google Play."
+
+categoryBanners:
+  creative-assets:
+    image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=1600&q=80"
+    title: "Explore Creative & Assets"
+    description: "Art tools, wallpapers, 3D models, and learning resources for makers."
+  tools-utilities:
+    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1600&q=80"
+    title: "Tools & Utilities Collection"
+    description: "Productivity apps, formatters, SEO tools, and dev utilities in your browser."
+  games-fun:
+    image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=1600&q=80"
+    title: "Games & Fun"
+    description: "Wordle, Snake, Chain Reaction, and more—play instantly in your browser."
+  site-links:
+    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80"
+    title: "Site & Resources"
+    description: "About, updates, store, privacy, and external links."
+
+hero:
+  badge: "Free tools — no signup"
+  searchPlaceholder: "Search tools, games, AI apps..."
+  autoplayMs: 6000
+  slides:
+    - image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=2850&q=80"
+      title: "Tools, games & AI in your browser"
+      description: "This is a platform where we learn, work on experimental projects, play games, come up with innovative ideas, and build many more..."
+    - image: "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=2850&q=80"
+      title: "Build faster with CodeFryDev"
+      description: "From JSON playgrounds to design lab resources—everything runs in your browser."
+    - image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=2852&q=80"
+      title: "No install. Just open and use."
+      description: "Explore creative assets, productivity tools, games, and AI helpers in one place."
+
+cta:
+  coffee:
+    title: "Buy us a Coffee"
+    description: "If our tools have helped you, consider supporting ongoing development of free utilities for everyone."
+    buttonText: "Support us today"
+    buttonUrl: "/tncprivacy"
+    secondaryText: "Learn about our mission"
+    secondaryUrl: "/about-us"
+
+marquee:
+  enabled: true
+  label: "Built for makers worldwide"
+  items:
+    - name: "No Signup"
+    - name: "Browser Tools"
+    - name: "Free Games"
+    - name: "AI Apps"
+    - name: "Design Lab"
+    - name: "Open Access"
+
+testimonials:
+  - quote: "CodeFryDev is my go-to when I need a quick JSON formatter or a game break—everything just works in the tab."
+    author: "Priya S."
+    handle: "@priya_codes"
+    avatar: "https://i.pravatar.cc/150?img=47"
+  - quote: "The design lab and SVG tools saved me hours on a side project. All free, no account needed."
+    author: "Marcus T."
+    handle: "@marcusbuilds"
+    avatar: "https://i.pravatar.cc/150?img=12"
+  - quote: "I send students here for DSA animations and puzzles. Clean, fast, and always available."
+    author: "Dr. Anika R."
+    handle: "@anika_teaches"
+    avatar: "https://i.pravatar.cc/150?img=33"
+  - quote: "Our team uses the SEO and meta tag tools weekly. Simple UI, no clutter."
+    author: "Jordan P."
+    handle: "@jpatelsdesign"
+    avatar: "https://i.pravatar.cc/150?img=53"
+  - quote: "Wordle, Snake, Chain Reaction—great collection of browser games when you need a five-minute reset."
+    author: "Sam D."
+    handle: "@dawsontechtips"
+    avatar: "https://i.pravatar.cc/150?img=5"
+  - quote: "The AI tools page keeps growing. Summarizers and generators without signing up for yet another SaaS."
+    author: "Riley K."
+    handle: "@rileysmith1"
+    avatar: "https://i.pravatar.cc/150?img=44"

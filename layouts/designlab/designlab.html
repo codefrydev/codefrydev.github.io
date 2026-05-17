@@ -1,52 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  {{ partial "header.html" . }}
-
-  {{ with resources.Get "css/home.css" }}
-    {{ $minifiedCSS := . | resources.Minify }}
-    <link rel="stylesheet" href="{{ $minifiedCSS.RelPermalink }}">
-  {{ else }}
-    {{ warnf "The CSS file 'css/home.css' was not found." }}
-  {{ end }}
-  <link rel="stylesheet" href="/css/internal.css">
-</head>
-<body>
-  {{ partial "skip-link.html" . }}
-
-  {{ partial "page-header.html" . }}
-
-  <main id="main-content">
-    {{ partial "search.html" (dict "containerClass" "search-container" "placeholder" "Search for design tools, visualizations, and creative resources..." "autofocus" false "Site" .Site "Scratch" .Scratch) }}
-    {{- if .Content }}
-    <section class="home-intro" aria-label="Introduction">
-      <div class="home-intro-content">
-        {{ .Content }}
-      </div>
-    </section>
-    {{- end }}
-    <section class="category-section" aria-labelledby="hub-heading-design-lab">
-      <h2 id="hub-heading-design-lab" class="category-title">Design Lab</h2>
-      <ul class="button-grid">
-        {{ range hugo.Data.designlab.data }}
-          <li>
-          {{- $isExternal := or (hasPrefix .url "http://") (hasPrefix .url "https://") -}}
-          <a href="{{ .url }}"
-             class="neumorphic-button hapticButton"
-             aria-label="{{ .name }} - Design tool"
-             {{ if $isExternal }}target="_blank" rel="noopener noreferrer"{{ end }}>
-            <img src="/images/designlab/{{ .icon }}.svg" srcset="/images/designlab/{{ .icon }}.svg" alt="{{ .name }} design tool icon" class="button-icon" loading="lazy">
-            <span>{{ .name }}</span>
-          </a>
-          </li>
-        {{ end }}
-      </ul>
-    </section>
-  </main>
-  
-  {{ partial "footer.html" . }}
-  <script src="/js/search.js"></script>
-  <script src="/js/feedback.js" ></script>
-  <script src="/js/theme.js"></script>
-</body>
-</html>
+{{ partial "home/hub-page.html" (dict
+  "page" .
+  "title" "Design Lab"
+  "subtitle" "Creative design tools & visualizers"
+  "items" hugo.Data.designlab.data
+  "iconDir" "designlab"
+  "defaultPhosphorIcon" "palette"
+  "searchID" "designlab"
+  "searchPlaceholder" "Search design tools and creative resources..."
+  "navActive" "designlab"
+  "banner" (index hugo.Data.homepage.hubBanners "designlab" | default dict)
+) }}

@@ -1,0 +1,24 @@
+{{- $page := . -}}
+{{ partial "home/modern-page-start.html" (dict "page" $page "navActive" "" "headExtra" `<link rel="stylesheet" href="/css/history.css">`) }}
+    <section class="pt-8 pb-16 max-w-6xl mx-auto px-4 w-full page-history">
+      <header class="mb-10">
+        <h1 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4 m-0">{{ $page.Title }}</h1>
+        {{- if $page.Content -}}
+        <div class="prose prose-slate max-w-none text-slate-600 m-0">
+          {{ $page.Content }}
+        </div>
+        {{- end -}}
+      </header>
+      <ul class="history-timeline" role="list">
+        {{- range hugo.Data.history.history -}}
+        <li style="--accent-color: {{ .accent_color | default "#6366f1" }}" role="listitem">
+          <a href="{{ .link }}" class="history-item-link group" aria-label="History item: {{ .title }}">
+            <div class="date">{{ .date }}</div>
+            <div class="title">{{ .title }}</div>
+            <div class="descr">{{ .description }}</div>
+          </a>
+        </li>
+        {{- end -}}
+      </ul>
+    </section>
+{{ partial "home/modern-page-end.html" (dict "page" $page) }}

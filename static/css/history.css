@@ -1,21 +1,61 @@
-/* History timeline – scoped so body/main layout from internal.css and home.css is preserved */
+/* History timeline — self-contained for modern pages (no theme.css variables) */
 
-/* Mobile: prevent timeline line and circles from being clipped by main */
+.page-history {
+  --history-card-bg: #ffffff;
+  --history-line: #e2e8f0;
+  --history-shadow: rgba(15, 23, 42, 0.06);
+  --history-text-on-accent: #ffffff;
+}
+
+[data-theme="dark"] .page-history {
+  --history-card-bg: #1e293b;
+  --history-line: #475569;
+  --history-shadow: rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="dark"] .page-history .history-timeline li .title {
+  color: #f1f5f9;
+  border-color: #334155;
+  background: var(--history-card-bg);
+}
+
+[data-theme="dark"] .page-history .history-timeline li .descr {
+  color: #94a3b8;
+  border-color: #334155;
+  background: var(--history-card-bg);
+}
+
+[data-theme="dark"] .page-history .history-timeline li .title,
+[data-theme="dark"] .page-history .history-timeline li .descr {
+  border-inline-color: #334155;
+}
+
+[data-theme="dark"] .page-history .history-timeline li .date::after {
+  background: #1e293b;
+  box-shadow: 0 0 0 4px #1e293b;
+}
+
+[data-theme="dark"] .page-history .history-item-link:hover .title,
+[data-theme="dark"] .page-history .history-item-link:focus-visible .title {
+  color: var(--accent-color);
+}
+
 @media (max-width: 767px) {
   #main-content.page-history {
-    padding-inline: 1.5rem;
     overflow-x: visible;
   }
-  .history-timeline {
+
+  .page-history .history-timeline {
     --col-gap: 1.25rem;
     min-width: 0;
   }
-  .history-timeline li {
+
+  .page-history .history-timeline li {
     --inlineP: 1rem;
   }
 }
 
-.history-timeline {
+.page-history .history-timeline {
   --col-gap: 2rem;
   --row-gap: 2rem;
   --line-w: 0.25rem;
@@ -32,8 +72,7 @@
   box-sizing: border-box;
 }
 
-/* line – full height via absolute positioning so it connects all circles */
-.history-timeline::before {
+.page-history .history-timeline::before {
   content: "";
   position: absolute;
   top: 0;
@@ -41,18 +80,16 @@
   left: calc(var(--line-w) / 2);
   width: var(--line-w);
   margin-left: calc(-1 * var(--line-w) / 2);
-  background: var(--timeline-line);
+  background: var(--history-line);
   border-radius: calc(var(--line-w) / 2);
   z-index: 0;
 }
 
-/* row gaps */
-.history-timeline li:not(:last-child) {
+.page-history .history-timeline li:not(:last-child) {
   margin-bottom: var(--row-gap);
 }
 
-/* card */
-.history-timeline li {
+.page-history .history-timeline li {
   grid-column: 2;
   --inlineP: 1.5rem;
   margin-inline: var(--inlineP);
@@ -63,150 +100,158 @@
   z-index: 1;
 }
 
-/* history item link */
-.history-item-link {
+.page-history .history-item-link {
   display: grid;
   grid-template-rows: min-content min-content min-content;
   text-decoration: none;
   color: inherit;
-  transition: transform 0.2s ease;
+  border-radius: 0.75rem;
+  outline-offset: 4px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.history-item-link:hover,
-.history-item-link:focus {
+.page-history .history-item-link:hover,
+.page-history .history-item-link:focus-visible {
   transform: translateY(-2px);
   text-decoration: none;
   color: inherit;
 }
 
-/* date */
-.history-timeline li .date {
+.page-history .history-item-link:focus-visible {
+  outline: 2px solid var(--accent-color);
+}
+
+.page-history .history-timeline li .date {
   --dateH: 3rem;
   height: var(--dateH);
   margin-inline: calc(var(--inlineP) * -1);
-
   text-align: center;
   background-color: var(--accent-color);
-
-  color: var(--text-on-accent);
-  font-size: 1.25rem;
+  color: var(--history-text-on-accent);
+  font-size: 1.125rem;
   font-weight: 700;
-
   display: grid;
   place-content: center;
   position: relative;
-
   border-radius: calc(var(--dateH) / 2) 0 0 calc(var(--dateH) / 2);
 }
 
-/* date flap */
-.history-timeline li .date::before {
+.page-history .history-timeline li .date::before {
   content: "";
   width: var(--inlineP);
   aspect-ratio: 1;
   background: var(--accent-color);
-  background-image: linear-gradient(var(--timeline-shadow) 100%, transparent);
+  background-image: linear-gradient(var(--history-shadow) 100%, transparent);
   position: absolute;
   top: 100%;
-
   clip-path: polygon(0 0, 100% 0, 0 100%);
   right: 0;
 }
 
-  /* circle */
-.history-timeline li .date::after {
+.page-history .history-timeline li .date::after {
   content: "";
   position: absolute;
   width: 2rem;
   aspect-ratio: 1;
-  background: var(--bg-primary);
+  background: #f8fafc;
   border: 0.3rem solid var(--accent-color);
   border-radius: 50%;
   top: 50%;
-
   transform: translate(50%, -50%);
   right: calc(100% + var(--col-gap) + var(--line-w) / 2);
+  box-shadow: 0 0 0 4px #f8fafc;
 }
 
-/* title descr */
-.history-timeline li .title,
-.history-timeline li .descr {
-  background: var(--bg-primary);
+.page-history .history-timeline li .title,
+.page-history .history-timeline li .descr {
+  background: var(--history-card-bg);
   position: relative;
   padding-inline: 1.5rem;
+  border-inline: 1px solid #f1f5f9;
 }
-.history-timeline li .title {
+
+.page-history .history-timeline li .title {
   overflow: hidden;
-  padding-block-start: 1.5rem;
-  padding-block-end: 1rem;
-  font-weight: 500;
-}
-.history-timeline li .descr {
-  padding-block-end: 1.5rem;
-  font-weight: 300;
-}
-
-/* shadows */
-.history-timeline li .title::before,
-.history-timeline li .descr::before {
-  content: "";
-  position: absolute;
-  width: 90%;
-  height: 0.5rem;
-  background: var(--timeline-shadow);
-  left: 50%;
-  border-radius: 50%;
-  filter: blur(4px);
-  transform: translate(-50%, 50%);
-}
-.history-timeline li .title::before {
-  bottom: calc(100% + 0.125rem);
+  padding-block-start: 1.25rem;
+  padding-block-end: 0.75rem;
+  font-weight: 600;
+  font-size: 1.125rem;
+  color: #0f172a;
+  border-top: 1px solid #f1f5f9;
+  border-radius: 0.75rem 0.75rem 0 0;
 }
 
-.history-timeline li .descr::before {
-  z-index: -1;
-  bottom: 0.25rem;
+.page-history .history-timeline li .descr {
+  padding-block-end: 1.25rem;
+  font-weight: 400;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: #475569;
+  border-bottom: 1px solid #f1f5f9;
+  border-radius: 0 0 0.75rem 0.75rem;
+}
+
+.page-history .history-item-link:hover .title,
+.page-history .history-item-link:hover .descr,
+.page-history .history-item-link:focus-visible .title,
+.page-history .history-item-link:focus-visible .descr {
+  border-color: #e2e8f0;
+}
+
+.page-history .history-item-link:hover .title,
+.page-history .history-item-link:focus-visible .title {
+  color: var(--accent-color);
+}
+
+.page-history .history-timeline li .title::before,
+.page-history .history-timeline li .descr::before {
+  display: none;
 }
 
 @media (min-width: 768px) {
-  .history-timeline {
+  .page-history .history-timeline {
     grid-template-columns: 1fr var(--line-w) 1fr;
   }
-  /* center line in middle column */
-  .history-timeline::before {
+
+  .page-history .history-timeline::before {
     left: 50%;
     margin-left: calc(-1 * var(--line-w) / 2);
   }
-  .history-timeline li:nth-child(odd) {
+
+  .page-history .history-timeline li:nth-child(odd) {
     grid-column: 1;
   }
-  .history-timeline li:nth-child(even) {
+
+  .page-history .history-timeline li:nth-child(even) {
     grid-column: 3;
   }
 
-  /* start second card */
-  .history-timeline li:nth-child(2) {
+  .page-history .history-timeline li:nth-child(2) {
     grid-row: 2/4;
   }
 
-  .history-timeline li:nth-child(odd) .date::before {
+  .page-history .history-timeline li:nth-child(odd) .date::before {
     clip-path: polygon(0 0, 100% 0, 100% 100%);
     left: 0;
   }
 
-  .history-timeline li:nth-child(odd) .date::after {
+  .page-history .history-timeline li:nth-child(odd) .date::after {
     transform: translate(-50%, -50%);
     left: calc(100% + var(--col-gap) + var(--line-w) / 2);
   }
-  .history-timeline li:nth-child(odd) .date {
+
+  .page-history .history-timeline li:nth-child(odd) .date {
     border-radius: 0 calc(var(--dateH) / 2) calc(var(--dateH) / 2) 0;
   }
 }
 
-.credits {
-  margin-top: 1rem;
-  text-align: right;
-}
-.credits a {
-  color: var(--text-primary);
+@media (prefers-reduced-motion: reduce) {
+  .page-history .history-item-link {
+    transition: none;
+  }
+
+  .page-history .history-item-link:hover,
+  .page-history .history-item-link:focus-visible {
+    transform: none;
+  }
 }

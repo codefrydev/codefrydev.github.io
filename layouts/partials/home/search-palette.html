@@ -1,0 +1,82 @@
+{{- if not (.Scratch.Get "searchPaletteLoaded") -}}
+<div id="search-palette" class="search-palette" hidden aria-hidden="true">
+  <div class="search-palette__backdrop" data-search-close tabindex="-1" aria-hidden="true"></div>
+  <div class="search-palette__dialog" role="dialog" aria-modal="true" aria-labelledby="search-palette-title">
+    <p id="search-palette-title" class="sr-only">Search CodeFryDev</p>
+    <div class="search-palette__input-wrap">
+      <i class="ph-bold ph-magnifying-glass search-palette__input-icon" aria-hidden="true"></i>
+      <input
+        type="search"
+        id="search-palette-input"
+        class="search-palette__input"
+        placeholder="Search tools, games, AI apps…"
+        autocomplete="off"
+        autocorrect="off"
+        spellcheck="false"
+        enterkeyhint="search"
+        aria-controls="search-palette-results"
+        aria-autocomplete="list"
+      >
+      <kbd class="search-palette__esc" aria-hidden="true">esc</kbd>
+    </div>
+    <div class="search-palette__body" id="search-palette-body">
+      <div id="search-palette-empty" class="search-palette__empty" hidden>
+        <i class="ph-duotone ph-magnifying-glass search-palette__empty-icon" aria-hidden="true"></i>
+        <p class="search-palette__empty-title">No matches</p>
+        <p class="search-palette__empty-hint">Try another keyword or pick a shortcut below</p>
+      </div>
+      <div id="search-palette-default" class="search-palette__default">
+        <p class="search-palette__section-label">Quick open</p>
+        <div class="search-palette__chips" role="list">
+          <a href="/games/" class="search-palette__chip" role="listitem"><i class="ph-duotone ph-game-controller" aria-hidden="true"></i> Games</a>
+          <a href="/ai/" class="search-palette__chip" role="listitem"><i class="ph-duotone ph-robot" aria-hidden="true"></i> AI Tools</a>
+          <a href="/designlab/" class="search-palette__chip" role="listitem"><i class="ph-duotone ph-palette" aria-hidden="true"></i> Design Lab</a>
+          <a href="/browse/" class="search-palette__chip" role="listitem"><i class="ph-duotone ph-squares-four" aria-hidden="true"></i> Browse</a>
+        </div>
+        <p class="search-palette__section-label">Popular</p>
+        <ul id="search-palette-suggestions" class="search-palette__list" role="listbox" aria-label="Popular tools">
+          {{- $n := 0 -}}
+          {{- range $cat := hugo.Data.home.categories -}}
+            {{- range $cat.items -}}
+              {{- if and .featured (lt $n 6) -}}
+              <li role="option">
+                <a href="{{ .url }}" class="search-palette__result" data-search-suggestion>
+                  <span class="search-palette__result-icon"><i class="ph-fill ph-{{ .phosphorIcon | default "app-window" }}" aria-hidden="true"></i></span>
+                  <span class="search-palette__result-text">
+                    <span class="search-palette__result-name">{{ .name }}</span>
+                    <span class="search-palette__result-meta">{{ $cat.name }}</span>
+                  </span>
+                  <i class="ph-bold ph-arrow-right search-palette__result-arrow" aria-hidden="true"></i>
+                </a>
+              </li>
+              {{- $n = add $n 1 -}}
+              {{- end -}}
+            {{- end -}}
+          {{- end -}}
+        </ul>
+      </div>
+      <ul id="search-palette-results" class="search-palette__list search-palette__list--results" role="listbox" aria-label="Search results" hidden></ul>
+    </div>
+    <footer class="search-palette__footer">
+      <span><kbd>↑</kbd><kbd>↓</kbd> navigate</span>
+      <span><kbd>↵</kbd> open</span>
+      <span><kbd>esc</kbd> close</span>
+      <span class="search-palette__footer-kbd" data-search-kbd-mod></span>
+    </footer>
+  </div>
+</div>
+<script>
+window.CFD_SEARCH = {{- dict
+  "baseURL" .Site.BaseURL
+  "data" (dict
+    "home" hugo.Data.home
+    "ai" hugo.Data.ai
+    "games" hugo.Data.games
+    "designlab" hugo.Data.designlab
+    "store" hugo.Data.store
+  )
+| jsonify | safeJS -}};
+</script>
+<script src="/js/search-palette.js" defer></script>
+{{- .Scratch.Set "searchPaletteLoaded" true -}}
+{{- end -}}

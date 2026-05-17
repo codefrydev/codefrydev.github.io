@@ -1,0 +1,85 @@
+{{- $page := .page | default nil -}}
+{{- $items := slice -}}
+
+{{- if .items -}}
+  {{- $items = .items -}}
+{{- else if .label -}}
+  {{- $items = slice (dict "name" "Home" "url" "/") (dict "name" .label "current" true) -}}
+{{- else if $page -}}
+  {{- $items = slice (dict "name" "Home" "url" "/") -}}
+  {{- $path := $page.RelPermalink -}}
+  {{- $section := $page.Section | lower -}}
+
+  {{- if eq $section "browse" -}}
+    {{- if ne $path "/browse/" -}}
+      {{- $items = $items | append (dict "name" "Browse" "url" "/browse/") -}}
+      {{- $items = $items | append (dict "name" $page.Title "current" true) -}}
+    {{- else -}}
+      {{- $items = $items | append (dict "name" "Browse" "current" true) -}}
+    {{- end -}}
+  {{- else if eq $section "about" -}}
+    {{- if strings.Contains $path "/about/users/" -}}
+      {{- $items = $items | append (dict "name" "About us" "url" "/about-us/") -}}
+      {{- if $page.IsPage -}}
+        {{- $items = $items | append (dict "name" "Members" "url" "/about/users/") -}}
+        {{- $items = $items | append (dict "name" $page.Title "current" true) -}}
+      {{- else -}}
+        {{- $items = $items | append (dict "name" "Members" "current" true) -}}
+      {{- end -}}
+    {{- end -}}
+  {{- else if eq $section "about-us" -}}
+    {{- $items = $items | append (dict "name" "About us" "current" true) -}}
+  {{- else if or (eq $section "history") (eq $section "History") -}}
+    {{- $items = $items | append (dict "name" "History" "current" true) -}}
+  {{- else if eq $section "press" -}}
+    {{- $items = $items | append (dict "name" "Press & Media" "current" true) -}}
+  {{- else if eq $section "cfddc" -}}
+    {{- if ne $path "/cfddc/" -}}
+      {{- $items = $items | append (dict "name" "CFDDC" "url" "/cfddc/") -}}
+      {{- $items = $items | append (dict "name" $page.Title "current" true) -}}
+    {{- else -}}
+      {{- $items = $items | append (dict "name" "CFDDC" "current" true) -}}
+    {{- end -}}
+  {{- else if eq $section "games" -}}
+    {{- $items = $items | append (dict "name" "Games & Fun" "current" true) -}}
+  {{- else if eq $section "ai" -}}
+    {{- $items = $items | append (dict "name" "AI Tools" "current" true) -}}
+  {{- else if eq $section "designlab" -}}
+    {{- $items = $items | append (dict "name" "Design Lab" "current" true) -}}
+  {{- else if eq $section "store" -}}
+    {{- $items = $items | append (dict "name" "Store" "current" true) -}}
+  {{- else if eq $section "search" -}}
+    {{- $items = $items | append (dict "name" "Search" "current" true) -}}
+  {{- else if $section -}}
+    {{- $sectionTitle := $page.Section | title -}}
+    {{- if ne $path (printf "/%s/" $section) -}}
+      {{- $items = $items | append (dict "name" $sectionTitle "url" (printf "/%s/" $section)) -}}
+    {{- end -}}
+    {{- if $page.Title -}}
+      {{- $items = $items | append (dict "name" $page.Title "current" true) -}}
+    {{- else -}}
+      {{- $items = $items | append (dict "name" $sectionTitle "current" true) -}}
+    {{- end -}}
+  {{- else if $page.Title -}}
+    {{- $items = $items | append (dict "name" $page.Title "current" true) -}}
+  {{- end -}}
+{{- end -}}
+
+{{- if gt (len $items) 0 -}}
+<nav class="m-0" aria-label="Breadcrumb">
+  <ol class="flex flex-wrap items-center gap-x-1.5 gap-y-1 text-sm text-slate-500 list-none m-0 p-0">
+    {{- range $i, $crumb := $items -}}
+    <li class="inline-flex items-center gap-1.5 min-w-0">
+      {{- if gt $i 0 -}}
+      <span class="text-slate-300 shrink-0" aria-hidden="true">/</span>
+      {{- end -}}
+      {{- if $crumb.current -}}
+      <span class="text-slate-800 font-medium truncate" aria-current="page">{{ $crumb.name }}</span>
+      {{- else -}}
+      <a href="{{ $crumb.url }}" class="hover:text-brand no-underline transition-colors truncate">{{ $crumb.name }}</a>
+      {{- end -}}
+    </li>
+    {{- end -}}
+  </ol>
+</nav>
+{{- end -}}

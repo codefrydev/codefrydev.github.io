@@ -1,52 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  {{ partial "header.html" . }}
-
-  {{ with resources.Get "css/home.css" }}
-    {{ $minifiedCSS := . | resources.Minify }}
-    <link rel="stylesheet" href="{{ $minifiedCSS.RelPermalink }}">
-  {{ else }}
-    {{ warnf "The CSS file 'css/home.css' was not found." }}
-  {{ end }}
-  <link rel="stylesheet" href="/css/internal.css">
-</head>
-<body>
-  {{ partial "skip-link.html" . }}
-
-  {{ partial "page-header.html" . }}
-
-  <main id="main-content">
-    {{ partial "search.html" (dict "containerClass" "search-container" "placeholder" "Search for games, puzzles, and fun activities..." "autofocus" false "Site" .Site "Scratch" .Scratch) }}
-    {{- if .Content }}
-    <section class="home-intro" aria-label="Introduction">
-      <div class="home-intro-content">
-        {{ .Content }}
-      </div>
-    </section>
-    {{- end }}
-    <section class="category-section" aria-labelledby="hub-heading-games">
-      <h2 id="hub-heading-games" class="category-title">Games</h2>
-      <ul class="button-grid">
-        {{ range hugo.Data.games.data }}
-          <li>
-          {{- $isExternal := or (hasPrefix .url "http://") (hasPrefix .url "https://") -}}
-          <a href="{{ .url }}"
-             class="neumorphic-button hapticButton"
-             aria-label="{{ .name }} - Play game"
-             {{ if $isExternal }}target="_blank" rel="noopener noreferrer"{{ end }}>
-            <img src="/images/games/{{ .icon }}.svg" srcset="/images/games/{{ .icon }}.svg" alt="{{ .name }} game icon" class="button-icon" loading="lazy">
-            <span>{{ .name }}</span>
-          </a>
-          </li>
-        {{ end }}
-      </ul>
-    </section>
-  </main>
-  
-  {{ partial "footer.html" . }}
-  <script src="/js/search.js"></script>
-  <script src="/js/feedback.js" ></script>
-  <script src="/js/theme.js"></script>
-</body>
-</html>
+{{ partial "home/hub-page.html" (dict
+  "page" .
+  "title" "Games & Fun"
+  "subtitle" "Play in your browser"
+  "items" hugo.Data.games.data
+  "iconDir" "games"
+  "homeCategorySlug" "games-fun"
+  "defaultPhosphorIcon" "game-controller"
+  "searchID" "games"
+  "searchPlaceholder" "Search for games, puzzles, and fun activities..."
+  "countLabel" "games"
+  "navActive" "games"
+  "banner" (index hugo.Data.homepage.hubBanners "games" | default dict)
+) }}

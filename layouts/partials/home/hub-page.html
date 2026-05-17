@@ -1,0 +1,73 @@
+{{- $title := .title -}}
+{{- $subtitle := .subtitle | default "" -}}
+{{- $items := .items -}}
+{{- $iconDir := .iconDir | default "home" -}}
+{{- $defaultIcon := .defaultPhosphorIcon | default "app-window" -}}
+{{- $homeCategorySlug := .homeCategorySlug -}}
+{{- $searchPlaceholder := .searchPlaceholder | default "Search tools, games, AI apps..." -}}
+{{- $searchID := .searchID | default "hub" -}}
+{{- $banner := .banner | default dict -}}
+{{- $page := .page -}}
+{{- $showSearch := .showSearch | default true -}}
+{{- $searchAutofocus := .searchAutofocus | default false -}}
+{{- $searchContainerClass := .searchContainerClass | default "home-hero-search" -}}
+
+{{- $homeItems := slice -}}
+{{- if $homeCategorySlug -}}
+  {{- range hugo.Data.home.categories -}}
+    {{- if eq (.slug | default (.name | anchorize)) $homeCategorySlug -}}
+      {{- $homeItems = .items -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{ partial "home/modern-page-start.html" (dict "page" $page "navActive" (.navActive | default "")) }}
+    <section class="browse-category pt-8 pb-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      {{- $page.Scratch.Set "breadcrumbLabel" $title -}}
+      {{- if $banner.image -}}
+        {{ partial "home/category-banner.html" (dict "category" (dict "name" $title "subtitle" $subtitle) "banner" $banner) }}
+      {{- else -}}
+        <div class="mb-10 pb-4 border-b border-gray-200">
+          <h1 class="text-3xl md:text-4xl font-bold text-slate-900 mb-2 m-0">{{ $title }}</h1>
+          {{- with $subtitle -}}
+          <p class="text-xs font-bold tracking-widest text-slate-500 uppercase m-0">{{ . }}</p>
+          {{- end -}}
+        </div>
+      {{- end -}}
+
+      {{- if or $showSearch (gt (len $items) 0) -}}
+      <div class="browse-category__header">
+        {{- if gt (len $items) 0 -}}
+        <p class="browse-category__count m-0">{{ len $items }} {{ .countLabel | default "tools" }}</p>
+        {{- else -}}
+        <p class="browse-category__count m-0"></p>
+        {{- end -}}
+        {{- if $showSearch -}}
+        <div class="browse-category__actions">
+          {{ partial "home/search-trigger.html" (dict "placeholder" $searchPlaceholder "size" "md" "class" "browse-index__search-trigger w-full sm:w-auto" "category" $title "categorySlug" $homeCategorySlug) }}
+        </div>
+        {{- end -}}
+      </div>
+      {{- end -}}
+
+      {{- if gt (len $items) 0 -}}
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 browse-category__grid">
+        {{- range $items -}}
+          {{- $item := . -}}
+          {{- range $homeItems -}}
+            {{- if eq .name $item.name -}}
+              {{- $item = merge . $item -}}
+            {{- end -}}
+          {{- end -}}
+          {{ partial "home/tool-card.html" (dict "item" $item "defaultPhosphorIcon" $defaultIcon "iconDir" $iconDir "categoryName" $title "source" (printf "hub_%s" ($homeCategorySlug | default "hub"))) }}
+        {{- end -}}
+      </div>
+      {{- end -}}
+
+      {{- if $page.Content -}}
+      <div class="prose prose-slate max-w-none mt-10 text-slate-600">
+        {{ $page.Content }}
+      </div>
+      {{- end -}}
+    </section>
+{{ partial "home/modern-page-end.html" (dict "page" $page) }}

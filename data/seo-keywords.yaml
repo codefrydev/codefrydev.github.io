@@ -71,3 +71,12 @@ press:
     - "media kit"
     - "logo"
     - "contact"
+
+cfddc:
+  primary:
+    - "CFDDC"
+    - "CodeFryDev Developer Conference"
+  secondary:
+    - "announcements"
+    - "timeline"
+    - "WWDC"

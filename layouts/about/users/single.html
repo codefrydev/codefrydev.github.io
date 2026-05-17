@@ -1,42 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
+{{- $bg := .Params.colors.background | default "#28966a" -}}
+{{- $containerBg := .Params.colors.container_background | default "rgba(98, 126, 70, 0)" -}}
+{{- $linkBg := .Params.colors.link_background | default "rgba(165, 190, 140, 0.56)" -}}
+{{- $linkHover := .Params.colors.link_hover | default "#e09d62" -}}
 
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#28966a">
-    <meta name="msapplication-TileColor" content="#28966a">
-    <meta name="theme-color" content="#28966a">
-  <title>{{ .Title }}</title>
-  <link rel="stylesheet" href="{{ "css/usersstyle.css" | relURL }}">
-  <link rel="stylesheet" href="/css/internal.css">
-  <style>
-    :root {
-      --background-color: {{ .Params.colors.background | default "#28966a" }};
-      --container-bg: {{ .Params.colors.container_background | default "#627e4600" }};
-      --link-bg: {{ .Params.colors.link_background | default "#a5be8c8f" }};
-      --link-hover: {{ .Params.colors.link_hover | default "#e09d62" }};
-    }
-  </style>
-
-</head>
-
-<body>
-  <div class="container">
-    <img class="profile-img" src="{{ .Params.profile_image }}" srcset="{{ .Params.profile_image }}" alt="Profile Picture">
-    <h1>{{ .Title }}</h1>
-    <h2>{{ .Params.subtitle }}</h2>
-
-    {{ range .Params.links }}
-      <a class="link" href="{{ .url }}" target="_blank">{{ .name }}</a>
-    {{ end }}
-  </div>
-  {{ partial "footer.html" . }}
-  <script src="/js/theme.js"></script>
-</body>
-
-</html>
+{{ partial "home/modern-page-start.html" (dict "page" . "navActive" "about") }}
+    <section class="pt-8 pb-16 max-w-lg mx-auto px-4 w-full">
+      <div class="rounded-3xl border border-gray-100 shadow-lg overflow-hidden text-center p-8 md:p-10" style="background-color: {{ $bg }};">
+        {{- $img := .Params.listProfile_image | default .Params.profile_image -}}
+        {{- if and $img (not (hasPrefix $img "/")) -}}
+          {{- $img = printf "/about/users/%s/%s" (.File.ContentBaseName) $img -}}
+        {{- end -}}
+        <img class="w-28 h-28 rounded-full object-cover border-4 border-white/30 mx-auto mb-6 shadow-md" src="{{ $img }}" alt="{{ .Title }}" width="112" height="112">
+        <h1 class="text-2xl font-bold text-white m-0 mb-2">{{ .Title }}</h1>
+        {{- with .Params.subtitle -}}
+        <p class="text-white/90 text-sm font-medium m-0 mb-8">{{ . }}</p>
+        {{- end -}}
+        <div class="flex flex-col gap-3">
+          {{- range .Params.links -}}
+          <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="block px-5 py-3 rounded-xl font-medium text-slate-900 no-underline transition-opacity hover:opacity-90" style="background-color: {{ $linkBg }};">
+            {{ .name }}
+          </a>
+          {{- end -}}
+        </div>
+      </div>
+    </section>
+{{ partial "home/modern-page-end.html" (dict "page" .) }}

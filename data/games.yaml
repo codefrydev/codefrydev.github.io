@@ -1,43 +1,97 @@
-# data/buttons.yaml
 data:
-  - name: "WordDice"
-    icon: "cfd-worddice"
-    url: "https://worddice.codefrydev.in/"
-
-  - name: "Chain Reaction"
-    icon: "cfd-chainreaction"
-    url: "/ChainReaction/"
-
-  - name: "Wordle"
-    icon: "cfd-wordle"
-    url: "/Wordle/"
-
-  - name: "Snake"
-    icon: "cfd-snake"
-    url: "/Snake"
-    
-  - name: "Game"
-    icon: "cfd-games"
-    url: "https://play.google.com/store/apps/details?id=org.codefrydev.developer.abhijeet.galacticgunner"
-    
-  - name: "Ludo"
-    icon: "cfd-ludo"
-    url: "/Ludo/"
-  - name: "Carrom"
-    icon: "cfd-carrom"
-    url: "/Carrom/"
-  - name: "Billiards"
-    icon: "cfd-billiards"
-    url: "/Billiards/"
-  - name: "Archery"
-    icon: "cfd-archery"
-    url: "/Archery/"
-  - name: "DotsAndBox"
-    icon: "cfd-dotbox"
-    url: "/DotsAndBox/"
-  - name: "TicTacToe"
-    icon: "cfd-ttt"
-    url: "/TicTacToe/"
+  - name: WordDice
+    icon: cfd-worddice
+    url: https://worddice.codefrydev.in/
+    description: Word puzzle game with dice-driven challenges.
+    date: "2025-03-03"
+    phosphorIcon: dice-five
+    featured: true
+    external: true
+  - name: Chain Reaction
+    icon: cfd-chainreaction
+    url: /ChainReaction/
+    description: Strategic board game—expand cells and dominate the grid.
+    date: "2025-03-01"
+    phosphorIcon: circles-three
+    featured: true
+    external: false
+  - name: Wordle
+    icon: cfd-wordle
+    url: /Wordle/
+    description: Guess the five-letter word in six tries.
+    date: "2025-02-01"
+    phosphorIcon: text-aa
+    featured: true
+    external: false
+  - name: Snake
+    icon: cfd-snake
+    url: /Snake
+    description: Classic snake game—eat, grow, and avoid the walls.
+    date: "2025-01-15"
+    phosphorIcon: snake
+    featured: true
+    external: false
+  - name: Game
+    icon: cfd-games
+    url: https://play.google.com/store/apps/details?id=org.codefrydev.developer.abhijeet.galacticgunner
+    description: Full games hub—puzzles, classics, and arcade favorites.
+    date: "2025-01-01"
+    phosphorIcon: game-controller
+    featured: true
+    external: false
+  - name: Ludo
+    icon: cfd-ludo
+    url: /Ludo/
+    description: Classic Ludo board game online.
+    date: "2025-01-13"
+    phosphorIcon: dice-six
+    featured: true
+    external: false
+  - name: Carrom
+    icon: cfd-carrom
+    url: /Carrom/
+    description: Play carrom online with smooth controls.
+    date: "2025-03-15"
+    phosphorIcon: target
+    featured: false
+    external: false
+  - name: Billiards
+    icon: cfd-billiards
+    url: /Billiards/
+    description: Browser billiards with realistic physics.
+    date: "2025-02-14"
+    phosphorIcon: circle
+    featured: false
+    external: false
+  - name: Archery
+    icon: cfd-archery
+    url: /Archery/
+    description: Aim and shoot in this browser archery challenge.
+    date: "2025-04-01"
+    phosphorIcon: target
+    featured: false
+    external: false
+  - name: DotsAndBox
+    icon: cfd-dotbox
+    url: /DotsAndBox/
+    description: Open DotsAndBox — free in your browser on CodeFryDev.
+    date: "2025-10-10"
+    phosphorIcon: game-controller
+    featured: false
+    external: false
+  - name: TicTacToe
+    icon: cfd-ttt
+    url: /TicTacToe/
+    description: Open TicTacToe — free in your browser on CodeFryDev.
+    date: "2025-11-11"
+    phosphorIcon: game-controller
+    featured: false
+    external: false
   - name: "2048"
-    icon: "cfd-2048"
-    url: "/2048/"
+    icon: cfd-2048
+    url: /2048/
+    description: Slide tiles and combine numbers to reach 2048.
+    date: "2025-01-20"
+    phosphorIcon: grid-four
+    featured: false
+    external: false

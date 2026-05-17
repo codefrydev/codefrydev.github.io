@@ -1,0 +1,18 @@
+{{- $placeholder := .placeholder | default "Search tools, games, AI apps…" -}}
+{{- $class := .class | default "" -}}
+{{- $size := .size | default "md" -}}
+{{- $category := .category | default "" -}}
+{{- $categorySlug := .categorySlug | default "" -}}
+<button
+  type="button"
+  class="search-trigger search-trigger--{{ $size }} {{ $class }}"
+  data-search-open
+  {{- with $category }} data-search-category="{{ . }}"{{ end }}
+  {{- with $categorySlug }} data-search-category-slug="{{ . }}"{{ end }}
+  aria-label="Open search"
+  aria-keyshortcuts="Control+K Meta+K"
+>
+  <i class="ph-bold ph-magnifying-glass search-trigger__icon" aria-hidden="true"></i>
+  <span class="search-trigger__label">{{ $placeholder }}</span>
+  <kbd class="search-trigger__kbd" aria-hidden="true"><span data-search-kbd-mod>⌘</span>K</kbd>
+</button>

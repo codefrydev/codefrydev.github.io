@@ -1,30 +1,57 @@
-# data/buttons.yaml
 data:
-
-  - name: "AI SocialSnap"
-    icon: "cfd-social"
-    url: "https://socialsnap.codefrydev.in/"
-
-  - name: "AI Meme Generator"
-    icon: "cfd-meme"
-    url: "https://meme.codefrydev.in/"
-
-  - name: "Visual Note AI"
-    icon: "cfd-vnote"
-    url: "https://appsuit.codefrydev.in/apps/visualnoteai/"
-
-  - name: "Aqua tracker AI"
-    icon: "cfd-water"
-    url: "https://aquatrack.codefrydev.in/"
-
-  - name: "AI Web Summarize"
-    icon: "cfd-summarize"
-    url: "https://summarize.codefrydev.in/"
-
-  - name: "Profile AI"
-    icon: "cfd-chat"
-    url: "/ProfiledAi/"
-
-  - name: "CFD Chat AI"
-    icon: "cfd-chat"
-    url: "https://chat.codefrydev.in/"
+  - name: AI SocialSnap
+    icon: cfd-social
+    url: https://socialsnap.codefrydev.in/
+    description: AI-powered social content and caption generator.
+    date: "2025-01-01"
+    phosphorIcon: share-network
+    featured: true
+    external: true
+  - name: AI Meme Generator
+    icon: cfd-meme
+    url: https://meme.codefrydev.in/
+    description: Create memes with AI-suggested captions and layouts.
+    date: "2025-02-02"
+    phosphorIcon: smiley
+    featured: true
+    external: true
+  - name: Visual Note AI
+    icon: cfd-vnote
+    url: https://appsuit.codefrydev.in/apps/visualnoteai/
+    description: AI-assisted visual notes and idea boards.
+    date: "2025-03-03"
+    phosphorIcon: note
+    featured: true
+    external: true
+  - name: Aqua tracker AI
+    icon: cfd-water
+    url: https://aquatrack.codefrydev.in/
+    description: Track water intake with AI reminders and insights.
+    date: "2025-04-04"
+    phosphorIcon: drop
+    featured: true
+    external: true
+  - name: AI Web Summarize
+    icon: cfd-summarize
+    url: https://summarize.codefrydev.in/
+    description: Summarize any webpage or article with AI.
+    date: "2025-05-05"
+    phosphorIcon: article
+    featured: true
+    external: true
+  - name: Profile AI
+    icon: cfd-chat
+    url: /ProfiledAi/
+    description: Build and refine professional profiles with AI.
+    date: "2025-06-06"
+    phosphorIcon: user
+    featured: true
+    external: false
+  - name: CFD Chat AI
+    icon: cfd-chat
+    url: https://chat.codefrydev.in/
+    description: Chat with CodeFryDev AI for help and ideas.
+    date: "2025-07-07"
+    phosphorIcon: chat-circle
+    featured: false
+    external: true

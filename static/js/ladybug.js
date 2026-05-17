@@ -112,9 +112,12 @@
         var n = slot % 5;
         var el = null;
         if (n === 0) {
-            el = document.querySelector('.main-navigation .nav-list a.nav-link[href="/"]');
+            el = document.querySelector('header.nav-shell a[href="/"]') ||
+                document.querySelector('.main-navigation .nav-list a.nav-link[href="/"]');
         } else if (n === 1) {
-            el = document.querySelector('.main-navigation .nav-list a.nav-link[href="/about-us"]');
+            el = document.querySelector('header.nav-shell a[href="/about-us/"]') ||
+                document.querySelector('header.nav-shell a[href="/about-us"]') ||
+                document.querySelector('.main-navigation .nav-list a.nav-link[href="/about-us"]');
         } else if (n === 2) {
             var h = getH1BiteTarget();
             el = h ? h.querySelector('.ladybug-h1-char:not(.ladybug-h1-char-sup)') : null;
@@ -243,8 +246,25 @@
                     sp.textContent = c;
                     out.appendChild(sp);
                 }
+            } else if (n.nodeType === 1 && (n.id === 'hero-title' || (n.tagName === 'SPAN' && n.classList.contains('hero-slide-title')))) {
+                var slideEl = n.cloneNode(false);
+                if (n.id) slideEl.id = n.id;
+                if (n.className) slideEl.className = n.className;
+                var stSlide = n.textContent;
+                for (var ks = 0; ks < stSlide.length; ks++) {
+                    var cs = stSlide[ks];
+                    if (cs === ' ') {
+                        slideEl.appendChild(document.createTextNode(' '));
+                        continue;
+                    }
+                    var spSlide = document.createElement('span');
+                    spSlide.className = 'ladybug-h1-char';
+                    spSlide.textContent = cs;
+                    slideEl.appendChild(spSlide);
+                }
+                out.appendChild(slideEl);
             } else if (n.nodeType === 1 && n.tagName === 'SUP') {
-                var hasReveal = n.querySelector && n.querySelector('#ladybug-reveal-alpha');
+                var hasReveal = n.querySelector && n.querySelector('#ladybug-reveal-alpha, #ladybug-reveal-beta');
                 if (hasReveal) {
                     var spEl2 = n.cloneNode(false);
                     if (n.getAttribute('style')) spEl2.setAttribute('style', n.getAttribute('style'));
@@ -353,7 +373,9 @@
     }
 
     function pickRandomToolButton() {
-        var nodes = document.querySelectorAll('main#main-content .button-grid a.neumorphic-button');
+        var nodes = document.querySelectorAll(
+            'main#main-content .button-grid a.neumorphic-button, main.home-sections a[data-cfd-tool]'
+        );
         var list = [];
         var i;
         for (i = 0; i < nodes.length; i++) {
@@ -531,7 +553,7 @@
 
     window.addEventListener('click', function (e) {
         if (isLadybugGateHidden()) return;
-        if (e.target && e.target.closest && e.target.closest('#ladybug-reveal-alpha')) return;
+        if (e.target && e.target.closest && e.target.closest('#ladybug-reveal-alpha, #ladybug-reveal-beta, [data-search-open], #search-palette, .search-palette')) return;
         if (state === 'h1feast') {
             endH1Feast(true);
         }
@@ -1286,8 +1308,9 @@
         if (pill) pill.classList.remove('ladybug-gate-hidden');
         bug.classList.remove('ladybug-gate-hidden');
         bug.setAttribute('aria-hidden', 'false');
-        var revealBtn = document.getElementById('ladybug-reveal-alpha');
-        if (revealBtn) revealBtn.setAttribute('aria-pressed', 'true');
+        document.querySelectorAll('#ladybug-reveal-alpha, #ladybug-reveal-beta').forEach(function (btn) {
+            btn.setAttribute('aria-pressed', 'true');
+        });
         setTimeout(function () {
             if (isDarkTheme()) {
                 beginHibernateFromTheme();
@@ -1296,11 +1319,12 @@
     }
 
     function bindLadybugRevealControl() {
-        var revealBtn = document.getElementById('ladybug-reveal-alpha');
-        if (!revealBtn) return;
-        revealBtn.addEventListener('click', function (e) {
-            e.preventDefault();
-            revealLadybugEasterEgg();
+        document.querySelectorAll('#ladybug-reveal-alpha, #ladybug-reveal-beta').forEach(function (revealBtn) {
+            revealBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                revealLadybugEasterEgg();
+            });
         });
     }
 
