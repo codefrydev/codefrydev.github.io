@@ -1,29 +1,53 @@
 # CodeFryDev
 
+> This is a platform where we learn, work on experimental projects, play games, come up with innovative ideas, and build many more...
+
 ## About
-This is a platform where we learn, work on experimental projects, play games, come up with innovative ideas, and build many more...
+CodeFryDev offers free online tools, games, and AI apps—no signup required. We build productivity apps, AI-powered utilities, engaging games, and creative design resources for developers, designers, and anyone curious to experiment in the browser. Active since 2023.
 
 ## Website
 - URL: https://codefrydev.in/
 - Built with: Hugo static site generator
-- Language: English
+- Language: English (en-US)
+- Full documentation: https://codefrydev.in/llms-full.txt
 
 ## Main Sections
-- Home: Main landing page with categorized tools and resources
-- About: Information about the project, contributors, and technology stack
-- AI: Collection of AI-powered tools and applications
-- Games: Interactive games and entertainment
-- Design Lab: Creative design tools and resources
-- Store: Mobile apps and downloadable products
-- History: Timeline of project milestones and updates
-- Search: Site-wide search functionality
+- Home (/): Categorized tools and resources across four browse categories
+- Browse (/browse/): All tools organized by category
+- About us (/about-us): Mission, team, and contributors (alias: /about)
+- AI (/ai): Free AI-powered tools—memes, summarizers, chat, visual notes
+- Games (/games): Browser games—Wordle, Snake, Chain Reaction, and more
+- Design Lab (/designlab): Creative design tools, visualizers, and resources
+- Store (/store): Mobile apps on Google Play
+- History (/history): Project timeline and milestones
+- CFDDC (/cfddc/): CodeFryDev Developer Conference—year-by-year announcements
+- Search (/search): Site-wide search for tools, games, and AI apps
+- Press (/press/): Media kit, boilerplate, and logo assets
+- Terms, Privacy & Contact (/tncprivacy): Policies and contact information
 
-## Key Categories
-1. **Creative & Assets**: Muraly, Art, Text tools, Wallpapers, 3D Models, Android Assets
-2. **Tools & Utilities**: AI tools, Prompt Library, BSOD, CSV tools, Json2Form, Meta Tags, Notebook, Weather, Crop & Resize, and more
-3. **Games & Fun**: WordDice, Chain Reaction, Wordle, Snake, Tom & Jerry, and more
-4. **Site & External Links**: About, Timeline, Store, Privacy, and external resources
+## Browse Categories
+1. **Creative & Assets** (/browse/creative-assets/): Muraly, SVG Engine, 3D Printer, ESP32CAM, fonts, DSA learning, wallpapers, 3D models, text tools, and more
+2. **Tools & Utilities** (/browse/tools-utilities/): JSON Playground, JS LIDE, Web SEO, Prompt Library, CSV, meta tags, weather, tier lists, and more
+3. **Games & Fun** (/browse/games-fun/): Wordle, Snake, Chain Reaction, WordDice, 2048, Ludo, Carrom, Overdose, and more
+4. **Site & External Links** (/browse/site-links/): About, timeline, CFDDC, store, privacy, and external education links
 
-## Mission
-This is a platform where we learn, work on experimental projects, play games, come up with innovative ideas, and build many more...
+## AI Tools (featured)
+- AI SocialSnap: https://socialsnap.codefrydev.in/
+- AI Meme Generator: https://meme.codefrydev.in/
+- Visual Note AI: https://appsuit.codefrydev.in/apps/visualnoteai/
+- Aqua Tracker AI: https://aquatrack.codefrydev.in/
+- AI Web Summarize: https://summarize.codefrydev.in/
+- Profile AI: /ProfiledAi/
+- CFD Chat AI: https://chat.codefrydev.in/
 
+## Highlights
+- 100% free — most tools need no signup
+- Runs in your browser — no install required
+- Privacy-focused — most tools process data locally
+- Cookie consent banner for analytics (Google Analytics, Microsoft Clarity) — user can accept or decline
+
+## Optional
+- Sitemap: https://codefrydev.in/sitemap.xml
+- Robots: https://codefrydev.in/robots.txt
+
+Last Updated: May 2026

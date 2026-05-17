@@ -1,5 +1,4 @@
 {{- if not (.Scratch.Get "searchPaletteLoaded") -}}
-{{- .Scratch.Set "searchPaletteLoaded" true -}}
 <div id="search-palette" class="search-palette" hidden aria-hidden="true">
   <div class="search-palette__backdrop" data-search-close tabindex="-1" aria-hidden="true"></div>
   <div class="search-palette__dialog" role="dialog" aria-modal="true" aria-labelledby="search-palette-title">
@@ -79,4 +78,5 @@ window.CFD_SEARCH = {{- dict
 | jsonify | safeJS -}};
 </script>
 <script src="/js/search-palette.js" defer></script>
+{{- .Scratch.Set "searchPaletteLoaded" true -}}
 {{- end -}}
