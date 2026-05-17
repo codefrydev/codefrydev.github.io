@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="90" fill="#020617"/>
+
+  <!-- Terminal window -->
+  <rect x="70" y="110" width="372" height="292" rx="34" fill="#111827"/>
+
+  <!-- Prompt chevron -->
+  <path fill="#38bdf8" d="M110 200 L150 230 L110 260 Z"/>
+
+  <!-- Code lines (SVG paths, no fonts) -->
+  <rect x="170" y="188" width="180" height="16" rx="8" fill="#ffffff"/>
+  <rect x="170" y="228" width="140" height="16" rx="8" fill="#94a3b8"/>
+  <rect x="170" y="268" width="200" height="16" rx="8" fill="#ffffff"/>
+  <rect x="170" y="308" width="120" height="16" rx="8" fill="#94a3b8"/>
+
+  <!-- Cursor -->
+  <rect x="310" y="262" width="18" height="52" fill="#38bdf8">
+    <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- npm badge -->
+  <rect x="318" y="56" width="128" height="72" rx="14" fill="#CB3837"/>
+  <rect x="334" y="72" width="96" height="40" rx="8" fill="#ffffff"/>
+  <text x="382" y="102" text-anchor="middle" font-family="system-ui, sans-serif" font-size="28" font-weight="800" fill="#CB3837">npm</text>
+</svg>

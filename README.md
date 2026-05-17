@@ -5,7 +5,7 @@ Static site for [codefrydev.in](https://codefrydev.in/) — free online tools, g
 ## Features
 
 - **Modern homepage** — category grids, search palette, scroll sections, dark/light theme
-- **Browse** — `/browse/` index plus category pages (`creative-assets`, `tools-utilities`, `games-fun`, `site-links`)
+- **Browse** — `/browse/` index plus category pages (`creative-assets`, `tools-utilities`, `games-fun`, `site-links`, `containers-packages`)
 - **Hubs** — Games, AI, Design Lab, Store, Search
 - **CFDDC** — year-by-year “developer conference” pages at `/cfddc/` fed from [`data/history.yaml`](data/history.yaml)
 - **History timeline** — `/history/`

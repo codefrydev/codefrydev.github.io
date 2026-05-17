@@ -3,7 +3,7 @@ faqs:
     answer: "This is a platform where we learn, work on experimental projects, play games, come up with innovative ideas, and build many more... We offer free tools, games, and AI apps in your browser—no signup required."
   
   - question: "What types of tools does CodeFryDev offer?"
-    answer: "CodeFryDev offers four main categories: Creative & Assets (art, text tools, wallpapers, 3D models), Tools & Utilities (AI tools, CSV tools, JSON formatters, meta tag generators), Games & Fun (various games including Chain Reaction, Wordle, Snake), and Site & External Links (about, timeline, store, privacy)."
+    answer: "CodeFryDev offers five main categories: Creative & Assets (art, text tools, wallpapers, 3D models), Tools & Utilities (AI tools, CSV tools, JSON formatters, meta tag generators), Games & Fun (various games including Chain Reaction, Wordle, Snake), Site & External Links (about, timeline, store, privacy), and Containers & Packages (Docker images and npm packages)."
   
   - question: "Are the tools and games free to use?"
     answer: "Most of our web-based tools and games are free to use. Some premium features or mobile apps may have different pricing models. Check individual tool pages for specific details."

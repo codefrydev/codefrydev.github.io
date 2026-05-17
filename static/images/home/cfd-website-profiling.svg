@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="90" fill="#020617"/>
+  <rect x="56" y="56" width="400" height="400" rx="48" fill="#0f172a"/>
+
+  <!-- Docker whale body -->
+  <path fill="#2496ED" d="M128 300c0-72 48-120 128-120s128 48 128 120v24H128v-24z"/>
+  <ellipse cx="256" cy="188" rx="88" ry="52" fill="#2496ED"/>
+  <rect x="168" y="300" width="176" height="56" rx="12" fill="#1d4ed8"/>
+
+  <!-- Container blocks on whale -->
+  <rect x="176" y="248" width="44" height="36" rx="6" fill="#38bdf8"/>
+  <rect x="234" y="248" width="44" height="36" rx="6" fill="#38bdf8"/>
+  <rect x="292" y="248" width="44" height="36" rx="6" fill="#38bdf8"/>
+
+  <!-- Profiling chart -->
+  <rect x="96" y="372" width="320" height="72" rx="16" fill="#111827"/>
+  <polyline points="120,420 168,388 216,408 264,360 312,376 360,332 392,348"
+            fill="none" stroke="#22c55e" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="392" cy="348" r="10" fill="#22c55e"/>
+</svg>

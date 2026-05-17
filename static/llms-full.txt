@@ -20,7 +20,7 @@ CodeFryDev offers free online tools, games, and AI apps—no signup required. We
 ### Main Sections
 
 #### 1. Home (/)
-The main landing page featuring categorized tools and resources organized into four browse categories, with search, hero carousel, and featured tools.
+The main landing page featuring categorized tools and resources organized into five browse categories, with search, hero carousel, and featured tools.
 
 #### 2. Browse (/browse/)
 Hub to explore all tools by category:
@@ -28,6 +28,7 @@ Hub to explore all tools by category:
 - Tools & Utilities: /browse/tools-utilities/
 - Games & Fun: /browse/games-fun/
 - Site & External Links: /browse/site-links/
+- Containers & Packages: /browse/containers-packages/
 
 #### 3. About us (/about-us)
 Mission, team, and technology stack. Aliases: /about, /about/
@@ -154,6 +155,13 @@ Terms of use, privacy policy, and contact details.
 | Agurutwa | https://agurutwa.github.io/ | External community resources |
 | Pathsala | https://agurutwa.github.io/Pathsala/ | Educational paths and learning |
 
+### Category 5: Containers & Packages (/browse/containers-packages/)
+
+| Package | URL | Description |
+|---------|-----|-------------|
+| Website Profiling | https://hub.docker.com/r/codefrydev/website-profiling | Docker image for website performance profiling |
+| SVG Engine (npm) | https://www.npmjs.com/package/@codefrydev/svg-engine | @codefrydev/svg-engine — SVG creation and manipulation |
+
 ## AI Tools (/ai)
 
 1. **AI SocialSnap** (https://socialsnap.codefrydev.in/): AI-powered social content and caption generator
@@ -240,7 +248,7 @@ See /history for the full timeline back to March 2024 (Crispy Launch).
 This is a platform where we learn, work on experimental projects, play games, come up with innovative ideas, and build many more... We offer free tools, games, and AI apps in your browser—no signup required.
 
 **What types of tools does CodeFryDev offer?**
-Four browse categories: Creative & Assets, Tools & Utilities, Games & Fun, and Site & External Links—plus dedicated hubs for AI, Games, Design Lab, and Store.
+Five browse categories: Creative & Assets, Tools & Utilities, Games & Fun, Site & External Links, and Containers & Packages—plus dedicated hubs for AI, Games, Design Lab, and Store.
 
 **Are the tools and games free to use?**
 Most web-based tools and games are free. Some mobile apps may differ; check individual listings.

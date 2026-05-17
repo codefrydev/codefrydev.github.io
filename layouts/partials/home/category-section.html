@@ -33,7 +33,7 @@
       </div>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 flex-1 min-h-0 items-start md:content-center">
+    <div class="browse-category__grid flex-1 min-h-0 items-start md:content-center">
       {{- range $i, $item := $previewItems -}}
       <div class="{{ if ge $i 6 }}hidden md:block{{ end }} min-h-0">
         {{ partial "home/tool-card.html" (dict "item" $item "defaultPhosphorIcon" $defaultIcon "categoryName" $cat.name "source" (printf "home_%s" $slug)) }}

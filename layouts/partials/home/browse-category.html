@@ -29,7 +29,7 @@
     </div>
   </div>
 
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 browse-category__grid">
+  <div class="browse-category__grid">
     {{- range $items -}}
       {{ partial "home/tool-card.html" (dict "item" . "defaultPhosphorIcon" $defaultIcon "categoryName" $cat.name "headingLevel" 2 "source" (printf "browse_%s" $slug)) }}
     {{- end -}}

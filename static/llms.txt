@@ -12,7 +12,7 @@ CodeFryDev offers free online tools, games, and AI apps—no signup required. We
 - Full documentation: https://codefrydev.in/llms-full.txt
 
 ## Main Sections
-- Home (/): Categorized tools and resources across four browse categories
+- Home (/): Categorized tools and resources across five browse categories
 - Browse (/browse/): All tools organized by category
 - About us (/about-us): Mission, team, and contributors (alias: /about)
 - AI (/ai): Free AI-powered tools—memes, summarizers, chat, visual notes
@@ -30,6 +30,7 @@ CodeFryDev offers free online tools, games, and AI apps—no signup required. We
 2. **Tools & Utilities** (/browse/tools-utilities/): JSON Playground, JS LIDE, Web SEO, Prompt Library, CSV, meta tags, weather, tier lists, and more
 3. **Games & Fun** (/browse/games-fun/): Wordle, Snake, Chain Reaction, WordDice, 2048, Ludo, Carrom, Overdose, and more
 4. **Site & External Links** (/browse/site-links/): About, timeline, CFDDC, store, privacy, and external education links
+5. **Containers & Packages** (/browse/containers-packages/): Website Profiling Docker image, @codefrydev/svg-engine on npm
 
 ## AI Tools (featured)
 - AI SocialSnap: https://socialsnap.codefrydev.in/

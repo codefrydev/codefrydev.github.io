@@ -79,6 +79,10 @@ categoryBanners:
     image: "/images/banners/site-links.jpg"
     title: "Site & Resources"
     description: "About, updates, store, privacy, and external links."
+  containers-packages:
+    image: "/images/banners/containers-packages.jpg"
+    title: "Containers & Packages"
+    description: "Official Docker images and npm packages from CodeFryDev."
 
 hero:
   badge: "Free tools — no signup"

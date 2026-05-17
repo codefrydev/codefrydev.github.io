@@ -587,3 +587,26 @@ categories:
         phosphorIcon: book
         featured: false
         external: true
+  - name: Containers & Packages
+    slug: containers-packages
+    subtitle: Docker images & npm packages
+    seeAllUrl: /browse/containers-packages/
+    previewCount: 12
+    phosphorIcon: package
+    items:
+      - name: Website Profiling
+        icon: cfd-website-profiling
+        url: https://hub.docker.com/r/codefrydev/website-profiling
+        description: Docker image for website performance profiling and analysis.
+        date: "2026-05-16"
+        phosphorIcon: chart-line
+        featured: true
+        external: true
+      - name: SVG Engine (npm)
+        icon: cfd-svg-engine-npm
+        url: https://www.npmjs.com/package/@codefrydev/svg-engine
+        description: "@codefrydev/svg-engine — SVG creation and manipulation for Node and the browser."
+        date: "2026-05-16"
+        phosphorIcon: pen-nib
+        featured: true
+        external: true

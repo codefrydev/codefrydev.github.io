@@ -1,5 +1,10 @@
 history:
   - date: "17 May 2026"
+    title: "Containers & Packages"
+    description: "New homepage and browse category for official distributions—Website Profiling on Docker Hub (codefrydev/website-profiling) and @codefrydev/svg-engine on npm—with dedicated card icons at /browse/containers-packages/."
+    link: "/browse/containers-packages/"
+    accent_color: "#2496ED"
+  - date: "17 May 2026"
     title: "Homepage redesign & legacy migration"
     description: "Launched the new CodeFryDev homepage—modern layout, improved navigation, search palette, and refreshed footer. The previous design remains available at archived.codefrydev.in (linked as Legacy in the site footer) so existing bookmarks and workflows still work during the transition."
     link: "/"
