@@ -275,7 +275,13 @@
       return;
     }
     if (isOpen && isPaletteVisible()) {
-      close({ force: true });
+      if (input) {
+        input.focus();
+        if (query) {
+          input.value = query;
+          runSearch(query);
+        }
+      }
       return;
     }
     if (isOpen && !isPaletteVisible()) {
@@ -343,11 +349,7 @@
           e.preventDefault();
           e.stopPropagation();
           readScopeFromButton(openBtn);
-          if (isOpen && isPaletteVisible()) {
-            close({ force: true });
-          } else {
-            open('');
-          }
+          open('');
           return;
         }
         if (e.target.closest('[data-search-close]')) {
