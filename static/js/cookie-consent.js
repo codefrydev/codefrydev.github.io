@@ -1,6 +1,6 @@
 /**
  * Cookie Consent Manager
- * Handles GDPR/CCPA compliance for Google Analytics
+ * Handles GDPR/CCPA compliance for Google Analytics and Microsoft Clarity
  */
 
 (function() {
@@ -19,6 +19,36 @@
     // Fallback - this should not happen if hugo.toml is properly configured
     console.warn('Google Analytics ID not found in cookie consent banner. Please check hugo.toml params.google_analytics_id');
     return 'G-VM01Q3R43D'; // Last resort fallback
+  }
+
+  function getClarityProjectId() {
+    const banner = document.getElementById('cookie-consent-banner');
+    if (banner && banner.dataset.clarityId) {
+      return banner.dataset.clarityId;
+    }
+    return '';
+  }
+
+  function loadMicrosoftClarity() {
+    const clarityId = getClarityProjectId();
+    if (!clarityId || window.__cfdClarityLoadedId === clarityId) {
+      return;
+    }
+
+    (function (c, l, a, r, i, t, y) {
+      c[a] =
+        c[a] ||
+        function () {
+          (c[a].q = c[a].q || []).push(arguments);
+        };
+      t = l.createElement(r);
+      t.async = 1;
+      t.src = 'https://www.clarity.ms/tag/' + i;
+      y = l.getElementsByTagName(r)[0];
+      y.parentNode.insertBefore(t, y);
+    })(window, document, 'clarity', 'script', clarityId);
+
+    window.__cfdClarityLoadedId = clarityId;
   }
 
   // Check if consent has been given
@@ -110,6 +140,8 @@
         event_category: 'privacy',
       });
     }
+
+    loadMicrosoftClarity();
   }
 
   // Handle accept button click

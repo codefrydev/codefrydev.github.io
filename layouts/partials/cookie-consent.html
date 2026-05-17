@@ -4,7 +4,8 @@
   {{- warnf "google_analytics_id not set in hugo.toml params. Please configure it." -}}
   {{- $gaId = "G-VM01Q3R43D" -}}
 {{- end -}}
-<div id="cookie-consent-banner" class="cookie-consent-banner" role="dialog" aria-labelledby="cookie-consent-title" aria-live="polite" style="display: none;" data-ga-id="{{ $gaId }}">
+{{- $clarityId := .Site.Params.microsoft_clarity_id | default "" -}}
+<div id="cookie-consent-banner" class="cookie-consent-banner" role="dialog" aria-labelledby="cookie-consent-title" aria-live="polite" style="display: none;" data-ga-id="{{ $gaId }}"{{ with $clarityId }} data-clarity-id="{{ . }}"{{ end }}>
   <div class="cookie-consent-content">
     <div class="cookie-consent-text">
       <h2 id="cookie-consent-title" class="cookie-consent-title">Cookie Consent</h2>

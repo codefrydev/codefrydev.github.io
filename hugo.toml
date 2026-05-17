@@ -20,6 +20,7 @@ disableKinds = ["taxonomy", "term"]
   paginate = 10
   env = "production"
   google_analytics_id = "G-VM01Q3R43D"
+  microsoft_clarity_id = "mxr4hxioh4"
   # Add static/images/og-default.png (1200×630) for better social sharing; omit or leave empty to use logo
   default_og_image = "images/og-default.png"
   
