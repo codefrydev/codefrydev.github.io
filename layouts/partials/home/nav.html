@@ -53,6 +53,7 @@
         <button type="button" id="theme-toggle" class="theme-toggle-nav hidden md:inline-flex h-10 w-10 items-center justify-center rounded-full text-slate-500 hover:text-brand hover:bg-slate-100 transition-colors border-0 cursor-pointer bg-transparent" aria-label="Switch to dark theme" title="Switch to dark theme">
           <i class="ph-bold ph-moon theme-toggle-nav__icon theme-toggle-nav__icon--dark" aria-hidden="true"></i>
           <i class="ph-bold ph-sun theme-toggle-nav__icon theme-toggle-nav__icon--light" aria-hidden="true"></i>
+          <i class="ph-bold ph-drop theme-toggle-nav__icon theme-toggle-nav__icon--glass" aria-hidden="true"></i>
         </button>
         <button type="button" id="mobile-menu-btn" class="lg:hidden inline-flex h-10 w-10 items-center justify-center rounded-full text-slate-600 hover:bg-slate-100 transition-colors relative" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
           <span class="absolute w-5 h-0.5 bg-current rounded-full transition-all duration-300 -translate-y-1.5"></span>
@@ -63,7 +64,7 @@
     </nav>
 
     {{- if $mega -}}
-    <div id="nav-browse-mega" class="nav-mega nav-dropdown nav-dropdown--mega fixed inset-x-0 top-[57px] z-50 pt-4 px-4 sm:px-6 lg:px-8" role="region" aria-label="{{ $mega.label | default "Browse" }} menu">
+    <div id="nav-browse-mega" class="nav-mega nav-dropdown nav-dropdown--mega fixed inset-x-0 top-[var(--home-nav-height,73px)] z-40 pt-4 px-4 sm:px-6 lg:px-8 pointer-events-none" role="region" aria-label="{{ $mega.label | default "Browse" }} menu">
       <div class="nav-mega__panel mx-auto w-full max-w-3xl rounded-2xl border border-gray-200/90 bg-white shadow-xl shadow-slate-300/25 overflow-hidden">
         <div class="nav-mega__grid">
           <div class="nav-mega__col">
@@ -123,6 +124,7 @@
       <button type="button" data-theme-toggle class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-slate-100 text-sm font-medium text-slate-700 hover:bg-slate-200/80 border-0 cursor-pointer" aria-label="Switch theme">
         <i class="ph-bold ph-moon theme-toggle-nav__icon theme-toggle-nav__icon--dark" aria-hidden="true"></i>
         <i class="ph-bold ph-sun theme-toggle-nav__icon theme-toggle-nav__icon--light" aria-hidden="true"></i>
+        <i class="ph-bold ph-drop theme-toggle-nav__icon theme-toggle-nav__icon--glass" aria-hidden="true"></i>
         Theme
       </button>
     </div>

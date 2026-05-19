@@ -135,27 +135,20 @@
 <link rel="alternate" hreflang="{{ $locale }}" href="{{ .Permalink | absURL }}">
 <link rel="alternate" hreflang="x-default" href="{{ .Permalink | absURL }}">
 
-{{- if not (.Scratch.Get "modernLayout") -}}
-{{- /* Theme CSS (legacy pages only; modern home/hub uses Tailwind) */ -}}
-<link rel="stylesheet" href="/css/theme.css">
+<link rel="stylesheet" href="/css/home-tailwind.css">
+<link rel="stylesheet" href="/css/theme-tokens.css">
+<link rel="stylesheet" href="/css/modern-light-theme.css">
+<link rel="stylesheet" href="/css/modern-dark-theme.css">
+<link rel="stylesheet" href="/css/modern-glass-theme.css">
 <script>
 (function() {
   var theme = localStorage.getItem('theme-preference') || 'dark';
   document.documentElement.setAttribute('data-theme', theme);
   var meta = document.querySelector('meta[name="theme-color"]');
-  if (meta) meta.setAttribute('content', theme === 'dark' ? '#0f172a' : '#e5e9f4');
+  var colors = { light: '#e5e9f4', glass: '#eaf2fb', dark: '#0f172a' };
+  if (meta) meta.setAttribute('content', colors[theme] || colors.light);
 })();
 </script>
-{{- else -}}
-<script>
-(function() {
-  var theme = localStorage.getItem('theme-preference') || 'dark';
-  document.documentElement.setAttribute('data-theme', theme);
-  var meta = document.querySelector('meta[name="theme-color"]');
-  if (meta) meta.setAttribute('content', theme === 'dark' ? '#0f172a' : '#e5e9f4');
-})();
-</script>
-{{- end -}}
 
 {{- /* Accessibility CSS */ -}}
 <link rel="stylesheet" href="/css/accessibility.css">

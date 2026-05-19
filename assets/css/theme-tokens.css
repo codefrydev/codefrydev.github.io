@@ -1,0 +1,104 @@
+/**
+ * Shared theme tokens — light, glass, and dark.
+ * Loaded on every page alongside Tailwind + theme override sheets.
+ */
+
+/* Light (default) */
+:root,
+[data-theme="light"] {
+  color-scheme: light;
+  --bg-primary: #f4f6fa;
+  --bg-secondary: #f1f5f9;
+  --bg-tertiary: #ffffff;
+  --bg-card: #ffffff;
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --text-tertiary: #475569;
+  --text-quaternary: #64748b;
+  --link-color: #1d4ed8;
+  --link-hover: #1e40af;
+  --border-light: rgba(0, 0, 0, 0.1);
+  --border-medium: #d1d9e6;
+  --border-dark: #cbd5e1;
+  --shadow-light: hsl(0 0% 100% / 0.75);
+  --shadow-dark: hsl(0 0% 50% / 0.5);
+  --shadow-light-alt: hsl(0 0% 100% / 0.6);
+  --shadow-dark-alt: hsl(225 15% 70% / 0.9);
+  --shadow-card: rgba(15, 23, 42, 0.08);
+  --shadow-card-hover: rgba(15, 23, 42, 0.12);
+  --accent-color: #1d4ed8;
+  --accent-hover: #1e40af;
+  --button-text: #334155;
+  --button-text-hover: #1d4ed8;
+  --button-bg: #f1f5f9;
+  --text-on-accent: #ffffff;
+}
+
+/* Glass */
+[data-theme="glass"] {
+  color-scheme: light;
+  --bg-primary: transparent;
+  --bg-secondary: rgba(255, 255, 255, 0.55);
+  --bg-tertiary: rgba(255, 255, 255, 0.7);
+  --bg-card: rgba(255, 255, 255, 0.74);
+  --text-primary: #0f172a;
+  --text-secondary: #1e293b;
+  --text-tertiary: #334155;
+  --text-quaternary: #475569;
+  --link-color: #0284c7;
+  --link-hover: #0369a1;
+  --border-light: rgba(255, 255, 255, 0.72);
+  --border-medium: rgba(203, 213, 225, 0.7);
+  --border-dark: rgba(148, 163, 184, 0.5);
+  --shadow-light: rgba(255, 255, 255, 0.92);
+  --shadow-dark: rgba(15, 23, 42, 0.08);
+  --shadow-light-alt: rgba(255, 255, 255, 0.6);
+  --shadow-dark-alt: rgba(15, 23, 42, 0.06);
+  --shadow-card: rgba(15, 23, 42, 0.08);
+  --shadow-card-hover: rgba(15, 23, 42, 0.12);
+  --accent-color: #0ea5e9;
+  --accent-hover: #0284c7;
+  --button-text: #1e293b;
+  --button-text-hover: #0ea5e9;
+  --button-bg: rgba(255, 255, 255, 0.6);
+  --text-on-accent: #ffffff;
+}
+
+/* Dark */
+[data-theme="dark"] {
+  color-scheme: dark;
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --bg-tertiary: #334155;
+  --bg-card: #1e293b;
+  --text-primary: #f1f5f9;
+  --text-secondary: #cbd5e1;
+  --text-tertiary: #94a3b8;
+  --text-quaternary: #64748b;
+  --link-color: #60a5fa;
+  --link-hover: #3b82f6;
+  --border-light: rgba(255, 255, 255, 0.1);
+  --border-medium: #475569;
+  --border-dark: #334155;
+  --shadow-light: hsl(0 0% 100% / 0.15);
+  --shadow-dark: hsl(0 0% 0% / 0.6);
+  --shadow-light-alt: hsl(0 0% 100% / 0.12);
+  --shadow-dark-alt: hsl(0 0% 0% / 0.7);
+  --shadow-card: rgba(0, 0, 0, 0.3);
+  --shadow-card-hover: rgba(0, 0, 0, 0.4);
+  --accent-color: #60a5fa;
+  --accent-hover: #3b82f6;
+  --button-text: #cbd5e1;
+  --button-text-hover: #60a5fa;
+  --button-bg: #0f172a;
+  --text-on-accent: #ffffff;
+}
+
+/* Logo on dark backgrounds */
+[data-theme="dark"] img[src*="IconCodefrydev"],
+[data-theme="dark"] .footer-logo,
+[data-theme="dark"] img[src*="iconcodefrydev"],
+[data-theme="dark"] .site-logo {
+  filter: invert(1) brightness(1.1);
+  transition: filter 0.3s ease;
+}

@@ -10,13 +10,23 @@
   body.home-page {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: #f9fafb !important;
+    background-color: #f4f6fa !important;
+    color: #1e293b !important;
+  }
+
+  [data-theme="light"] body.home-page {
+    background-color: #f4f6fa !important;
     color: #1e293b !important;
   }
 
   [data-theme="dark"] body.home-page {
     background-color: #0f172a !important;
     color: #e2e8f0 !important;
+  }
+
+  [data-theme="glass"] body.home-page {
+    background-color: transparent !important;
+    color: #0f172a !important;
   }
 
   [data-theme="dark"] body.home-page img[src*="IconCodefrydev"] {
@@ -123,11 +133,37 @@
     @apply hidden;
   }
 
+  .theme-toggle-nav__icon--glass {
+    @apply hidden;
+  }
+
   [data-theme="dark"] .theme-toggle-nav__icon--dark {
     @apply hidden;
   }
 
   [data-theme="dark"] .theme-toggle-nav__icon--light {
+    @apply inline;
+  }
+
+  [data-theme="glass"] .theme-toggle-nav__icon--dark {
+    @apply hidden;
+  }
+
+  [data-theme="glass"] .theme-toggle-nav__icon--light {
+    @apply hidden;
+  }
+
+  [data-theme="glass"] .theme-toggle-nav__icon--glass {
+    @apply inline;
+  }
+
+  /* Light theme: show next theme icon (glass) */
+  [data-theme="light"] .theme-toggle-nav__icon--dark,
+  [data-theme="light"] .theme-toggle-nav__icon--light {
+    @apply hidden;
+  }
+
+  [data-theme="light"] .theme-toggle-nav__icon--glass {
     @apply inline;
   }
 
@@ -154,12 +190,13 @@
   }
 
   .search-palette {
-    @apply fixed inset-0 z-[200] flex items-start justify-center pt-[10vh] px-4 pb-8;
-    @apply opacity-0 transition-opacity duration-200 pointer-events-none;
+    @apply fixed inset-0 z-[10100] flex items-start justify-center pt-[10vh] px-4 pb-8;
+    @apply opacity-0 invisible transition-[opacity,visibility] duration-200 pointer-events-none;
   }
 
   .search-palette.is-visible {
-    @apply opacity-100 pointer-events-auto;
+    @apply opacity-100 visible pointer-events-auto;
+    z-index: 10100;
   }
 
   .search-palette--embedded,
@@ -322,6 +359,13 @@
 
   .search-palette__footer-kbd {
     @apply ml-auto font-medium text-slate-500;
+  }
+
+  /* Nav chrome actions stay above mega-menu fixed layer */
+  .nav-shell [data-search-open],
+  .nav-shell #theme-toggle,
+  .nav-shell #mobile-menu-btn {
+    @apply relative z-[60];
   }
 
   /* Nav dropdowns — bridge gap; stay open while hovering panel */

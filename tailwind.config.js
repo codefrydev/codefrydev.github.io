@@ -108,6 +108,7 @@ module.exports = {
     'theme-toggle-nav__icon',
     'theme-toggle-nav__icon--dark',
     'theme-toggle-nav__icon--light',
+    'theme-toggle-nav__icon--glass',
     'browse-index',
     'browse-index__hero',
     'browse-category-card',

@@ -8,6 +8,7 @@
   var triggersBound = false;
   var initialized = false;
   var pendingOpen = false;
+  var openingClick = false;
   var openedAt = 0;
   var activeCategory = null;
   var activeCategorySlug = null;
@@ -261,7 +262,16 @@
     return !!(palette && palette.classList.contains('is-visible'));
   }
 
+  /** Fixed overlay must be a direct child of body (avoids trapped stacking contexts). */
+  function mountPaletteToBody() {
+    if (!palette || palette.parentElement === document.body) return;
+    document.body.appendChild(palette);
+  }
+
   function open(query) {
+    if (!initialized) {
+      init();
+    }
     if (!palette) {
       if (!initialized) {
         pendingOpen = true;
@@ -270,6 +280,9 @@
       goToSearchPage(query || '');
       return;
     }
+
+    mountPaletteToBody();
+
     if (isEmbedded) {
       if (input) {
         input.focus();
@@ -300,11 +313,30 @@
     palette.setAttribute('aria-hidden', 'false');
     setBodyScrollLocked(true);
     palette.classList.add('is-visible');
+    palette.style.pointerEvents = 'auto';
+    palette.style.visibility = 'visible';
+    palette.style.zIndex = '10100';
     if (input) {
       input.value = query || '';
-      input.focus();
       runSearch(input.value);
+      requestAnimationFrame(function () {
+        if (input) input.focus();
+      });
     }
+  }
+
+  function handleOpenTrigger(btn, event) {
+    if (event) {
+      event.preventDefault();
+      if (event.type === 'click') event.stopPropagation();
+    }
+    if (openingClick) return;
+    openingClick = true;
+    setTimeout(function () {
+      openingClick = false;
+    }, 0);
+    readScopeFromButton(btn);
+    open('');
   }
 
   function close(opts) {
@@ -317,6 +349,9 @@
     activeCategorySlug = null;
     palette.classList.remove('is-visible');
     palette.setAttribute('aria-hidden', 'true');
+    palette.style.pointerEvents = '';
+    palette.style.visibility = '';
+    palette.style.zIndex = '';
     setTimeout(function () {
       palette.hidden = true;
       palette.setAttribute('hidden', '');
@@ -355,10 +390,7 @@
       function (e) {
         var openBtn = e.target.closest('[data-search-open]');
         if (openBtn) {
-          e.preventDefault();
-          e.stopPropagation();
-          readScopeFromButton(openBtn);
-          open('');
+          handleOpenTrigger(openBtn, e);
           return;
         }
         if (e.target.closest('[data-search-close]')) {
@@ -368,6 +400,15 @@
       },
       true
     );
+
+    /* Direct bind — fallback when delegated capture is blocked by overlays */
+    document.querySelectorAll('[data-search-open]').forEach(function (btn) {
+      if (btn.dataset.searchOpenBound === 'true') return;
+      btn.dataset.searchOpenBound = 'true';
+      btn.addEventListener('click', function (e) {
+        handleOpenTrigger(btn, e);
+      });
+    });
   }
 
   function bindPalette() {
@@ -420,14 +461,19 @@
 
   function init() {
     if (initialized) return true;
-    if (!window.CFD_SEARCH || !window.CFD_SEARCH.data) {
-      return false;
-    }
 
     palette = document.getElementById('search-palette');
     if (!palette) {
       return false;
     }
+
+    if (window.CFD_SEARCH && window.CFD_SEARCH.data) {
+      allItems = buildIndex(window.CFD_SEARCH.data);
+    } else {
+      allItems = [];
+    }
+
+    mountPaletteToBody();
     initialized = true;
 
     backdrop = $('.search-palette__backdrop', palette);
@@ -440,9 +486,9 @@
       document.body.classList.contains('search-palette-page') ||
       /^\/search\/?$/.test(window.location.pathname);
 
-    allItems = buildIndex(window.CFD_SEARCH.data);
     initKbdLabels();
     bindPalette();
+    bindTriggers();
 
     document.addEventListener('keydown', function (e) {
       if ((e.metaKey || e.ctrlKey) && e.key === 'k') {

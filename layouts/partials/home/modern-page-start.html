@@ -4,7 +4,6 @@
 {{- $mainClass := .mainClass | default "min-h-screen" -}}
 {{- $bodyClass := .bodyClass | default "" -}}
 
-{{- $page.Scratch.Set "modernLayout" true -}}
 {{- with $navActive -}}{{- $page.Scratch.Set "navActive" . -}}{{- end -}}
 
 <!DOCTYPE html>

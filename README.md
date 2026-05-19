@@ -4,7 +4,7 @@ Static site for [codefrydev.in](https://codefrydev.in/) — free online tools, g
 
 ## Features
 
-- **Modern homepage** — category grids, search palette, scroll sections, dark/light theme
+- **Modern site shell** — category grids, search palette, scroll sections, **light / glass / dark** themes
 - **Browse** — `/browse/` index plus category pages (`creative-assets`, `tools-utilities`, `games-fun`, `site-links`, `containers-packages`)
 - **Hubs** — Games, AI, Design Lab, Store, Search
 - **CFDDC** — year-by-year “developer conference” pages at `/cfddc/` fed from [`data/history.yaml`](data/history.yaml)
@@ -18,7 +18,7 @@ Static site for [codefrydev.in](https://codefrydev.in/) — free online tools, g
 |--------|--------|
 | Site generator | Hugo Extended **0.160.1** (see [`.github/workflows/hugo.yaml`](.github/workflows/hugo.yaml)) |
 | Styling | Tailwind CSS 3 → `static/css/home-tailwind.css` |
-| Dark theme | `assets/css/modern-dark-theme.css` (copied to `static/css/` on build) |
+| Themes | `light`, `glass`, `dark` — tokens in `assets/css/theme-tokens.css`; overrides in `modern-dark-theme.css` and `modern-glass-theme.css` (copied to `static/css/` on build) |
 | Icons | Phosphor Icons (CDN) |
 | Deploy | GitHub Actions → GitHub Pages |
 
@@ -33,7 +33,7 @@ Static site for [codefrydev.in](https://codefrydev.in/) — free online tools, g
 # Install JS dependencies (first time)
 npm install
 
-# Build Tailwind + dark theme CSS
+# Build Tailwind + theme CSS
 npm run build:css
 
 # Watch CSS while editing (optional, second terminal)
@@ -108,7 +108,9 @@ When [`data/history.yaml`](data/history.yaml) includes dates for a new year:
 ## CSS notes
 
 - Edit Tailwind utilities and components in [`assets/css/tailwind-input.css`](assets/css/tailwind-input.css).
+- Edit shared color tokens in [`assets/css/theme-tokens.css`](assets/css/theme-tokens.css).
 - Edit dark-mode overrides in [`assets/css/modern-dark-theme.css`](assets/css/modern-dark-theme.css).
+- Edit glass-mode overrides in [`assets/css/modern-glass-theme.css`](assets/css/modern-glass-theme.css).
 - Always run `npm run build:css` before committing CSS-related changes (CI runs this on deploy).
 
 ## Deployment

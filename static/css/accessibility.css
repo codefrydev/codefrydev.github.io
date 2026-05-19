@@ -1,8 +1,13 @@
-/* Focus ring tokens (modern layout does not load theme.css) */
+/* Focus ring tokens (complement theme-tokens.css) */
 :root,
-body.home-page {
+[data-theme="light"] body.home-page {
   --link-color: #2563eb;
   --focus-ring: #2563eb;
+}
+
+[data-theme="glass"] body.home-page {
+  --link-color: #0284c7;
+  --focus-ring: #0284c7;
 }
 
 [data-theme="dark"] body.home-page {

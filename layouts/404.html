@@ -1,4 +1,3 @@
-{{- .Scratch.Set "modernLayout" true -}}
 {{- .Scratch.Set "navActive" "" -}}
 {{- .Scratch.Set "breadcrumbItems" (slice (dict "name" "Home" "url" "/") (dict "name" "Page not found" "current" true)) -}}
 {{ partial "home/modern-page-start.html" (dict "page" . "headExtra" `<meta name="robots" content="noindex, follow">`) }}

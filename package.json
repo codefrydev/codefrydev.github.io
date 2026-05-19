@@ -2,7 +2,7 @@
   "name": "codefrydev-site",
   "private": true,
   "scripts": {
-    "build:css": "tailwindcss -i ./assets/css/tailwind-input.css -o ./static/css/home-tailwind.css --minify && cp ./assets/css/modern-dark-theme.css ./static/css/modern-dark-theme.css",
+    "build:css": "tailwindcss -i ./assets/css/tailwind-input.css -o ./static/css/home-tailwind.css --minify && cp ./assets/css/theme-tokens.css ./static/css/theme-tokens.css && cp ./assets/css/modern-light-theme.css ./static/css/modern-light-theme.css && cp ./assets/css/modern-dark-theme.css ./static/css/modern-dark-theme.css && cp ./assets/css/modern-glass-theme.css ./static/css/modern-glass-theme.css",
     "watch:css": "tailwindcss -i ./assets/css/tailwind-input.css -o ./static/css/home-tailwind.css --watch"
   },
   "devDependencies": {
