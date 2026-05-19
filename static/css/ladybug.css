@@ -2,13 +2,48 @@
    Ladybug Feature — Home Page Only
    ============================================================ */
 
-/* Gated: hidden until user clicks “Alpha” (home) */
+/* Gated: hidden until user clicks “Beta” (home) */
 #ladybug-container.ladybug-gate-hidden,
 #ladybug-particles-host.ladybug-gate-hidden,
 #ladybug-message.ladybug-gate-hidden {
     visibility: hidden;
     opacity: 0;
     pointer-events: none;
+}
+
+/* Brief peek near the Beta tag before the user reveals the easter egg */
+#ladybug-container.ladybug-gate-hidden.ladybug-gate-teaser {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: none;
+}
+
+#ladybug-container.ladybug-gate-teaser {
+    transition: filter 0.25s ease, opacity 0.22s ease, visibility 0.22s ease;
+}
+
+@keyframes ladybug-beta-teaser-bob {
+    0%,
+    100% { transform: translate3d(var(--ladybug-teaser-x, 0), var(--ladybug-teaser-y, 0), 0) rotate(178deg) scale(0.9); }
+    50%     { transform: translate3d(var(--ladybug-teaser-x, 0), calc(var(--ladybug-teaser-y, 0px) - 5px), 0) rotate(182deg) scale(0.96); }
+}
+
+#ladybug-container.ladybug-gate-teaser.ladybug-beta-teaser-animate {
+    animation: ladybug-beta-teaser-bob 0.55s ease-in-out 2;
+}
+
+.site-beta-tag.site-beta-tag--teaser-hint {
+    animation: ladybug-beta-tag-pulse 0.65s ease-in-out 2;
+}
+
+@keyframes ladybug-beta-tag-pulse {
+    0%,
+    100% {
+        box-shadow: 0 0 0 0 rgba(14, 165, 233, 0);
+    }
+    50% {
+        box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.35);
+    }
 }
 
 /* Bug container: fixed overlay, full-page movement space */

@@ -1300,9 +1300,93 @@
         requestAnimationFrame(animateLoop);
     }
 
-    // ---------- Reveal gate (home: hidden until “Alpha” is clicked) ----------
+    // ---------- Reveal gate (home: hidden until “Beta” is clicked) ----------
+
+    var BETA_TEASER_INTERVAL_MS = 120000; /* 2 minutes between peeks */
+    var BETA_TEASER_VISIBLE_MS = 1100;
+    var betaTeaserIntervalTimer = null;
+    var betaTeaserHideTimer = null;
+
+    function getBetaRevealButton() {
+        return document.getElementById('ladybug-reveal-beta');
+    }
+
+    function positionBugForBetaTeaser(betaEl) {
+        var r = betaEl.getBoundingClientRect();
+        if (r.width < 2 || r.height < 2) return false;
+        var tx = r.right - bugSize * 0.42;
+        var ty = r.top - bugSize * 0.12;
+        tx = clamp(tx, 4, window.innerWidth - bugSize - 4);
+        ty = clamp(ty, 4, window.innerHeight - bugSize - 4);
+        bug.style.setProperty('--ladybug-teaser-x', tx + 'px');
+        bug.style.setProperty('--ladybug-teaser-y', ty + 'px');
+        bug.style.transform = 'translate3d(' + tx + 'px, ' + ty + 'px, 0) rotate(180deg) scale(0.9)';
+        x = tx;
+        y = ty;
+        return true;
+    }
+
+    function stopBetaTeaserLoop() {
+        if (betaTeaserIntervalTimer) {
+            clearInterval(betaTeaserIntervalTimer);
+            betaTeaserIntervalTimer = null;
+        }
+    }
+
+    function cancelBetaTeaser() {
+        stopBetaTeaserLoop();
+        if (betaTeaserHideTimer) {
+            clearTimeout(betaTeaserHideTimer);
+            betaTeaserHideTimer = null;
+        }
+        bug.classList.remove('ladybug-gate-teaser', 'ladybug-beta-teaser-animate', 'ladybug-flying');
+        bug.style.removeProperty('--ladybug-teaser-x');
+        bug.style.removeProperty('--ladybug-teaser-y');
+        var betaBtn = getBetaRevealButton();
+        if (betaBtn) {
+            betaBtn.classList.remove('site-beta-tag--teaser-hint');
+        }
+    }
+
+    function endBetaTeaser() {
+        betaTeaserHideTimer = null;
+        if (!isLadybugGateHidden()) return;
+        bug.classList.remove('ladybug-gate-teaser', 'ladybug-beta-teaser-animate', 'ladybug-flying');
+        var betaBtn = getBetaRevealButton();
+        if (betaBtn) {
+            betaBtn.classList.remove('site-beta-tag--teaser-hint');
+        }
+    }
+
+    function runBetaTeaser() {
+        if (!isLadybugGateHidden()) return;
+        if (bug.classList.contains('ladybug-gate-teaser')) return;
+        var betaBtn = getBetaRevealButton();
+        if (!betaBtn) return;
+        if (!positionBugForBetaTeaser(betaBtn)) return;
+
+        bug.classList.add('ladybug-gate-teaser', 'ladybug-beta-teaser-animate', 'ladybug-flying');
+        betaBtn.classList.add('site-beta-tag--teaser-hint');
+
+        betaTeaserHideTimer = setTimeout(endBetaTeaser, BETA_TEASER_VISIBLE_MS);
+    }
+
+    function startBetaTeaserLoop() {
+        if (!getBetaRevealButton()) return;
+        if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        stopBetaTeaserLoop();
+
+        betaTeaserIntervalTimer = setInterval(function () {
+            if (!isLadybugGateHidden()) {
+                stopBetaTeaserLoop();
+                return;
+            }
+            runBetaTeaser();
+        }, BETA_TEASER_INTERVAL_MS);
+    }
 
     function revealLadybugEasterEgg() {
+        cancelBetaTeaser();
         if (!bug.classList.contains('ladybug-gate-hidden')) return;
         if (particlesHost) particlesHost.classList.remove('ladybug-gate-hidden');
         if (pill) pill.classList.remove('ladybug-gate-hidden');
@@ -1337,6 +1421,7 @@
         lastScrollY = window.scrollY || window.pageYOffset || 0;
         initH1BiteTarget();
         bindLadybugRevealControl();
+        startBetaTeaserLoop();
         requestAnimationFrame(animateLoop);
         setTimeout(function () {
             if (!isLadybugGateHidden() && isDarkTheme()) {
