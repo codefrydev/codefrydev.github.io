@@ -36,7 +36,8 @@
 
 /* ── Header & nav ── */
 [data-theme="light"] body > header.nav-shell {
-  position: relative;
+  position: sticky;
+  top: 0;
   background-color: rgba(255, 255, 255, 0.97) !important;
   border-color: var(--light-border) !important;
   box-shadow: inset 0 1px 0 var(--light-highlight), var(--light-shadow-sm), 0 4px 20px rgba(15, 23, 42, 0.04);

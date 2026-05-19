@@ -44,7 +44,8 @@
 
 /* ── Header & nav (chrome tier) ── */
 [data-theme="glass"] body > header.nav-shell {
-  position: relative;
+  position: sticky;
+  top: 0;
   isolation: isolate;
   border-color: var(--glass-border);
   background-color: var(--glass-chrome-bg);
