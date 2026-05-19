@@ -5,6 +5,7 @@
   {{- $totalTools = add $totalTools (len (where .items "hidden" "!=" true)) -}}
 {{- end -}}
 {{- $catCount := len hugo.Data.home.categories -}}
+{{- $iconEmoji := dict "palette" "🎨" "wrench" "🔧" "game-controller" "🎮" "link" "🔗" "package" "📦" "squares-four" "⊞" "robot" "🤖" "magnifying-glass" "🔍" "shopping-bag" "🛍️" "app-window" "🖥️" "arrow-right" "→" -}}
 
 <section class="browse-index pt-8 pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full" aria-labelledby="browse-index-heading">
   <header class="browse-index__hero">
@@ -13,8 +14,8 @@
       <h1 id="browse-index-heading" class="browse-index__title m-0">{{ $page.Title | default "Browse all categories" }}</h1>
       <p class="browse-index__lead m-0">{{ $page.Description | default "Free tools, games, and AI apps—organized by category. Pick a collection or jump to a hub." }}</p>
       <div class="browse-index__meta">
-        <span class="browse-index__stat"><i class="ph-duotone ph-squares-four" aria-hidden="true"></i> {{ $catCount }} categories</span>
-        <span class="browse-index__stat"><i class="ph-duotone ph-app-window" aria-hidden="true"></i> {{ $totalTools }}+ tools</span>
+        <span class="browse-index__stat">⊞ {{ $catCount }} categories</span>
+        <span class="browse-index__stat">🖥️ {{ $totalTools }}+ tools</span>
       </div>
       <div class="browse-index__search">
         {{ partial "home/search-trigger.html" (dict "placeholder" "Search tools, games, AI apps…" "size" "md" "class" "browse-index__search-trigger") }}
@@ -28,11 +29,11 @@
       {{- range hugo.Data.home.categories -}}
       {{- $slug := .slug | default (.name | anchorize) -}}
       {{- $url := .seeAllUrl | default (printf "/browse/%s/" $slug) -}}
-      {{- $icon := .phosphorIcon | default "squares-four" -}}
       {{- $visible := where .items "hidden" "!=" true -}}
       {{- $featured := where $visible "featured" true -}}
       {{- $previews := cond (gt (len $featured) 0) ($featured | first 6) ($visible | first 6) -}}
       {{- $banner := index hugo.Data.homepage.categoryBanners $slug | default dict -}}
+      {{- $catEmoji := index $iconEmoji (.phosphorIcon | default "squares-four") | default "•" -}}
       <li role="listitem">
         <a href="{{ $url }}" class="browse-category-card group no-underline" data-cfd-cta="browse_card_{{ $slug }}">
           {{- with $banner.image -}}
@@ -40,9 +41,7 @@
           {{- end -}}
           <span class="browse-category-card__body">
             <span class="browse-category-card__top">
-              <span class="browse-category-card__icon" aria-hidden="true">
-                <i class="ph-duotone ph-{{ $icon }}"></i>
-              </span>
+              <span class="browse-category-card__icon" aria-hidden="true">{{ $catEmoji }}</span>
               <span class="browse-category-card__heading">
                 <span class="browse-category-card__name">{{ .name }}</span>
                 <span class="browse-category-card__subtitle">{{ .subtitle }}</span>
@@ -59,7 +58,7 @@
             </span>
             {{- end -}}
             <span class="browse-category-card__cta">
-              View category <i class="ph-bold ph-arrow-right" aria-hidden="true"></i>
+              View category →
             </span>
           </span>
         </a>
@@ -74,11 +73,12 @@
     <p class="browse-index__section-desc m-0">Curated collections for games, AI, design, and more.</p>
     <ul class="browse-hub-grid list-none m-0 p-0" role="list">
       {{- range $hubs -}}
+      {{- $hubEmoji := index $iconEmoji (.icon | default "arrow-right") | default "→" -}}
       <li role="listitem">
         <a href="{{ .url }}" class="browse-hub-card no-underline group">
-          <i class="ph-duotone ph-{{ .icon | default "arrow-right" }}" aria-hidden="true"></i>
+          <span aria-hidden="true">{{ $hubEmoji }}</span>
           <span class="browse-hub-card__label">{{ .label }}</span>
-          <i class="ph-bold ph-caret-right browse-hub-card__arrow" aria-hidden="true"></i>
+          <span class="browse-hub-card__arrow" aria-hidden="true">→</span>
         </a>
       </li>
       {{- end -}}

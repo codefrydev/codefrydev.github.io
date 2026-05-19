@@ -1,0 +1,5 @@
+{{- $name := .name -}}
+{{- $weight := .weight | default "bold" -}}
+{{- $class := .class -}}
+{{- $label := .label -}}
+<svg class="ph-icon ph-icon--{{ $weight }}{{ with $class }} {{ . }}{{ end }}" {{ if $label }}role="img" aria-label="{{ $label }}"{{ else }}aria-hidden="true"{{ end }} focusable="false"><use href="#ph-{{ $weight }}-{{ $name }}"></use></svg>

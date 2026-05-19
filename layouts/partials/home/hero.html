@@ -51,10 +51,10 @@
 
   {{- if gt (len $slides) 1 -}}
   <button type="button" id="hero-carousel-prev" class="home-hero__nav-btn home-hero__nav-btn--side home-hero__nav-btn--prev" aria-label="Previous slide">
-    <i class="ph-bold ph-caret-left" aria-hidden="true"></i>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="20" height="20" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
   </button>
   <button type="button" id="hero-carousel-next" class="home-hero__nav-btn home-hero__nav-btn--side home-hero__nav-btn--next" aria-label="Next slide">
-    <i class="ph-bold ph-caret-right" aria-hidden="true"></i>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="20" height="20" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
   </button>
   <div id="carousel-indicators" class="home-hero__indicators" role="tablist" aria-label="Hero slides"></div>
   {{- else -}}
@@ -63,7 +63,7 @@
 
   <p class="absolute bottom-24 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-slate-400 text-xs font-medium pointer-events-none m-0 home-scroll-hint" aria-hidden="true">
     <span>Scroll to explore</span>
-    <i class="ph-bold ph-caret-down text-sm animate-bounce"></i>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" class="animate-bounce"><polyline points="6 9 12 15 18 9"/></svg>
   </p>
 
   <script>

@@ -15,7 +15,7 @@
       {{- end -}}
       {{- if $latestCard -}}
       <a href="/cfddc/{{ $latest }}/" class="cfddc-btn cfddc-btn--primary mt-8 inline-flex no-underline" data-cfd-cta="cfddc_latest">
-        Watch CFDDC {{ $latestCard.shortYear }} <i class="ph-bold ph-arrow-right" aria-hidden="true"></i>
+        Watch CFDDC {{ $latestCard.shortYear }} →
       </a>
       {{- end -}}
     </div>
@@ -35,13 +35,13 @@
             <span class="cfddc-year-card__full">{{ .year }}</span>
             <span class="cfddc-year-card__count">{{ .count }} {{ if eq .count 1 }}announcement{{ else }}announcements{{ end }}</span>
           </span>
-          <span class="cfddc-year-card__cta">View edition <i class="ph-bold ph-arrow-right" aria-hidden="true"></i></span>
+          <span class="cfddc-year-card__cta">View edition →</span>
         </a>
       </li>
       {{- end -}}
     </ul>
     <p class="text-center mt-10 mb-0">
-      <a href="/history/" class="cfddc-link no-underline">View full timeline <i class="ph-bold ph-arrow-right text-xs" aria-hidden="true"></i></a>
+      <a href="/history/" class="cfddc-link no-underline">View full timeline →</a>
     </p>
   </section>
 </div>

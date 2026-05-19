@@ -4,7 +4,7 @@
   <div class="search-palette__dialog" role="dialog" aria-modal="true" aria-labelledby="search-palette-title">
     <p id="search-palette-title" class="sr-only">Search CodeFryDev</p>
     <div class="search-palette__input-wrap">
-      <i class="ph-bold ph-magnifying-glass search-palette__input-icon" aria-hidden="true"></i>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" class="search-palette__input-icon" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
       <input
         type="search"
         id="search-palette-input"
@@ -21,17 +21,17 @@
     </div>
     <div class="search-palette__body" id="search-palette-body">
       <div id="search-palette-empty" class="search-palette__empty" hidden>
-        <i class="ph-duotone ph-magnifying-glass search-palette__empty-icon" aria-hidden="true"></i>
+        <span class="search-palette__empty-icon" aria-hidden="true">🔍</span>
         <p class="search-palette__empty-title">No matches</p>
         <p class="search-palette__empty-hint">Try another keyword or pick a shortcut below</p>
       </div>
       <div id="search-palette-default" class="search-palette__default">
         <p class="search-palette__section-label">Quick open</p>
         <div class="search-palette__chips" role="list">
-          <a href="/games/" class="search-palette__chip" role="listitem"><i class="ph-duotone ph-game-controller" aria-hidden="true"></i> Games</a>
-          <a href="/ai/" class="search-palette__chip" role="listitem"><i class="ph-duotone ph-robot" aria-hidden="true"></i> AI Tools</a>
-          <a href="/designlab/" class="search-palette__chip" role="listitem"><i class="ph-duotone ph-palette" aria-hidden="true"></i> Design Lab</a>
-          <a href="/browse/" class="search-palette__chip" role="listitem"><i class="ph-duotone ph-squares-four" aria-hidden="true"></i> Browse</a>
+          <a href="/games/" class="search-palette__chip" role="listitem">🎮 Games</a>
+          <a href="/ai/" class="search-palette__chip" role="listitem">🤖 AI Tools</a>
+          <a href="/designlab/" class="search-palette__chip" role="listitem">🎨 Design Lab</a>
+          <a href="/browse/" class="search-palette__chip" role="listitem">⊞ Browse</a>
         </div>
         <p class="search-palette__section-label">Popular</p>
         <ul id="search-palette-suggestions" class="search-palette__list" role="listbox" aria-label="Popular tools">
@@ -41,12 +41,11 @@
               {{- if and .featured (lt $n 6) -}}
               <li role="option">
                 <a href="{{ .url }}" class="search-palette__result" data-search-suggestion>
-                  <span class="search-palette__result-icon"><i class="ph-fill ph-{{ .phosphorIcon | default "app-window" }}" aria-hidden="true"></i></span>
                   <span class="search-palette__result-text">
                     <span class="search-palette__result-name">{{ .name }}</span>
                     <span class="search-palette__result-meta">{{ $cat.name }}</span>
                   </span>
-                  <i class="ph-bold ph-arrow-right search-palette__result-arrow" aria-hidden="true"></i>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" class="search-palette__result-arrow" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
                 </a>
               </li>
               {{- $n = add $n 1 -}}

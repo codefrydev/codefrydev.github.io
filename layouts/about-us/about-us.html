@@ -19,7 +19,7 @@
         <p class="about-hero__quote m-0">{{ $quote }}</p>
         <div class="about-hero__actions">
           <a href="/browse/" class="about-btn about-btn--primary no-underline">
-            Browse tools <i class="ph-bold ph-arrow-right" aria-hidden="true"></i>
+            Browse tools →
           </a>
           <a href="/press/" class="about-btn about-btn--ghost no-underline">Press &amp; media</a>
         </div>
@@ -45,7 +45,7 @@
         <ul class="about-values-list list-none m-0 p-0">
           {{- range . -}}
           <li class="about-values-list__item">
-            <span class="about-values-list__icon" aria-hidden="true"><i class="ph-fill ph-check-circle"></i></span>
+            <span class="about-values-list__check" aria-hidden="true">✓</span>
             <span>{{ . }}</span>
           </li>
           {{- end -}}
@@ -69,22 +69,22 @@
     <section class="about-stats mb-14 sm:mb-16" aria-label="Platform at a glance">
       <ul class="about-stats__grid list-none m-0 p-0">
         <li class="about-stat">
-          <span class="about-stat__icon" aria-hidden="true"><i class="ph-duotone ph-app-window"></i></span>
+          <span class="about-stat__icon" aria-hidden="true">🖥️</span>
           <span class="about-stat__value">{{ $totalTools }}+</span>
           <span class="about-stat__label">Tools &amp; apps</span>
         </li>
         <li class="about-stat">
-          <span class="about-stat__icon" aria-hidden="true"><i class="ph-duotone ph-robot"></i></span>
+          <span class="about-stat__icon" aria-hidden="true">🤖</span>
           <span class="about-stat__value">{{ $aiCount }}</span>
           <span class="about-stat__label">AI projects</span>
         </li>
         <li class="about-stat">
-          <span class="about-stat__icon" aria-hidden="true"><i class="ph-duotone ph-game-controller"></i></span>
+          <span class="about-stat__icon" aria-hidden="true">🎮</span>
           <span class="about-stat__value">{{ $gamesCount }}</span>
           <span class="about-stat__label">Games</span>
         </li>
         <li class="about-stat">
-          <span class="about-stat__icon" aria-hidden="true"><i class="ph-duotone ph-palette"></i></span>
+          <span class="about-stat__icon" aria-hidden="true">🎨</span>
           <span class="about-stat__value">{{ $designCount }}</span>
           <span class="about-stat__label">Design tools</span>
         </li>
@@ -99,7 +99,7 @@
           <p class="about-subhead m-0">The people building tools, games, and experiments in the open.</p>
         </div>
         <a href="{{ $members.RelPermalink }}" class="about-link-arrow no-underline">
-          All members <i class="ph-bold ph-arrow-right" aria-hidden="true"></i>
+          All members →
         </a>
       </div>
       <ul class="about-team-grid list-none m-0 p-0">
@@ -115,7 +115,7 @@
               <span class="about-team-card__role">{{ . }}</span>
               {{- end -}}
             </span>
-            <span class="about-team-card__cta">View profile <i class="ph-bold ph-arrow-up-right" aria-hidden="true"></i></span>
+            <span class="about-team-card__cta">View profile →</span>
           </a>
         </li>
         {{- end -}}
@@ -138,14 +138,10 @@
             {{- with .accent_color -}}style="--about-accent: {{ . }}"{{- end -}}
             {{- if strings.HasPrefix .url "http" -}} target="_blank" rel="noopener noreferrer"{{- end -}}
           >
-            <span class="about-connect-card__icon" aria-hidden="true">
-              <i class="ph-duotone ph-{{ .phosphorIcon | default "link" }}"></i>
-            </span>
             <span class="about-connect-card__text">
               <span class="about-connect-card__title">{{ .title }}</span>
               <span class="about-connect-card__desc">{{ .content }}</span>
             </span>
-            <i class="ph-bold ph-arrow-up-right about-connect-card__arrow" aria-hidden="true"></i>
           </a>
         </li>
         {{- end -}}
@@ -158,8 +154,8 @@
         <h2 class="about-cta__title m-0">Ready to explore?</h2>
         <p class="about-cta__text m-0">Jump into tools, games, or AI apps—everything runs in your browser.</p>
         <div class="about-cta__actions">
-          <a href="/" class="about-btn about-btn--primary about-btn--on-dark no-underline">Go to homepage</a>
-          <a href="/history/" class="about-btn about-btn--ghost about-btn--on-dark no-underline">Our timeline</a>
+          <a href="/" class="about-btn about-btn--primary about-btn--on-dark no-underline">Go to homepage →</a>
+          <a href="/history/" class="about-btn about-btn--ghost about-btn--on-dark no-underline">Our timeline ↗</a>
         </div>
       </div>
     </section>
