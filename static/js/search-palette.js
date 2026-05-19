@@ -22,6 +22,19 @@
     return (url || '').replace(/\/$/, '').toLowerCase();
   }
 
+  function phosphorIconSvg(name) {
+    var safe = String(name || 'app-window')
+      .toLowerCase()
+      .replace(/[^a-z0-9-]/g, '');
+    if (!safe) safe = 'app-window';
+    return (
+      '<svg class="ph-icon ph-icon--fill" aria-hidden="true" focusable="false">' +
+      '<use href="#ph-fill-' +
+      safe +
+      '"></use></svg>'
+    );
+  }
+
   function buildIndex(data) {
     var items = [];
     var seen = new Set();
@@ -199,9 +212,9 @@
       a.setAttribute('data-cfd-category', item.category);
       a.setAttribute('data-cfd-source', 'search_palette');
       a.innerHTML =
-        '<span class="search-palette__result-icon"><i class="ph-fill ph-' +
-        item.phosphorIcon +
-        '" aria-hidden="true"></i></span>' +
+        '<span class="search-palette__result-icon">' +
+        phosphorIconSvg(item.phosphorIcon) +
+        '</span>' +
         '<span class="search-palette__result-text">' +
         '<span class="search-palette__result-name">' +
         highlight(item.name, query) +
@@ -331,7 +344,7 @@
     openedAt = Date.now();
     palette.removeAttribute('hidden');
     palette.hidden = false;
-    palette.setAttribute('aria-hidden', 'false');
+    palette.removeAttribute('inert');
     setBodyScrollLocked(true);
     palette.classList.add('is-visible');
     palette.style.pointerEvents = 'auto';
@@ -367,7 +380,7 @@
     activeCategory = null;
     activeCategorySlug = null;
     palette.classList.remove('is-visible');
-    palette.setAttribute('aria-hidden', 'true');
+    palette.setAttribute('inert', '');
     palette.style.pointerEvents = '';
     palette.style.visibility = '';
     palette.style.zIndex = '';

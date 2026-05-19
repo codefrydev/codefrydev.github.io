@@ -111,7 +111,12 @@ When [`data/history.yaml`](data/history.yaml) includes dates for a new year:
 - Edit glass-mode overrides in [`assets/css/modern-glass-theme.css`](assets/css/modern-glass-theme.css).
 - All six global CSS sources are bundled and minified into `static/css/site.min.css` by [`scripts/bundle-site-css.mjs`](scripts/bundle-site-css.mjs). Every page loads only this one file for global styles.
 - Page-specific CSS (`search.css`, `ladybug.css`, `history.css`, `cfddc.css`, `cookie-consent.css`) is still loaded individually where needed.
-- Always run `npm run build:css` before committing CSS-related changes (CI runs this on deploy).
+- Run `npm run build` (CSS + JS bundles) before deploy (CI runs this on deploy).
+- Edit JS sources in `static/js/*.js` (not `*.min.js`). Bundles are built by [`scripts/bundle-site-js.mjs`](scripts/bundle-site-js.mjs):
+  - `site.min.js` — shared on all modern-layout pages (theme, nav, cookies, analytics, footer)
+  - `home.min.js` — homepage only (hero, scroll, ladybug)
+  - `search-palette.min.js` — loaded after inline `window.CFD_SEARCH` config
+  - `cfddc.min.js` — CFDDC pages only
 
 ## Deployment
 

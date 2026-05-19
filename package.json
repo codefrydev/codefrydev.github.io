@@ -3,10 +3,13 @@
   "private": true,
   "scripts": {
     "build:css": "tailwindcss -i ./assets/css/tailwind-input.css -o ./static/css/home-tailwind.css --minify && node ./scripts/bundle-site-css.mjs",
+    "build:js": "node ./scripts/bundle-site-js.mjs",
+    "build": "npm run build:css && npm run build:js",
     "watch:css": "tailwindcss -i ./assets/css/tailwind-input.css -o ./static/css/home-tailwind.css --watch",
-    "dev": "npm run build:css && hugo server"
+    "dev": "npm run build && hugo server"
   },
   "devDependencies": {
+    "esbuild": "^0.25.0",
     "lightningcss": "^1.32.0",
     "tailwindcss": "^3.4.17"
   }

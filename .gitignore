@@ -11,3 +11,6 @@ hugo_stats.json
 # Generated CSS (built by npm run build:css before hugo)
 static/css/home-tailwind.css
 static/css/site.min.css
+
+# Generated JS bundles (built by npm run build:js before hugo)
+static/js/*.min.js

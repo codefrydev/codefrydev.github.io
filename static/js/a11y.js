@@ -4,9 +4,22 @@
   var FOCUSABLE =
     'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), summary, [tabindex]:not([tabindex="-1"])';
 
+  function isInertSubtree(el) {
+    var node = el;
+    while (node) {
+      if (node.inert || node.hasAttribute('inert')) return true;
+      node = node.parentElement;
+    }
+    return false;
+  }
+
   function getFocusables(root) {
     return Array.prototype.slice.call(root.querySelectorAll(FOCUSABLE)).filter(function (el) {
-      return !el.hasAttribute('disabled') && el.getAttribute('aria-hidden') !== 'true';
+      return (
+        !el.hasAttribute('disabled') &&
+        el.getAttribute('aria-hidden') !== 'true' &&
+        !isInertSubtree(el)
+      );
     });
   }
 

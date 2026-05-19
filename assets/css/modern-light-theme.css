@@ -123,13 +123,15 @@
 }
 
 [data-theme="light"] body .site-beta-tag {
-  color: #0369a1 !important;
-  background-color: #f0f9ff !important;
-  --tw-ring-color: #bae6fd !important;
+  color: #0284c7 !important;
 }
 
 [data-theme="light"] body .site-beta-tag:hover {
-  background-color: #e0f2fe !important;
+  color: #0369a1 !important;
+}
+
+[data-theme="light"] body .site-beta-tag--static {
+  color: #64748b !important;
 }
 
 /* ── Section bands (keep visible — unlike glass) ── */
@@ -202,7 +204,7 @@
   box-shadow: var(--light-shadow-card) !important;
 }
 
-[data-theme="light"] body .home-hero__dot--active {
+[data-theme="light"] body .home-hero__dot--active::after {
   background-color: #0f172a !important;
 }
 

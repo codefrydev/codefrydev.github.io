@@ -11,7 +11,11 @@
       isOpen = open;
       btn.setAttribute('aria-expanded', open ? 'true' : 'false');
       btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-      menu.setAttribute('aria-hidden', open ? 'false' : 'true');
+      if (open) {
+        menu.removeAttribute('inert');
+      } else {
+        menu.setAttribute('inert', '');
+      }
       document.body.classList.toggle('mobile-menu-open', open);
 
       if (open) {

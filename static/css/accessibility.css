@@ -157,6 +157,26 @@ body.mobile-menu-open {
   overflow: hidden;
 }
 
+/* WCAG AA: improve contrast for Tailwind slate utility text on light surfaces */
+body.home-page .text-slate-400 {
+  color: #64748b;
+}
+
+body.home-page .text-slate-500 {
+  color: #475569;
+}
+
+/* WCAG 2.5.5: minimum 44×44px touch targets with spacing */
+.home-hero__indicators {
+  gap: 0.25rem;
+}
+
+.nav-shell .site-footer__back-top,
+.cookie-consent-button {
+  min-height: 44px;
+  min-width: 44px;
+}
+
 /* Visually hidden but available to AT */
 .visually-hidden {
   position: absolute !important;

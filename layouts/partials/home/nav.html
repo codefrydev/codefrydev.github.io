@@ -7,16 +7,18 @@
 <header class="nav-shell sticky top-0 z-50 shrink-0 snap-none relative border-b border-gray-200/60 bg-white/80 backdrop-blur-xl shadow-[0_1px_2px_rgba(15,23,42,0.04)]">
   <div class="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8">
     <nav class="flex items-center justify-between gap-4 h-[73px]" aria-label="Main navigation">
-      <div class="flex items-center gap-2 shrink-0 z-20">
-        <a href="/" id="ladybug-logo-anchor" class="flex items-center gap-2.5 no-underline" aria-label="CodeFryDev home">
+      <div class="flex items-center gap-2.5 shrink-0 z-20">
+        <a href="/" id="ladybug-logo-anchor" class="flex items-center no-underline shrink-0" aria-label="CodeFryDev home">
           <img src="/images/IconCodefrydev.svg" alt="" width="36" height="36" class="h-9 w-9 shrink-0" fetchpriority="high">
-          <span class="hidden sm:inline font-bold text-lg tracking-tight text-brand">CODEFRYDEV</span>
         </a>
-        {{- if .IsHome -}}
-        <button type="button" id="ladybug-reveal-beta" class="site-beta-tag" aria-label="Show the interactive ladybug easter egg" title="Click to meet the ladybug">Beta</button>
-        {{- else -}}
-        <span class="site-beta-tag site-beta-tag--static" aria-label="Site status: beta">Beta</span>
-        {{- end -}}
+        <span class="hidden sm:inline-flex items-baseline font-bold text-lg tracking-tight text-brand leading-none">
+          <a href="/" class="text-inherit no-underline hover:opacity-90">CODEFRYDEV</a>
+          {{- if .IsHome -}}
+          <button type="button" id="ladybug-reveal-beta" class="site-beta-tag" aria-label="Show the interactive ladybug easter egg" title="Click to meet the ladybug">Beta</button>
+          {{- else -}}
+          <sup class="site-beta-tag site-beta-tag--static" aria-label="Site status: beta">Beta</sup>
+          {{- end -}}
+        </span>
       </div>
 
       <ul class="hidden lg:flex items-center gap-0.5 absolute left-1/2 -translate-x-1/2 rounded-full bg-slate-100/90 p-1 ring-1 ring-slate-200/60 list-none m-0">
@@ -47,15 +49,15 @@
       </ul>
 
       <div class="flex items-center gap-2 sm:gap-3 shrink-0 z-20">
-        <button type="button" class="hidden md:inline-flex h-10 w-10 items-center justify-center rounded-full text-slate-500 hover:text-brand hover:bg-slate-100 transition-colors border-0 cursor-pointer bg-transparent" data-search-open aria-label="Open search">
+        <button type="button" class="hidden md:inline-flex h-11 w-11 items-center justify-center rounded-full text-slate-500 hover:text-brand hover:bg-slate-100 transition-colors border-0 cursor-pointer bg-transparent" data-search-open aria-label="Open search">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
         </button>
-        <button type="button" id="theme-toggle" class="theme-toggle-nav hidden md:inline-flex h-10 w-10 items-center justify-center rounded-full text-slate-500 hover:text-brand hover:bg-slate-100 transition-colors border-0 cursor-pointer bg-transparent" aria-label="Switch to dark theme" title="Switch to dark theme">
+        <button type="button" id="theme-toggle" class="theme-toggle-nav hidden md:inline-flex h-11 w-11 items-center justify-center rounded-full text-slate-500 hover:text-brand hover:bg-slate-100 transition-colors border-0 cursor-pointer bg-transparent" aria-label="Switch to dark theme" title="Switch to dark theme">
           <span class="theme-toggle-nav__icon theme-toggle-nav__icon--dark" aria-hidden="true">🌙</span>
           <span class="theme-toggle-nav__icon theme-toggle-nav__icon--light" aria-hidden="true">☀️</span>
           <span class="theme-toggle-nav__icon theme-toggle-nav__icon--glass" aria-hidden="true">💧</span>
         </button>
-        <button type="button" id="mobile-menu-btn" class="lg:hidden inline-flex h-10 w-10 items-center justify-center rounded-full text-slate-600 hover:bg-slate-100 transition-colors relative" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <button type="button" id="mobile-menu-btn" class="lg:hidden inline-flex h-11 w-11 items-center justify-center rounded-full text-slate-600 hover:bg-slate-100 transition-colors relative" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
           <span class="absolute w-5 h-0.5 bg-current rounded-full transition-all duration-300 -translate-y-1.5"></span>
           <span class="absolute w-5 h-0.5 bg-current rounded-full transition-opacity duration-300"></span>
           <span class="absolute w-5 h-0.5 bg-current rounded-full transition-all duration-300 translate-y-1.5"></span>
@@ -115,7 +117,7 @@
   </div>
 </header>
 
-<div id="mobile-menu" class="fixed inset-0 top-[73px] z-40 lg:hidden bg-white/95 backdrop-blur-xl translate-x-full opacity-0 pointer-events-none transition-all duration-300 ease-out overflow-y-auto" aria-hidden="true">
+<div id="mobile-menu" class="fixed inset-0 top-[73px] z-40 lg:hidden bg-white/95 backdrop-blur-xl translate-x-full opacity-0 pointer-events-none transition-all duration-300 ease-out overflow-y-auto" inert>
   <div class="max-w-lg mx-auto px-5 py-6 pb-10">
     <div class="flex gap-2 mb-6">
       <button type="button" class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-slate-100 text-sm font-medium text-slate-700 hover:bg-slate-200/80 border-0 cursor-pointer" data-search-open>

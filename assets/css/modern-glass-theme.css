@@ -419,14 +419,15 @@
 
 /* ── Site beta tag ── */
 [data-theme="glass"] body .site-beta-tag {
-  color: #0369a1 !important;
-  background-color: rgba(224, 242, 254, 0.85) !important;
-  --tw-ring-color: rgba(14, 165, 233, 0.35) !important;
+  color: #0284c7 !important;
 }
 
 [data-theme="glass"] body .site-beta-tag:hover {
-  color: #0c4a6e !important;
-  background-color: rgba(186, 230, 253, 0.95) !important;
+  color: #0369a1 !important;
+}
+
+[data-theme="glass"] body .site-beta-tag--static {
+  color: #64748b !important;
 }
 
 /* ── Buttons ── */

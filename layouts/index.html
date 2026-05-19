@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="/css/ladybug.css">
 </head>
 <body class="home-page bg-gray-50/50 text-slate-800 font-sans antialiased">
+  {{ partial "icons-sprite.html" . }}
   {{ partial "skip-link.html" . }}
   {{ partial "home/nav.html" . }}
   <script>
@@ -34,11 +35,7 @@
   {{ partial "ladybug.html" . }}
   {{ partial "cookie-consent.html" . }}
   {{ partial "home/search-palette.html" . }}
-  <script src="/js/a11y.js" defer></script>
-  <script src="/js/home-hero.js" defer></script>
-  <script src="/js/home-nav.js" defer></script>
-  <script src="/js/home-scroll.js" defer></script>
-  <script src="/js/theme.js" defer></script>
-  <script src="/js/ladybug.js" defer></script>
+  <script src="/js/site.min.js" defer></script>
+  <script src="/js/home.min.js" defer></script>
 </body>
 </html>

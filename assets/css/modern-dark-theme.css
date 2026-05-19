@@ -191,19 +191,16 @@
 }
 
 [data-theme="dark"] body.home-page .site-beta-tag {
-  color: rgb(186 230 253) !important;
-  background-color: rgb(12 74 110 / 0.45) !important;
-  --tw-ring-color: rgb(56 189 248 / 0.35) !important;
+  color: rgb(125 211 252) !important;
 }
 
 [data-theme="dark"] body.home-page .site-beta-tag:hover {
-  color: rgb(224 242 254) !important;
-  background-color: rgb(12 74 110 / 0.65) !important;
+  color: rgb(186 230 253) !important;
 }
 
+[data-theme="dark"] body.home-page .site-beta-tag--static,
 [data-theme="dark"] body.home-page .site-beta-tag--static:hover {
-  color: rgb(186 230 253) !important;
-  background-color: rgb(12 74 110 / 0.45) !important;
+  color: rgb(148 163 184) !important;
 }
 
 [data-theme="dark"] body.home-page .hover\:text-brand:hover,
@@ -291,11 +288,11 @@
   color: rgb(248 250 252) !important;
 }
 
-[data-theme="dark"] body.home-page .home-hero__dot {
+[data-theme="dark"] body.home-page .home-hero__dot::after {
   background-color: rgb(100 116 139) !important;
 }
 
-[data-theme="dark"] body.home-page .home-hero__dot--active {
+[data-theme="dark"] body.home-page .home-hero__dot--active::after {
   background-color: rgb(226 232 240) !important;
 }
 

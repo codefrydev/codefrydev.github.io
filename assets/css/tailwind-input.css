@@ -40,20 +40,26 @@
   }
 
   .site-beta-tag {
-    @apply inline-flex items-center px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider rounded-full border-0 cursor-pointer;
-    @apply text-sky-700 bg-sky-50 ring-1 ring-sky-200/80 transition-colors;
+    @apply relative ml-0.5 border-0 bg-transparent p-0 text-[0.5em] font-bold uppercase tracking-wide text-sky-600 cursor-pointer transition-colors leading-none;
+    vertical-align: super;
+  }
+
+  .site-beta-tag::before {
+    content: '';
+    position: absolute;
+    inset: -8px -6px;
   }
 
   .site-beta-tag:hover {
-    @apply bg-sky-100 text-sky-800;
+    @apply text-sky-700;
   }
 
   .site-beta-tag--static {
-    @apply cursor-default;
+    @apply cursor-default text-slate-500;
   }
 
   .site-beta-tag--static:hover {
-    @apply bg-sky-50 text-sky-700;
+    @apply text-slate-500;
   }
 
   .home-hero {
@@ -107,15 +113,28 @@
   }
 
   .home-hero__dot {
-    @apply h-2 w-2 rounded-full bg-slate-300 transition-all duration-300 hover:bg-slate-400;
+    @apply relative inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border-0 bg-transparent p-0 cursor-pointer transition-colors;
   }
 
-  .home-hero__dot--active {
-    @apply w-6 bg-slate-800 hover:bg-slate-800;
+  .home-hero__dot::after {
+    content: '';
+    @apply block h-2 w-2 rounded-full bg-slate-400 transition-all duration-300;
+  }
+
+  .home-hero__dot:hover::after {
+    @apply bg-slate-500;
+  }
+
+  .home-hero__dot--active::after {
+    @apply h-2 w-6 bg-slate-800;
+  }
+
+  .home-hero__dot--active:hover::after {
+    @apply bg-slate-800;
   }
 
   .home-hero__nav-btn {
-    @apply flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-slate-200/90 bg-white/90 text-slate-600 shadow-sm transition-colors;
+    @apply flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-slate-200/90 bg-white/90 text-slate-600 shadow-sm transition-colors;
     @apply hover:border-slate-300 hover:bg-white hover:text-slate-900 focus:outline-none focus:ring-2 focus:ring-brand/20;
   }
 
@@ -166,6 +185,21 @@
 
   [data-theme="light"] .theme-toggle-nav__icon--glass {
     @apply inline;
+  }
+
+  /* Phosphor SVG sprite icons */
+  .ph-icon {
+    display: inline-block;
+    width: 1.25em;
+    height: 1.25em;
+    flex-shrink: 0;
+    fill: currentColor;
+    vertical-align: -0.125em;
+  }
+
+  .search-palette__result-icon .ph-icon {
+    width: 1.25rem;
+    height: 1.25rem;
   }
 
   /* —— Search command palette (⌘K) —— */
