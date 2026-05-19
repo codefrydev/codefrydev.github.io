@@ -7,3 +7,7 @@ node_modules
 resources/_gen/
 .hugo_build.lock
 hugo_stats.json
+
+# Generated CSS (built by npm run build:css before hugo)
+static/css/home-tailwind.css
+static/css/site.min.css

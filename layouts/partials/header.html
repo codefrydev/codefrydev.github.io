@@ -149,11 +149,6 @@
 <link rel="alternate" hreflang="{{ $locale }}" href="{{ .Permalink | absURL }}">
 <link rel="alternate" hreflang="x-default" href="{{ .Permalink | absURL }}">
 
-<link rel="stylesheet" href="/css/home-tailwind.css">
-<link rel="stylesheet" href="/css/theme-tokens.css">
-<link rel="stylesheet" href="/css/modern-light-theme.css">
-<link rel="stylesheet" href="/css/modern-dark-theme.css">
-<link rel="stylesheet" href="/css/modern-glass-theme.css">
 <script>
 (function() {
   var theme = localStorage.getItem('theme-preference') || 'dark';
@@ -163,9 +158,7 @@
   if (meta) meta.setAttribute('content', colors[theme] || colors.light);
 })();
 </script>
-
-{{- /* Accessibility CSS */ -}}
-<link rel="stylesheet" href="/css/accessibility.css">
+<link rel="stylesheet" href="/css/site.min.css">
 
 {{- /* Structured data */ -}}
 {{ partial "site_schema.html" . }}

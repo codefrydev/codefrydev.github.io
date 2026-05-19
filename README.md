@@ -17,8 +17,8 @@ Static site for [codefrydev.in](https://codefrydev.in/) — free online tools, g
 | Layer | Tools |
 |--------|--------|
 | Site generator | Hugo Extended **0.160.1** (see [`.github/workflows/hugo.yaml`](.github/workflows/hugo.yaml)) |
-| Styling | Tailwind CSS 3 → `static/css/home-tailwind.css` |
-| Themes | `light`, `glass`, `dark` — tokens in `assets/css/theme-tokens.css`; overrides in `modern-dark-theme.css` and `modern-glass-theme.css` (copied to `static/css/` on build) |
+| Styling | Tailwind CSS 3 + lightningcss → `static/css/site.min.css` (global bundle) |
+| Themes | `light`, `glass`, `dark` — tokens in `assets/css/theme-tokens.css`; overrides in `modern-dark-theme.css` and `modern-glass-theme.css` (bundled into `site.min.css` on build) |
 | Icons | Phosphor Icons (CDN) |
 | Deploy | GitHub Actions → GitHub Pages |
 
@@ -33,17 +33,15 @@ Static site for [codefrydev.in](https://codefrydev.in/) — free online tools, g
 # Install JS dependencies (first time)
 npm install
 
-# Build Tailwind + theme CSS
-npm run build:css
+# Build CSS + start Hugo dev server (recommended)
+npm run dev
 
-# Watch CSS while editing (optional, second terminal)
-npm run watch:css
-
-# Run dev server
-hugo server
+# Or separately:
+npm run build:css   # build Tailwind + bundle → static/css/site.min.css
+hugo server         # start dev server (requires site.min.css to already exist)
 ```
 
-Open [http://localhost:1313/](http://localhost:1313/). After changing templates or `assets/css/tailwind-input.css`, run `npm run build:css` (or use `watch:css`).
+Open [http://localhost:1313/](http://localhost:1313/). Use `npm run dev` rather than `hugo server` directly — it ensures `static/css/site.min.css` is built first. After editing any file in `assets/css/`, re-run `npm run build:css` (or restart `npm run dev`). Use `watch:css` in a second terminal for live Tailwind rebuilds, then run `npm run build:css` once more to regenerate the full bundle.
 
 Production build:
 
@@ -111,6 +109,8 @@ When [`data/history.yaml`](data/history.yaml) includes dates for a new year:
 - Edit shared color tokens in [`assets/css/theme-tokens.css`](assets/css/theme-tokens.css).
 - Edit dark-mode overrides in [`assets/css/modern-dark-theme.css`](assets/css/modern-dark-theme.css).
 - Edit glass-mode overrides in [`assets/css/modern-glass-theme.css`](assets/css/modern-glass-theme.css).
+- All six global CSS sources are bundled and minified into `static/css/site.min.css` by [`scripts/bundle-site-css.mjs`](scripts/bundle-site-css.mjs). Every page loads only this one file for global styles.
+- Page-specific CSS (`search.css`, `ladybug.css`, `history.css`, `cfddc.css`, `cookie-consent.css`) is still loaded individually where needed.
 - Always run `npm run build:css` before committing CSS-related changes (CI runs this on deploy).
 
 ## Deployment
