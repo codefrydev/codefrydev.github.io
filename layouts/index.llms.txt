@@ -1,0 +1,35 @@
+# {{ .Site.Title }}
+
+> {{ .Site.Params.description }}
+
+## About
+{{ .Site.Title }} offers free online tools, games, and AI apps—no signup required. We build productivity apps, AI-powered utilities, engaging games, and creative design resources for developers, designers, and anyone curious to experiment in the browser. Active since 2023.
+
+## Website
+- URL: {{ .Site.BaseURL }}
+- Built with: Hugo static site generator
+- Language: {{ .Site.LanguageCode | default "en-US" }}
+- Full documentation: {{ .Site.BaseURL }}llms-full.txt
+
+## Main Sections
+{{ range where site.Pages "Kind" "section" -}}
+{{ if and (ne .Section "search") (ne .Draft true) -}}
+- {{ .Title | default (.Section | title) }} ({{ .RelPermalink }}): {{ .Description | default "..." }}
+{{ end -}}
+{{ end -}}
+
+## Browse Categories
+{{ range $index, $cat := hugo.Data.home.categories -}}
+{{ $index | add 1 }}. **{{ $cat.name }}** ({{ $cat.seeAllUrl | default (printf "/browse/%s/" ($cat.slug | default ($cat.name | anchorize))) }}): {{ $cat.subtitle }}
+{{ end -}}
+
+## Highlights
+- 100% free — most tools need no signup
+- Runs in your browser — no install required
+- Privacy-focused — most tools process data locally
+
+## Optional
+- Sitemap: {{ .Site.BaseURL }}sitemap.xml
+- Robots: {{ .Site.BaseURL }}robots.txt
+
+Last Updated: {{ now.Format "January 2006" }}

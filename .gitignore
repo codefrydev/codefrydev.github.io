@@ -2,3 +2,8 @@ public
 /public
 .DS_Store
 node_modules
+
+# Hugo generated files
+resources/_gen/
+.hugo_build.lock
+hugo_stats.json

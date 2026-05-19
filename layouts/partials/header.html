@@ -4,8 +4,11 @@
 {{ partial "googlegtag.html" . }}
 
 {{- /* Page-specific title (single source of truth; do not add <title> in section layouts) */ -}}
-{{- $pageTitle := .Title -}}
-{{- if .IsHome -}}
+{{- /* Priority: 1) seo_title frontmatter  2) section-based defaults  3) page title  4) site title */ -}}
+{{- $pageTitle := "" -}}
+{{- if .Params.seo_title -}}
+  {{- $pageTitle = .Params.seo_title -}}
+{{- else if .IsHome -}}
   {{- $pageTitle = "Free Online Tools, Games & AI Apps | CodeFryDev - No Signup Required" -}}
 {{- else if eq .Section "ai" -}}
   {{- $pageTitle = "Free AI Tools & Generators | CodeFryDev - AI-Powered Utilities" -}}
@@ -17,7 +20,15 @@
   {{- $pageTitle = "About Us - CodeFryDev | Free Online Tools & Resources Platform" -}}
 {{- else if eq .Section "about" -}}
   {{- if strings.Contains .RelPermalink "/about/users/" -}}
-    {{- $pageTitle = printf "%s - CodeFryDev Team" .Title -}}
+    {{- if .IsPage -}}
+      {{- $pageTitle = printf "%s - CodeFryDev Team" .Title -}}
+    {{- else -}}
+      {{- $pageTitle = "Devs and Designers - CodeFryDev | Meet Our Team" -}}
+    {{- end -}}
+  {{- else if ne .Title "" -}}
+    {{- $pageTitle = printf "%s | CodeFryDev" .Title -}}
+  {{- else -}}
+    {{- $pageTitle = "About | CodeFryDev" -}}
   {{- end -}}
 {{- else if eq .Section "search" -}}
   {{- $pageTitle = "Search - CodeFryDev | Find Tools, Games & Apps" -}}
@@ -33,8 +44,6 @@
   {{- end -}}
 {{- else if eq .Section "store" -}}
   {{- $pageTitle = "Free Mobile Apps | CodeFryDev Store" -}}
-{{- else if strings.HasSuffix .RelPermalink "/about/users/" -}}
-  {{- $pageTitle = "Devs and Designers - CodeFryDev | Meet Our Team" -}}
 {{- else if ne .Title "" -}}
   {{- $pageTitle = printf "%s | CodeFryDev" .Title -}}
 {{- else -}}
@@ -64,6 +73,11 @@
 {{- end -}}
 <meta name="robots" content="{{ $robots }}">
 <link rel="canonical" href="{{ .Permalink | absURL }}">
+
+{{- /* RSS Auto-Discovery */ -}}
+{{- with .OutputFormats.Get "rss" -}}
+<link rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }} Feed" href="{{ .Permalink }}">
+{{- end -}}
 
 {{- /* Language and locale (BCP 47); single source for og:locale and hreflang */ -}}
 {{- $localeRaw := .Site.Language.LanguageCode | default .Site.LanguageCode | default "en-US" -}}

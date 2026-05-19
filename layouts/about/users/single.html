@@ -10,7 +10,14 @@
         {{- if and $img (not (hasPrefix $img "/")) -}}
           {{- $img = printf "/about/users/%s/%s" (.File.ContentBaseName) $img -}}
         {{- end -}}
-        <img class="w-28 h-28 rounded-full object-cover border-4 border-white/30 mx-auto mb-6 shadow-md" src="{{ $img }}" alt="{{ .Title }}" width="112" height="112">
+        {{- $resPath := strings.TrimPrefix "/" $img -}}
+        {{- $res := resources.Get $resPath -}}
+        {{- if $res -}}
+          {{- $webp := $res.Resize "224x webp" -}}
+          <img class="w-28 h-28 rounded-full object-cover border-4 border-white/30 mx-auto mb-6 shadow-md" src="{{ $webp.RelPermalink }}" alt="{{ .Title }}" width="{{ $webp.Width }}" height="{{ $webp.Height }}" loading="lazy">
+        {{- else -}}
+          <img class="w-28 h-28 rounded-full object-cover border-4 border-white/30 mx-auto mb-6 shadow-md" src="{{ $img }}" alt="{{ .Title }}" width="112" height="112" loading="lazy">
+        {{- end -}}
         <h1 class="text-2xl font-bold text-white m-0 mb-2">{{ .Title }}</h1>
         {{- with .Params.subtitle -}}
         <p class="text-white/90 text-sm font-medium m-0 mb-8">{{ . }}</p>

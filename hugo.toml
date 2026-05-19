@@ -6,8 +6,24 @@ title = 'CodeFryDev'
 # No tagged content; skip /tags/ and /categories/ list pages
 disableKinds = ["taxonomy", "term"]
 
+[mediaTypes]
+  [mediaTypes."text/plain"]
+    suffixes = ["txt"]
+
+[outputFormats]
+  [outputFormats.LLMS]
+    mediaType = "text/plain"
+    baseName = "llms"
+    isPlainText = true
+    notAlternative = true
+  [outputFormats.LLMSFULL]
+    mediaType = "text/plain"
+    baseName = "llms-full"
+    isPlainText = true
+    notAlternative = true
+
 [outputs]
-  home = ["HTML", "RSS"]
+  home = ["HTML", "RSS", "ROBOTS", "LLMS", "LLMSFULL"]
 
 [Author]
   name = "CodeFryDev"
@@ -51,3 +67,23 @@ disableKinds = ["taxonomy", "term"]
     weight = 1
     contentDir = "content"
 
+
+[module]
+  [[module.mounts]]
+    source = "content"
+    target = "content"
+  [[module.mounts]]
+    source = "data"
+    target = "data"
+  [[module.mounts]]
+    source = "layouts"
+    target = "layouts"
+  [[module.mounts]]
+    source = "static"
+    target = "static"
+  [[module.mounts]]
+    source = "assets"
+    target = "assets"
+  [[module.mounts]]
+    source = "static"
+    target = "assets"

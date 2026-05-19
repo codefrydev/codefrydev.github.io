@@ -1,0 +1,92 @@
+# {{ .Site.Title }} - Complete Documentation
+
+## Website Information
+- **Name**: {{ .Site.Title }}
+- **Base URL**: {{ .Site.BaseURL }}
+- **Language**: {{ .Site.LanguageCode | default "en-US" }}
+- **Technology**: Hugo static site generator
+- **Concise summary**: {{ .Site.BaseURL }}llms.txt
+
+## Description
+{{ .Site.Params.description }}
+
+## Detailed Category Breakdown
+
+{{ range hugo.Data.home.categories -}}
+### {{ .name }} ({{ .seeAllUrl | default (printf "/browse/%s/" (.slug | default (.name | anchorize))) }})
+{{ .subtitle }}
+
+| Tool | URL | Description |
+|------|-----|-------------|
+{{ range .items -}}
+{{- $url := .url -}}
+{{- if not (or (hasPrefix $url "http://") (hasPrefix $url "https://")) -}}
+  {{- if not (hasPrefix $url "/") -}}{{- $url = printf "/%s" $url -}}{{- end -}}
+  {{- $url = printf "%s%s" $.Site.BaseURL (strings.TrimPrefix "/" $url) -}}
+{{- end -}}
+| {{ .name }} | {{ $url }} | {{ .description | default "" }} |
+{{ end -}}
+
+{{ end -}}
+
+## Data-Driven Sections
+
+### AI Tools
+{{ if hugo.Data.ai -}}
+{{ if hugo.Data.ai.data -}}
+| AI Tool | URL |
+|---------|-----|
+{{ range hugo.Data.ai.data -}}
+{{- $url := .url -}}
+{{- if not (or (hasPrefix $url "http://") (hasPrefix $url "https://")) -}}
+  {{- if not (hasPrefix $url "/") -}}{{- $url = printf "/%s" $url -}}{{- end -}}
+  {{- $url = printf "%s%s" $.Site.BaseURL (strings.TrimPrefix "/" $url) -}}
+{{- end -}}
+| {{ .name }} | {{ $url }} |
+{{ end -}}
+{{ end -}}
+{{ end -}}
+
+### Games
+{{ if hugo.Data.games -}}
+{{ if hugo.Data.games.data -}}
+| Game | URL |
+|------|-----|
+{{ range hugo.Data.games.data -}}
+{{- $url := .url -}}
+{{- if not (or (hasPrefix $url "http://") (hasPrefix $url "https://")) -}}
+  {{- if not (hasPrefix $url "/") -}}{{- $url = printf "/%s" $url -}}{{- end -}}
+  {{- $url = printf "%s%s" $.Site.BaseURL (strings.TrimPrefix "/" $url) -}}
+{{- end -}}
+| {{ .name }} | {{ $url }} |
+{{ end -}}
+{{ end -}}
+{{ end -}}
+
+### Design Lab
+{{ if hugo.Data.designlab -}}
+{{ if hugo.Data.designlab.data -}}
+| Design Tool | URL |
+|-------------|-----|
+{{ range hugo.Data.designlab.data -}}
+{{- $url := .url -}}
+{{- if not (or (hasPrefix $url "http://") (hasPrefix $url "https://")) -}}
+  {{- if not (hasPrefix $url "/") -}}{{- $url = printf "/%s" $url -}}{{- end -}}
+  {{- $url = printf "%s%s" $.Site.BaseURL (strings.TrimPrefix "/" $url) -}}
+{{- end -}}
+| {{ .name }} | {{ $url }} |
+{{ end -}}
+{{ end -}}
+{{ end -}}
+
+## All Pages
+
+| Title | Path |
+|-------|------|
+{{ range where site.Pages "Kind" "page" -}}
+{{ if and (ne .Permalink "") (ne .Draft true) -}}
+| {{ .Title }} | {{ .RelPermalink }} |
+{{ end -}}
+{{ end -}}
+
+Last Updated: {{ now.Format "January 2006" }}

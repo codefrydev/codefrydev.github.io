@@ -194,6 +194,34 @@
     {{- end -}}
   {{- end -}}
 {{- end -}}
+{{- /* Add section pages not explicitly listed above (cfddc, browse, about sub-sections, etc.) */ -}}
+{{- $explicitSections := slice
+  (print $baseURL)
+  (print $baseURL "about-us/")
+  (print $baseURL "history/")
+  (print $baseURL "ai/")
+  (print $baseURL "games/")
+  (print $baseURL "designlab/")
+  (print $baseURL "store/")
+  (print $baseURL "press/")
+-}}
+{{- range where site.Pages "Kind" "section" -}}
+  {{- if and (ne .Section "search") (ne .Draft true) (not (in $explicitSections .Permalink)) -}}
+  {{- $lastmodDate := $currentDate -}}
+  {{- if .Lastmod -}}
+    {{- $formatted := .Lastmod.Format "2006-01-02T15:04:05-07:00" -}}
+    {{- if not (hasPrefix $formatted "0001-01-01") -}}
+      {{- $lastmodDate = $formatted -}}
+    {{- end -}}
+  {{- end -}}
+  <url>
+    <loc>{{ .Permalink }}</loc>
+    <lastmod>{{ $lastmodDate }}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  {{- end -}}
+{{- end -}}
 {{- /* Add content pages */ -}}
 {{- range where site.Pages "Kind" "page" -}}
   {{- if and (ne .Permalink "") (ne .Draft true) -}}
