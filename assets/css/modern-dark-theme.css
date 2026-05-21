@@ -818,6 +818,10 @@
   color: rgb(52 211 153) !important;
 }
 
+[data-theme="dark"] body.home-page .home-why__perk-text {
+  color: rgb(203 213 225) !important;
+}
+
 /* —— Breadcrumbs —— */
 [data-theme="dark"] body.home-page nav[aria-label="Breadcrumb"] a {
   color: rgb(148 163 184);
@@ -877,7 +881,7 @@
 }
 
 [data-theme="dark"] body.home-page .site-footer__stat {
-  color: rgb(100 116 139);
+  color: rgb(148 163 184);
 }
 
 [data-theme="dark"] body.home-page .site-footer__cta {
@@ -932,7 +936,7 @@
 }
 
 [data-theme="dark"] body.home-page .site-footer__copy {
-  color: rgb(100 116 139);
+  color: rgb(148 163 184);
 }
 
 [data-theme="dark"] body.home-page .site-footer__legal li:not(:last-child)::after {

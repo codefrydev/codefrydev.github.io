@@ -712,7 +712,7 @@
 [data-theme="glass"] body .site-footer__tagline,
 [data-theme="glass"] body .site-footer__copy,
 [data-theme="glass"] body .site-footer__stat {
-  color: #64748b !important;
+  color: #475569 !important;
 }
 
 [data-theme="glass"] body .site-footer__links a,
@@ -731,9 +731,12 @@
 
 /* Home sections */
 [data-theme="glass"] body .home-why__intro,
-[data-theme="glass"] body .home-why__card-text,
-[data-theme="glass"] body .home-why__perk-text {
+[data-theme="glass"] body .home-why__card-text {
   color: #475569 !important;
+}
+
+[data-theme="glass"] body .home-why__perk-text {
+  color: #334155 !important;
 }
 
 [data-theme="glass"] body .home-testimonial-card p {

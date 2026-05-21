@@ -1257,7 +1257,7 @@
   }
 
   .site-footer__stat {
-    @apply text-xs text-slate-400;
+    @apply text-xs text-slate-600;
   }
 
   .site-footer__nav {
@@ -1337,7 +1337,7 @@
   }
 
   .site-footer__copy {
-    @apply m-0 text-xs text-slate-400;
+    @apply m-0 text-xs text-slate-600;
   }
 
   .site-footer__legal {

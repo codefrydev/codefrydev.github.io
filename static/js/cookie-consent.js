@@ -86,6 +86,22 @@
     }
   }
 
+  // Arm listeners and call fn on the first user interaction
+  function onFirstInteraction(fn) {
+    var fired = false;
+    function go() {
+      if (fired) return;
+      fired = true;
+      ['scroll', 'click', 'keydown', 'touchstart'].forEach(function (ev) {
+        window.removeEventListener(ev, go, { passive: true });
+      });
+      fn();
+    }
+    ['scroll', 'click', 'keydown', 'touchstart'].forEach(function (ev) {
+      window.addEventListener(ev, go, { once: true, passive: true });
+    });
+  }
+
   // Load Google Analytics (GA4 + Consent Mode v2)
   function loadGoogleAnalytics() {
     const gaMeasurementId = getGAMeasurementId();
@@ -144,11 +160,17 @@
     loadMicrosoftClarity();
   }
 
+  // Ensure Consent Mode defaults are set, then load GA on first interaction
+  function scheduleGoogleAnalytics() {
+    initConsentDefaults();
+    onFirstInteraction(loadGoogleAnalytics);
+  }
+
   // Handle accept button click
   function handleAccept() {
     setConsentStatus(COOKIE_CONSENT_ACCEPTED);
     hideCookieBanner();
-    loadGoogleAnalytics();
+    scheduleGoogleAnalytics();
   }
 
   // Handle decline button click
@@ -189,7 +211,7 @@
       // No consent given yet, show banner
       showCookieBanner();
     } else if (consentStatus === COOKIE_CONSENT_ACCEPTED) {
-      loadGoogleAnalytics();
+      scheduleGoogleAnalytics();
     }
     // If declined, do nothing
 

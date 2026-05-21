@@ -4,7 +4,6 @@
   {{ partial "header.html" . }}
   {{ partial "home/head.html" . }}
   <link rel="preload" as="image" href="/images/hero/slide-1.jpg" fetchpriority="high">
-  <link rel="stylesheet" href="/css/ladybug.css">
 </head>
 <body class="home-page bg-gray-50/50 text-slate-800 font-sans antialiased">
   {{ partial "icons-sprite.html" . }}
@@ -37,5 +36,26 @@
   {{ partial "home/search-palette.html" . }}
   <script src="/js/site.min.js" defer></script>
   <script src="/js/home.min.js" defer></script>
+  <script>
+  (function () {
+    if (!document.getElementById('ladybug-container')) return;
+    var fired = false;
+    function loadLadybug() {
+      if (fired) return;
+      fired = true;
+      var link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = '/css/ladybug.css';
+      document.head.appendChild(link);
+      var s = document.createElement('script');
+      s.src = '/js/ladybug.min.js';
+      s.defer = true;
+      document.body.appendChild(s);
+    }
+    ['scroll', 'click', 'keydown', 'touchstart'].forEach(function (ev) {
+      window.addEventListener(ev, loadLadybug, { once: true, passive: true });
+    });
+  })();
+  </script>
 </body>
 </html>

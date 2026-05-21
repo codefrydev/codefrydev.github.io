@@ -3,7 +3,8 @@
  *
  * Outputs:
  *   site.min.js           — theme, a11y, nav, cookie consent, analytics, footer
- *   home.min.js           — hero carousel, scroll, ladybug (homepage only)
+ *   home.min.js           — hero carousel, scroll (homepage only)
+ *   ladybug.min.js        — ladybug easter egg (homepage only, lazy-loaded)
  *   search-palette.min.js — search palette (after inline window.CFD_SEARCH)
  *   cfddc.min.js          — CFDDC year pages only
  *
@@ -32,7 +33,11 @@ const BUNDLES = [
   },
   {
     out: 'home.min.js',
-    files: ['home-hero.js', 'home-scroll.js', 'ladybug.js'],
+    files: ['home-hero.js', 'home-scroll.js'],
+  },
+  {
+    out: 'ladybug.min.js',
+    files: ['ladybug.js'],
   },
   {
     out: 'search-palette.min.js',
