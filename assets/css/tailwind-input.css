@@ -97,7 +97,9 @@
   }
 
   .home-hero__indicators {
-    @apply absolute bottom-8 left-1/2 z-10 flex -translate-x-1/2 items-center gap-2;
+    @apply absolute inset-x-0 bottom-0 z-10 flex items-end gap-1.5 px-6 pb-4 pt-10 pointer-events-none;
+    max-width: 12rem;
+    margin-inline: auto;
   }
 
   .home-hero__nav-btn--side {
@@ -113,24 +115,25 @@
   }
 
   .home-hero__dot {
-    @apply relative inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border-0 bg-transparent p-0 cursor-pointer transition-colors;
+    @apply relative flex flex-1 min-h-[44px] items-end border-0 bg-transparent p-0 cursor-pointer pointer-events-auto;
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/30 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent;
   }
 
   .home-hero__dot::after {
     content: '';
-    @apply block h-2 w-2 rounded-full bg-slate-400 transition-all duration-300;
+    @apply block h-0.5 w-full rounded-full bg-slate-400/45 transition-all duration-300 ease-out;
   }
 
   .home-hero__dot:hover::after {
-    @apply bg-slate-500;
+    @apply bg-slate-500/70;
   }
 
   .home-hero__dot--active::after {
-    @apply h-2 w-6 bg-slate-800;
+    @apply h-1 bg-brand;
   }
 
   .home-hero__dot--active:hover::after {
-    @apply bg-slate-800;
+    @apply bg-brand;
   }
 
   .home-hero__nav-btn {
@@ -1257,7 +1260,7 @@
   }
 
   .site-footer__stat {
-    @apply text-xs text-slate-600;
+    @apply text-xs text-slate-700;
   }
 
   .site-footer__nav {
@@ -1302,7 +1305,7 @@
     }
 
     .site-footer__summary {
-      @apply pointer-events-none cursor-default py-0 mb-4 text-xs font-semibold uppercase tracking-wider text-slate-500;
+      @apply pointer-events-none cursor-default py-0 mb-4 text-xs font-semibold uppercase tracking-wider text-slate-700;
     }
 
     .site-footer__summary .site-footer__chevron {
@@ -1354,6 +1357,6 @@
   }
 
   .site-footer__legal a {
-    @apply px-1 py-1 text-slate-500 no-underline transition-colors hover:text-slate-800;
+    @apply px-1 py-1 text-slate-600 no-underline transition-colors hover:text-slate-900;
   }
 }

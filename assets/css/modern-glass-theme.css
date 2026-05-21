@@ -323,6 +323,10 @@
   color: #0f172a !important;
 }
 
+[data-theme="glass"] body .home-hero__dot--active::after {
+  background-color: #0b162c !important;
+}
+
 /* ── Search palette (above cookie banner at z-index 10000) ── */
 [data-theme="glass"] body .search-palette.is-visible,
 [data-theme="light"] body .search-palette.is-visible,
@@ -712,7 +716,7 @@
 [data-theme="glass"] body .site-footer__tagline,
 [data-theme="glass"] body .site-footer__copy,
 [data-theme="glass"] body .site-footer__stat {
-  color: #475569 !important;
+  color: #334155 !important;
 }
 
 [data-theme="glass"] body .site-footer__links a,

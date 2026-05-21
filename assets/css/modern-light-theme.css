@@ -205,7 +205,7 @@
 }
 
 [data-theme="light"] body .home-hero__dot--active::after {
-  background-color: #0f172a !important;
+  background-color: #0b162c !important;
 }
 
 /* ── FAQ: separate cards (not glass grouped panel) ── */
@@ -406,8 +406,9 @@
   color: #0f172a !important;
 }
 
-[data-theme="light"] body .site-footer__tagline {
-  color: #64748b !important;
+[data-theme="light"] body .site-footer__tagline,
+[data-theme="light"] body .site-footer__stat {
+  color: #334155 !important;
 }
 
 [data-theme="light"] body .site-footer__cta {
