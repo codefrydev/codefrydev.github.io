@@ -4,6 +4,7 @@
   "scripts": {
     "build:css": "tailwindcss -i ./assets/css/tailwind-input.css -o ./static/css/home-tailwind.css --minify && node ./scripts/bundle-site-css.mjs",
     "build:js": "node ./scripts/bundle-site-js.mjs",
+    "convert:hero": "node ./scripts/convert-hero-images.mjs",
     "build": "npm run build:css && npm run build:js",
     "watch:css": "tailwindcss -i ./assets/css/tailwind-input.css -o ./static/css/home-tailwind.css --watch",
     "dev": "npm run build && hugo server"
@@ -11,6 +12,7 @@
   "devDependencies": {
     "esbuild": "^0.25.0",
     "lightningcss": "^1.32.0",
+    "sharp": "^0.34.5",
     "tailwindcss": "^3.4.17"
   }
 }

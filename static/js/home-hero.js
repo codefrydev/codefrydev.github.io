@@ -27,14 +27,24 @@
   const autoplayMs = prefersReducedMotion ? 0 : Number(window.heroAutoplayMs) || 6000;
   const fadeMs = prefersReducedMotion ? 0 : 500;
 
-  function setLayerImage(layerEl, url) {
-    if (!layerEl || !url) return;
-    var img = layerEl.querySelector('img');
-    if (img) {
-      img.src = url;
+  function setLayerImage(layerEl, slide) {
+    if (!layerEl || !slide) return;
+    var picture = layerEl.querySelector('picture');
+    if (picture) {
+      var webp = picture.querySelector('source[type="image/webp"]');
+      var img = picture.querySelector('img');
+      if (webp && slide.imageWebp) webp.srcset = slide.imageWebp;
+      if (img && slide.image) img.src = slide.image;
       return;
     }
-    layerEl.style.backgroundImage = "url('" + String(url).replace(/'/g, "\\'") + "')";
+    var imgOnly = layerEl.querySelector('img');
+    if (imgOnly && slide.image) {
+      imgOnly.src = slide.image;
+      return;
+    }
+    if (slide.image) {
+      layerEl.style.backgroundImage = "url('" + String(slide.image).replace(/'/g, "\\'") + "')";
+    }
   }
 
   function syncLadybugBackup() {
@@ -45,9 +55,11 @@
   }
 
   heroSlides.forEach(function (slide) {
-    if (!slide.image) return;
-    const img = new Image();
-    img.src = slide.image;
+    [slide.imageWebp, slide.image].forEach(function (url) {
+      if (!url) return;
+      var img = new Image();
+      img.src = url;
+    });
   });
 
   heroSlides.forEach(function (slide, index) {
@@ -113,7 +125,7 @@
     const nextLayer = activeLayer === 1 ? bgLayer2 : bgLayer1;
     const currentLayerEl = activeLayer === 1 ? bgLayer1 : bgLayer2;
 
-    setLayerImage(nextLayer, slide.image);
+    setLayerImage(nextLayer, slide);
 
     if (fadeMs === 0) {
       applySlideContent(slide);

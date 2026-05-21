@@ -9,27 +9,33 @@
 <section id="hero" data-section-label="Home" class="home-hero relative text-center flex flex-col items-center justify-center px-4 py-8 overflow-hidden bg-[#edf2f8]" aria-roledescription="carousel" aria-label="Featured highlights">
   <div class="home-hero__bg" aria-hidden="true">
     <div id="bg-layer-1" class="home-hero__bg-layer opacity-100">
-      <img
-        id="hero-bg-img-1"
-        src="{{ $firstSlide.image }}"
-        alt=""
-        width="1600"
-        height="840"
-        class="home-hero__bg-img"
-        fetchpriority="high"
-        decoding="async"
-      >
+      <picture>
+        <source type="image/webp" srcset="{{ $firstSlide.imageWebp }}">
+        <img
+          id="hero-bg-img-1"
+          src="{{ $firstSlide.image }}"
+          alt=""
+          width="1600"
+          height="840"
+          class="home-hero__bg-img"
+          fetchpriority="high"
+          decoding="async"
+        >
+      </picture>
     </div>
     <div id="bg-layer-2" class="home-hero__bg-layer opacity-0">
-      <img
-        id="hero-bg-img-2"
-        alt=""
-        width="1600"
-        height="840"
-        class="home-hero__bg-img"
-        loading="lazy"
-        decoding="async"
-      >
+      <picture>
+        <source type="image/webp">
+        <img
+          id="hero-bg-img-2"
+          alt=""
+          width="1600"
+          height="840"
+          class="home-hero__bg-img"
+          loading="lazy"
+          decoding="async"
+        >
+      </picture>
     </div>
   </div>
   <div class="home-hero__overlay" aria-hidden="true"></div>

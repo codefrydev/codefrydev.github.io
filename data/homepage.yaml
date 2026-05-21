@@ -90,14 +90,17 @@ hero:
   autoplayMs: 6000
   slides:
     - image: "/images/hero/slide-1.jpg"
+      imageWebp: "/images/hero/slide-1.webp"
       imageAlt: "Team collaborating on laptops"
       title: "Tools, games & AI in your browser"
       description: "This is a platform where we learn, work on experimental projects, play games, come up with innovative ideas, and build many more..."
     - image: "/images/hero/slide-2.jpg"
+      imageWebp: "/images/hero/slide-2.webp"
       imageAlt: "Developers working together at a desk"
       title: "Build faster with CodeFryDev"
       description: "From JSON playgrounds to design lab resources—everything runs in your browser."
     - image: "/images/hero/slide-3.jpg"
+      imageWebp: "/images/hero/slide-3.webp"
       imageAlt: "Laptop showing code on a desk"
       title: "No install. Just open and use."
       description: "Explore creative assets, productivity tools, games, and AI helpers in one place."
