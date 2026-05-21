@@ -82,10 +82,6 @@
     @apply absolute inset-0 overflow-hidden transition-opacity duration-1000 ease-in-out;
   }
 
-  .home-hero__bg-layer picture {
-    @apply block h-full w-full;
-  }
-
   .home-hero__bg-img {
     @apply h-full w-full object-cover object-center;
   }
