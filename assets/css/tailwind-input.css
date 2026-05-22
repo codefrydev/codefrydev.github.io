@@ -387,6 +387,22 @@
     @apply text-sm text-slate-500 m-0;
   }
 
+  .search-palette__empty-suggest {
+    @apply text-sm text-slate-500 mt-3 mb-0;
+  }
+
+  .search-palette__suggest-btn {
+    @apply inline font-semibold text-brand bg-transparent border-0 p-0 cursor-pointer underline-offset-2 hover:underline;
+  }
+
+  .search-palette__recent {
+    @apply m-0;
+  }
+
+  .search-palette__recent .search-palette__chip {
+    @apply cursor-pointer border-0;
+  }
+
   .search-palette__footer {
     @apply flex flex-wrap items-center justify-center gap-x-4 gap-y-1 px-4 py-2.5 border-t border-gray-100 bg-slate-50/80 text-[11px] text-slate-400 shrink-0;
   }

@@ -7,6 +7,7 @@ data:
     phosphorIcon: paint-brush
     featured: true
     external: false
+    aliases: [design hub, creative tools, designlab, ui]
   - name: 3D Musilizer
     icon: cfd-musilizer
     url: /3DMUSILIZER/
@@ -15,6 +16,7 @@ data:
     phosphorIcon: music-notes
     featured: true
     external: false
+    aliases: [music visualizer, audio reactive, 3d music, musilizer]
   - name: Aurora 3D
     icon: cfd-aurora
     url: https://aurora3d.codefrydev.in
@@ -23,6 +25,7 @@ data:
     phosphorIcon: sparkle
     featured: true
     external: true
+    aliases: [aurora, particles, visualizer, 3d effects]
   - name: DSGN.LIB
     icon: cfd-dsgn
     url: /dsgnlib/
@@ -31,6 +34,7 @@ data:
     phosphorIcon: books
     featured: true
     external: false
+    aliases: [design library, components, patterns, ui kit]
   - name: JUICY HAPTIC
     icon: cfd-juicy
     url: https://juicyhapticdesign.codefrydev.in/
@@ -39,6 +43,7 @@ data:
     phosphorIcon: device-mobile
     featured: true
     external: true
+    aliases: [haptic, vibration, mobile design, feedback]
   - name: DataViz
     icon: cfd-datavis
     url: https://dataviz.codefrydev.in/
@@ -47,6 +52,7 @@ data:
     phosphorIcon: chart-bar
     featured: true
     external: true
+    aliases: [charts, graphs, visualization, data]
   - name: Neural Music Player
     icon: cfd-music
     url: https://neuralmusicplayer.codefrydev.in
@@ -55,3 +61,4 @@ data:
     phosphorIcon: music-notes
     featured: false
     external: true
+    aliases: [music player, ai music, neural, audio player]

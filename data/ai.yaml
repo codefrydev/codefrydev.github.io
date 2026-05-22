@@ -7,6 +7,7 @@ data:
     phosphorIcon: share-network
     featured: true
     external: true
+    aliases: [social media, captions, instagram, posts]
   - name: AI Meme Generator
     icon: cfd-meme
     url: https://meme.codefrydev.in/
@@ -15,6 +16,7 @@ data:
     phosphorIcon: smiley
     featured: true
     external: true
+    aliases: [meme, funny, captions, generator]
   - name: Visual Note AI
     icon: cfd-vnote
     url: https://appsuit.codefrydev.in/apps/visualnoteai/
@@ -23,6 +25,7 @@ data:
     phosphorIcon: note
     featured: true
     external: true
+    aliases: [visual notes, idea board, notes ai, brainstorming]
   - name: Aqua tracker AI
     icon: cfd-water
     url: https://aquatrack.codefrydev.in/
@@ -31,6 +34,7 @@ data:
     phosphorIcon: drop
     featured: true
     external: true
+    aliases: [water tracker, hydration, drink water, health]
   - name: AI Web Summarize
     icon: cfd-summarize
     url: https://summarize.codefrydev.in/
@@ -39,6 +43,7 @@ data:
     phosphorIcon: article
     featured: true
     external: true
+    aliases: [summarize, tldr, article, webpage]
   - name: Profile AI
     icon: cfd-chat
     url: /ProfiledAi/
@@ -47,6 +52,7 @@ data:
     phosphorIcon: user
     featured: true
     external: false
+    aliases: [resume, cv, professional profile, linkedin]
   - name: CFD Chat AI
     icon: cfd-chat
     url: https://chat.codefrydev.in/
@@ -55,3 +61,4 @@ data:
     phosphorIcon: chat-circle
     featured: false
     external: true
+    aliases: [chat ai, chatbot, assistant, help]

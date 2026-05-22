@@ -24,6 +24,9 @@
         <span class="search-palette__empty-icon" aria-hidden="true">🔍</span>
         <p class="search-palette__empty-title">No matches</p>
         <p class="search-palette__empty-hint">Try another keyword or pick a shortcut below</p>
+        <p id="search-palette-suggest" class="search-palette__empty-suggest" hidden>
+          Did you mean <button type="button" class="search-palette__suggest-btn" data-search-suggest></button>?
+        </p>
       </div>
       <div id="search-palette-default" class="search-palette__default">
         <p class="search-palette__section-label">Quick open</p>
@@ -32,6 +35,10 @@
           <a href="/ai/" class="search-palette__chip" role="listitem">🤖 AI Tools</a>
           <a href="/designlab/" class="search-palette__chip" role="listitem">🎨 Design Lab</a>
           <a href="/browse/" class="search-palette__chip" role="listitem">⊞ Browse</a>
+        </div>
+        <div id="search-palette-recent" class="search-palette__recent" hidden>
+          <p class="search-palette__section-label">Recent</p>
+          <div class="search-palette__chips" role="list" id="search-palette-recent-list"></div>
         </div>
         <p class="search-palette__section-label">Popular</p>
         <ul id="search-palette-suggestions" class="search-palette__list" role="listbox" aria-label="Popular tools">

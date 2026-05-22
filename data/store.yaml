@@ -7,6 +7,7 @@ data:
     phosphorIcon: drop
     featured: true
     external: true
+    aliases: [hydration, android app, drink water, reminder]
   - name: abintudyog
     icon: cfd-abint
     url: https://play.google.com/store/apps/details?id=com.priyadarshi.abhijeet.abintudyog
@@ -15,6 +16,7 @@ data:
     phosphorIcon: student
     featured: true
     external: true
+    aliases: [education app, learning, android, study]
   - name: Tiny fish
     icon: cfd-tinyfish
     url: https://play.google.com/store/apps/details?id=in.codefrydev.developer.abhijeet.tinyfish
@@ -23,6 +25,7 @@ data:
     phosphorIcon: fish
     featured: true
     external: true
+    aliases: [fish game, casual game, android, aquarium]
   - name: Galactic gunner
     icon: cfd-galacticgunner
     url: https://play.google.com/store/apps/details?id=org.codefrydev.developer.abhijeet.galacticgunner
@@ -31,3 +34,4 @@ data:
     phosphorIcon: rocket
     featured: true
     external: true
+    aliases: [space shooter, arcade, android game, galactic]

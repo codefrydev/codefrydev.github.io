@@ -14,7 +14,7 @@
 import { readFileSync, writeFileSync } from 'fs';
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
-import { transformSync } from 'esbuild';
+import { transformSync, buildSync } from 'esbuild';
 
 const __dir = dirname(fileURLToPath(import.meta.url));
 const jsDir = resolve(__dir, '../static/js');
@@ -53,6 +53,29 @@ let totalIn = 0;
 let totalOut = 0;
 
 for (const bundle of BUNDLES) {
+  const outPath = resolve(jsDir, bundle.out);
+
+  if (bundle.out === 'search-palette.min.js') {
+    const entryPath = resolve(jsDir, bundle.files[0]);
+    const source = readFileSync(entryPath, 'utf8');
+    const result = buildSync({
+      entryPoints: [entryPath],
+      bundle: true,
+      format: 'iife',
+      minify: true,
+      target: 'es2018',
+      write: false,
+    });
+    const code = result.outputFiles[0].text;
+    writeFileSync(outPath, code);
+    totalIn += source.length;
+    totalOut += code.length;
+    console.log(
+      `${bundle.files.join(' + ')} (bundled) → ${bundle.out} (${source.length} → ${code.length} bytes)`
+    );
+    continue;
+  }
+
   const combined = bundle.files
     .map((name) => readFileSync(resolve(jsDir, name), 'utf8'))
     .join('\n');
@@ -63,7 +86,6 @@ for (const bundle of BUNDLES) {
     target: 'es2018',
   });
 
-  const outPath = resolve(jsDir, bundle.out);
   writeFileSync(outPath, code);
   totalIn += combined.length;
   totalOut += code.length;

@@ -7,6 +7,7 @@ data:
     phosphorIcon: dice-five
     featured: true
     external: true
+    aliases: [word game, dice, puzzle, scrabble]
   - name: Chain Reaction
     icon: cfd-chainreaction
     url: /ChainReaction/
@@ -15,6 +16,7 @@ data:
     phosphorIcon: circles-three
     featured: true
     external: false
+    aliases: [strategy, board game, cells, grid]
   - name: Wordle
     icon: cfd-wordle
     url: /Wordle/
@@ -23,6 +25,7 @@ data:
     phosphorIcon: text-aa
     featured: true
     external: false
+    aliases: [word game, 5 letter, guess, puzzle]
   - name: Snake
     icon: cfd-snake
     url: /Snake
@@ -31,6 +34,7 @@ data:
     phosphorIcon: snake
     featured: true
     external: false
+    aliases: [snake game, classic, arcade, retro]
   - name: Game
     icon: cfd-games
     url: https://play.google.com/store/apps/details?id=org.codefrydev.developer.abhijeet.galacticgunner
@@ -39,6 +43,7 @@ data:
     phosphorIcon: game-controller
     featured: true
     external: false
+    aliases: [galactic gunner, android game, space shooter, play store]
   - name: Ludo
     icon: cfd-ludo
     url: /Ludo/
@@ -47,6 +52,7 @@ data:
     phosphorIcon: dice-six
     featured: true
     external: false
+    aliases: [board game, dice, classic, family]
   - name: Carrom
     icon: cfd-carrom
     url: /Carrom/
@@ -55,6 +61,7 @@ data:
     phosphorIcon: target
     featured: false
     external: false
+    aliases: [carrom board, tabletop, striker, board game]
   - name: Billiards
     icon: cfd-billiards
     url: /Billiards/
@@ -63,6 +70,7 @@ data:
     phosphorIcon: circle
     featured: false
     external: false
+    aliases: [pool, cue, snooker, physics]
   - name: Archery
     icon: cfd-archery
     url: /Archery/
@@ -71,6 +79,7 @@ data:
     phosphorIcon: target
     featured: false
     external: false
+    aliases: [bow, shoot, target, aim]
   - name: DotsAndBox
     icon: cfd-dotbox
     url: /DotsAndBox/
@@ -79,6 +88,7 @@ data:
     phosphorIcon: game-controller
     featured: false
     external: false
+    aliases: [dot box, dots and boxes, strategy, two player]
   - name: TicTacToe
     icon: cfd-ttt
     url: /TicTacToe/
@@ -87,6 +97,7 @@ data:
     phosphorIcon: game-controller
     featured: false
     external: false
+    aliases: [tic tac toe, ttt, xo, noughts crosses]
   - name: "2048"
     icon: cfd-2048
     url: /2048/
@@ -95,3 +106,4 @@ data:
     phosphorIcon: grid-four
     featured: false
     external: false
+    aliases: [puzzle, numbers, tile game, slide]
