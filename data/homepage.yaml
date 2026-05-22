@@ -107,7 +107,7 @@ cta:
     title: "Buy us a Coffee"
     description: "If our tools have helped you, consider supporting ongoing development of free utilities for everyone."
     buttonText: "Support us today"
-    buttonUrl: "/tncprivacy"
+    buttonUrl: "/donate"
     secondaryText: "Learn about our mission"
     secondaryUrl: "/about-us"
 
