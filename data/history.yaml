@@ -1,4 +1,9 @@
 history:
+  - date: "23 May 2026"
+    title: "ColorTools"
+    description: "Free online color suite—generators, modifiers, and utilities to create palettes, adjust hues, extract colors from images, and convert between HEX, RGB, HSL, and HSV; added to Tools & Utilities on the home page."
+    link: "/ColorTools/"
+    accent_color: "#ec4899"
   - date: "17 May 2026"
     title: "Containers & Packages"
     description: "New homepage and browse category for official distributions—Website Profiling on Docker Hub (codefrydev/website-profiling) and @codefrydev/svg-engine on npm—with dedicated card icons at /browse/containers-packages/."

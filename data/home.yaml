@@ -189,6 +189,14 @@ categories:
         phosphorIcon: monitor
         featured: true
         external: false
+      - name: ColorTools
+        icon: cfd-colortools
+        url: /ColorTools/
+        description: Generate palettes, adjust hues, extract colors, and convert formats.
+        date: "2026-05-23"
+        phosphorIcon: palette
+        featured: true
+        external: false
       - name: Prompt Library
         icon: cfd-prompt
         url: /PromptsValut/
