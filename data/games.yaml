@@ -17,6 +17,15 @@ data:
     featured: true
     external: false
     aliases: [strategy, board game, cells, grid]
+  - name: Chain Reaction Online
+    icon: cfd-chainreaction-online
+    url: https://chainreaction.codefrydev.in/
+    description: Online multiplayer Chain Reaction—play with friends, capture orbs, and trigger chain reactions.
+    date: "2026-05-24"
+    phosphorIcon: share-network
+    featured: true
+    external: true
+    aliases: [multiplayer, online, strategy, board game, chain reaction]
   - name: Wordle
     icon: cfd-wordle
     url: /Wordle/
