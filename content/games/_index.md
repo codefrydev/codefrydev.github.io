@@ -1,6 +1,6 @@
 ---
 title: "Games"
-date: 2023-01-01T00:00:00Z
+date: 2024-06-08T00:00:00Z
 description: "Play free online games in your browser—Wordle, Snake, Chain Reaction, and more. No download or signup. CodeFryDev browser games."
 keywords: ["free online games", "browser games", "Wordle", "Snake game", "Chain Reaction", "play free games", "codefrydev games"]
 ---

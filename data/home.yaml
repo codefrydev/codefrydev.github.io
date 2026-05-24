@@ -10,7 +10,7 @@ categories:
         icon: cfd-muraly
         url: https://muraly.codefrydev.in/
         description: Collaborative mural canvas for drawing together in the browser.
-        date: "2025-06-01"
+        date: "2025-12-29"
         phosphorIcon: paint-brush
         featured: true
         external: true
@@ -19,7 +19,7 @@ categories:
         icon: cfd-svgengine
         url: /svgengine/
         description: Create and edit SVG graphics with a visual editor.
-        date: "2025-05-12"
+        date: "2026-05-09"
         phosphorIcon: pen-nib
         featured: true
         external: false
@@ -28,7 +28,7 @@ categories:
         icon: cfd-3dprinter
         url: https://codefrydev.in/3DPrinter/
         description: 3D printing utilities and model helpers for makers.
-        date: "2025-04-20"
+        date: "2026-04-16"
         phosphorIcon: cube
         featured: true
         external: true
@@ -37,7 +37,7 @@ categories:
         icon: cfd-esp32cam
         url: /Esp32cam/
         description: ESP32 camera utilities and guides for IoT projects.
-        date: "2025-04-04"
+        date: "2026-01-24"
         phosphorIcon: cpu
         featured: true
         external: false
@@ -46,7 +46,7 @@ categories:
         icon: cfd-font
         url: /font/
         description: Preview and download the Noob font family for your projects.
-        date: "2025-05-05"
+        date: "2026-01-27"
         phosphorIcon: text-aa
         featured: true
         external: false
@@ -55,7 +55,7 @@ categories:
         icon: cfd-rag
         url: /RandomApiGenerator/docs/
         description: Random API generator docs and playground for mock APIs.
-        date: "2025-03-08"
+        date: "2026-04-14"
         phosphorIcon: shuffle
         featured: true
         external: false
@@ -64,7 +64,7 @@ categories:
         icon: cfd-tomatoes
         url: /Tomatoes/
         description: Pomodoro-style timer to boost focus and productivity.
-        date: "2025-07-07"
+        date: "2026-03-11"
         phosphorIcon: plant
         featured: false
         external: false
@@ -73,7 +73,7 @@ categories:
         icon: cfd-nodeflow
         url: /NodeEditor/
         description: Visual node editor for flows and diagrams in the browser.
-        date: "2025-02-14"
+        date: "2026-02-07"
         phosphorIcon: graph
         featured: false
         external: false
@@ -82,7 +82,7 @@ categories:
         icon: cfd-sql
         url: /SqLite/
         description: Run and explore SQLite databases in the browser.
-        date: "2025-09-09"
+        date: "2026-03-16"
         phosphorIcon: database
         featured: false
         external: false
@@ -91,7 +91,7 @@ categories:
         icon: cfd-art
         url: /designlab/
         description: Design lab hub for creative tools and visual resources.
-        date: "2025-01-10"
+        date: "2025-06-18"
         phosphorIcon: palette
         featured: false
         external: false
@@ -100,7 +100,7 @@ categories:
         icon: cfd-socialsnap
         url: /SocialMedia/
         description: Create and preview social media layouts and snippets.
-        date: "2025-11-11"
+        date: "2026-04-12"
         phosphorIcon: share-network
         featured: false
         external: false
@@ -109,7 +109,7 @@ categories:
         icon: cfd-texttools
         url: /TextHub/
         description: Text tools hub—format, transform, and edit text online.
-        date: "2025-12-12"
+        date: "2025-09-07"
         phosphorIcon: text-t
         featured: false
         external: false
@@ -118,7 +118,7 @@ categories:
         icon: cfd-wallpaper
         url: /Wallpaper/
         description: Browse and download wallpapers for desktop and mobile.
-        date: "2025-01-13"
+        date: "2024-04-12"
         phosphorIcon: image
         featured: false
         external: false
@@ -127,7 +127,7 @@ categories:
         icon: cfd-threedassets
         url: /ThreeDAssets/
         description: Explore and preview 3D models and assets.
-        date: "2025-02-14"
+        date: "2025-05-10"
         phosphorIcon: cube
         featured: false
         external: false
@@ -136,7 +136,7 @@ categories:
         icon: cfd-android
         url: https://android.codefrydev.in/
         description: Android design assets, icons, and resources.
-        date: "2025-03-15"
+        date: "2025-07-14"
         phosphorIcon: android-logo
         featured: false
         external: true
@@ -145,7 +145,7 @@ categories:
         icon: cfd-dsanim
         url: /AnimateDatastructure/
         description: Animated visualizations for data structures and algorithms.
-        date: "2025-04-16"
+        date: "2026-03-18"
         phosphorIcon: graduation-cap
         featured: false
         external: false
@@ -154,7 +154,7 @@ categories:
         icon: cfd-learnds
         url: /LearnDS/
         description: Interactive lab for learning data structures step by step.
-        date: "2025-05-17"
+        date: "2026-02-18"
         phosphorIcon: book-open
         featured: false
         external: false
@@ -163,7 +163,7 @@ categories:
         icon: cfd-sizematters
         url: /SizeMatters/
         description: Compare and understand file and image dimensions.
-        date: "2025-06-18"
+        date: "2026-03-25"
         phosphorIcon: ruler
         featured: false
         external: false
@@ -172,7 +172,7 @@ categories:
         icon: cfd-fish
         url: /fish/
         description: Relaxing aquarium simulation in your browser.
-        date: "2025-07-19"
+        date: "2026-01-20"
         phosphorIcon: fish
         featured: false
         external: false
@@ -188,7 +188,7 @@ categories:
         icon: cfd-cfdpenney
         url: /CFDPenney/
         description: Penny auction demo and learning tool.
-        date: "2025-01-01"
+        date: "2026-01-04"
         phosphorIcon: coins
         featured: true
         external: false
@@ -197,7 +197,7 @@ categories:
         icon: cfd-seo
         url: /WebsiteProfiling/
         description: Analyze and profile websites for SEO insights.
-        date: "2025-08-01"
+        date: "2026-03-16"
         phosphorIcon: chart-line-up
         featured: true
         external: false
@@ -206,7 +206,7 @@ categories:
         icon: cfd-resolutiontester
         url: /WebsiteResolutionTester/
         description: Preview your site at common viewport resolutions.
-        date: "2025-03-03"
+        date: "2026-05-13"
         phosphorIcon: monitor
         featured: true
         external: false
@@ -224,7 +224,7 @@ categories:
         icon: cfd-prompt
         url: /PromptsValut/
         description: Curated AI prompts for writing, code, and creativity.
-        date: "2025-04-04"
+        date: "2025-09-20"
         phosphorIcon: book-open
         featured: true
         external: false
@@ -233,7 +233,7 @@ categories:
         icon: cfd-jsonplayground
         url: /JsonPlayground/
         description: Format, validate, and experiment with JSON in real time.
-        date: "2025-07-15"
+        date: "2026-02-06"
         phosphorIcon: brackets-curly
         featured: true
         external: false
@@ -242,7 +242,7 @@ categories:
         icon: cfd-jswebide
         url: /Javascript/
         description: Lightweight JavaScript IDE in the browser.
-        date: "2025-06-06"
+        date: "2026-04-24"
         phosphorIcon: code
         featured: true
         external: false
@@ -251,7 +251,7 @@ categories:
         icon: cfd-speedtest
         url: /Wifi-Speed-Test/
         description: Test your network speed directly in the browser.
-        date: "2025-06-20"
+        date: "2026-04-08"
         phosphorIcon: gauge
         featured: false
         external: false
@@ -260,7 +260,7 @@ categories:
         icon: cfd-bsod
         url: /bluescreenofdeath/
         description: Blue screen simulator for pranks and presentations.
-        date: "2025-08-08"
+        date: "2025-12-29"
         phosphorIcon: warning
         featured: false
         external: false
@@ -269,7 +269,7 @@ categories:
         icon: cfd-jvm
         url: /VisualMapper/
         description: Visualize and map JSON data structures.
-        date: "2025-09-09"
+        date: "2026-03-15"
         phosphorIcon: brackets-curly
         featured: false
         external: false
@@ -278,7 +278,7 @@ categories:
         icon: cfd-csv
         url: /CSV/
         description: View, edit, and convert CSV files online.
-        date: "2025-10-10"
+        date: "2025-03-03"
         phosphorIcon: table
         featured: false
         external: false
@@ -287,7 +287,7 @@ categories:
         icon: cfd-cin
         url: /CIN/
         description: Corporate identification and business lookup utilities.
-        date: "2025-11-11"
+        date: "2026-04-26"
         phosphorIcon: identification-card
         featured: false
         external: false
@@ -296,7 +296,7 @@ categories:
         icon: cfd-tierlistmaker
         url: /TierListMaker/
         description: Create shareable tier lists with drag and drop.
-        date: "2025-12-12"
+        date: "2026-04-27"
         phosphorIcon: list-numbers
         featured: false
         external: false
@@ -305,7 +305,7 @@ categories:
         icon: cfd-knowyoursize
         url: /KnowYourSize/
         description: Screen and viewport size reference for developers.
-        date: "2025-01-13"
+        date: "2026-04-28"
         phosphorIcon: ruler
         featured: false
         external: false
@@ -314,7 +314,7 @@ categories:
         icon: cfd-txtdiff
         url: /TextDifference/
         description: Compare two text files side by side.
-        date: "2025-02-14"
+        date: "2026-03-14"
         phosphorIcon: files
         featured: false
         external: false
@@ -323,7 +323,7 @@ categories:
         icon: cfd-mifier
         url: /Mifier/
         description: Minify and beautify code and markup.
-        date: "2025-03-15"
+        date: "2026-03-14"
         phosphorIcon: sparkle
         featured: false
         external: false
@@ -341,7 +341,7 @@ categories:
         icon: cfd-metatag
         url: /metatag/
         description: Generate and preview HTML meta tags for sharing and SEO.
-        date: "2025-05-01"
+        date: "2025-06-22"
         phosphorIcon: tag
         featured: false
         external: false
@@ -350,7 +350,7 @@ categories:
         icon: cfd-notebook
         url: /YourNoteBook/
         description: Simple online notebook for quick notes.
-        date: "2025-06-18"
+        date: "2025-04-07"
         phosphorIcon: notebook
         featured: false
         external: false
@@ -359,7 +359,7 @@ categories:
         icon: cfd-texteditor
         url: /TextEditor/
         description: Fast in-browser text editor with essentials.
-        date: "2025-07-19"
+        date: "2026-02-18"
         phosphorIcon: pencil
         featured: false
         external: false
@@ -368,7 +368,7 @@ categories:
         icon: cfd-mausam
         url: /Mausam/
         description: Check weather conditions with a simple, fast interface.
-        date: "2025-04-10"
+        date: "2025-05-06"
         phosphorIcon: cloud-sun
         featured: false
         external: false
@@ -377,7 +377,7 @@ categories:
         icon: cfd-brain
         url: /ai
         description: Browse AI-powered tools—memes, summarizers, chat, and more.
-        date: "2025-09-01"
+        date: "2025-06-24"
         phosphorIcon: brain
         featured: false
         external: false
@@ -395,7 +395,7 @@ categories:
         icon: cfd-instaimage
         url: https://instaimage.codefrydev.in/
         description: Prepare images sized for Instagram and social posts.
-        date: "2025-11-23"
+        date: "2026-01-16"
         phosphorIcon: instagram-logo
         featured: false
         external: true
@@ -404,7 +404,7 @@ categories:
         icon: cfd-willbeback
         url: /willbeback/
         description: Custom “be right back” screen for streams and meetings.
-        date: "2025-12-24"
+        date: "2025-10-21"
         phosphorIcon: clock
         featured: false
         external: false
@@ -413,7 +413,7 @@ categories:
         icon: cfd-git
         url: /CodeSnippt/
         description: Generate commit messages and code snippets.
-        date: "2025-01-25"
+        date: "2026-02-23"
         phosphorIcon: git-branch
         featured: false
         external: false
@@ -422,7 +422,7 @@ categories:
         icon: cfd-snippt
         url: /CodeSnippt/
         description: Save and organize code snippets in the browser.
-        date: "2025-02-26"
+        date: "2026-03-28"
         phosphorIcon: scissors
         featured: false
         external: false
@@ -438,7 +438,7 @@ categories:
         icon: cfd-games
         url: /games
         description: Full games hub—puzzles, classics, and arcade favorites.
-        date: "2025-01-01"
+        date: "2024-06-08"
         phosphorIcon: game-controller
         featured: true
         external: false
@@ -447,7 +447,7 @@ categories:
         icon: cfd-overdose
         url: /Overdose
         description: Fast-paced arcade game—test your reflexes.
-        date: "2025-02-02"
+        date: "2026-03-01"
         phosphorIcon: pill
         featured: true
         external: false
@@ -456,7 +456,7 @@ categories:
         icon: cfd-worddice
         url: https://worddice.codefrydev.in/
         description: Word puzzle game with dice-driven challenges.
-        date: "2025-03-03"
+        date: "2025-11-08"
         phosphorIcon: dice-five
         featured: true
         external: true
@@ -465,7 +465,7 @@ categories:
         icon: cfd-chainreaction
         url: /ChainReaction/
         description: Strategic board game—expand cells and dominate the grid.
-        date: "2025-03-01"
+        date: "2024-05-06"
         phosphorIcon: circles-three
         featured: true
         external: false
@@ -474,7 +474,7 @@ categories:
         icon: cfd-wordle
         url: /Wordle/
         description: Guess the five-letter word in six tries.
-        date: "2025-02-01"
+        date: "2024-05-19"
         phosphorIcon: text-aa
         featured: true
         external: false
@@ -483,7 +483,7 @@ categories:
         icon: cfd-tomjerry
         url: /TomAndJerry/
         description: Classic chase game fun in the browser.
-        date: "2025-06-06"
+        date: "2024-06-05"
         phosphorIcon: cat
         featured: true
         external: false
@@ -492,7 +492,7 @@ categories:
         icon: cfd-snake
         url: /Snake
         description: Classic snake game—eat, grow, and avoid the walls.
-        date: "2025-01-15"
+        date: "2024-06-08"
         phosphorIcon: snake
         featured: false
         external: false
@@ -501,7 +501,7 @@ categories:
         icon: cfd-challenge
         url: /Challenge/
         description: Daily challenges and mini-games to play online.
-        date: "2025-08-08"
+        date: "2024-03-26"
         phosphorIcon: trophy
         featured: false
         external: false
@@ -510,7 +510,7 @@ categories:
         icon: cfd-dotbox
         url: /DotsAndBox/
         description: Dots and boxes strategy game for two players.
-        date: "2025-09-09"
+        date: "2026-03-10"
         phosphorIcon: grid-four
         featured: false
         external: false
@@ -519,7 +519,7 @@ categories:
         icon: cfd-ttt
         url: /TicTacToe/
         description: Tic-tac-toe—play against a friend or the computer.
-        date: "2025-10-10"
+        date: "2026-03-10"
         phosphorIcon: x
         featured: false
         external: false
@@ -528,7 +528,7 @@ categories:
         icon: cfd-2048
         url: /2048/
         description: Slide tiles and combine numbers to reach 2048.
-        date: "2025-01-20"
+        date: "2026-03-10"
         phosphorIcon: grid-four
         featured: false
         external: false
@@ -537,7 +537,7 @@ categories:
         icon: cfd-archery
         url: /Archery/
         description: Aim and shoot in this browser archery challenge.
-        date: "2025-04-01"
+        date: "2026-03-11"
         phosphorIcon: target
         featured: false
         external: false
@@ -546,7 +546,7 @@ categories:
         icon: cfd-ludo
         url: /Ludo/
         description: Classic Ludo board game online.
-        date: "2025-01-13"
+        date: "2026-03-11"
         phosphorIcon: dice-six
         featured: false
         external: false
@@ -555,7 +555,7 @@ categories:
         icon: cfd-billiards
         url: /Billiards/
         description: Browser billiards with realistic physics.
-        date: "2025-02-14"
+        date: "2026-03-11"
         phosphorIcon: circle
         featured: false
         external: false
@@ -564,7 +564,7 @@ categories:
         icon: cfd-carrom
         url: /Carrom/
         description: Play carrom online with smooth controls.
-        date: "2025-03-15"
+        date: "2026-03-11"
         phosphorIcon: target
         featured: false
         external: false
@@ -580,7 +580,7 @@ categories:
         icon: cfd-about
         url: /about-us
         description: Learn about CodeFryDev and the team behind the tools.
-        date: "2025-01-01"
+        date: "2024-03-01"
         phosphorIcon: users
         featured: true
         external: false
@@ -589,7 +589,7 @@ categories:
         icon: cfd-history
         url: /history
         description: Explore our history and project milestones.
-        date: "2025-02-01"
+        date: "2024-03-01"
         phosphorIcon: clock-counter-clockwise
         featured: true
         external: false
@@ -598,7 +598,7 @@ categories:
         icon: cfd-games
         url: /cfddc/
         description: CodeFryDev Developer Conference — year-by-year announcements from our timeline.
-        date: "2026-05-16"
+        date: "2026-05-17"
         phosphorIcon: presentation
         featured: true
         external: false
@@ -607,7 +607,7 @@ categories:
         icon: cfd-pi
         url: /PI/
         description: Explore Pi digits, facts, and visualizations.
-        date: "2025-03-03"
+        date: "2026-03-15"
         phosphorIcon: pi
         featured: true
         external: false
@@ -616,7 +616,7 @@ categories:
         icon: cfd-rl
         url: /Reinforcement/
         description: Reinforcement learning demos and experiments.
-        date: "2025-04-04"
+        date: "2026-03-15"
         phosphorIcon: brain
         featured: true
         external: false
@@ -634,7 +634,7 @@ categories:
         icon: cfd-store
         url: /store/
         description: Mobile apps and downloads from the CodeFryDev store.
-        date: "2025-03-15"
+        date: "2025-03-02"
         phosphorIcon: device-mobile
         featured: true
         external: false
@@ -643,7 +643,7 @@ categories:
         icon: cfd-privacy
         url: /tncprivacy
         description: Terms, privacy policy, and contact information.
-        date: "2025-01-01"
+        date: "2024-03-01"
         phosphorIcon: shield-check
         featured: false
         external: false
@@ -652,7 +652,7 @@ categories:
         icon: cfd-agurutwa
         url: https://agurutwa.github.io/
         description: External project by Agurutwa—community resources.
-        date: "2025-08-08"
+        date: "2025-06-01"
         phosphorIcon: link
         featured: false
         external: true
@@ -661,7 +661,7 @@ categories:
         icon: cfd-pathsala
         url: https://agurutwa.github.io/Pathsala/
         description: Educational paths and learning resources.
-        date: "2025-09-09"
+        date: "2025-06-01"
         phosphorIcon: book
         featured: false
         external: true
@@ -677,7 +677,7 @@ categories:
         icon: cfd-website-profiling
         url: https://hub.docker.com/r/codefrydev/website-profiling
         description: Docker image for website performance profiling and analysis.
-        date: "2026-05-16"
+        date: "2026-05-17"
         phosphorIcon: chart-line
         featured: true
         external: true
@@ -686,7 +686,7 @@ categories:
         icon: cfd-svg-engine-npm
         url: https://www.npmjs.com/package/@codefrydev/svg-engine
         description: "@codefrydev/svg-engine — SVG creation and manipulation for Node and the browser."
-        date: "2026-05-16"
+        date: "2026-05-17"
         phosphorIcon: pen-nib
         featured: true
         external: true

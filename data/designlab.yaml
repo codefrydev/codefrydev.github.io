@@ -3,7 +3,7 @@ data:
     icon: cfd-design
     url: /design/
     description: Design tools hub for creative projects.
-    date: "2025-01-01"
+    date: "2024-07-26"
     phosphorIcon: paint-brush
     featured: true
     external: false
@@ -21,7 +21,7 @@ data:
     icon: cfd-aurora
     url: https://aurora3d.codefrydev.in
     description: Stunning 3D aurora and particle visualizer.
-    date: "2025-03-03"
+    date: "2025-07-14"
     phosphorIcon: sparkle
     featured: true
     external: true
@@ -30,7 +30,7 @@ data:
     icon: cfd-dsgn
     url: /dsgnlib/
     description: Design library of components and patterns.
-    date: "2025-04-04"
+    date: "2025-06-18"
     phosphorIcon: books
     featured: true
     external: false
@@ -39,7 +39,7 @@ data:
     icon: cfd-juicy
     url: https://juicyhapticdesign.codefrydev.in/
     description: Haptic feedback design patterns and demos.
-    date: "2025-05-05"
+    date: "2025-07-12"
     phosphorIcon: device-mobile
     featured: true
     external: true
@@ -48,7 +48,7 @@ data:
     icon: cfd-datavis
     url: https://dataviz.codefrydev.in/
     description: Charts and data visualization in the browser.
-    date: "2025-06-06"
+    date: "2025-07-14"
     phosphorIcon: chart-bar
     featured: true
     external: true
@@ -57,7 +57,7 @@ data:
     icon: cfd-music
     url: https://neuralmusicplayer.codefrydev.in
     description: AI-driven music player with neural visuals.
-    date: "2025-07-07"
+    date: "2025-07-14"
     phosphorIcon: music-notes
     featured: false
     external: true

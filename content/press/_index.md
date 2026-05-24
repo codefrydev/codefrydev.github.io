@@ -10,7 +10,7 @@ keywords: ["CodeFryDev press", "media kit", "press kit", "logo", "contact"]
 
 **CodeFryDev** — *This is a platform where we learn, work on experimental projects, play games, come up with innovative ideas, and build many more...*
 
-We offer free online tools, games, and AI apps—no signup required. CodeFryDev has been building and shipping in the browser since 2023, with a growing collection of utilities, games, AI helpers, and design lab resources.
+We offer free online tools, games, and AI apps—no signup required. CodeFryDev has been building and shipping in the browser since 2024, with a growing collection of utilities, games, AI helpers, and design lab resources.
 
 ## Logo & assets
 

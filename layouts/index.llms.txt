@@ -3,7 +3,7 @@
 > {{ .Site.Params.description }}
 
 ## About
-{{ .Site.Title }} offers free online tools, games, and AI apps—no signup required. We build productivity apps, AI-powered utilities, engaging games, and creative design resources for developers, designers, and anyone curious to experiment in the browser. Active since 2023.
+{{ .Site.Title }} offers free online tools, games, and AI apps—no signup required. We build productivity apps, AI-powered utilities, engaging games, and creative design resources for developers, designers, and anyone curious to experiment in the browser. Active since 2024.
 
 ## Website
 - URL: {{ .Site.BaseURL }}
