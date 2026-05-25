@@ -258,6 +258,7 @@
 [data-theme="light"] body .about-connect-card,
 [data-theme="light"] body .contact-form-card,
 [data-theme="light"] body .contact-link,
+[data-theme="light"] body .faq-main-card,
 [data-theme="light"] body .about-pillar,
 [data-theme="light"] body .home-why__card,
 [data-theme="light"] body .home-why__perk,
@@ -311,6 +312,68 @@
 
 [data-theme="light"] body .browse-category__grid .border-b {
   border-color: #e2e8f0 !important;
+}
+
+/* —— FAQ page —— */
+[data-theme="light"] body .faq-main__toolbar {
+  border-color: #e2e8f0 !important;
+  background-color: #f8fafc !important;
+}
+
+[data-theme="light"] body .faq-search__input {
+  border-color: #e2e8f0 !important;
+  background-color: #ffffff !important;
+}
+
+[data-theme="light"] body .faq-filter {
+  border-color: #e2e8f0 !important;
+  background-color: #ffffff !important;
+}
+
+[data-theme="light"] body .faq-filter.is-active {
+  border-color: #bae6fd !important;
+  background-color: #e0f2fe !important;
+  color: #0369a1 !important;
+}
+
+[data-theme="light"] body .faq-group__head {
+  border-color: #e2e8f0 !important;
+}
+
+[data-theme="light"] body .faq-group__title {
+  color: #0284c7 !important;
+}
+
+[data-theme="light"] body .faq-group__count {
+  background-color: #e0f2fe !important;
+  color: #0369a1 !important;
+}
+
+[data-theme="light"] body .faq-item {
+  border-color: #e2e8f0 !important;
+  background-color: #f8fafc !important;
+}
+
+[data-theme="light"] body .faq-item:hover,
+[data-theme="light"] body .faq-item[open] {
+  border-color: #cbd5e1 !important;
+  background-color: #ffffff !important;
+  box-shadow: var(--light-shadow-sm) !important;
+}
+
+[data-theme="light"] body .faq-item[open] .faq-item__question {
+  color: #0284c7 !important;
+}
+
+[data-theme="light"] body .faq-item__answer {
+  border-color: #e2e8f0 !important;
+  color: #475569 !important;
+}
+
+[data-theme="light"] body .faq-no-results {
+  border-color: #e2e8f0 !important;
+  background-color: #f8fafc !important;
+  color: #64748b !important;
 }
 
 /* ── Partners strip ── */

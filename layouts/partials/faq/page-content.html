@@ -1,0 +1,62 @@
+{{- $categories := hugo.Data.faq.categories | default (slice) -}}
+{{- $faqs := hugo.Data.faq.faqs | default (slice) -}}
+
+{{- if gt (len $faqs) 0 -}}
+<section class="faq-main" aria-labelledby="faq-main-heading">
+  <div class="faq-main__toolbar">
+    <div class="faq-search">
+      <label for="faq-search-input" class="sr-only">Search FAQ</label>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" class="faq-search__icon" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input
+        type="search"
+        id="faq-search-input"
+        class="faq-search__input"
+        placeholder="Search questions…"
+        autocomplete="off"
+        spellcheck="false"
+      >
+    </div>
+    <div class="faq-filters" role="group" aria-label="Filter by topic">
+      <button type="button" class="faq-filter is-active" data-faq-filter="all" aria-pressed="true">All topics</button>
+      {{- range $categories -}}
+      <button type="button" class="faq-filter" data-faq-filter="{{ .id }}" aria-pressed="false">{{ .label }}</button>
+      {{- end -}}
+    </div>
+  </div>
+
+  <h2 id="faq-main-heading" class="sr-only">Questions and answers</h2>
+
+  <div class="faq-groups" id="faq-groups">
+    {{- range $categories -}}
+    {{- $catId := .id -}}
+    {{- $catFaqs := where $faqs "category" $catId -}}
+    {{- if gt (len $catFaqs) 0 -}}
+    <section class="faq-group" data-faq-category="{{ $catId }}" aria-labelledby="faq-cat-{{ $catId }}">
+      <header class="faq-group__head">
+        {{- with .icon -}}<span class="faq-group__icon" aria-hidden="true">{{ . }}</span>{{- end -}}
+        <h3 id="faq-cat-{{ $catId }}" class="faq-group__title m-0">{{ .label }}</h3>
+        <span class="faq-group__count">{{ len $catFaqs }}</span>
+      </header>
+      <div class="faq-group__list">
+        {{- range $catFaqs -}}
+        <details class="faq-item">
+          <summary class="faq-item__summary">
+            <span class="faq-item__question">{{ .question }}</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" class="faq-item__chevron" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <p class="faq-item__answer m-0">{{ .answer }}</p>
+        </details>
+        {{- end -}}
+      </div>
+    </section>
+    {{- end -}}
+    {{- end -}}
+  </div>
+
+  <p id="faq-no-results" class="faq-no-results m-0" hidden>
+    No questions match your search. Try different keywords or
+    <a href="/contact-us/" class="text-brand no-underline hover:underline">contact us</a>
+    for help.
+  </p>
+</section>
+{{- end -}}

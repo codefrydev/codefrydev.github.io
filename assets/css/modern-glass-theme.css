@@ -229,6 +229,7 @@
 [data-theme="glass"] body .about-connect-card,
 [data-theme="glass"] body .contact-form-card,
 [data-theme="glass"] body .contact-link,
+[data-theme="glass"] body .faq-main-card,
 [data-theme="glass"] body .about-pillar,
 [data-theme="glass"] body .home-why__card,
 [data-theme="glass"] body .home-why__perk,
@@ -254,6 +255,7 @@
 [data-theme="glass"] body .about-card::before,
 [data-theme="glass"] body .contact-form-card::before,
 [data-theme="glass"] body .contact-link::before,
+[data-theme="glass"] body .faq-main-card::before,
 [data-theme="glass"] body article.bg-white.rounded-2xl::before,
 [data-theme="glass"] body article.bg-white.rounded-2xl.flex::before,
 [data-theme="glass"] body .home-testimonial-card::before,
@@ -273,6 +275,7 @@
 [data-theme="glass"] body .about-card > *,
 [data-theme="glass"] body .contact-form-card > *,
 [data-theme="glass"] body .contact-link > *,
+[data-theme="glass"] body .faq-main-card > *,
 [data-theme="glass"] body article.bg-white.rounded-2xl > *,
 [data-theme="glass"] body article.bg-white.rounded-2xl.flex > *,
 [data-theme="glass"] body .home-testimonial-card > *,
@@ -288,6 +291,7 @@
 [data-theme="glass"] body .about-connect-card:hover,
 [data-theme="glass"] body .contact-form-card:hover,
 [data-theme="glass"] body .contact-link:hover,
+[data-theme="glass"] body .faq-main-card:hover,
 [data-theme="glass"] body article.bg-white.rounded-2xl:hover {
   background-color: rgba(255, 255, 255, 0.72) !important;
   box-shadow: inset 0 1px 0 var(--glass-highlight), 0 12px 40px rgba(15, 23, 42, 0.12), 0 1px 0 rgba(15, 23, 42, 0.05) !important;
@@ -554,6 +558,91 @@
 
 [data-theme="glass"] body .home-faq-scroll {
   scrollbar-color: rgba(148, 163, 184, 0.45) transparent;
+}
+
+/* —— FAQ page —— */
+[data-theme="glass"] body .faq-main__toolbar {
+  border-color: rgba(255, 255, 255, 0.45) !important;
+  background-color: rgba(255, 255, 255, 0.28) !important;
+}
+
+[data-theme="glass"] body .faq-search__input {
+  border-color: rgba(255, 255, 255, 0.5) !important;
+  background-color: rgba(255, 255, 255, 0.55) !important;
+  color: rgb(15 23 42) !important;
+}
+
+[data-theme="glass"] body .faq-search__input::placeholder {
+  color: rgb(100 116 139) !important;
+}
+
+[data-theme="glass"] body .faq-search__input:focus {
+  border-color: rgba(14, 165, 233, 0.45) !important;
+  background-color: rgba(255, 255, 255, 0.72) !important;
+  box-shadow: 0 0 0 4px rgba(14, 165, 233, 0.12) !important;
+}
+
+[data-theme="glass"] body .faq-filter {
+  border-color: rgba(255, 255, 255, 0.5) !important;
+  background-color: rgba(255, 255, 255, 0.45) !important;
+  color: rgb(51 65 85) !important;
+}
+
+[data-theme="glass"] body .faq-filter:hover {
+  background-color: rgba(255, 255, 255, 0.62) !important;
+}
+
+[data-theme="glass"] body .faq-filter.is-active {
+  border-color: rgba(14, 165, 233, 0.4) !important;
+  background-color: rgba(14, 165, 233, 0.12) !important;
+  color: rgb(3 105 161) !important;
+}
+
+[data-theme="glass"] body .faq-group__head {
+  border-color: rgba(255, 255, 255, 0.35) !important;
+}
+
+[data-theme="glass"] body .faq-group__title {
+  color: rgb(3 105 161) !important;
+}
+
+[data-theme="glass"] body .faq-group__count {
+  background-color: rgba(14, 165, 233, 0.12) !important;
+  color: rgb(3 105 161) !important;
+}
+
+[data-theme="glass"] body .faq-item {
+  border-color: rgba(255, 255, 255, 0.42) !important;
+  background-color: rgba(255, 255, 255, 0.32) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35) !important;
+}
+
+[data-theme="glass"] body .faq-item:hover {
+  background-color: rgba(255, 255, 255, 0.48) !important;
+}
+
+[data-theme="glass"] body .faq-item[open] {
+  border-color: rgba(14, 165, 233, 0.35) !important;
+  background-color: rgba(255, 255, 255, 0.52) !important;
+}
+
+[data-theme="glass"] body .faq-item__question {
+  color: rgb(15 23 42) !important;
+}
+
+[data-theme="glass"] body .faq-item[open] .faq-item__question {
+  color: rgb(2 132 199) !important;
+}
+
+[data-theme="glass"] body .faq-item__answer {
+  border-color: rgba(255, 255, 255, 0.35) !important;
+  color: rgb(71 85 105) !important;
+}
+
+[data-theme="glass"] body .faq-no-results {
+  border-color: rgba(255, 255, 255, 0.45) !important;
+  background-color: rgba(255, 255, 255, 0.25) !important;
+  color: rgb(71 85 105) !important;
 }
 
 /* ── Footer ── */
