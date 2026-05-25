@@ -1,0 +1,14 @@
+/* TEAM */
+Developer: CodeFryDev
+Site: https://codefrydev.in/
+Contact: https://codefrydev.in/contact-us/
+Twitter: @codefrydev
+GitHub: https://github.com/codefrydev
+
+/* THANKS */
+Hugo — https://gohugo.io/
+Tailwind CSS — https://tailwindcss.com/
+
+/* SITE */
+Last update: 2026-05-25
+Standards: HTML5, CSS3, Schema.org, WCAG 2.1

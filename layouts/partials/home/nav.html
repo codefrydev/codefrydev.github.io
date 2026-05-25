@@ -44,7 +44,7 @@
         </li>
 
         <li>
-          <a href="{{ if .IsHome }}#faq{{ else }}/#faq{{ end }}" class="{{ $linkIdle }} home-hash-link">FAQ</a>
+          <a href="/faq/" class="{{ if eq $navActive "faq" }}{{ $linkActive }}{{ else }}{{ $linkIdle }}{{ end }}">FAQ</a>
         </li>
       </ul>
 
@@ -165,7 +165,7 @@
       <li><a href="/ai/" class="block px-4 py-3 rounded-xl font-medium text-slate-800 hover:bg-slate-50 no-underline">AI Tools</a></li>
       <li><a href="/designlab/" class="block px-4 py-3 rounded-xl font-medium text-slate-800 hover:bg-slate-50 no-underline">Design Lab</a></li>
       <li><a href="/about-us/" class="block px-4 py-3 rounded-xl font-medium text-slate-800 hover:bg-slate-50 no-underline">About us</a></li>
-      <li><a href="{{ if .IsHome }}#faq{{ else }}/#faq{{ end }}" class="block px-4 py-3 rounded-xl font-medium text-slate-800 hover:bg-slate-50 no-underline home-hash-link">FAQ</a></li>
+      <li><a href="/faq/" class="block px-4 py-3 rounded-xl font-medium text-slate-800 hover:bg-slate-50 no-underline">FAQ</a></li>
     </ul>
   </div>
 </div>

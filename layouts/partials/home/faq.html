@@ -1,21 +1,7 @@
 {{- if hugo.Data.faq.faqs -}}
 <section id="faq" data-section-label="FAQ" class="flex flex-col bg-gray-50/50 relative pt-24 pb-12 home-faq" aria-labelledby="faq-heading">
   <div class="max-w-3xl mx-auto px-4 w-full h-full flex flex-col min-h-0">
-    <div class="text-center mb-6 shrink-0">
-      <p class="inline-block px-4 py-1.5 mb-4 text-sm font-medium text-slate-700 bg-white rounded-full border border-gray-200 shadow-sm m-0">FAQ</p>
-      <h2 id="faq-heading" class="text-3xl md:text-4xl font-bold text-[#0B162C] tracking-tight m-0">Frequently asked questions</h2>
-    </div>
-    <div class="home-faq-scroll flex-1 min-h-0 overflow-y-auto pr-1 -mr-1 flex flex-col gap-3 pb-4">
-      {{- range hugo.Data.faq.faqs -}}
-      <details class="bg-white rounded-2xl border border-gray-100 shadow-sm px-6 py-4 group shrink-0">
-        <summary class="cursor-pointer list-none flex justify-between items-center gap-4">
-          <h3 class="text-[15px] font-semibold text-slate-900 m-0 flex-1 text-left">{{ .question }}</h3>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" class="shrink-0 text-slate-500 group-open:rotate-180 transition-transform" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-        </summary>
-        <p class="text-slate-600 text-[14px] leading-relaxed mt-4 mb-0">{{ .answer }}</p>
-      </details>
-      {{- end -}}
-    </div>
+    {{ partial "faq/accordion.html" (dict "headingLevel" "h2" "headingId" "faq-heading" "showEyebrow" true "showTitle" true) }}
   </div>
 </section>
 {{- end -}}

@@ -1,0 +1,6 @@
+Contact: mailto:codefrydev@gmail.com
+Contact: https://codefrydev.in/contact-us/
+Expires: 2027-05-25T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://codefrydev.in/.well-known/security.txt
+Policy: https://codefrydev.in/tncprivacy/term/security-disclosure/

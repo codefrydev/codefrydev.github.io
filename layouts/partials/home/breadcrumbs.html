@@ -35,6 +35,8 @@
     {{- $items = $items | append (dict "name" "Press & Media" "current" true) -}}
   {{- else if eq $section "contact-us" -}}
     {{- $items = $items | append (dict "name" "Contact us" "current" true) -}}
+  {{- else if eq $section "faq" -}}
+    {{- $items = $items | append (dict "name" "FAQ" "current" true) -}}
   {{- else if eq $section "cfddc" -}}
     {{- if ne $path "/cfddc/" -}}
       {{- $items = $items | append (dict "name" "CFDDC" "url" "/cfddc/") -}}

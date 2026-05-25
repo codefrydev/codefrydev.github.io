@@ -38,6 +38,8 @@
   {{- $pageTitle = "Press & Media - CodeFryDev | Press Kit & Contact" -}}
 {{- else if eq .Section "contact-us" -}}
   {{- $pageTitle = "Contact Us - CodeFryDev | Support & Inquiries" -}}
+{{- else if eq .Section "faq" -}}
+  {{- $pageTitle = "FAQ - CodeFryDev | Help & Common Questions" -}}
 {{- else if eq .Section "cfddc" -}}
   {{- if .Params.year -}}
     {{- $pageTitle = printf "CFDDC %s (%s) | CodeFryDev Developer Conference" (substr .Params.year 2 2) .Params.year -}}

@@ -1,0 +1,29 @@
+{{ partial "home/modern-page-start.html" (dict "page" . "navActive" "" "headExtra" `<meta name="keywords" content="FAQ, CodeFryDev help, free tools, support, privacy">`) }}
+
+<article class="faq-page pt-6 pb-20 sm:pt-10 sm:pb-24">
+  <header class="about-hero max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-10 sm:mb-14">
+    <div class="about-hero__panel">
+      <div class="about-hero__glow" aria-hidden="true"></div>
+      <div class="about-hero__inner md:max-w-2xl">
+        <p class="about-hero__eyebrow">Help center</p>
+        {{- if .Content -}}
+        <div class="about-hero__quote m-0">{{ .Content }}</div>
+        {{- end -}}
+      </div>
+    </div>
+  </header>
+
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+    {{ partial "faq/accordion.html" (dict "headingLevel" "h1" "headingId" "faq-page-heading" "showEyebrow" false "showTitle" true "title" .Title "scrollClass" "flex flex-col gap-3") }}
+
+    <div class="faq-page__cta mt-12 text-center">
+      <p class="text-slate-600 text-base m-0 mb-4">Still need help?</p>
+      <a href="/contact-us/" class="about-btn about-btn--primary inline-flex items-center justify-center gap-2 no-underline">
+        Contact us
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+  </div>
+</article>
+
+{{ partial "home/modern-page-end.html" (dict "page" .) }}

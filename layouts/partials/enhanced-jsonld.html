@@ -41,7 +41,7 @@
       "contactPoint": {
         "@type": "ContactPoint",
         "contactType": "customer service",
-        "url": "{{ .Site.BaseURL }}contact-us"
+        "url": "{{ .Site.BaseURL }}contact-us/"
       },
       "about": {
         "@type": "AboutPage",
@@ -95,9 +95,9 @@
 </script>
 
 {{- /* ============================================ */ -}}
-{{- /* FAQ Schema (home only) */ -}}
+{{- /* FAQ Schema (/faq/ only) */ -}}
 {{- /* ============================================ */ -}}
-{{- if and .IsHome hugo.Data.faq -}}
+{{- if and (eq .Section "faq") hugo.Data.faq.faqs -}}
   {{- if hugo.Data.faq.faqs -}}
     {{- $faqItems := slice -}}
     {{- range hugo.Data.faq.faqs -}}
@@ -198,6 +198,23 @@
   {{- $pageSchema = $pageSchema | append $aboutUs -}}
 {{- end -}}
 
+{{- /* Contact-us page */ -}}
+{{- if eq .Section "contact-us" -}}
+  {{- $contactPage := dict
+    "@type" "ContactPage"
+    "@id" (printf "%s#contactpage" .Permalink)
+    "url" .Permalink
+    "name" "Contact us"
+    "description" (.Description | default "Get in touch with CodeFryDev for support, feedback, partnerships, and press inquiries.")
+    "inLanguage" (.Site.LanguageCode | default "en-US")
+    "isPartOf" (dict "@id" (print .Site.BaseURL "#website"))
+    "publisher" (dict "@id" (print .Site.BaseURL "#organization"))
+    "mainEntity" (dict "@id" (print .Site.BaseURL "#organization"))
+    "contactPoint" (dict "@type" "ContactPoint" "contactType" "customer support" "url" .Permalink "availableLanguage" (slice "English"))
+  -}}
+  {{- $pageSchema = $pageSchema | append $contactPage -}}
+{{- end -}}
+
 {{- /* Store page */ -}}
 {{- if eq .Section "store" -}}
   {{- $store := dict "@type" "Store" "name" "CodeFryDev Store" "description" "Official store for CodeFryDev products and applications" "url" .Permalink "seller" (dict "@id" (print .Site.BaseURL "#organization")) "paymentAccepted" "Free" "currenciesAccepted" "USD" -}}
@@ -236,6 +253,10 @@
     {{- $crumbs = $crumbs | append (dict "@type" "ListItem" "position" $pos "name" "History" "item" .Permalink) -}}
   {{- else if eq $section "press" -}}
     {{- $crumbs = $crumbs | append (dict "@type" "ListItem" "position" $pos "name" "Press & Media" "item" .Permalink) -}}
+  {{- else if eq $section "contact-us" -}}
+    {{- $crumbs = $crumbs | append (dict "@type" "ListItem" "position" $pos "name" "Contact us" "item" .Permalink) -}}
+  {{- else if eq $section "faq" -}}
+    {{- $crumbs = $crumbs | append (dict "@type" "ListItem" "position" $pos "name" "FAQ" "item" .Permalink) -}}
   {{- else if eq $section "cfddc" -}}
     {{- if ne $path "/cfddc/" -}}
       {{- $crumbs = $crumbs | append (dict "@type" "ListItem" "position" $pos "name" "CFDDC" "item" (print .Site.BaseURL "cfddc/")) -}}
