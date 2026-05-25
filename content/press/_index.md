@@ -21,4 +21,4 @@ We offer free online tools, games, and AI apps—no signup required. CodeFryDev 
 
 For press inquiries, interviews, or partnership requests, please use our main contact channel:
 
-- [Contact & support](/tncprivacy) — terms, privacy, and contact information.
+- [Contact us](/contact-us/) — support, feedback, and general inquiries.

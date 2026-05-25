@@ -5,6 +5,12 @@ cards:
     phosphorIcon: users
     url: "/about/users/"
 
+  - accent_color: "#fa709a"
+    title: "Contact us"
+    content: "Support, feedback, partnerships, and press inquiries."
+    phosphorIcon: envelope
+    url: "/contact-us/"
+
   - accent_color: "#f093fb"
     title: "Hugo"
     content: "This site is built with Hugo—fast, static, and version-controlled."

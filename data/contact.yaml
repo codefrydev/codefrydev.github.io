@@ -1,0 +1,14 @@
+smartform:
+  recipient: "b74bc04ad06f8c8fead06c04d820a483"
+  subject: "CodeFryDev contact form"
+  successMessage: "Thanks! We'll get back to you soon."
+
+validation:
+  name:
+    minLength: 2
+    maxLength: 80
+  email:
+    maxLength: 254
+  message:
+    minLength: 10
+    maxLength: 5000

@@ -14,3 +14,4 @@ static/css/site.min.css
 
 # Generated JS bundles (built by npm run build:js before hugo)
 static/js/*.min.js
+!static/js/smartform.min.js

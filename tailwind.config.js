@@ -126,5 +126,11 @@ module.exports = {
     'home-why__perk',
     'home-why__perk-icon',
     'home-why__perk-text',
+    'contact-form-card',
+    'contact-link',
+    'contact-submit',
+    'contact-field__input',
+    'contact-page',
+    'contact-layout',
   ],
 };

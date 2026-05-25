@@ -227,6 +227,8 @@
 [data-theme="glass"] body .about-stat,
 [data-theme="glass"] body .about-team-card,
 [data-theme="glass"] body .about-connect-card,
+[data-theme="glass"] body .contact-form-card,
+[data-theme="glass"] body .contact-link,
 [data-theme="glass"] body .about-pillar,
 [data-theme="glass"] body .home-why__card,
 [data-theme="glass"] body .home-why__perk,
@@ -250,6 +252,8 @@
 [data-theme="glass"] body .browse-category-card::before,
 [data-theme="glass"] body .browse-hub-card::before,
 [data-theme="glass"] body .about-card::before,
+[data-theme="glass"] body .contact-form-card::before,
+[data-theme="glass"] body .contact-link::before,
 [data-theme="glass"] body article.bg-white.rounded-2xl::before,
 [data-theme="glass"] body article.bg-white.rounded-2xl.flex::before,
 [data-theme="glass"] body .home-testimonial-card::before,
@@ -267,6 +271,8 @@
 [data-theme="glass"] body .browse-category-card > *,
 [data-theme="glass"] body .browse-hub-card > *,
 [data-theme="glass"] body .about-card > *,
+[data-theme="glass"] body .contact-form-card > *,
+[data-theme="glass"] body .contact-link > *,
 [data-theme="glass"] body article.bg-white.rounded-2xl > *,
 [data-theme="glass"] body article.bg-white.rounded-2xl.flex > *,
 [data-theme="glass"] body .home-testimonial-card > *,
@@ -280,6 +286,8 @@
 [data-theme="glass"] body .about-stat:hover,
 [data-theme="glass"] body .about-team-card:hover,
 [data-theme="glass"] body .about-connect-card:hover,
+[data-theme="glass"] body .contact-form-card:hover,
+[data-theme="glass"] body .contact-link:hover,
 [data-theme="glass"] body article.bg-white.rounded-2xl:hover {
   background-color: rgba(255, 255, 255, 0.72) !important;
   box-shadow: inset 0 1px 0 var(--glass-highlight), 0 12px 40px rgba(15, 23, 42, 0.12), 0 1px 0 rgba(15, 23, 42, 0.05) !important;
