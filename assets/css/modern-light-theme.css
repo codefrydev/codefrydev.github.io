@@ -253,9 +253,6 @@
 [data-theme="light"] body .browse-category-card,
 [data-theme="light"] body .browse-hub-card,
 [data-theme="light"] body .about-card,
-[data-theme="light"] body .about-stat,
-[data-theme="light"] body .about-team-card,
-[data-theme="light"] body .about-connect-card,
 [data-theme="light"] body .contact-form-card,
 [data-theme="light"] body .contact-link,
 [data-theme="light"] body .faq-main-card,
@@ -271,7 +268,8 @@
 }
 
 [data-theme="light"] body .browse-index__hero,
-[data-theme="light"] body .about-hero__panel {
+[data-theme="light"] body .about-hero__panel,
+[data-theme="light"] body .about-cta__panel {
   background-color: #ffffff !important;
   background-image: none !important;
   border-color: var(--light-border) !important;
@@ -280,6 +278,21 @@
 
 [data-theme="light"] body .home-why__card {
   background-color: #f8fafc !important;
+}
+
+[data-theme="light"] body .about-stat,
+[data-theme="light"] body .about-mission-perk,
+[data-theme="light"] body .about-team-card,
+[data-theme="light"] body .about-connect-card {
+  background-color: rgb(248 250 252 / 0.9) !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: none !important;
+}
+
+[data-theme="light"] body .about-team-card:hover,
+[data-theme="light"] body .about-connect-card:hover {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
 }
 
 [data-theme="light"] body .home-why__card:hover {
@@ -297,9 +310,6 @@
 
 [data-theme="light"] body .browse-category-card:hover,
 [data-theme="light"] body .browse-hub-card:hover,
-[data-theme="light"] body .about-stat:hover,
-[data-theme="light"] body .about-team-card:hover,
-[data-theme="light"] body .about-connect-card:hover,
 [data-theme="light"] body article.bg-white.rounded-2xl:hover {
   border-color: #cbd5e1 !important;
   box-shadow: var(--light-shadow-card-hover) !important;
