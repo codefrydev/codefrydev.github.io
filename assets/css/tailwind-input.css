@@ -689,6 +689,22 @@
     @apply mt-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-4 md:gap-6;
   }
 
+  .tool-card {
+    @apply h-[140px] xl:h-[148px];
+  }
+
+  .tool-card__body {
+    @apply justify-between;
+  }
+
+  .tool-card__desc {
+    @apply m-0 mt-2 min-h-[2.0625rem] text-xs leading-snug text-slate-500 line-clamp-2 xl:min-h-[2.25rem] xl:text-[13px];
+  }
+
+  .tool-card__meta {
+    @apply mt-2 h-5 shrink-0;
+  }
+
   /* About us (/about-us/) */
   .about-hero__panel {
     @apply relative overflow-hidden rounded-2xl border border-gray-200/80 bg-gradient-to-br from-white via-slate-50/90 to-sky-50/50 shadow-sm sm:rounded-3xl;

@@ -15,13 +15,13 @@
 {{- $linkClass := "tool-card__link text-inherit no-underline hover:text-brand after:absolute after:inset-0 after:rounded-2xl after:z-10 after:content-['']" -}}
 
 <article
-  class="relative bg-white border border-gray-100 p-3.5 rounded-2xl flex items-center gap-3 hover:-translate-y-1 hover:shadow-md transition-all group"
+  class="tool-card relative bg-white border border-gray-100 p-3.5 rounded-2xl flex items-center gap-3 hover:-translate-y-1 hover:shadow-md transition-all group"
   data-cfd-tool="{{ $item.name }}"
   data-cfd-category="{{ $categoryName }}"
   data-cfd-source="{{ $source }}"
   data-cfd-external="{{ $isExternal }}">
-  <div class="flex-1 flex flex-col justify-between pt-1 min-w-0">
-    <div class="flex justify-between items-start gap-1">
+  <div class="tool-card__body flex-1 flex flex-col min-w-0 min-h-0 self-stretch">
+    <div class="shrink-0">
         {{- if eq $headingLevel 2 -}}
         <h2 class="{{ $titleClass }}">
           <a href="{{ $item.url }}" class="{{ $linkClass }}"{{ if $isExternal }} target="_blank" rel="noopener noreferrer"{{ end }}>
@@ -41,13 +41,13 @@
           </a>
         </h3>
         {{- end -}}
-      </div>
-    <p class="text-xs xl:text-[13px] text-slate-500 leading-snug mt-2 line-clamp-3 m-0">{{ $desc }}</p>
-    {{- with $item.date -}}
-    <div class="mt-4">
-      <span class="inline-block bg-gray-50 px-2 py-0.5 rounded-md text-[10px] xl:text-[11px] font-medium text-slate-500 border border-gray-100">{{ . | time.Format "02 Jan 2006" }}</span>
     </div>
-    {{- end -}}
+    <p class="tool-card__desc">{{ $desc }}</p>
+    <div class="tool-card__meta">
+      {{- with $item.date -}}
+      <span class="inline-block bg-gray-50 px-2 py-0.5 rounded-md text-[10px] xl:text-[11px] font-medium text-slate-500 border border-gray-100">{{ . | time.Format "02 Jan 2006" }}</span>
+      {{- end -}}
+    </div>
   </div>
   <div class="w-20 h-20 xl:w-[104px] xl:h-[104px] bg-gray-50/80 rounded-xl shrink-0 flex items-center justify-center p-2 border border-gray-50 group-hover:border-gray-100 transition-colors relative z-0">
     <img src="/images/{{ $iconDir }}/{{ $item.icon }}.svg" alt="" class="w-full h-full object-contain opacity-80 group-hover:opacity-100 transition-opacity" loading="lazy" width="80" height="80">
