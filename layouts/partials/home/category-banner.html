@@ -19,6 +19,7 @@
         class="absolute inset-0 h-full w-full object-cover"
         loading="lazy"
         decoding="async"
+        {{- with $banner.imageTitle }} title="{{ . }}"{{ end }}
       >
     {{- else -}}
       <img
@@ -29,6 +30,7 @@
         class="absolute inset-0 h-full w-full object-cover"
         loading="lazy"
         decoding="async"
+        {{- with $banner.imageTitle }} title="{{ . }}"{{ end }}
       >
     {{- end -}}
     <div class="absolute inset-0 bg-gradient-to-r from-slate-950/65 via-transparent to-slate-950/10" aria-hidden="true"></div>

@@ -13,6 +13,7 @@
 {{- end -}}
 {{- $titleClass := "text-lg xl:text-xl font-semibold text-slate-900 tracking-tight leading-tight truncate m-0 min-w-0" -}}
 {{- $linkClass := "tool-card__link text-inherit no-underline hover:text-brand after:absolute after:inset-0 after:rounded-2xl after:z-10 after:content-['']" -}}
+{{- $iconAlt := $item.iconAlt | default (printf "%s icon" $item.name) -}}
 
 <article
   class="tool-card relative bg-white border border-gray-100 p-3.5 rounded-2xl flex items-center gap-3 hover:-translate-y-1 hover:shadow-md transition-all group"
@@ -50,7 +51,7 @@
     </div>
   </div>
   <div class="w-20 h-20 xl:w-[104px] xl:h-[104px] bg-gray-50/80 rounded-xl shrink-0 flex items-center justify-center p-2 border border-gray-50 group-hover:border-gray-100 transition-colors relative z-0">
-    <img src="/images/{{ $iconDir }}/{{ $item.icon }}.svg" alt="" class="w-full h-full object-contain opacity-80 group-hover:opacity-100 transition-opacity" loading="lazy" width="80" height="80">
+    <img src="/images/{{ $iconDir }}/{{ $item.icon }}.svg" alt="{{ $iconAlt }}" class="w-full h-full object-contain opacity-80 group-hover:opacity-100 transition-opacity" loading="lazy" width="80" height="80"{{- with $item.iconTitle }} title="{{ . }}"{{ end }}>
     {{- if $isExternal -}}
     <span class="absolute top-1 right-1 text-[9px] text-slate-400" aria-hidden="true">↗</span>
     {{- end -}}

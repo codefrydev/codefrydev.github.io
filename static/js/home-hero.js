@@ -27,14 +27,24 @@
   const autoplayMs = prefersReducedMotion ? 0 : Number(window.heroAutoplayMs) || 6000;
   const fadeMs = prefersReducedMotion ? 0 : 500;
 
-  function setLayerImage(layerEl, url) {
-    if (!layerEl || !url) return;
+  function slideImageAlt(slide) {
+    return (slide && (slide.imageAlt || slide.title)) || '';
+  }
+
+  function setLayerImage(layerEl, slide) {
+    if (!layerEl || !slide || !slide.image) return;
     var img = layerEl.querySelector('img');
     if (img) {
-      img.src = url;
+      img.src = slide.image;
+      img.alt = slideImageAlt(slide);
+      if (slide.imageTitle) {
+        img.title = slide.imageTitle;
+      } else {
+        img.removeAttribute('title');
+      }
       return;
     }
-    layerEl.style.backgroundImage = "url('" + String(url).replace(/'/g, "\\'") + "')";
+    layerEl.style.backgroundImage = "url('" + String(slide.image).replace(/'/g, "\\'") + "')";
   }
 
   function syncLadybugBackup() {
@@ -113,7 +123,7 @@
     const nextLayer = activeLayer === 1 ? bgLayer2 : bgLayer1;
     const currentLayerEl = activeLayer === 1 ? bgLayer1 : bgLayer2;
 
-    setLayerImage(nextLayer, slide.image);
+    setLayerImage(nextLayer, slide);
 
     if (fadeMs === 0) {
       applySlideContent(slide);

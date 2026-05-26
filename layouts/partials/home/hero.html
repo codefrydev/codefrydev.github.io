@@ -5,6 +5,7 @@
 {{- $autoplay := $hero.autoplayMs | default 6000 -}}
 {{- $slides := $hero.slides -}}
 {{- $firstSlide := index $slides 0 -}}
+{{- $firstSlideAlt := $firstSlide.imageAlt | default $firstSlide.title -}}
 
 <section id="hero" data-section-label="Home" class="home-hero relative text-center flex flex-col items-center justify-center px-4 py-8 overflow-hidden bg-[#edf2f8]" aria-roledescription="carousel" aria-label="Featured highlights">
   <div class="home-hero__bg" aria-hidden="true">
@@ -12,18 +13,19 @@
       <img
         id="hero-bg-img-1"
         src="{{ $firstSlide.image }}"
-        alt=""
+        alt="{{ $firstSlideAlt }}"
         width="1600"
         height="840"
         class="home-hero__bg-img"
         fetchpriority="high"
         decoding="async"
+        {{- with $firstSlide.imageTitle }} title="{{ . }}"{{ end }}
       >
     </div>
     <div id="bg-layer-2" class="home-hero__bg-layer opacity-0">
       <img
         id="hero-bg-img-2"
-        alt=""
+        alt="{{ $firstSlideAlt }}"
         width="1600"
         height="840"
         class="home-hero__bg-img"

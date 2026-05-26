@@ -48,40 +48,58 @@ hubBanners:
   games:
     image: "/images/banners/games.jpg"
     title: "Games & Fun"
+    imageAlt: "Browser games and puzzles on CodeFryDev"
+    imageTitle: "Games & Fun"
     description: "Puzzles, classics, and arcade games—play instantly in your browser."
   ai:
     image: "/images/banners/ai.jpg"
     title: "AI Tools"
+    imageAlt: "AI-powered tools and generators on CodeFryDev"
+    imageTitle: "AI Tools"
     description: "Meme generators, summarizers, chat, and more—no signup required."
   designlab:
     image: "/images/banners/designlab.jpg"
     title: "Design Lab"
+    imageAlt: "Design lab tools and creative resources for makers"
+    imageTitle: "Design Lab"
     description: "Creative design tools, visualizers, and resources for makers."
   store:
     image: "/images/banners/store.jpg"
     title: "CodeFryDev Store"
+    imageAlt: "CodeFryDev mobile apps on Google Play"
+    imageTitle: "CodeFryDev Store"
     description: "Mobile apps and downloads on Google Play."
 
 categoryBanners:
   creative-assets:
     image: "/images/banners/creative-assets.jpg"
     title: "Explore Creative & Assets"
+    imageAlt: "Creative tools, digital art, and learning assets on CodeFryDev"
+    imageTitle: "Explore Creative & Assets"
     description: "Art tools, wallpapers, 3D models, and learning resources for makers."
   tools-utilities:
     image: "/images/banners/tools-utilities.jpg"
     title: "Tools & Utilities Collection"
+    imageAlt: "Productivity and developer utilities in the browser"
+    imageTitle: "Tools & Utilities Collection"
     description: "Productivity apps, formatters, SEO tools, and dev utilities in your browser."
   games-fun:
     image: "/images/banners/games-fun.jpg"
     title: "Games & Fun"
+    imageAlt: "Free browser games including Wordle, Snake, and Chain Reaction"
+    imageTitle: "Games & Fun"
     description: "Wordle, Snake, Chain Reaction, and more—play instantly in your browser."
   site-links:
     image: "/images/banners/site-links.jpg"
     title: "Site & Resources"
+    imageAlt: "Site links, about pages, and external resources"
+    imageTitle: "Site & Resources"
     description: "About, updates, store, privacy, and external links."
   containers-packages:
     image: "/images/banners/containers-packages.jpg"
     title: "Containers & Packages"
+    imageAlt: "Docker images and npm packages from CodeFryDev"
+    imageTitle: "Containers & Packages"
     description: "Official Docker images and npm packages from CodeFryDev."
 
 hero:
@@ -91,14 +109,17 @@ hero:
   slides:
     - image: "/images/hero/slide-1.webp"
       imageAlt: "Team collaborating on laptops"
+      imageTitle: "Tools, games & AI in your browser"
       title: "Tools, games & AI in your browser"
       description: "This is a platform where we learn, work on experimental projects, play games, come up with innovative ideas, and build many more..."
     - image: "/images/hero/slide-2.webp"
       imageAlt: "Developers working together at a desk"
+      imageTitle: "Build faster with CodeFryDev"
       title: "Build faster with CodeFryDev"
       description: "From JSON playgrounds to design lab resources—everything runs in your browser."
     - image: "/images/hero/slide-3.webp"
       imageAlt: "Laptop showing code on a desk"
+      imageTitle: "No install. Just open and use."
       title: "No install. Just open and use."
       description: "Explore creative assets, productivity tools, games, and AI helpers in one place."
 

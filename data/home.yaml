@@ -62,6 +62,8 @@ categories:
         aliases: [font, typography, typeface, download]
       - name: RAG
         icon: cfd-rag
+        iconAlt: "Random API Generator icon"
+        iconTitle: "RAG — Random API Generator"
         url: /RandomApiGenerator/docs/
         description: Random API generator docs and playground for mock APIs.
         date: "2026-04-14"
@@ -249,6 +251,8 @@ categories:
         aliases: [json, json editor, validate, format]
       - name: JS LIDE
         icon: cfd-jswebide
+        iconAlt: "JavaScript IDE in the browser icon"
+        iconTitle: "JS LIDE — JavaScript IDE"
         url: /Javascript/
         description: Lightweight JavaScript IDE in the browser.
         date: "2026-04-24"
@@ -285,6 +289,8 @@ categories:
         aliases: [json visualizer, json mapper, visual mapper, tree view]
       - name: CSV
         icon: cfd-csv
+        iconAlt: "CSV editor and converter icon"
+        iconTitle: "CSV — editor and converter"
         url: /CSV/
         description: View, edit, and convert CSV files online.
         date: "2025-03-03"
@@ -294,6 +300,8 @@ categories:
         aliases: [csv editor, spreadsheet, table, convert csv]
       - name: CIN
         icon: cfd-cin
+        iconAlt: "Corporate identification lookup icon"
+        iconTitle: "CIN — corporate ID lookup"
         url: /CIN/
         description: Corporate identification and business lookup utilities.
         date: "2026-04-26"
@@ -623,6 +631,8 @@ categories:
         aliases: [developer conference, devcon, announcements, cfddc]
       - name: PI
         icon: cfd-pi
+        iconAlt: "Pi digits explorer icon"
+        iconTitle: "PI — pi digits explorer"
         url: /PI/
         description: Explore Pi digits, facts, and visualizations.
         date: "2026-03-15"
@@ -632,6 +642,8 @@ categories:
         aliases: [pi digits, math, 3.14, constant]
       - name: RL
         icon: cfd-rl
+        iconAlt: "Reinforcement learning demos icon"
+        iconTitle: "RL — reinforcement learning demos"
         url: /Reinforcement/
         description: Reinforcement learning demos and experiments.
         date: "2026-03-15"

@@ -52,7 +52,7 @@
             <span class="browse-category-card__previews" aria-hidden="true">
               {{- range $previews -}}
               <span class="browse-category-card__preview" title="{{ .name }}">
-                <img src="/images/home/{{ .icon }}.svg" alt="" width="32" height="32" loading="lazy">
+                <img src="/images/home/{{ .icon }}.svg" alt="{{ .iconAlt | default (printf "%s icon" .name) }}" width="32" height="32" loading="lazy"{{- with .iconTitle }} title="{{ . }}"{{ end }}>
               </span>
               {{- end -}}
             </span>
