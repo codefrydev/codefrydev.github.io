@@ -1,4 +1,9 @@
 history:
+  - date: "29 May 2026"
+    title: "SVG CSS Color Filter Generator"
+    description: "Generate CSS filter combinations to recolor black SVG icons loaded through img tags—hex input, live preview, sample icons, and one-click CSS copy at /ColoringImageUsingCss/; added to Tools & Utilities on the home page."
+    link: "/ColoringImageUsingCss/"
+    accent_color: "#a855f7"
   - date: "24 May 2026"
     title: "Chain Reaction Online"
     description: "Online multiplayer Chain Reaction—play with friends in real time, capture orbs, and trigger chain reactions from the browser; listed in Creative & Assets and Games & Fun."

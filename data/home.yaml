@@ -231,6 +231,15 @@ categories:
         featured: true
         external: false
         aliases: [color, palette, hex, picker, colortools]
+      - name: SVG Color Filter
+        icon: cfd-svgcolorfilter
+        url: /ColoringImageUsingCss/
+        description: Generate CSS filter values to recolor SVG icons loaded via img tags.
+        date: "2026-05-29"
+        phosphorIcon: drop-half-bottom
+        featured: true
+        external: false
+        aliases: [svg color, css filter, recolor svg, img tag, coloring image, css color filter]
       - name: Prompt Library
         icon: cfd-prompt
         url: /PromptsValut/
