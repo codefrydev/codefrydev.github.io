@@ -1,13 +1,17 @@
 {{- $data := partial "get-data.html" . -}}
+{{- $banner := index $data.homepage.hubBanners "ai" | default dict -}}
+{{- $hubTitle := $banner.title | default (i18n "footer_ai") -}}
+{{- $hubSubtitle := $banner.description | default "" -}}
 {{ partial "home/hub-page.html" (dict
   "page" .
-  "title" "AI Tools"
-  "subtitle" "AI-powered apps & generators"
+  "title" $hubTitle
+  "subtitle" $hubSubtitle
   "items" $data.ai.data
   "iconDir" "ai"
   "defaultPhosphorIcon" "brain"
   "searchID" "ai"
-  "searchPlaceholder" "Search for AI tools, generators, and utilities..."
+  "searchPlaceholder" (i18n "hub_search_ai")
+  "countLabel" (i18n "hub_count_tools")
   "navActive" "ai"
-  "banner" (index $data.homepage.hubBanners "ai" | default dict)
+  "banner" $banner
 ) }}

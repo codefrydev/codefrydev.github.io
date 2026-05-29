@@ -140,6 +140,17 @@
 - id: search_chip_browse
   translation: "⊞ ब्राउज़"
 
+- id: hub_search_designlab
+  translation: "डिज़ाइन टूल और क्रिएटिव संसाधन खोजें…"
+- id: hub_search_games
+  translation: "गेम, पहेलियाँ और मज़ेदार गतिविधियाँ खोजें…"
+- id: hub_search_ai
+  translation: "AI टूल, जनरेटर और यूटिलिटी खोजें…"
+- id: hub_count_tools
+  translation: "टूल"
+- id: hub_count_games
+  translation: "गेम"
+
 - id: skip_link
   translation: "मुख्य सामग्री पर जाएँ"
 
@@ -190,3 +201,87 @@
   translation: "(नई टैब में खुलता है)"
 - id: tool_default_description
   translation: "%s खोलें — आपके ब्राउज़र में मुफ़्त।"
+
+- id: about_browse_tools
+  translation: "टूल ब्राउज़ करें →"
+- id: about_press_media
+  translation: "प्रेस और मीडिया"
+- id: about_mission_heading
+  translation: "हमारा मिशन"
+- id: about_mission_aria
+  translation: "हम किसके लिए काम करते हैं"
+- id: about_stats_heading
+  translation: "प्लेटफ़ॉर्म एक नज़र में"
+- id: about_stats_subhead
+  translation: "CodeFryDev पर आज क्या लाइव है — एक त्वरित झलक।"
+- id: about_stat_tools
+  translation: "टूल और ऐप"
+- id: about_stat_ai
+  translation: "AI प्रोजेक्ट"
+- id: about_stat_games
+  translation: "गेम"
+- id: about_stat_design
+  translation: "डिज़ाइन टूल"
+- id: about_team_heading
+  translation: "हमारी टीम"
+- id: about_team_subhead
+  translation: "टूल, गेम और प्रयोग खुले तौर पर बनाने वाले लोग।"
+- id: about_all_members
+  translation: "सभी सदस्य →"
+- id: about_connect_heading
+  translation: "एक्सप्लोर और जुड़ें"
+- id: about_connect_subhead
+  translation: "प्लेटफ़ॉर्म के पीछे क्रेडिट, समुदाय और संसाधन।"
+- id: about_cta_eyebrow
+  translation: "शुरू करें"
+- id: about_cta_title
+  translation: "एक्सप्लोर करने के लिए तैयार?"
+- id: about_cta_text
+  translation: "टूल, गेम या AI ऐप में कूदें — सब कुछ आपके ब्राउज़र में चलता है।"
+- id: about_cta_home
+  translation: "होमपेज पर जाएँ →"
+- id: about_cta_timeline
+  translation: "हमारी टाइमलाइन ↗"
+
+- id: faq_help_center
+  translation: "सहायता केंद्र"
+- id: faq_browse_tools
+  translation: "टूल ब्राउज़ करें"
+- id: faq_aside_aria
+  translation: "उपयोगी लिंक"
+- id: faq_quick_answer
+  translation: "त्वरित उत्तर"
+- id: faq_quick_answer_title
+  translation: "ज़्यादातर टूल मुफ़्त हैं और आपके ब्राउज़र में चलते हैं — साइनअप की ज़रूरत नहीं।"
+- id: faq_quick_answer_text
+  translation: "किसी विषय पर जाने के लिए ऊपर खोजें, या कोई श्रेणी फ़िल्टर चुनें।"
+- id: faq_link_contact_title
+  translation: "सहायता से संपर्क"
+- id: faq_link_contact_desc
+  translation: "हमें संदेश भेजें — 2–3 दिनों में जवाब"
+- id: faq_link_privacy_title
+  translation: "गोपनीयता और नियम"
+- id: faq_link_privacy_desc
+  translation: "नीतियाँ, कुकीज़ और कानूनी जानकारी"
+- id: faq_link_about_title
+  translation: "हमारे बारे में"
+- id: faq_link_about_desc
+  translation: "टीम, मिशन और प्लेटफ़ॉर्म की कहानी"
+- id: faq_link_search_title
+  translation: "टूल खोजें"
+- id: faq_link_search_desc
+  translation: "कोई भी टूल, गेम या AI ऐप खोजें"
+- id: faq_search_label
+  translation: "FAQ खोजें"
+- id: faq_search_placeholder
+  translation: "प्रश्न खोजें…"
+- id: faq_filter_aria
+  translation: "विषय के अनुसार फ़िल्टर"
+- id: faq_filter_all
+  translation: "सभी विषय"
+- id: faq_main_heading
+  translation: "प्रश्न और उत्तर"
+- id: faq_no_results_before
+  translation: "आपकी खोज से कोई प्रश्न मेल नहीं खाता। दूसरे कीवर्ड आज़माएँ या"
+- id: faq_no_results_after
+  translation: "करके सहायता लें।"

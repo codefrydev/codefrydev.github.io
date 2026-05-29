@@ -1,11 +1,11 @@
 ---
 translationKey: "designlab"
-title: "All Design"
+title: "デザインラボ"
 date: 2025-06-06T00:00:00Z
-description: "Free design tools and creative resources—music visualization, 3D tools, web-based design utilities. CodeFryDev Design Lab, no signup required."
-keywords: ["free design tools", "creative resources", "design lab", "music visualization", "web-based design tools", "codefrydev design"]
+description: "無料のデザインツールとクリエイティブリソース — 音楽ビジュアライゼーション、3Dツール、ブラウザベースのデザインユーティリティ。CodeFryDev デザインラボ、登録不要。"
+keywords: ["無料デザインツール", "クリエイティブリソース", "デザインラボ", "音楽ビジュアライゼーション", "ブラウザデザインツール", "codefrydev design"]
 ---
 
-Free design tools, visualizations, and creative resources for your projects—no signup required.
+無料のデザインツール、ビジュアライゼーション、クリエイティブリソース — 登録不要でプロジェクトに活用できます。
 
-Design Lab offers web-based design tools, music visualization, and creative utilities. Use these free design tools in your browser with no signup.
+デザインラボでは、ブラウザベースのデザインツール、音楽ビジュアライゼーション、クリエイティブユーティリティを提供しています。登録不要でブラウザから無料でお使いください。

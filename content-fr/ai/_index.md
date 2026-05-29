@@ -2,10 +2,10 @@
 translationKey: "ai"
 title: "CFD AI"
 date: 2025-06-21T00:00:00Z
-description: "Free AI tools and generators—meme generator, website summarizer, social content AI, visual notes. No signup required. Use CodeFryDev AI utilities in your browser."
-keywords: ["free AI tools", "AI meme generator", "website summarizer", "AI generator", "visual notes AI", "codefrydev AI"]
+description: "Outils et générateurs IA gratuits — générateur de mèmes, résumé de sites, contenu social IA, notes visuelles. Sans inscription. Utilisez les utilitaires IA CodeFryDev dans votre navigateur."
+keywords: ["outils IA gratuits", "générateur de mèmes IA", "résumeur de site web", "générateur IA", "notes visuelles IA", "codefrydev AI"]
 ---
 
-Use our free AI-powered tools for memes, summaries, social content, visual notes, and more—no signup required.
+Utilisez nos outils IA gratuits pour les mèmes, résumés, contenu social, notes visuelles et plus — sans inscription.
 
-Our free AI tools include an AI meme generator, website summarizer, and social media helpers. All run in your browser with no account needed. Pick a tool below to get started.
+Nos outils IA gratuits incluent un générateur de mèmes IA, un résumeur de sites web et des assistants réseaux sociaux. Tout fonctionne dans votre navigateur, sans compte. Choisissez un outil ci-dessous pour commencer.

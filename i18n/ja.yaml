@@ -140,6 +140,17 @@
 - id: search_chip_browse
   translation: "⊞ 閲覧"
 
+- id: hub_search_designlab
+  translation: "デザインツールとクリエイティブリソースを検索…"
+- id: hub_search_games
+  translation: "ゲーム、パズル、楽しいアクティビティを検索…"
+- id: hub_search_ai
+  translation: "AIツール、ジェネレーター、ユーティリティを検索…"
+- id: hub_count_tools
+  translation: "ツール"
+- id: hub_count_games
+  translation: "ゲーム"
+
 - id: skip_link
   translation: "メインコンテンツへスキップ"
 
@@ -190,3 +201,87 @@
   translation: "（新しいタブで開く）"
 - id: tool_default_description
   translation: "%s を開く — ブラウザで無料。"
+
+- id: about_browse_tools
+  translation: "ツールを見る →"
+- id: about_press_media
+  translation: "プレス・メディア"
+- id: about_mission_heading
+  translation: "私たちのミッション"
+- id: about_mission_aria
+  translation: "私たちが大切にしていること"
+- id: about_stats_heading
+  translation: "プラットフォーム概要"
+- id: about_stats_subhead
+  translation: "CodeFryDev で現在公開中の内容をざっくりご紹介します。"
+- id: about_stat_tools
+  translation: "ツールとアプリ"
+- id: about_stat_ai
+  translation: "AIプロジェクト"
+- id: about_stat_games
+  translation: "ゲーム"
+- id: about_stat_design
+  translation: "デザインツール"
+- id: about_team_heading
+  translation: "チーム"
+- id: about_team_subhead
+  translation: "ツール、ゲーム、実験をオープンに作っているメンバー。"
+- id: about_all_members
+  translation: "メンバー一覧 →"
+- id: about_connect_heading
+  translation: "探索とつながり"
+- id: about_connect_subhead
+  translation: "プラットフォームを支えるクレジット、コミュニティ、リソース。"
+- id: about_cta_eyebrow
+  translation: "はじめる"
+- id: about_cta_title
+  translation: "探索してみませんか？"
+- id: about_cta_text
+  translation: "ツール、ゲーム、AIアプリへ — すべてブラウザで動作します。"
+- id: about_cta_home
+  translation: "ホームへ →"
+- id: about_cta_timeline
+  translation: "タイムライン ↗"
+
+- id: faq_help_center
+  translation: "ヘルプセンター"
+- id: faq_browse_tools
+  translation: "ツールを見る"
+- id: faq_aside_aria
+  translation: "便利なリンク"
+- id: faq_quick_answer
+  translation: "クイック回答"
+- id: faq_quick_answer_title
+  translation: "ほとんどのツールは無料でブラウザで動作 — 登録不要。"
+- id: faq_quick_answer_text
+  translation: "上の検索でトピックにジャンプするか、カテゴリフィルターを選んでください。"
+- id: faq_link_contact_title
+  translation: "サポートに連絡"
+- id: faq_link_contact_desc
+  translation: "メッセージを送る — 2〜3日以内に返信します"
+- id: faq_link_privacy_title
+  translation: "プライバシーと利用規約"
+- id: faq_link_privacy_desc
+  translation: "ポリシー、Cookie、法的情報"
+- id: faq_link_about_title
+  translation: "私たちについて"
+- id: faq_link_about_desc
+  translation: "チーム、ミッション、プラットフォームのストーリー"
+- id: faq_link_search_title
+  translation: "ツールを検索"
+- id: faq_link_search_desc
+  translation: "ツール、ゲーム、AIアプリを探す"
+- id: faq_search_label
+  translation: "FAQを検索"
+- id: faq_search_placeholder
+  translation: "質問を検索…"
+- id: faq_filter_aria
+  translation: "トピックで絞り込み"
+- id: faq_filter_all
+  translation: "すべてのトピック"
+- id: faq_main_heading
+  translation: "質問と回答"
+- id: faq_no_results_before
+  translation: "検索に一致する質問がありません。別のキーワードを試すか、"
+- id: faq_no_results_after
+  translation: "してサポートを受けてください。"

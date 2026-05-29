@@ -1,11 +1,11 @@
 ---
 translationKey: "games"
-title: "Games"
+title: "ゲーム"
 date: 2024-06-08T00:00:00Z
-description: "Play free online games in your browser—Wordle, Snake, Chain Reaction, and more. No download or signup. CodeFryDev browser games."
-keywords: ["free online games", "browser games", "Wordle", "Snake game", "Chain Reaction", "play free games", "codefrydev games"]
+description: "ブラウザで無料オンラインゲーム — Wordle、Snake、Chain Reactionなど。ダウンロードも登録も不要。CodeFryDevのブラウザゲーム。"
+keywords: ["無料オンラインゲーム", "ブラウザゲーム", "Wordle", "Snake", "Chain Reaction", "無料ゲーム", "codefrydev games"]
 ---
 
-Play free browser games—Wordle, Snake, Chain Reaction, and more. No download or signup required.
+Wordle、Snake、Chain Reactionなど — 無料のブラウザゲーム。ダウンロードも登録も不要。
 
-All games run in your browser. Play Wordle, Snake, Chain Reaction, and other free online games anytime. No install, no signup—just click and play.
+すべてのゲームはブラウザで動作します。Wordle、Snake、Chain Reactionなど、いつでも無料でプレイできます。インストールも登録も不要 — クリックするだけ。

@@ -1,11 +1,11 @@
 ---
 translationKey: "designlab"
-title: "All Design"
+title: "Design Lab"
 date: 2025-06-06T00:00:00Z
-description: "Free design tools and creative resources—music visualization, 3D tools, web-based design utilities. CodeFryDev Design Lab, no signup required."
-keywords: ["free design tools", "creative resources", "design lab", "music visualization", "web-based design tools", "codefrydev design"]
+description: "Outils design gratuits et ressources créatives — visualisation musicale, outils 3D, utilitaires design dans le navigateur. CodeFryDev Design Lab, sans inscription."
+keywords: ["outils design gratuits", "ressources créatives", "design lab", "visualisation musicale", "outils design navigateur", "codefrydev design"]
 ---
 
-Free design tools, visualizations, and creative resources for your projects—no signup required.
+Outils design gratuits, visualisations et ressources créatives pour vos projets — sans inscription.
 
-Design Lab offers web-based design tools, music visualization, and creative utilities. Use these free design tools in your browser with no signup.
+Design Lab propose des outils design web, de la visualisation musicale et des utilitaires créatifs. Utilisez ces outils gratuits dans votre navigateur, sans inscription.

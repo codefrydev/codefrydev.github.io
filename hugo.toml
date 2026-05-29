@@ -104,19 +104,23 @@ disableKinds = ["taxonomy", "term"]
   [[module.mounts]]
     source = "content"
     target = "content"
-    lang = "en"
+    [module.mounts.sites.matrix]
+      languages = ["en"]
   [[module.mounts]]
     source = "content-ja"
     target = "content"
-    lang = "ja"
+    [module.mounts.sites.matrix]
+      languages = ["ja"]
   [[module.mounts]]
     source = "content-fr"
     target = "content"
-    lang = "fr"
+    [module.mounts.sites.matrix]
+      languages = ["fr"]
   [[module.mounts]]
     source = "content-hi"
     target = "content"
-    lang = "hi"
+    [module.mounts.sites.matrix]
+      languages = ["hi"]
   [[module.mounts]]
     source = "data"
     target = "data"

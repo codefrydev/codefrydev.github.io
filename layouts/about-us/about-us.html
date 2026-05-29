@@ -7,7 +7,7 @@
 {{- $aiCount := 0 }}{{ with $data.ai.data }}{{ $aiCount = len . }}{{ end -}}
 {{- $gamesCount := 0 }}{{ with $data.games.data }}{{ $gamesCount = len . }}{{ end -}}
 {{- $designCount := 0 }}{{ with $data.designlab.data }}{{ $designCount = len . }}{{ end -}}
-{{- $members := site.GetPage "/about/users" -}}
+{{- $members := .Site.GetPage "/about/users" -}}
 
 <article class="about-page pt-6 pb-20 sm:pt-10 sm:pb-24">
   <header class="about-hero max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-14 sm:mb-16">
@@ -19,10 +19,10 @@
           <p class="about-hero__quote m-0">{{ .Description }}</p>
         </div>
         <div class="about-hero__actions">
-          <a href="/browse/" class="about-btn about-btn--primary no-underline">
-            Browse tools →
+          <a href="{{ "/browse/" | relLangURL }}" class="about-btn about-btn--primary no-underline">
+            {{ i18n "about_browse_tools" }}
           </a>
-          <a href="/press/" class="about-btn about-btn--ghost no-underline">Press &amp; media</a>
+          <a href="{{ "/press/" | relLangURL }}" class="about-btn about-btn--ghost no-underline">{{ i18n "about_press_media" }}</a>
         </div>
       </div>
     </div>
@@ -32,7 +32,7 @@
     <section class="about-mission mb-14 sm:mb-16" aria-labelledby="about-mission-heading">
       {{- if .Content -}}
       <div class="about-mission__story">
-        <h2 id="about-mission-heading" class="about-heading m-0">Our mission</h2>
+        <h2 id="about-mission-heading" class="about-heading m-0">{{ i18n "about_mission_heading" }}</h2>
         <div class="about-prose about-prose--mission text-slate-600">
           {{ .Content }}
         </div>
@@ -40,7 +40,7 @@
       {{- end -}}
 
       {{- with $why.bullets -}}
-      <ul class="about-mission-perks list-none m-0 p-0" aria-label="What we stand for">
+      <ul class="about-mission-perks list-none m-0 p-0" aria-label="{{ i18n "about_mission_aria" }}">
         {{- range . -}}
         <li class="about-mission-perk">
           <span class="about-mission-perk__icon" aria-hidden="true">✓</span>
@@ -54,8 +54,8 @@
     <section class="about-stats mb-14 sm:mb-16" aria-labelledby="about-stats-heading">
       <div class="about-section-head about-section-head--stack">
         <div>
-          <h2 id="about-stats-heading" class="about-heading m-0">Platform at a glance</h2>
-          <p class="about-subhead m-0">A quick snapshot of what is live on CodeFryDev today.</p>
+          <h2 id="about-stats-heading" class="about-heading m-0">{{ i18n "about_stats_heading" }}</h2>
+          <p class="about-subhead m-0">{{ i18n "about_stats_subhead" }}</p>
         </div>
       </div>
       <ul class="about-stats__grid list-none m-0 p-0">
@@ -63,28 +63,28 @@
           <span class="about-stat__icon" aria-hidden="true">🖥️</span>
           <span class="about-stat__body">
             <span class="about-stat__value">{{ $totalTools }}+</span>
-            <span class="about-stat__label">Tools &amp; apps</span>
+            <span class="about-stat__label">{{ i18n "about_stat_tools" }}</span>
           </span>
         </li>
         <li class="about-stat">
           <span class="about-stat__icon" aria-hidden="true">🤖</span>
           <span class="about-stat__body">
             <span class="about-stat__value">{{ $aiCount }}</span>
-            <span class="about-stat__label">AI projects</span>
+            <span class="about-stat__label">{{ i18n "about_stat_ai" }}</span>
           </span>
         </li>
         <li class="about-stat">
           <span class="about-stat__icon" aria-hidden="true">🎮</span>
           <span class="about-stat__body">
             <span class="about-stat__value">{{ $gamesCount }}</span>
-            <span class="about-stat__label">Games</span>
+            <span class="about-stat__label">{{ i18n "about_stat_games" }}</span>
           </span>
         </li>
         <li class="about-stat">
           <span class="about-stat__icon" aria-hidden="true">🎨</span>
           <span class="about-stat__body">
             <span class="about-stat__value">{{ $designCount }}</span>
-            <span class="about-stat__label">Design tools</span>
+            <span class="about-stat__label">{{ i18n "about_stat_design" }}</span>
           </span>
         </li>
       </ul>
@@ -94,11 +94,11 @@
     <section class="about-team mb-14 sm:mb-16" aria-labelledby="about-team-heading">
       <div class="about-section-head">
         <div>
-          <h2 id="about-team-heading" class="about-heading m-0">Our team</h2>
-          <p class="about-subhead m-0">The people building tools, games, and experiments in the open.</p>
+          <h2 id="about-team-heading" class="about-heading m-0">{{ i18n "about_team_heading" }}</h2>
+          <p class="about-subhead m-0">{{ i18n "about_team_subhead" }}</p>
         </div>
         <a href="{{ $members.RelPermalink }}" class="about-link-arrow no-underline">
-          All members →
+          {{ i18n "about_all_members" }}
         </a>
       </div>
       <ul class="about-team-grid list-none m-0 p-0">
@@ -126,13 +126,17 @@
     <section class="about-connect mb-14 sm:mb-16" aria-labelledby="about-connect-heading">
       <div class="about-section-head about-section-head--stack">
         <div>
-          <h2 id="about-connect-heading" class="about-heading m-0">Explore &amp; connect</h2>
-          <p class="about-subhead m-0">Credits, community, and resources behind the platform.</p>
+          <h2 id="about-connect-heading" class="about-heading m-0">{{ i18n "about_connect_heading" }}</h2>
+          <p class="about-subhead m-0">{{ i18n "about_connect_subhead" }}</p>
         </div>
       </div>
       <ul class="about-connect-grid list-none m-0 p-0">
         {{- range . -}}
         {{- $isExternal := strings.HasPrefix .url "http" -}}
+        {{- $cardUrl := .url -}}
+        {{- if and (not $isExternal) (hasPrefix $cardUrl "/") -}}
+          {{- $cardUrl = $cardUrl | relLangURL -}}
+        {{- end -}}
         {{- $iconName := .phosphorIcon | default "link" -}}
         {{- $iconWeight := "fill" -}}
         {{- if eq $iconName "palette" -}}
@@ -143,7 +147,7 @@
         {{- end -}}
         <li>
           <a
-            href="{{ .url }}"
+            href="{{ $cardUrl }}"
             class="about-connect-card no-underline group"
             {{- with .accent_color -}}style="--about-accent: {{ . }}"{{- end -}}
             {{- if $isExternal -}} target="_blank" rel="noopener noreferrer"{{- end -}}
@@ -168,13 +172,13 @@
         <div class="about-cta__glow" aria-hidden="true"></div>
         <div class="about-cta__inner">
           <div class="about-cta__content">
-            <p class="about-cta__eyebrow m-0">Get started</p>
-            <h2 id="about-cta-heading" class="about-cta__title m-0">Ready to explore?</h2>
-            <p class="about-cta__text m-0">Jump into tools, games, or AI apps—everything runs in your browser.</p>
+            <p class="about-cta__eyebrow m-0">{{ i18n "about_cta_eyebrow" }}</p>
+            <h2 id="about-cta-heading" class="about-cta__title m-0">{{ i18n "about_cta_title" }}</h2>
+            <p class="about-cta__text m-0">{{ i18n "about_cta_text" }}</p>
           </div>
           <div class="about-cta__actions">
-            <a href="/" class="about-btn about-btn--primary no-underline">Go to homepage →</a>
-            <a href="/history/" class="about-btn about-btn--ghost no-underline">Our timeline ↗</a>
+            <a href="{{ "/" | relLangURL }}" class="about-btn about-btn--primary no-underline">{{ i18n "about_cta_home" }}</a>
+            <a href="{{ "/history/" | relLangURL }}" class="about-btn about-btn--ghost no-underline">{{ i18n "about_cta_timeline" }}</a>
           </div>
         </div>
       </div>

@@ -19,7 +19,10 @@
       </p>
       <div class="site-footer__mast-actions">
         <a href="{{ "/browse/" | relLangURL }}" class="site-footer__cta">{{ i18n "footer_browse_all" }}</a>
-        <span class="site-footer__stat">{{ $totalTools }}{{ i18n "footer_free_count" }}</span>
+        <div class="site-footer__mast-meta">
+          <span class="site-footer__stat">{{ $totalTools }}{{ i18n "footer_free_count" }}</span>
+          {{ partial "home/language-switcher.html" . }}
+        </div>
       </div>
     </div>
 

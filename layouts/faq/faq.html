@@ -6,15 +6,15 @@
       <div class="about-hero__glow" aria-hidden="true"></div>
       <div class="about-hero__inner">
         <div class="about-hero__content">
-          <p class="about-hero__eyebrow">Help center</p>
+          <p class="about-hero__eyebrow">{{ i18n "faq_help_center" }}</p>
           <h1 class="about-hero__title m-0">{{ .Title }}</h1>
           {{- if .Content -}}
           <div class="about-hero__quote faq-hero__intro m-0">{{ .Content }}</div>
           {{- end -}}
         </div>
         <div class="about-hero__actions">
-          <a href="{{ "/contact-us/" | relLangURL }}" class="about-btn about-btn--primary no-underline">Contact us</a>
-          <a href="{{ "/browse/" | relLangURL }}" class="about-btn about-btn--ghost no-underline">Browse tools</a>
+          <a href="{{ "/contact-us/" | relLangURL }}" class="about-btn about-btn--primary no-underline">{{ i18n "footer_contact" }}</a>
+          <a href="{{ "/browse/" | relLangURL }}" class="about-btn about-btn--ghost no-underline">{{ i18n "faq_browse_tools" }}</a>
         </div>
       </div>
     </div>
@@ -26,20 +26,20 @@
         {{ partial "faq/page-content.html" . }}
       </div>
 
-      <aside class="faq-aside" aria-label="Helpful links">
+      <aside class="faq-aside" aria-label="{{ i18n "faq_aside_aria" }}">
         <div class="contact-info-card">
-          <p class="contact-info-card__eyebrow m-0">Quick answer</p>
-          <p class="contact-info-card__title m-0">Most tools are free and run in your browser—no signup needed.</p>
-          <p class="contact-info-card__text m-0">Use search above to jump to a topic, or pick a category filter.</p>
+          <p class="contact-info-card__eyebrow m-0">{{ i18n "faq_quick_answer" }}</p>
+          <p class="contact-info-card__title m-0">{{ i18n "faq_quick_answer_title" }}</p>
+          <p class="contact-info-card__text m-0">{{ i18n "faq_quick_answer_text" }}</p>
         </div>
 
         <ul class="contact-links list-none m-0 p-0">
           <li>
-            <a href="/contact-us/" class="contact-link no-underline group">
+            <a href="{{ "/contact-us/" | relLangURL }}" class="contact-link no-underline group">
               <span class="contact-link__icon" aria-hidden="true">✉️</span>
               <span class="contact-link__body">
-                <span class="contact-link__title">Contact support</span>
-                <span class="contact-link__desc">Send us a message—we reply in 2–3 days</span>
+                <span class="contact-link__title">{{ i18n "faq_link_contact_title" }}</span>
+                <span class="contact-link__desc">{{ i18n "faq_link_contact_desc" }}</span>
               </span>
               <span class="contact-link__arrow" aria-hidden="true">→</span>
             </a>
@@ -48,28 +48,28 @@
             <a href="/tncprivacy" class="contact-link no-underline group">
               <span class="contact-link__icon" aria-hidden="true">📋</span>
               <span class="contact-link__body">
-                <span class="contact-link__title">Privacy &amp; terms</span>
-                <span class="contact-link__desc">Policies, cookies, and legal info</span>
+                <span class="contact-link__title">{{ i18n "faq_link_privacy_title" }}</span>
+                <span class="contact-link__desc">{{ i18n "faq_link_privacy_desc" }}</span>
               </span>
               <span class="contact-link__arrow" aria-hidden="true">→</span>
             </a>
           </li>
           <li>
-            <a href="/about-us/" class="contact-link no-underline group">
+            <a href="{{ "/about-us/" | relLangURL }}" class="contact-link no-underline group">
               <span class="contact-link__icon" aria-hidden="true">👋</span>
               <span class="contact-link__body">
-                <span class="contact-link__title">About us</span>
-                <span class="contact-link__desc">Team, mission, and platform story</span>
+                <span class="contact-link__title">{{ i18n "faq_link_about_title" }}</span>
+                <span class="contact-link__desc">{{ i18n "faq_link_about_desc" }}</span>
               </span>
               <span class="contact-link__arrow" aria-hidden="true">→</span>
             </a>
           </li>
           <li>
-            <a href="/search/" class="contact-link no-underline group">
+            <a href="{{ "/search/" | relLangURL }}" class="contact-link no-underline group">
               <span class="contact-link__icon" aria-hidden="true">🔍</span>
               <span class="contact-link__body">
-                <span class="contact-link__title">Search tools</span>
-                <span class="contact-link__desc">Find any tool, game, or AI app</span>
+                <span class="contact-link__title">{{ i18n "faq_link_search_title" }}</span>
+                <span class="contact-link__desc">{{ i18n "faq_link_search_desc" }}</span>
               </span>
               <span class="contact-link__arrow" aria-hidden="true">→</span>
             </a>

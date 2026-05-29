@@ -1,13 +1,17 @@
 {{- $data := partial "get-data.html" . -}}
+{{- $banner := index $data.homepage.hubBanners "designlab" | default dict -}}
+{{- $hubTitle := $banner.title | default (i18n "footer_design") -}}
+{{- $hubSubtitle := $banner.description | default "" -}}
 {{ partial "home/hub-page.html" (dict
   "page" .
-  "title" "Design Lab"
-  "subtitle" "Creative design tools & visualizers"
+  "title" $hubTitle
+  "subtitle" $hubSubtitle
   "items" $data.designlab.data
   "iconDir" "designlab"
   "defaultPhosphorIcon" "palette"
   "searchID" "designlab"
-  "searchPlaceholder" "Search design tools and creative resources..."
+  "searchPlaceholder" (i18n "hub_search_designlab")
+  "countLabel" (i18n "hub_count_tools")
   "navActive" "designlab"
-  "banner" (index $data.homepage.hubBanners "designlab" | default dict)
+  "banner" $banner
 ) }}

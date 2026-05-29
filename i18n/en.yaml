@@ -140,6 +140,17 @@
 - id: search_chip_browse
   translation: "⊞ Browse"
 
+- id: hub_search_designlab
+  translation: "Search design tools and creative resources..."
+- id: hub_search_games
+  translation: "Search for games, puzzles, and fun activities..."
+- id: hub_search_ai
+  translation: "Search for AI tools, generators, and utilities..."
+- id: hub_count_tools
+  translation: "tools"
+- id: hub_count_games
+  translation: "games"
+
 - id: skip_link
   translation: "Skip to main content"
 
@@ -190,3 +201,87 @@
   translation: "(opens in new tab)"
 - id: tool_default_description
   translation: "Open %s — free in your browser."
+
+- id: about_browse_tools
+  translation: "Browse tools →"
+- id: about_press_media
+  translation: "Press & media"
+- id: about_mission_heading
+  translation: "Our mission"
+- id: about_mission_aria
+  translation: "What we stand for"
+- id: about_stats_heading
+  translation: "Platform at a glance"
+- id: about_stats_subhead
+  translation: "A quick snapshot of what is live on CodeFryDev today."
+- id: about_stat_tools
+  translation: "Tools & apps"
+- id: about_stat_ai
+  translation: "AI projects"
+- id: about_stat_games
+  translation: "Games"
+- id: about_stat_design
+  translation: "Design tools"
+- id: about_team_heading
+  translation: "Our team"
+- id: about_team_subhead
+  translation: "The people building tools, games, and experiments in the open."
+- id: about_all_members
+  translation: "All members →"
+- id: about_connect_heading
+  translation: "Explore & connect"
+- id: about_connect_subhead
+  translation: "Credits, community, and resources behind the platform."
+- id: about_cta_eyebrow
+  translation: "Get started"
+- id: about_cta_title
+  translation: "Ready to explore?"
+- id: about_cta_text
+  translation: "Jump into tools, games, or AI apps—everything runs in your browser."
+- id: about_cta_home
+  translation: "Go to homepage →"
+- id: about_cta_timeline
+  translation: "Our timeline ↗"
+
+- id: faq_help_center
+  translation: "Help center"
+- id: faq_browse_tools
+  translation: "Browse tools"
+- id: faq_aside_aria
+  translation: "Helpful links"
+- id: faq_quick_answer
+  translation: "Quick answer"
+- id: faq_quick_answer_title
+  translation: "Most tools are free and run in your browser—no signup needed."
+- id: faq_quick_answer_text
+  translation: "Use search above to jump to a topic, or pick a category filter."
+- id: faq_link_contact_title
+  translation: "Contact support"
+- id: faq_link_contact_desc
+  translation: "Send us a message—we reply in 2–3 days"
+- id: faq_link_privacy_title
+  translation: "Privacy & terms"
+- id: faq_link_privacy_desc
+  translation: "Policies, cookies, and legal info"
+- id: faq_link_about_title
+  translation: "About us"
+- id: faq_link_about_desc
+  translation: "Team, mission, and platform story"
+- id: faq_link_search_title
+  translation: "Search tools"
+- id: faq_link_search_desc
+  translation: "Find any tool, game, or AI app"
+- id: faq_search_label
+  translation: "Search FAQ"
+- id: faq_search_placeholder
+  translation: "Search questions…"
+- id: faq_filter_aria
+  translation: "Filter by topic"
+- id: faq_filter_all
+  translation: "All topics"
+- id: faq_main_heading
+  translation: "Questions and answers"
+- id: faq_no_results_before
+  translation: "No questions match your search. Try different keywords or"
+- id: faq_no_results_after
+  translation: "for help."

@@ -140,6 +140,17 @@
 - id: search_chip_browse
   translation: "⊞ Parcourir"
 
+- id: hub_search_designlab
+  translation: "Rechercher des outils design et ressources créatives…"
+- id: hub_search_games
+  translation: "Rechercher des jeux, puzzles et activités…"
+- id: hub_search_ai
+  translation: "Rechercher des outils IA, générateurs et utilitaires…"
+- id: hub_count_tools
+  translation: "outils"
+- id: hub_count_games
+  translation: "jeux"
+
 - id: skip_link
   translation: "Aller au contenu principal"
 
@@ -190,3 +201,87 @@
   translation: "(s'ouvre dans un nouvel onglet)"
 - id: tool_default_description
   translation: "Ouvrir %s — gratuit dans votre navigateur."
+
+- id: about_browse_tools
+  translation: "Parcourir les outils →"
+- id: about_press_media
+  translation: "Presse et médias"
+- id: about_mission_heading
+  translation: "Notre mission"
+- id: about_mission_aria
+  translation: "Ce que nous défendons"
+- id: about_stats_heading
+  translation: "La plateforme en un coup d'œil"
+- id: about_stats_subhead
+  translation: "Un aperçu rapide de ce qui est en ligne sur CodeFryDev aujourd'hui."
+- id: about_stat_tools
+  translation: "Outils et apps"
+- id: about_stat_ai
+  translation: "Projets IA"
+- id: about_stat_games
+  translation: "Jeux"
+- id: about_stat_design
+  translation: "Outils design"
+- id: about_team_heading
+  translation: "Notre équipe"
+- id: about_team_subhead
+  translation: "Les personnes qui construisent outils, jeux et expériences en open source."
+- id: about_all_members
+  translation: "Tous les membres →"
+- id: about_connect_heading
+  translation: "Explorer et connecter"
+- id: about_connect_subhead
+  translation: "Crédits, communauté et ressources derrière la plateforme."
+- id: about_cta_eyebrow
+  translation: "Commencer"
+- id: about_cta_title
+  translation: "Prêt à explorer ?"
+- id: about_cta_text
+  translation: "Plongez dans les outils, jeux ou apps IA — tout fonctionne dans votre navigateur."
+- id: about_cta_home
+  translation: "Aller à l'accueil →"
+- id: about_cta_timeline
+  translation: "Notre chronologie ↗"
+
+- id: faq_help_center
+  translation: "Centre d'aide"
+- id: faq_browse_tools
+  translation: "Parcourir les outils"
+- id: faq_aside_aria
+  translation: "Liens utiles"
+- id: faq_quick_answer
+  translation: "Réponse rapide"
+- id: faq_quick_answer_title
+  translation: "La plupart des outils sont gratuits et fonctionnent dans votre navigateur — sans inscription."
+- id: faq_quick_answer_text
+  translation: "Utilisez la recherche ci-dessus ou choisissez un filtre de catégorie."
+- id: faq_link_contact_title
+  translation: "Contacter le support"
+- id: faq_link_contact_desc
+  translation: "Envoyez-nous un message — réponse sous 2–3 jours"
+- id: faq_link_privacy_title
+  translation: "Confidentialité et conditions"
+- id: faq_link_privacy_desc
+  translation: "Politiques, cookies et informations légales"
+- id: faq_link_about_title
+  translation: "À propos"
+- id: faq_link_about_desc
+  translation: "Équipe, mission et histoire de la plateforme"
+- id: faq_link_search_title
+  translation: "Rechercher des outils"
+- id: faq_link_search_desc
+  translation: "Trouver un outil, jeu ou app IA"
+- id: faq_search_label
+  translation: "Rechercher dans la FAQ"
+- id: faq_search_placeholder
+  translation: "Rechercher des questions…"
+- id: faq_filter_aria
+  translation: "Filtrer par sujet"
+- id: faq_filter_all
+  translation: "Tous les sujets"
+- id: faq_main_heading
+  translation: "Questions et réponses"
+- id: faq_no_results_before
+  translation: "Aucune question ne correspond à votre recherche. Essayez d'autres mots-clés ou"
+- id: faq_no_results_after
+  translation: "pour obtenir de l'aide."

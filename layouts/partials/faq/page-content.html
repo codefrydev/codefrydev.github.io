@@ -6,26 +6,26 @@
 <section class="faq-main" aria-labelledby="faq-main-heading">
   <div class="faq-main__toolbar">
     <div class="faq-search">
-      <label for="faq-search-input" class="sr-only">Search FAQ</label>
+      <label for="faq-search-input" class="sr-only">{{ i18n "faq_search_label" }}</label>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" class="faq-search__icon" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
       <input
         type="search"
         id="faq-search-input"
         class="faq-search__input"
-        placeholder="Search questions…"
+        placeholder="{{ i18n "faq_search_placeholder" }}"
         autocomplete="off"
         spellcheck="false"
       >
     </div>
-    <div class="faq-filters" role="group" aria-label="Filter by topic">
-      <button type="button" class="faq-filter is-active" data-faq-filter="all" aria-pressed="true">All topics</button>
+    <div class="faq-filters" role="group" aria-label="{{ i18n "faq_filter_aria" }}">
+      <button type="button" class="faq-filter is-active" data-faq-filter="all" aria-pressed="true">{{ i18n "faq_filter_all" }}</button>
       {{- range $categories -}}
       <button type="button" class="faq-filter" data-faq-filter="{{ .id }}" aria-pressed="false">{{ .label }}</button>
       {{- end -}}
     </div>
   </div>
 
-  <h2 id="faq-main-heading" class="sr-only">Questions and answers</h2>
+  <h2 id="faq-main-heading" class="sr-only">{{ i18n "faq_main_heading" }}</h2>
 
   <div class="faq-groups" id="faq-groups">
     {{- range $categories -}}
@@ -55,9 +55,9 @@
   </div>
 
   <p id="faq-no-results" class="faq-no-results m-0" hidden>
-    No questions match your search. Try different keywords or
-    <a href="/contact-us/" class="text-brand no-underline hover:underline">contact us</a>
-    for help.
+    {{ i18n "faq_no_results_before" }}
+    <a href="{{ "/contact-us/" | relLangURL }}" class="text-brand no-underline hover:underline">{{ i18n "footer_contact" }}</a>
+    {{ i18n "faq_no_results_after" }}
   </p>
 </section>
 {{- end -}}

@@ -101,9 +101,9 @@
 
   /** Language switcher — toggle dropdown on click */
   (function () {
-    var root = document.querySelector('.nav-lang');
-    var trigger = document.getElementById('nav-lang-btn');
-    var panel = document.getElementById('nav-lang-menu');
+    var root = document.querySelector('.footer-lang');
+    var trigger = document.getElementById('footer-lang-btn');
+    var panel = document.getElementById('footer-lang-menu');
     if (!root || !trigger || !panel) return;
 
     var isOpen = false;

@@ -1,13 +1,13 @@
 ---
 translationKey: "about-us"
-title: "About us"
+title: "हमारे बारे में"
 date: 2024-03-01T00:00:00Z
 draft: false
 aliases: ["/about", "/about/"]
-description: "About CodeFryDev—our mission, team, and free online tools, games, and AI apps. Meet the developers and designers behind the platform."
-keywords: ["CodeFryDev", "about us", "team", "developers", "designers", "free online tools platform"]
+description: "CodeFryDev के बारे में — हमारा मिशन, टीम और मुफ़्त ऑनलाइन टूल, गेम और AI ऐप। प्लेटफ़ॉर्म के पीछे के डेवलपर और डिज़ाइनर से मिलें।"
+keywords: ["CodeFryDev", "हमारे बारे में", "टीम", "डेवलपर", "डिज़ाइनर", "मुफ़्त ऑनलाइन टूल प्लेटफ़ॉर्म"]
 ---
 
-CodeFryDev offers free online tools, games, and AI apps—no signup required. We build productivity apps, AI-powered utilities, engaging games, and creative design resources for developers, designers, and anyone curious to experiment in the browser.
+CodeFryDev मुफ़्त ऑनलाइन टूल, गेम और AI ऐप प्रदान करता है — साइनअप की ज़रूरत नहीं। हम डेवलपर, डिज़ाइनर और ब्राउज़र में प्रयोग करने के लिए उत्सुक सभी के लिए उत्पादकता ऐप, AI-संचालित यूटिलिटी, मज़ेदार गेम और क्रिएटिव डिज़ाइन संसाधन बनाते हैं।
 
-Since 2024 we have been shipping a growing collection—from utility apps and learning tools to games and design assets. We are committed to expanding what you can do in a single tab, with no install and no account for most tools.
+2024 से हम एक बढ़ता हुआ संग्रह लॉन्च कर रहे हैं — यूटिलिटी ऐप और सीखने के टूल से लेकर गेम और डिज़ाइन एसेट तक। हम एक ही टैब में आप जो कर सकते हैं उसे बढ़ाने के लिए प्रतिबद्ध हैं, ज़्यादातर टूल के लिए बिना इंस्टॉल और बिना अकाउंट।
