@@ -11,8 +11,9 @@
   {{- $section := $page.Section | lower -}}
 
   {{- if eq $section "browse" -}}
-    {{- if ne $path "/browse/" -}}
-      {{- $items = $items | append (dict "name" "Browse" "url" "/browse/") -}}
+    {{- $browseRoot := "/browse/" | relLangURL -}}
+    {{- if ne $path $browseRoot -}}
+      {{- $items = $items | append (dict "name" "Browse" "url" $browseRoot) -}}
       {{- $items = $items | append (dict "name" $page.Title "current" true) -}}
     {{- else -}}
       {{- $items = $items | append (dict "name" "Browse" "current" true) -}}

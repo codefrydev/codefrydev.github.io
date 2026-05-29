@@ -1,0 +1,56 @@
+categories:
+- id: getting-started
+  label: はじめに
+  icon: "\U0001F680"
+- id: using-tools
+  label: ツールの使い方
+  icon: "\U0001F6E0️"
+- id: privacy-support
+  label: プライバシー & サポート
+  icon: "\U0001F512"
+- id: community
+  label: コミュニティと学習
+  icon: "\U0001F91D"
+faqs:
+- question: CodeFryDevとは何ですか？
+  answer: 学び、実験プロジェクト、ゲーム、アイデア創出などを行うプラットフォーム… ブラウザで無料ツール、ゲーム、AIアプリを提供 — 登録不要。
+  category: getting-started
+- question: CodeFryDevはどのようなツールを提供していますか？
+  answer: >-
+    CodeFryDevは5つの主要カテゴリを提供：クリエイティブ & アセット（アート、テキストツール、壁紙、3Dモデル）、ツール & ユーティリティ（AIツール、CSV、JSONフォーマッター、meta tagジェネレーター）、ゲーム
+    & ファン（Chain Reaction、Wordle、Snakeなど）、サイト & 外部リンク（概要、タイムライン、ストア、プライバシー）、コンテナ & パッケージ（Dockerイメージとnpmパッケージ）。
+  category: getting-started
+- question: どのようなAIツールがありますか？
+  answer: >-
+    AI SocialSnap、AI Meme Generator、Visual Note AI、Aqua Tracker AI、AI Web Summarizer、Profile AI、CFD Chat AIなど複数のAIツールを提供。コンテンツ作成、要約、生産性を支援。
+  category: getting-started
+- question: 新しいツールやゲームはどのくらいの頻度で追加されますか？
+  answer: 新しいツールとゲームを定期的に追加。アップデートセクションやSNSで最新情報をご確認ください。
+  category: getting-started
+- question: ツールとゲームは無料で使えますか？
+  answer: ほとんどのWebベースツールとゲームは無料。一部のプレミアム機能やモバイルアプリは異なる料金体系の場合があります。各ツールページで詳細を確認してください。
+  category: using-tools
+- question: ツールを使うにはアカウント作成が必要ですか？
+  answer: ほとんどのツールはアカウント作成なしで利用可能。ツールページにアクセスしてすぐ使い始められます。一部の高度な機能には登録が必要な場合があります。
+  category: using-tools
+- question: モバイルデバイスでこれらのツールを使えますか？
+  answer: はい、ほとんどのツールはレスポンシブでモバイルデバイスで動作します。Google Play Storeで専用モバイルアプリも提供。
+  category: using-tools
+- question: CodeFryDevのサポートにはどう連絡できますか？
+  answer: "/contact-us/のお問い合わせページからご連絡いただけます — メッセージをお送りください、近日中にご返信します。すべてのユーザーに優れたサポートを提供することをお約束します。"
+  category: privacy-support
+- question: 利用規約とプライバシーポリシー、連絡先はどこで確認できますか？
+  answer: 利用規約とプライバシーポリシーはフッターのヘルプと法的情報にリンク。サポートと一般のお問い合わせは/contact-us/のお問い合わせページをご利用ください。
+  category: privacy-support
+- question: CodeFryDevツール使用時、データは安全ですか？
+  answer: はい、データセキュリティを真剣に取り組んでいます。ほとんどのツールはブラウザ内でローカルにデータを処理し、データ保護のベストプラクティスに従います。詳細はプライバシーポリシーをご確認ください。
+  category: privacy-support
+- question: CodeFryDevはどのプログラミング言語と技術を使用していますか？
+  answer: CodeFryDevはHTML5、CSS3、JavaScript、各種フレームワークなどのモダンWeb技術を使用。バックエンドは.NET、モバイルアプリはUnityなどのクロスプラットフォーム技術で開発。
+  category: community
+- question: CodeFryDevプロジェクトに貢献できますか？
+  answer: はい！CodeFryDevはコントリビューションを歓迎します。GitHubでプロジェクトを見つけ、pull request、バグ報告、機能提案で貢献できます。参加方法は概要ページをご確認ください。
+  category: community
+- question: Web開発学習のチュートリアルはありますか？
+  answer: はい、CodeFryDevは基本HTML/CSSから高度なフレームワークとベストプラクティスまで、Web開発向けの包括的なチュートリアルと教材を提供。すべてのスキルレベル向け。
+  category: community

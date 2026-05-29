@@ -1,0 +1,79 @@
+home:
+  primary:
+    - "無料オンラインツール"
+    - "無料AIツール"
+  secondary:
+    - "登録不要 無料ゲーム"
+    - "ブラウザベース ユーティリティ"
+    - "無料 生産性アプリ"
+
+ai:
+  primary:
+    - "無料AIツール"
+    - "AI搭載ユーティリティ"
+  secondary:
+    - "AIミームジェネレーター"
+    - "ウェブサイト要約"
+    - "登録不要 無料AIジェネレーター"
+
+games:
+  primary:
+    - "無料オンラインゲーム"
+    - "ブラウザゲーム"
+  secondary:
+    - "Wordle"
+    - "Snake ゲーム"
+    - "Chain Reaction ゲーム"
+    - "ダウンロード不要 無料ゲーム"
+
+designlab:
+  primary:
+    - "無料デザインツール"
+    - "クリエイティブリソース"
+  secondary:
+    - "デザインラボ"
+    - "音楽ビジュアライザー"
+    - "ブラウザベース デザインツール"
+
+store:
+  primary:
+    - "無料モバイルアプリ"
+    - "CodeFryDev アプリ"
+  secondary:
+    - "Android アプリ"
+    - "Play Store"
+    - "生産性アプリ"
+
+about_us:
+  primary:
+    - "CodeFryDev"
+    - "無料オンラインツール プラットフォーム"
+  secondary:
+    - "私たちについて"
+    - "ツールとゲーム"
+
+history:
+  primary:
+    - "CodeFryDev 沿革"
+    - "タイムライン"
+  secondary:
+    - "マイルストーン"
+    - "アップデート"
+
+press:
+  primary:
+    - "CodeFryDev プレス"
+    - "プレスキット"
+  secondary:
+    - "メディアキット"
+    - "ロゴ"
+    - "お問い合わせ"
+
+cfddc:
+  primary:
+    - "CFDDC"
+    - "CodeFryDev 開発者カンファレンス"
+  secondary:
+    - "お知らせ"
+    - "タイムライン"
+    - "WWDC"

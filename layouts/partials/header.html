@@ -4,56 +4,7 @@
 {{ partial "googlegtag.html" . }}
 
 {{- /* Page-specific title (single source of truth; do not add <title> in section layouts) */ -}}
-{{- /* Priority: 1) seo_title frontmatter  2) section-based defaults  3) page title  4) site title */ -}}
-{{- $pageTitle := "" -}}
-{{- if .Params.seo_title -}}
-  {{- $pageTitle = .Params.seo_title -}}
-{{- else if .IsHome -}}
-  {{- $pageTitle = "Free Online Tools, Games & AI Apps | CodeFryDev" -}}
-{{- else if eq .Section "ai" -}}
-  {{- $pageTitle = "Free AI Tools & Generators | CodeFryDev - AI-Powered Utilities" -}}
-{{- else if eq .Section "games" -}}
-  {{- $pageTitle = "Free Online Games - Play Now | CodeFryDev" -}}
-{{- else if eq .Section "designlab" -}}
-  {{- $pageTitle = "Design Tools & Creative Resources | CodeFryDev Design Lab" -}}
-{{- else if eq .Section "about-us" -}}
-  {{- $pageTitle = "About Us - CodeFryDev | Free Online Tools & Resources Platform" -}}
-{{- else if eq .Section "about" -}}
-  {{- if strings.Contains .RelPermalink "/about/users/" -}}
-    {{- if .IsPage -}}
-      {{- $pageTitle = printf "%s - CodeFryDev Team" .Title -}}
-    {{- else -}}
-      {{- $pageTitle = "Devs and Designers - CodeFryDev | Meet Our Team" -}}
-    {{- end -}}
-  {{- else if ne .Title "" -}}
-    {{- $pageTitle = printf "%s | CodeFryDev" .Title -}}
-  {{- else -}}
-    {{- $pageTitle = "About | CodeFryDev" -}}
-  {{- end -}}
-{{- else if eq .Section "search" -}}
-  {{- $pageTitle = "Search - CodeFryDev | Find Tools, Games & Apps" -}}
-{{- else if eq .Section "history" -}}
-  {{- $pageTitle = "History - CodeFryDev | Timeline & Milestones" -}}
-{{- else if eq .Section "press" -}}
-  {{- $pageTitle = "Press & Media - CodeFryDev | Press Kit & Contact" -}}
-{{- else if eq .Section "contact-us" -}}
-  {{- $pageTitle = "Contact Us - CodeFryDev | Support & Inquiries" -}}
-{{- else if eq .Section "faq" -}}
-  {{- $pageTitle = "FAQ - CodeFryDev | Help & Common Questions" -}}
-{{- else if eq .Section "cfddc" -}}
-  {{- if .Params.year -}}
-    {{- $pageTitle = printf "CFDDC %s (%s) | CodeFryDev Developer Conference" (substr .Params.year 2 2) .Params.year -}}
-  {{- else -}}
-    {{- $pageTitle = "CFDDC | CodeFryDev Developer Conference" -}}
-  {{- end -}}
-{{- else if eq .Section "store" -}}
-  {{- $pageTitle = "Free Mobile Apps | CodeFryDev Store" -}}
-{{- else if ne .Title "" -}}
-  {{- $pageTitle = printf "%s | CodeFryDev" .Title -}}
-{{- else -}}
-  {{- $pageTitle = "Free Online Tools, Games & AI Apps | CodeFryDev" -}}
-{{- end -}}
-<title>{{ $pageTitle }}</title>
+{{ partial "seo-title.html" . }}
 
 {{- /* Page-specific description */ -}}
 {{- $description := .Description -}}
@@ -84,11 +35,12 @@
 {{- end -}}
 
 {{- /* Language and locale (BCP 47); single source for og:locale and hreflang */ -}}
-{{- $localeRaw := .Site.Language.LanguageCode | default .Site.LanguageCode | default "en-US" -}}
+{{- $localeRaw := .Site.Language.Locale | default "en-US" -}}
 {{- $localeNorm := $localeRaw | replace "_" "-" -}}
 {{- $locale := cond (or (not $localeNorm) (lt (len $localeNorm) 2)) "en-US" $localeNorm -}}
 
 {{- /* Open Graph meta tags */ -}}
+{{- $pageTitle := .Scratch.Get "pageTitle" -}}
 {{- $ogTitle := $pageTitle -}}
 {{- $ogDescription := $description -}}
 {{- $ogImage := "" -}}
@@ -148,10 +100,22 @@
 <meta name="msapplication-TileColor" content="#0f172a">
 <meta name="theme-color" content="#0f172a">
 
-{{- /* Language meta and hreflang (use $locale from top of head) */ -}}
+{{- /* Language meta and hreflang */ -}}
 <meta name="language" content="{{ $locale }}">
 <link rel="alternate" hreflang="{{ $locale }}" href="{{ .Permalink | absURL }}">
-<link rel="alternate" hreflang="x-default" href="{{ .Permalink | absURL }}">
+{{- range .AllTranslations -}}
+  {{- if ne .Lang $.Lang -}}
+    {{- $tLocale := .Site.Language.Locale | default .Lang -}}
+    <link rel="alternate" hreflang="{{ $tLocale }}" href="{{ .Permalink | absURL }}">
+  {{- end -}}
+{{- end -}}
+{{- $xDefault := .Permalink -}}
+{{- range .AllTranslations -}}
+  {{- if eq .Lang "en" -}}
+    {{- $xDefault = .Permalink -}}
+  {{- end -}}
+{{- end -}}
+<link rel="alternate" hreflang="x-default" href="{{ $xDefault | absURL }}">
 
 <script>
 (function() {

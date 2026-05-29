@@ -4,15 +4,17 @@
   <header class="about-hero max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-10 sm:mb-14">
     <div class="about-hero__panel">
       <div class="about-hero__glow" aria-hidden="true"></div>
-      <div class="about-hero__inner md:max-w-2xl">
-        <p class="about-hero__eyebrow">Help center</p>
-        <h1 class="about-hero__title m-0">{{ .Title }}</h1>
-        {{- if .Content -}}
-        <div class="about-hero__quote faq-hero__intro m-0">{{ .Content }}</div>
-        {{- end -}}
+      <div class="about-hero__inner">
+        <div class="about-hero__content">
+          <p class="about-hero__eyebrow">Help center</p>
+          <h1 class="about-hero__title m-0">{{ .Title }}</h1>
+          {{- if .Content -}}
+          <div class="about-hero__quote faq-hero__intro m-0">{{ .Content }}</div>
+          {{- end -}}
+        </div>
         <div class="about-hero__actions">
-          <a href="/contact-us/" class="about-btn about-btn--primary no-underline">Contact us</a>
-          <a href="/browse/" class="about-btn about-btn--ghost no-underline">Browse tools</a>
+          <a href="{{ "/contact-us/" | relLangURL }}" class="about-btn about-btn--primary no-underline">Contact us</a>
+          <a href="{{ "/browse/" | relLangURL }}" class="about-btn about-btn--ghost no-underline">Browse tools</a>
         </div>
       </div>
     </div>

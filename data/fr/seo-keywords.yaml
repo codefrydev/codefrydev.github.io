@@ -1,0 +1,79 @@
+home:
+  primary:
+    - "outils en ligne gratuits"
+    - "outils IA gratuits"
+  secondary:
+    - "jeux gratuits sans inscription"
+    - "utilitaires navigateur"
+    - "applications productivité gratuites"
+
+ai:
+  primary:
+    - "outils IA gratuits"
+    - "utilitaires IA"
+  secondary:
+    - "générateur de mèmes IA"
+    - "résumeur de site web"
+    - "générateur IA gratuit sans inscription"
+
+games:
+  primary:
+    - "jeux en ligne gratuits"
+    - "jeux navigateur"
+  secondary:
+    - "Wordle"
+    - "jeu Snake"
+    - "jeu Chain Reaction"
+    - "jouer gratuit sans téléchargement"
+
+designlab:
+  primary:
+    - "outils design gratuits"
+    - "ressources créatives"
+  secondary:
+    - "design lab"
+    - "visualisation musicale"
+    - "outils design navigateur"
+
+store:
+  primary:
+    - "applications mobiles gratuites"
+    - "apps CodeFryDev"
+  secondary:
+    - "applications Android"
+    - "Play Store"
+    - "applications productivité"
+
+about_us:
+  primary:
+    - "CodeFryDev"
+    - "plateforme outils en ligne gratuits"
+  secondary:
+    - "à propos"
+    - "outils et jeux"
+
+history:
+  primary:
+    - "historique CodeFryDev"
+    - "chronologie"
+  secondary:
+    - "jalons"
+    - "mises à jour"
+
+press:
+  primary:
+    - "presse CodeFryDev"
+    - "kit presse"
+  secondary:
+    - "kit média"
+    - "logo"
+    - "contact"
+
+cfddc:
+  primary:
+    - "CFDDC"
+    - "conférence développeurs CodeFryDev"
+  secondary:
+    - "annonces"
+    - "chronologie"
+    - "WWDC"

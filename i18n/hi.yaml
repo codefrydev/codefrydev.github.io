@@ -1,0 +1,192 @@
+- id: nav_home
+  translation: "होम"
+- id: nav_browse
+  translation: "ब्राउज़"
+- id: nav_games
+  translation: "गेम"
+- id: nav_ai
+  translation: "AI"
+- id: nav_design
+  translation: "डिज़ाइन"
+- id: nav_about
+  translation: "हमारे बारे में"
+- id: nav_faq
+  translation: "FAQ"
+- id: nav_search
+  translation: "खोजें"
+- id: nav_theme
+  translation: "थीम"
+- id: nav_more
+  translation: "और"
+- id: nav_view_all_categories
+  translation: "सभी श्रेणियाँ देखें →"
+- id: nav_main
+  translation: "मुख्य नेविगेशन"
+- id: nav_open_search
+  translation: "खोज खोलें"
+- id: nav_open_menu
+  translation: "मेनू खोलें"
+- id: nav_close_menu
+  translation: "मेनू बंद करें"
+- id: nav_switch_theme
+  translation: "डार्क थीम पर स्विच करें"
+- id: nav_home_aria
+  translation: "CodeFryDev होम"
+- id: nav_beta_reveal
+  translation: "इंटरैक्टिव ladybug easter egg दिखाएँ"
+- id: nav_beta_status
+  translation: "साइट स्थिति: बीटा"
+- id: nav_language
+  translation: "भाषा"
+- id: nav_language_menu
+  translation: "भाषा चुनें"
+
+- id: footer_product
+  translation: "उत्पाद"
+- id: footer_company
+  translation: "कंपनी"
+- id: footer_help
+  translation: "सहायता और कानूनी"
+- id: footer_browse_all
+  translation: "सभी टूल ब्राउज़ करें"
+- id: footer_free_count
+  translation: "+ मुफ़्त — आपके ब्राउज़र में"
+- id: footer_back_top
+  translation: "ऊपर जाएँ"
+- id: footer_games
+  translation: "गेम"
+- id: footer_ai
+  translation: "AI टूल"
+- id: footer_design
+  translation: "डिज़ाइन लैब"
+- id: footer_store
+  translation: "स्टोर"
+- id: footer_all_categories
+  translation: "सभी श्रेणियाँ"
+- id: footer_about
+  translation: "हमारे बारे में"
+- id: footer_history
+  translation: "इतिहास"
+- id: footer_press
+  translation: "प्रेस"
+- id: footer_cfddc
+  translation: "CFDDC"
+- id: footer_search
+  translation: "खोज"
+- id: footer_faq
+  translation: "FAQ"
+- id: footer_updates
+  translation: "अपडेट"
+- id: footer_privacy_terms
+  translation: "गोपनीयता और शर्तें"
+- id: footer_contact
+  translation: "संपर्क"
+- id: footer_legacy
+  translation: "पुरानी साइट"
+- id: footer_privacy
+  translation: "गोपनीयता"
+- id: footer_terms
+  translation: "शर्तें"
+- id: footer_legal_links
+  translation: "कानूनी लिंक"
+
+- id: cookie_title
+  translation: "कुकी सहमति"
+- id: cookie_message
+  translation: "हम आपके अनुभव को बेहतर बनाने और साइट ट्रैफ़िक का विश्लेषण करने के लिए कुकीज़ का उपयोग करते हैं। «स्वीकार करें» पर क्लिक करके आप सहमति देते हैं।"
+- id: cookie_learn_more
+  translation: "हमारी गोपनीयता नीति के बारे में और जानें"
+- id: cookie_accept
+  translation: "स्वीकार करें"
+- id: cookie_decline
+  translation: "अस्वीकार करें"
+- id: cookie_accept_aria
+  translation: "कुकीज़ स्वीकार करें"
+- id: cookie_decline_aria
+  translation: "कुकीज़ अस्वीकार करें"
+
+- id: search_title
+  translation: "CodeFryDev खोजें"
+- id: search_placeholder
+  translation: "टूल, गेम, AI ऐप खोजें…"
+- id: search_no_matches
+  translation: "कोई परिणाम नहीं"
+- id: search_empty_hint
+  translation: "दूसरा कीवर्ड आज़माएँ या नीचे शॉर्टकट चुनें"
+- id: search_did_you_mean
+  translation: "क्या आपका मतलब था"
+- id: search_quick_open
+  translation: "त्वरित खोलें"
+- id: search_recent
+  translation: "हाल के"
+- id: search_popular
+  translation: "लोकप्रिय"
+- id: search_results
+  translation: "खोज परिणाम"
+- id: search_popular_tools
+  translation: "लोकप्रिय टूल"
+- id: search_navigate
+  translation: "नेविगेट"
+- id: search_open
+  translation: "खोलें"
+- id: search_close
+  translation: "बंद"
+- id: search_chip_games
+  translation: "🎮 गेम"
+- id: search_chip_ai
+  translation: "🤖 AI टूल"
+- id: search_chip_design
+  translation: "🎨 डिज़ाइन लैब"
+- id: search_chip_browse
+  translation: "⊞ ब्राउज़"
+
+- id: skip_link
+  translation: "मुख्य सामग्री पर जाएँ"
+
+- id: seo_home
+  translation: "मुफ़्त ऑनलाइन टूल, गेम और AI ऐप | CodeFryDev"
+- id: seo_ai
+  translation: "मुफ़्त AI टूल और जनरेटर | CodeFryDev"
+- id: seo_games
+  translation: "मुफ़्त ऑनलाइन गेम | CodeFryDev"
+- id: seo_designlab
+  translation: "डिज़ाइन टूल और क्रिएटिव संसाधन | CodeFryDev"
+- id: seo_about_us
+  translation: "हमारे बारे में | CodeFryDev"
+- id: seo_team_list
+  translation: "डेवलपर और डिज़ाइनर | CodeFryDev टीम"
+- id: seo_team_member
+  translation: "%s - CodeFryDev टीम"
+- id: seo_about
+  translation: "About | CodeFryDev"
+- id: seo_search
+  translation: "खोज | CodeFryDev"
+- id: seo_history
+  translation: "इतिहास | CodeFryDev"
+- id: seo_press
+  translation: "प्रेस | CodeFryDev"
+- id: seo_contact
+  translation: "संपर्क | CodeFryDev"
+- id: seo_faq
+  translation: "FAQ | CodeFryDev"
+- id: seo_cfddc
+  translation: "CFDDC | CodeFryDev डेवलपर कॉन्फ़्रेंस"
+- id: seo_cfddc_year
+  translation: "CFDDC %s (%s) | CodeFryDev"
+- id: seo_store
+  translation: "मुफ़्त मोबाइल ऐप | CodeFryDev Store"
+- id: seo_page
+  translation: "%s | CodeFryDev"
+- id: seo_default
+  translation: "मुफ़्त ऑनलाइन टूल, गेम और AI ऐप | CodeFryDev"
+
+- id: category_tool_count
+  translation: "%d टूल"
+- id: category_see_all
+  translation: "सभी देखें →"
+- id: category_see_all_named
+  translation: "सभी %s देखें (%d)"
+- id: tool_opens_new_tab
+  translation: "(नई टैब में खुलता है)"
+- id: tool_default_description
+  translation: "%s खोलें — आपके ब्राउज़र में मुफ़्त।"

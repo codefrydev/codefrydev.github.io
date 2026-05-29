@@ -60,8 +60,8 @@
     if (!btn || !menu || btn.dataset.a11yMenuBound === 'true') return;
     btn.dataset.a11yMenuBound = 'true';
 
-    var openLabel = 'Open menu';
-    var closeLabel = 'Close menu';
+    var openLabel = (window.CFD_I18N && window.CFD_I18N.navOpenMenu) || 'Open menu';
+    var closeLabel = (window.CFD_I18N && window.CFD_I18N.navCloseMenu) || 'Close menu';
 
     function isMenuOpen() {
       return btn.getAttribute('aria-expanded') === 'true';

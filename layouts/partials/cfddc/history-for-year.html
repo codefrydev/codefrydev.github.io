@@ -6,7 +6,8 @@
 */ -}}
 {{- $page := .page -}}
 {{- $yearFilter := .year | default "" -}}
-{{- $all := hugo.Data.history.history | default slice -}}
+{{- $data := partial "get-data.html" . -}}
+{{- $all := $data.history.history | default slice -}}
 
 {{- $years := slice -}}
 {{- $seen := dict -}}

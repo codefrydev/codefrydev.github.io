@@ -1,5 +1,6 @@
 {{ partial "home/modern-page-start.html" (dict "page" . "navActive" "browse") }}
-{{- if eq .RelPermalink "/browse/" -}}
+{{- $browseRoot := "/browse/" | relLangURL -}}
+{{- if eq .RelPermalink $browseRoot -}}
   {{- .Scratch.Set "breadcrumbLabel" (.Title | default "Browse") -}}
   {{ partial "home/browse-index.html" (dict "page" .) }}
 {{- else -}}

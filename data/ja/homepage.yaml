@@ -1,0 +1,163 @@
+quote: 学び、実験プロジェクト、ゲーム、アイデア創出などを行うプラットフォーム…
+nav:
+  megaMenu:
+    label: 閲覧
+    primaryTitle: カテゴリを閲覧
+    secondaryTitle: ハブ
+    hubs:
+    - label: ゲーム
+      url: "/games/"
+      icon: game-controller
+    - label: AIツール
+      url: "/ai/"
+      icon: robot
+    - label: デザインラボ
+      url: "/designlab/"
+      icon: palette
+    - label: ストア
+      url: "/store/"
+      icon: shopping-bag
+    - label: すべてのツールを検索
+      url: "/search/"
+      icon: magnifying-glass
+why:
+  title: なぜCodeFryDevを選ぶのか？
+  intro: 学び、実験プロジェクト、ゲーム、アイデア創出などを行うプラットフォーム…
+  bullets:
+  - 100%無料——ほとんどのツールは登録不要
+  - ブラウザで動作——インストール不要
+  - 新しいツールとゲームを定期的に追加
+  - プライバシー重視——作業はデバイス上に留まります
+  highlights:
+  - title: クリエイティブ & アセット
+    icon: "\U0001F3A8"
+    text: デザイナーと開発者向けデジタルアートツール、壁紙、3Dモデル、DSA学習リソースなど。
+  - title: ツール & ユーティリティ
+    icon: "\U0001F6E0️"
+    text: JSONフォーマッター、SEOツール、meta tagジェネレーター、テキストエディター、日常の生産性ユーティリティ。
+  - title: ゲーム & ファン
+    icon: "\U0001F3AE"
+    text: Wordle、Snake、Chain Reaction、アーケードクラシック — ブラウザですぐプレイ。
+  - title: AI & デザインラボ
+    icon: "\U0001F916"
+    text: AIアプリに加え、デザインユーティリティ、ビジュアライザー、クリエイティブワークフローを一箇所に。
+hubBanners:
+  games:
+    image: "/images/banners/games.jpg"
+    title: ゲーム & ファン
+    imageAlt: CodeFryDevのブラウザゲームとパズル
+    imageTitle: ゲーム & ファン
+    description: パズル、クラシック、アーケードゲーム — ブラウザですぐプレイ。
+  ai:
+    image: "/images/banners/ai.jpg"
+    title: AIツール
+    imageAlt: CodeFryDevのAIツールとジェネレーター
+    imageTitle: AIツール
+    description: ミームジェネレーター、要約、チャットなど — 登録不要。
+  designlab:
+    image: "/images/banners/designlab.jpg"
+    title: デザインラボ
+    imageAlt: メーカー向けデザインラボツールとクリエイティブリソース
+    imageTitle: デザインラボ
+    description: メーカー向けクリエイティブデザインツール、ビジュアライザー、リソース。
+  store:
+    image: "/images/banners/store.jpg"
+    title: CodeFryDev Store
+    imageAlt: Google PlayのCodeFryDevモバイルアプリ
+    imageTitle: CodeFryDev Store
+    description: Google Playのモバイルアプリとダウンロード。
+categoryBanners:
+  creative-assets:
+    image: "/images/banners/creative-assets.jpg"
+    title: クリエイティブ & アセットを探索
+    imageAlt: CodeFryDevのクリエイティブツール、デジタルアート、学習アセット
+    imageTitle: クリエイティブ & アセットを探索
+    description: メーカー向けアートツール、壁紙、3Dモデル、学習リソース。
+  tools-utilities:
+    image: "/images/banners/tools-utilities.jpg"
+    title: ツール & ユーティリティコレクション
+    imageAlt: ブラウザ内の生産性と開発者ユーティリティ
+    imageTitle: ツール & ユーティリティコレクション
+    description: ブラウザ内の生産性アプリ、フォーマッター、SEOツール、開発ユーティリティ。
+  games-fun:
+    image: "/images/banners/games-fun.jpg"
+    title: ゲーム & ファン
+    imageAlt: Wordle、Snake、Chain Reactionを含む無料ブラウザゲーム
+    imageTitle: ゲーム & ファン
+    description: Wordle、Snake、Chain Reactionなど — ブラウザですぐプレイ。
+  site-links:
+    image: "/images/banners/site-links.jpg"
+    title: サイト & リソース
+    imageAlt: サイトリンク、概要ページ、外部リソース
+    imageTitle: サイト & リソース
+    description: 概要、アップデート、ストア、プライバシー、外部リンク。
+  containers-packages:
+    image: "/images/banners/containers-packages.jpg"
+    title: コンテナ & パッケージ
+    imageAlt: CodeFryDevのDockerイメージとnpmパッケージ
+    imageTitle: コンテナ & パッケージ
+    description: CodeFryDev公式Dockerイメージとnpmパッケージ。
+hero:
+  badge: 無料ツール — 登録不要
+  searchPlaceholder: ツール、ゲーム、AIアプリを検索…
+  autoplayMs: 6000
+  slides:
+  - image: "/images/hero/slide-1.webp"
+    imageAlt: ラップトップで協力するチーム
+    imageTitle: ブラウザでツール、ゲーム、AI
+    title: ブラウザでツール、ゲーム、AI
+    description: 学び、実験プロジェクト、ゲーム、アイデア創出などを行うプラットフォーム…
+  - image: "/images/hero/slide-2.webp"
+    imageAlt: デスクで一緒に作業する開発者
+    imageTitle: CodeFryDevでより速く構築
+    title: CodeFryDevでより速く構築
+    description: JSONプレイグラウンドからDesign Labリソースまで — すべてブラウザで動作。
+  - image: "/images/hero/slide-3.webp"
+    imageAlt: デスク上のコード表示ラップトップ
+    imageTitle: インストール不要。開いて使うだけ。
+    title: インストール不要。開いて使うだけ。
+    description: クリエイティブアセット、生産性ツール、ゲーム、AIヘルパーを一箇所で探索。
+cta:
+  coffee:
+    title: コーヒーをおごる
+    description: ツールがお役に立ったなら、みんなのための無料ユーティリティの継続開発をご支援ください。
+    buttonText: 今日サポートする
+    buttonUrl: "/donate"
+    secondaryText: 私たちのミッションについて
+    secondaryUrl: "/about-us"
+marquee:
+  enabled: true
+  label: 世界中のメーカーのために
+  items:
+  - name: 登録不要
+  - name: ブラウザツール
+  - name: 無料ゲーム
+  - name: AIアプリ
+  - name: デザインラボ
+  - name: オープンアクセス
+testimonials:
+- quote: JSONフォーマッターやJSONプレイグラウンドが必要なとき、CodeFryDevが定番です。
+  author: Shubham P
+  handle: "@shubham.p"
+- quote: Chain Reactionのために来ました — 広告も余計なものもありません。
+  author: Umang Kumar
+  handle: "@umangKum"
+- quote: OCRツールを探して来ました。このサイトが大好きです — 本当にありがとう。
+  author: Avinash Kumar
+  handle: "@Avibaoss"
+  avatar: https://i.pravatar.cc/150?img=33
+- quote: チームはSEOとmeta tagツールを毎週使用。シンプルUI、散らかりなし — サブスクなし、広告なし、すべて無料、ローカル実行。多くの開発者の助けに。
+  author: Fredrick
+  handle: "@sriLankanFredrick"
+- quote: どのツールから選べばいいかわかりません — ここのツールはすべて素晴らしい。無料のままでお願いします。
+  author: Vivek Bhuj
+  handle: "@bhujOnly"
+- quote: WordleとSnakeは5分休憩に最適。インストール不要、アカウント不要 — 開いてプレイ。
+  author: Sam D.
+  handle: "@dawsontechtips"
+- quote: AIツールは増え続けています — 別のSaaSに登録せずに要約とジェネレーター。
+  author: Riley K.
+  handle: "@rileysmith1"
+- quote: DSAアニメーションとパズルのために学生をここに送ります。クリーンで高速、いつでも利用可能。
+  author: Dr. Anika R.
+  handle: "@anika_teaches"

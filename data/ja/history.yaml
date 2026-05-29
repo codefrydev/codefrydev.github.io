@@ -1,0 +1,425 @@
+history:
+- date: 29 May 2026
+  title: SVG CSS Color Filter Generator
+  description: >-
+    imgタグ経由の黒SVGアイコンを再着色するCSSフィルター組み合わせを生成 — hex入力、ライブプレビュー、サンプルアイコン、ワンクリックCSSコピー（/ColoringImageUsingCss/）；ホームページのツール & ユーティリティに追加。
+  link: "/ColoringImageUsingCss/"
+  accent_color: "#a855f7"
+- date: 24 May 2026
+  title: Chain Reaction Online
+  description: オンラインマルチプレイヤーChain Reaction — リアルタイムで友達と遊び、オーブを捕獲し、ブラウザから連鎖反応；クリエイティブ & アセットとゲーム & ファンに掲載。
+  link: https://chainreaction.codefrydev.in/
+  accent_color: "#AB47BC"
+- date: 23 May 2026
+  title: ColorTools
+  description: 無料オンラインカラースイート — パレット生成、色相調整、画像からの色抽出、HEX、RGB、HSL、HSV変換；ホームページのツール & ユーティリティに追加。
+  link: "/ColorTools/"
+  accent_color: "#ec4899"
+- date: 17 May 2026
+  title: コンテナ & パッケージ
+  description: >-
+    新ホームページと公式配布の閲覧カテゴリ — Docker HubのWebsite Profiling（codefrydev/website-profiling）とnpmの@codefrydev/svg-engine — /browse/containers-packages/に専用カードアイコン。
+  link: "/browse/containers-packages/"
+  accent_color: "#2496ED"
+- date: 17 May 2026
+  title: ホームページ再設計 & レガシー移行
+  description: 新CodeFryDevホームページを公開 — モダンレイアウト、改善されたナビゲーション、検索パレット、刷新されたフッター。以前のデザインはarchived.codefrydev.in（フッターのLegacyリンク）で引き続き利用可能。
+  link: "/"
+  accent_color: "#6366f1"
+- date: 13 May 2026
+  title: Website Resolution Tester
+  description: "/WebsiteResolutionTester/から一般的なビューポート幅でレイアウトをプレビュー・比較；ホームページのツール & ユーティリティに追加。"
+  link: "/WebsiteResolutionTester/"
+  accent_color: "#6366f1"
+- date: '09 May 2026'
+  title: SVG Engine
+  description: 一から構築したカスタムSVG Engine — 非従来的なエディターフロー；/svgengine/で利用可能、クリエイティブ & アセットに掲載。
+  link: "/svgengine/"
+  accent_color: "#8b5cf6"
+- date: 28 April 2026
+  title: Know Your Size
+  description: "/KnowYourSize/でテキストサイズ、文字数、ファイルなどを素早く比較 — シンプルな並列表示；ホームツールグリッドに掲載。"
+  link: "/KnowYourSize/"
+  accent_color: "#0ea5e9"
+- date: 27 April 2026
+  title: Tier List Maker
+  description: ブラウザでランク付きティアリストを作成・並べ替え — 行を積み、ティア間でドラッグ、/TierListMaker/からエクスポート・共有；ホームツールグリッドに掲載。
+  link: "/TierListMaker/"
+  accent_color: "#6366f1"
+- date: 26 April 2026
+  title: CIN
+  description: Company Identification Numberヘルパー — 21文字CIN形式を検証し、上場区分、業種、年、州、登録コンポーネントに分割；ホームツールグリッドからアクセス。
+  link: "/CIN/"
+  accent_color: "#0d9488"
+- date: 25 April 2026
+  title: ホームページてんとう虫イースターエッグ
+  description: >-
+    ホームページのインタラクティブてんとう虫：歩き回り、驚き、飛び立ち、怒ることも；カーソルを「食べる」パーティクル演出；ヘッダーロゴに止まり、空腹時にメインタイトルをかじり、ランダムなツールタイルを訪れて遊び心のあるメッセージと紙吹雪 —
+    名前空間付きスタイルとスクリプトでサイトの他部分と競合しない。
+  link: "/"
+  accent_color: "#dc2626"
+- date: 24 April 2026
+  title: JS LIDE
+  description: ブラウザ内JavaScriptワークスペース — ファイルエクスプローラー、エディター、コンソール出力で素早い実験。
+  link: "/Javascript/"
+  accent_color: "#F7DF1E"
+- date: 16 April 2026
+  title: 3Dプリンター
+  description: カスタマイズ可能なパラメータで3Dプリント可能モデルを手続き的生成しSTL形式でエクスポート。任意の3Dプリンターで印刷可能。
+  link: https://codefrydev.in/3DPrinter/
+  accent_color: "#020617"
+- date: 14 April 2026
+  title: RAG
+  description: Random API Generatorデスクトップアプリ
+  link: "/RandomApiGenerator/docs/"
+  accent_color: "#020617"
+- date: 12 April 2026
+  title: SocialSnap
+  description: ソーシャルフィード向けモックアップスタジオ — 編集、プレビュー、PNGエクスポート。
+  link: "/SocialMedia/"
+  accent_color: "#0EA5E9"
+- date: '08 April 2026'
+  title: インターネット速度テスト
+  description: ping、ダウンロード、アップロードのブラウザベース速度テスト（Cloudflare edge）— ツール & ユーティリティに追加。
+  link: "/Wifi-Speed-Test/"
+  accent_color: "#4CAF50"
+- date: 28 March 2026
+  title: Code Snippet
+  description: 毎日使う共通スニペット
+  link: "/CodeSnippt/"
+  accent_color: "#ff0055"
+- date: 25 March 2026
+  title: Size Matters
+  description: Size Explorer — プリセット、カスタム項目、ズームで数値スケールを帯上で視覚比較。
+  link: "/SizeMatters/"
+  accent_color: "#ff0055"
+- date: 18 March 2026
+  title: DSA Animaiton Hard Ways
+  description: データ構造でのフローをステップバイステップで確認
+  link: "/AnimateDatastructure/"
+  accent_color: "#ff0055"
+- date: 16 March 2026
+  title: Sql Practice
+  description: Practice Sql On Browser
+  link: "/SqLite/"
+  accent_color: "#ff0055"
+- date: 16 March 2026
+  title: Website Profiling
+  description: ウェブサイトのSEO、パフォーマンス、Web Vitalsを分析するPythonベースのシンプルなツール …/SQLite/
+  link: "/WebsiteProfiling/"
+  accent_color: "#ff0055"
+- date: 15 March 2026
+  title: Json Visual Mapper Experiment
+  description: JSONマッパーの実験 — 入力JSON、出力JSON、インタラクティブUIによる視覚的マッピング関係
+  link: "/VisualMapper/"
+  accent_color: "#ff0055"
+- date: 15 March 2026
+  title: PI
+  description: Just Pi Day Application
+  link: "/PI/"
+  accent_color: "#ff0055"
+- date: 15 March 2026
+  title: RL
+  description: Reinforcement Learningの学習パスと演習。コンテンツはインターネットとAI生成から収集され、学習に応じて微調整中
+  link: "/Reinforcement/"
+  accent_color: "#ff0055"
+- date: 14 March 2026
+  title: Text Minification
+  description: ミニマルなテキスト圧縮・整形アプリ。サーバー不要 — プライバシーと安全のためすべてブラウザ内で処理。
+  link: "/Mifier/"
+  accent_color: "#ff0055"
+- date: 14 March 2026
+  title: Text TextDifference
+  description: ミニマルなテキスト差分アプリ。サーバー不要 — プライバシーと安全のためすべてブラウザ内で処理。
+  link: "/TextDifference/"
+  accent_color: "#ff0055"
+- date: 11 March 2026
+  title: Tomatoes
+  description: 集中力と生産性を高めるミニマルなポモドーロタイマーアプリ。
+  link: "/Tomatoes/"
+  accent_color: "#ff0055"
+- date: 11 March 2026
+  title: Ludo
+  description: RL向けシンプルLudoゲームソースコード
+  link: "/Ludo/"
+  accent_color: "#ff0033"
+- date: 11 March 2026
+  title: Carrom
+  description: RL向けシンプルCarromゲームソースコード
+  link: "/Carrom/"
+  accent_color: "#ff0033"
+- date: 11 March 2026
+  title: Archery
+  description: RL向けシンプルArcheryゲームソースコード
+  link: "/Archery/"
+  accent_color: "#ff0033"
+- date: 11 March 2026
+  title: Billiards
+  description: RL向けシンプルBilliardsゲームソースコード
+  link: "/Billiards/"
+  accent_color: "#ff0033"
+- date: 10 March 2026
+  title: '2048'
+  description: RL向けシンプル2048ゲームソースコード
+  link: "/2048/"
+  accent_color: "#ff0033"
+- date: 10 March 2026
+  title: Dot and Box
+  description: RL向けシンプルDotsAndBoxゲームソースコード
+  link: "/DotsAndBox/"
+  accent_color: "#ff0033"
+- date: 10 March 2026
+  title: TicTacToe
+  description: RL向けシンプルTicTacToeゲームソースコード
+  link: "/TicTacToe/"
+  accent_color: "#ff0033"
+- date: 01 March 2026
+  title: Overdose
+  description: マウスのみでシンプルにプレイ。カラフルなラグドールプラットフォーマーゲーム
+  link: "/Overdose"
+  accent_color: "#ff0033"
+- date: 23 February 2026
+  title: Git Commit Generator
+  description: カスタムタイムスタンプ付きコマンドを生成してコミット履歴を偽造。
+  link: "/git/"
+  accent_color: "#F05032"
+- date: 18 February 2026
+  title: Text Editor
+  description: オンラインでテキストを書いたり編集したりできるシンプルなブラウザベースのテキストエディター — 登録不要。
+  link: "/TextEditor/"
+  accent_color: "#5D4037"
+- date: 18 February 2026
+  title: DSA Lab
+  description: 可視化、コード例、多言語の練習問題でデータ構造をマスターするインタラクティブ学習プラットフォーム。
+  link: "/LearnDS/"
+  accent_color: "#1E88E5"
+- date: 07 February 2026
+  title: NodeFlow
+  description: ビジュアルコンピューティングプラットフォーム — ビジュアルエディターでノードを作成・接続。
+  link: "/NodeEditor/"
+  accent_color: "#009688"
+- date: 06 February 2026
+  title: JSON Playground
+  description: ビジュアルJSON ExplorerとプレイグラウンドでJSONを探索・編集。
+  link: "/JsonPlayground/"
+  accent_color: "#F9A825"
+- date: 27 January 2026
+  title: Noob FONT
+  description: 'タイポグラフィを知らなくても、学びたくなくても、見た目が整ったフォントが欲しい人向けのフォントジェネレーター。 '
+  link: "/font/"
+  accent_color: "#0288D5"
+- date: 24 January 2026
+  title: ESP32CAM
+  description: REST API、SDカードストレージ、ライブストリーミング、Webコントロールパネル付きESP32-CAM向けWiFi写真管理システム。
+  link: "/Esp32cam/"
+  accent_color: "#0288D1"
+- date: 20 January 2026
+  title: Fish
+  description: ライブ錦鯉壁紙
+  link: "/fish/"
+  accent_color: "#00ACC1"
+- date: 16 January 2026
+  title: InstaImage
+  description: InstaImageは任意の画像をカスタマイズ可能なタイルグリッドに分割できる無料のブラウザベースツール。ソーシャルメディアグリッド、パズル、コラージュなど、画像を複数セクションに分けるプロジェクトに最適。
+  link: https://instaimage.codefrydev.in/
+  accent_color: "#6366F1"
+- date: '08 January 2026'
+  title: Day vs Night
+  description: ライトモードとダークモードの切り替え機能を追加。
+  link: https://codefrydev.in
+  accent_color: "#dd3415"
+- date: 04 January 2026
+  title: White Board Collabration
+  description: アイデアの共同作業のために共有できるホワイトボード画面 — 共通キャンバスやボードを共有
+  link: "/CFDPenney/"
+  accent_color: "#60a5fa"
+- date: 29 December 2025
+  title: Blue Screen of Death :)
+  description: スクリーンセーバーと単色背景用のブルースクリーン。
+  link: "/bluescreenofdeath/"
+  accent_color: "#0A4DFF"
+- date: 29 December 2025
+  title: 2026年の誕生を祝う！
+  description: 2026年お誕生日おめでとう！毎秒成長しますように。
+  link: https://happy.codefrydev.in/
+  accent_color: "#FF005C"
+- date: 29 December 2025
+  title: Muraly
+  description: 拡張現実で実空間の壁画とウォールアートを可視化。自信を持って作成、プレビュー、デザイン。
+  link: https://muraly.codefrydev.in/
+  accent_color: "#FF005C"
+- date: '08 November 2025'
+  title: WordDice
+  description: WordDiceは魅力的な演習とリアルタイムフィードバックで語彙を学び練習するモダンなインタラクティブWebアプリ。
+  link: https://worddice.codefrydev.in/
+  accent_color: "#ffc31f"
+- date: 21 October 2025
+  title: willbebacksoon
+  description: YouTube視聴者に「すぐ戻ります」メッセージを表示するライブサイトシーン。モダンUI使用。
+  link: "/willbeback/"
+  accent_color: "#C62828"
+- date: 20 Sept 2025
+  title: Prompt Library
+  description: さまざまなタスクと用途向けに厳選したAIプロンプト集。
+  link: "/PromptsValut/"
+  accent_color: "#d32f2f"
+- date: 07 Sept 2025
+  title: Text Hub
+  description: Text ToolsセクションをText Hubに更新 — より多くの機能とモダンUI。
+  link: "/"
+  accent_color: "#e53935"
+- date: 1 August 2025
+  title: Visual Note AI
+  description: 世界をキャプチャし、スマートノートに変換。ビジュアルメモリを再発明。
+  link: https://visualnote.codefrydev.in/
+  accent_color: "#D81B60"
+- date: 19 July 2025
+  title: To Svg
+  description: パフォーマンスとカスタマイズ向上のためフォントアイコンからSVGアイコンに切り替え。
+  link: "/"
+  accent_color: "#8E24AA"
+- date: 14 July 2025
+  title: Aurora 3D
+  description: カスタム照明と音楽に反応するサウンドで3Dモデルを表示。
+  link: https://aurora3d.codefrydev.in/
+  accent_color: "#5E35B1"
+- date: 14 July 2025
+  title: Neural Music Player
+  description: 音に反応する3Dビジュアライザーで音楽を聴く。
+  link: https://neuralmusicplayer.codefrydev.in/
+  accent_color: "#3949AB"
+- date: 14 July 2025
+  title: DataViz
+  description: データ可視化チャートの学習と作成を支援するインタラクティブガイド。
+  link: https://dataviz.codefrydev.in/
+  accent_color: "#1E88E5"
+- date: 14 July 2025
+  title: Android Asset Generator
+  description: Androidアプリに必要なすべての画像アセットを簡単に作成。
+  link: https://android.codefrydev.in/
+  accent_color: "#039BE5"
+- date: 12 July 2025
+  title: Juicy Haptic Design Studio
+  description: アプリ向け振動パターン（触覚）を設計・テストするツール。
+  link: https://juicyhapticdesign.codefrydev.in/
+  accent_color: "#00ACC1"
+- date: 30 June 2025
+  title: AI Meme Generator
+  description: AI支援で素早くミームを作成するシンプルなエディター。
+  link: https://meme.codefrydev.in/
+  accent_color: "#00897B"
+- date: 24 June 2025
+  title: SocialSnap Ai
+  description: ソーシャルメディア投稿の執筆とスナップショット作成を支援するAIツール。
+  link: https://summarize.codefrydev.in/
+  accent_color: "#43A047"
+- date: 24 June 2025
+  title: Website Summarizer Ai
+  description: 任意のウェブページを読み取り要約するAIツール。
+  link: https://summarize.codefrydev.in/
+  accent_color: "#7CB342"
+- date: 24 June 2025
+  title: CFD Chat AI
+  description: シンプルで分かりやすいAIチャットツール。
+  link: https://chat.codefrydev.in/
+  accent_color: "#C0CA33"
+- date: 22 June 2025
+  title: Metatag Generator
+  description: ウェブサイトのSEOを改善する適切なmeta tagを作成。
+  link: "/metatag/"
+  accent_color: "#FDD835"
+- date: 22 June 2025
+  title: Aqua tracker
+  description: 毎日の水分摂取量を記録するシンプルなアプリ。
+  link: https://aquatrack.codefrydev.in/
+  accent_color: "#FFB300"
+- date: 21 June 2025
+  title: Profiled Ai
+  description: さまざまなAIパーソナリティとプロフィールを作成してチャット。
+  link: "/ProfiledAi/"
+  accent_color: "#FB8C00"
+- date: 18 June 2025
+  title: Design Lab
+  description: デザイン作品を作成・共有するスペース。
+  link: "/designlab/"
+  accent_color: "#F4511E"
+- date: 1 June 2025
+  title: Agurutwa Pathsala
+  description: 誰もが無料でアクセスできる教育を提供する最初のプロジェクト。
+  link: https://agurutwa.github.io
+  accent_color: "#6D4C41"
+- date: 10 May 2025
+  title: Model View
+  description: 3Dモデルのライブプレビュー。
+  link: "/ThreeDAssets/"
+  accent_color: "#8D6E63"
+- date: 6 May 2025
+  title: Weather App
+  description: 任意の都市の現在の天気を確認。
+  link: "/Mausam/"
+  accent_color: "#546E7A"
+- date: 07 April 2025
+  title: NoteBook
+  description: メモを素早く書いて保存するシンプルなオンラインノートブック。
+  link: "/YourNoteBook/"
+  accent_color: "#26A69A"
+- date: 03 March 2025
+  title: CSV
+  description: CSVスプレッドシートファイルを素早く表示・編集・ダウンロードするツール。
+  link: "/CSV/"
+  accent_color: "#2E7D32"
+- date: 02 March 2025
+  title: コントリビューター一覧
+  description: このプロジェクトに貢献している素晴らしい人々の一覧。
+  link: "/about/users/"
+  accent_color: "#9CCC65"
+- date: 01 August 2024
+  title: Text Tools
+  description: テキストの整形や操作に役立つツール集。
+  link: "/TextTools"
+  accent_color: "#D4E157"
+- date: 26 July 2024
+  title: デザイン
+  description: ウェブサイトの新デザインセクションを公開。
+  link: "/design/"
+  accent_color: "#FFEE58"
+- date: '09 June 2024'
+  title: Code Fry Dev
+  description: ウェブサイトはHugo静的サイトジェネレーターで構築されるようになりました。
+  link: https://gohugo.io/
+  accent_color: "#FFCA28"
+- date: '08 June 2024'
+  title: Snake Game
+  description: クラシックSnakeゲームの楽しく混沌としたバージョン。
+  link: "/Snake"
+  accent_color: "#FFA726"
+- date: 05 June 2024
+  title: Tom & Jerry
+  description: 1940年代のクラシックTom and Jerryエピソードを視聴。
+  link: "/TomAndJerry/"
+  accent_color: "#EF5350"
+- date: 19 May 2024
+  title: Wordle
+  description: 楽しく挑戦的な単語当てゲーム。
+  link: "/Wordle/"
+  accent_color: "#EC407A"
+- date: 06 May 2024
+  title: Chain Reaction
+  description: オーブを捕獲し連鎖反応を起こす戦略的マルチプレイヤーゲーム。
+  link: "/ChainReaction/"
+  accent_color: "#AB47BC"
+- date: 12 April 2024
+  title: Wallpaper App
+  description: 手作りまたはコード生成の壁紙コレクション。
+  link: "/projects/Wallpaper/Index.html"
+  accent_color: "#7E57C2"
+- date: 26 March 2024
+  title: Challenge App
+  description: 習慣を記録し一貫性を保つアプリ。
+  link: "/projects/Challenge/Index.html"
+  accent_color: "#5C6BC0"
+- date: 01 March 2024
+  title: "Crispy Launch, Dinner \U0001F37B"
+  description: ウェブサイトの最初のバージョンを公開。
+  link: "/"
+  accent_color: "#42A5F5"

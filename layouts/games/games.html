@@ -1,8 +1,9 @@
+{{- $data := partial "get-data.html" . -}}
 {{ partial "home/hub-page.html" (dict
   "page" .
   "title" "Games & Fun"
   "subtitle" "Play in your browser"
-  "items" hugo.Data.games.data
+  "items" $data.games.data
   "iconDir" "games"
   "homeCategorySlug" "games-fun"
   "defaultPhosphorIcon" "game-controller"
@@ -10,5 +11,5 @@
   "searchPlaceholder" "Search for games, puzzles, and fun activities..."
   "countLabel" "games"
   "navActive" "games"
-  "banner" (index hugo.Data.homepage.hubBanners "games" | default dict)
+  "banner" (index $data.homepage.hubBanners "games" | default dict)
 ) }}

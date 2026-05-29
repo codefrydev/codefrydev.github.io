@@ -1,4 +1,5 @@
-{{- $hp := hugo.Data.homepage -}}
+{{- $data := partial "get-data.html" . -}}
+{{- $hp := $data.homepage -}}
 {{- $mega := $hp.nav.megaMenu -}}
 {{- $navActive := .Scratch.Get "navActive" -}}
 {{- $linkIdle := "inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-white/80 transition-all duration-200 no-underline" -}}
@@ -6,56 +7,57 @@
 
 <header class="nav-shell sticky top-0 z-50 shrink-0 snap-none relative border-b border-gray-200/60 bg-white/80 backdrop-blur-xl shadow-[0_1px_2px_rgba(15,23,42,0.04)]">
   <div class="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8">
-    <nav class="flex items-center justify-between gap-4 h-[73px]" aria-label="Main navigation">
+    <nav class="flex items-center justify-between gap-4 h-[73px]" aria-label="{{ i18n "nav_main" }}">
       <div class="flex items-center gap-2.5 shrink-0 z-20">
-        <a href="/" id="ladybug-logo-anchor" class="flex items-center no-underline shrink-0" aria-label="CodeFryDev home">
+        <a href="{{ "/" | relLangURL }}" id="ladybug-logo-anchor" class="flex items-center no-underline shrink-0" aria-label="{{ i18n "nav_home_aria" }}">
           <img src="/images/IconCodefrydev.svg" alt="CodeFryDev" width="36" height="36" class="h-9 w-9 shrink-0" fetchpriority="high">
         </a>
         <span class="hidden sm:inline-flex items-baseline font-bold text-lg tracking-tight text-brand leading-none">
-          <a href="/" class="text-inherit no-underline hover:opacity-90">CODEFRYDEV</a>
+          <a href="{{ "/" | relLangURL }}" class="text-inherit no-underline hover:opacity-90">CODEFRYDEV</a>
           {{- if .IsHome -}}
-          <button type="button" id="ladybug-reveal-beta" class="site-beta-tag" aria-label="Show the interactive ladybug easter egg" title="Click to meet the ladybug">Beta</button>
+          <button type="button" id="ladybug-reveal-beta" class="site-beta-tag" aria-label="{{ i18n "nav_beta_reveal" }}" title="Click to meet the ladybug">Beta</button>
           {{- else -}}
-          <sup class="site-beta-tag site-beta-tag--static" aria-label="Site status: beta">Beta</sup>
+          <sup class="site-beta-tag site-beta-tag--static" aria-label="{{ i18n "nav_beta_status" }}">Beta</sup>
           {{- end -}}
         </span>
       </div>
 
       <ul class="hidden lg:flex items-center gap-0.5 absolute left-1/2 -translate-x-1/2 rounded-full bg-slate-100/90 p-1 ring-1 ring-slate-200/60 list-none m-0">
         <li>
-          <a href="/" class="{{ if .IsHome }}{{ $linkActive }}{{ else }}{{ $linkIdle }}{{ end }}">Home</a>
+          <a href="{{ "/" | relLangURL }}" class="{{ if .IsHome }}{{ $linkActive }}{{ else }}{{ $linkIdle }}{{ end }}">{{ i18n "nav_home" }}</a>
         </li>
 
         {{- if $mega -}}
         <li class="nav-item-browse group/browse relative flex items-center">
-          <a href="/browse/" class="{{ if eq $navActive "browse" }}{{ $linkActive }}{{ else }}{{ $linkIdle }}{{ end }}" aria-haspopup="true" aria-expanded="false" aria-controls="nav-browse-mega">
-            {{ $mega.label | default "Browse" }}
+          <a href="{{ "/browse/" | relLangURL }}" class="{{ if eq $navActive "browse" }}{{ $linkActive }}{{ else }}{{ $linkIdle }}{{ end }}" aria-haspopup="true" aria-expanded="false" aria-controls="nav-browse-mega">
+            {{ $mega.label | default (i18n "nav_browse") }}
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="10" height="10" class="opacity-60 group-hover/browse:rotate-180 transition-transform duration-200" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
           </a>
         </li>
         {{- end -}}
 
-        <li><a href="/games/" class="{{ if eq $navActive "games" }}{{ $linkActive }}{{ else }}{{ $linkIdle }}{{ end }}">Games</a></li>
-        <li><a href="/ai/" class="{{ if eq $navActive "ai" }}{{ $linkActive }}{{ else }}{{ $linkIdle }}{{ end }}">AI</a></li>
-        <li><a href="/designlab/" class="{{ if eq $navActive "designlab" }}{{ $linkActive }}{{ else }}{{ $linkIdle }}{{ end }}">Design</a></li>
+        <li><a href="{{ "/games/" | relLangURL }}" class="{{ if eq $navActive "games" }}{{ $linkActive }}{{ else }}{{ $linkIdle }}{{ end }}">{{ i18n "nav_games" }}</a></li>
+        <li><a href="{{ "/ai/" | relLangURL }}" class="{{ if eq $navActive "ai" }}{{ $linkActive }}{{ else }}{{ $linkIdle }}{{ end }}">{{ i18n "nav_ai" }}</a></li>
+        <li><a href="{{ "/designlab/" | relLangURL }}" class="{{ if eq $navActive "designlab" }}{{ $linkActive }}{{ else }}{{ $linkIdle }}{{ end }}">{{ i18n "nav_design" }}</a></li>
 
         <li>
-          <a href="/about-us/" class="{{ if or (eq $navActive "about") (eq $navActive "team") }}{{ $linkActive }}{{ else }}{{ $linkIdle }}{{ end }}">About us</a>
+          <a href="{{ "/about-us/" | relLangURL }}" class="{{ if or (eq $navActive "about") (eq $navActive "team") }}{{ $linkActive }}{{ else }}{{ $linkIdle }}{{ end }}">{{ i18n "nav_about" }}</a>
         </li>
 
         <li>
-          <a href="/faq/" class="{{ if eq $navActive "faq" }}{{ $linkActive }}{{ else }}{{ $linkIdle }}{{ end }}">FAQ</a>
+          <a href="{{ "/faq/" | relLangURL }}" class="{{ if eq $navActive "faq" }}{{ $linkActive }}{{ else }}{{ $linkIdle }}{{ end }}">{{ i18n "nav_faq" }}</a>
         </li>
       </ul>
 
       <div class="flex items-center gap-2 sm:gap-3 shrink-0 z-20">
-        <button type="button" class="hidden md:inline-flex h-11 w-11 items-center justify-center rounded-full text-slate-500 hover:text-brand hover:bg-slate-100 transition-colors border-0 cursor-pointer bg-transparent" data-search-open aria-label="Open search">
+        {{ partial "home/language-switcher.html" . }}
+        <button type="button" class="hidden md:inline-flex h-11 w-11 items-center justify-center rounded-full text-slate-500 hover:text-brand hover:bg-slate-100 transition-colors border-0 cursor-pointer bg-transparent" data-search-open aria-label="{{ i18n "nav_open_search" }}">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
         </button>
-        <button type="button" id="theme-toggle" class="theme-toggle-nav hidden md:inline-flex h-11 w-11 items-center justify-center rounded-full text-slate-500 hover:text-brand hover:bg-slate-100 transition-colors border-0 cursor-pointer bg-transparent" aria-label="Switch to dark theme" title="Switch to dark theme">
+        <button type="button" id="theme-toggle" class="theme-toggle-nav hidden md:inline-flex h-11 w-11 items-center justify-center rounded-full text-slate-500 hover:text-brand hover:bg-slate-100 transition-colors border-0 cursor-pointer bg-transparent" aria-label="{{ i18n "nav_switch_theme" }}" title="{{ i18n "nav_switch_theme" }}">
           {{ partial "home/theme-toggle-icons.html" . }}
         </button>
-        <button type="button" id="mobile-menu-btn" class="lg:hidden inline-flex h-11 w-11 items-center justify-center rounded-full text-slate-600 hover:bg-slate-100 transition-colors relative" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <button type="button" id="mobile-menu-btn" class="lg:hidden inline-flex h-11 w-11 items-center justify-center rounded-full text-slate-600 hover:bg-slate-100 transition-colors relative" aria-label="{{ i18n "nav_open_menu" }}" aria-expanded="false" aria-controls="mobile-menu">
           <span class="absolute w-5 h-0.5 bg-current rounded-full transition-all duration-300 -translate-y-1.5"></span>
           <span class="absolute w-5 h-0.5 bg-current rounded-full transition-opacity duration-300"></span>
           <span class="absolute w-5 h-0.5 bg-current rounded-full transition-all duration-300 translate-y-1.5"></span>
@@ -65,17 +67,18 @@
 
     {{- $iconEmoji := dict "palette" "🎨" "wrench" "🔧" "game-controller" "🎮" "link" "🔗" "package" "📦" "squares-four" "⊞" "robot" "🤖" "magnifying-glass" "🔍" "shopping-bag" "🛍️" "app-window" "🖥️" "arrow-right" "→" -}}
     {{- if $mega -}}
-    <div id="nav-browse-mega" class="nav-mega nav-dropdown nav-dropdown--mega fixed inset-x-0 top-[var(--home-nav-height,73px)] z-40 pt-4 px-4 sm:px-6 lg:px-8 pointer-events-none" role="region" aria-label="{{ $mega.label | default "Browse" }} menu">
-      <div class="nav-mega__panel mx-auto w-full max-w-3xl rounded-2xl border border-gray-200/90 bg-white shadow-xl shadow-slate-300/25 overflow-hidden">
+    <div id="nav-browse-mega" class="nav-mega nav-dropdown nav-dropdown--mega fixed inset-x-0 top-[var(--home-nav-height,73px)] z-40 pt-0 px-4 sm:px-6 lg:px-8 pointer-events-none" role="region" aria-label="{{ $mega.label | default (i18n "nav_browse") }} menu">
+      <div class="nav-mega__panel mt-0 mx-auto w-full max-w-3xl rounded-2xl border border-gray-200/90 bg-white shadow-xl shadow-slate-300/25 overflow-hidden">
         <div class="nav-mega__grid">
           <div class="nav-mega__col">
-            <p class="nav-mega__label">{{ $mega.primaryTitle | default "Browse categories" }}</p>
+            <p class="nav-mega__label">{{ $mega.primaryTitle | default (i18n "nav_browse") }}</p>
             <ul class="nav-mega__list" role="list">
-              {{- range hugo.Data.home.categories -}}
+              {{- range $data.home.categories -}}
               {{- $catSlug := .slug | default (.name | anchorize) -}}
+              {{- $catUrl := .seeAllUrl | default (printf "/browse/%s/" $catSlug) -}}
               {{- $catEmoji := index $iconEmoji (.phosphorIcon | default "squares-four") | default "•" -}}
               <li role="listitem">
-                <a href="{{ if $.IsHome }}#{{ $catSlug }}{{ else }}{{ .seeAllUrl | default (printf "/browse/%s/" $catSlug) }}{{ end }}" class="nav-mega__cat-link group/cat{{ if $.IsHome }} home-hash-link{{ end }}">
+                <a href="{{ if $.IsHome }}#{{ $catSlug }}{{ else }}{{ $catUrl | relLangURL }}{{ end }}" class="nav-mega__cat-link group/cat{{ if $.IsHome }} home-hash-link{{ end }}">
                   <span class="nav-mega__cat-icon" aria-hidden="true">{{ $catEmoji }}</span>
                   <span class="nav-mega__cat-text">
                     <span class="nav-mega__cat-name">{{ .name }}</span>
@@ -97,16 +100,20 @@
                 (dict "label" "Store" "url" "/store/" "icon" "shopping-bag")
                 (dict "label" "Search all tools" "url" "/search/" "icon" "magnifying-glass")
               ) -}}
+              {{- $hubUrl := .url -}}
+              {{- if hasPrefix $hubUrl "/" -}}
+                {{- $hubUrl = $hubUrl | relLangURL -}}
+              {{- end -}}
               {{- $hubEmoji := index $iconEmoji (.icon | default "arrow-right") | default "→" -}}
               <li role="listitem">
-                <a href="{{ .url }}" class="nav-mega__hub-link">
+                <a href="{{ $hubUrl }}" class="nav-mega__hub-link">
                   <span aria-hidden="true">{{ $hubEmoji }}</span>
                   <span>{{ .label }}</span>
                 </a>
               </li>
               {{- end -}}
             </ul>
-            <a href="/browse/" class="nav-mega__view-all">View all categories →</a>
+            <a href="{{ "/browse/" | relLangURL }}" class="nav-mega__view-all">{{ i18n "nav_view_all_categories" }}</a>
           </div>
         </div>
       </div>
@@ -120,26 +127,48 @@
     <div class="flex gap-2 mb-6">
       <button type="button" class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-slate-100 text-sm font-medium text-slate-700 hover:bg-slate-200/80 border-0 cursor-pointer" data-search-open>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-        Search
+        {{ i18n "nav_search" }}
       </button>
-      <button type="button" data-theme-toggle class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-slate-100 text-sm font-medium text-slate-700 hover:bg-slate-200/80 border-0 cursor-pointer" aria-label="Switch theme">
+      <button type="button" data-theme-toggle class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-slate-100 text-sm font-medium text-slate-700 hover:bg-slate-200/80 border-0 cursor-pointer" aria-label="{{ i18n "nav_switch_theme" }}">
         {{ partial "home/theme-toggle-icons.html" . }}
-        Theme
+        {{ i18n "nav_theme" }}
       </button>
     </div>
 
+    <p class="text-[11px] font-bold tracking-widest text-slate-400 uppercase mb-2 px-4 m-0">{{ i18n "nav_language" }}</p>
+    <ul class="flex flex-col gap-0.5 list-none m-0 p-0 mb-4">
+      {{- $translations := dict -}}
+      {{- range .AllTranslations -}}
+        {{- $translations = merge $translations (dict .Lang .) -}}
+      {{- end -}}
+      {{- $current := .Lang -}}
+      {{- range sort hugo.Sites "Language.Weight" -}}
+        {{- $lang := .Language.Lang -}}
+        {{- $target := "" -}}
+        {{- with index $translations $lang -}}
+          {{- $target = .RelPermalink -}}
+        {{- else -}}
+          {{- $target = .Home.RelPermalink -}}
+        {{- end -}}
+        <li>
+          <a href="{{ $target }}" hreflang="{{ $lang }}" lang="{{ $lang }}" class="block px-4 py-3 rounded-xl font-medium no-underline{{ if eq $lang $current }} text-brand bg-slate-50{{ else }} text-slate-800 hover:bg-slate-50{{ end }}">{{ .Language.Label }}</a>
+        </li>
+      {{- end -}}
+    </ul>
+
     <ul class="flex flex-col gap-0.5 list-none m-0 p-0">
-      <li><a href="/" class="block px-4 py-3 rounded-xl text-base font-medium text-slate-900 hover:bg-slate-50 no-underline">Home</a></li>
+      <li><a href="{{ "/" | relLangURL }}" class="block px-4 py-3 rounded-xl text-base font-medium text-slate-900 hover:bg-slate-50 no-underline">{{ i18n "nav_home" }}</a></li>
     </ul>
 
     {{- if $mega -}}
-    <p class="text-[11px] font-bold tracking-widest text-slate-400 uppercase mt-6 mb-2 px-4 m-0">{{ $mega.primaryTitle | default "Categories" }}</p>
+    <p class="text-[11px] font-bold tracking-widest text-slate-400 uppercase mt-6 mb-2 px-4 m-0">{{ $mega.primaryTitle | default (i18n "nav_browse") }}</p>
     <ul class="flex flex-col gap-0.5 list-none m-0 p-0 mb-4">
-      {{- range hugo.Data.home.categories -}}
+      {{- range $data.home.categories -}}
       {{- $catSlug := .slug | default (.name | anchorize) -}}
+      {{- $catUrl := .seeAllUrl | default (printf "/browse/%s/" $catSlug) -}}
       {{- $catEmoji := index $iconEmoji (.phosphorIcon | default "squares-four") | default "•" -}}
       <li>
-        <a href="{{ if $.IsHome }}#{{ $catSlug }}{{ else }}{{ .seeAllUrl | default (printf "/browse/%s/" $catSlug) }}{{ end }}" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-800 hover:bg-slate-50 no-underline{{ if $.IsHome }} home-hash-link{{ end }}">
+        <a href="{{ if $.IsHome }}#{{ $catSlug }}{{ else }}{{ $catUrl | relLangURL }}{{ end }}" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-800 hover:bg-slate-50 no-underline{{ if $.IsHome }} home-hash-link{{ end }}">
           <span aria-hidden="true">{{ $catEmoji }}</span>
           <span class="font-medium">{{ .name }}</span>
         </a>
@@ -150,18 +179,22 @@
     <p class="text-[11px] font-bold tracking-widest text-slate-400 uppercase mb-2 px-4 m-0">{{ $mega.secondaryTitle | default "Hubs" }}</p>
     <ul class="flex flex-col gap-0.5 list-none m-0 p-0 mb-4">
       {{- range $mega.hubs | default (slice) -}}
-      <li><a href="{{ .url }}" class="block px-4 py-3 rounded-xl font-medium text-slate-800 hover:bg-slate-50 no-underline">{{ .label }}</a></li>
+      {{- $hubUrl := .url -}}
+      {{- if hasPrefix $hubUrl "/" -}}
+        {{- $hubUrl = $hubUrl | relLangURL -}}
+      {{- end -}}
+      <li><a href="{{ $hubUrl }}" class="block px-4 py-3 rounded-xl font-medium text-slate-800 hover:bg-slate-50 no-underline">{{ .label }}</a></li>
       {{- end -}}
     </ul>
     {{- end -}}
 
-    <p class="text-[11px] font-bold tracking-widest text-slate-400 uppercase mb-2 px-4 m-0">More</p>
+    <p class="text-[11px] font-bold tracking-widest text-slate-400 uppercase mb-2 px-4 m-0">{{ i18n "nav_more" }}</p>
     <ul class="flex flex-col gap-0.5 list-none m-0 p-0">
-      <li><a href="/games/" class="block px-4 py-3 rounded-xl font-medium text-slate-800 hover:bg-slate-50 no-underline">Games</a></li>
-      <li><a href="/ai/" class="block px-4 py-3 rounded-xl font-medium text-slate-800 hover:bg-slate-50 no-underline">AI Tools</a></li>
-      <li><a href="/designlab/" class="block px-4 py-3 rounded-xl font-medium text-slate-800 hover:bg-slate-50 no-underline">Design Lab</a></li>
-      <li><a href="/about-us/" class="block px-4 py-3 rounded-xl font-medium text-slate-800 hover:bg-slate-50 no-underline">About us</a></li>
-      <li><a href="/faq/" class="block px-4 py-3 rounded-xl font-medium text-slate-800 hover:bg-slate-50 no-underline">FAQ</a></li>
+      <li><a href="{{ "/games/" | relLangURL }}" class="block px-4 py-3 rounded-xl font-medium text-slate-800 hover:bg-slate-50 no-underline">{{ i18n "nav_games" }}</a></li>
+      <li><a href="{{ "/ai/" | relLangURL }}" class="block px-4 py-3 rounded-xl font-medium text-slate-800 hover:bg-slate-50 no-underline">{{ i18n "nav_ai" }}</a></li>
+      <li><a href="{{ "/designlab/" | relLangURL }}" class="block px-4 py-3 rounded-xl font-medium text-slate-800 hover:bg-slate-50 no-underline">{{ i18n "nav_design" }}</a></li>
+      <li><a href="{{ "/about-us/" | relLangURL }}" class="block px-4 py-3 rounded-xl font-medium text-slate-800 hover:bg-slate-50 no-underline">{{ i18n "nav_about" }}</a></li>
+      <li><a href="{{ "/faq/" | relLangURL }}" class="block px-4 py-3 rounded-xl font-medium text-slate-800 hover:bg-slate-50 no-underline">{{ i18n "nav_faq" }}</a></li>
     </ul>
   </div>
 </div>

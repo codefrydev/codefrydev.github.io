@@ -1,15 +1,16 @@
 {{- if not (.Scratch.Get "searchPaletteLoaded") -}}
+{{- $data := partial "get-data.html" . -}}
 <div id="search-palette" class="search-palette" hidden inert>
   <div class="search-palette__backdrop" data-search-close></div>
   <div class="search-palette__dialog" role="dialog" aria-modal="true" aria-labelledby="search-palette-title">
-    <p id="search-palette-title" class="sr-only">Search CodeFryDev</p>
+    <p id="search-palette-title" class="sr-only">{{ i18n "search_title" }}</p>
     <div class="search-palette__input-wrap">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" class="search-palette__input-icon" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
       <input
         type="search"
         id="search-palette-input"
         class="search-palette__input"
-        placeholder="Search tools, games, AI apps…"
+        placeholder="{{ i18n "search_placeholder" }}"
         autocomplete="off"
         autocorrect="off"
         spellcheck="false"
@@ -22,28 +23,28 @@
     <div class="search-palette__body" id="search-palette-body">
       <div id="search-palette-empty" class="search-palette__empty" hidden>
         <span class="search-palette__empty-icon" aria-hidden="true">🔍</span>
-        <p class="search-palette__empty-title">No matches</p>
-        <p class="search-palette__empty-hint">Try another keyword or pick a shortcut below</p>
+        <p class="search-palette__empty-title">{{ i18n "search_no_matches" }}</p>
+        <p class="search-palette__empty-hint">{{ i18n "search_empty_hint" }}</p>
         <p id="search-palette-suggest" class="search-palette__empty-suggest" hidden>
-          Did you mean <button type="button" class="search-palette__suggest-btn" data-search-suggest></button>?
+          {{ i18n "search_did_you_mean" }} <button type="button" class="search-palette__suggest-btn" data-search-suggest></button>?
         </p>
       </div>
       <div id="search-palette-default" class="search-palette__default">
-        <p class="search-palette__section-label">Quick open</p>
+        <p class="search-palette__section-label">{{ i18n "search_quick_open" }}</p>
         <div class="search-palette__chips" role="list">
-          <a href="/games/" class="search-palette__chip" role="listitem">🎮 Games</a>
-          <a href="/ai/" class="search-palette__chip" role="listitem">🤖 AI Tools</a>
-          <a href="/designlab/" class="search-palette__chip" role="listitem">🎨 Design Lab</a>
-          <a href="/browse/" class="search-palette__chip" role="listitem">⊞ Browse</a>
+          <a href="{{ "/games/" | relLangURL }}" class="search-palette__chip" role="listitem">{{ i18n "search_chip_games" }}</a>
+          <a href="{{ "/ai/" | relLangURL }}" class="search-palette__chip" role="listitem">{{ i18n "search_chip_ai" }}</a>
+          <a href="{{ "/designlab/" | relLangURL }}" class="search-palette__chip" role="listitem">{{ i18n "search_chip_design" }}</a>
+          <a href="{{ "/browse/" | relLangURL }}" class="search-palette__chip" role="listitem">{{ i18n "search_chip_browse" }}</a>
         </div>
         <div id="search-palette-recent" class="search-palette__recent" hidden>
-          <p class="search-palette__section-label">Recent</p>
+          <p class="search-palette__section-label">{{ i18n "search_recent" }}</p>
           <div class="search-palette__chips" role="list" id="search-palette-recent-list"></div>
         </div>
-        <p class="search-palette__section-label">Popular</p>
-        <ul id="search-palette-suggestions" class="search-palette__list" role="listbox" aria-label="Popular tools">
+        <p class="search-palette__section-label">{{ i18n "search_popular" }}</p>
+        <ul id="search-palette-suggestions" class="search-palette__list" role="listbox" aria-label="{{ i18n "search_popular_tools" }}">
           {{- $n := 0 -}}
-          {{- range $cat := hugo.Data.home.categories -}}
+          {{- range $cat := $data.home.categories -}}
             {{- range $cat.items -}}
               {{- if and .featured (lt $n 6) -}}
               <li role="option">
@@ -61,12 +62,12 @@
           {{- end -}}
         </ul>
       </div>
-      <ul id="search-palette-results" class="search-palette__list search-palette__list--results" role="listbox" aria-label="Search results" hidden></ul>
+      <ul id="search-palette-results" class="search-palette__list search-palette__list--results" role="listbox" aria-label="{{ i18n "search_results" }}" hidden></ul>
     </div>
     <footer class="search-palette__footer">
-      <span><kbd>↑</kbd><kbd>↓</kbd> navigate</span>
-      <span><kbd>↵</kbd> open</span>
-      <span><kbd>esc</kbd> close</span>
+      <span><kbd>↑</kbd><kbd>↓</kbd> {{ i18n "search_navigate" }}</span>
+      <span><kbd>↵</kbd> {{ i18n "search_open" }}</span>
+      <span><kbd>esc</kbd> {{ i18n "search_close" }}</span>
       <span class="search-palette__footer-kbd" data-search-kbd-mod></span>
     </footer>
   </div>
@@ -74,12 +75,13 @@
 <script>
 window.CFD_SEARCH = {{- dict
   "baseURL" .Site.BaseURL
+  "lang" (.Site.Language.Lang | default "en")
   "data" (dict
-    "home" hugo.Data.home
-    "ai" hugo.Data.ai
-    "games" hugo.Data.games
-    "designlab" hugo.Data.designlab
-    "store" hugo.Data.store
+    "home" $data.home
+    "ai" $data.ai
+    "games" $data.games
+    "designlab" $data.designlab
+    "store" $data.store
   )
 | jsonify | safeJS -}};
 </script>

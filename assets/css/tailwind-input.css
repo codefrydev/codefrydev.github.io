@@ -431,6 +431,18 @@
     @apply opacity-100 visible pointer-events-auto;
   }
 
+  .nav-lang__menu {
+    @apply opacity-0 invisible pointer-events-none transition-[opacity,visibility] duration-200;
+  }
+
+  .nav-lang.is-open .nav-lang__menu {
+    @apply opacity-100 visible pointer-events-auto;
+  }
+
+  .nav-lang.is-open .nav-lang__chevron {
+    @apply rotate-180;
+  }
+
   /* Browse nav mega menu */
   .nav-mega__grid {
     @apply grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-gray-100;

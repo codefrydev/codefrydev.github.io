@@ -1,6 +1,6 @@
-{{- $hp := hugo.Data.homepage -}}
+{{- $data := partial "get-data.html" . -}}
+{{- $hp := $data.homepage -}}
 {{- $hero := $hp.hero -}}
-{{- $badge := $hero.badge | default "Free tools — no signup" -}}
 {{- $placeholder := $hero.searchPlaceholder | default "Search tools, games, AI apps..." -}}
 {{- $autoplay := $hero.autoplayMs | default 6000 -}}
 {{- $slides := $hero.slides -}}
@@ -35,10 +35,6 @@
     </div>
   </div>
   <div class="home-hero__overlay" aria-hidden="true"></div>
-
-  <div class="relative z-10 inline-flex items-center gap-2 px-3 py-1 mb-6 text-xs font-semibold tracking-wide text-slate-600 uppercase bg-white border border-gray-200 rounded-full shadow-sm">
-    {{ $badge }}
-  </div>
 
   <div id="hero-content" class="relative z-10 transition-opacity duration-500 ease-in-out opacity-100" aria-live="polite">
     <h1 id="ladybug-h1-bite-target" class="max-w-4xl mx-auto text-5xl md:text-6xl font-bold tracking-tight text-[#0B162C] mb-6 m-0">

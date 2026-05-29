@@ -4,7 +4,7 @@
 {{- $categoryName := .categoryName | default "" -}}
 {{- $source := .source | default "site" -}}
 {{- $headingLevel := .headingLevel | default 3 -}}
-{{- $desc := $item.description | default (printf "Open %s — free in your browser." $item.name) -}}
+{{- $desc := $item.description | default (printf (i18n "tool_default_description") $item.name) -}}
 {{- $isExternal := false -}}
 {{- if isset $item "external" -}}
   {{- $isExternal = $item.external -}}
@@ -28,7 +28,7 @@
           <a href="{{ $item.url }}" class="{{ $linkClass }}"{{ if $isExternal }} target="_blank" rel="noopener noreferrer"{{ end }}>
             {{ $item.name }}
             {{- if $isExternal -}}
-            <span class="sr-only"> (opens in new tab)</span>
+            <span class="sr-only"> {{ i18n "tool_opens_new_tab" }}</span>
             {{- end -}}
           </a>
         </h2>
@@ -37,7 +37,7 @@
           <a href="{{ $item.url }}" class="{{ $linkClass }}"{{ if $isExternal }} target="_blank" rel="noopener noreferrer"{{ end }}>
             {{ $item.name }}
             {{- if $isExternal -}}
-            <span class="sr-only"> (opens in new tab)</span>
+            <span class="sr-only"> {{ i18n "tool_opens_new_tab" }}</span>
             {{- end -}}
           </a>
         </h3>

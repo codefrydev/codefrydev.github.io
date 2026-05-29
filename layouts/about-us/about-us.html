@@ -1,11 +1,12 @@
 {{ partial "home/modern-page-start.html" (dict "page" . "navActive" "about" "headExtra" `<meta name="keywords" content="about codefrydev, team, developers, designers, contributors, free online tools platform">`) }}
 
-{{- $why := hugo.Data.homepage.why -}}
+{{- $data := partial "get-data.html" . -}}
+{{- $why := $data.homepage.why -}}
 {{- $totalTools := 0 -}}
-{{- range hugo.Data.home.categories }}{{ $totalTools = add $totalTools (len .items) }}{{ end -}}
-{{- $aiCount := 0 }}{{ with hugo.Data.ai.data }}{{ $aiCount = len . }}{{ end -}}
-{{- $gamesCount := 0 }}{{ with hugo.Data.games.data }}{{ $gamesCount = len . }}{{ end -}}
-{{- $designCount := 0 }}{{ with hugo.Data.designlab.data }}{{ $designCount = len . }}{{ end -}}
+{{- range $data.home.categories }}{{ $totalTools = add $totalTools (len .items) }}{{ end -}}
+{{- $aiCount := 0 }}{{ with $data.ai.data }}{{ $aiCount = len . }}{{ end -}}
+{{- $gamesCount := 0 }}{{ with $data.games.data }}{{ $gamesCount = len . }}{{ end -}}
+{{- $designCount := 0 }}{{ with $data.designlab.data }}{{ $designCount = len . }}{{ end -}}
 {{- $members := site.GetPage "/about/users" -}}
 
 <article class="about-page pt-6 pb-20 sm:pt-10 sm:pb-24">
@@ -121,7 +122,7 @@
     </section>
     {{- end -}}
 
-    {{- with hugo.Data.about.cards -}}
+    {{- with $data.about.cards -}}
     <section class="about-connect mb-14 sm:mb-16" aria-labelledby="about-connect-heading">
       <div class="about-section-head about-section-head--stack">
         <div>

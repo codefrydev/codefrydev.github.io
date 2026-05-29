@@ -1,10 +1,11 @@
 {{- $page := .page -}}
-{{- $hubs := .hubs | default (index hugo.Data.homepage "nav" "megaMenu" "hubs") | default slice -}}
+{{- $data := partial "get-data.html" . -}}
+{{- $hubs := .hubs | default (index $data.homepage "nav" "megaMenu" "hubs") | default slice -}}
 {{- $totalTools := 0 -}}
-{{- range hugo.Data.home.categories -}}
+{{- range $data.home.categories -}}
   {{- $totalTools = add $totalTools (len (where .items "hidden" "!=" true)) -}}
 {{- end -}}
-{{- $catCount := len hugo.Data.home.categories -}}
+{{- $catCount := len $data.home.categories -}}
 {{- $iconEmoji := dict "palette" "🎨" "wrench" "🔧" "game-controller" "🎮" "link" "🔗" "package" "📦" "squares-four" "⊞" "robot" "🤖" "magnifying-glass" "🔍" "shopping-bag" "🛍️" "app-window" "🖥️" "arrow-right" "→" -}}
 
 <section class="browse-index pt-8 pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full" aria-labelledby="browse-index-heading">
@@ -26,16 +27,16 @@
   <div class="browse-index__section">
     <h2 class="browse-index__section-title">Categories</h2>
     <ul class="browse-category-grid list-none m-0 p-0" role="list">
-      {{- range hugo.Data.home.categories -}}
+      {{- range $data.home.categories -}}
       {{- $slug := .slug | default (.name | anchorize) -}}
       {{- $url := .seeAllUrl | default (printf "/browse/%s/" $slug) -}}
       {{- $visible := where .items "hidden" "!=" true -}}
       {{- $featured := where $visible "featured" true -}}
       {{- $previews := cond (gt (len $featured) 0) ($featured | first 6) ($visible | first 6) -}}
-      {{- $banner := index hugo.Data.homepage.categoryBanners $slug | default dict -}}
+      {{- $banner := index $data.homepage.categoryBanners $slug | default dict -}}
       {{- $catEmoji := index $iconEmoji (.phosphorIcon | default "squares-four") | default "•" -}}
       <li role="listitem">
-        <a href="{{ $url }}" class="browse-category-card group no-underline" data-cfd-cta="browse_card_{{ $slug }}">
+        <a href="{{ $url | relLangURL }}" class="browse-category-card group no-underline" data-cfd-cta="browse_card_{{ $slug }}">
           {{- with $banner.image -}}
           <span class="browse-category-card__accent" style="background-image: url('{{ . }}');" aria-hidden="true"></span>
           {{- end -}}

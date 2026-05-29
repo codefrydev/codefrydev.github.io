@@ -7,14 +7,16 @@
 {{- with $navActive -}}{{- $page.Scratch.Set "navActive" . -}}{{- end -}}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ $page.Site.Language.Lang | default "en" }}">
 <head>
   {{ partial "header.html" $page }}
   {{ partial "home/head.html" $page }}
+  {{ partial "home/lang-fonts.html" $page }}
   {{- $headExtra | safeHTML -}}
 </head>
 <body class="home-page bg-gray-50/50 text-slate-800 font-sans antialiased{{ with $bodyClass }} {{ . }}{{ end }}">
   {{ partial "icons-sprite.html" $page }}
   {{ partial "skip-link.html" $page }}
+  {{ partial "i18n-script.html" $page }}
   {{ partial "home/nav.html" $page }}
   <main id="main-content" class="{{ $mainClass }}" tabindex="-1">

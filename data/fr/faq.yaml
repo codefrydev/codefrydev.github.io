@@ -1,0 +1,81 @@
+categories:
+- id: getting-started
+  label: Premiers pas
+  icon: "\U0001F680"
+- id: using-tools
+  label: Utiliser nos outils
+  icon: "\U0001F6E0️"
+- id: privacy-support
+  label: Confidentialité et support
+  icon: "\U0001F512"
+- id: community
+  label: Communauté et apprentissage
+  icon: "\U0001F91D"
+faqs:
+- question: Qu'est-ce que CodeFryDev ?
+  answer: >-
+    Une plateforme où nous apprenons, expérimentons, jouons, inventons des idées innovantes et bien plus encore… Nous proposons
+    des outils, jeux et apps IA gratuits dans votre navigateur — sans inscription.
+  category: getting-started
+- question: Quels types d'outils CodeFryDev propose-t-il ?
+  answer: >-
+    CodeFryDev propose cinq catégories principales : Créatif & Assets (art, outils texte, fonds d'écran, modèles 3D), Outils
+    & Utilitaires (outils IA, CSV, formateurs JSON, générateurs de meta tags), Jeux & Fun (Chain Reaction, Wordle, Snake,
+    etc.), Liens du site (à propos, chronologie, boutique, confidentialité) et Conteneurs & Packages (images Docker et packages
+    npm).
+  category: getting-started
+- question: Quels outils IA sont disponibles ?
+  answer: >-
+    Nous proposons plusieurs outils IA dont AI SocialSnap, AI Meme Generator, Visual Note AI, Aqua Tracker AI, AI Web Summarizer,
+    Profile AI et CFD Chat AI. Ils aident à la création de contenu, au résumé et à la productivité.
+  category: getting-started
+- question: À quelle fréquence de nouveaux outils et jeux sont-ils ajoutés ?
+  answer: >-
+    Nous mettons régulièrement à jour notre collection avec de nouveaux outils et jeux. Suivez notre section mises à jour
+    ou nos réseaux sociaux pour les dernières nouveautés.
+  category: getting-started
+- question: Les outils et jeux sont-ils gratuits ?
+  answer: >-
+    La plupart de nos outils et jeux web sont gratuits. Certaines fonctionnalités premium ou apps mobiles peuvent avoir des
+    tarifs différents. Consultez les pages individuelles pour les détails.
+  category: using-tools
+- question: Dois-je créer un compte pour utiliser les outils ?
+  answer: >-
+    La plupart de nos outils fonctionnent sans créer de compte. Visitez simplement la page et commencez à utiliser. Certaines
+    fonctionnalités avancées peuvent nécessiter une inscription.
+  category: using-tools
+- question: Puis-je utiliser ces outils sur mobile ?
+  answer: >-
+    Oui, la plupart de nos outils sont responsive et fonctionnent sur mobile. Nous avons aussi des apps dédiées sur Google
+    Play Store pour une meilleure expérience mobile.
+  category: using-tools
+- question: Comment contacter CodeFryDev pour le support ?
+  answer: >-
+    Vous pouvez nous joindre via notre page Contact à /contact-us/ — envoyez-nous un message et nous vous répondrons. Nous
+    nous engageons à offrir un excellent support à tous nos utilisateurs.
+  category: privacy-support
+- question: Où lire vos conditions et politique de confidentialité et trouver les coordonnées ?
+  answer: >-
+    Nos Conditions d'utilisation et Politique de confidentialité sont liées dans le pied de page sous Aide et mentions légales.
+    Pour le support et les demandes générales, utilisez notre page Contact à /contact-us/.
+  category: privacy-support
+- question: Mes données sont-elles sécurisées avec les outils CodeFryDev ?
+  answer: >-
+    Oui, nous prenons la sécurité des données au sérieux. La plupart de nos outils traitent les données localement dans votre
+    navigateur, et nous suivons les bonnes pratiques. Consultez notre politique de confidentialité pour plus de détails.
+  category: privacy-support
+- question: Quels langages et technologies CodeFryDev utilise-t-il ?
+  answer: >-
+    CodeFryDev utilise des technologies web modernes dont HTML5, CSS3, JavaScript et divers frameworks. Nos services backend
+    sont construits avec .NET, et nous développons aussi des apps mobiles avec Unity et d'autres technologies multiplateformes.
+  category: community
+- question: Puis-je contribuer aux projets CodeFryDev ?
+  answer: >-
+    Oui ! CodeFryDev est ouvert aux contributions. Retrouvez nos projets sur GitHub et contribuez via pull requests, rapports
+    de bugs ou suggestions. Consultez notre page à propos pour en savoir plus.
+  category: community
+- question: Proposez-vous des tutoriels pour apprendre le développement web ?
+  answer: >-
+    Oui, CodeFryDev propose des tutoriels complets pour le développement web, du HTML/CSS de base aux frameworks avancés et
+    bonnes pratiques. Nos tutoriels conviennent à tous les niveaux.
+  category: community

@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ .Site.Language.Lang | default "en" }}">
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="refresh" content="0; url=/about-us/">
-  <link rel="canonical" href="/about-us/">
+  <meta http-equiv="refresh" content="0; url={{ "/about-us/" | relLangURL }}">
+  <link rel="canonical" href="{{ "/about-us/" | relLangURL }}">
   <title>Redirecting…</title>
-  <script>location.replace('/about-us/');</script>
+  <script>location.replace('{{ "/about-us/" | relLangURL }}');</script>
 </head>
 <body>
-  <p><a href="/about-us/">Continue to About us</a></p>
+  <p><a href="{{ "/about-us/" | relLangURL }}">Continue to About us</a></p>
 </body>
 </html>

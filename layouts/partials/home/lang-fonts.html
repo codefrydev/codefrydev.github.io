@@ -1,0 +1,12 @@
+{{- $lang := .Site.Language.Lang | default "en" -}}
+{{- if eq $lang "ja" -}}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>html[lang="ja"] body{font-family:"Noto Sans JP",ui-sans-serif,system-ui,sans-serif}</style>
+{{- else if eq $lang "hi" -}}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>html[lang="hi"] body{font-family:"Noto Sans Devanagari",ui-sans-serif,system-ui,sans-serif}</style>
+{{- end -}}

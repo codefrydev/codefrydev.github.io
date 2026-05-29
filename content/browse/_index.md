@@ -1,4 +1,5 @@
 ---
+translationKey: "browse"
 title: "Browse all categories"
 url: /browse/
 description: "Free tools, games, and AI apps—organized by category. Pick a collection or jump to a hub."

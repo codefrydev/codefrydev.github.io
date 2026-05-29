@@ -39,6 +39,9 @@ import Fuse from 'fuse.js';
     'the', 'and', 'for', 'with', 'your', 'from', 'open', 'free', 'in', 'on',
     'a', 'an', 'to', 'of', 'by', 'app', 'tool', 'tools', 'browser', 'online',
     'codefrydev', 'any', 'all', 'more', 'our', 'its', 'use', 'using', 'play',
+    'le', 'la', 'les', 'de', 'du', 'des', 'et', 'pour', 'avec', 'un', 'une',
+    'の', 'を', 'に', 'は', 'が', 'と', 'で', 'も',
+    'का', 'की', 'के', 'में', 'और', 'से', 'को', 'है',
   ]);
 
   function $(sel, root) {
@@ -50,9 +53,13 @@ import Fuse from 'fuse.js';
   }
 
   function normalizeQuery(q) {
-    return (q || '')
-      .toLowerCase()
-      .replace(/[^a-z0-9\s]/g, ' ')
+    var lang = (window.CFD_SEARCH && window.CFD_SEARCH.lang) || 'en';
+    var raw = (q || '').toLowerCase();
+    if (lang === 'ja' || lang === 'hi') {
+      return raw.replace(/\s+/g, ' ').trim();
+    }
+    return raw
+      .replace(/[^a-z0-9\s\u0900-\u097F\u3040-\u30FF\u4E00-\u9FFF]/g, ' ')
       .replace(/\s+/g, ' ')
       .trim();
   }

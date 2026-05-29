@@ -1,4 +1,5 @@
-{{- $testimonials := hugo.Data.homepage.testimonials -}}
+{{- $data := partial "get-data.html" . -}}
+{{- $testimonials := $data.homepage.testimonials -}}
 {{- if $testimonials -}}
 <section id="testimonials" data-section-label="Testimonials" class="home-testimonials flex flex-col justify-center bg-gray-50/50 relative pt-28 pb-16" aria-labelledby="testimonials-heading">
   <div class="max-w-6xl mx-auto px-4 w-full">

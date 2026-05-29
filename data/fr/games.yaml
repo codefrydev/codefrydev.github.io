@@ -1,0 +1,172 @@
+data:
+- name: WordDice
+  icon: cfd-worddice
+  url: https://worddice.codefrydev.in/
+  description: Jeu de mots avec défis pilotés par des dés.
+  date: '2025-11-08'
+  phosphorIcon: dice-five
+  featured: true
+  external: true
+  aliases:
+  - word game
+  - dice
+  - puzzle
+  - scrabble
+- name: Chain Reaction
+  icon: cfd-chainreaction
+  url: "/ChainReaction/"
+  description: Jeu de plateau stratégique — étendez les cellules et dominez la grille.
+  date: '2024-05-06'
+  phosphorIcon: circles-three
+  featured: true
+  external: false
+  aliases:
+  - strategy
+  - board game
+  - cells
+  - grid
+- name: Chain Reaction Online
+  icon: cfd-chainreaction-online
+  url: https://chainreaction.codefrydev.in/
+  description: Chain Reaction multijoueur en ligne — jouez avec des amis, capturez des orbes et déclenchez des réactions en
+    chaîne.
+  date: '2026-05-24'
+  phosphorIcon: share-network
+  featured: true
+  external: true
+  aliases:
+  - multiplayer
+  - online
+  - strategy
+  - board game
+  - chain reaction
+- name: Wordle
+  icon: cfd-wordle
+  url: "/Wordle/"
+  description: Devinez le mot de cinq lettres en six essais.
+  date: '2024-05-19'
+  phosphorIcon: text-aa
+  featured: true
+  external: false
+  aliases:
+  - word game
+  - 5 letter
+  - guess
+  - puzzle
+- name: Snake
+  icon: cfd-snake
+  url: "/Snake"
+  description: Jeu Snake classique — mangez, grandissez et évitez les murs.
+  date: '2024-06-08'
+  phosphorIcon: snake
+  featured: true
+  external: false
+  aliases:
+  - snake game
+  - classic
+  - arcade
+  - retro
+- name: Jeu
+  icon: cfd-games
+  url: https://play.google.com/store/apps/details?id=org.codefrydev.developer.abhijeet.galacticgunner
+  description: Hub de jeux complet — puzzles, classiques et favoris d'arcade.
+  date: '2024-06-08'
+  phosphorIcon: game-controller
+  featured: true
+  external: false
+  aliases:
+  - galactic gunner
+  - android game
+  - space shooter
+  - play store
+- name: Ludo
+  icon: cfd-ludo
+  url: "/Ludo/"
+  description: Jeu de plateau Ludo classique en ligne.
+  date: '2026-03-11'
+  phosphorIcon: dice-six
+  featured: true
+  external: false
+  aliases:
+  - board game
+  - dice
+  - classic
+  - family
+- name: Carrom
+  icon: cfd-carrom
+  url: "/Carrom/"
+  description: Jouez au carrom en ligne avec des contrôles fluides.
+  date: '2026-03-11'
+  phosphorIcon: target
+  featured: false
+  external: false
+  aliases:
+  - carrom board
+  - tabletop
+  - striker
+  - board game
+- name: Billiards
+  icon: cfd-billiards
+  url: "/Billiards/"
+  description: Billard dans le navigateur avec une physique réaliste.
+  date: '2026-03-11'
+  phosphorIcon: circle
+  featured: false
+  external: false
+  aliases:
+  - pool
+  - cue
+  - snooker
+  - physics
+- name: Archery
+  icon: cfd-archery
+  url: "/Archery/"
+  description: Visez et tirez dans ce défi de tir à l'arc dans le navigateur.
+  date: '2026-03-11'
+  phosphorIcon: target
+  featured: false
+  external: false
+  aliases:
+  - bow
+  - shoot
+  - target
+  - aim
+- name: DotsAndBox
+  icon: cfd-dotbox
+  url: "/DotsAndBox/"
+  description: Ouvrez DotsAndBox — gratuit dans votre navigateur sur CodeFryDev.
+  date: '2026-03-10'
+  phosphorIcon: game-controller
+  featured: false
+  external: false
+  aliases:
+  - dot box
+  - dots and boxes
+  - strategy
+  - two player
+- name: TicTacToe
+  icon: cfd-ttt
+  url: "/TicTacToe/"
+  description: Ouvrez TicTacToe — gratuit dans votre navigateur sur CodeFryDev.
+  date: '2026-03-10'
+  phosphorIcon: game-controller
+  featured: false
+  external: false
+  aliases:
+  - tic tac toe
+  - ttt
+  - xo
+  - noughts crosses
+- name: '2048'
+  icon: cfd-2048
+  url: "/2048/"
+  description: Faites glisser les tuiles et combinez les nombres pour atteindre 2048.
+  date: '2026-03-10'
+  phosphorIcon: grid-four
+  featured: false
+  external: false
+  aliases:
+  - puzzle
+  - numbers
+  - tile game
+  - slide

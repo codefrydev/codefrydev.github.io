@@ -1,12 +1,13 @@
+{{- $data := partial "get-data.html" . -}}
 {{ partial "home/hub-page.html" (dict
   "page" .
   "title" "Design Lab"
   "subtitle" "Creative design tools & visualizers"
-  "items" hugo.Data.designlab.data
+  "items" $data.designlab.data
   "iconDir" "designlab"
   "defaultPhosphorIcon" "palette"
   "searchID" "designlab"
   "searchPlaceholder" "Search design tools and creative resources..."
   "navActive" "designlab"
-  "banner" (index hugo.Data.homepage.hubBanners "designlab" | default dict)
+  "banner" (index $data.homepage.hubBanners "designlab" | default dict)
 ) }}

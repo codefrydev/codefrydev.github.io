@@ -1,5 +1,6 @@
-{{- $categories := hugo.Data.faq.categories | default (slice) -}}
-{{- $faqs := hugo.Data.faq.faqs | default (slice) -}}
+{{- $data := partial "get-data.html" . -}}
+{{- $categories := $data.faq.categories | default (slice) -}}
+{{- $faqs := $data.faq.faqs | default (slice) -}}
 
 {{- if gt (len $faqs) 0 -}}
 <section class="faq-main" aria-labelledby="faq-main-heading">

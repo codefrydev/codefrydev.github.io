@@ -14,7 +14,8 @@
 
 {{- $homeItems := slice -}}
 {{- if $homeCategorySlug -}}
-  {{- range hugo.Data.home.categories -}}
+  {{- $data := partial "get-data.html" . -}}
+  {{- range $data.home.categories -}}
     {{- if eq (.slug | default (.name | anchorize)) $homeCategorySlug -}}
       {{- $homeItems = .items -}}
     {{- end -}}
