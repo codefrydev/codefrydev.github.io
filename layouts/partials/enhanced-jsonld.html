@@ -80,7 +80,7 @@
         },
         "query-input": "required name=search_term_string"
       },
-      "inLanguage": "{{ .Site.LanguageCode | default "en-US" }}",
+      "inLanguage": "{{ .Site.Language.Locale | default "en-US" }}",
       "copyrightYear": "{{ now.Format "2006" }}",
       "copyrightHolder": {
         "@id": "{{ .Site.BaseURL }}#organization"
@@ -97,10 +97,11 @@
 {{- /* ============================================ */ -}}
 {{- /* FAQ Schema (/faq/ only) */ -}}
 {{- /* ============================================ */ -}}
-{{- if and (eq .Section "faq") hugo.Data.faq.faqs -}}
-  {{- if hugo.Data.faq.faqs -}}
+{{- $data := partial "get-data.html" . -}}
+{{- if and (eq .Section "faq") $data.faq.faqs -}}
+  {{- if $data.faq.faqs -}}
     {{- $faqItems := slice -}}
-    {{- range hugo.Data.faq.faqs -}}
+    {{- range $data.faq.faqs -}}
       {{- $faqItems = $faqItems | append (dict "@type" "Question" "name" .question "acceptedAnswer" (dict "@type" "Answer" "text" .answer)) -}}
     {{- end -}}
     {{- if gt (len $faqItems) 0 -}}
@@ -123,7 +124,7 @@
 {{- /* Home ItemList */ -}}
 {{- if .IsHome -}}
   {{- $homeLists := slice -}}
-  {{- range hugo.Data.home.categories -}}
+  {{- range $data.home.categories -}}
     {{- $catName := .name -}}
     {{- $items := slice -}}
     {{- range $idx, $it := .items -}}
@@ -131,47 +132,47 @@
     {{- end -}}
     {{- $homeLists = $homeLists | append (dict "@type" "ItemList" "name" .name "description" (print .name " tools and resources") "numberOfItems" (len .items) "itemListElement" $items) -}}
   {{- end -}}
-  {{- $home := dict "@type" "ItemList" "name" "CodeFryDev Tools and Games Collection" "description" "Complete collection of creative tools, games, and utilities" "url" .Site.BaseURL "numberOfItems" (len hugo.Data.home.categories) "itemListElement" $homeLists -}}
+  {{- $home := dict "@type" "ItemList" "name" "CodeFryDev Tools and Games Collection" "description" "Complete collection of creative tools, games, and utilities" "url" .Site.BaseURL "numberOfItems" (len $data.home.categories) "itemListElement" $homeLists -}}
   {{- $pageSchema = $pageSchema | append $home -}}
 {{- end -}}
 
 {{- /* Games page ItemList */ -}}
 {{- if eq .Section "games" -}}
   {{- $gameItems := slice -}}
-  {{- range $idx, $g := hugo.Data.games.data -}}
+  {{- range $idx, $g := $data.games.data -}}
     {{- $gameItems = $gameItems | append (dict "@type" "ListItem" "position" (add $idx 1) "item" (dict "@type" "VideoGame" "name" $g.name "url" ($g.url | absURL) "description" (print $g.name " - A fun game by CodeFryDev") "genre" "Casual Game" "gamePlatform" "Web Browser" "operatingSystem" "Any" "applicationCategory" "Game" "offers" (dict "@type" "Offer" "price" "0" "priceCurrency" "USD" "availability" "https://schema.org/InStock") "publisher" (dict "@id" (print $.Site.BaseURL "#organization")))) -}}
   {{- end -}}
-  {{- $games := dict "@type" "ItemList" "name" "CodeFryDev Games Collection" "description" "Collection of fun and engaging games developed by CodeFryDev" "url" .Permalink "numberOfItems" (len hugo.Data.games.data) "itemListElement" $gameItems -}}
+  {{- $games := dict "@type" "ItemList" "name" "CodeFryDev Games Collection" "description" "Collection of fun and engaging games developed by CodeFryDev" "url" .Permalink "numberOfItems" (len $data.games.data) "itemListElement" $gameItems -}}
   {{- $pageSchema = $pageSchema | append $games -}}
 {{- end -}}
 
 {{- /* AI page ItemList */ -}}
 {{- if eq .Section "ai" -}}
   {{- $toolItems := slice -}}
-  {{- range $idx, $t := hugo.Data.ai.data -}}
+  {{- range $idx, $t := $data.ai.data -}}
     {{- $toolItems = $toolItems | append (dict "@type" "ListItem" "position" (add $idx 1) "item" (dict "@type" "SoftwareApplication" "name" $t.name "url" ($t.url | absURL) "description" (print $t.name " - AI-powered tool by CodeFryDev") "applicationCategory" "AI Tool" "operatingSystem" "Web Browser" "softwareVersion" "1.0" "offers" (dict "@type" "Offer" "price" "0" "priceCurrency" "USD" "availability" "https://schema.org/InStock") "publisher" (dict "@id" (print $.Site.BaseURL "#organization")) "featureList" (slice "AI-powered functionality" "Easy to use interface" "No installation required" "Cross-platform compatibility"))) -}}
   {{- end -}}
-  {{- $ai := dict "@type" "ItemList" "name" "CodeFryDev AI Tools Collection" "description" "Collection of AI-powered tools and utilities for productivity and creativity" "url" .Permalink "numberOfItems" (len hugo.Data.ai.data) "itemListElement" $toolItems -}}
+  {{- $ai := dict "@type" "ItemList" "name" "CodeFryDev AI Tools Collection" "description" "Collection of AI-powered tools and utilities for productivity and creativity" "url" .Permalink "numberOfItems" (len $data.ai.data) "itemListElement" $toolItems -}}
   {{- $pageSchema = $pageSchema | append $ai -}}
 {{- end -}}
 
 {{- /* Design Lab page ItemList */ -}}
 {{- if eq .Section "designlab" -}}
   {{- $designItems := slice -}}
-  {{- range $idx, $d := hugo.Data.designlab.data -}}
+  {{- range $idx, $d := $data.designlab.data -}}
     {{- $designItems = $designItems | append (dict "@type" "ListItem" "position" (add $idx 1) "item" (dict "@type" "WebApplication" "name" $d.name "url" ($d.url | absURL) "description" (print $d.name " - Creative design tool by CodeFryDev") "applicationCategory" "Design Tool" "operatingSystem" "Web Browser" "offers" (dict "@type" "Offer" "price" "0" "priceCurrency" "USD" "availability" "https://schema.org/InStock") "publisher" (dict "@id" (print $.Site.BaseURL "#organization")))) -}}
   {{- end -}}
-  {{- $designlab := dict "@type" "ItemList" "name" "CodeFryDev Design Lab Collection" "description" "Collection of creative design tools and resources" "url" .Permalink "numberOfItems" (len hugo.Data.designlab.data) "itemListElement" $designItems -}}
+  {{- $designlab := dict "@type" "ItemList" "name" "CodeFryDev Design Lab Collection" "description" "Collection of creative design tools and resources" "url" .Permalink "numberOfItems" (len $data.designlab.data) "itemListElement" $designItems -}}
   {{- $pageSchema = $pageSchema | append $designlab -}}
 {{- end -}}
 
 {{- /* Browse category ItemList */ -}}
-{{- if and (eq .Section "browse") (ne .RelPermalink "/browse/") -}}
+{{- if and (eq .Section "browse") (ne .RelPermalink ("/browse/" | relLangURL)) -}}
   {{- $browseSlug := .Params.category_slug -}}
   {{- with .File -}}
     {{- if not $browseSlug -}}{{- $browseSlug = .ContentBaseName -}}{{- end -}}
   {{- end -}}
-  {{- range hugo.Data.home.categories -}}
+  {{- range $data.home.categories -}}
     {{- $catSlug := .slug | default (.name | anchorize) -}}
     {{- if eq $catSlug $browseSlug -}}
       {{- $catName := .name -}}
@@ -194,7 +195,7 @@
 
 {{- /* About-us page */ -}}
 {{- if eq .Section "about-us" -}}
-  {{- $aboutUs := dict "@type" "AboutPage" "name" "About us" "description" .Site.Params.description "url" .Permalink "image" (dict "@type" "ImageObject" "url" (print .Site.BaseURL "images/IconCodefrydev.svg") "width" 96 "height" 96) "mainEntity" (dict "@id" (print .Site.BaseURL "#organization")) "breadcrumb" (dict "@type" "BreadcrumbList" "itemListElement" (slice (dict "@type" "ListItem" "position" 1 "name" "Home" "item" .Site.BaseURL) (dict "@type" "ListItem" "position" 2 "name" "About us" "item" .Permalink))) -}}
+  {{- $aboutUs := dict "@type" "AboutPage" "name" .Title "description" (.Description | default .Site.Params.description) "url" .Permalink "image" (dict "@type" "ImageObject" "url" (print .Site.BaseURL "images/IconCodefrydev.svg") "width" 96 "height" 96) "mainEntity" (dict "@id" (print .Site.BaseURL "#organization")) "breadcrumb" (dict "@type" "BreadcrumbList" "itemListElement" (slice (dict "@type" "ListItem" "position" 1 "name" (i18n "nav_home") "item" ("/" | absLangURL)) (dict "@type" "ListItem" "position" 2 "name" .Title "item" .Permalink))) -}}
   {{- $pageSchema = $pageSchema | append $aboutUs -}}
 {{- end -}}
 
@@ -206,7 +207,7 @@
     "url" .Permalink
     "name" "Contact us"
     "description" (.Description | default "Get in touch with CodeFryDev for support, feedback, partnerships, and press inquiries.")
-    "inLanguage" (.Site.LanguageCode | default "en-US")
+    "inLanguage" (.Site.Language.Locale | default "en-US")
     "isPartOf" (dict "@id" (print .Site.BaseURL "#website"))
     "publisher" (dict "@id" (print .Site.BaseURL "#organization"))
     "mainEntity" (dict "@id" (print .Site.BaseURL "#organization"))
@@ -223,13 +224,14 @@
 
 {{- /* Breadcrumb for non-home pages (aligned with breadcrumbs.html) */ -}}
 {{- if not .IsHome -}}
-  {{- $crumbs := slice (dict "@type" "ListItem" "position" 1 "name" "Home" "item" .Site.BaseURL) -}}
+  {{- $crumbs := slice (dict "@type" "ListItem" "position" 1 "name" (i18n "nav_home") "item" ("/" | absLangURL)) -}}
   {{- $path := .RelPermalink -}}
   {{- $section := .Section | lower -}}
   {{- $pos := 2 -}}
   {{- if eq $section "browse" -}}
-    {{- if ne $path "/browse/" -}}
-      {{- $crumbs = $crumbs | append (dict "@type" "ListItem" "position" $pos "name" "Browse" "item" (print .Site.BaseURL "browse/")) -}}
+    {{- $browseRoot := "/browse/" | relLangURL -}}
+    {{- if ne $path $browseRoot -}}
+      {{- $crumbs = $crumbs | append (dict "@type" "ListItem" "position" $pos "name" "Browse" "item" (print .Site.BaseURL (strings.TrimPrefix "/" $browseRoot))) -}}
       {{- $pos = add $pos 1 -}}
       {{- $crumbs = $crumbs | append (dict "@type" "ListItem" "position" $pos "name" .Title "item" .Permalink) -}}
     {{- else -}}
@@ -248,7 +250,7 @@
       {{- end -}}
     {{- end -}}
   {{- else if eq $section "about-us" -}}
-    {{- $crumbs = $crumbs | append (dict "@type" "ListItem" "position" $pos "name" "About us" "item" .Permalink) -}}
+    {{- $crumbs = $crumbs | append (dict "@type" "ListItem" "position" $pos "name" .Title "item" .Permalink) -}}
   {{- else if or (eq $section "history") -}}
     {{- $crumbs = $crumbs | append (dict "@type" "ListItem" "position" $pos "name" "History" "item" .Permalink) -}}
   {{- else if eq $section "press" -}}
@@ -310,7 +312,7 @@
     "name" $wpTitle
     "headline" $wpTitle
     "description" $wpDesc
-    "inLanguage" (.Site.LanguageCode | default "en-US")
+    "inLanguage" (.Site.Language.Locale | default "en-US")
     "isPartOf" (dict "@id" (print .Site.BaseURL "#website"))
     "publisher" (dict "@id" (print .Site.BaseURL "#organization"))
     "datePublished" (.Date.Format "2006-01-02")

@@ -1,0 +1,164 @@
+quote: यह एक मंच है जहाँ हम सीखते, प्रयोग करते, गेम खेलते, नए विचार बनाते और बहुत कुछ…
+nav:
+  megaMenu:
+    label: ब्राउज़
+    primaryTitle: श्रेणियाँ ब्राउज़ करें
+    secondaryTitle: हब
+    hubs:
+    - label: गेम
+      url: "/games/"
+      icon: game-controller
+    - label: AI टूल
+      url: "/ai/"
+      icon: robot
+    - label: डिज़ाइन लैब
+      url: "/designlab/"
+      icon: palette
+    - label: स्टोर
+      url: "/store/"
+      icon: shopping-bag
+    - label: सभी टूल खोजें
+      url: "/search/"
+      icon: magnifying-glass
+why:
+  title: CodeFryDev क्यों चुनें?
+  intro: यह एक मंच है जहाँ हम सीखते, प्रयोग करते, गेम खेलते, नए विचार बनाते और बहुत कुछ…
+  bullets:
+  - 100% मुफ़्त — ज़्यादातर टूल में साइनअप नहीं
+  - आपके ब्राउज़र में चलता है — इंस्टॉल की ज़रूरत नहीं
+  - नए टूल और गेम के साथ नियमित अपडेट
+  - गोपनीयता-केंद्रित — आपका काम आपके डिवाइस पर रहता है
+  highlights:
+  - title: क्रिएटिव & एसेट
+    icon: "\U0001F3A8"
+    text: डिज़ाइनर और डेवलपर के लिए डिजिटल आर्ट टूल, वॉलपेपर, 3D मॉडल, DSA सीखने के संसाधन और अधिक।
+  - title: टूल & यूटिलिटी
+    icon: "\U0001F6E0️"
+    text: JSON फ़ॉर्मेटर, SEO टूल, meta tag जनरेटर, टेक्स्ट एडिटर और रोज़मर्रा की उत्पादकता यूटिलिटी।
+  - title: गेम & फ़न
+    icon: "\U0001F3AE"
+    text: Wordle, Snake, Chain Reaction और आर्केड क्लासिक — ब्राउज़र में तुरंत खेलें।
+  - title: AI & डिज़ाइन लैब
+    icon: "\U0001F916"
+    text: AI ऐप्स के साथ डिज़ाइन यूटिलिटी, विज़ुअलाइज़र और क्रिएटिव वर्कफ़्लो एक जगह।
+hubBanners:
+  games:
+    image: "/images/banners/games.jpg"
+    title: गेम & फ़न
+    imageAlt: CodeFryDev पर ब्राउज़र गेम और पहेलियाँ
+    imageTitle: गेम & फ़न
+    description: पहेलियाँ, क्लासिक और आर्केड गेम — ब्राउज़र में तुरंत खेलें।
+  ai:
+    image: "/images/banners/ai.jpg"
+    title: AI टूल
+    imageAlt: CodeFryDev पर AI-संचालित टूल और जनरेटर
+    imageTitle: AI टूल
+    description: मीम जनरेटर, सारांश, चैट और अधिक — साइनअप नहीं।
+  designlab:
+    image: "/images/banners/designlab.jpg"
+    title: डिज़ाइन लैब
+    imageAlt: मेकर्स के लिए डिज़ाइन लैब टूल और क्रिएटिव संसाधन
+    imageTitle: डिज़ाइन लैब
+    description: मेकर्स के लिए क्रिएटिव डिज़ाइन टूल, विज़ुअलाइज़र और संसाधन।
+  store:
+    image: "/images/banners/store.jpg"
+    title: CodeFryDev Store
+    imageAlt: Google Play पर CodeFryDev मोबाइल ऐप
+    imageTitle: CodeFryDev Store
+    description: Google Play पर मोबाइल ऐप और डाउनलोड।
+categoryBanners:
+  creative-assets:
+    image: "/images/banners/creative-assets.jpg"
+    title: क्रिएटिव & एसेट एक्सप्लोर करें
+    imageAlt: CodeFryDev पर क्रिएटिव टूल, डिजिटल कला और सीखने के एसेट
+    imageTitle: क्रिएटिव & एसेट एक्सप्लोर करें
+    description: मेकर्स के लिए आर्ट टूल, वॉलपेपर, 3D मॉडल और सीखने के संसाधन।
+  tools-utilities:
+    image: "/images/banners/tools-utilities.jpg"
+    title: टूल & यूटिलिटी संग्रह
+    imageAlt: ब्राउज़र में उत्पादकता और डेवलपर यूटिलिटी
+    imageTitle: टूल & यूटिलिटी संग्रह
+    description: ब्राउज़र में उत्पादकता ऐप, फ़ॉर्मेटर, SEO टूल और dev यूटिलिटी।
+  games-fun:
+    image: "/images/banners/games-fun.jpg"
+    title: गेम & फ़न
+    imageAlt: Wordle, Snake और Chain Reaction सहित मुफ़्त ब्राउज़र गेम
+    imageTitle: गेम & फ़न
+    description: Wordle, Snake, Chain Reaction और अधिक — ब्राउज़र में तुरंत खेलें।
+  site-links:
+    image: "/images/banners/site-links.jpg"
+    title: साइट & संसाधन
+    imageAlt: साइट लिंक, परिचय पेज और बाहरी संसाधन
+    imageTitle: साइट & संसाधन
+    description: परिचय, अपडेट, स्टोर, गोपनीयता और बाहरी लिंक।
+  containers-packages:
+    image: "/images/banners/containers-packages.jpg"
+    title: कंटेनर & पैकेज
+    imageAlt: CodeFryDev से Docker इमेज और npm पैकेज
+    imageTitle: कंटेनर & पैकेज
+    description: CodeFryDev से आधिकारिक Docker इमेज और npm पैकेज।
+hero:
+  badge: मुफ़्त टूल — साइनअप नहीं
+  searchPlaceholder: टूल, गेम, AI ऐप खोजें…
+  autoplayMs: 6000
+  slides:
+  - image: "/images/hero/slide-1.webp"
+    imageAlt: लैपटॉप पर सहयोग करती टीम
+    imageTitle: ब्राउज़र में टूल, गेम और AI
+    title: ब्राउज़र में टूल, गेम और AI
+    description: यह एक मंच है जहाँ हम सीखते, प्रयोग करते, गेम खेलते, नए विचार बनाते और बहुत कुछ…
+  - image: "/images/hero/slide-2.webp"
+    imageAlt: डेस्क पर साथ काम करते डेवलपर
+    imageTitle: CodeFryDev के साथ तेज़ी से बनाएँ
+    title: CodeFryDev के साथ तेज़ी से बनाएँ
+    description: JSON प्लेग्राउंड से Design Lab संसाधन तक — सब कुछ ब्राउज़र में।
+  - image: "/images/hero/slide-3.webp"
+    imageAlt: डेस्क पर कोड दिखाता लैपटॉप
+    imageTitle: कोई इंस्टॉल नहीं। खोलें और उपयोग करें।
+    title: कोई इंस्टॉल नहीं। खोलें और उपयोग करें।
+    description: क्रिएटिव एसेट, उत्पादकता टूल, गेम और AI हेल्पर एक जगह।
+cta:
+  coffee:
+    title: हमें कॉफ़ी पिलाएँ
+    description: अगर हमारे टूल से मदद मिली हो, तो सभी के लिए मुफ़्त यूटिलिटी के विकास में सहयोग करें।
+    buttonText: आज हमारा समर्थन करें
+    buttonUrl: "/donate"
+    secondaryText: हमारे मिशन के बारे में
+    secondaryUrl: "/about-us"
+marquee:
+  enabled: true
+  label: दुनिया भर के मेकर्स के लिए
+  items:
+  - name: बिना साइनअप
+  - name: ब्राउज़र टूल
+  - name: मुफ़्त गेम
+  - name: AI ऐप
+  - name: डिज़ाइन लैब
+  - name: खुली पहुँच
+testimonials:
+- quote: JSON फ़ॉर्मेटर या JSON प्लेग्राउंड चाहिए हो तो CodeFryDev मेरा पहला विकल्प है।
+  author: Shubham P
+  handle: "@shubham.p"
+- quote: मैं सिर्फ Chain Reaction के लिए आया — कोई विज्ञापन या परेशान करने वाला extra नहीं।
+  author: Umang Kumar
+  handle: "@umangKum"
+- quote: OCR टूल खोजते हुए आया। इस वेबसाइट से प्यार है — बहुत-बहुत धन्यवाद।
+  author: Avinash Kumar
+  handle: "@Avibaoss"
+  avatar: https://i.pravatar.cc/150?img=33
+- quote: हमारी टीम SEO और meta tag टूल साप्ताहिक उपयोग करती है। सरल UI, कोई clutter नहीं — सब मुफ़्त, स्थानीय रूप से चलता
+    है।
+  author: Fredrick
+  handle: "@sriLankanFredrick"
+- quote: पहले कौन सा टूल चुनूँ पता नहीं — यहाँ हर टूल बढ़िया है। मुफ़्त रखें।
+  author: Vivek Bhuj
+  handle: "@bhujOnly"
+- quote: Wordle और Snake पाँच मिनट के ब्रेक के लिए बढ़िया। कोई इंस्टॉल, कोई अकाउंट — खोलें और खेलें।
+  author: Sam D.
+  handle: "@dawsontechtips"
+- quote: AI टूल बढ़ते जा रहे हैं — किसी और SaaS में साइनअप किए बिना सारांश और जनरेटर।
+  author: Riley K.
+  handle: "@rileysmith1"
+- quote: DSA एनिमेशन और पहेलियों के लिए छात्रों को यहाँ भेजता हूँ। साफ़, तेज़, हमेशा उपलब्ध।
+  author: Dr. Anika R.
+  handle: "@anika_teaches"

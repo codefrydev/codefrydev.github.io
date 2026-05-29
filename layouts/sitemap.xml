@@ -68,7 +68,8 @@
     <priority>0.6</priority>
   </url>
 {{- /* Add all URLs from home.yaml */ -}}
-{{- range hugo.Data.home.categories -}}
+{{- $data := partial "get-data.html" . -}}
+{{- range $data.home.categories -}}
   {{- range .items -}}
     {{- $url := .url -}}
     {{- $absoluteURL := "" -}}
@@ -91,9 +92,9 @@
   {{- end -}}
 {{- end -}}
 {{- /* Add all URLs from ai.yaml */ -}}
-{{- if hugo.Data.ai -}}
-  {{- if hugo.Data.ai.data -}}
-    {{- range hugo.Data.ai.data -}}
+{{- if $data.ai -}}
+  {{- if $data.ai.data -}}
+    {{- range $data.ai.data -}}
       {{- if .url -}}
         {{- $url := .url -}}
         {{- $absoluteURL := "" -}}
@@ -117,9 +118,9 @@
   {{- end -}}
 {{- end -}}
 {{- /* Add all URLs from games.yaml */ -}}
-{{- if hugo.Data.games -}}
-  {{- if hugo.Data.games.data -}}
-    {{- range hugo.Data.games.data -}}
+{{- if $data.games -}}
+  {{- if $data.games.data -}}
+    {{- range $data.games.data -}}
       {{- if .url -}}
         {{- $url := .url -}}
         {{- $absoluteURL := "" -}}
@@ -143,9 +144,9 @@
   {{- end -}}
 {{- end -}}
 {{- /* Add all URLs from designlab.yaml */ -}}
-{{- if hugo.Data.designlab -}}
-  {{- if hugo.Data.designlab.data -}}
-    {{- range hugo.Data.designlab.data -}}
+{{- if $data.designlab -}}
+  {{- if $data.designlab.data -}}
+    {{- range $data.designlab.data -}}
       {{- if .url -}}
         {{- $url := .url -}}
         {{- $absoluteURL := "" -}}
@@ -169,9 +170,9 @@
   {{- end -}}
 {{- end -}}
 {{- /* Add all URLs from store.yaml */ -}}
-{{- if hugo.Data.store -}}
-  {{- if hugo.Data.store.data -}}
-    {{- range hugo.Data.store.data -}}
+{{- if $data.store -}}
+  {{- if $data.store.data -}}
+    {{- range $data.store.data -}}
       {{- if .url -}}
         {{- $url := .url -}}
         {{- $absoluteURL := "" -}}

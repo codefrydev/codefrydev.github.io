@@ -10,7 +10,8 @@
         {{- end -}}
       </header>
       <ul class="history-timeline" role="list">
-        {{- range hugo.Data.history.history -}}
+        {{- $data := partial "get-data.html" . -}}
+        {{- range $data.history.history -}}
         <li style="--accent-color: {{ .accent_color | default "#6366f1" }}" role="listitem">
           <a href="{{ .link }}" class="history-item-link group" aria-label="History item: {{ .title }}">
             <div class="date">{{ .date }}</div>

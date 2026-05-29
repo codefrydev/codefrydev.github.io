@@ -1,4 +1,5 @@
 ---
+translationKey: "faq"
 title: "FAQ"
 date: 2025-05-25T00:00:00Z
 draft: false

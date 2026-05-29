@@ -1,4 +1,5 @@
 ---
+translationKey: "about-us"
 title: "About us"
 date: 2024-03-01T00:00:00Z
 draft: false

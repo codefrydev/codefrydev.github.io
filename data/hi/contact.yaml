@@ -1,0 +1,13 @@
+smartform:
+  recipient: b74bc04ad06f8c8fead06c04d820a483
+  subject: CodeFryDev संपर्क फ़ॉर्म
+  successMessage: धन्यवाद! हम जल्द जवाब देंगे।
+validation:
+  name:
+    minLength: 2
+    maxLength: 80
+  email:
+    maxLength: 254
+  message:
+    minLength: 10
+    maxLength: 5000

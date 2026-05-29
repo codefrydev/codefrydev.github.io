@@ -1,0 +1,8 @@
+<script>
+window.CFD_I18N = {{ dict
+  "lang" (.Site.Language.Lang | default "en")
+  "navOpenMenu" (i18n "nav_open_menu")
+  "navCloseMenu" (i18n "nav_close_menu")
+  "navSwitchTheme" (i18n "nav_switch_theme")
+| jsonify | safeJS }};
+</script>

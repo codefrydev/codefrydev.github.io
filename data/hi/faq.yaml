@@ -1,0 +1,72 @@
+categories:
+- id: getting-started
+  label: शुरुआत
+  icon: "\U0001F680"
+- id: using-tools
+  label: हमारे टूल का उपयोग
+  icon: "\U0001F6E0️"
+- id: privacy-support
+  label: गोपनीयता और सहायता
+  icon: "\U0001F512"
+- id: community
+  label: समुदाय और सीखना
+  icon: "\U0001F91D"
+faqs:
+- question: CodeFryDev क्या है?
+  answer: >-
+    यह एक मंच है जहाँ हम सीखते, प्रयोग करते, गेम खेलते, नए विचार बनाते और बहुत कुछ… ब्राउज़र में मुफ़्त टूल, गेम और AI ऐप
+    — साइनअप नहीं।
+  category: getting-started
+- question: CodeFryDev किस प्रकार के टूल प्रदान करता है?
+  answer: >-
+    CodeFryDev पाँच मुख्य श्रेणियाँ प्रदान करता है: क्रिएटिव & एसेट (कला, टेक्स्ट टूल, वॉलपेपर, 3D मॉडल), टूल & यूटिलिटी (AI
+    टूल, CSV, JSON फ़ॉर्मेटर, meta tag जनरेटर), गेम & फ़न (Chain Reaction, Wordle, Snake), साइट & बाहरी लिंक (परिचय, टाइमलाइन,
+    स्टोर, गोपनीयता), कंटेनर & पैकेज (Docker इमेज और npm पैकेज)।
+  category: getting-started
+- question: कौन से AI टूल उपलब्ध हैं?
+  answer: >-
+    AI SocialSnap, AI Meme Generator, Visual Note AI, Aqua Tracker AI, AI Web Summarizer, Profile AI और CFD Chat AI सहित कई
+    AI टूल। कंटेंट निर्माण, सारांश और उत्पादकता में मदद।
+  category: getting-started
+- question: नए टूल और गेम कितनी बार जोड़े जाते हैं?
+  answer: हम नियमित रूप से नए टूल और गेम जोड़ते हैं। अपडेट सेक्शन या सोशल मीडिया पर नज़र रखें।
+  category: getting-started
+- question: क्या टूल और गेम मुफ़्त हैं?
+  answer: ज़्यादातर वेब-आधारित टूल और गेम मुफ़्त हैं। कुछ प्रीमियम सुविधाएँ या मोबाइल ऐप अलग मूल्य निर्धारण पर हो सकते हैं।
+  category: using-tools
+- question: क्या टूल उपयोग करने के लिए अकाउंट बनाना ज़रूरी है?
+  answer: >-
+    ज़्यादातर टूल बिना अकाउंट के उपयोग किए जा सकते हैं। टूल पेज खोलें और तुरंत शुरू करें। कुछ उन्नत सुविधाओं के लिए पंजीकरण
+    आवश्यक हो सकता है।
+  category: using-tools
+- question: क्या ये टूल मोबाइल पर उपयोग किए जा सकते हैं?
+  answer: हाँ, ज़्यादातर टूल responsive हैं और मोबाइल पर काम करते हैं। Google Play Store पर समर्पित मोबाइल ऐप भी उपलब्ध।
+  category: using-tools
+- question: CodeFryDev सहायता के लिए कैसे संपर्क करें?
+  answer: >-
+    /contact-us/ पर संपर्क पेज से हम तक पहुँचें — संदेश भेजें, हम जल्द जवाब देंगे। सभी उपयोगकर्ताओं को उत्कृष्ट सहायता देने
+    के लिए प्रतिबद्ध।
+  category: privacy-support
+- question: शर्तें, गोपनीयता नीति और संपर्क विवरण कहाँ पढ़ें?
+  answer: उपयोग की शर्तें और गोपनीयता नीति फ़ुटर में सहायता और कानूनी के अंतर्गत। सहायता के लिए /contact-us/ पर संपर्क पेज।
+  category: privacy-support
+- question: CodeFryDev टूल उपयोग करते समय क्या मेरा डेटा सुरक्षित है?
+  answer: >-
+    हाँ, हम डेटा सुरक्षा को गंभीरता से लेते हैं। ज़्यादातर टूल आपके ब्राउज़र में स्थानीय रूप से डेटा प्रोसेस करते हैं। विस्तार
+    के लिए गोपनीयता नीति देखें।
+  category: privacy-support
+- question: CodeFryDev कौन सी प्रोग्रामिंग भाषाएँ और तकनीकें उपयोग करता है?
+  answer: >-
+    CodeFryDev HTML5, CSS3, JavaScript और विभिन्न फ़्रेमवर्क सहित आधुनिक वेब तकनीकें उपयोग करता है। बैकएंड .NET पर है और Unity
+    आदि से मोबाइल ऐप भी विकसित करते हैं।
+  category: community
+- question: क्या मैं CodeFryDev प्रोजेक्ट में योगदान कर सकता/सकती हूँ?
+  answer: >-
+    हाँ! CodeFryDev योगदान के लिए खुला है। GitHub पर प्रोजेक्ट — pull request, बग रिपोर्ट या सुझाव भेजें। हमारे about पेज
+    देखें।
+  category: community
+- question: क्या वेब डेवलपमेंट सीखने के ट्यूटोरियल उपलब्ध हैं?
+  answer: >-
+    हाँ, CodeFryDev वेब डेवलपमेंट के व्यापक ट्यूटोरियल प्रदान करता है — बुनियादी HTML/CSS से उन्नत फ़्रेमवर्क तक। सभी स्तरों
+    के लिए।
+  category: community

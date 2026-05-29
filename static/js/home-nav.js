@@ -9,8 +9,9 @@
 
     function setOpen(open) {
       isOpen = open;
+      var i18n = window.CFD_I18N || {};
       btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-      btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      btn.setAttribute('aria-label', open ? (i18n.navCloseMenu || 'Close menu') : (i18n.navOpenMenu || 'Open menu'));
       if (open) {
         menu.removeAttribute('inert');
       } else {
@@ -97,4 +98,36 @@
   }
 
   wireDropdown('.nav-item-browse > a', '#nav-browse-mega', 120);
+
+  /** Language switcher — toggle dropdown on click */
+  (function () {
+    var root = document.querySelector('.footer-lang');
+    var trigger = document.getElementById('footer-lang-btn');
+    var panel = document.getElementById('footer-lang-menu');
+    if (!root || !trigger || !panel) return;
+
+    var isOpen = false;
+
+    function setOpen(open) {
+      isOpen = open;
+      root.classList.toggle('is-open', open);
+      trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+
+    trigger.addEventListener('click', function (e) {
+      e.stopPropagation();
+      setOpen(!isOpen);
+    });
+
+    document.addEventListener('click', function (e) {
+      if (!root.contains(e.target)) setOpen(false);
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && isOpen) {
+        setOpen(false);
+        trigger.focus();
+      }
+    });
+  })();
 })();

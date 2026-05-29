@@ -1,0 +1,51 @@
+{{- /* Page-specific title (single source of truth; do not add <title> in section layouts) */ -}}
+{{- $pageTitle := "" -}}
+{{- if .Params.seo_title -}}
+  {{- $pageTitle = .Params.seo_title -}}
+{{- else if .IsHome -}}
+  {{- $pageTitle = i18n "seo_home" -}}
+{{- else if eq .Section "ai" -}}
+  {{- $pageTitle = i18n "seo_ai" -}}
+{{- else if eq .Section "games" -}}
+  {{- $pageTitle = i18n "seo_games" -}}
+{{- else if eq .Section "designlab" -}}
+  {{- $pageTitle = i18n "seo_designlab" -}}
+{{- else if eq .Section "about-us" -}}
+  {{- $pageTitle = i18n "seo_about_us" -}}
+{{- else if eq .Section "about" -}}
+  {{- if strings.Contains .RelPermalink "/about/users/" -}}
+    {{- if .IsPage -}}
+      {{- $pageTitle = printf (i18n "seo_team_member") .Title -}}
+    {{- else -}}
+      {{- $pageTitle = i18n "seo_team_list" -}}
+    {{- end -}}
+  {{- else if ne .Title "" -}}
+    {{- $pageTitle = printf (i18n "seo_page") .Title -}}
+  {{- else -}}
+    {{- $pageTitle = i18n "seo_about" -}}
+  {{- end -}}
+{{- else if eq .Section "search" -}}
+  {{- $pageTitle = i18n "seo_search" -}}
+{{- else if eq .Section "history" -}}
+  {{- $pageTitle = i18n "seo_history" -}}
+{{- else if eq .Section "press" -}}
+  {{- $pageTitle = i18n "seo_press" -}}
+{{- else if eq .Section "contact-us" -}}
+  {{- $pageTitle = i18n "seo_contact" -}}
+{{- else if eq .Section "faq" -}}
+  {{- $pageTitle = i18n "seo_faq" -}}
+{{- else if eq .Section "cfddc" -}}
+  {{- if .Params.year -}}
+    {{- $pageTitle = printf (i18n "seo_cfddc_year") (substr .Params.year 2 2) .Params.year -}}
+  {{- else -}}
+    {{- $pageTitle = i18n "seo_cfddc" -}}
+  {{- end -}}
+{{- else if eq .Section "store" -}}
+  {{- $pageTitle = i18n "seo_store" -}}
+{{- else if ne .Title "" -}}
+  {{- $pageTitle = printf (i18n "seo_page") .Title -}}
+{{- else -}}
+  {{- $pageTitle = i18n "seo_default" -}}
+{{- end -}}
+{{- .Scratch.Set "pageTitle" $pageTitle -}}
+<title>{{ $pageTitle }}</title>

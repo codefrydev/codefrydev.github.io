@@ -1,0 +1,12 @@
+{{- $ctx := . -}}
+{{- if .Site -}}
+  {{- /* page context */ -}}
+{{- else -}}
+  {{- $ctx = .page -}}
+{{- end -}}
+{{- $lang := "en" -}}
+{{- with $ctx.Site -}}
+  {{- $lang = .Language.Lang -}}
+{{- end -}}
+{{- $langData := index hugo.Data $lang | default dict -}}
+{{- return merge hugo.Data $langData -}}

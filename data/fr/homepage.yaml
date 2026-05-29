@@ -1,0 +1,165 @@
+quote: Une plateforme où nous apprenons, expérimentons, jouons, inventons des idées innovantes et bien plus encore…
+nav:
+  megaMenu:
+    label: Parcourir
+    primaryTitle: Parcourir les catégories
+    secondaryTitle: Pôles
+    hubs:
+    - label: Jeux
+      url: "/games/"
+      icon: game-controller
+    - label: Outils IA
+      url: "/ai/"
+      icon: robot
+    - label: Design Lab
+      url: "/designlab/"
+      icon: palette
+    - label: Boutique
+      url: "/store/"
+      icon: shopping-bag
+    - label: Rechercher tous les outils
+      url: "/search/"
+      icon: magnifying-glass
+why:
+  title: Pourquoi choisir CodeFryDev ?
+  intro: Une plateforme où nous apprenons, expérimentons, jouons, inventons des idées innovantes et bien plus encore…
+  bullets:
+  - 100 % gratuit — la plupart des outils sans inscription
+  - Fonctionne dans votre navigateur — aucune installation
+  - Mises à jour régulières avec de nouveaux outils et jeux
+  - Respect de la vie privée — votre travail reste sur votre appareil
+  highlights:
+  - title: Créatif & Assets
+    icon: "\U0001F3A8"
+    text: Outils d'art numérique, fonds d'écran, modèles 3D, ressources DSA et plus pour designers et développeurs.
+  - title: Outils & Utilitaires
+    icon: "\U0001F6E0️"
+    text: Formateurs JSON, outils SEO, générateurs de meta tags, éditeurs de texte et utilitaires de productivité quotidiens.
+  - title: Jeux & Fun
+    icon: "\U0001F3AE"
+    text: Wordle, Snake, Chain Reaction et classiques d'arcade — jouez instantanément dans votre navigateur.
+  - title: IA & Design Lab
+    icon: "\U0001F916"
+    text: Applications IA, utilitaires de design, visualiseurs et workflows créatifs en un seul endroit.
+hubBanners:
+  games:
+    image: "/images/banners/games.jpg"
+    title: Jeux & Fun
+    imageAlt: Jeux et puzzles dans le navigateur sur CodeFryDev
+    imageTitle: Jeux & Fun
+    description: Puzzles, classiques et jeux d'arcade — jouez instantanément dans votre navigateur.
+  ai:
+    image: "/images/banners/ai.jpg"
+    title: Outils IA
+    imageAlt: Outils et générateurs IA sur CodeFryDev
+    imageTitle: Outils IA
+    description: Générateurs de mèmes, résumés, chat et plus — sans inscription.
+  designlab:
+    image: "/images/banners/designlab.jpg"
+    title: Design Lab
+    imageAlt: Outils Design Lab et ressources créatives pour les makers
+    imageTitle: Design Lab
+    description: Outils de design créatif, visualiseurs et ressources pour les makers.
+  store:
+    image: "/images/banners/store.jpg"
+    title: Boutique CodeFryDev
+    imageAlt: Applications mobiles CodeFryDev sur Google Play
+    imageTitle: Boutique CodeFryDev
+    description: Applications mobiles et téléchargements sur Google Play.
+categoryBanners:
+  creative-assets:
+    image: "/images/banners/creative-assets.jpg"
+    title: Explorer Créatif & Assets
+    imageAlt: Outils créatifs, art numérique et ressources d'apprentissage sur CodeFryDev
+    imageTitle: Explorer Créatif & Assets
+    description: Outils d'art, fonds d'écran, modèles 3D et ressources d'apprentissage pour les makers.
+  tools-utilities:
+    image: "/images/banners/tools-utilities.jpg"
+    title: Collection Outils & Utilitaires
+    imageAlt: Utilitaires de productivité et développeur dans le navigateur
+    imageTitle: Collection Outils & Utilitaires
+    description: Apps de productivité, formateurs, outils SEO et utilitaires dev dans votre navigateur.
+  games-fun:
+    image: "/images/banners/games-fun.jpg"
+    title: Jeux & Fun
+    imageAlt: Jeux gratuits dans le navigateur dont Wordle, Snake et Chain Reaction
+    imageTitle: Jeux & Fun
+    description: Wordle, Snake, Chain Reaction et plus — jouez instantanément dans votre navigateur.
+  site-links:
+    image: "/images/banners/site-links.jpg"
+    title: Site et ressources
+    imageAlt: Liens du site, pages à propos et ressources externes
+    imageTitle: Site et ressources
+    description: À propos, mises à jour, boutique, confidentialité et liens externes.
+  containers-packages:
+    image: "/images/banners/containers-packages.jpg"
+    title: Conteneurs & Packages
+    imageAlt: Images Docker et packages npm de CodeFryDev
+    imageTitle: Conteneurs & Packages
+    description: Images Docker officielles et packages npm de CodeFryDev.
+hero:
+  badge: Outils gratuits — sans inscription
+  searchPlaceholder: Rechercher outils, jeux, apps IA…
+  autoplayMs: 6000
+  slides:
+  - image: "/images/hero/slide-1.webp"
+    imageAlt: Équipe collaborant sur des ordinateurs portables
+    imageTitle: Outils, jeux et IA dans votre navigateur
+    title: Outils, jeux et IA dans votre navigateur
+    description: Une plateforme où nous apprenons, expérimentons, jouons, inventons des idées innovantes et bien plus encore…
+  - image: "/images/hero/slide-2.webp"
+    imageAlt: Développeurs travaillant ensemble à un bureau
+    imageTitle: Développez plus vite avec CodeFryDev
+    title: Développez plus vite avec CodeFryDev
+    description: Des bacs à sable JSON aux ressources Design Lab — tout fonctionne dans votre navigateur.
+  - image: "/images/hero/slide-3.webp"
+    imageAlt: Ordinateur portable affichant du code sur un bureau
+    imageTitle: Aucune installation. Ouvrez et utilisez.
+    title: Aucune installation. Ouvrez et utilisez.
+    description: Explorez assets créatifs, outils de productivité, jeux et assistants IA en un seul endroit.
+cta:
+  coffee:
+    title: Offrez-nous un café
+    description: Si nos outils vous ont aidé, pensez à soutenir le développement continu d'utilitaires gratuits pour tous.
+    buttonText: Soutenez-nous aujourd'hui
+    buttonUrl: "/donate"
+    secondaryText: Découvrez notre mission
+    secondaryUrl: "/about-us"
+marquee:
+  enabled: true
+  label: Conçu pour les makers du monde entier
+  items:
+  - name: Sans inscription
+  - name: Outils navigateur
+  - name: Jeux gratuits
+  - name: Apps IA
+  - name: Design Lab
+  - name: Accès ouvert
+testimonials:
+- quote: CodeFryDev est mon réflexe quand j'ai besoin d'un formateur JSON rapide ou d'un bac à sable JSON.
+  author: Shubham P
+  handle: "@shubham.p"
+- quote: Je suis venu uniquement pour Chain Reaction — pas de pub ni d'extras agaçants.
+  author: Umang Kumar
+  handle: "@umangKum"
+- quote: Je suis venu chercher des outils OCR. J'adore ce site — merci beaucoup les gars.
+  author: Avinash Kumar
+  handle: "@Avibaoss"
+  avatar: https://i.pravatar.cc/150?img=33
+- quote: >-
+    Notre équipe utilise les outils SEO et meta tags chaque semaine. Interface simple, sans encombrement — pas d'abonnement,
+    pas de pub, tout gratuit, et ça tourne localement. Ça aide beaucoup de développeurs.
+  author: Fredrick
+  handle: "@sriLankanFredrick"
+- quote: Je ne sais pas quel outil choisir en premier — chaque outil ici est génial. Merci de le garder gratuit.
+  author: Vivek Bhuj
+  handle: "@bhujOnly"
+- quote: Wordle et Snake sont parfaits pour une pause de cinq minutes. Pas d'installation, pas de compte — ouvrez et jouez.
+  author: Sam D.
+  handle: "@dawsontechtips"
+- quote: Les outils IA ne cessent de croître — résumés et générateurs sans s'inscrire à un autre SaaS.
+  author: Riley K.
+  handle: "@rileysmith1"
+- quote: J'envoie mes étudiants ici pour les animations DSA et les puzzles. Propre, rapide et toujours disponible.
+  author: Dr. Anika R.
+  handle: "@anika_teaches"

@@ -1,0 +1,26 @@
+cards:
+- accent_color: "#667eea"
+  title: コントリビューター
+  content: CodeFryDevツールを構築・維持するすべての人に会う。
+  phosphorIcon: users
+  url: "/about/users/"
+- accent_color: "#fa709a"
+  title: お問い合わせ
+  content: サポート、フィードバック、パートナーシップ、プレスお問い合わせ。
+  phosphorIcon: envelope
+  url: "/contact-us/"
+- accent_color: "#f093fb"
+  title: Hugo
+  content: このサイトはHugoで構築 — 高速、静的、バージョン管理。
+  phosphorIcon: code
+  url: https://gohugo.io/
+- accent_color: "#4facfe"
+  title: MarkBoots
+  content: CodePenのクリエイティブ作品からのレイアウトインスピレーション。
+  phosphorIcon: palette
+  url: https://codepen.io/MarkBoots
+- accent_color: "#43e97b"
+  title: プロフィールジェネレーター
+  content: 新しいチームページ用のコントリビュータープロフィールYAMLを生成。
+  phosphorIcon: user-plus
+  url: "/CodefrydevUserDataGenerator/"

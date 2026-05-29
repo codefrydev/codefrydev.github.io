@@ -1,4 +1,5 @@
 ---
+translationKey: "games"
 title: "Games"
 date: 2024-06-08T00:00:00Z
 description: "Play free online games in your browser—Wordle, Snake, Chain Reaction, and more. No download or signup. CodeFryDev browser games."

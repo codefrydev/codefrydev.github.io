@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ .Site.Language.Lang | default "en" }}">
 <head>
   {{ partial "header.html" . }}
   {{ partial "home/head.html" . }}
+  {{ partial "home/lang-fonts.html" . }}
   <link rel="preload" as="image" href="/images/hero/slide-1.webp" type="image/webp" fetchpriority="high">
 </head>
 <body class="home-page bg-gray-50/50 text-slate-800 font-sans antialiased">
   {{ partial "icons-sprite.html" . }}
   {{ partial "skip-link.html" . }}
+  {{ partial "i18n-script.html" . }}
   {{ partial "home/nav.html" . }}
   <script>
     (function () {
@@ -20,7 +22,8 @@
 
   <main id="main-content" class="home-sections" tabindex="-1">
     {{ partial "home/hero.html" . }}
-    {{- range hugo.Data.home.categories -}}
+    {{- $data := partial "get-data.html" . -}}
+    {{- range $data.home.categories -}}
       {{ partial "home/category-section.html" (dict "category" . "Site" $.Site) }}
     {{- end -}}
     {{ partial "home/testimonials.html" . }}

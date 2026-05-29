@@ -6,6 +6,7 @@
 {{- $homeCategorySlug := .homeCategorySlug -}}
 {{- $searchPlaceholder := .searchPlaceholder | default "Search tools, games, AI apps..." -}}
 {{- $searchID := .searchID | default "hub" -}}
+{{- $countLabel := .countLabel | default (i18n "hub_count_tools") -}}
 {{- $banner := .banner | default dict -}}
 {{- $page := .page -}}
 {{- $showSearch := .showSearch | default true -}}
@@ -14,7 +15,8 @@
 
 {{- $homeItems := slice -}}
 {{- if $homeCategorySlug -}}
-  {{- range hugo.Data.home.categories -}}
+  {{- $data := partial "get-data.html" . -}}
+  {{- range $data.home.categories -}}
     {{- if eq (.slug | default (.name | anchorize)) $homeCategorySlug -}}
       {{- $homeItems = .items -}}
     {{- end -}}
@@ -38,7 +40,7 @@
       {{- if or $showSearch (gt (len $items) 0) -}}
       <div class="browse-category__header">
         {{- if gt (len $items) 0 -}}
-        <p class="browse-category__count m-0">{{ len $items }} {{ .countLabel | default "tools" }}</p>
+        <p class="browse-category__count m-0">{{ len $items }} {{ $countLabel }}</p>
         {{- else -}}
         <p class="browse-category__count m-0"></p>
         {{- end -}}

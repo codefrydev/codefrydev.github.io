@@ -1,4 +1,5 @@
 ---
+translationKey: "designlab"
 title: "All Design"
 date: 2025-06-06T00:00:00Z
 description: "Free design tools and creative resources—music visualization, 3D tools, web-based design utilities. CodeFryDev Design Lab, no signup required."

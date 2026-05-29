@@ -3,7 +3,8 @@
 {{- $items := .Scratch.Get "cfddcItems" -}}
 {{- $shortYear := .Scratch.Get "cfddcShortYear" -}}
 {{- $count := .Scratch.Get "cfddcCount" -}}
-{{- $meta := index (hugo.Data.cfddc.years | default dict) $year | default dict -}}
+{{- $data := partial "get-data.html" . -}}
+{{- $meta := index ($data.cfddc.years | default dict) $year | default dict -}}
 {{- $tagline := $meta.tagline | default "A year of technology, creativity, and community" -}}
 {{- $dates := $meta.dates | default $year -}}
 {{- $allYears := .Scratch.Get "cfddcAllYears" -}}

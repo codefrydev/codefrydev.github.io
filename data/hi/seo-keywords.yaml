@@ -1,0 +1,79 @@
+home:
+  primary:
+    - "मुफ़्त ऑनलाइन टूल"
+    - "मुफ़्त AI टूल"
+  secondary:
+    - "बिना साइनअप मुफ़्त गेम"
+    - "ब्राउज़र आधारित यूटिलिटी"
+    - "मुफ़्त उत्पादकता ऐप"
+
+ai:
+  primary:
+    - "मुफ़्त AI टूल"
+    - "AI-संचालित यूटिलिटी"
+  secondary:
+    - "AI मीम जनरेटर"
+    - "वेबसाइट सारांशक"
+    - "बिना साइनअप मुफ़्त AI जनरेटर"
+
+games:
+  primary:
+    - "मुफ़्त ऑनलाइन गेम"
+    - "ब्राउज़र गेम"
+  secondary:
+    - "Wordle"
+    - "Snake गेम"
+    - "Chain Reaction गेम"
+    - "डाउनलोड के बिना मुफ़्त गेम"
+
+designlab:
+  primary:
+    - "मुफ़्त डिज़ाइन टूल"
+    - "क्रिएटिव संसाधन"
+  secondary:
+    - "डिज़ाइन लैब"
+    - "संगीत विज़ुअलाइज़ेशन"
+    - "ब्राउज़र डिज़ाइन टूल"
+
+store:
+  primary:
+    - "मुफ़्त मोबाइल ऐप"
+    - "CodeFryDev ऐप"
+  secondary:
+    - "Android ऐप"
+    - "Play Store"
+    - "उत्पादकता ऐप"
+
+about_us:
+  primary:
+    - "CodeFryDev"
+    - "मुफ़्त ऑनलाइन टूल प्लेटफ़ॉर्म"
+  secondary:
+    - "हमारे बारे में"
+    - "टूल और गेम"
+
+history:
+  primary:
+    - "CodeFryDev इतिहास"
+    - "समयरेखा"
+  secondary:
+    - "मील के पत्थर"
+    - "अपडेट"
+
+press:
+  primary:
+    - "CodeFryDev प्रेस"
+    - "प्रेस किट"
+  secondary:
+    - "मीडिया किट"
+    - "लोगो"
+    - "संपर्क"
+
+cfddc:
+  primary:
+    - "CFDDC"
+    - "CodeFryDev डेवलपर कॉन्फ़्रेंस"
+  secondary:
+    - "घोषणाएँ"
+    - "समयरेखा"
+    - "WWDC"

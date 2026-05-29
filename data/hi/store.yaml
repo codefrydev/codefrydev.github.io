@@ -1,0 +1,53 @@
+data:
+- name: Water Reminder
+  icon: cfd-waterreminder
+  url: https://play.google.com/store/apps/details?id=com.codefrydev.waterreminder
+  description: हाइड्रेटेड रहें — Google Play पर Android ऐप।
+  date: '2025-01-01'
+  phosphorIcon: drop
+  featured: true
+  external: true
+  aliases:
+  - hydration
+  - android app
+  - drink water
+  - reminder
+- name: abintudyog
+  icon: cfd-abint
+  url: https://play.google.com/store/apps/details?id=com.priyadarshi.abhijeet.abintudyog
+  description: Google Play पर शैक्षिक Android ऐप।
+  date: '2025-02-02'
+  phosphorIcon: student
+  featured: true
+  external: true
+  aliases:
+  - education app
+  - learning
+  - android
+  - study
+- name: Tiny fish
+  icon: cfd-tinyfish
+  url: https://play.google.com/store/apps/details?id=in.codefrydev.developer.abhijeet.tinyfish
+  description: कैज़ुअल फिश गेम — Google Play पर Android ऐप।
+  date: '2025-03-03'
+  phosphorIcon: fish
+  featured: true
+  external: true
+  aliases:
+  - fish game
+  - casual game
+  - android
+  - aquarium
+- name: Galactic gunner
+  icon: cfd-galacticgunner
+  url: https://play.google.com/store/apps/details?id=org.codefrydev.developer.abhijeet.galacticgunner
+  description: स्पेस शूटर — Google Play पर Android ऐप।
+  date: '2025-04-04'
+  phosphorIcon: rocket
+  featured: true
+  external: true
+  aliases:
+  - space shooter
+  - arcade
+  - android game
+  - galactic

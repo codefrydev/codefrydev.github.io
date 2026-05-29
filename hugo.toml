@@ -1,7 +1,9 @@
 baseURL = 'https://codefrydev.in/'
-languageCode = 'en-US'
+locale = 'en-US'
 defaultContentLanguage = 'en'
+defaultContentLanguageInSubdir = false
 title = 'CodeFryDev'
+enableMissingTranslationPlaceholders = false
 
 # No tagged content; skip /tags/ and /categories/ list pages
 disableKinds = ["taxonomy", "term"]
@@ -62,16 +64,63 @@ disableKinds = ["taxonomy", "term"]
 
 [languages]
   [languages.en]
-    languageCode = "en-US"
-    languageName = "English"
+    locale = "en-US"
+    label = "English"
     weight = 1
     contentDir = "content"
+    [languages.en.params]
+      description = "This is a platform where we learn, work on experimental projects, play games, come up with innovative ideas, and build many more..."
+      footer_tagline = "This is a platform where we learn, work on experimental projects, play games, come up with innovative ideas, and build many more..."
+
+  [languages.ja]
+    locale = "ja-JP"
+    label = "日本語"
+    weight = 2
+    contentDir = "content-ja"
+    [languages.ja.params]
+      description = "学び、実験的なプロジェクト、ゲーム、アイデアづくりができるプラットフォーム。ブラウザで無料のツール、ゲーム、AIアプリをお楽しみください。"
+      footer_tagline = "学び、実験、ゲーム、アイデアづくり——無料のブラウザツールとゲームのプラットフォーム。"
+
+  [languages.fr]
+    locale = "fr-FR"
+    label = "Français"
+    weight = 3
+    contentDir = "content-fr"
+    [languages.fr.params]
+      description = "Une plateforme pour apprendre, expérimenter, jouer et innover — outils, jeux et apps IA gratuits dans votre navigateur."
+      footer_tagline = "Apprendre, expérimenter, jouer et innover — outils et jeux gratuits dans le navigateur."
+
+  [languages.hi]
+    locale = "hi-IN"
+    label = "हिन्दी"
+    weight = 4
+    contentDir = "content-hi"
+    [languages.hi.params]
+      description = "सीखने, प्रयोग करने, गेम खेलने और नए विचार बनाने का मंच — ब्राउज़र में मुफ़्त टूल, गेम और AI ऐप।"
+      footer_tagline = "सीखें, प्रयोग करें, खेलें और बनाएं — ब्राउज़र में मुफ़्त टूल और गेम।"
 
 
 [module]
   [[module.mounts]]
     source = "content"
     target = "content"
+    [module.mounts.sites.matrix]
+      languages = ["en"]
+  [[module.mounts]]
+    source = "content-ja"
+    target = "content"
+    [module.mounts.sites.matrix]
+      languages = ["ja"]
+  [[module.mounts]]
+    source = "content-fr"
+    target = "content"
+    [module.mounts.sites.matrix]
+      languages = ["fr"]
+  [[module.mounts]]
+    source = "content-hi"
+    target = "content"
+    [module.mounts.sites.matrix]
+      languages = ["hi"]
   [[module.mounts]]
     source = "data"
     target = "data"

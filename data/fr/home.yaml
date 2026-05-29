@@ -1,0 +1,1040 @@
+categories:
+- name: Créatif & Assets
+  slug: creative-assets
+  subtitle: Art, assets et apprentissage
+  seeAllUrl: "/browse/creative-assets/"
+  previewCount: 12
+  phosphorIcon: palette
+  items:
+  - name: Muraly
+    icon: cfd-muraly
+    url: https://muraly.codefrydev.in/
+    description: Canevas mural collaboratif pour dessiner ensemble dans le navigateur.
+    date: '2025-12-29'
+    phosphorIcon: paint-brush
+    featured: true
+    external: true
+    aliases:
+    - drawing
+    - canvas
+    - mural
+    - collaborate
+  - name: Chain Reaction Online
+    icon: cfd-chainreaction-online
+    url: https://chainreaction.codefrydev.in/
+    description: Chain Reaction multijoueur en ligne — jouez avec des amis et déclenchez des réactions en chaîne.
+    date: '2026-05-24'
+    phosphorIcon: share-network
+    featured: true
+    external: true
+    aliases:
+    - multiplayer
+    - online
+    - strategy
+    - board game
+    - chain reaction
+  - name: SVG Engine
+    icon: cfd-svgengine
+    url: "/svgengine/"
+    description: Créez et modifiez des graphiques SVG avec un éditeur visuel.
+    date: '2026-05-09'
+    phosphorIcon: pen-nib
+    featured: true
+    external: false
+    aliases:
+    - svg
+    - vector
+    - graphics
+    - editor
+  - name: 3D Printer
+    icon: cfd-3dprinter
+    url: https://codefrydev.in/3DPrinter/
+    description: Utilitaires d'impression 3D et aides pour modèles destinés aux makers.
+    date: '2026-04-16'
+    phosphorIcon: cube
+    featured: true
+    external: true
+    aliases:
+    - 3d print
+    - maker
+    - model
+  - name: ESP32CAM
+    icon: cfd-esp32cam
+    url: "/Esp32cam/"
+    description: Utilitaires et guides pour caméra ESP32 pour projets IoT.
+    date: '2026-01-24'
+    phosphorIcon: cpu
+    featured: true
+    external: false
+    aliases:
+    - esp32
+    - camera
+    - iot
+    - microcontroller
+  - name: Noob FONT
+    icon: cfd-font
+    url: "/font/"
+    description: Prévisualisez et téléchargez la famille de polices Noob pour vos projets.
+    date: '2026-01-27'
+    phosphorIcon: text-aa
+    featured: true
+    external: false
+    aliases:
+    - font
+    - typography
+    - typeface
+    - download
+  - name: RAG
+    icon: cfd-rag
+    iconAlt: Icône Random API Generator
+    iconTitle: RAG — Random API Generator
+    url: "/RandomApiGenerator/docs/"
+    description: Documentation et bac à sable du générateur d'API aléatoires pour APIs mock.
+    date: '2026-04-14'
+    phosphorIcon: shuffle
+    featured: true
+    external: false
+    aliases:
+    - random api
+    - mock api
+    - api generator
+  - name: Tomatoes
+    icon: cfd-tomatoes
+    url: "/Tomatoes/"
+    description: Minuteur style Pomodoro pour améliorer la concentration et la productivité.
+    date: '2026-03-11'
+    phosphorIcon: plant
+    featured: false
+    external: false
+    aliases:
+    - pomodoro
+    - timer
+    - focus
+    - productivity
+  - name: NodeFlow
+    icon: cfd-nodeflow
+    url: "/NodeEditor/"
+    description: Éditeur visuel de nœuds pour flux et diagrammes dans le navigateur.
+    date: '2026-02-07'
+    phosphorIcon: graph
+    featured: false
+    external: false
+    aliases:
+    - node editor
+    - flowchart
+    - diagram
+    - workflow
+  - name: SqLite
+    icon: cfd-sql
+    url: "/SqLite/"
+    description: Exécutez et explorez des bases SQLite dans le navigateur.
+    date: '2026-03-16'
+    phosphorIcon: database
+    featured: false
+    external: false
+    aliases:
+    - sqlite
+    - database
+    - sql
+    - db
+  - name: Art
+    icon: cfd-art
+    url: "/designlab/"
+    description: Hub Design Lab pour outils créatifs et ressources visuelles.
+    date: '2025-06-18'
+    phosphorIcon: palette
+    featured: false
+    external: false
+    aliases:
+    - design lab
+    - creative
+    - art tools
+    - visual
+  - name: SocialSnap
+    icon: cfd-socialsnap
+    url: "/SocialMedia/"
+    description: Créez et prévisualisez des mises en page et extraits pour les réseaux sociaux.
+    date: '2026-04-12'
+    phosphorIcon: share-network
+    featured: false
+    external: false
+    aliases:
+    - social media
+    - instagram
+    - layout
+    - snippets
+  - name: Text
+    icon: cfd-texttools
+    url: "/TextHub/"
+    description: Hub d'outils texte — formatez, transformez et éditez du texte en ligne.
+    date: '2025-09-07'
+    phosphorIcon: text-t
+    featured: false
+    external: false
+    aliases:
+    - text tools
+    - text hub
+    - format
+    - transform
+  - name: Wallpaper
+    icon: cfd-wallpaper
+    url: "/Wallpaper/"
+    description: Parcourez et téléchargez des fonds d'écran pour bureau et mobile.
+    date: '2024-04-12'
+    phosphorIcon: image
+    featured: false
+    external: false
+    aliases:
+    - background
+    - desktop
+    - mobile
+    - download
+  - name: 3D Models
+    icon: cfd-threedassets
+    url: "/ThreeDAssets/"
+    description: Explorez et prévisualisez des modèles et assets 3D.
+    date: '2025-05-10'
+    phosphorIcon: cube
+    featured: false
+    external: false
+    aliases:
+    - 3d models
+    - assets
+    - preview
+    - three d
+  - name: Android Assets
+    icon: cfd-android
+    url: https://android.codefrydev.in/
+    description: Assets de design Android, icônes et ressources.
+    date: '2025-07-14'
+    phosphorIcon: android-logo
+    featured: false
+    external: true
+    aliases:
+    - android
+    - icons
+    - design assets
+    - mobile
+  - name: DSAAnim
+    icon: cfd-dsanim
+    url: "/AnimateDatastructure/"
+    description: Visualisations animées pour les structures de données et algorithmes.
+    date: '2026-03-18'
+    phosphorIcon: graduation-cap
+    featured: false
+    external: false
+    aliases:
+    - data structures
+    - algorithms
+    - animation
+    - dsa
+  - name: DSA Lab
+    icon: cfd-learnds
+    url: "/LearnDS/"
+    description: Labo interactif pour apprendre les structures de données étape par étape.
+    date: '2026-02-18'
+    phosphorIcon: book-open
+    featured: false
+    external: false
+    aliases:
+    - data structures
+    - learn dsa
+    - algorithms
+    - coding
+  - name: Size Matters
+    icon: cfd-sizematters
+    url: "/SizeMatters/"
+    description: Comparez et comprenez les dimensions de fichiers et d'images.
+    date: '2026-03-25'
+    phosphorIcon: ruler
+    featured: false
+    external: false
+    aliases:
+    - file size
+    - image dimensions
+    - compare size
+    - bytes
+  - name: Fish
+    icon: cfd-fish
+    url: "/fish/"
+    description: Simulation d'aquarium relaxante dans votre navigateur.
+    date: '2026-01-20'
+    phosphorIcon: fish
+    featured: false
+    external: false
+    aliases:
+    - aquarium
+    - simulation
+    - relaxing
+    - fish tank
+- name: Outils & Utilitaires
+  slug: tools-utilities
+  subtitle: Productivité et outils dev
+  seeAllUrl: "/browse/tools-utilities/"
+  previewCount: 12
+  phosphorIcon: wrench
+  items:
+  - name: CFD's Penney
+    icon: cfd-cfdpenney
+    url: "/CFDPenney/"
+    description: Démo et outil d'apprentissage d'enchères au centime.
+    date: '2026-01-04'
+    phosphorIcon: coins
+    featured: true
+    external: false
+    aliases:
+    - penny auction
+    - auction
+    - demo
+    - bidding
+  - name: Web SEO
+    icon: cfd-seo
+    url: "/WebsiteProfiling/"
+    description: Analyser et profiler des sites web pour des insights SEO.
+    date: '2026-03-16'
+    phosphorIcon: chart-line-up
+    featured: true
+    external: false
+    aliases:
+    - seo
+    - website profiling
+    - analyze site
+    - audit
+  - name: Resolution Tester
+    icon: cfd-resolutiontester
+    url: "/WebsiteResolutionTester/"
+    description: Prévisualisez votre site aux résolutions de viewport courantes.
+    date: '2026-05-13'
+    phosphorIcon: monitor
+    featured: true
+    external: false
+    aliases:
+    - responsive
+    - viewport
+    - screen size
+    - breakpoint
+  - name: ColorTools
+    icon: cfd-colortools
+    url: "/ColorTools/"
+    description: Générez des palettes, ajustez les teintes, extrayez des couleurs et convertissez les formats.
+    date: '2026-05-23'
+    phosphorIcon: palette
+    featured: true
+    external: false
+    aliases:
+    - color
+    - palette
+    - hex
+    - picker
+    - colortools
+  - name: SVG Color Filter
+    icon: cfd-svgcolorfilter
+    url: "/ColoringImageUsingCss/"
+    description: Générez des valeurs de filtre CSS pour recolorer des icônes SVG chargées via des balises img.
+    date: '2026-05-29'
+    phosphorIcon: drop-half-bottom
+    featured: true
+    external: false
+    aliases:
+    - svg color
+    - css filter
+    - recolor svg
+    - img tag
+    - coloring image
+    - css color filter
+  - name: Prompt Library
+    icon: cfd-prompt
+    url: "/PromptsValut/"
+    description: Prompts IA sélectionnés pour l'écriture, le code et la créativité.
+    date: '2025-09-20'
+    phosphorIcon: book-open
+    featured: true
+    external: false
+    aliases:
+    - prompts
+    - prompt vault
+    - ai prompts
+    - chatgpt
+  - name: JSON Playground
+    icon: cfd-jsonplayground
+    url: "/JsonPlayground/"
+    description: Formatez, validez et expérimentez avec JSON en temps réel.
+    date: '2026-02-06'
+    phosphorIcon: brackets-curly
+    featured: true
+    external: false
+    aliases:
+    - json
+    - json editor
+    - validate
+    - format
+  - name: JS LIDE
+    icon: cfd-jswebide
+    iconAlt: Icône IDE JavaScript dans le navigateur
+    iconTitle: JS LIDE — IDE JavaScript
+    url: "/Javascript/"
+    description: IDE JavaScript léger dans le navigateur.
+    date: '2026-04-24'
+    phosphorIcon: code
+    featured: true
+    external: false
+    aliases:
+    - javascript ide
+    - js editor
+    - code editor
+    - web ide
+  - name: Speed Test
+    icon: cfd-speedtest
+    url: "/Wifi-Speed-Test/"
+    description: Testez la vitesse de votre réseau directement dans le navigateur.
+    date: '2026-04-08'
+    phosphorIcon: gauge
+    featured: false
+    external: false
+    aliases:
+    - wifi speed
+    - network speed
+    - bandwidth
+    - internet test
+  - name: BSOD
+    icon: cfd-bsod
+    url: "/bluescreenofdeath/"
+    description: Simulateur d'écran bleu pour blagues et présentations.
+    date: '2025-12-29'
+    phosphorIcon: warning
+    featured: false
+    external: false
+    aliases:
+    - blue screen
+    - bluescreen
+    - prank
+    - windows error
+  - name: Json V M
+    icon: cfd-jvm
+    url: "/VisualMapper/"
+    description: Visualisez et mappez des structures de données JSON.
+    date: '2026-03-15'
+    phosphorIcon: brackets-curly
+    featured: false
+    external: false
+    aliases:
+    - json visualizer
+    - json mapper
+    - visual mapper
+    - tree view
+  - name: CSV
+    icon: cfd-csv
+    iconAlt: Icône d'éditeur et convertisseur CSV
+    iconTitle: CSV — éditeur et convertisseur
+    url: "/CSV/"
+    description: Visualisez, modifiez et convertissez des fichiers CSV en ligne.
+    date: '2025-03-03'
+    phosphorIcon: table
+    featured: false
+    external: false
+    aliases:
+    - csv editor
+    - spreadsheet
+    - table
+    - convert csv
+  - name: CIN
+    icon: cfd-cin
+    iconAlt: Icône de recherche d'identification d'entreprise
+    iconTitle: CIN — recherche d'identification d'entreprise
+    url: "/CIN/"
+    description: Utilitaires de recherche d'identification d'entreprise.
+    date: '2026-04-26'
+    phosphorIcon: identification-card
+    featured: false
+    external: false
+    aliases:
+    - corporate id
+    - business lookup
+    - company search
+    - cin number
+  - name: Tier List Maker
+    icon: cfd-tierlistmaker
+    url: "/TierListMaker/"
+    description: Créez des tier lists partageables par glisser-déposer.
+    date: '2026-04-27'
+    phosphorIcon: list-numbers
+    featured: false
+    external: false
+    aliases:
+    - tier list
+    - ranking
+    - drag drop
+    - s tier
+  - name: Know Your Size
+    icon: cfd-knowyoursize
+    url: "/KnowYourSize/"
+    description: Référence de tailles d'écran et de viewport pour développeurs.
+    date: '2026-04-28'
+    phosphorIcon: ruler
+    featured: false
+    external: false
+    aliases:
+    - screen size
+    - viewport
+    - display size
+    - monitor
+  - name: TXT Diff
+    icon: cfd-txtdiff
+    url: "/TextDifference/"
+    description: Comparez deux fichiers texte côte à côte.
+    date: '2026-03-14'
+    phosphorIcon: files
+    featured: false
+    external: false
+    aliases:
+    - text diff
+    - compare text
+    - diff tool
+    - file compare
+  - name: Mifier
+    icon: cfd-mifier
+    url: "/Mifier/"
+    description: Minifiez et embellissez le code et le balisage.
+    date: '2026-03-14'
+    phosphorIcon: sparkle
+    featured: false
+    external: false
+    aliases:
+    - minify
+    - beautify
+    - formatter
+    - prettify
+  - name: Json2Form
+    icon: cfd-json
+    url: "/Json2Form/"
+    description: Générez des formulaires HTML à partir d'un schéma JSON.
+    date: '2025-04-16'
+    phosphorIcon: brackets-curly
+    featured: false
+    external: false
+    aliases:
+    - json form
+    - form generator
+    - schema form
+    - html form
+  - name: Meta Tags
+    icon: cfd-metatag
+    url: "/metatag/"
+    description: Générez et prévisualisez des meta tags HTML pour le partage et le SEO.
+    date: '2025-06-22'
+    phosphorIcon: tag
+    featured: false
+    external: false
+    aliases:
+    - og tags
+    - open graph
+    - social preview
+    - seo tags
+  - name: Notebook
+    icon: cfd-notebook
+    url: "/YourNoteBook/"
+    description: Carnet en ligne simple pour notes rapides.
+    date: '2025-04-07'
+    phosphorIcon: notebook
+    featured: false
+    external: false
+    aliases:
+    - notes
+    - notepad
+    - quick notes
+    - online notebook
+  - name: Text Editor
+    icon: cfd-texteditor
+    url: "/TextEditor/"
+    description: Éditeur de texte rapide dans le navigateur avec l'essentiel.
+    date: '2026-02-18'
+    phosphorIcon: pencil
+    featured: false
+    external: false
+    aliases:
+    - editor
+    - write
+    - plain text
+    - notepad
+  - name: Weather
+    icon: cfd-mausam
+    url: "/Mausam/"
+    description: Consultez la météo avec une interface simple et rapide.
+    date: '2025-05-06'
+    phosphorIcon: cloud-sun
+    featured: false
+    external: false
+    aliases:
+    - mausam
+    - forecast
+    - temperature
+    - climate
+  - name: AI
+    icon: cfd-brain
+    url: "/ai"
+    description: Parcourez les outils IA — mèmes, résumés, chat et plus.
+    date: '2025-06-24'
+    phosphorIcon: brain
+    featured: false
+    external: false
+    aliases:
+    - ai tools
+    - artificial intelligence
+    - chatgpt
+    - machine learning
+  - name: Crop & Resize
+    icon: cfd-picwrap
+    url: https://picwrap.codefrydev.in
+    description: Recadrez et redimensionnez des images sans installer de logiciel.
+    date: '2025-10-22'
+    phosphorIcon: crop
+    featured: false
+    external: true
+    aliases:
+    - image crop
+    - resize image
+    - picwrap
+    - photo edit
+  - name: InstaImage
+    icon: cfd-instaimage
+    url: https://instaimage.codefrydev.in/
+    description: Préparez des images aux dimensions Instagram et réseaux sociaux.
+    date: '2026-01-16'
+    phosphorIcon: instagram-logo
+    featured: false
+    external: true
+    aliases:
+    - instagram
+    - social image
+    - story size
+    - post size
+  - name: Be Back
+    icon: cfd-willbeback
+    url: "/willbeback/"
+    description: Écran personnalisé « de retour bientôt » pour streams et réunions.
+    date: '2025-10-21'
+    phosphorIcon: clock
+    featured: false
+    external: false
+    aliases:
+    - brb
+    - be right back
+    - stream overlay
+    - away screen
+  - name: Commit
+    icon: cfd-git
+    url: "/CodeSnippt/"
+    description: Générez des messages de commit et des extraits de code.
+    date: '2026-02-23'
+    phosphorIcon: git-branch
+    featured: false
+    external: false
+    aliases:
+    - commit message
+    - git commit
+    - code snippet
+    - github
+  - name: Snippt
+    icon: cfd-snippt
+    url: "/CodeSnippt/"
+    description: Enregistrez et organisez des extraits de code dans le navigateur.
+    date: '2026-03-28'
+    phosphorIcon: scissors
+    featured: false
+    external: false
+    aliases:
+    - code snippet
+    - snippets
+    - save code
+    - clipboard
+- name: Jeux & Fun
+  slug: games-fun
+  subtitle: Jouez dans votre navigateur
+  seeAllUrl: "/browse/games-fun/"
+  previewCount: 12
+  phosphorIcon: game-controller
+  items:
+  - name: Game
+    icon: cfd-games
+    url: "/games"
+    description: Hub de jeux complet — puzzles, classiques et favoris d'arcade.
+    date: '2024-06-08'
+    phosphorIcon: game-controller
+    featured: true
+    external: false
+    aliases:
+    - games hub
+    - play games
+    - arcade
+    - puzzles
+  - name: Overdose
+    icon: cfd-overdose
+    url: "/Overdose"
+    description: Jeu d'arcade rapide — testez vos réflexes.
+    date: '2026-03-01'
+    phosphorIcon: pill
+    featured: true
+    external: false
+    aliases:
+    - arcade
+    - reflex
+    - fast paced
+    - action
+  - name: WordDice
+    icon: cfd-worddice
+    url: https://worddice.codefrydev.in/
+    description: Jeu de mots avec défis pilotés par des dés.
+    date: '2025-11-08'
+    phosphorIcon: dice-five
+    featured: true
+    external: true
+    aliases:
+    - word game
+    - dice
+    - puzzle
+    - scrabble
+  - name: Chain Reaction
+    icon: cfd-chainreaction
+    url: "/ChainReaction/"
+    description: Jeu de plateau stratégique — étendez les cellules et dominez la grille.
+    date: '2024-05-06'
+    phosphorIcon: circles-three
+    featured: true
+    external: false
+    aliases:
+    - strategy
+    - board game
+    - cells
+    - grid
+  - name: Chain Reaction Online
+    icon: cfd-chainreaction-online
+    url: https://chainreaction.codefrydev.in/
+    description: Chain Reaction multijoueur en ligne — jouez avec des amis, capturez des orbes et déclenchez des réactions
+      en chaîne.
+    date: '2026-05-24'
+    phosphorIcon: share-network
+    featured: true
+    external: true
+    aliases:
+    - multiplayer
+    - online
+    - strategy
+    - board game
+    - chain reaction
+  - name: Wordle
+    icon: cfd-wordle
+    url: "/Wordle/"
+    description: Devinez le mot de cinq lettres en six essais.
+    date: '2024-05-19'
+    phosphorIcon: text-aa
+    featured: true
+    external: false
+    aliases:
+    - word game
+    - 5 letter
+    - guess
+    - puzzle
+  - name: Tom & Jerry
+    icon: cfd-tomjerry
+    url: "/TomAndJerry/"
+    description: Le plaisir du jeu de poursuite classique dans le navigateur.
+    date: '2024-06-05'
+    phosphorIcon: cat
+    featured: true
+    external: false
+    aliases:
+    - chase game
+    - cartoon
+    - cat mouse
+    - tom jerry
+  - name: Snake
+    icon: cfd-snake
+    url: "/Snake"
+    description: Jeu Snake classique — mangez, grandissez et évitez les murs.
+    date: '2024-06-08'
+    phosphorIcon: snake
+    featured: false
+    external: false
+    aliases:
+    - snake game
+    - classic
+    - arcade
+    - retro
+  - name: Challenge
+    icon: cfd-challenge
+    url: "/Challenge/"
+    description: Défis quotidiens et mini-jeux à jouer en ligne.
+    date: '2024-03-26'
+    phosphorIcon: trophy
+    featured: false
+    external: false
+    aliases:
+    - daily challenge
+    - mini games
+    - quests
+    - tasks
+  - name: Dot Box
+    icon: cfd-dotbox
+    url: "/DotsAndBox/"
+    description: Jeu de stratégie points et cases pour deux joueurs.
+    date: '2026-03-10'
+    phosphorIcon: grid-four
+    featured: false
+    external: false
+    aliases:
+    - dots and boxes
+    - strategy
+    - two player
+    - dotsandbox
+  - name: TTT
+    icon: cfd-ttt
+    url: "/TicTacToe/"
+    description: Morpion — jouez contre un ami ou l'ordinateur.
+    date: '2026-03-10'
+    phosphorIcon: x
+    featured: false
+    external: false
+    aliases:
+    - tic tac toe
+    - tictactoe
+    - xo
+    - noughts crosses
+  - name: '2048'
+    icon: cfd-2048
+    url: "/2048/"
+    description: Faites glisser les tuiles et combinez les nombres pour atteindre 2048.
+    date: '2026-03-10'
+    phosphorIcon: grid-four
+    featured: false
+    external: false
+    aliases:
+    - puzzle
+    - numbers
+    - tile game
+    - slide
+  - name: Archery
+    icon: cfd-archery
+    url: "/Archery/"
+    description: Visez et tirez dans ce défi de tir à l'arc dans le navigateur.
+    date: '2026-03-11'
+    phosphorIcon: target
+    featured: false
+    external: false
+    aliases:
+    - bow
+    - shoot
+    - target
+    - aim
+  - name: Ludo
+    icon: cfd-ludo
+    url: "/Ludo/"
+    description: Jeu de plateau Ludo classique en ligne.
+    date: '2026-03-11'
+    phosphorIcon: dice-six
+    featured: false
+    external: false
+    aliases:
+    - board game
+    - dice
+    - classic
+    - family
+  - name: Billiards
+    icon: cfd-billiards
+    url: "/Billiards/"
+    description: Billard dans le navigateur avec une physique réaliste.
+    date: '2026-03-11'
+    phosphorIcon: circle
+    featured: false
+    external: false
+    aliases:
+    - pool
+    - cue
+    - snooker
+    - physics
+  - name: Carrom
+    icon: cfd-carrom
+    url: "/Carrom/"
+    description: Jouez au carrom en ligne avec des contrôles fluides.
+    date: '2026-03-11'
+    phosphorIcon: target
+    featured: false
+    external: false
+    aliases:
+    - carrom board
+    - tabletop
+    - striker
+    - board game
+- name: Liens du site
+  slug: site-links
+  subtitle: À propos, mises à jour et plus
+  seeAllUrl: "/browse/site-links/"
+  previewCount: 12
+  phosphorIcon: link
+  items:
+  - name: About us
+    icon: cfd-about
+    url: "/about-us"
+    description: Découvrez CodeFryDev et l'équipe derrière les outils.
+    date: '2024-03-01'
+    phosphorIcon: users
+    featured: true
+    external: false
+    aliases:
+    - about
+    - team
+    - codefrydev
+    - who we are
+  - name: Timeline
+    icon: cfd-history
+    url: "/history"
+    description: Explorez notre histoire et les jalons du projet.
+    date: '2024-03-01'
+    phosphorIcon: clock-counter-clockwise
+    featured: true
+    external: false
+    aliases:
+    - history
+    - milestones
+    - changelog
+    - journey
+  - name: CFDDC
+    icon: cfd-games
+    url: "/cfddc/"
+    description: Conférence des développeurs CodeFryDev — annonces année par année depuis notre chronologie.
+    date: '2026-05-17'
+    phosphorIcon: presentation
+    featured: true
+    external: false
+    aliases:
+    - developer conference
+    - devcon
+    - announcements
+    - cfddc
+  - name: PI
+    icon: cfd-pi
+    iconAlt: Icône explorateur de chiffres de Pi
+    iconTitle: PI — explorateur de chiffres de Pi
+    url: "/PI/"
+    description: Explorez les chiffres de Pi, faits et visualisations.
+    date: '2026-03-15'
+    phosphorIcon: pi
+    featured: true
+    external: false
+    aliases:
+    - pi digits
+    - math
+    - 3.14
+    - constant
+  - name: RL
+    icon: cfd-rl
+    iconAlt: Icône démos de reinforcement learning
+    iconTitle: RL — démos de reinforcement learning
+    url: "/Reinforcement/"
+    description: Démos et expériences de reinforcement learning.
+    date: '2026-03-15'
+    phosphorIcon: brain
+    featured: true
+    external: false
+    aliases:
+    - reinforcement learning
+    - machine learning
+    - ai demo
+    - rl
+  - name: ".NET"
+    icon: cfd-net
+    url: "/Updates/"
+    description: Dernières mises à jour et versions liées à .NET.
+    date: '2025-05-01'
+    phosphorIcon: code
+    featured: true
+    external: false
+    aliases:
+    - dotnet
+    - updates
+    - csharp
+    - microsoft
+  - name: Store
+    icon: cfd-store
+    url: "/store/"
+    description: Applications mobiles et téléchargements depuis la boutique CodeFryDev.
+    date: '2025-03-02'
+    phosphorIcon: device-mobile
+    featured: true
+    external: false
+    aliases:
+    - apps
+    - download
+    - mobile apps
+    - google play
+  - name: T&C Privacy
+    icon: cfd-privacy
+    url: "/tncprivacy"
+    description: Conditions, politique de confidentialité et coordonnées.
+    date: '2024-03-01'
+    phosphorIcon: shield-check
+    featured: false
+    external: false
+    aliases:
+    - terms
+    - privacy
+    - policy
+    - legal
+  - name: Agurutwa
+    icon: cfd-agurutwa
+    url: https://agurutwa.github.io/
+    description: Projet externe d'Agurutwa — ressources communautaires.
+    date: '2025-06-01'
+    phosphorIcon: link
+    featured: false
+    external: true
+    aliases:
+    - community
+    - external
+    - resources
+    - partner
+  - name: Pathsala
+    icon: cfd-pathsala
+    url: https://agurutwa.github.io/Pathsala/
+    description: Parcours éducatifs et ressources d'apprentissage.
+    date: '2025-06-01'
+    phosphorIcon: book
+    featured: false
+    external: true
+    aliases:
+    - education
+    - learning
+    - paths
+    - study
+- name: Conteneurs & Packages
+  slug: containers-packages
+  subtitle: Images Docker et packages npm
+  seeAllUrl: "/browse/containers-packages/"
+  previewCount: 12
+  phosphorIcon: package
+  items:
+  - name: Website Profiling
+    icon: cfd-website-profiling
+    url: https://hub.docker.com/r/codefrydev/website-profiling
+    description: Image Docker pour le profilage et l'analyse des performances de sites web.
+    date: '2026-05-17'
+    phosphorIcon: chart-line
+    featured: true
+    external: true
+    aliases:
+    - docker
+    - profiling
+    - performance
+    - lighthouse
+  - name: SVG Engine (npm)
+    icon: cfd-svg-engine-npm
+    url: https://www.npmjs.com/package/@codefrydev/svg-engine
+    description: "@codefrydev/svg-engine — création et manipulation SVG pour Node et le navigateur."
+    date: '2026-05-17'
+    phosphorIcon: pen-nib
+    featured: true
+    external: true
+    aliases:
+    - npm
+    - package
+    - svg library
+    - node module

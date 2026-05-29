@@ -1,0 +1,92 @@
+data:
+- name: AI SocialSnap
+  icon: cfd-social
+  url: https://socialsnap.codefrydev.in/
+  description: Générateur de contenu social et de légendes alimenté par l'IA.
+  date: '2025-06-24'
+  phosphorIcon: share-network
+  featured: true
+  external: true
+  aliases:
+  - social media
+  - captions
+  - instagram
+  - posts
+- name: AI Meme Generator
+  icon: cfd-meme
+  url: https://meme.codefrydev.in/
+  description: Créez des mèmes avec légendes et mises en page suggérées par l'IA.
+  date: '2025-06-30'
+  phosphorIcon: smiley
+  featured: true
+  external: true
+  aliases:
+  - meme
+  - funny
+  - captions
+  - generator
+- name: Visual Note AI
+  icon: cfd-vnote
+  url: https://appsuit.codefrydev.in/apps/visualnoteai/
+  description: Notes visuelles et tableaux d'idées assistés par l'IA.
+  date: '2025-08-01'
+  phosphorIcon: note
+  featured: true
+  external: true
+  aliases:
+  - visual notes
+  - idea board
+  - notes ai
+  - brainstorming
+- name: Aqua tracker AI
+  icon: cfd-water
+  url: https://aquatrack.codefrydev.in/
+  description: Suivez votre consommation d'eau avec rappels et insights IA.
+  date: '2025-06-22'
+  phosphorIcon: drop
+  featured: true
+  external: true
+  aliases:
+  - water tracker
+  - hydration
+  - drink water
+  - health
+- name: AI Web Summarize
+  icon: cfd-summarize
+  url: https://summarize.codefrydev.in/
+  description: Résumez n'importe quelle page web ou article avec l'IA.
+  date: '2025-06-24'
+  phosphorIcon: article
+  featured: true
+  external: true
+  aliases:
+  - summarize
+  - tldr
+  - article
+  - webpage
+- name: Profile AI
+  icon: cfd-chat
+  url: "/ProfiledAi/"
+  description: Créer et affiner des profils professionnels avec l'IA.
+  date: '2025-06-21'
+  phosphorIcon: user
+  featured: true
+  external: false
+  aliases:
+  - resume
+  - cv
+  - professional profile
+  - linkedin
+- name: CFD Chat AI
+  icon: cfd-chat
+  url: https://chat.codefrydev.in/
+  description: Discutez avec l'IA CodeFryDev pour de l'aide et des idées.
+  date: '2025-06-24'
+  phosphorIcon: chat-circle
+  featured: false
+  external: true
+  aliases:
+  - chat ai
+  - chatbot
+  - assistant
+  - help

@@ -1,0 +1,287 @@
+- id: nav_home
+  translation: "ホーム"
+- id: nav_browse
+  translation: "閲覧"
+- id: nav_games
+  translation: "ゲーム"
+- id: nav_ai
+  translation: "AI"
+- id: nav_design
+  translation: "デザイン"
+- id: nav_about
+  translation: "私たちについて"
+- id: nav_faq
+  translation: "よくある質問"
+- id: nav_search
+  translation: "検索"
+- id: nav_theme
+  translation: "テーマ"
+- id: nav_more
+  translation: "その他"
+- id: nav_view_all_categories
+  translation: "すべてのカテゴリを見る →"
+- id: nav_main
+  translation: "メインナビゲーション"
+- id: nav_open_search
+  translation: "検索を開く"
+- id: nav_open_menu
+  translation: "メニューを開く"
+- id: nav_close_menu
+  translation: "メニューを閉じる"
+- id: nav_switch_theme
+  translation: "ダークテーマに切り替え"
+- id: nav_home_aria
+  translation: "CodeFryDev ホーム"
+- id: nav_beta_reveal
+  translation: "てんとう虫イースターエッグを表示"
+- id: nav_beta_status
+  translation: "サイトステータス: ベータ"
+- id: nav_language
+  translation: "言語"
+- id: nav_language_menu
+  translation: "言語を選択"
+
+- id: footer_product
+  translation: "プロダクト"
+- id: footer_company
+  translation: "会社情報"
+- id: footer_help
+  translation: "ヘルプと法的情報"
+- id: footer_browse_all
+  translation: "すべてのツールを見る"
+- id: footer_free_count
+  translation: "+ 件の無料ツール（ブラウザで利用可能）"
+- id: footer_back_top
+  translation: "トップへ戻る"
+- id: footer_games
+  translation: "ゲーム"
+- id: footer_ai
+  translation: "AIツール"
+- id: footer_design
+  translation: "デザインラボ"
+- id: footer_store
+  translation: "ストア"
+- id: footer_all_categories
+  translation: "すべてのカテゴリ"
+- id: footer_about
+  translation: "私たちについて"
+- id: footer_history
+  translation: "沿革"
+- id: footer_press
+  translation: "プレス"
+- id: footer_cfddc
+  translation: "CFDDC"
+- id: footer_search
+  translation: "検索"
+- id: footer_faq
+  translation: "よくある質問"
+- id: footer_updates
+  translation: "更新情報"
+- id: footer_privacy_terms
+  translation: "プライバシーと利用規約"
+- id: footer_contact
+  translation: "お問い合わせ"
+- id: footer_legacy
+  translation: "旧サイト"
+- id: footer_privacy
+  translation: "プライバシー"
+- id: footer_terms
+  translation: "利用規約"
+- id: footer_legal_links
+  translation: "法的情報リンク"
+
+- id: cookie_title
+  translation: "Cookieの同意"
+- id: cookie_message
+  translation: "当サイトでは、閲覧体験の向上とトラフィック分析のためにCookieを使用しています。「同意する」をクリックすると、Cookieの使用に同意したことになります。"
+- id: cookie_learn_more
+  translation: "プライバシーポリシーの詳細"
+- id: cookie_accept
+  translation: "同意する"
+- id: cookie_decline
+  translation: "拒否する"
+- id: cookie_accept_aria
+  translation: "Cookieに同意する"
+- id: cookie_decline_aria
+  translation: "Cookieを拒否する"
+
+- id: search_title
+  translation: "CodeFryDev を検索"
+- id: search_placeholder
+  translation: "ツール、ゲーム、AIアプリを検索…"
+- id: search_no_matches
+  translation: "一致する結果がありません"
+- id: search_empty_hint
+  translation: "別のキーワードを試すか、下のショートカットを選んでください"
+- id: search_did_you_mean
+  translation: "もしかして"
+- id: search_quick_open
+  translation: "クイックオープン"
+- id: search_recent
+  translation: "最近"
+- id: search_popular
+  translation: "人気"
+- id: search_results
+  translation: "検索結果"
+- id: search_popular_tools
+  translation: "人気のツール"
+- id: search_navigate
+  translation: "移動"
+- id: search_open
+  translation: "開く"
+- id: search_close
+  translation: "閉じる"
+- id: search_chip_games
+  translation: "🎮 ゲーム"
+- id: search_chip_ai
+  translation: "🤖 AIツール"
+- id: search_chip_design
+  translation: "🎨 デザインラボ"
+- id: search_chip_browse
+  translation: "⊞ 閲覧"
+
+- id: hub_search_designlab
+  translation: "デザインツールとクリエイティブリソースを検索…"
+- id: hub_search_games
+  translation: "ゲーム、パズル、楽しいアクティビティを検索…"
+- id: hub_search_ai
+  translation: "AIツール、ジェネレーター、ユーティリティを検索…"
+- id: hub_count_tools
+  translation: "ツール"
+- id: hub_count_games
+  translation: "ゲーム"
+
+- id: skip_link
+  translation: "メインコンテンツへスキップ"
+
+- id: seo_home
+  translation: "無料オンラインツール・ゲーム・AIアプリ | CodeFryDev"
+- id: seo_ai
+  translation: "無料AIツールとジェネレーター | CodeFryDev"
+- id: seo_games
+  translation: "無料オンラインゲーム | CodeFryDev"
+- id: seo_designlab
+  translation: "デザインツールとクリエイティブリソース | CodeFryDev"
+- id: seo_about_us
+  translation: "私たちについて | CodeFryDev"
+- id: seo_team_list
+  translation: "開発者とデザイナー | CodeFryDev チーム"
+- id: seo_team_member
+  translation: "%s - CodeFryDev チーム"
+- id: seo_about
+  translation: "About | CodeFryDev"
+- id: seo_search
+  translation: "検索 | CodeFryDev"
+- id: seo_history
+  translation: "沿革 | CodeFryDev"
+- id: seo_press
+  translation: "プレス | CodeFryDev"
+- id: seo_contact
+  translation: "お問い合わせ | CodeFryDev"
+- id: seo_faq
+  translation: "よくある質問 | CodeFryDev"
+- id: seo_cfddc
+  translation: "CFDDC | CodeFryDev 開発者カンファレンス"
+- id: seo_cfddc_year
+  translation: "CFDDC %s (%s) | CodeFryDev"
+- id: seo_store
+  translation: "無料モバイルアプリ | CodeFryDev ストア"
+- id: seo_page
+  translation: "%s | CodeFryDev"
+- id: seo_default
+  translation: "無料オンラインツール・ゲーム・AIアプリ | CodeFryDev"
+
+- id: category_tool_count
+  translation: "%d ツール"
+- id: category_see_all
+  translation: "すべて見る →"
+- id: category_see_all_named
+  translation: "%s をすべて見る (%d)"
+- id: tool_opens_new_tab
+  translation: "（新しいタブで開く）"
+- id: tool_default_description
+  translation: "%s を開く — ブラウザで無料。"
+
+- id: about_browse_tools
+  translation: "ツールを見る →"
+- id: about_press_media
+  translation: "プレス・メディア"
+- id: about_mission_heading
+  translation: "私たちのミッション"
+- id: about_mission_aria
+  translation: "私たちが大切にしていること"
+- id: about_stats_heading
+  translation: "プラットフォーム概要"
+- id: about_stats_subhead
+  translation: "CodeFryDev で現在公開中の内容をざっくりご紹介します。"
+- id: about_stat_tools
+  translation: "ツールとアプリ"
+- id: about_stat_ai
+  translation: "AIプロジェクト"
+- id: about_stat_games
+  translation: "ゲーム"
+- id: about_stat_design
+  translation: "デザインツール"
+- id: about_team_heading
+  translation: "チーム"
+- id: about_team_subhead
+  translation: "ツール、ゲーム、実験をオープンに作っているメンバー。"
+- id: about_all_members
+  translation: "メンバー一覧 →"
+- id: about_connect_heading
+  translation: "探索とつながり"
+- id: about_connect_subhead
+  translation: "プラットフォームを支えるクレジット、コミュニティ、リソース。"
+- id: about_cta_eyebrow
+  translation: "はじめる"
+- id: about_cta_title
+  translation: "探索してみませんか？"
+- id: about_cta_text
+  translation: "ツール、ゲーム、AIアプリへ — すべてブラウザで動作します。"
+- id: about_cta_home
+  translation: "ホームへ →"
+- id: about_cta_timeline
+  translation: "タイムライン ↗"
+
+- id: faq_help_center
+  translation: "ヘルプセンター"
+- id: faq_browse_tools
+  translation: "ツールを見る"
+- id: faq_aside_aria
+  translation: "便利なリンク"
+- id: faq_quick_answer
+  translation: "クイック回答"
+- id: faq_quick_answer_title
+  translation: "ほとんどのツールは無料でブラウザで動作 — 登録不要。"
+- id: faq_quick_answer_text
+  translation: "上の検索でトピックにジャンプするか、カテゴリフィルターを選んでください。"
+- id: faq_link_contact_title
+  translation: "サポートに連絡"
+- id: faq_link_contact_desc
+  translation: "メッセージを送る — 2〜3日以内に返信します"
+- id: faq_link_privacy_title
+  translation: "プライバシーと利用規約"
+- id: faq_link_privacy_desc
+  translation: "ポリシー、Cookie、法的情報"
+- id: faq_link_about_title
+  translation: "私たちについて"
+- id: faq_link_about_desc
+  translation: "チーム、ミッション、プラットフォームのストーリー"
+- id: faq_link_search_title
+  translation: "ツールを検索"
+- id: faq_link_search_desc
+  translation: "ツール、ゲーム、AIアプリを探す"
+- id: faq_search_label
+  translation: "FAQを検索"
+- id: faq_search_placeholder
+  translation: "質問を検索…"
+- id: faq_filter_aria
+  translation: "トピックで絞り込み"
+- id: faq_filter_all
+  translation: "すべてのトピック"
+- id: faq_main_heading
+  translation: "質問と回答"
+- id: faq_no_results_before
+  translation: "検索に一致する質問がありません。別のキーワードを試すか、"
+- id: faq_no_results_after
+  translation: "してサポートを受けてください。"

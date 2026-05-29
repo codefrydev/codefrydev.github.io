@@ -1,0 +1,92 @@
+data:
+- name: Design
+  icon: cfd-design
+  url: "/design/"
+  description: Hub d'outils design pour projets créatifs.
+  date: '2024-07-26'
+  phosphorIcon: paint-brush
+  featured: true
+  external: false
+  aliases:
+  - design hub
+  - creative tools
+  - designlab
+  - ui
+- name: 3D Musilizer
+  icon: cfd-musilizer
+  url: "/3DMUSILIZER/"
+  description: Visualisez la musique en 3D avec des graphismes réactifs au son.
+  date: '2025-02-02'
+  phosphorIcon: music-notes
+  featured: true
+  external: false
+  aliases:
+  - music visualizer
+  - audio reactive
+  - 3d music
+  - musilizer
+- name: Aurora 3D
+  icon: cfd-aurora
+  url: https://aurora3d.codefrydev.in
+  description: Visualiseur 3D d'aurore et de particules époustouflant.
+  date: '2025-07-14'
+  phosphorIcon: sparkle
+  featured: true
+  external: true
+  aliases:
+  - aurora
+  - particles
+  - visualizer
+  - 3d effects
+- name: DSGN.LIB
+  icon: cfd-dsgn
+  url: "/dsgnlib/"
+  description: Bibliothèque de composants et de motifs design.
+  date: '2025-06-18'
+  phosphorIcon: books
+  featured: true
+  external: false
+  aliases:
+  - design library
+  - components
+  - patterns
+  - ui kit
+- name: JUICY HAPTIC
+  icon: cfd-juicy
+  url: https://juicyhapticdesign.codefrydev.in/
+  description: Motifs de design et démos de retour haptique.
+  date: '2025-07-12'
+  phosphorIcon: device-mobile
+  featured: true
+  external: true
+  aliases:
+  - haptic
+  - vibration
+  - mobile design
+  - feedback
+- name: DataViz
+  icon: cfd-datavis
+  url: https://dataviz.codefrydev.in/
+  description: Graphiques et visualisation de données dans le navigateur.
+  date: '2025-07-14'
+  phosphorIcon: chart-bar
+  featured: true
+  external: true
+  aliases:
+  - charts
+  - graphs
+  - visualization
+  - data
+- name: Neural Music Player
+  icon: cfd-music
+  url: https://neuralmusicplayer.codefrydev.in
+  description: Lecteur de musique piloté par l'IA avec visuels neuronaux.
+  date: '2025-07-14'
+  phosphorIcon: music-notes
+  featured: false
+  external: true
+  aliases:
+  - music player
+  - ai music
+  - neural
+  - audio player

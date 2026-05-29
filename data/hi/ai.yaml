@@ -1,0 +1,92 @@
+data:
+- name: AI SocialSnap
+  icon: cfd-social
+  url: https://socialsnap.codefrydev.in/
+  description: AI-संचालित सोशल कंटेंट और कैप्शन जनरेटर।
+  date: '2025-06-24'
+  phosphorIcon: share-network
+  featured: true
+  external: true
+  aliases:
+  - social media
+  - captions
+  - instagram
+  - posts
+- name: AI Meme Generator
+  icon: cfd-meme
+  url: https://meme.codefrydev.in/
+  description: AI-सुझाए गए कैप्शन और लेआउट से मीम बनाएँ।
+  date: '2025-06-30'
+  phosphorIcon: smiley
+  featured: true
+  external: true
+  aliases:
+  - meme
+  - funny
+  - captions
+  - generator
+- name: Visual Note AI
+  icon: cfd-vnote
+  url: https://appsuit.codefrydev.in/apps/visualnoteai/
+  description: AI-सहायता प्राप्त विज़ुअल नोट्स और आइडिया बोर्ड।
+  date: '2025-08-01'
+  phosphorIcon: note
+  featured: true
+  external: true
+  aliases:
+  - visual notes
+  - idea board
+  - notes ai
+  - brainstorming
+- name: Aqua tracker AI
+  icon: cfd-water
+  url: https://aquatrack.codefrydev.in/
+  description: AI रिमाइंडर और अंतर्दृष्टि के साथ पानी की खपत ट्रैक करें।
+  date: '2025-06-22'
+  phosphorIcon: drop
+  featured: true
+  external: true
+  aliases:
+  - water tracker
+  - hydration
+  - drink water
+  - health
+- name: AI Web Summarize
+  icon: cfd-summarize
+  url: https://summarize.codefrydev.in/
+  description: AI से किसी भी वेबपेज या लेख का सारांश।
+  date: '2025-06-24'
+  phosphorIcon: article
+  featured: true
+  external: true
+  aliases:
+  - summarize
+  - tldr
+  - article
+  - webpage
+- name: Profile AI
+  icon: cfd-chat
+  url: "/ProfiledAi/"
+  description: AI के साथ पेशेवर प्रोफ़ाइल बनाएँ और सुधारें।
+  date: '2025-06-21'
+  phosphorIcon: user
+  featured: true
+  external: false
+  aliases:
+  - resume
+  - cv
+  - professional profile
+  - linkedin
+- name: CFD Chat AI
+  icon: cfd-chat
+  url: https://chat.codefrydev.in/
+  description: मदद और विचारों के लिए CodeFryDev AI से चैट करें।
+  date: '2025-06-24'
+  phosphorIcon: chat-circle
+  featured: false
+  external: true
+  aliases:
+  - chat ai
+  - chatbot
+  - assistant
+  - help

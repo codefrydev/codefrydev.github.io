@@ -1,0 +1,171 @@
+data:
+- name: WordDice
+  icon: cfd-worddice
+  url: https://worddice.codefrydev.in/
+  description: पासों से चुनौतियों वाला शब्द पहेली गेम।
+  date: '2025-11-08'
+  phosphorIcon: dice-five
+  featured: true
+  external: true
+  aliases:
+  - word game
+  - dice
+  - puzzle
+  - scrabble
+- name: Chain Reaction
+  icon: cfd-chainreaction
+  url: "/ChainReaction/"
+  description: रणनीतिक बोर्ड गेम — सेल विस्तारित करें और ग्रिड पर हावी हों।
+  date: '2024-05-06'
+  phosphorIcon: circles-three
+  featured: true
+  external: false
+  aliases:
+  - strategy
+  - board game
+  - cells
+  - grid
+- name: Chain Reaction Online
+  icon: cfd-chainreaction-online
+  url: https://chainreaction.codefrydev.in/
+  description: ऑनलाइन मल्टीप्लेयर Chain Reaction — दोस्तों के साथ, ऑर्ब कैप्चर और चेन रिएक्शन।
+  date: '2026-05-24'
+  phosphorIcon: share-network
+  featured: true
+  external: true
+  aliases:
+  - multiplayer
+  - online
+  - strategy
+  - board game
+  - chain reaction
+- name: Wordle
+  icon: cfd-wordle
+  url: "/Wordle/"
+  description: छह प्रयासों में पाँच अक्षर का शब्द अनुमान लगाएँ।
+  date: '2024-05-19'
+  phosphorIcon: text-aa
+  featured: true
+  external: false
+  aliases:
+  - word game
+  - 5 letter
+  - guess
+  - puzzle
+- name: Snake
+  icon: cfd-snake
+  url: "/Snake"
+  description: क्लासिक Snake गेम — खाएँ, बढ़ें और दीवारों से बचें।
+  date: '2024-06-08'
+  phosphorIcon: snake
+  featured: true
+  external: false
+  aliases:
+  - snake game
+  - classic
+  - arcade
+  - retro
+- name: गेम
+  icon: cfd-games
+  url: https://play.google.com/store/apps/details?id=org.codefrydev.developer.abhijeet.galacticgunner
+  description: पूर्ण गेम हब — पहेलियाँ, क्लासिक और आर्केड पसंदीदा।
+  date: '2024-06-08'
+  phosphorIcon: game-controller
+  featured: true
+  external: false
+  aliases:
+  - galactic gunner
+  - android game
+  - space shooter
+  - play store
+- name: Ludo
+  icon: cfd-ludo
+  url: "/Ludo/"
+  description: क्लासिक Ludo बोर्ड गेम ऑनलाइन।
+  date: '2026-03-11'
+  phosphorIcon: dice-six
+  featured: true
+  external: false
+  aliases:
+  - board game
+  - dice
+  - classic
+  - family
+- name: Carrom
+  icon: cfd-carrom
+  url: "/Carrom/"
+  description: स्मूथ नियंत्रण के साथ ऑनलाइन carrom खेलें।
+  date: '2026-03-11'
+  phosphorIcon: target
+  featured: false
+  external: false
+  aliases:
+  - carrom board
+  - tabletop
+  - striker
+  - board game
+- name: Billiards
+  icon: cfd-billiards
+  url: "/Billiards/"
+  description: यथार्थवादी भौतिकी के साथ ब्राउज़र बिलियर्ड्स।
+  date: '2026-03-11'
+  phosphorIcon: circle
+  featured: false
+  external: false
+  aliases:
+  - pool
+  - cue
+  - snooker
+  - physics
+- name: Archery
+  icon: cfd-archery
+  url: "/Archery/"
+  description: इस ब्राउज़र Archery चुनौती में निशाना लगाएँ और गोली चलाएँ।
+  date: '2026-03-11'
+  phosphorIcon: target
+  featured: false
+  external: false
+  aliases:
+  - bow
+  - shoot
+  - target
+  - aim
+- name: DotsAndBox
+  icon: cfd-dotbox
+  url: "/DotsAndBox/"
+  description: DotsAndBox खोलें — CodeFryDev पर ब्राउज़र में मुफ़्त।
+  date: '2026-03-10'
+  phosphorIcon: game-controller
+  featured: false
+  external: false
+  aliases:
+  - dot box
+  - dots and boxes
+  - strategy
+  - two player
+- name: TicTacToe
+  icon: cfd-ttt
+  url: "/TicTacToe/"
+  description: TicTacToe खोलें — CodeFryDev पर ब्राउज़र में मुफ़्त।
+  date: '2026-03-10'
+  phosphorIcon: game-controller
+  featured: false
+  external: false
+  aliases:
+  - tic tac toe
+  - ttt
+  - xo
+  - noughts crosses
+- name: '2048'
+  icon: cfd-2048
+  url: "/2048/"
+  description: टाइल स्लाइड करें और 2048 तक पहुँचने के लिए संख्याएँ मिलाएँ।
+  date: '2026-03-10'
+  phosphorIcon: grid-four
+  featured: false
+  external: false
+  aliases:
+  - puzzle
+  - numbers
+  - tile game
+  - slide

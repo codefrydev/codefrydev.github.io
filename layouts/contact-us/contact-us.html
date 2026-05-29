@@ -1,7 +1,8 @@
 {{ partial "home/modern-page-start.html" (dict "page" . "navActive" "" "headExtra" `<meta name="keywords" content="contact, support, CodeFryDev, feedback">`) }}
 
-{{- $sf := hugo.Data.contact.smartform -}}
-{{- $v := hugo.Data.contact.validation -}}
+{{- $data := partial "get-data.html" . -}}
+{{- $sf := $data.contact.smartform -}}
+{{- $v := $data.contact.validation -}}
 
 <article class="contact-page pt-6 pb-20 sm:pt-10 sm:pb-24">
   <header class="about-hero max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-10 sm:mb-14">

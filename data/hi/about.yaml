@@ -1,0 +1,26 @@
+cards:
+- accent_color: "#667eea"
+  title: योगदानकर्ता
+  content: CodeFryDev टूल बनाने और बनाए रखने वाले सभी से मिलें।
+  phosphorIcon: users
+  url: "/about/users/"
+- accent_color: "#fa709a"
+  title: संपर्क करें
+  content: सहायता, फ़ीडबैक, साझेदारी और प्रेस पूछताछ।
+  phosphorIcon: envelope
+  url: "/contact-us/"
+- accent_color: "#f093fb"
+  title: Hugo
+  content: यह साइट Hugo से बनी — तेज़, स्थिर और version-controlled।
+  phosphorIcon: code
+  url: https://gohugo.io/
+- accent_color: "#4facfe"
+  title: MarkBoots
+  content: CodePen पर क्रिएटिव कार्य से लेआउट प्रेरणा।
+  phosphorIcon: palette
+  url: https://codepen.io/MarkBoots
+- accent_color: "#43e97b"
+  title: प्रोफ़ाइल जनरेटर
+  content: नई टीम पेज के लिए योगदानकर्ता प्रोफ़ाइल YAML जनरेट करें।
+  phosphorIcon: user-plus
+  url: "/CodefrydevUserDataGenerator/"

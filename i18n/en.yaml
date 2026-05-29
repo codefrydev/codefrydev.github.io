@@ -1,0 +1,287 @@
+- id: nav_home
+  translation: "Home"
+- id: nav_browse
+  translation: "Browse"
+- id: nav_games
+  translation: "Games"
+- id: nav_ai
+  translation: "AI"
+- id: nav_design
+  translation: "Design"
+- id: nav_about
+  translation: "About us"
+- id: nav_faq
+  translation: "FAQ"
+- id: nav_search
+  translation: "Search"
+- id: nav_theme
+  translation: "Theme"
+- id: nav_more
+  translation: "More"
+- id: nav_view_all_categories
+  translation: "View all categories →"
+- id: nav_main
+  translation: "Main navigation"
+- id: nav_open_search
+  translation: "Open search"
+- id: nav_open_menu
+  translation: "Open menu"
+- id: nav_close_menu
+  translation: "Close menu"
+- id: nav_switch_theme
+  translation: "Switch to dark theme"
+- id: nav_home_aria
+  translation: "CodeFryDev home"
+- id: nav_beta_reveal
+  translation: "Show the interactive ladybug easter egg"
+- id: nav_beta_status
+  translation: "Site status: beta"
+- id: nav_language
+  translation: "Language"
+- id: nav_language_menu
+  translation: "Choose language"
+
+- id: footer_product
+  translation: "Product"
+- id: footer_company
+  translation: "Company"
+- id: footer_help
+  translation: "Help & legal"
+- id: footer_browse_all
+  translation: "Browse all tools"
+- id: footer_free_count
+  translation: "+ free in your browser"
+- id: footer_back_top
+  translation: "Back to top"
+- id: footer_games
+  translation: "Games"
+- id: footer_ai
+  translation: "AI Tools"
+- id: footer_design
+  translation: "Design Lab"
+- id: footer_store
+  translation: "Store"
+- id: footer_all_categories
+  translation: "All categories"
+- id: footer_about
+  translation: "About us"
+- id: footer_history
+  translation: "History"
+- id: footer_press
+  translation: "Press"
+- id: footer_cfddc
+  translation: "CFDDC"
+- id: footer_search
+  translation: "Search"
+- id: footer_faq
+  translation: "FAQ"
+- id: footer_updates
+  translation: "Updates"
+- id: footer_privacy_terms
+  translation: "Privacy & Terms"
+- id: footer_contact
+  translation: "Contact"
+- id: footer_legacy
+  translation: "Legacy"
+- id: footer_privacy
+  translation: "Privacy"
+- id: footer_terms
+  translation: "Terms"
+- id: footer_legal_links
+  translation: "Legal links"
+
+- id: cookie_title
+  translation: "Cookie Consent"
+- id: cookie_message
+  translation: 'We use cookies to enhance your browsing experience and analyze site traffic. By clicking "Accept", you consent to our use of cookies.'
+- id: cookie_learn_more
+  translation: "Learn more about our privacy policy"
+- id: cookie_accept
+  translation: "Accept"
+- id: cookie_decline
+  translation: "Decline"
+- id: cookie_accept_aria
+  translation: "Accept cookies"
+- id: cookie_decline_aria
+  translation: "Decline cookies"
+
+- id: search_title
+  translation: "Search CodeFryDev"
+- id: search_placeholder
+  translation: "Search tools, games, AI apps…"
+- id: search_no_matches
+  translation: "No matches"
+- id: search_empty_hint
+  translation: "Try another keyword or pick a shortcut below"
+- id: search_did_you_mean
+  translation: "Did you mean"
+- id: search_quick_open
+  translation: "Quick open"
+- id: search_recent
+  translation: "Recent"
+- id: search_popular
+  translation: "Popular"
+- id: search_results
+  translation: "Search results"
+- id: search_popular_tools
+  translation: "Popular tools"
+- id: search_navigate
+  translation: "navigate"
+- id: search_open
+  translation: "open"
+- id: search_close
+  translation: "close"
+- id: search_chip_games
+  translation: "🎮 Games"
+- id: search_chip_ai
+  translation: "🤖 AI Tools"
+- id: search_chip_design
+  translation: "🎨 Design Lab"
+- id: search_chip_browse
+  translation: "⊞ Browse"
+
+- id: hub_search_designlab
+  translation: "Search design tools and creative resources..."
+- id: hub_search_games
+  translation: "Search for games, puzzles, and fun activities..."
+- id: hub_search_ai
+  translation: "Search for AI tools, generators, and utilities..."
+- id: hub_count_tools
+  translation: "tools"
+- id: hub_count_games
+  translation: "games"
+
+- id: skip_link
+  translation: "Skip to main content"
+
+- id: seo_home
+  translation: "Free Online Tools, Games & AI Apps | CodeFryDev"
+- id: seo_ai
+  translation: "Free AI Tools & Generators | CodeFryDev - AI-Powered Utilities"
+- id: seo_games
+  translation: "Free Online Games - Play Now | CodeFryDev"
+- id: seo_designlab
+  translation: "Design Tools & Creative Resources | CodeFryDev Design Lab"
+- id: seo_about_us
+  translation: "About Us - CodeFryDev | Free Online Tools & Resources Platform"
+- id: seo_team_list
+  translation: "Devs and Designers - CodeFryDev | Meet Our Team"
+- id: seo_team_member
+  translation: "%s - CodeFryDev Team"
+- id: seo_about
+  translation: "About | CodeFryDev"
+- id: seo_search
+  translation: "Search - CodeFryDev | Find Tools, Games & Apps"
+- id: seo_history
+  translation: "History - CodeFryDev | Timeline & Milestones"
+- id: seo_press
+  translation: "Press & Media - CodeFryDev | Press Kit & Contact"
+- id: seo_contact
+  translation: "Contact Us - CodeFryDev | Support & Inquiries"
+- id: seo_faq
+  translation: "FAQ - CodeFryDev | Help & Common Questions"
+- id: seo_cfddc
+  translation: "CFDDC | CodeFryDev Developer Conference"
+- id: seo_cfddc_year
+  translation: "CFDDC %s (%s) | CodeFryDev Developer Conference"
+- id: seo_store
+  translation: "Free Mobile Apps | CodeFryDev Store"
+- id: seo_page
+  translation: "%s | CodeFryDev"
+- id: seo_default
+  translation: "Free Online Tools, Games & AI Apps | CodeFryDev"
+
+- id: category_tool_count
+  translation: "%d tools"
+- id: category_see_all
+  translation: "See all →"
+- id: category_see_all_named
+  translation: "See all %s (%d)"
+- id: tool_opens_new_tab
+  translation: "(opens in new tab)"
+- id: tool_default_description
+  translation: "Open %s — free in your browser."
+
+- id: about_browse_tools
+  translation: "Browse tools →"
+- id: about_press_media
+  translation: "Press & media"
+- id: about_mission_heading
+  translation: "Our mission"
+- id: about_mission_aria
+  translation: "What we stand for"
+- id: about_stats_heading
+  translation: "Platform at a glance"
+- id: about_stats_subhead
+  translation: "A quick snapshot of what is live on CodeFryDev today."
+- id: about_stat_tools
+  translation: "Tools & apps"
+- id: about_stat_ai
+  translation: "AI projects"
+- id: about_stat_games
+  translation: "Games"
+- id: about_stat_design
+  translation: "Design tools"
+- id: about_team_heading
+  translation: "Our team"
+- id: about_team_subhead
+  translation: "The people building tools, games, and experiments in the open."
+- id: about_all_members
+  translation: "All members →"
+- id: about_connect_heading
+  translation: "Explore & connect"
+- id: about_connect_subhead
+  translation: "Credits, community, and resources behind the platform."
+- id: about_cta_eyebrow
+  translation: "Get started"
+- id: about_cta_title
+  translation: "Ready to explore?"
+- id: about_cta_text
+  translation: "Jump into tools, games, or AI apps—everything runs in your browser."
+- id: about_cta_home
+  translation: "Go to homepage →"
+- id: about_cta_timeline
+  translation: "Our timeline ↗"
+
+- id: faq_help_center
+  translation: "Help center"
+- id: faq_browse_tools
+  translation: "Browse tools"
+- id: faq_aside_aria
+  translation: "Helpful links"
+- id: faq_quick_answer
+  translation: "Quick answer"
+- id: faq_quick_answer_title
+  translation: "Most tools are free and run in your browser—no signup needed."
+- id: faq_quick_answer_text
+  translation: "Use search above to jump to a topic, or pick a category filter."
+- id: faq_link_contact_title
+  translation: "Contact support"
+- id: faq_link_contact_desc
+  translation: "Send us a message—we reply in 2–3 days"
+- id: faq_link_privacy_title
+  translation: "Privacy & terms"
+- id: faq_link_privacy_desc
+  translation: "Policies, cookies, and legal info"
+- id: faq_link_about_title
+  translation: "About us"
+- id: faq_link_about_desc
+  translation: "Team, mission, and platform story"
+- id: faq_link_search_title
+  translation: "Search tools"
+- id: faq_link_search_desc
+  translation: "Find any tool, game, or AI app"
+- id: faq_search_label
+  translation: "Search FAQ"
+- id: faq_search_placeholder
+  translation: "Search questions…"
+- id: faq_filter_aria
+  translation: "Filter by topic"
+- id: faq_filter_all
+  translation: "All topics"
+- id: faq_main_heading
+  translation: "Questions and answers"
+- id: faq_no_results_before
+  translation: "No questions match your search. Try different keywords or"
+- id: faq_no_results_after
+  translation: "for help."

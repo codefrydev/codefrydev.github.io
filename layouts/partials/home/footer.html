@@ -1,5 +1,6 @@
 {{- $totalTools := 0 -}}
-{{- range hugo.Data.home.categories }}{{ $totalTools = add $totalTools (len .items) }}{{ end -}}
+{{- $data := partial "get-data.html" . -}}
+{{- range $data.home.categories }}{{ $totalTools = add $totalTools (len .items) }}{{ end -}}
 
 <footer
   id="footer"
@@ -9,77 +10,80 @@
 >
   <div class="site-footer__inner">
     <div class="site-footer__mast">
-      <a href="/" class="site-footer__brand" aria-label="CodeFryDev home">
+      <a href="{{ "/" | relLangURL }}" class="site-footer__brand" aria-label="{{ i18n "nav_home_aria" }}">
         <img src="/images/IconCodefrydev.svg" alt="CodeFryDev" width="28" height="28" class="site-footer__logo" loading="lazy">
         <span class="site-footer__name">CodeFryDev</span>
       </a>
       <p class="site-footer__tagline">
-        {{- with hugo.Data.homepage.quote }}{{ . }}{{ else }}{{ with .Site.Params.footer_tagline }}{{ . }}{{ else }}{{ .Site.Params.description | truncate 100 }}{{ end }}{{ end -}}
+        {{- with $data.homepage.quote }}{{ . }}{{ else }}{{ with .Site.Params.footer_tagline }}{{ . }}{{ else }}{{ .Site.Params.description | truncate 100 }}{{ end }}{{ end -}}
       </p>
       <div class="site-footer__mast-actions">
-        <a href="/browse/" class="site-footer__cta">Browse all tools</a>
-        <span class="site-footer__stat">{{ $totalTools }}+ free in your browser</span>
+        <a href="{{ "/browse/" | relLangURL }}" class="site-footer__cta">{{ i18n "footer_browse_all" }}</a>
+        <div class="site-footer__mast-meta">
+          <span class="site-footer__stat">{{ $totalTools }}{{ i18n "footer_free_count" }}</span>
+          {{ partial "home/language-switcher.html" . }}
+        </div>
       </div>
     </div>
 
     <nav class="site-footer__nav" aria-label="Footer">
       <details class="site-footer__accordion">
         <summary class="site-footer__summary">
-          <span>Product</span>
+          <span>{{ i18n "footer_product" }}</span>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" class="site-footer__chevron" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
         </summary>
         <ul class="site-footer__links">
-          <li><a href="/games/">Games</a></li>
-          <li><a href="/ai/">AI Tools</a></li>
-          <li><a href="/designlab/">Design Lab</a></li>
-          <li><a href="/store/">Store</a></li>
-          <li><a href="/browse/">All categories</a></li>
+          <li><a href="{{ "/games/" | relLangURL }}">{{ i18n "footer_games" }}</a></li>
+          <li><a href="{{ "/ai/" | relLangURL }}">{{ i18n "footer_ai" }}</a></li>
+          <li><a href="{{ "/designlab/" | relLangURL }}">{{ i18n "footer_design" }}</a></li>
+          <li><a href="{{ "/store/" | relLangURL }}">{{ i18n "footer_store" }}</a></li>
+          <li><a href="{{ "/browse/" | relLangURL }}">{{ i18n "footer_all_categories" }}</a></li>
         </ul>
       </details>
 
       <details class="site-footer__accordion">
         <summary class="site-footer__summary">
-          <span>Company</span>
+          <span>{{ i18n "footer_company" }}</span>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" class="site-footer__chevron" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
         </summary>
         <ul class="site-footer__links">
-          <li><a href="/about-us/">About us</a></li>
-          <li><a href="/history/">History</a></li>
-          <li><a href="/press/">Press</a></li>
-          <li><a href="/cfddc/">CFDDC</a></li>
+          <li><a href="{{ "/about-us/" | relLangURL }}">{{ i18n "footer_about" }}</a></li>
+          <li><a href="{{ "/history/" | relLangURL }}">{{ i18n "footer_history" }}</a></li>
+          <li><a href="{{ "/press/" | relLangURL }}">{{ i18n "footer_press" }}</a></li>
+          <li><a href="{{ "/cfddc/" | relLangURL }}">{{ i18n "footer_cfddc" }}</a></li>
         </ul>
       </details>
 
       <details class="site-footer__accordion">
         <summary class="site-footer__summary">
-          <span>Help &amp; legal</span>
+          <span>{{ i18n "footer_help" }}</span>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" class="site-footer__chevron" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
         </summary>
         <ul class="site-footer__links">
-          <li><a href="/search/">Search</a></li>
-          <li><a href="/faq/">FAQ</a></li>
-          <li><a href="/Updates/">Updates</a></li>
-          <li><a href="/tncprivacy">Privacy &amp; Terms</a></li>
-          <li><a href="/contact-us/">Contact</a></li>
-          <li><a href="https://archived.codefrydev.in/" target="_blank" rel="noopener noreferrer">Legacy</a></li>
+          <li><a href="{{ "/search/" | relLangURL }}">{{ i18n "footer_search" }}</a></li>
+          <li><a href="{{ "/faq/" | relLangURL }}">{{ i18n "footer_faq" }}</a></li>
+          <li><a href="{{ "/Updates/" | relLangURL }}">{{ i18n "footer_updates" }}</a></li>
+          <li><a href="{{ "/tncprivacy" | relLangURL }}">{{ i18n "footer_privacy_terms" }}</a></li>
+          <li><a href="{{ "/contact-us/" | relLangURL }}">{{ i18n "footer_contact" }}</a></li>
+          <li><a href="https://archived.codefrydev.in/" target="_blank" rel="noopener noreferrer">{{ i18n "footer_legacy" }}</a></li>
         </ul>
       </details>
     </nav>
 
     {{- if .IsHome -}}
-    <button type="button" class="site-footer__back-top" data-footer-back-top hidden aria-label="Back to top">
-      Back to top
+    <button type="button" class="site-footer__back-top" data-footer-back-top hidden aria-label="{{ i18n "footer_back_top" }}">
+      {{ i18n "footer_back_top" }}
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg>
     </button>
     {{- end -}}
 
     <div class="site-footer__bar">
       <p class="site-footer__copy">&copy; {{ now.Year }} {{ .Site.Params.copyright | default .Site.Title }}</p>
-      <ul class="site-footer__legal" aria-label="Legal links">
-        <li><a href="/tncprivacy">Privacy</a></li>
-        <li><a href="/tncprivacy">Terms</a></li>
-        <li><a href="/contact-us/">Contact</a></li>
-        <li><a href="https://archived.codefrydev.in/" target="_blank" rel="noopener noreferrer">Legacy</a></li>
+      <ul class="site-footer__legal" aria-label="{{ i18n "footer_legal_links" }}">
+        <li><a href="{{ "/tncprivacy" | relLangURL }}">{{ i18n "footer_privacy" }}</a></li>
+        <li><a href="{{ "/tncprivacy" | relLangURL }}">{{ i18n "footer_terms" }}</a></li>
+        <li><a href="{{ "/contact-us/" | relLangURL }}">{{ i18n "footer_contact" }}</a></li>
+        <li><a href="https://archived.codefrydev.in/" target="_blank" rel="noopener noreferrer">{{ i18n "footer_legacy" }}</a></li>
       </ul>
     </div>
   </div>

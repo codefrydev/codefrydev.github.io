@@ -8,7 +8,7 @@
 ## Website
 - URL: {{ .Site.BaseURL }}
 - Built with: Hugo static site generator
-- Language: {{ .Site.LanguageCode | default "en-US" }}
+- Language: {{ .Site.Language.Locale | default "en-US" }}
 - Full documentation: {{ .Site.BaseURL }}llms-full.txt
 
 ## Main Sections
@@ -19,7 +19,8 @@
 {{ end -}}
 
 ## Browse Categories
-{{ range $index, $cat := hugo.Data.home.categories -}}
+{{- $data := partial "get-data.html" . -}}
+{{ range $index, $cat := $data.home.categories -}}
 {{ $index | add 1 }}. **{{ $cat.name }}** ({{ $cat.seeAllUrl | default (printf "/browse/%s/" ($cat.slug | default ($cat.name | anchorize))) }}): {{ $cat.subtitle }}
 {{ end -}}
 

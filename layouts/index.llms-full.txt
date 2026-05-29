@@ -3,7 +3,7 @@
 ## Website Information
 - **Name**: {{ .Site.Title }}
 - **Base URL**: {{ .Site.BaseURL }}
-- **Language**: {{ .Site.LanguageCode | default "en-US" }}
+- **Language**: {{ .Site.Language.Locale | default "en-US" }}
 - **Technology**: Hugo static site generator
 - **Concise summary**: {{ .Site.BaseURL }}llms.txt
 
@@ -12,7 +12,8 @@
 
 ## Detailed Category Breakdown
 
-{{ range hugo.Data.home.categories -}}
+{{- $data := partial "get-data.html" . -}}
+{{ range $data.home.categories -}}
 ### {{ .name }} ({{ .seeAllUrl | default (printf "/browse/%s/" (.slug | default (.name | anchorize))) }})
 {{ .subtitle }}
 
@@ -32,11 +33,11 @@
 ## Data-Driven Sections
 
 ### AI Tools
-{{ if hugo.Data.ai -}}
-{{ if hugo.Data.ai.data -}}
+{{ if $data.ai -}}
+{{ if $data.ai.data -}}
 | AI Tool | URL |
 |---------|-----|
-{{ range hugo.Data.ai.data -}}
+{{ range $data.ai.data -}}
 {{- $url := .url -}}
 {{- if not (or (hasPrefix $url "http://") (hasPrefix $url "https://")) -}}
   {{- if not (hasPrefix $url "/") -}}{{- $url = printf "/%s" $url -}}{{- end -}}
@@ -48,11 +49,11 @@
 {{ end -}}
 
 ### Games
-{{ if hugo.Data.games -}}
-{{ if hugo.Data.games.data -}}
+{{ if $data.games -}}
+{{ if $data.games.data -}}
 | Game | URL |
 |------|-----|
-{{ range hugo.Data.games.data -}}
+{{ range $data.games.data -}}
 {{- $url := .url -}}
 {{- if not (or (hasPrefix $url "http://") (hasPrefix $url "https://")) -}}
   {{- if not (hasPrefix $url "/") -}}{{- $url = printf "/%s" $url -}}{{- end -}}
@@ -64,11 +65,11 @@
 {{ end -}}
 
 ### Design Lab
-{{ if hugo.Data.designlab -}}
-{{ if hugo.Data.designlab.data -}}
+{{ if $data.designlab -}}
+{{ if $data.designlab.data -}}
 | Design Tool | URL |
 |-------------|-----|
-{{ range hugo.Data.designlab.data -}}
+{{ range $data.designlab.data -}}
 {{- $url := .url -}}
 {{- if not (or (hasPrefix $url "http://") (hasPrefix $url "https://")) -}}
   {{- if not (hasPrefix $url "/") -}}{{- $url = printf "/%s" $url -}}{{- end -}}

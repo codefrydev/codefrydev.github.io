@@ -8,18 +8,18 @@
 <div id="cookie-consent-banner" class="cookie-consent-banner" role="dialog" aria-labelledby="cookie-consent-title" aria-live="polite" style="display: none;" data-ga-id="{{ $gaId }}"{{ with $clarityId }} data-clarity-id="{{ . }}"{{ end }}>
   <div class="cookie-consent-content">
     <div class="cookie-consent-text">
-      <h2 id="cookie-consent-title" class="cookie-consent-title">Cookie Consent</h2>
+      <h2 id="cookie-consent-title" class="cookie-consent-title">{{ i18n "cookie_title" }}</h2>
       <p class="cookie-consent-message">
-        We use cookies to enhance your browsing experience and analyze site traffic. By clicking "Accept", you consent to our use of cookies. 
-        <a href="/tncprivacy" class="cookie-consent-link">Learn more about our privacy policy</a>.
+        {{ i18n "cookie_message" }}
+        <a href="{{ "/tncprivacy" | relLangURL }}" class="cookie-consent-link">{{ i18n "cookie_learn_more" }}</a>.
       </p>
     </div>
     <div class="cookie-consent-buttons">
-      <button type="button" id="cookie-consent-accept" class="cookie-consent-button cookie-consent-accept" aria-label="Accept cookies">
-        Accept
+      <button type="button" id="cookie-consent-accept" class="cookie-consent-button cookie-consent-accept" aria-label="{{ i18n "cookie_accept_aria" }}">
+        {{ i18n "cookie_accept" }}
       </button>
-      <button type="button" id="cookie-consent-decline" class="cookie-consent-button cookie-consent-decline" aria-label="Decline cookies">
-        Decline
+      <button type="button" id="cookie-consent-decline" class="cookie-consent-button cookie-consent-decline" aria-label="{{ i18n "cookie_decline_aria" }}">
+        {{ i18n "cookie_decline" }}
       </button>
     </div>
   </div>

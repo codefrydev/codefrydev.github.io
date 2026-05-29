@@ -4,15 +4,16 @@
 {{- if .items -}}
   {{- $items = .items -}}
 {{- else if .label -}}
-  {{- $items = slice (dict "name" "Home" "url" "/") (dict "name" .label "current" true) -}}
+  {{- $items = slice (dict "name" (i18n "nav_home") "url" ("/" | relLangURL)) (dict "name" .label "current" true) -}}
 {{- else if $page -}}
-  {{- $items = slice (dict "name" "Home" "url" "/") -}}
+  {{- $items = slice (dict "name" (i18n "nav_home") "url" ("/" | relLangURL)) -}}
   {{- $path := $page.RelPermalink -}}
   {{- $section := $page.Section | lower -}}
 
   {{- if eq $section "browse" -}}
-    {{- if ne $path "/browse/" -}}
-      {{- $items = $items | append (dict "name" "Browse" "url" "/browse/") -}}
+    {{- $browseRoot := "/browse/" | relLangURL -}}
+    {{- if ne $path $browseRoot -}}
+      {{- $items = $items | append (dict "name" "Browse" "url" $browseRoot) -}}
       {{- $items = $items | append (dict "name" $page.Title "current" true) -}}
     {{- else -}}
       {{- $items = $items | append (dict "name" "Browse" "current" true) -}}
@@ -28,7 +29,7 @@
       {{- end -}}
     {{- end -}}
   {{- else if eq $section "about-us" -}}
-    {{- $items = $items | append (dict "name" "About us" "current" true) -}}
+    {{- $items = $items | append (dict "name" $page.Title "current" true) -}}
   {{- else if or (eq $section "history") (eq $section "History") -}}
     {{- $items = $items | append (dict "name" "History" "current" true) -}}
   {{- else if eq $section "press" -}}

@@ -431,6 +431,18 @@
     @apply opacity-100 visible pointer-events-auto;
   }
 
+  .footer-lang__menu {
+    @apply opacity-0 invisible pointer-events-none transition-[opacity,visibility] duration-200;
+  }
+
+  .footer-lang.is-open .footer-lang__menu {
+    @apply opacity-100 visible pointer-events-auto;
+  }
+
+  .footer-lang.is-open .footer-lang__chevron {
+    @apply rotate-180;
+  }
+
   /* Browse nav mega menu */
   .nav-mega__grid {
     @apply grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-gray-100;
@@ -1621,6 +1633,10 @@
 
   .site-footer__cta {
     @apply inline-flex w-fit items-center justify-center rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-800 no-underline shadow-sm transition-colors hover:border-slate-400 hover:bg-slate-50;
+  }
+
+  .site-footer__mast-meta {
+    @apply flex flex-wrap items-center gap-3;
   }
 
   .site-footer__stat {

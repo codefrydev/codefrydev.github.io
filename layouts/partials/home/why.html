@@ -1,4 +1,5 @@
-{{- $why := hugo.Data.homepage.why -}}
+{{- $data := partial "get-data.html" . -}}
+{{- $why := $data.homepage.why -}}
 {{- if $why -}}
 <section id="why" data-section-label="Why us" class="home-why flex flex-col justify-center gap-12 relative pt-24 pb-16" aria-labelledby="why-heading">
   <header class="home-why__header max-w-4xl mx-auto px-4 w-full text-center">

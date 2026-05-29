@@ -1,4 +1,5 @@
 ---
+translationKey: "ai"
 title: "CFD AI"
 date: 2025-06-21T00:00:00Z
 description: "Free AI tools and generators—meme generator, website summarizer, social content AI, visual notes. No signup required. Use CodeFryDev AI utilities in your browser."

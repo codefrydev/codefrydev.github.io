@@ -1,0 +1,92 @@
+data:
+- name: डिज़ाइन
+  icon: cfd-design
+  url: "/design/"
+  description: क्रिएटिव प्रोजेक्ट के लिए डिज़ाइन टूल हब।
+  date: '2024-07-26'
+  phosphorIcon: paint-brush
+  featured: true
+  external: false
+  aliases:
+  - design hub
+  - creative tools
+  - designlab
+  - ui
+- name: 3D Musilizer
+  icon: cfd-musilizer
+  url: "/3DMUSILIZER/"
+  description: ऑडियो-प्रतिक्रियाशील ग्राफ़िक्स के साथ 3D में संगीत विज़ुअलाइज़ करें।
+  date: '2025-02-02'
+  phosphorIcon: music-notes
+  featured: true
+  external: false
+  aliases:
+  - music visualizer
+  - audio reactive
+  - 3d music
+  - musilizer
+- name: Aurora 3D
+  icon: cfd-aurora
+  url: https://aurora3d.codefrydev.in
+  description: शानदार 3D aurora और कण विज़ुअलाइज़र।
+  date: '2025-07-14'
+  phosphorIcon: sparkle
+  featured: true
+  external: true
+  aliases:
+  - aurora
+  - particles
+  - visualizer
+  - 3d effects
+- name: DSGN.LIB
+  icon: cfd-dsgn
+  url: "/dsgnlib/"
+  description: कंपोनेंट और पैटर्न की डिज़ाइन लाइब्रेरी।
+  date: '2025-06-18'
+  phosphorIcon: books
+  featured: true
+  external: false
+  aliases:
+  - design library
+  - components
+  - patterns
+  - ui kit
+- name: JUICY HAPTIC
+  icon: cfd-juicy
+  url: https://juicyhapticdesign.codefrydev.in/
+  description: haptic फ़ीडबैक डिज़ाइन पैटर्न और डेमो।
+  date: '2025-07-12'
+  phosphorIcon: device-mobile
+  featured: true
+  external: true
+  aliases:
+  - haptic
+  - vibration
+  - mobile design
+  - feedback
+- name: DataViz
+  icon: cfd-datavis
+  url: https://dataviz.codefrydev.in/
+  description: ब्राउज़र में चार्ट और डेटा विज़ुअलाइज़ेशन।
+  date: '2025-07-14'
+  phosphorIcon: chart-bar
+  featured: true
+  external: true
+  aliases:
+  - charts
+  - graphs
+  - visualization
+  - data
+- name: Neural Music Player
+  icon: cfd-music
+  url: https://neuralmusicplayer.codefrydev.in
+  description: न्यूरल विज़ुअल के साथ AI-चालित संगीत प्लेयर।
+  date: '2025-07-14'
+  phosphorIcon: music-notes
+  featured: false
+  external: true
+  aliases:
+  - music player
+  - ai music
+  - neural
+  - audio player

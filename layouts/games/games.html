@@ -1,14 +1,18 @@
+{{- $data := partial "get-data.html" . -}}
+{{- $banner := index $data.homepage.hubBanners "games" | default dict -}}
+{{- $hubTitle := $banner.title | default (i18n "footer_games") -}}
+{{- $hubSubtitle := $banner.description | default "" -}}
 {{ partial "home/hub-page.html" (dict
   "page" .
-  "title" "Games & Fun"
-  "subtitle" "Play in your browser"
-  "items" hugo.Data.games.data
+  "title" $hubTitle
+  "subtitle" $hubSubtitle
+  "items" $data.games.data
   "iconDir" "games"
   "homeCategorySlug" "games-fun"
   "defaultPhosphorIcon" "game-controller"
   "searchID" "games"
-  "searchPlaceholder" "Search for games, puzzles, and fun activities..."
-  "countLabel" "games"
+  "searchPlaceholder" (i18n "hub_search_games")
+  "countLabel" (i18n "hub_count_games")
   "navActive" "games"
-  "banner" (index hugo.Data.homepage.hubBanners "games" | default dict)
+  "banner" $banner
 ) }}

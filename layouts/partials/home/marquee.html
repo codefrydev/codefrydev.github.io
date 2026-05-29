@@ -1,4 +1,5 @@
-{{- $marquee := hugo.Data.homepage.marquee -}}
+{{- $data := partial "get-data.html" . -}}
+{{- $marquee := $data.homepage.marquee -}}
 {{- if and $marquee $marquee.enabled $marquee.items -}}
 <section id="partners" data-section-label="Partners" class="home-partners py-12 border-t border-gray-200 bg-white overflow-hidden relative group" aria-label="{{ $marquee.label | default "Partners" }}">
   <div class="text-center mb-8">

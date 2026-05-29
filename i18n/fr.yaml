@@ -1,0 +1,287 @@
+- id: nav_home
+  translation: "Accueil"
+- id: nav_browse
+  translation: "Parcourir"
+- id: nav_games
+  translation: "Jeux"
+- id: nav_ai
+  translation: "IA"
+- id: nav_design
+  translation: "Design"
+- id: nav_about
+  translation: "À propos"
+- id: nav_faq
+  translation: "FAQ"
+- id: nav_search
+  translation: "Rechercher"
+- id: nav_theme
+  translation: "Thème"
+- id: nav_more
+  translation: "Plus"
+- id: nav_view_all_categories
+  translation: "Voir toutes les catégories →"
+- id: nav_main
+  translation: "Navigation principale"
+- id: nav_open_search
+  translation: "Ouvrir la recherche"
+- id: nav_open_menu
+  translation: "Ouvrir le menu"
+- id: nav_close_menu
+  translation: "Fermer le menu"
+- id: nav_switch_theme
+  translation: "Passer au thème sombre"
+- id: nav_home_aria
+  translation: "Accueil CodeFryDev"
+- id: nav_beta_reveal
+  translation: "Afficher l'easter egg coccinelle"
+- id: nav_beta_status
+  translation: "Statut du site : bêta"
+- id: nav_language
+  translation: "Langue"
+- id: nav_language_menu
+  translation: "Choisir la langue"
+
+- id: footer_product
+  translation: "Produit"
+- id: footer_company
+  translation: "Entreprise"
+- id: footer_help
+  translation: "Aide et mentions légales"
+- id: footer_browse_all
+  translation: "Parcourir tous les outils"
+- id: footer_free_count
+  translation: "+ gratuits dans votre navigateur"
+- id: footer_back_top
+  translation: "Retour en haut"
+- id: footer_games
+  translation: "Jeux"
+- id: footer_ai
+  translation: "Outils IA"
+- id: footer_design
+  translation: "Design Lab"
+- id: footer_store
+  translation: "Boutique"
+- id: footer_all_categories
+  translation: "Toutes les catégories"
+- id: footer_about
+  translation: "À propos"
+- id: footer_history
+  translation: "Historique"
+- id: footer_press
+  translation: "Presse"
+- id: footer_cfddc
+  translation: "CFDDC"
+- id: footer_search
+  translation: "Rechercher"
+- id: footer_faq
+  translation: "FAQ"
+- id: footer_updates
+  translation: "Mises à jour"
+- id: footer_privacy_terms
+  translation: "Confidentialité et conditions"
+- id: footer_contact
+  translation: "Contact"
+- id: footer_legacy
+  translation: "Ancien site"
+- id: footer_privacy
+  translation: "Confidentialité"
+- id: footer_terms
+  translation: "Conditions"
+- id: footer_legal_links
+  translation: "Liens légaux"
+
+- id: cookie_title
+  translation: "Consentement aux cookies"
+- id: cookie_message
+  translation: "Nous utilisons des cookies pour améliorer votre expérience et analyser le trafic. En cliquant sur « Accepter », vous consentez à leur utilisation."
+- id: cookie_learn_more
+  translation: "En savoir plus sur notre politique de confidentialité"
+- id: cookie_accept
+  translation: "Accepter"
+- id: cookie_decline
+  translation: "Refuser"
+- id: cookie_accept_aria
+  translation: "Accepter les cookies"
+- id: cookie_decline_aria
+  translation: "Refuser les cookies"
+
+- id: search_title
+  translation: "Rechercher sur CodeFryDev"
+- id: search_placeholder
+  translation: "Rechercher outils, jeux, apps IA…"
+- id: search_no_matches
+  translation: "Aucun résultat"
+- id: search_empty_hint
+  translation: "Essayez un autre mot-clé ou choisissez un raccourci ci-dessous"
+- id: search_did_you_mean
+  translation: "Vouliez-vous dire"
+- id: search_quick_open
+  translation: "Accès rapide"
+- id: search_recent
+  translation: "Récents"
+- id: search_popular
+  translation: "Populaires"
+- id: search_results
+  translation: "Résultats de recherche"
+- id: search_popular_tools
+  translation: "Outils populaires"
+- id: search_navigate
+  translation: "naviguer"
+- id: search_open
+  translation: "ouvrir"
+- id: search_close
+  translation: "fermer"
+- id: search_chip_games
+  translation: "🎮 Jeux"
+- id: search_chip_ai
+  translation: "🤖 Outils IA"
+- id: search_chip_design
+  translation: "🎨 Design Lab"
+- id: search_chip_browse
+  translation: "⊞ Parcourir"
+
+- id: hub_search_designlab
+  translation: "Rechercher des outils design et ressources créatives…"
+- id: hub_search_games
+  translation: "Rechercher des jeux, puzzles et activités…"
+- id: hub_search_ai
+  translation: "Rechercher des outils IA, générateurs et utilitaires…"
+- id: hub_count_tools
+  translation: "outils"
+- id: hub_count_games
+  translation: "jeux"
+
+- id: skip_link
+  translation: "Aller au contenu principal"
+
+- id: seo_home
+  translation: "Outils, jeux et apps IA gratuits en ligne | CodeFryDev"
+- id: seo_ai
+  translation: "Outils et générateurs IA gratuits | CodeFryDev"
+- id: seo_games
+  translation: "Jeux en ligne gratuits | CodeFryDev"
+- id: seo_designlab
+  translation: "Outils de design et ressources créatives | CodeFryDev"
+- id: seo_about_us
+  translation: "À propos | CodeFryDev"
+- id: seo_team_list
+  translation: "Développeurs et designers | Équipe CodeFryDev"
+- id: seo_team_member
+  translation: "%s - Équipe CodeFryDev"
+- id: seo_about
+  translation: "About | CodeFryDev"
+- id: seo_search
+  translation: "Recherche | CodeFryDev"
+- id: seo_history
+  translation: "Historique | CodeFryDev"
+- id: seo_press
+  translation: "Presse | CodeFryDev"
+- id: seo_contact
+  translation: "Contact | CodeFryDev"
+- id: seo_faq
+  translation: "FAQ | CodeFryDev"
+- id: seo_cfddc
+  translation: "CFDDC | Conférence développeurs CodeFryDev"
+- id: seo_cfddc_year
+  translation: "CFDDC %s (%s) | CodeFryDev"
+- id: seo_store
+  translation: "Applications mobiles gratuites | CodeFryDev Store"
+- id: seo_page
+  translation: "%s | CodeFryDev"
+- id: seo_default
+  translation: "Outils, jeux et apps IA gratuits en ligne | CodeFryDev"
+
+- id: category_tool_count
+  translation: "%d outils"
+- id: category_see_all
+  translation: "Tout voir →"
+- id: category_see_all_named
+  translation: "Voir tout %s (%d)"
+- id: tool_opens_new_tab
+  translation: "(s'ouvre dans un nouvel onglet)"
+- id: tool_default_description
+  translation: "Ouvrir %s — gratuit dans votre navigateur."
+
+- id: about_browse_tools
+  translation: "Parcourir les outils →"
+- id: about_press_media
+  translation: "Presse et médias"
+- id: about_mission_heading
+  translation: "Notre mission"
+- id: about_mission_aria
+  translation: "Ce que nous défendons"
+- id: about_stats_heading
+  translation: "La plateforme en un coup d'œil"
+- id: about_stats_subhead
+  translation: "Un aperçu rapide de ce qui est en ligne sur CodeFryDev aujourd'hui."
+- id: about_stat_tools
+  translation: "Outils et apps"
+- id: about_stat_ai
+  translation: "Projets IA"
+- id: about_stat_games
+  translation: "Jeux"
+- id: about_stat_design
+  translation: "Outils design"
+- id: about_team_heading
+  translation: "Notre équipe"
+- id: about_team_subhead
+  translation: "Les personnes qui construisent outils, jeux et expériences en open source."
+- id: about_all_members
+  translation: "Tous les membres →"
+- id: about_connect_heading
+  translation: "Explorer et connecter"
+- id: about_connect_subhead
+  translation: "Crédits, communauté et ressources derrière la plateforme."
+- id: about_cta_eyebrow
+  translation: "Commencer"
+- id: about_cta_title
+  translation: "Prêt à explorer ?"
+- id: about_cta_text
+  translation: "Plongez dans les outils, jeux ou apps IA — tout fonctionne dans votre navigateur."
+- id: about_cta_home
+  translation: "Aller à l'accueil →"
+- id: about_cta_timeline
+  translation: "Notre chronologie ↗"
+
+- id: faq_help_center
+  translation: "Centre d'aide"
+- id: faq_browse_tools
+  translation: "Parcourir les outils"
+- id: faq_aside_aria
+  translation: "Liens utiles"
+- id: faq_quick_answer
+  translation: "Réponse rapide"
+- id: faq_quick_answer_title
+  translation: "La plupart des outils sont gratuits et fonctionnent dans votre navigateur — sans inscription."
+- id: faq_quick_answer_text
+  translation: "Utilisez la recherche ci-dessus ou choisissez un filtre de catégorie."
+- id: faq_link_contact_title
+  translation: "Contacter le support"
+- id: faq_link_contact_desc
+  translation: "Envoyez-nous un message — réponse sous 2–3 jours"
+- id: faq_link_privacy_title
+  translation: "Confidentialité et conditions"
+- id: faq_link_privacy_desc
+  translation: "Politiques, cookies et informations légales"
+- id: faq_link_about_title
+  translation: "À propos"
+- id: faq_link_about_desc
+  translation: "Équipe, mission et histoire de la plateforme"
+- id: faq_link_search_title
+  translation: "Rechercher des outils"
+- id: faq_link_search_desc
+  translation: "Trouver un outil, jeu ou app IA"
+- id: faq_search_label
+  translation: "Rechercher dans la FAQ"
+- id: faq_search_placeholder
+  translation: "Rechercher des questions…"
+- id: faq_filter_aria
+  translation: "Filtrer par sujet"
+- id: faq_filter_all
+  translation: "Tous les sujets"
+- id: faq_main_heading
+  translation: "Questions et réponses"
+- id: faq_no_results_before
+  translation: "Aucune question ne correspond à votre recherche. Essayez d'autres mots-clés ou"
+- id: faq_no_results_after
+  translation: "pour obtenir de l'aide."
