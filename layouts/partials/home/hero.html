@@ -48,10 +48,10 @@
   {{ partial "home/search-trigger.html" (dict "placeholder" $placeholder "size" "lg") }}
 
   {{- if gt (len $slides) 1 -}}
-  <button type="button" id="hero-carousel-prev" class="home-hero__nav-btn home-hero__nav-btn--side home-hero__nav-btn--prev" aria-label="Previous slide">
+  <button type="button" id="hero-carousel-prev" class="home-hero__nav-btn home-hero__nav-btn--side home-hero__nav-btn--prev max-md:hidden md:flex" aria-label="Previous slide">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="20" height="20" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
   </button>
-  <button type="button" id="hero-carousel-next" class="home-hero__nav-btn home-hero__nav-btn--side home-hero__nav-btn--next" aria-label="Next slide">
+  <button type="button" id="hero-carousel-next" class="home-hero__nav-btn home-hero__nav-btn--side home-hero__nav-btn--next max-md:hidden md:flex" aria-label="Next slide">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="20" height="20" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
   </button>
   <div id="carousel-indicators" class="home-hero__indicators" role="tablist" aria-label="Hero slides"></div>

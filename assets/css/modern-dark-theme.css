@@ -1015,11 +1015,9 @@
   background-color: rgb(15 23 42) !important;
 }
 
-[data-theme="dark"] body.home-page .home-why__eyebrow {
-  background-color: rgb(30 41 59) !important;
-  border-color: rgb(51 65 85) !important;
-  color: rgb(203 213 225) !important;
-  box-shadow: none;
+[data-theme="dark"] body.home-page .home-why__hero {
+  border-color: rgb(71 85 105 / 0.8);
+  background-image: linear-gradient(to bottom right, rgb(30 41 59), rgb(15 23 42), rgb(30 41 59));
 }
 
 [data-theme="dark"] body.home-page .home-why__title,

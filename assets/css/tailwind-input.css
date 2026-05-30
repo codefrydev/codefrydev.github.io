@@ -106,6 +106,10 @@
     @apply absolute top-1/2 z-10 -translate-y-1/2;
   }
 
+  .home-hero__nav-btn.home-hero__nav-btn--side {
+    @apply hidden md:flex;
+  }
+
   .home-hero__nav-btn--prev {
     @apply left-3 sm:left-5 md:left-8;
   }
@@ -137,7 +141,7 @@
   }
 
   .home-hero__nav-btn {
-    @apply flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-slate-200/90 bg-white/90 text-slate-600 shadow-sm transition-colors;
+    @apply h-11 w-11 shrink-0 items-center justify-center rounded-full border border-slate-200/90 bg-white/90 text-slate-600 shadow-sm transition-colors;
     @apply hover:border-slate-300 hover:bg-white hover:text-slate-900 focus:outline-none focus:ring-2 focus:ring-brand/20;
   }
 
@@ -1527,19 +1531,23 @@
   }
 
   .home-why__header {
-    @apply shrink-0;
+    @apply mb-12 shrink-0;
   }
 
-  .home-why__eyebrow {
-    @apply inline-block px-4 py-1.5 mb-6 text-sm font-medium text-slate-700 bg-white rounded-full border border-gray-200 shadow-sm;
+  .home-why__hero {
+    @apply relative overflow-hidden rounded-2xl border border-gray-200/80 bg-gradient-to-br from-white via-slate-50/80 to-sky-50/40 shadow-sm md:rounded-3xl;
+  }
+
+  .home-why__hero-inner {
+    @apply relative z-10 px-6 py-8 text-center sm:px-10 sm:py-10;
   }
 
   .home-why__title {
-    @apply text-4xl font-bold tracking-tight text-slate-900 mb-6 md:text-[44px];
+    @apply text-3xl font-bold tracking-tight text-slate-900 md:text-4xl;
   }
 
   .home-why__intro {
-    @apply mx-auto max-w-2xl text-lg leading-relaxed text-slate-500;
+    @apply mx-auto mt-3 max-w-2xl text-base leading-relaxed text-slate-600 md:text-lg;
   }
 
   .home-why__grid {
@@ -1549,10 +1557,6 @@
   .home-why__card {
     @apply rounded-2xl border border-gray-100 bg-gray-50/80 p-6 text-left transition-colors md:p-8;
     @apply hover:border-slate-200 hover:bg-white;
-  }
-
-  .home-why__card-icon {
-    @apply mb-3 block text-2xl leading-none;
   }
 
   .home-why__card-title {

@@ -293,6 +293,7 @@
 
 /* ── Hero panels (have bg-gradient-to-br — must also clear background-image) ── */
 [data-theme="glass"] body .browse-index__hero,
+[data-theme="glass"] body .home-why__hero,
 [data-theme="glass"] body .about-hero__panel,
 [data-theme="glass"] body .about-cta__panel {
   background-image: none !important;
@@ -417,13 +418,6 @@
 /* ── Why-us section ── */
 [data-theme="glass"] body .home-why {
   background-color: transparent !important;
-}
-
-[data-theme="glass"] body .home-why__eyebrow {
-  background-color: rgba(255, 255, 255, 0.65) !important;
-  border-color: rgba(255, 255, 255, 0.6) !important;
-  -webkit-backdrop-filter: blur(16px);
-  backdrop-filter: blur(16px);
 }
 
 /* ── Site beta tag ── */
@@ -895,6 +889,7 @@
   [data-theme="glass"] body .home-why__perk,
   [data-theme="glass"] body .home-faq-scroll,
   [data-theme="glass"] body .browse-index__hero,
+  [data-theme="glass"] body .home-why__hero,
   [data-theme="glass"] body .about-hero__panel,
   [data-theme="glass"] body .about-cta__panel {
     background-color: rgba(255, 255, 255, 0.96) !important;
@@ -919,6 +914,7 @@
   [data-theme="glass"] body .home-why__perk,
   [data-theme="glass"] body .home-faq-scroll,
   [data-theme="glass"] body .browse-index__hero,
+  [data-theme="glass"] body .home-why__hero,
   [data-theme="glass"] body .about-hero__panel,
   [data-theme="glass"] body .about-cta__panel {
     background-color: rgba(255, 255, 255, 0.97) !important;
