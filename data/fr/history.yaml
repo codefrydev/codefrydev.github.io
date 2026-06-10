@@ -1,4 +1,11 @@
 history:
+- date: 11 June 2026
+  title: Chess
+  description: >-
+    Échecs en ligne gratuits à deux joueurs — jouez dans votre navigateur sur chess.codefrydev.in ; ajouté à Créatif & Assets
+    et Jeux & Fun sur l'accueil.
+  link: https://chess.codefrydev.in/
+  accent_color: "#475569"
 - date: 29 May 2026
   title: SVG CSS Color Filter Generator
   description: >-

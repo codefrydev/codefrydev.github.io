@@ -33,6 +33,20 @@ categories:
     - strategy
     - board game
     - chain reaction
+  - name: Chess
+    icon: cfd-chess
+    url: https://chess.codefrydev.in/
+    description: मुफ्त ऑनलाइन 2-प्लेयर शतरंज — ब्राउज़र में दोस्त के साथ खेलें।
+    date: '2026-06-11'
+    phosphorIcon: game-controller
+    featured: true
+    external: true
+    aliases:
+    - chess game
+    - board game
+    - checkmate
+    - strategy
+    - two player
   - name: SVG Engine
     icon: cfd-svgengine
     url: "/svgengine/"
@@ -680,6 +694,20 @@ categories:
     - reflex
     - fast paced
     - action
+  - name: Chess
+    icon: cfd-chess
+    url: https://chess.codefrydev.in/
+    description: मुफ्त ऑनलाइन 2-प्लेयर शतरंज — ब्राउज़र में दोस्त के साथ खेलें।
+    date: '2026-06-11'
+    phosphorIcon: game-controller
+    featured: true
+    external: true
+    aliases:
+    - chess game
+    - board game
+    - checkmate
+    - strategy
+    - two player
   - name: WordDice
     icon: cfd-worddice
     url: https://worddice.codefrydev.in/

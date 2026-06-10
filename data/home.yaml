@@ -24,6 +24,15 @@ categories:
         featured: true
         external: true
         aliases: [multiplayer, online, strategy, board game, chain reaction]
+      - name: Chess
+        icon: cfd-chess
+        url: https://chess.codefrydev.in/
+        description: Free online 2-player chess—play in your browser with a friend.
+        date: "2026-06-11"
+        phosphorIcon: game-controller
+        featured: true
+        external: true
+        aliases: [chess game, board game, checkmate, strategy, two player]
       - name: SVG Engine
         icon: cfd-svgengine
         url: /svgengine/
@@ -478,6 +487,15 @@ categories:
         featured: true
         external: false
         aliases: [arcade, reflex, fast paced, action]
+      - name: Chess
+        icon: cfd-chess
+        url: https://chess.codefrydev.in/
+        description: Free online 2-player chess—play in your browser with a friend.
+        date: "2026-06-11"
+        phosphorIcon: game-controller
+        featured: true
+        external: true
+        aliases: [chess game, board game, checkmate, strategy, two player]
       - name: WordDice
         icon: cfd-worddice
         url: https://worddice.codefrydev.in/

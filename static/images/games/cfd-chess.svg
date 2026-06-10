@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="240" height="240">
+
+<style>
+.board{filter:drop-shadow(0 4px 10px rgba(0,0,0,0.25));}
+.sq-light{fill:#eeeed2;}
+.sq-dark{fill:#769656;}
+.piece{
+  fill:#1a1a1a;
+  filter:drop-shadow(0 3px 6px rgba(0,0,0,0.35));
+  animation:float 2.8s ease-in-out infinite;
+  transform-origin:80px 88px;
+}
+@keyframes float{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-4px);}
+}
+</style>
+
+<defs>
+  <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+    <stop offset="0%" stop-color="#0f766e"/>
+    <stop offset="100%" stop-color="#134e4a"/>
+  </linearGradient>
+</defs>
+
+<rect x="5" y="5" width="150" height="150" rx="28" fill="url(#bg)"/>
+
+<g class="board">
+  <rect x="28" y="28" width="104" height="104" rx="10" fill="#5a7a42"/>
+
+  <rect class="sq-light" x="32" y="32" width="24" height="24"/>
+  <rect class="sq-dark" x="56" y="32" width="24" height="24"/>
+  <rect class="sq-dark" x="80" y="32" width="24" height="24"/>
+  <rect class="sq-light" x="104" y="32" width="24" height="24"/>
+
+  <rect class="sq-dark" x="32" y="56" width="24" height="24"/>
+  <rect class="sq-light" x="56" y="56" width="24" height="24"/>
+  <rect class="sq-light" x="80" y="56" width="24" height="24"/>
+  <rect class="sq-dark" x="104" y="56" width="24" height="24"/>
+
+  <rect class="sq-light" x="32" y="80" width="24" height="24"/>
+  <rect class="sq-dark" x="56" y="80" width="24" height="24"/>
+  <rect class="sq-dark" x="80" y="80" width="24" height="24"/>
+  <rect class="sq-light" x="104" y="80" width="24" height="24"/>
+
+  <rect class="sq-dark" x="32" y="104" width="24" height="24"/>
+  <rect class="sq-light" x="56" y="104" width="24" height="24"/>
+  <rect class="sq-light" x="80" y="104" width="24" height="24"/>
+  <rect class="sq-dark" x="104" y="104" width="24" height="24"/>
+</g>
+
+<g class="piece">
+  <rect x="56" y="112" width="48" height="8" rx="2"/>
+  <path d="M60 112 L63 92 Q80 84 97 92 L100 112 Z"/>
+  <rect x="64" y="84" width="32" height="8" rx="1.5"/>
+  <rect x="68" y="62" width="24" height="22" rx="3"/>
+  <rect x="64" y="54" width="32" height="8" rx="1.5"/>
+  <rect x="66" y="42" width="9" height="12" rx="1.5"/>
+  <rect x="75.5" y="42" width="9" height="12" rx="1.5"/>
+  <rect x="85" y="42" width="9" height="12" rx="1.5"/>
+</g>
+
+</svg>

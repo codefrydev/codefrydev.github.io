@@ -1,4 +1,9 @@
 history:
+- date: 11 June 2026
+  title: Chess
+  description: मुफ्त ऑनलाइन 2-प्लेयर शतरंज — chess.codefrydev.in पर ब्राउज़र में खेलें; होम पेज पर Creative & Assets और Games & Fun में जोड़ा गया।
+  link: https://chess.codefrydev.in/
+  accent_color: "#475569"
 - date: 29 May 2026
   title: SVG CSS Color Filter Generator
   description: >-

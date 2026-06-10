@@ -1,4 +1,9 @@
 history:
+- date: 11 June 2026
+  title: Chess
+  description: 無料オンライン2人対戦チェス — chess.codefrydev.inでブラウザ対戦；ホームページのクリエイティブ & アセットとゲーム & ファンに追加。
+  link: https://chess.codefrydev.in/
+  accent_color: "#475569"
 - date: 29 May 2026
   title: SVG CSS Color Filter Generator
   description: >-
