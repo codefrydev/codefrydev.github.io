@@ -1,5 +1,10 @@
 history:
 - date: 11 June 2026
+  title: Connect
+  description: रैंडम टेक्स्ट और वीडियो चैट — connect.codefrydev.in पर ब्राउज़र में नए लोगों से मिलें; होम पेज पर Creative & Assets और Games & Fun में जोड़ा गया।
+  link: https://connect.codefrydev.in/
+  accent_color: "#5E35B1"
+- date: 11 June 2026
   title: Online Games
   description: ब्राउज़र गेम संग्रह — onlinegames.codefrydev.in पर पहेलियाँ, क्लासिक और आर्केड; होम पेज पर Creative & Assets और Games & Fun में जोड़ा गया।
   link: https://onlinegames.codefrydev.in/

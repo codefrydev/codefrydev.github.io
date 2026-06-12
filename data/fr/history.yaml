@@ -1,5 +1,12 @@
 history:
 - date: 11 June 2026
+  title: Connect
+  description: >-
+    Chat texte et vidéo aléatoire — rencontrez de nouvelles personnes dans votre navigateur sur connect.codefrydev.in ;
+    ajouté à Créatif & Assets et Jeux & Fun sur l'accueil.
+  link: https://connect.codefrydev.in/
+  accent_color: "#5E35B1"
+- date: 11 June 2026
   title: Online Games
   description: >-
     Collection de jeux navigateur — puzzles, classiques et arcade sur onlinegames.codefrydev.in ; ajouté à Créatif & Assets

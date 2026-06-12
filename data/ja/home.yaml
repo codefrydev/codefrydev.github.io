@@ -62,6 +62,20 @@ categories:
     - arcade
     - puzzles
     - play free
+  - name: Connect
+    icon: cfd-connect
+    url: https://connect.codefrydev.in/
+    description: ランダムテキスト＆ビデオチャット — ブラウザで新しい人と出会う。
+    date: '2026-06-11'
+    phosphorIcon: chat-circle
+    featured: true
+    external: true
+    aliases:
+    - video chat
+    - random chat
+    - text chat
+    - meet people
+    - omegle
   - name: SVG Engine
     icon: cfd-svgengine
     url: "/svgengine/"
@@ -738,6 +752,20 @@ categories:
     - arcade
     - puzzles
     - play free
+  - name: Connect
+    icon: cfd-connect
+    url: https://connect.codefrydev.in/
+    description: ランダムテキスト＆ビデオチャット — ブラウザで新しい人と出会う。
+    date: '2026-06-11'
+    phosphorIcon: chat-circle
+    featured: true
+    external: true
+    aliases:
+    - video chat
+    - random chat
+    - text chat
+    - meet people
+    - omegle
   - name: WordDice
     icon: cfd-worddice
     url: https://worddice.codefrydev.in/

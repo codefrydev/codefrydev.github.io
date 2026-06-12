@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-label="Connect">
+  <style>
+    .bubble{
+      animation:float 3.2s ease-in-out infinite;
+      transform-origin:76px 78px;
+    }
+    .play{
+      animation:pulse 3.2s ease-in-out infinite;
+      transform-origin:83px 75px;
+    }
+    @keyframes float{
+      0%,100%{transform:translateY(0);}
+      50%{transform:translateY(-3px);}
+    }
+    @keyframes pulse{
+      0%,100%{opacity:1;transform:scale(1);}
+      50%{opacity:0.92;transform:scale(1.04);}
+    }
+  </style>
+
+  <defs>
+    <linearGradient id="bg" x1="16" y1="12" x2="144" y2="148" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#fde047" />
+      <stop offset="100%" stop-color="#ea580c" />
+    </linearGradient>
+  </defs>
+
+  <rect x="8" y="8" width="144" height="144" rx="36" fill="url(#bg)" />
+
+  <g class="bubble">
+    <path
+      fill="#ffffff"
+      d="M 48 42
+         H 104
+         Q 118 42 118 56
+         V 94
+         Q 118 108 104 108
+         H 66
+         L 48 124
+         L 54 108
+         H 48
+         Q 34 108 34 94
+         V 56
+         Q 34 42 48 42
+         Z"
+    />
+    <path class="play" fill="#ea580c" d="M 68 58 L 68 92 L 98 75 Z" />
+  </g>
+</svg>
