@@ -47,6 +47,21 @@ categories:
     - checkmate
     - strategy
     - two player
+  - name: Online Games
+    icon: cfd-onlinegames
+    url: https://onlinegames.codefrydev.in/
+    description: ब्राउज़र गेम संग्रह — पहेलियाँ, क्लासिक और आर्केड एक ही जगह।
+    date: '2026-06-11'
+    phosphorIcon: grid-four
+    featured: true
+    external: true
+    aliases:
+    - game collection
+    - online games
+    - browser games
+    - arcade
+    - puzzles
+    - play free
   - name: SVG Engine
     icon: cfd-svgengine
     url: "/svgengine/"
@@ -708,6 +723,21 @@ categories:
     - checkmate
     - strategy
     - two player
+  - name: Online Games
+    icon: cfd-onlinegames
+    url: https://onlinegames.codefrydev.in/
+    description: ब्राउज़र गेम संग्रह — पहेलियाँ, क्लासिक और आर्केड एक ही जगह।
+    date: '2026-06-11'
+    phosphorIcon: grid-four
+    featured: true
+    external: true
+    aliases:
+    - game collection
+    - online games
+    - browser games
+    - arcade
+    - puzzles
+    - play free
   - name: WordDice
     icon: cfd-worddice
     url: https://worddice.codefrydev.in/

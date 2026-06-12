@@ -1,5 +1,12 @@
 history:
 - date: 11 June 2026
+  title: Online Games
+  description: >-
+    Collection de jeux navigateur — puzzles, classiques et arcade sur onlinegames.codefrydev.in ; ajouté à Créatif & Assets
+    et Jeux & Fun sur l'accueil.
+  link: https://onlinegames.codefrydev.in/
+  accent_color: "#7c3aed"
+- date: 11 June 2026
   title: Chess
   description: >-
     Échecs en ligne gratuits à deux joueurs — jouez dans votre navigateur sur chess.codefrydev.in ; ajouté à Créatif & Assets

@@ -1,4 +1,19 @@
 data:
+- name: Online Games
+  icon: cfd-onlinegames
+  url: https://onlinegames.codefrydev.in/
+  description: Collection de jeux navigateur — puzzles, classiques et arcade au même endroit.
+  date: '2026-06-11'
+  phosphorIcon: grid-four
+  featured: true
+  external: true
+  aliases:
+  - game collection
+  - online games
+  - browser games
+  - arcade
+  - puzzles
+  - play free
 - name: Chess
   icon: cfd-chess
   url: https://chess.codefrydev.in/

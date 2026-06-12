@@ -1,5 +1,10 @@
 history:
   - date: "11 June 2026"
+    title: "Online Games"
+    description: "Browser game collection—puzzles, classics, and arcade favorites at onlinegames.codefrydev.in; added to Creative & Assets and Games & Fun on the home page."
+    link: "https://onlinegames.codefrydev.in/"
+    accent_color: "#7c3aed"
+  - date: "11 June 2026"
     title: "Chess"
     description: "Free online 2-player chess—play in your browser at chess.codefrydev.in; added to Creative & Assets and Games & Fun on the home page."
     link: "https://chess.codefrydev.in/"

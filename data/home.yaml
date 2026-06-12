@@ -33,6 +33,15 @@ categories:
         featured: true
         external: true
         aliases: [chess game, board game, checkmate, strategy, two player]
+      - name: Online Games
+        icon: cfd-onlinegames
+        url: https://onlinegames.codefrydev.in/
+        description: Browser game collection—puzzles, classics, and arcade favorites in one place.
+        date: "2026-06-11"
+        phosphorIcon: grid-four
+        featured: true
+        external: true
+        aliases: [game collection, online games, browser games, arcade, puzzles, play free]
       - name: SVG Engine
         icon: cfd-svgengine
         url: /svgengine/
@@ -496,6 +505,15 @@ categories:
         featured: true
         external: true
         aliases: [chess game, board game, checkmate, strategy, two player]
+      - name: Online Games
+        icon: cfd-onlinegames
+        url: https://onlinegames.codefrydev.in/
+        description: Browser game collection—puzzles, classics, and arcade favorites in one place.
+        date: "2026-06-11"
+        phosphorIcon: grid-four
+        featured: true
+        external: true
+        aliases: [game collection, online games, browser games, arcade, puzzles, play free]
       - name: WordDice
         icon: cfd-worddice
         url: https://worddice.codefrydev.in/

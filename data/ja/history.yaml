@@ -1,5 +1,10 @@
 history:
 - date: 11 June 2026
+  title: Online Games
+  description: ブラウザゲームコレクション — onlinegames.codefrydev.inでパズル、クラシック、アーケード；ホームページのクリエイティブ & アセットとゲーム & ファンに追加。
+  link: https://onlinegames.codefrydev.in/
+  accent_color: "#7c3aed"
+- date: 11 June 2026
   title: Chess
   description: 無料オンライン2人対戦チェス — chess.codefrydev.inでブラウザ対戦；ホームページのクリエイティブ & アセットとゲーム & ファンに追加。
   link: https://chess.codefrydev.in/
