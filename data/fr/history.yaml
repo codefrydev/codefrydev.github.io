@@ -1,4 +1,11 @@
 history:
+- date: 18 June 2026
+  title: CFD blog
+  description: >-
+    Lancement du blog CFD sur codefrydev.in/blog/ — mises à jour, projets open source et notes d'ingénierie ; ajouté à
+    Créatif & Assets et Liens du site & externes sur l'accueil.
+  link: https://codefrydev.in/blog/
+  accent_color: "#0D9488"
 - date: 11 June 2026
   title: Connect
   description: >-

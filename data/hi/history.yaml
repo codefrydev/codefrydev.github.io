@@ -1,4 +1,9 @@
 history:
+- date: 18 June 2026
+  title: CFD blog
+  description: CFD ब्लॉग codefrydev.in/blog/ पर लॉन्च — अपडेट, ओपन-सोर्स प्रोजेक्ट और इंजीनियरिंग नोट्स; होम पेज पर Creative & Assets और Site & External Links में जोड़ा गया।
+  link: https://codefrydev.in/blog/
+  accent_color: "#0D9488"
 - date: 11 June 2026
   title: Connect
   description: रैंडम टेक्स्ट और वीडियो चैट — connect.codefrydev.in पर ब्राउज़र में नए लोगों से मिलें; होम पेज पर Creative & Assets और Games & Fun में जोड़ा गया।

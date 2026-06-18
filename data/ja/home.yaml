@@ -76,6 +76,24 @@ categories:
     - text chat
     - meet people
     - omegle
+  - name: CFD blog
+    icon: cfd-blog
+    iconAlt: "CFD blog icon"
+    iconTitle: "CFD blog"
+    url: https://codefrydev.in/blog/
+    description: アップデート、オープンソースプロジェクト、エンジニアリングノート。
+    date: '2026-06-18'
+    phosphorIcon: article
+    featured: true
+    external: true
+    aliases:
+    - blog
+    - articles
+    - updates
+    - engineering
+    - open source posts
+    - seo
+    - site audit
   - name: SVG Engine
     icon: cfd-svgengine
     url: "/svgengine/"
@@ -982,6 +1000,22 @@ categories:
     - milestones
     - changelog
     - journey
+  - name: CFD blog
+    icon: cfd-blog
+    iconAlt: "CFD blog icon"
+    iconTitle: "CFD blog"
+    url: https://codefrydev.in/blog/
+    description: アップデート、オープンソースプロジェクト、エンジニアリングノート。
+    date: '2026-06-18'
+    phosphorIcon: article
+    featured: true
+    external: true
+    aliases:
+    - blog
+    - articles
+    - updates
+    - engineering
+    - open source posts
   - name: CFDDC
     icon: cfd-games
     url: "/cfddc/"

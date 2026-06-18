@@ -1,4 +1,9 @@
 history:
+  - date: "18 June 2026"
+    title: "CFD blog"
+    description: "Launched the CFD blog at codefrydev.in/blog/—updates, open-source projects, and engineering notes; added to Creative & Assets and Site & External Links on the home page."
+    link: "https://codefrydev.in/blog/"
+    accent_color: "#0D9488"
   - date: "11 June 2026"
     title: "Connect"
     description: "Random text and video chat—meet new people in your browser at connect.codefrydev.in; added to Creative & Assets and Games & Fun on the home page."

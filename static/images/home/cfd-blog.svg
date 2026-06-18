@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-label="CFD blog">
+  <style>
+    .page{
+      animation:float 3.4s ease-in-out infinite;
+      transform-origin:80px 76px;
+    }
+    .line{
+      animation:fade 3.4s ease-in-out infinite;
+    }
+    .line2{animation-delay:.2s;}
+    .line3{animation-delay:.4s;}
+    .line4{animation-delay:.6s;}
+    @keyframes float{
+      0%,100%{transform:translateY(0);}
+      50%{transform:translateY(-3px);}
+    }
+    @keyframes fade{
+      0%,100%{opacity:1;}
+      50%{opacity:0.72;}
+    }
+  </style>
+
+  <rect x="8" y="8" width="144" height="144" rx="36" fill="#0D9488"/>
+
+  <g class="page">
+    <rect x="34" y="32" width="92" height="100" rx="10" fill="#ffffff"/>
+    <path fill="#ccfbf1" d="M 106 32 L 126 52 L 106 52 Z"/>
+
+    <rect x="46" y="46" width="52" height="10" rx="3" fill="#0F766E"/>
+    <rect class="line" x="46" y="66" width="68" height="6" rx="2" fill="#5eead4"/>
+    <rect class="line line2" x="46" y="78" width="60" height="6" rx="2" fill="#5eead4"/>
+    <rect class="line line3" x="46" y="90" width="64" height="6" rx="2" fill="#5eead4"/>
+    <rect class="line line4" x="46" y="102" width="42" height="6" rx="2" fill="#5eead4"/>
+
+    <circle cx="52" cy="118" r="5" fill="#0F766E" opacity="0.35"/>
+    <rect x="62" y="115" width="28" height="6" rx="2" fill="#a7f3d0"/>
+  </g>
+</svg>

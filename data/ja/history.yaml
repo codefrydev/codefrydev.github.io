@@ -1,4 +1,9 @@
 history:
+- date: 18 June 2026
+  title: CFD blog
+  description: CFDブログをcodefrydev.in/blog/で公開 — アップデート、オープンソース、エンジニアリングノート；ホームページのクリエイティブ & アセットとサイト & 外部リンクに追加。
+  link: https://codefrydev.in/blog/
+  accent_color: "#0D9488"
 - date: 11 June 2026
   title: Connect
   description: ランダムテキスト＆ビデオチャット — connect.codefrydev.inでブラウザから新しい人と出会う；ホームページのクリエイティブ & アセットとゲーム & ファンに追加。
