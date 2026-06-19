@@ -43,60 +43,170 @@ why:
     text: AIアプリに加え、デザインユーティリティ、ビジュアライザー、クリエイティブワークフローを一箇所に。
 hubBanners:
   games:
-    image: "/images/banners/games.jpg"
+    image: "/images/hero/browse/games-fun-1.webp"
     title: ゲーム & ファン
     imageAlt: CodeFryDevのブラウザゲームとパズル
     imageTitle: ゲーム & ファン
     description: パズル、クラシック、アーケードゲーム — ブラウザですぐプレイ。
+    autoplayMs: 6000
+    slides:
+      - image: "/images/hero/browse/games-fun-1.webp"
+        imageAlt: コントローラーとサイコロで遊ぶカートゥーンキャラクター
+        imageTitle: ゲーム & ファン
+        title: ゲーム & ファン
+        description: Wordle、Snake、Chain Reactionなど — ブラウザですぐプレイ。
+      - image: "/images/hero/browse/games-fun-2.webp"
+        imageAlt: パズルとボードゲームアイコンのカートゥーンアーケード筐体
+        imageTitle: インストール不要ですぐプレイ
+        title: インストール不要ですぐプレイ
+        description: アーケードクラシック、パズル、マルチプレイの人気作 — タブを開いてプレイ。
   ai:
-    image: "/images/banners/ai.jpg"
+    image: "/images/hero/hub/ai-hub-1.webp"
     title: AIツール
     imageAlt: CodeFryDevのAIツールとジェネレーター
     imageTitle: AIツール
     description: ミームジェネレーター、要約、チャットなど — 登録不要。
+    autoplayMs: 6000
+    slides:
+      - image: "/images/hero/hub/ai-hub-1.webp"
+        imageAlt: チャットバブル、脳のきらめき、AIアイコン付きのカートゥーンロボットアシスタント
+        imageTitle: AIツール
+        title: AIツール
+        description: ミームジェネレーター、要約、チャットなど — 登録不要。
+      - image: "/images/hero/hub/ai-hub-2.webp"
+        imageAlt: 登録なしでブラウザのAIツールを使うカートゥーンの人物
+        imageTitle: ブラウザですぐAI
+        title: ブラウザですぐAI
+        description: タブを開いてすぐ開始 — 要約、ジェネレーター、ヘルパー、アカウント不要。
   designlab:
-    image: "/images/banners/designlab.jpg"
+    image: "/images/hero/hub/designlab-hub-1.webp"
     title: デザインラボ
     imageAlt: メーカー向けデザインラボツールとクリエイティブリソース
     imageTitle: デザインラボ
     description: メーカー向けクリエイティブデザインツール、ビジュアライザー、リソース。
+    autoplayMs: 6000
+    slides:
+      - image: "/images/hero/hub/designlab-hub-1.webp"
+        imageAlt: タブレット、パレット、デザインツールを使うクリエイティブデスクのカートゥーンメーカー
+        imageTitle: デザインラボ
+        title: デザインラボ
+        description: メーカー向けクリエイティブデザインツール、ビジュアライザー、リソース。
+      - image: "/images/hero/hub/designlab-hub-2.webp"
+        imageAlt: ブラウザでモックアップ、カラースウォッチ、ビジュアライザーを並べるカートゥーンデザイナー
+        imageTitle: 可視化して創作
+        title: 可視化して創作
+        description: モックアップ、パレット、グラデーション、ビジュアライザー — ブラウザで試せます。
   store:
     image: "/images/banners/store.jpg"
     title: CodeFryDev Store
     imageAlt: Google PlayのCodeFryDevモバイルアプリ
     imageTitle: CodeFryDev Store
     description: Google Playのモバイルアプリとダウンロード。
+browseIndex:
+  autoplayMs: 6000
+  searchPlaceholder: ツール、ゲーム、AIアプリを検索…
+  slides:
+  - image: "/images/hero/browse/browse-index-1.webp"
+    imageAlt: 整理されたカテゴリカードを見るカートゥーンの探検家
+    imageTitle: すべてのカテゴリを閲覧
+    title: すべてのカテゴリを閲覧
+    description: 無料のツール、ゲーム、AIアプリをカテゴリ別に。コレクションを選ぶかハブへ。
+  - image: "/images/hero/browse/browse-index-2.webp"
+    imageAlt: 無料アプリタイルのモザイクを表示するカートゥーンブラウザ
+    imageTitle: すべてが一か所に
+    title: すべてが一か所に
+    description: クリエイティブアセット、ユーティリティ、ゲーム、サイトリンク、パッケージを発見。
 categoryBanners:
   creative-assets:
-    image: "/images/banners/creative-assets.jpg"
+    image: "/images/hero/browse/creative-assets-1.webp"
     title: クリエイティブ & アセットを探索
     imageAlt: CodeFryDevのクリエイティブツール、デジタルアート、学習アセット
     imageTitle: クリエイティブ & アセットを探索
     description: メーカー向けアートツール、壁紙、3Dモデル、学習リソース。
+    autoplayMs: 6000
+    slides:
+      - image: "/images/hero/browse/creative-assets-1.webp"
+        imageAlt: タブレットとパレットを持つカートゥーンのデジタルアーティスト
+        imageTitle: クリエイティブ & アセットを探索
+        title: クリエイティブ & アセットを探索
+        description: メーカー向けアートツール、壁紙、3Dモデル、学習リソース。
+      - image: "/images/hero/browse/creative-assets-2.webp"
+        imageAlt: メーカースタジオの3Dモデル、フォント、ミューラルキャンバス
+        imageTitle: 制限なく創作
+        title: 制限なく創作
+        description: SVGエディタ、フォント、ミューラル、ビジュアル学習ラボ — すべてブラウザで。
   tools-utilities:
-    image: "/images/banners/tools-utilities.jpg"
+    image: "/images/hero/browse/tools-utilities-1.webp"
     title: ツール & ユーティリティコレクション
     imageAlt: ブラウザ内の生産性と開発者ユーティリティ
     imageTitle: ツール & ユーティリティコレクション
     description: ブラウザ内の生産性アプリ、フォーマッター、SEOツール、開発ユーティリティ。
+    autoplayMs: 6000
+    slides:
+      - image: "/images/hero/browse/tools-utilities-1.webp"
+        imageAlt: レンチとコーディングツールを持つカートゥーン開発者
+        imageTitle: ツール & ユーティリティコレクション
+        title: ツール & ユーティリティコレクション
+        description: ブラウザ内の生産性アプリ、フォーマッター、SEOツール、開発ユーティリティ。
+      - image: "/images/hero/browse/tools-utilities-2.webp"
+        imageAlt: チャートやエディタなどのカートゥーン生産性アイコン
+        imageTitle: ブラウザで素早く開発
+        title: ブラウザで素早く開発
+        description: JSONプレイグラウンド、カラーツール、SEOプロファイラーなど — インストール不要。
   games-fun:
-    image: "/images/banners/games-fun.jpg"
+    image: "/images/hero/browse/games-fun-1.webp"
     title: ゲーム & ファン
     imageAlt: Wordle、Snake、Chain Reactionを含む無料ブラウザゲーム
     imageTitle: ゲーム & ファン
     description: Wordle、Snake、Chain Reactionなど — ブラウザですぐプレイ。
+    autoplayMs: 6000
+    slides:
+      - image: "/images/hero/browse/games-fun-1.webp"
+        imageAlt: コントローラーとサイコロで遊ぶカートゥーンキャラクター
+        imageTitle: ゲーム & ファン
+        title: ゲーム & ファン
+        description: Wordle、Snake、Chain Reactionなど — ブラウザですぐプレイ。
+      - image: "/images/hero/browse/games-fun-2.webp"
+        imageAlt: パズルとボードゲームアイコンのカートゥーンアーケード筐体
+        imageTitle: インストール不要ですぐプレイ
+        title: インストール不要ですぐプレイ
+        description: アーケードクラシック、パズル、マルチプレイの人気作 — タブを開いてプレイ。
   site-links:
-    image: "/images/banners/site-links.jpg"
+    image: "/images/hero/browse/site-links-1.webp"
     title: サイト & リソース
     imageAlt: サイトリンク、概要ページ、外部リソース
     imageTitle: サイト & リソース
     description: 概要、アップデート、ストア、プライバシー、外部リンク。
+    autoplayMs: 6000
+    slides:
+      - image: "/images/hero/browse/site-links-1.webp"
+        imageAlt: サイトリンクを指すカートゥーンガイド
+        imageTitle: サイト & リソース
+        title: サイト & リソース
+        description: 概要、アップデート、ストア、プライバシー、外部リンク。
+      - image: "/images/hero/browse/site-links-2.webp"
+        imageAlt: ウェブグローブの周りのコンパス、ブログ、プライバシーアイコン
+        imageTitle: CodeFryDevのすべて
+        title: CodeFryDevのすべて
+        description: 履歴、プレス、ストア、ブログ、コミュニティリソースが一か所に。
   containers-packages:
-    image: "/images/banners/containers-packages.jpg"
+    image: "/images/hero/browse/containers-packages-1.webp"
     title: コンテナ & パッケージ
     imageAlt: CodeFryDevのDockerイメージとnpmパッケージ
     imageTitle: コンテナ & パッケージ
     description: CodeFryDev公式Dockerイメージとnpmパッケージ。
+    autoplayMs: 6000
+    slides:
+      - image: "/images/hero/browse/containers-packages-1.webp"
+        imageAlt: カラフルなコンテナを運ぶカートゥーンDockerクジラ
+        imageTitle: コンテナ & パッケージ
+        title: コンテナ & パッケージ
+        description: CodeFryDev公式Dockerイメージとnpmパッケージ。
+      - image: "/images/hero/browse/containers-packages-2.webp"
+        imageAlt: ターミナル付き棚のカートゥーンnpmパッケージ
+        imageTitle: pullしてインストールできるオープンソース
+        title: pullしてインストールできるオープンソース
+        description: CodeFryDevチームがメンテナンスするDockerイメージとnpmモジュール。
 hero:
   badge: 無料ツール — 登録不要
   searchPlaceholder: ツール、ゲーム、AIアプリを検索…

@@ -43,60 +43,170 @@ why:
     text: AI ऐप्स के साथ डिज़ाइन यूटिलिटी, विज़ुअलाइज़र और क्रिएटिव वर्कफ़्लो एक जगह।
 hubBanners:
   games:
-    image: "/images/banners/games.jpg"
+    image: "/images/hero/browse/games-fun-1.webp"
     title: गेम & फ़न
     imageAlt: CodeFryDev पर ब्राउज़र गेम और पहेलियाँ
     imageTitle: गेम & फ़न
     description: पहेलियाँ, क्लासिक और आर्केड गेम — ब्राउज़र में तुरंत खेलें।
+    autoplayMs: 6000
+    slides:
+      - image: "/images/hero/browse/games-fun-1.webp"
+        imageAlt: कंट्रोलर और पासों के साथ ब्राउज़र गेम खेलते कार्टून पात्र
+        imageTitle: गेम & फ़न
+        title: गेम & फ़न
+        description: Wordle, Snake, Chain Reaction और अधिक — ब्राउज़र में तुरंत खेलें।
+      - image: "/images/hero/browse/games-fun-2.webp"
+        imageAlt: पहेली और बोर्ड गेम आइकन के साथ कार्टून आर्केड कैबिनेट
+        imageTitle: तुरंत खेलें, इंस्टॉल नहीं
+        title: तुरंत खेलें, इंस्टॉल नहीं
+        description: आर्केड क्लासिक, पहेलियाँ और मल्टीप्लेयर पसंदीदा — टैब खोलें और खेलें।
   ai:
-    image: "/images/banners/ai.jpg"
+    image: "/images/hero/hub/ai-hub-1.webp"
     title: AI टूल
     imageAlt: CodeFryDev पर AI-संचालित टूल और जनरेटर
     imageTitle: AI टूल
     description: मीम जनरेटर, सारांश, चैट और अधिक — साइनअप नहीं।
+    autoplayMs: 6000
+    slides:
+      - image: "/images/hero/hub/ai-hub-1.webp"
+        imageAlt: चैट बबल, दिमाग की चमक और AI आइकन के साथ कार्टून रोबोट सहायक
+        imageTitle: AI टूल
+        title: AI टूल
+        description: मीम जनरेटर, सारांश, चैट और अधिक — साइनअप नहीं।
+      - image: "/images/hero/hub/ai-hub-2.webp"
+        imageAlt: बिना साइनअप ब्राउज़र में AI टूल इस्तेमाल करता कार्टून व्यक्ति
+        imageTitle: ब्राउज़र में तुरंत AI
+        title: ब्राउज़र में तुरंत AI
+        description: टैब खोलें और शुरू करें — सारांश, जनरेटर और हेल्पर, खाते की ज़रूरत नहीं।
   designlab:
-    image: "/images/banners/designlab.jpg"
+    image: "/images/hero/hub/designlab-hub-1.webp"
     title: डिज़ाइन लैब
     imageAlt: मेकर्स के लिए डिज़ाइन लैब टूल और क्रिएटिव संसाधन
     imageTitle: डिज़ाइन लैब
     description: मेकर्स के लिए क्रिएटिव डिज़ाइन टूल, विज़ुअलाइज़र और संसाधन।
+    autoplayMs: 6000
+    slides:
+      - image: "/images/hero/hub/designlab-hub-1.webp"
+        imageAlt: टैबलेट, पैलेट और डिज़ाइन टूल के साथ क्रिएटिव डेस्क पर कार्टून मेकर
+        imageTitle: डिज़ाइन लैब
+        title: डिज़ाइन लैब
+        description: मेकर्स के लिए क्रिएटिव डिज़ाइन टूल, विज़ुअलाइज़र और संसाधन।
+      - image: "/images/hero/hub/designlab-hub-2.webp"
+        imageAlt: ब्राउज़र में मॉकअप, रंग स्वैच और विज़ुअलाइज़र व्यवस्थित करता कार्टून डिज़ाइनर
+        imageTitle: विज़ुअलाइज़ करें और बनाएँ
+        title: विज़ुअलाइज़ करें और बनाएँ
+        description: मॉकअप, पैलेट, ग्रेडिएंट और विज़ुअलाइज़र — ब्राउज़र में प्रयोग करें।
   store:
     image: "/images/banners/store.jpg"
     title: CodeFryDev Store
     imageAlt: Google Play पर CodeFryDev मोबाइल ऐप
     imageTitle: CodeFryDev Store
     description: Google Play पर मोबाइल ऐप और डाउनलोड।
+browseIndex:
+  autoplayMs: 6000
+  searchPlaceholder: टूल, गेम, AI ऐप खोजें…
+  slides:
+  - image: "/images/hero/browse/browse-index-1.webp"
+    imageAlt: व्यवस्थित श्रेणी कार्ड ब्राउज़ करता कार्टून एक्सप्लोरर
+    imageTitle: सभी श्रेणियाँ ब्राउज़ करें
+    title: सभी श्रेणियाँ ब्राउज़ करें
+    description: मुफ़्त टूल, गेम और AI ऐप — श्रेणी के अनुसार। संग्रह चुनें या हब पर जाएँ।
+  - image: "/images/hero/browse/browse-index-2.webp"
+    imageAlt: मुफ़्त ऐप टाइलों के मोज़ेक वाला कार्टून ब्राउज़र विंडो
+    imageTitle: सब कुछ एक जगह
+    title: सब कुछ एक जगह
+    description: क्रिएटिव एसेट, यूटिलिटी, गेम, साइट लिंक और पैकेज — अपने प्रोजेक्ट के लिए खोजें।
 categoryBanners:
   creative-assets:
-    image: "/images/banners/creative-assets.jpg"
+    image: "/images/hero/browse/creative-assets-1.webp"
     title: क्रिएटिव & एसेट एक्सप्लोर करें
     imageAlt: CodeFryDev पर क्रिएटिव टूल, डिजिटल कला और सीखने के एसेट
     imageTitle: क्रिएटिव & एसेट एक्सप्लोर करें
     description: मेकर्स के लिए आर्ट टूल, वॉलपेपर, 3D मॉडल और सीखने के संसाधन।
+    autoplayMs: 6000
+    slides:
+      - image: "/images/hero/browse/creative-assets-1.webp"
+        imageAlt: टैबलेट और पैलेट के साथ कार्टून डिजिटल कलाकार
+        imageTitle: क्रिएटिव & एसेट एक्सप्लोर करें
+        title: क्रिएटिव & एसेट एक्सप्लोर करें
+        description: मेकर्स के लिए आर्ट टूल, वॉलपेपर, 3D मॉडल और सीखने के संसाधन।
+      - image: "/images/hero/browse/creative-assets-2.webp"
+        imageAlt: मेकर स्टूडियो में 3D मॉडल, फ़ॉन्ट और mural कैनवास
+        imageTitle: बिना सीमा के बनाएँ
+        title: बिना सीमा के बनाएँ
+        description: SVG एडिटर, फ़ॉन्ट, mural और विज़ुअल लर्निंग लैब — सब ब्राउज़र में।
   tools-utilities:
-    image: "/images/banners/tools-utilities.jpg"
+    image: "/images/hero/browse/tools-utilities-1.webp"
     title: टूल & यूटिलिटी संग्रह
     imageAlt: ब्राउज़र में उत्पादकता और डेवलपर यूटिलिटी
     imageTitle: टूल & यूटिलिटी संग्रह
     description: ब्राउज़र में उत्पादकता ऐप, फ़ॉर्मेटर, SEO टूल और dev यूटिलिटी।
+    autoplayMs: 6000
+    slides:
+      - image: "/images/hero/browse/tools-utilities-1.webp"
+        imageAlt: रिंच और कोडिंग यूटिलिटी के साथ कार्टून डेवलपर
+        imageTitle: टूल & यूटिलिटी संग्रह
+        title: टूल & यूटिलिटी संग्रह
+        description: ब्राउज़र में उत्पादकता ऐप, फ़ॉर्मेटर, SEO टूल और dev यूटिलिटी।
+      - image: "/images/hero/browse/tools-utilities-2.webp"
+        imageAlt: चार्ट, एडिटर और गेज सहित कार्टून उत्पादकता आइकन
+        imageTitle: ब्राउज़र में तेज़ी से शिप करें
+        title: ब्राउज़र में तेज़ी से शिप करें
+        description: JSON प्लेग्राउंड, कलर टूल, SEO प्रोफ़ाइलर और अधिक — इंस्टॉल की ज़रूरत नहीं।
   games-fun:
-    image: "/images/banners/games-fun.jpg"
+    image: "/images/hero/browse/games-fun-1.webp"
     title: गेम & फ़न
     imageAlt: Wordle, Snake और Chain Reaction सहित मुफ़्त ब्राउज़र गेम
     imageTitle: गेम & फ़न
     description: Wordle, Snake, Chain Reaction और अधिक — ब्राउज़र में तुरंत खेलें।
+    autoplayMs: 6000
+    slides:
+      - image: "/images/hero/browse/games-fun-1.webp"
+        imageAlt: कंट्रोलर और पासों के साथ ब्राउज़र गेम खेलते कार्टून पात्र
+        imageTitle: गेम & फ़न
+        title: गेम & फ़न
+        description: Wordle, Snake, Chain Reaction और अधिक — ब्राउज़र में तुरंत खेलें।
+      - image: "/images/hero/browse/games-fun-2.webp"
+        imageAlt: पहेली और बोर्ड गेम आइकन के साथ कार्टून आर्केड कैबिनेट
+        imageTitle: तुरंत खेलें, इंस्टॉल नहीं
+        title: तुरंत खेलें, इंस्टॉल नहीं
+        description: आर्केड क्लासिक, पहेलियाँ और मल्टीप्लेयर पसंदीदा — टैब खोलें और खेलें।
   site-links:
-    image: "/images/banners/site-links.jpg"
+    image: "/images/hero/browse/site-links-1.webp"
     title: साइट & संसाधन
     imageAlt: साइट लिंक, परिचय पेज और बाहरी संसाधन
     imageTitle: साइट & संसाधन
     description: परिचय, अपडेट, स्टोर, गोपनीयता और बाहरी लिंक।
+    autoplayMs: 6000
+    slides:
+      - image: "/images/hero/browse/site-links-1.webp"
+        imageAlt: साइट लिंक और परिचय पेज की ओर इशारा करता कार्टून गाइड
+        imageTitle: साइट & संसाधन
+        title: साइट & संसाधन
+        description: परिचय, अपडेट, स्टोर, गोपनीयता और बाहरी लिंक।
+      - image: "/images/hero/browse/site-links-2.webp"
+        imageAlt: वेबसाइट ग्लोब के चारों ओर कम्पास, ब्लॉग और गोपनीयता आइकन
+        imageTitle: CodeFryDev के बारे में सब कुछ
+        title: CodeFryDev के बारे में सब कुछ
+        description: इतिहास, प्रेस, स्टोर, ब्लॉग और समुदाय संसाधन एक ही जगह।
   containers-packages:
-    image: "/images/banners/containers-packages.jpg"
+    image: "/images/hero/browse/containers-packages-1.webp"
     title: कंटेनर & पैकेज
     imageAlt: CodeFryDev से Docker इमेज और npm पैकेज
     imageTitle: कंटेनर & पैकेज
     description: CodeFryDev से आधिकारिक Docker इमेज और npm पैकेज।
+    autoplayMs: 6000
+    slides:
+      - image: "/images/hero/browse/containers-packages-1.webp"
+        imageAlt: रंगीन कंटेनर ले जाता कार्टून Docker व्हेल
+        imageTitle: कंटेनर & पैकेज
+        title: कंटेनर & पैकेज
+        description: CodeFryDev से आधिकारिक Docker इमेज और npm पैकेज।
+      - image: "/images/hero/browse/containers-packages-2.webp"
+        imageAlt: टर्मिनल विंडो के साथ शेल्फ पर कार्टून npm पैकेज
+        imageTitle: ओपन सोर्स जो आप pull और install कर सकते हैं
+        title: ओपन सोर्स जो आप pull और install कर सकते हैं
+        description: CodeFryDev टीम द्वारा बनाए गए Docker इमेज और npm मॉड्यूल।
 hero:
   badge: मुफ़्त टूल — साइनअप नहीं
   searchPlaceholder: टूल, गेम, AI ऐप खोजें…

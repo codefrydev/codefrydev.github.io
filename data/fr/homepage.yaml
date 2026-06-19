@@ -43,60 +43,170 @@ why:
     text: Applications IA, utilitaires de design, visualiseurs et workflows créatifs en un seul endroit.
 hubBanners:
   games:
-    image: "/images/banners/games.jpg"
+    image: "/images/hero/browse/games-fun-1.webp"
     title: Jeux & Fun
     imageAlt: Jeux et puzzles dans le navigateur sur CodeFryDev
     imageTitle: Jeux & Fun
     description: Puzzles, classiques et jeux d'arcade — jouez instantanément dans votre navigateur.
+    autoplayMs: 6000
+    slides:
+      - image: "/images/hero/browse/games-fun-1.webp"
+        imageAlt: Personnages cartoon jouant avec manette et dés
+        imageTitle: Jeux & Fun
+        title: Jeux & Fun
+        description: Wordle, Snake, Chain Reaction et plus — jouez instantanément dans votre navigateur.
+      - image: "/images/hero/browse/games-fun-2.webp"
+        imageAlt: Borne d'arcade cartoon avec puzzles et jeux de plateau
+        imageTitle: Jouez tout de suite, sans installation
+        title: Jouez tout de suite, sans installation
+        description: Classiques d'arcade, puzzles et favoris multijoueur — ouvrez un onglet et jouez.
   ai:
-    image: "/images/banners/ai.jpg"
+    image: "/images/hero/hub/ai-hub-1.webp"
     title: Outils IA
     imageAlt: Outils et générateurs IA sur CodeFryDev
     imageTitle: Outils IA
     description: Générateurs de mèmes, résumés, chat et plus — sans inscription.
+    autoplayMs: 6000
+    slides:
+      - image: "/images/hero/hub/ai-hub-1.webp"
+        imageAlt: Assistant robot cartoon avec bulles de chat, étincelles cérébrales et icônes IA
+        imageTitle: Outils IA
+        title: Outils IA
+        description: Générateurs de mèmes, résumés, chat et plus — sans inscription.
+      - image: "/images/hero/hub/ai-hub-2.webp"
+        imageAlt: Personnage cartoon utilisant des outils IA dans le navigateur sans inscription
+        imageTitle: IA instantanée dans votre navigateur
+        title: IA instantanée dans votre navigateur
+        description: Ouvrez un onglet et commencez — résumés, générateurs et assistants sans compte.
   designlab:
-    image: "/images/banners/designlab.jpg"
+    image: "/images/hero/hub/designlab-hub-1.webp"
     title: Design Lab
     imageAlt: Outils Design Lab et ressources créatives pour les makers
     imageTitle: Design Lab
     description: Outils de design créatif, visualiseurs et ressources pour les makers.
+    autoplayMs: 6000
+    slides:
+      - image: "/images/hero/hub/designlab-hub-1.webp"
+        imageAlt: Maker cartoon à un bureau créatif avec tablette, palette et outils de design
+        imageTitle: Design Lab
+        title: Design Lab
+        description: Outils de design créatif, visualiseurs et ressources pour les makers.
+      - image: "/images/hero/hub/designlab-hub-2.webp"
+        imageAlt: Designer cartoon organisant maquettes, nuanciers et visualiseurs dans un navigateur
+        imageTitle: Visualisez et créez
+        title: Visualisez et créez
+        description: Maquettes, palettes, dégradés et visualiseurs — expérimentez dans votre navigateur.
   store:
     image: "/images/banners/store.jpg"
     title: Boutique CodeFryDev
     imageAlt: Applications mobiles CodeFryDev sur Google Play
     imageTitle: Boutique CodeFryDev
     description: Applications mobiles et téléchargements sur Google Play.
+browseIndex:
+  autoplayMs: 6000
+  searchPlaceholder: "Rechercher outils, jeux, apps IA…"
+  slides:
+  - image: "/images/hero/browse/browse-index-1.webp"
+    imageAlt: Explorateur cartoon parcourant des cartes de catégories
+    imageTitle: Parcourir toutes les catégories
+    title: Parcourir toutes les catégories
+    description: Outils, jeux et apps IA gratuits — par catégorie. Choisissez une collection ou un hub.
+  - image: "/images/hero/browse/browse-index-2.webp"
+    imageAlt: Fenêtre navigateur cartoon avec mosaïque d'apps gratuites
+    imageTitle: Tout au même endroit
+    title: Tout au même endroit
+    description: Assets créatifs, utilitaires, jeux, liens du site et packages — trouvez ce qu'il vous faut.
 categoryBanners:
   creative-assets:
-    image: "/images/banners/creative-assets.jpg"
+    image: "/images/hero/browse/creative-assets-1.webp"
     title: Explorer Créatif & Assets
     imageAlt: Outils créatifs, art numérique et ressources d'apprentissage sur CodeFryDev
     imageTitle: Explorer Créatif & Assets
     description: Outils d'art, fonds d'écran, modèles 3D et ressources d'apprentissage pour les makers.
+    autoplayMs: 6000
+    slides:
+      - image: "/images/hero/browse/creative-assets-1.webp"
+        imageAlt: Artiste numérique cartoon avec tablette et palette
+        imageTitle: Explorer Créatif & Assets
+        title: Explorer Créatif & Assets
+        description: Outils d'art, fonds d'écran, modèles 3D et ressources d'apprentissage pour les makers.
+      - image: "/images/hero/browse/creative-assets-2.webp"
+        imageAlt: Modèles 3D, polices et toile mural dans un studio créatif
+        imageTitle: Créez sans limites
+        title: Créez sans limites
+        description: Éditeurs SVG, polices, murals et labs visuels — tout dans le navigateur.
   tools-utilities:
-    image: "/images/banners/tools-utilities.jpg"
+    image: "/images/hero/browse/tools-utilities-1.webp"
     title: Collection Outils & Utilitaires
     imageAlt: Utilitaires de productivité et développeur dans le navigateur
     imageTitle: Collection Outils & Utilitaires
     description: Apps de productivité, formateurs, outils SEO et utilitaires dev dans votre navigateur.
+    autoplayMs: 6000
+    slides:
+      - image: "/images/hero/browse/tools-utilities-1.webp"
+        imageAlt: Développeur cartoon avec clé et utilitaires de code
+        imageTitle: Collection Outils & Utilitaires
+        title: Collection Outils & Utilitaires
+        description: Apps de productivité, formateurs, outils SEO et utilitaires dev dans votre navigateur.
+      - image: "/images/hero/browse/tools-utilities-2.webp"
+        imageAlt: Icônes de productivité cartoon avec graphiques et éditeurs
+        imageTitle: Livrez plus vite dans le navigateur
+        title: Livrez plus vite dans le navigateur
+        description: Playgrounds JSON, outils couleur, profils SEO et plus — sans installation.
   games-fun:
-    image: "/images/banners/games-fun.jpg"
+    image: "/images/hero/browse/games-fun-1.webp"
     title: Jeux & Fun
     imageAlt: Jeux gratuits dans le navigateur dont Wordle, Snake et Chain Reaction
     imageTitle: Jeux & Fun
     description: Wordle, Snake, Chain Reaction et plus — jouez instantanément dans votre navigateur.
+    autoplayMs: 6000
+    slides:
+      - image: "/images/hero/browse/games-fun-1.webp"
+        imageAlt: Personnages cartoon jouant avec manette et dés
+        imageTitle: Jeux & Fun
+        title: Jeux & Fun
+        description: Wordle, Snake, Chain Reaction et plus — jouez instantanément dans votre navigateur.
+      - image: "/images/hero/browse/games-fun-2.webp"
+        imageAlt: Borne d'arcade cartoon avec puzzles et jeux de plateau
+        imageTitle: Jouez tout de suite, sans installation
+        title: Jouez tout de suite, sans installation
+        description: Classiques d'arcade, puzzles et favoris multijoueur — ouvrez un onglet et jouez.
   site-links:
-    image: "/images/banners/site-links.jpg"
+    image: "/images/hero/browse/site-links-1.webp"
     title: Site et ressources
     imageAlt: Liens du site, pages à propos et ressources externes
     imageTitle: Site et ressources
     description: À propos, mises à jour, boutique, confidentialité et liens externes.
+    autoplayMs: 6000
+    slides:
+      - image: "/images/hero/browse/site-links-1.webp"
+        imageAlt: Guide cartoon pointant vers les liens et pages du site
+        imageTitle: Site et ressources
+        title: Site et ressources
+        description: À propos, mises à jour, boutique, confidentialité et liens externes.
+      - image: "/images/hero/browse/site-links-2.webp"
+        imageAlt: Boussole, blog et icônes autour d'un globe web
+        imageTitle: Tout sur CodeFryDev
+        title: Tout sur CodeFryDev
+        description: Historique, presse, boutique, blog et ressources communautaires au même endroit.
   containers-packages:
-    image: "/images/banners/containers-packages.jpg"
+    image: "/images/hero/browse/containers-packages-1.webp"
     title: Conteneurs & Packages
     imageAlt: Images Docker et packages npm de CodeFryDev
     imageTitle: Conteneurs & Packages
     description: Images Docker officielles et packages npm de CodeFryDev.
+    autoplayMs: 6000
+    slides:
+      - image: "/images/hero/browse/containers-packages-1.webp"
+        imageAlt: Baleine Docker cartoon portant des conteneurs colorés
+        imageTitle: Conteneurs & Packages
+        title: Conteneurs & Packages
+        description: Images Docker officielles et packages npm de CodeFryDev.
+      - image: "/images/hero/browse/containers-packages-2.webp"
+        imageAlt: Packages npm cartoon sur une étagère avec terminal
+        imageTitle: Open source à pull et installer
+        title: Open source à pull et installer
+        description: Images Docker et modules npm maintenus par l'équipe CodeFryDev.
 hero:
   badge: Outils gratuits — sans inscription
   searchPlaceholder: Rechercher outils, jeux, apps IA…

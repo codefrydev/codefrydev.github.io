@@ -4,68 +4,15 @@
 {{- $placeholder := $hero.searchPlaceholder | default "Search tools, games, AI apps..." -}}
 {{- $autoplay := $hero.autoplayMs | default 6000 -}}
 {{- $slides := $hero.slides -}}
-{{- $firstSlide := index $slides 0 -}}
-{{- $firstSlideAlt := $firstSlide.imageAlt | default $firstSlide.title -}}
 
-<section id="hero" data-section-label="Home" class="home-hero relative text-center flex flex-col items-center justify-center px-4 py-8 overflow-hidden bg-[#edf2f8]" aria-roledescription="carousel" aria-label="Featured highlights">
-  <div class="home-hero__bg" aria-hidden="true">
-    <div id="bg-layer-1" class="home-hero__bg-layer opacity-100">
-      <img
-        id="hero-bg-img-1"
-        src="{{ $firstSlide.image }}"
-        alt="{{ $firstSlideAlt }}"
-        width="1600"
-        height="840"
-        class="home-hero__bg-img"
-        fetchpriority="high"
-        decoding="async"
-        {{- with $firstSlide.imageTitle }} title="{{ . }}"{{ end }}
-      >
-    </div>
-    <div id="bg-layer-2" class="home-hero__bg-layer opacity-0">
-      <img
-        id="hero-bg-img-2"
-        alt="{{ $firstSlideAlt }}"
-        width="1600"
-        height="840"
-        class="home-hero__bg-img"
-        loading="lazy"
-        decoding="async"
-      >
-    </div>
-  </div>
-  <div class="home-hero__overlay" aria-hidden="true"></div>
-
-  <div id="hero-content" class="relative z-10 transition-opacity duration-500 ease-in-out opacity-100" aria-live="polite">
-    <h1 id="ladybug-h1-bite-target" class="max-w-4xl mx-auto text-5xl md:text-6xl font-bold tracking-tight text-[#0B162C] mb-6 m-0">
-      <span id="hero-title" class="hero-slide-title block">{{ $firstSlide.title }}</span>
-    </h1>
-    <p id="hero-desc" class="max-w-2xl mx-auto text-lg text-slate-600 mb-10 leading-relaxed font-medium m-0">
-      {{ $firstSlide.description }}
-    </p>
-  </div>
-
-  {{ partial "home/search-trigger.html" (dict "placeholder" $placeholder "size" "lg") }}
-
-  {{- if gt (len $slides) 1 -}}
-  <button type="button" id="hero-carousel-prev" class="home-hero__nav-btn home-hero__nav-btn--side home-hero__nav-btn--prev max-md:hidden md:flex" aria-label="Previous slide">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="20" height="20" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
-  </button>
-  <button type="button" id="hero-carousel-next" class="home-hero__nav-btn home-hero__nav-btn--side home-hero__nav-btn--next max-md:hidden md:flex" aria-label="Next slide">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="20" height="20" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
-  </button>
-  <div id="carousel-indicators" class="home-hero__indicators" role="tablist" aria-label="Hero slides"></div>
-  {{- else -}}
-  <div id="carousel-indicators" class="hidden" aria-hidden="true"></div>
-  {{- end -}}
-
-  <p class="absolute bottom-24 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-slate-500 text-xs font-medium pointer-events-none m-0 home-scroll-hint" aria-hidden="true">
-    <span>Scroll to explore</span>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" class="animate-bounce"><polyline points="6 9 12 15 18 9"/></svg>
-  </p>
-
-  <script>
-    window.heroSlides = {{ $slides | jsonify | safeJS }};
-    window.heroAutoplayMs = {{ $autoplay }};
-  </script>
-</section>
+{{ partial "home/hero-carousel.html" (dict
+  "slides" $slides
+  "variant" "home"
+  "autoplayMs" $autoplay
+  "ariaLabel" "Featured highlights"
+  "sectionLabel" "Home"
+  "heroContext" "home"
+  "searchPlaceholder" $placeholder
+  "showScrollHint" true
+  "ladybugH1" true
+) }}

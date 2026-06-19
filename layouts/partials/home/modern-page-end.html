@@ -20,6 +20,9 @@
   {{ partial "home/search-palette.html" $page }}
   {{- end -}}
   <script src="/js/site.min.js" defer></script>
+  {{- if $page.Scratch.Get "loadHeroCarousel" -}}
+  <script src="/js/hero-carousel.min.js" defer></script>
+  {{- end -}}
   {{ partial "tawk-to.html" $page }}
 </body>
 </html>

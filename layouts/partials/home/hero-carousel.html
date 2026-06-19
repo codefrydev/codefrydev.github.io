@@ -1,0 +1,91 @@
+{{- $slides := .slides -}}
+{{- if not $slides }}{{ return }}{{ end -}}
+{{- $firstSlide := index $slides 0 -}}
+{{- $firstSlideAlt := $firstSlide.imageAlt | default $firstSlide.title -}}
+{{- $sectionId := .sectionId | default "hero" -}}
+{{- $slidesDataId := printf "%s-slides-data" $sectionId -}}
+{{- $variant := .variant | default "home" -}}
+{{- $autoplay := .autoplayMs | default 6000 -}}
+{{- $ariaLabel := .ariaLabel | default "Featured highlights" -}}
+{{- $heroContext := .heroContext | default "home" -}}
+{{- $sectionClass := "home-hero relative text-center flex flex-col items-center justify-center px-4 py-8 overflow-hidden bg-[#edf2f8]" -}}
+{{- if eq $variant "subpage" -}}
+  {{- $sectionClass = printf "%s home-hero--subpage" $sectionClass -}}
+{{- end -}}
+
+<section
+  id="{{ $sectionId }}"
+  data-hero-carousel
+  data-hero-slides-id="{{ $slidesDataId }}"
+  data-hero-autoplay="{{ $autoplay }}"
+  data-hero-context="{{ $heroContext }}"
+  {{- with .sectionLabel }} data-section-label="{{ . }}"{{ end }}
+  class="{{ $sectionClass }}"
+  aria-roledescription="carousel"
+  aria-label="{{ $ariaLabel }}"
+>
+  <div class="home-hero__bg" aria-hidden="true">
+    <div data-hero-bg-layer="1" class="home-hero__bg-layer opacity-100">
+      <img
+        src="{{ $firstSlide.image }}"
+        alt="{{ $firstSlideAlt }}"
+        width="1600"
+        height="840"
+        class="home-hero__bg-img"
+        {{- if eq $variant "home" }} fetchpriority="high"{{ else }} loading="eager"{{ end }}
+        decoding="async"
+        {{- with $firstSlide.imageTitle }} title="{{ . }}"{{ end }}
+      >
+    </div>
+    <div data-hero-bg-layer="2" class="home-hero__bg-layer opacity-0">
+      <img
+        alt="{{ $firstSlideAlt }}"
+        width="1600"
+        height="840"
+        class="home-hero__bg-img"
+        loading="lazy"
+        decoding="async"
+      >
+    </div>
+  </div>
+  <div class="home-hero__overlay" aria-hidden="true"></div>
+
+  <div data-hero-content class="relative z-10 transition-opacity duration-500 ease-in-out opacity-100" aria-live="polite">
+    {{- if .ladybugH1 -}}
+    <h1 id="ladybug-h1-bite-target" class="max-w-4xl mx-auto text-5xl md:text-6xl font-bold tracking-tight text-[#0B162C] mb-6 m-0">
+      <span data-hero-title class="hero-slide-title block">{{ $firstSlide.title }}</span>
+    </h1>
+    {{- else -}}
+    <h1 class="max-w-4xl mx-auto text-4xl md:text-5xl font-bold tracking-tight text-[#0B162C] mb-6 m-0">
+      <span data-hero-title class="hero-slide-title block">{{ $firstSlide.title }}</span>
+    </h1>
+    {{- end -}}
+    <p data-hero-desc class="max-w-2xl mx-auto text-lg text-slate-600 mb-10 leading-relaxed font-medium m-0">
+      {{ $firstSlide.description }}
+    </p>
+  </div>
+
+  {{- with .searchPlaceholder -}}
+  {{ partial "home/search-trigger.html" (dict "placeholder" . "size" ($.searchSize | default "lg") "class" ($.searchClass | default "") "category" ($.searchCategory | default "") "categorySlug" ($.searchCategorySlug | default "")) }}
+  {{- end -}}
+
+  {{- if gt (len $slides) 1 -}}
+  <button type="button" data-hero-prev class="home-hero__nav-btn home-hero__nav-btn--side home-hero__nav-btn--prev max-md:hidden md:flex" aria-label="Previous slide">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="20" height="20" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+  </button>
+  <button type="button" data-hero-next class="home-hero__nav-btn home-hero__nav-btn--side home-hero__nav-btn--next max-md:hidden md:flex" aria-label="Next slide">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="20" height="20" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+  </button>
+  <div data-hero-indicators class="home-hero__indicators" role="tablist" aria-label="Hero slides"></div>
+  {{- else -}}
+  <div data-hero-indicators class="hidden" aria-hidden="true"></div>
+  {{- end -}}
+
+  {{- if .showScrollHint -}}
+  <p class="absolute bottom-24 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-slate-500 text-xs font-medium pointer-events-none m-0 home-scroll-hint" aria-hidden="true">
+    <span>Scroll to explore</span>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" class="animate-bounce"><polyline points="6 9 12 15 18 9"/></svg>
+  </p>
+  {{- end -}}
+</section>
+<script type="application/json" id="{{ $slidesDataId }}">{{ $slides | jsonify | safeJS }}</script>

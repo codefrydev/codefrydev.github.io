@@ -4,7 +4,7 @@
   {{- if not $slug -}}{{- $slug = .ContentBaseName -}}{{- end -}}
 {{- end -}}
 {{- $cat := false -}}
-{{- $data := partial "get-data.html" . -}}
+{{- $data := partial "get-data.html" (dict "page" $page) -}}
 {{- range $data.home.categories -}}
   {{- if eq (.slug | default (.name | anchorize)) $slug -}}
     {{- $cat = . -}}
@@ -18,16 +18,33 @@
 {{- $banner := index $data.homepage.categoryBanners $slug | default dict -}}
 {{- $defaultIcon := $cat.phosphorIcon | default "app-window" -}}
 {{- $items := where $cat.items "hidden" "!=" true -}}
+{{- $title := $banner.title | default (printf "Explore %s" $cat.name) -}}
+{{- $desc := $banner.description | default $cat.subtitle -}}
+{{- $slides := $banner.slides -}}
+{{- if not $slides -}}
+  {{- $slides = slice (dict "image" ($banner.image | default "/images/banners/tools-utilities.jpg") "imageAlt" ($banner.imageAlt | default $title) "imageTitle" ($banner.imageTitle | default $title) "title" $title "description" $desc) -}}
+{{- end -}}
+{{- $autoplay := $banner.autoplayMs | default 6000 -}}
+{{- $searchPlaceholder := $banner.searchPlaceholder | default (printf "Search in %s…" $cat.name) -}}
 {{- $page.Scratch.Set "breadcrumbItems" (slice (dict "name" "Home" "url" "/") (dict "name" "Browse" "url" ("/browse/" | relLangURL)) (dict "name" $cat.name "current" true)) -}}
+{{- $page.Scratch.Set "loadHeroCarousel" true -}}
+
+{{ partial "home/hero-carousel.html" (dict
+  "slides" $slides
+  "sectionId" (printf "browse-hero-%s" $slug)
+  "variant" "subpage"
+  "autoplayMs" $autoplay
+  "ariaLabel" $cat.name
+  "heroContext" (printf "browse_%s" $slug)
+  "searchPlaceholder" $searchPlaceholder
+  "searchSize" "md"
+  "searchCategory" $cat.name
+  "searchCategorySlug" $slug
+) }}
 
 <section class="browse-category pt-8 pb-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-  {{ partial "home/category-banner.html" (dict "category" $cat "banner" $banner) }}
-
   <div class="browse-category__header">
-    <p class="browse-category__count m-0">{{ len $items }} tools in this category</p>
-    <div class="browse-category__actions">
-      {{ partial "home/search-trigger.html" (dict "placeholder" (printf "Search in %s…" $cat.name) "size" "md" "class" "browse-index__search-trigger w-full sm:w-auto" "category" $cat.name "categorySlug" $slug) }}
-    </div>
+    <p class="browse-category__count m-0">{{ printf (i18n "category_tool_count") (len $items) }}</p>
   </div>
 
   <div class="browse-category__grid">

@@ -33,7 +33,11 @@ const BUNDLES = [
   },
   {
     out: 'home.min.js',
-    files: ['home-hero.js', 'home-scroll.js'],
+    files: ['hero-carousel.js', 'home-scroll.js'],
+  },
+  {
+    out: 'hero-carousel.min.js',
+    files: ['hero-carousel.js'],
   },
   {
     out: 'ladybug.min.js',

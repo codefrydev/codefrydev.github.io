@@ -71,6 +71,12 @@
     max-height: calc(100dvh - var(--home-nav-height, 73px));
     max-height: calc(100vh - var(--home-nav-height, 73px));
   }
+
+  .home-hero--subpage {
+    height: min(52vh, 520px);
+    min-height: 320px;
+    max-height: 520px;
+  }
 }
 
 @layer components {
@@ -590,9 +596,9 @@
   }
 
   .browse-category-card__accent {
-    @apply absolute inset-x-0 top-0 h-20 bg-cover bg-center opacity-30;
-    mask-image: linear-gradient(to bottom, black 20%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to bottom, black 20%, transparent 100%);
+    @apply absolute inset-x-0 top-0 h-24 bg-cover bg-center opacity-45;
+    mask-image: linear-gradient(to bottom, black 35%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 35%, transparent 100%);
   }
 
   .browse-category-card__body {

@@ -24,31 +24,39 @@
 {{- end -}}
 
 {{ partial "home/modern-page-start.html" (dict "page" $page "navActive" (.navActive | default "")) }}
+    {{- $slides := $banner.slides -}}
+    {{- if not $slides -}}
+      {{- $slides = slice (dict "image" ($banner.image | default "") "imageAlt" ($banner.imageAlt | default $title) "imageTitle" ($banner.imageTitle | default $title) "title" $title "description" $subtitle) -}}
+    {{- end -}}
+    {{- $autoplay := $banner.autoplayMs | default 6000 -}}
+    {{- $hubSlug := .navActive | default "hub" -}}
+    {{- if gt (len $slides) 0 -}}
+      {{- with index $slides 0 -}}
+        {{- if not .image -}}
+          {{- $slides = slice (dict "image" ($banner.image | default "") "imageAlt" ($banner.imageAlt | default $title) "imageTitle" ($banner.imageTitle | default $title) "title" $title "description" $subtitle) -}}
+        {{- end -}}
+      {{- end -}}
+      {{- $page.Scratch.Set "loadHeroCarousel" true -}}
+      {{ partial "home/hero-carousel.html" (dict
+        "slides" $slides
+        "sectionId" (printf "hub-hero-%s" $hubSlug)
+        "variant" "subpage"
+        "autoplayMs" $autoplay
+        "ariaLabel" $title
+        "heroContext" (printf "hub_%s" $hubSlug)
+        "searchPlaceholder" $searchPlaceholder
+        "searchSize" "md"
+        "searchCategory" $title
+        "searchCategorySlug" $homeCategorySlug
+      ) }}
+    {{- end -}}
+
     <section class="browse-category pt-8 pb-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
       {{- $page.Scratch.Set "breadcrumbLabel" $title -}}
-      {{- if $banner.image -}}
-        {{ partial "home/category-banner.html" (dict "category" (dict "name" $title "subtitle" $subtitle) "banner" $banner) }}
-      {{- else -}}
-        <div class="mb-10 pb-4 border-b border-gray-200">
-          <h1 class="text-3xl md:text-4xl font-bold text-slate-900 mb-2 m-0">{{ $title }}</h1>
-          {{- with $subtitle -}}
-          <p class="text-xs font-bold tracking-widest text-slate-500 uppercase m-0">{{ . }}</p>
-          {{- end -}}
-        </div>
-      {{- end -}}
 
-      {{- if or $showSearch (gt (len $items) 0) -}}
+      {{- if gt (len $items) 0 -}}
       <div class="browse-category__header">
-        {{- if gt (len $items) 0 -}}
         <p class="browse-category__count m-0">{{ len $items }} {{ $countLabel }}</p>
-        {{- else -}}
-        <p class="browse-category__count m-0"></p>
-        {{- end -}}
-        {{- if $showSearch -}}
-        <div class="browse-category__actions">
-          {{ partial "home/search-trigger.html" (dict "placeholder" $searchPlaceholder "size" "md" "class" "browse-index__search-trigger w-full sm:w-auto" "category" $title "categorySlug" $homeCategorySlug) }}
-        </div>
-        {{- end -}}
       </div>
       {{- end -}}
 

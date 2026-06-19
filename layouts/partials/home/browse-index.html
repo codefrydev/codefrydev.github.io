@@ -1,5 +1,6 @@
 {{- $page := .page -}}
-{{- $data := partial "get-data.html" . -}}
+{{- $data := partial "get-data.html" (dict "page" $page) -}}
+{{- $browseIndex := $data.homepage.browseIndex | default dict -}}
 {{- $hubs := .hubs | default (index $data.homepage "nav" "megaMenu" "hubs") | default slice -}}
 {{- $totalTools := 0 -}}
 {{- range $data.home.categories -}}
@@ -7,25 +8,36 @@
 {{- end -}}
 {{- $catCount := len $data.home.categories -}}
 {{- $iconEmoji := dict "palette" "🎨" "wrench" "🔧" "game-controller" "🎮" "link" "🔗" "package" "📦" "squares-four" "⊞" "robot" "🤖" "magnifying-glass" "🔍" "shopping-bag" "🛍️" "app-window" "🖥️" "arrow-right" "→" -}}
+{{- $title := $page.Title | default "Browse all categories" -}}
+{{- $desc := $page.Description | default "Free tools, games, and AI apps—organized by category. Pick a collection or jump to a hub." -}}
+{{- $slides := $browseIndex.slides -}}
+{{- if not $slides -}}
+  {{- $slides = slice (dict "image" "/images/hero/browse/browse-index-1.webp" "imageAlt" $title "imageTitle" $title "title" $title "description" $desc) -}}
+{{- end -}}
+{{- $autoplay := $browseIndex.autoplayMs | default 6000 -}}
+{{- $searchPlaceholder := $browseIndex.searchPlaceholder | default "Search tools, games, AI apps…" -}}
+{{- $page.Scratch.Set "breadcrumbLabel" ($page.Title | default "Browse") -}}
+{{- $page.Scratch.Set "loadHeroCarousel" true -}}
+
+{{ partial "home/hero-carousel.html" (dict
+  "slides" $slides
+  "sectionId" "browse-hero-index"
+  "variant" "subpage"
+  "autoplayMs" $autoplay
+  "ariaLabel" ($page.Title | default "Browse")
+  "heroContext" "browse_index"
+  "searchPlaceholder" $searchPlaceholder
+  "searchSize" "md"
+) }}
 
 <section class="browse-index pt-8 pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full" aria-labelledby="browse-index-heading">
-  <header class="browse-index__hero">
-    <div class="browse-index__hero-inner">
-      <p class="browse-index__eyebrow">Explore CodeFryDev</p>
-      <h1 id="browse-index-heading" class="browse-index__title m-0">{{ $page.Title | default "Browse all categories" }}</h1>
-      <p class="browse-index__lead m-0">{{ $page.Description | default "Free tools, games, and AI apps—organized by category. Pick a collection or jump to a hub." }}</p>
-      <div class="browse-index__meta">
-        <span class="browse-index__stat">⊞ {{ $catCount }} categories</span>
-        <span class="browse-index__stat">🖥️ {{ $totalTools }}+ tools</span>
-      </div>
-      <div class="browse-index__search">
-        {{ partial "home/search-trigger.html" (dict "placeholder" "Search tools, games, AI apps…" "size" "md" "class" "browse-index__search-trigger") }}
-      </div>
-    </div>
-  </header>
+  <div class="browse-index__meta flex flex-wrap gap-3 mb-10">
+    <span class="browse-index__stat">⊞ {{ $catCount }} categories</span>
+    <span class="browse-index__stat">🖥️ {{ $totalTools }}+ tools</span>
+  </div>
 
   <div class="browse-index__section">
-    <h2 class="browse-index__section-title">Categories</h2>
+    <h2 id="browse-index-heading" class="browse-index__section-title">Categories</h2>
     <ul class="browse-category-grid list-none m-0 p-0" role="list">
       {{- range $data.home.categories -}}
       {{- $slug := .slug | default (.name | anchorize) -}}
@@ -34,10 +46,18 @@
       {{- $featured := where $visible "featured" true -}}
       {{- $previews := cond (gt (len $featured) 0) ($featured | first 6) ($visible | first 6) -}}
       {{- $banner := index $data.homepage.categoryBanners $slug | default dict -}}
+      {{- $cardImage := $banner.image -}}
+      {{- with $banner.slides -}}
+        {{- with index . 0 -}}
+          {{- with .image -}}
+            {{- $cardImage = . -}}
+          {{- end -}}
+        {{- end -}}
+      {{- end -}}
       {{- $catEmoji := index $iconEmoji (.phosphorIcon | default "squares-four") | default "•" -}}
       <li role="listitem">
         <a href="{{ $url | relLangURL }}" class="browse-category-card group no-underline" data-cfd-cta="browse_card_{{ $slug }}">
-          {{- with $banner.image -}}
+          {{- with $cardImage -}}
           <span class="browse-category-card__accent" style="background-image: url('{{ . }}');" aria-hidden="true"></span>
           {{- end -}}
           <span class="browse-category-card__body">
@@ -76,7 +96,7 @@
       {{- range $hubs -}}
       {{- $hubEmoji := index $iconEmoji (.icon | default "arrow-right") | default "→" -}}
       <li role="listitem">
-        <a href="{{ .url }}" class="browse-hub-card no-underline group">
+        <a href="{{ .url | relLangURL }}" class="browse-hub-card no-underline group">
           <span aria-hidden="true">{{ $hubEmoji }}</span>
           <span class="browse-hub-card__label">{{ .label }}</span>
           <span class="browse-hub-card__arrow" aria-hidden="true">→</span>

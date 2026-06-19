@@ -46,23 +46,59 @@ why:
 
 hubBanners:
   games:
-    image: "/images/banners/games.jpg"
+    image: "/images/hero/browse/games-fun-1.webp"
     title: "Games & Fun"
     imageAlt: "Browser games and puzzles on CodeFryDev"
     imageTitle: "Games & Fun"
     description: "Puzzles, classics, and arcade games—play instantly in your browser."
+    autoplayMs: 6000
+    slides:
+      - image: "/images/hero/browse/games-fun-1.webp"
+        imageAlt: "Cartoon characters playing browser games with controllers and dice"
+        imageTitle: "Games & Fun"
+        title: "Games & Fun"
+        description: "Wordle, Snake, Chain Reaction, and more—play instantly in your browser."
+      - image: "/images/hero/browse/games-fun-2.webp"
+        imageAlt: "Cartoon arcade cabinet with puzzle and board game icons"
+        imageTitle: "Play instantly, no install"
+        title: "Play instantly, no install"
+        description: "Arcade classics, puzzles, and multiplayer favorites—open a tab and play."
   ai:
-    image: "/images/banners/ai.jpg"
+    image: "/images/hero/hub/ai-hub-1.webp"
     title: "AI Tools"
     imageAlt: "AI-powered tools and generators on CodeFryDev"
     imageTitle: "AI Tools"
     description: "Meme generators, summarizers, chat, and more—no signup required."
+    autoplayMs: 6000
+    slides:
+      - image: "/images/hero/hub/ai-hub-1.webp"
+        imageAlt: "Cartoon robot assistant with chat bubbles, brain sparkles, and AI tool icons"
+        imageTitle: "AI Tools"
+        title: "AI Tools"
+        description: "Meme generators, summarizers, chat, and more—no signup required."
+      - image: "/images/hero/hub/ai-hub-2.webp"
+        imageAlt: "Cartoon person using browser AI tools instantly without signup"
+        imageTitle: "Instant AI in your browser"
+        title: "Instant AI in your browser"
+        description: "Open a tab and start—summaries, generators, and helpers with no account needed."
   designlab:
-    image: "/images/banners/designlab.jpg"
+    image: "/images/hero/hub/designlab-hub-1.webp"
     title: "Design Lab"
     imageAlt: "Design lab tools and creative resources for makers"
     imageTitle: "Design Lab"
     description: "Creative design tools, visualizers, and resources for makers."
+    autoplayMs: 6000
+    slides:
+      - image: "/images/hero/hub/designlab-hub-1.webp"
+        imageAlt: "Cartoon maker at a creative desk with tablet, palette, and design tools"
+        imageTitle: "Design Lab"
+        title: "Design Lab"
+        description: "Creative design tools, visualizers, and resources for makers."
+      - image: "/images/hero/hub/designlab-hub-2.webp"
+        imageAlt: "Cartoon designer arranging mockups, color swatches, and visualizers in a browser"
+        imageTitle: "Visualize and create"
+        title: "Visualize and create"
+        description: "Mockups, palettes, gradients, and visualizers—experiment in your browser."
   store:
     image: "/images/banners/store.jpg"
     title: "CodeFryDev Store"
@@ -70,37 +106,112 @@ hubBanners:
     imageTitle: "CodeFryDev Store"
     description: "Mobile apps and downloads on Google Play."
 
+browseIndex:
+  autoplayMs: 6000
+  searchPlaceholder: "Search tools, games, AI apps…"
+  slides:
+    - image: "/images/hero/browse/browse-index-1.webp"
+      imageAlt: "Cartoon explorer browsing organized category cards"
+      imageTitle: "Browse all categories"
+      title: "Browse all categories"
+      description: "Free tools, games, and AI apps—organized by category. Pick a collection or jump to a hub."
+    - image: "/images/hero/browse/browse-index-2.webp"
+      imageAlt: "Cartoon browser window showing a mosaic of free app tiles"
+      imageTitle: "Everything in one place"
+      title: "Everything in one place"
+      description: "Creative assets, utilities, games, site links, and packages—discover what fits your project."
+
 categoryBanners:
   creative-assets:
-    image: "/images/banners/creative-assets.jpg"
+    image: "/images/hero/browse/creative-assets-1.webp"
     title: "Explore Creative & Assets"
     imageAlt: "Creative tools, digital art, and learning assets on CodeFryDev"
     imageTitle: "Explore Creative & Assets"
     description: "Art tools, wallpapers, 3D models, and learning resources for makers."
+    autoplayMs: 6000
+    slides:
+      - image: "/images/hero/browse/creative-assets-1.webp"
+        imageAlt: "Cartoon digital artist with tablet and paint palette"
+        imageTitle: "Explore Creative & Assets"
+        title: "Explore Creative & Assets"
+        description: "Art tools, wallpapers, 3D models, and learning resources for makers."
+      - image: "/images/hero/browse/creative-assets-2.webp"
+        imageAlt: "Cartoon 3D models, fonts, and mural canvas in a maker studio"
+        imageTitle: "Create without limits"
+        title: "Create without limits"
+        description: "SVG editors, fonts, murals, and visual learning labs—all in your browser."
   tools-utilities:
-    image: "/images/banners/tools-utilities.jpg"
+    image: "/images/hero/browse/tools-utilities-1.webp"
     title: "Tools & Utilities Collection"
     imageAlt: "Productivity and developer utilities in the browser"
     imageTitle: "Tools & Utilities Collection"
     description: "Productivity apps, formatters, SEO tools, and dev utilities in your browser."
+    autoplayMs: 6000
+    slides:
+      - image: "/images/hero/browse/tools-utilities-1.webp"
+        imageAlt: "Cartoon developer with wrench and coding utilities"
+        imageTitle: "Tools & Utilities Collection"
+        title: "Tools & Utilities Collection"
+        description: "Productivity apps, formatters, SEO tools, and dev utilities in your browser."
+      - image: "/images/hero/browse/tools-utilities-2.webp"
+        imageAlt: "Cartoon productivity icons including charts, editors, and gauges"
+        imageTitle: "Ship faster in the browser"
+        title: "Ship faster in the browser"
+        description: "JSON playgrounds, color tools, SEO profilers, and more—no install required."
   games-fun:
-    image: "/images/banners/games-fun.jpg"
+    image: "/images/hero/browse/games-fun-1.webp"
     title: "Games & Fun"
     imageAlt: "Free browser games including Wordle, Snake, and Chain Reaction"
     imageTitle: "Games & Fun"
     description: "Wordle, Snake, Chain Reaction, and more—play instantly in your browser."
+    autoplayMs: 6000
+    slides:
+      - image: "/images/hero/browse/games-fun-1.webp"
+        imageAlt: "Cartoon characters playing browser games with controllers and dice"
+        imageTitle: "Games & Fun"
+        title: "Games & Fun"
+        description: "Wordle, Snake, Chain Reaction, and more—play instantly in your browser."
+      - image: "/images/hero/browse/games-fun-2.webp"
+        imageAlt: "Cartoon arcade cabinet with puzzle and board game icons"
+        imageTitle: "Play instantly, no install"
+        title: "Play instantly, no install"
+        description: "Arcade classics, puzzles, and multiplayer favorites—open a tab and play."
   site-links:
-    image: "/images/banners/site-links.jpg"
+    image: "/images/hero/browse/site-links-1.webp"
     title: "Site & Resources"
     imageAlt: "Site links, about pages, and external resources"
     imageTitle: "Site & Resources"
     description: "About, updates, store, privacy, and external links."
+    autoplayMs: 6000
+    slides:
+      - image: "/images/hero/browse/site-links-1.webp"
+        imageAlt: "Cartoon guide pointing to site links and about pages"
+        imageTitle: "Site & Resources"
+        title: "Site & Resources"
+        description: "About, updates, store, privacy, and external links."
+      - image: "/images/hero/browse/site-links-2.webp"
+        imageAlt: "Cartoon compass, blog, and privacy icons around a website globe"
+        imageTitle: "Everything about CodeFryDev"
+        title: "Everything about CodeFryDev"
+        description: "History, press, store, blog, and community resources in one place."
   containers-packages:
-    image: "/images/banners/containers-packages.jpg"
+    image: "/images/hero/browse/containers-packages-1.webp"
     title: "Containers & Packages"
     imageAlt: "Docker images and npm packages from CodeFryDev"
     imageTitle: "Containers & Packages"
     description: "Official Docker images and npm packages from CodeFryDev."
+    autoplayMs: 6000
+    slides:
+      - image: "/images/hero/browse/containers-packages-1.webp"
+        imageAlt: "Cartoon Docker whale carrying colorful containers"
+        imageTitle: "Containers & Packages"
+        title: "Containers & Packages"
+        description: "Official Docker images and npm packages from CodeFryDev."
+      - image: "/images/hero/browse/containers-packages-2.webp"
+        imageAlt: "Cartoon npm packages on a shelf with a terminal window"
+        imageTitle: "Open source you can pull and install"
+        title: "Open source you can pull and install"
+        description: "Docker images and npm modules maintained by the CodeFryDev team."
 
 hero:
   badge: "Free tools — no signup"
