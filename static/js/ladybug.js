@@ -295,6 +295,7 @@
         h1.innerHTML = '';
         h1.appendChild(out);
         h1.setAttribute('data-ladybug-wrapped', '1');
+        document.dispatchEvent(new CustomEvent('cfd:hero-title-dom-replaced'));
     }
 
     function restoreH1AndRewrap() {

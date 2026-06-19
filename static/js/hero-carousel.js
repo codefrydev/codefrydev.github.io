@@ -26,13 +26,19 @@
     var bgLayer1 = heroSection.querySelector('[data-hero-bg-layer="1"]');
     var bgLayer2 = heroSection.querySelector('[data-hero-bg-layer="2"]');
     var heroContent = heroSection.querySelector('[data-hero-content]');
-    var heroTitle = heroSection.querySelector('[data-hero-title]');
-    var heroDesc = heroSection.querySelector('[data-hero-desc]');
     var indicatorsContainer = heroSection.querySelector('[data-hero-indicators]');
     var prevBtn = heroSection.querySelector('[data-hero-prev]');
     var nextBtn = heroSection.querySelector('[data-hero-next]');
 
-    if (!bgLayer1 || !bgLayer2 || !heroContent || !heroTitle || !heroDesc || !indicatorsContainer) {
+    function getHeroTitleEl() {
+      return heroSection.querySelector('[data-hero-title]');
+    }
+
+    function getHeroDescEl() {
+      return heroSection.querySelector('[data-hero-desc]');
+    }
+
+    if (!bgLayer1 || !bgLayer2 || !heroContent || !getHeroTitleEl() || !getHeroDescEl() || !indicatorsContainer) {
       return;
     }
 
@@ -90,6 +96,8 @@
     });
 
     function setHeroTitleText(text) {
+      var heroTitle = getHeroTitleEl();
+      if (!heroTitle) return;
       if (heroTitle.querySelector('.ladybug-h1-char')) {
         heroTitle.innerHTML = '';
         for (var i = 0; i < text.length; i++) {
@@ -119,7 +127,10 @@
 
     function applySlideContent(slide) {
       setHeroTitleText(slide.title || '');
-      heroDesc.textContent = slide.description || '';
+      var heroDesc = getHeroDescEl();
+      if (heroDesc) {
+        heroDesc.textContent = slide.description || '';
+      }
     }
 
     function trackSlide() {
@@ -228,6 +239,16 @@
         if (!heroSection.contains(e.relatedTarget)) resetAutoplay();
       });
       resetAutoplay();
+    }
+
+    document.addEventListener('cfd:hero-title-dom-replaced', function () {
+      if (heroSection.contains(getH1BiteTarget())) {
+        applySlideContent(heroSlides[currentSlide]);
+      }
+    });
+
+    function getH1BiteTarget() {
+      return document.getElementById('ladybug-h1-bite-target');
     }
   }
 
