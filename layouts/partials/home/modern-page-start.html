@@ -7,7 +7,7 @@
 {{- with $navActive -}}{{- $page.Scratch.Set "navActive" . -}}{{- end -}}
 
 <!DOCTYPE html>
-<html lang="{{ $page.Site.Language.Lang | default "en" }}">
+<html lang="{{ $page.Site.Language.Lang | default "en" }}" data-theme="dark">
 <head>
   {{ partial "header.html" $page }}
   {{ partial "home/head.html" $page }}

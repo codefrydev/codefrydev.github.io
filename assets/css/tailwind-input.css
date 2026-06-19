@@ -11,8 +11,8 @@
   body.home-page {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: #f4f6fa !important;
-    color: #1e293b !important;
+    background-color: #0f172a !important;
+    color: #e2e8f0 !important;
   }
 
   [data-theme="light"] body.home-page {

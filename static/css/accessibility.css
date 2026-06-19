@@ -1,5 +1,4 @@
 /* Focus ring tokens (complement theme-tokens.css) */
-:root,
 [data-theme="light"] body.home-page {
   --link-color: #2563eb;
   --focus-ring: #2563eb;
@@ -10,6 +9,7 @@
   --focus-ring: #0284c7;
 }
 
+:root body.home-page,
 [data-theme="dark"] body.home-page {
   --link-color: #38bdf8;
   --focus-ring: #38bdf8;

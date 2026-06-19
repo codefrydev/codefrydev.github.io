@@ -1,7 +1,7 @@
 {{- $cat := .category -}}
 {{- $slug := $cat.slug | default ($cat.name | anchorize) -}}
 {{- $subtitle := $cat.subtitle | default $cat.name -}}
-{{- $seeAll := $cat.seeAllUrl | default (printf "/#%s" $slug) -}}
+{{- $seeAll := $cat.seeAllUrl | default (printf "/browse/%s/" $slug) | relLangURL -}}
 {{- $previewCount := $cat.previewCount | default 12 -}}
 {{- $defaultIcon := $cat.phosphorIcon | default "app-window" -}}
 {{- $visible := where $cat.items "hidden" "!=" true -}}

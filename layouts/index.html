@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.Language.Lang | default "en" }}">
+<html lang="{{ .Site.Language.Lang | default "en" }}" data-theme="dark">
 <head>
   {{ partial "header.html" . }}
   {{ partial "home/head.html" . }}
@@ -28,9 +28,9 @@
     {{- end -}}
     {{ partial "home/testimonials.html" . }}
     {{ partial "home/cta-coffee.html" . }}
-    {{ partial "home/marquee.html" . }}
     {{ partial "home/why.html" . }}
     {{ partial "home/faq.html" . }}
+    {{ partial "home/marquee.html" . }}
   </main>
 
   {{ partial "home/footer.html" . }}

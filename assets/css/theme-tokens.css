@@ -3,8 +3,7 @@
  * Loaded on every page alongside Tailwind + theme override sheets.
  */
 
-/* Light (default) */
-:root,
+/* Light */
 [data-theme="light"] {
   color-scheme: light;
   --bg-primary: #f4f6fa;
@@ -64,7 +63,8 @@
   --text-on-accent: #ffffff;
 }
 
-/* Dark */
+/* Dark (default) */
+:root,
 [data-theme="dark"] {
   color-scheme: dark;
   --bg-primary: #0f172a;
