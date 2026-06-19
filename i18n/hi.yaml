@@ -197,6 +197,12 @@
   translation: "सभी देखें →"
 - id: category_see_all_named
   translation: "सभी %s देखें (%d)"
+- id: popular_tools_title
+  translation: "लोकप्रिय टूल"
+- id: popular_tools_subtitle
+  translation: "इस महीने सबसे ज़्यादा क्लिक"
+- id: popular_tools_see_all
+  translation: "सभी ब्राउज़ करें →"
 - id: tool_opens_new_tab
   translation: "(नई टैब में खुलता है)"
 - id: tool_default_description

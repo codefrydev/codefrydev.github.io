@@ -197,6 +197,12 @@
   translation: "Tout voir →"
 - id: category_see_all_named
   translation: "Voir tout %s (%d)"
+- id: popular_tools_title
+  translation: "Outils populaires"
+- id: popular_tools_subtitle
+  translation: "Les plus cliqués ce mois-ci"
+- id: popular_tools_see_all
+  translation: "Tout parcourir →"
 - id: tool_opens_new_tab
   translation: "(s'ouvre dans un nouvel onglet)"
 - id: tool_default_description

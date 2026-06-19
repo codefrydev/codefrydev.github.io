@@ -1,0 +1,39 @@
+{{- $data := partial "get-data.html" . -}}
+{{- $result := slice -}}
+{{- $keys := slice -}}
+
+{{- range $data.home.categories -}}
+  {{- $catName := .name -}}
+  {{- range .items -}}
+    {{- if ne .hidden true -}}
+      {{- $key := partial "home/normalize-tool-url.html" .url -}}
+      {{- if and $key (not (in $keys $key)) -}}
+        {{- $keys = $keys | append $key -}}
+        {{- $result = $result | append (dict "item" . "iconDir" "home" "categoryName" $catName "urlKey" $key) -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $hubs := slice
+  (dict "items" ($data.games.data | default slice) "iconDir" "games" "categoryName" (i18n "footer_games"))
+  (dict "items" ($data.ai.data | default slice) "iconDir" "ai" "categoryName" (i18n "footer_ai"))
+  (dict "items" ($data.designlab.data | default slice) "iconDir" "designlab" "categoryName" (i18n "footer_design"))
+  (dict "items" ($data.store.data | default slice) "iconDir" "store" "categoryName" (i18n "footer_store"))
+-}}
+
+{{- range $hubs -}}
+  {{- $hubIconDir := .iconDir -}}
+  {{- $hubCategory := .categoryName -}}
+  {{- range .items -}}
+    {{- if ne .hidden true -}}
+      {{- $key := partial "home/normalize-tool-url.html" .url -}}
+      {{- if and $key (not (in $keys $key)) -}}
+        {{- $keys = $keys | append $key -}}
+        {{- $result = $result | append (dict "item" . "iconDir" $hubIconDir "categoryName" $hubCategory "urlKey" $key) -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- return $result -}}

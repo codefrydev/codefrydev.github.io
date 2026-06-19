@@ -197,6 +197,12 @@
   translation: "See all →"
 - id: category_see_all_named
   translation: "See all %s (%d)"
+- id: popular_tools_title
+  translation: "Popular tools"
+- id: popular_tools_subtitle
+  translation: "Most clicked this month"
+- id: popular_tools_see_all
+  translation: "Browse all →"
 - id: tool_opens_new_tab
   translation: "(opens in new tab)"
 - id: tool_default_description

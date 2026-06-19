@@ -1,0 +1,54 @@
+{{- $rankingsData := index site.Data "tool-rankings" | default dict -}}
+{{- if and $rankingsData.enabled (eq $rankingsData.source "ga4") -}}
+
+{{- $rankings := $rankingsData.rankings | default dict -}}
+{{- $catalog := partial "home/collect-all-tools.html" . -}}
+{{- $scored := slice -}}
+
+{{- range $catalog -}}
+  {{- $clicks := index $rankings .urlKey | default 0 | int -}}
+  {{- if gt $clicks 0 -}}
+    {{- $scored = $scored | append (dict "entry" . "clicks" $clicks) -}}
+  {{- end -}}
+{{- end -}}
+
+{{- if ge (len $scored) 1 -}}
+{{- $sorted := sort $scored "clicks" "desc" -}}
+{{- $previewCount := 12 -}}
+{{- $top := first $previewCount $sorted -}}
+{{- $seeAll := "/browse/" | relLangURL -}}
+{{- $headingId := "popular-tools-heading" -}}
+
+<section id="popular-tools" data-section-label="{{ i18n "popular_tools_title" }}" class="min-h-0 flex flex-col justify-start bg-gray-50/50 relative py-12 md:py-16" aria-labelledby="{{ $headingId }}">
+  <div class="max-w-7xl mx-auto px-4 w-full h-full flex flex-col min-h-0">
+    <div class="flex items-center justify-between mb-6 md:mb-8 pb-4 border-b border-gray-200 shrink-0">
+      <div>
+        <h2 id="{{ $headingId }}" class="text-3xl font-bold text-slate-900 mb-2 m-0">{{ i18n "popular_tools_title" }}</h2>
+        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase m-0">{{ i18n "popular_tools_subtitle" }}</p>
+      </div>
+      <div class="flex items-center gap-3 shrink-0">
+        <span class="hidden sm:inline-flex text-xs font-medium text-slate-500 bg-white border border-gray-200 rounded-full px-3 py-1">{{ printf (i18n "category_tool_count") (len $top) }}</span>
+        <a href="{{ $seeAll }}" class="hidden md:flex text-sm font-medium text-slate-600 hover:text-brand items-center gap-1 transition-colors no-underline" data-cfd-cta="see_all_popular">
+          {{ i18n "popular_tools_see_all" }}
+        </a>
+      </div>
+    </div>
+
+    <div class="browse-category__grid flex-1 min-h-0 items-start md:content-center">
+      {{- range $i, $row := $top -}}
+      {{- $entry := $row.entry -}}
+      <div class="{{ if ge $i 6 }}hidden md:block{{ end }} min-h-0">
+        {{ partial "home/tool-card.html" (dict "item" $entry.item "iconDir" $entry.iconDir "defaultPhosphorIcon" "app-window" "categoryName" $entry.categoryName "source" "home_popular") }}
+      </div>
+      {{- end -}}
+    </div>
+
+    <p class="mt-6 text-center md:hidden shrink-0">
+      <a href="{{ $seeAll }}" class="text-sm font-medium text-slate-600 hover:text-brand inline-flex items-center gap-1 no-underline">
+        {{ i18n "popular_tools_see_all" }} →
+      </a>
+    </p>
+  </div>
+</section>
+{{- end -}}
+{{- end -}}

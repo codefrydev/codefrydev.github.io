@@ -52,6 +52,11 @@ jobs:
         run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
       - name: Build CSS and JS bundles
         run: npm run build
+      - name: Sync tool rankings from GA4
+        env:
+          GA4_PROPERTY_ID: ${{ secrets.GA4_PROPERTY_ID }}
+          GA4_SERVICE_ACCOUNT_JSON: ${{ secrets.GA4_SERVICE_ACCOUNT_JSON }}
+        run: npm run sync:rankings
       - name: Build with Hugo
         env:
           # For maximum backward compatibility with Hugo modules

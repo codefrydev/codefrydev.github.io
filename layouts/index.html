@@ -22,6 +22,7 @@
 
   <main id="main-content" class="home-sections" tabindex="-1">
     {{ partial "home/hero.html" . }}
+    {{ partial "home/popular-tools-section.html" . }}
     {{- $data := partial "get-data.html" . -}}
     {{- range $data.home.categories -}}
       {{ partial "home/category-section.html" (dict "category" . "Site" $.Site) }}

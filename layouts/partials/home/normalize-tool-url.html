@@ -1,0 +1,18 @@
+{{- $url := . -}}
+{{- $out := "" -}}
+{{- if or (hasPrefix $url "http://") (hasPrefix $url "https://") -}}
+  {{- with urls.Parse $url -}}
+    {{- $path := .Path | default "/" -}}
+    {{- $path = strings.TrimSuffix "/" $path -}}
+    {{- if eq $path "" -}}{{- $path = "" -}}{{- end -}}
+    {{- $out = printf "%s://%s%s" (lower .Scheme) (lower .Host) $path -}}
+  {{- end -}}
+{{- else -}}
+  {{- $path := strings.TrimPrefix "/" (strings.TrimSuffix "/" ($url | default "")) -}}
+  {{- if $path -}}
+    {{- $out = printf "/%s" ($path | lower) -}}
+  {{- else -}}
+    {{- $out = "/" -}}
+  {{- end -}}
+{{- end -}}
+{{- return $out -}}

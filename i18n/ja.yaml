@@ -197,6 +197,12 @@
   translation: "すべて見る →"
 - id: category_see_all_named
   translation: "%s をすべて見る (%d)"
+- id: popular_tools_title
+  translation: "人気のツール"
+- id: popular_tools_subtitle
+  translation: "今月最もクリックされたツール"
+- id: popular_tools_see_all
+  translation: "すべて見る →"
 - id: tool_opens_new_tab
   translation: "（新しいタブで開く）"
 - id: tool_default_description

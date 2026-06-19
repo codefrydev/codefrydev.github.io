@@ -72,6 +72,7 @@ assets/css/       Tailwind source + modern-dark-theme source
 | [`data/cfddc.yaml`](data/cfddc.yaml) | Optional per-year CFDDC taglines/dates |
 | [`data/store.yaml`](data/store.yaml) | Mobile store listings |
 | [`data/games.yaml`](data/games.yaml), [`data/ai.yaml`](data/ai.yaml), etc. | Hub page content |
+| [`data/tool-rankings.json`](data/tool-rankings.json) | GA4 click rankings for homepage Popular tools (CI-generated; `enabled: false` locally) |
 
 ## Adding a new hub or browse category
 
@@ -120,7 +121,29 @@ When [`data/history.yaml`](data/history.yaml) includes dates for a new year:
 
 ## Deployment
 
-Pushes to `main` trigger [`.github/workflows/hugo.yaml`](.github/workflows/hugo.yaml): install Hugo → `npm run build:css` → `hugo --minify` → deploy `public/` to GitHub Pages.
+Pushes to `main` trigger [`.github/workflows/hugo.yaml`](.github/workflows/hugo.yaml): install Hugo → `npm run build` → `npm run sync:rankings` → `hugo --minify` → deploy `public/` to GitHub Pages.
+
+### Popular tools section (GA4)
+
+The homepage can show a **Popular tools** block (`#popular-tools`) ranked by real `tool_click` analytics. It is **hidden** unless GitHub Actions successfully syncs GA4 data at build time.
+
+**One-time setup:**
+
+1. In GA4 Admin → **Custom definitions**, register event parameter `tool_name` as a custom dimension (events already send it from `static/js/analytics.js`).
+2. Copy the **numeric Property ID** from GA4 Admin → Property settings (not the `G-` measurement ID).
+3. In Google Cloud: enable **Google Analytics Data API**, create a service account, download JSON key, add the service account email to the GA4 property as **Viewer**.
+4. In the GitHub repo → **Settings → Secrets and variables → Actions**, add:
+   - `GA4_PROPERTY_ID` — numeric property ID
+   - `GA4_SERVICE_ACCOUNT_JSON` — full service account key JSON
+
+**Behavior:**
+
+- CI runs `npm run sync:rankings` before `hugo`, writing [`data/tool-rankings.json`](data/tool-rankings.json).
+- If secrets are missing or the API fails, `enabled` stays `false` and the section is omitted from HTML.
+- Local builds without secrets behave the same (committed stub has `enabled: false`).
+- After deploy, confirm in the Actions log: `[sync:rankings] enabled: N tools, top 5: ...`
+
+Optional env: `RANKINGS_WINDOW_DAYS` (default `30`) for the GA4 lookback window.
 
 ## License
 
