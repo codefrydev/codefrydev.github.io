@@ -213,17 +213,17 @@ hero:
   autoplayMs: 6000
   slides:
   - image: "/images/hero/slide-1.webp"
-    imageAlt: लैपटॉप पर सहयोग करती टीम
+    imageAlt: टूल, गेम और AI आइकन वाली ब्राउज़र विंडो के आसपास कार्टून मेकर
     imageTitle: ब्राउज़र में टूल, गेम और AI
     title: ब्राउज़र में टूल, गेम और AI
     description: यह एक मंच है जहाँ हम सीखते, प्रयोग करते, गेम खेलते, नए विचार बनाते और बहुत कुछ…
   - image: "/images/hero/slide-2.webp"
-    imageAlt: डेस्क पर साथ काम करते डेवलपर
+    imageAlt: ब्राउज़र में JSON और Design Lab टूल से तेज़ी से बनाता कार्टून डेवलपर
     imageTitle: CodeFryDev के साथ तेज़ी से बनाएँ
     title: CodeFryDev के साथ तेज़ी से बनाएँ
     description: JSON प्लेग्राउंड से Design Lab संसाधन तक — सब कुछ ब्राउज़र में।
   - image: "/images/hero/slide-3.webp"
-    imageAlt: डेस्क पर कोड दिखाता लैपटॉप
+    imageAlt: बिना इंस्टॉल ब्राउज़र टैब से तुरंत टूल, गेम और AI ऐप खुलते हुए कार्टून
     imageTitle: कोई इंस्टॉल नहीं। खोलें और उपयोग करें।
     title: कोई इंस्टॉल नहीं। खोलें और उपयोग करें।
     description: क्रिएटिव एसेट, उत्पादकता टूल, गेम और AI हेल्पर एक जगह।

@@ -213,17 +213,17 @@ hero:
   autoplayMs: 6000
   slides:
   - image: "/images/hero/slide-1.webp"
-    imageAlt: Équipe collaborant sur des ordinateurs portables
+    imageAlt: Personnages cartoon autour d'une fenêtre navigateur avec outils, jeux et icônes IA
     imageTitle: Outils, jeux et IA dans votre navigateur
     title: Outils, jeux et IA dans votre navigateur
     description: Une plateforme où nous apprenons, expérimentons, jouons, inventons des idées innovantes et bien plus encore…
   - image: "/images/hero/slide-2.webp"
-    imageAlt: Développeurs travaillant ensemble à un bureau
+    imageAlt: Développeur cartoon construisant plus vite avec JSON et Design Lab dans le navigateur
     imageTitle: Développez plus vite avec CodeFryDev
     title: Développez plus vite avec CodeFryDev
     description: Des bacs à sable JSON aux ressources Design Lab — tout fonctionne dans votre navigateur.
   - image: "/images/hero/slide-3.webp"
-    imageAlt: Ordinateur portable affichant du code sur un bureau
+    imageAlt: Onglet navigateur cartoon ouvrant instantanément outils, jeux et apps IA sans installation
     imageTitle: Aucune installation. Ouvrez et utilisez.
     title: Aucune installation. Ouvrez et utilisez.
     description: Explorez assets créatifs, outils de productivité, jeux et assistants IA en un seul endroit.
