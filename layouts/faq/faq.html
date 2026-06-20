@@ -1,84 +1,55 @@
 {{ partial "home/modern-page-start.html" (dict "page" . "navActive" "faq" "headExtra" `<meta name="keywords" content="FAQ, CodeFryDev help, free tools, support, privacy">`) }}
 
-<article class="faq-page pt-6 pb-20 sm:pt-10 sm:pb-24">
-  <header class="about-hero max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-10 sm:mb-14">
-    <div class="about-hero__panel">
-      <div class="about-hero__glow" aria-hidden="true"></div>
-      <div class="about-hero__inner">
-        <div class="about-hero__content">
-          <p class="about-hero__eyebrow">{{ i18n "faq_help_center" }}</p>
-          <h1 class="about-hero__title m-0">{{ .Title }}</h1>
-          {{- if .Content -}}
-          <div class="about-hero__quote faq-hero__intro m-0">{{ .Content }}</div>
-          {{- end -}}
-        </div>
-        <div class="about-hero__actions">
-          <a href="{{ "/contact-us/" | relLangURL }}" class="about-btn about-btn--primary no-underline">{{ i18n "footer_contact" }}</a>
-          <a href="{{ "/browse/" | relLangURL }}" class="about-btn about-btn--ghost no-underline">{{ i18n "faq_browse_tools" }}</a>
-        </div>
-      </div>
-    </div>
-  </header>
+{{ partial "home/subpage-hero.html" (dict "page" . "bannerKey" "faq" "heroContext" "page_faq") }}
 
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="faq-layout">
-      <div class="faq-main-card">
-        {{ partial "faq/page-content.html" . }}
-      </div>
+<section class="home-faq flex flex-col bg-gray-50/50 relative pt-12 pb-12" aria-labelledby="faq-page-heading">
+  {{- .Scratch.Set "breadcrumbLabel" .Title -}}
+  <div class="max-w-3xl mx-auto px-4 w-full">
+    <h2 id="faq-page-heading" class="sr-only">{{ .Title }}</h2>
+    {{ partial "faq/page-content.html" . }}
+  </div>
+</section>
 
-      <aside class="faq-aside" aria-label="{{ i18n "faq_aside_aria" }}">
-        <div class="contact-info-card">
-          <p class="contact-info-card__eyebrow m-0">{{ i18n "faq_quick_answer" }}</p>
-          <p class="contact-info-card__title m-0">{{ i18n "faq_quick_answer_title" }}</p>
-          <p class="contact-info-card__text m-0">{{ i18n "faq_quick_answer_text" }}</p>
-        </div>
-
-        <ul class="contact-links list-none m-0 p-0">
-          <li>
-            <a href="{{ "/contact-us/" | relLangURL }}" class="contact-link no-underline group">
-              <span class="contact-link__icon" aria-hidden="true">✉️</span>
-              <span class="contact-link__body">
-                <span class="contact-link__title">{{ i18n "faq_link_contact_title" }}</span>
-                <span class="contact-link__desc">{{ i18n "faq_link_contact_desc" }}</span>
-              </span>
-              <span class="contact-link__arrow" aria-hidden="true">→</span>
-            </a>
-          </li>
-          <li>
-            <a href="/tncprivacy" class="contact-link no-underline group">
-              <span class="contact-link__icon" aria-hidden="true">📋</span>
-              <span class="contact-link__body">
-                <span class="contact-link__title">{{ i18n "faq_link_privacy_title" }}</span>
-                <span class="contact-link__desc">{{ i18n "faq_link_privacy_desc" }}</span>
-              </span>
-              <span class="contact-link__arrow" aria-hidden="true">→</span>
-            </a>
-          </li>
-          <li>
-            <a href="{{ "/about-us/" | relLangURL }}" class="contact-link no-underline group">
-              <span class="contact-link__icon" aria-hidden="true">👋</span>
-              <span class="contact-link__body">
-                <span class="contact-link__title">{{ i18n "faq_link_about_title" }}</span>
-                <span class="contact-link__desc">{{ i18n "faq_link_about_desc" }}</span>
-              </span>
-              <span class="contact-link__arrow" aria-hidden="true">→</span>
-            </a>
-          </li>
-          <li>
-            <a href="{{ "/search/" | relLangURL }}" class="contact-link no-underline group">
-              <span class="contact-link__icon" aria-hidden="true">🔍</span>
-              <span class="contact-link__body">
-                <span class="contact-link__title">{{ i18n "faq_link_search_title" }}</span>
-                <span class="contact-link__desc">{{ i18n "faq_link_search_desc" }}</span>
-              </span>
-              <span class="contact-link__arrow" aria-hidden="true">→</span>
-            </a>
-          </li>
-        </ul>
-      </aside>
+<section class="browse-index pt-8 pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+  <div class="browse-index__section browse-index__section--hubs">
+    <h2 class="browse-index__section-title">{{ i18n "faq_quick_answer_title" }}</h2>
+    <p class="browse-index__section-desc m-0">{{ i18n "faq_quick_answer_text" }}</p>
+    <div class="browse-category__grid mt-2">
+      {{ partial "home/tool-card.html" (dict
+        "item" (dict "name" (i18n "faq_link_contact_title") "url" ("/contact-us/" | relLangURL) "description" (i18n "faq_link_contact_desc"))
+        "phosphorIcon" "chat-circle"
+        "phosphorWeight" "fill"
+        "categoryName" "FAQ"
+        "headingLevel" 2
+        "source" "faq_links"
+      ) }}
+      {{ partial "home/tool-card.html" (dict
+        "item" (dict "name" (i18n "faq_link_privacy_title") "url" "/tncprivacy" "description" (i18n "faq_link_privacy_desc"))
+        "phosphorIcon" "article"
+        "phosphorWeight" "fill"
+        "categoryName" "FAQ"
+        "headingLevel" 2
+        "source" "faq_links"
+      ) }}
+      {{ partial "home/tool-card.html" (dict
+        "item" (dict "name" (i18n "faq_link_about_title") "url" ("/about-us/" | relLangURL) "description" (i18n "faq_link_about_desc"))
+        "phosphorIcon" "users"
+        "phosphorWeight" "fill"
+        "categoryName" "FAQ"
+        "headingLevel" 2
+        "source" "faq_links"
+      ) }}
+      {{ partial "home/tool-card.html" (dict
+        "item" (dict "name" (i18n "footer_all_categories") "url" ("/browse/" | relLangURL) "description" (i18n "faq_link_search_desc"))
+        "phosphorIcon" "squares-four"
+        "phosphorWeight" "duotone"
+        "categoryName" "FAQ"
+        "headingLevel" 2
+        "source" "faq_links"
+      ) }}
     </div>
   </div>
-</article>
+</section>
 
 <script src="/js/faq-page.js" defer></script>
 {{ partial "home/modern-page-end.html" (dict "page" .) }}

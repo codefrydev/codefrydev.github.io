@@ -18,9 +18,6 @@ nav:
       - label: "Store"
         url: "/store/"
         icon: "shopping-bag"
-      - label: "Search all tools"
-        url: "/search/"
-        icon: "magnifying-glass"
 
 why:
   title: "Why Choose CodeFryDev?"
@@ -100,11 +97,83 @@ hubBanners:
         title: "Visualize and create"
         description: "Mockups, palettes, gradients, and visualizers—experiment in your browser."
   store:
-    image: "/images/banners/store.jpg"
-    title: "CodeFryDev Store"
+    image: "/images/hero/hub/store-hub-1.webp"
+    title: "Store"
     imageAlt: "CodeFryDev mobile apps on Google Play"
-    imageTitle: "CodeFryDev Store"
-    description: "Mobile apps and downloads on Google Play."
+    imageTitle: "Store"
+    description: "Free mobile apps for productivity, games, and utilities—download on Google Play."
+    autoplayMs: 6000
+    slides:
+      - image: "/images/hero/hub/store-hub-1.webp"
+        imageAlt: "Cartoon character browsing mobile apps with phone and app icons"
+        imageTitle: "Store"
+        title: "Store"
+        description: "Mobile apps on Google Play—productivity, games, and utilities from CodeFryDev."
+      - image: "/images/hero/hub/store-hub-2.webp"
+        imageAlt: "Cartoon person downloading free Android apps on a smartphone"
+        imageTitle: "Free on Google Play"
+        title: "Free on Google Play"
+        description: "Download Android apps for productivity, games, and utilities—no signup required."
+
+pageBanners:
+  about-us:
+    autoplayMs: 6000
+    slides:
+      - image: "/images/hero/page/about-us-1.webp"
+        imageAlt: "Cartoon team of developers, designers, and makers waving together"
+        imageTitle: "About us"
+        title: "About us"
+        description: "Our mission, team, and free online tools, games, and AI apps—built for developers, designers, and curious makers."
+      - image: "/images/hero/page/about-us-2.webp"
+        imageAlt: "Cartoon maker building free browser tools with laptop and app icons"
+        imageTitle: "Built in the browser"
+        title: "Built in the browser"
+        description: "No install, no signup for most tools—just open a tab and start creating, playing, or experimenting."
+  faq:
+    autoplayMs: 6000
+    slides:
+      - image: "/images/hero/page/faq-1.webp"
+        imageAlt: "Cartoon help desk with FAQ bubbles and question marks"
+        imageTitle: "FAQ"
+        title: "FAQ"
+        description: "Answers about our free tools, games, AI apps, privacy practices, and how to get support."
+      - image: "/images/hero/page/faq-2.webp"
+        imageAlt: "Cartoon support assistant with privacy and tools icons"
+        imageTitle: "Tools, privacy & support"
+        title: "Tools, privacy & support"
+        description: "Find answers about using our apps, your data, and how to reach the team."
+  about-users:
+    autoplayMs: 6000
+    slides:
+      - image: "/images/hero/page/members-1.webp"
+        imageAlt: "Cartoon contributors and makers on the CodeFryDev team"
+        imageTitle: "Members"
+        title: "Members"
+        description: "Developers, designers, and contributors who build and maintain CodeFryDev."
+  contact-us:
+    autoplayMs: 6000
+    slides:
+      - image: "/images/hero/page/contact-1.webp"
+        imageAlt: "Cartoon character sending a support message"
+        imageTitle: "Contact us"
+        title: "Contact us"
+        description: "Support, feedback, partnerships, or press—we read every message."
+  press:
+    autoplayMs: 6000
+    slides:
+      - image: "/images/hero/page/press-1.webp"
+        imageAlt: "Cartoon press and media kit scene"
+        imageTitle: "Press & Media"
+        title: "Press & Media"
+        description: "Logo, boilerplate, and media contact for CodeFryDev."
+  cfddc:
+    autoplayMs: 6000
+    slides:
+      - image: "/images/hero/page/cfddc-1.webp"
+        imageAlt: "Cartoon developer conference keynote stage"
+        imageTitle: "CFDDC"
+        title: "CodeFryDev Developer Conference"
+        description: "Year-by-year announcements from our project timeline. Pick an edition to explore."
 
 browseIndex:
   autoplayMs: 6000

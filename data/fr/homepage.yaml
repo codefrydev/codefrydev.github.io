@@ -17,9 +17,6 @@ nav:
     - label: Boutique
       url: "/store/"
       icon: shopping-bag
-    - label: Rechercher tous les outils
-      url: "/search/"
-      icon: magnifying-glass
 why:
   title: Pourquoi choisir CodeFryDev ?
   intro: Une plateforme où nous apprenons, expérimentons, jouons, inventons des idées innovantes et bien plus encore…

@@ -276,7 +276,7 @@
 - id: faq_link_search_title
   translation: "Search tools"
 - id: faq_link_search_desc
-  translation: "Find any tool, game, or AI app"
+  translation: "Browse every category, or press ⌘K to search instantly"
 - id: faq_search_label
   translation: "Search FAQ"
 - id: faq_search_placeholder

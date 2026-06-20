@@ -17,9 +17,6 @@ nav:
     - label: ストア
       url: "/store/"
       icon: shopping-bag
-    - label: すべてのツールを検索
-      url: "/search/"
-      icon: magnifying-glass
 why:
   title: なぜCodeFryDevを選ぶのか？
   intro: 学び、実験プロジェクト、ゲーム、アイデア創出などを行うプラットフォーム…

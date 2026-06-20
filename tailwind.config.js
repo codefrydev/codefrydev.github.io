@@ -72,7 +72,6 @@ module.exports = {
     'line-clamp-1',
     'search-palette-open',
     'mobile-menu-open',
-    'search-palette-page',
     'search-palette--embedded',
     'is-visible',
     'is-active',

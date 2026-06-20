@@ -101,7 +101,6 @@ disableKinds = ["taxonomy", "term"]
       description = "सीखने, प्रयोग करने, गेम खेलने और नए विचार बनाने का मंच — ब्राउज़र में मुफ़्त टूल, गेम और AI ऐप।"
       footer_tagline = "सीखें, प्रयोग करें, खेलें और बनाएं — ब्राउज़र में मुफ़्त टूल और गेम।"
 
-
 [module]
   [[module.mounts]]
     source = "content"

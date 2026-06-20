@@ -4,7 +4,12 @@
 {{- $categoryName := .categoryName | default "" -}}
 {{- $source := .source | default "site" -}}
 {{- $headingLevel := .headingLevel | default 3 -}}
-{{- $desc := $item.description | default (printf (i18n "tool_default_description") $item.name) -}}
+{{- $phosphorIcon := .phosphorIcon | default "" -}}
+{{- $phosphorWeight := .phosphorWeight | default "fill" -}}
+{{- $desc := $item.description | default "" -}}
+{{- if and (not $desc) $item.name -}}
+  {{- $desc = printf (i18n "tool_default_description") $item.name -}}
+{{- end -}}
 {{- $isExternal := false -}}
 {{- if isset $item "external" -}}
   {{- $isExternal = $item.external -}}
@@ -14,6 +19,12 @@
 {{- $titleClass := "text-lg xl:text-xl font-semibold text-slate-900 tracking-tight leading-tight truncate m-0 min-w-0" -}}
 {{- $linkClass := "tool-card__link text-inherit no-underline hover:text-brand after:absolute after:inset-0 after:rounded-2xl after:z-10 after:content-['']" -}}
 {{- $iconAlt := $item.iconAlt | default (printf "%s icon" $item.name) -}}
+{{- $imageSrc := $item.imageUrl | default "" -}}
+{{- if and (not $imageSrc) $item.icon -}}
+  {{- $imageSrc = printf "/images/%s/%s.svg" $iconDir $item.icon -}}
+{{- end -}}
+{{- $imageRounded := $item.imageRounded | default false -}}
+{{- $iconEmoji := $item.iconEmoji | default "" -}}
 
 <article
   class="tool-card relative bg-white border border-gray-100 p-3.5 rounded-2xl flex items-center gap-3 hover:-translate-y-1 hover:shadow-md transition-all group"
@@ -43,15 +54,35 @@
         </h3>
         {{- end -}}
     </div>
+    {{- if $desc -}}
     <p class="tool-card__desc">{{ $desc }}</p>
+    {{- end -}}
     <div class="tool-card__meta">
+      {{- with $item.dateLabel -}}
+      <span class="inline-block bg-gray-50 px-2 py-0.5 rounded-md text-[10px] xl:text-[11px] font-medium text-slate-500 border border-gray-100">{{ . }}</span>
+      {{- else -}}
       {{- with $item.date -}}
       <span class="inline-block bg-gray-50 px-2 py-0.5 rounded-md text-[10px] xl:text-[11px] font-medium text-slate-500 border border-gray-100">{{ . | time.Format "02 Jan 2006" }}</span>
       {{- end -}}
+      {{- end -}}
     </div>
   </div>
-  <div class="w-20 h-20 xl:w-[104px] xl:h-[104px] bg-gray-50/80 rounded-xl shrink-0 flex items-center justify-center p-2 border border-gray-50 group-hover:border-gray-100 transition-colors relative z-0">
-    <img src="/images/{{ $iconDir }}/{{ $item.icon }}.svg" alt="{{ $iconAlt }}" class="w-full h-full object-contain opacity-80 group-hover:opacity-100 transition-opacity" loading="lazy" width="80" height="80"{{- with $item.iconTitle }} title="{{ . }}"{{ end }}>
+  <div class="w-20 h-20 xl:w-[104px] xl:h-[104px] bg-gray-50/80 rounded-xl shrink-0 flex items-center justify-center p-2 border border-gray-50 group-hover:border-gray-100 transition-colors relative z-0{{ if $imageRounded }} overflow-hidden{{ end }}">
+    {{- if $phosphorIcon -}}
+      {{ partial "icon.html" (dict "name" $phosphorIcon "weight" $phosphorWeight "class" "h-10 w-10 xl:h-12 xl:w-12 text-sky-600 opacity-80 group-hover:opacity-100 transition-opacity") }}
+    {{- else if $iconEmoji -}}
+      <span class="text-3xl xl:text-4xl leading-none opacity-80 group-hover:opacity-100 transition-opacity" aria-hidden="true">{{ $iconEmoji }}</span>
+    {{- else if $imageSrc -}}
+      <img
+        src="{{ $imageSrc }}"
+        alt="{{ $iconAlt }}"
+        class="{{ if $imageRounded }}h-full w-full object-cover{{ else }}w-full h-full object-contain opacity-80 group-hover:opacity-100 transition-opacity{{ end }}"
+        loading="lazy"
+        width="80"
+        height="80"
+        {{- with $item.iconTitle }} title="{{ . }}"{{ end -}}
+      >
+    {{- end -}}
     {{- if $isExternal -}}
     <span class="absolute top-1 right-1 text-[9px] text-slate-400" aria-hidden="true">↗</span>
     {{- end -}}

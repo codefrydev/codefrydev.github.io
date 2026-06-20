@@ -7,7 +7,6 @@ import Fuse from 'fuse.js';
   var recentPanel, recentList, activeIndex = -1;
   var allItems = [];
   var fuse = null;
-  var isEmbedded = false;
   var isOpen = false;
   var triggersBound = false;
   var initialized = false;
@@ -274,37 +273,45 @@ import Fuse from 'fuse.js';
     activeCategorySlug = btn.getAttribute('data-search-category-slug') || null;
   }
 
-  function goToSearchPage(query) {
-    var url = '/search/';
-    var params = new URLSearchParams();
-    if (query) params.set('q', query);
-    if (activeCategory) params.set('category', activeCategory);
-    if (activeCategorySlug) params.set('category_slug', activeCategorySlug);
-    var qs = params.toString();
-    if (qs) url += '?' + qs;
-    window.location.href = url;
-  }
-
   function getRecentSearches() {
     try {
       var raw = localStorage.getItem(RECENT_KEY);
       var list = raw ? JSON.parse(raw) : [];
-      return Array.isArray(list) ? list.filter(function (q) { return typeof q === 'string' && q.trim(); }) : [];
+      if (!Array.isArray(list)) return [];
+      return pruneRecentSearches(
+        list.filter(function (q) {
+          return typeof q === 'string' && q.trim();
+        })
+      );
     } catch (e) {
       return [];
     }
   }
 
+  function pruneRecentSearches(list) {
+    return list.filter(function (q, i) {
+      return !list.some(function (other, j) {
+        return i !== j && q.length < other.length && other.indexOf(q) === 0;
+      });
+    });
+  }
+
   function saveRecentSearch(query) {
     var trimmed = (query || '').trim();
-    if (!trimmed) return;
-    var recent = getRecentSearches().filter(function (q) { return q !== trimmed; });
+    if (trimmed.length < 2) return;
+    var recent = getRecentSearches().filter(function (q) {
+      return q !== trimmed;
+    });
     recent.unshift(trimmed);
     try {
-      localStorage.setItem(RECENT_KEY, JSON.stringify(recent.slice(0, RECENT_MAX)));
+      localStorage.setItem(RECENT_KEY, JSON.stringify(pruneRecentSearches(recent).slice(0, RECENT_MAX)));
     } catch (e) {
       /* ignore quota errors */
     }
+  }
+
+  function commitRecentSearch(query) {
+    saveRecentSearch((query || '').trim());
   }
 
   function renderRecentSearches() {
@@ -486,7 +493,6 @@ import Fuse from 'fuse.js';
       showSuggestion(findSuggestion(trimmed));
     } else {
       hideSuggestion();
-      saveRecentSearch(trimmed);
     }
     if (typeof window.cfdTrackSearch === 'function') {
       window.cfdTrackSearch('palette', trimmed, matches.length);
@@ -494,7 +500,6 @@ import Fuse from 'fuse.js';
   }
 
   function setBodyScrollLocked(locked) {
-    if (isEmbedded) return;
     document.body.classList.toggle('search-palette-open', locked);
   }
 
@@ -542,21 +547,12 @@ import Fuse from 'fuse.js';
     if (!palette) {
       if (!initialized) {
         pendingOpen = true;
-        return;
       }
-      goToSearchPage(query || '');
       return;
     }
 
     mountPaletteToBody();
 
-    if (isEmbedded) {
-      if (input) {
-        focusSearchInput();
-        runSearch(query || input.value || '');
-      }
-      return;
-    }
     if (isOpen && isPaletteVisible()) {
       if (input) {
         if (query) {
@@ -605,7 +601,6 @@ import Fuse from 'fuse.js';
   }
 
   function close(opts) {
-    if (isEmbedded) return;
     setBodyScrollLocked(false);
     if (!palette || !isOpen) return;
     if (!(opts && opts.force) && Date.now() - openedAt < OPEN_GUARD_MS) return;
@@ -632,6 +627,9 @@ import Fuse from 'fuse.js';
   function openSelected() {
     var nodes = getInteractives();
     if (activeIndex >= 0 && nodes[activeIndex]) {
+      if (input && input.value.trim()) {
+        commitRecentSearch(input.value);
+      }
       nodes[activeIndex].click();
       close({ force: true });
     }
@@ -702,18 +700,21 @@ import Fuse from 'fuse.js';
       if (document.visibilityState === 'hidden') unlockBodyOnExit();
     });
 
+    if (resultsList) {
+      resultsList.addEventListener('click', function (e) {
+        var link = e.target.closest('.search-palette__result');
+        if (link && input && input.value.trim()) {
+          commitRecentSearch(input.value);
+        }
+      });
+    }
+
     if (input) {
       var debounce;
       input.addEventListener('input', function () {
         clearTimeout(debounce);
         debounce = setTimeout(function () {
           runSearch(input.value);
-          if (isEmbedded) {
-            var url = new URL(window.location.href);
-            if (input.value.trim()) url.searchParams.set('q', input.value.trim());
-            else url.searchParams.delete('q');
-            window.history.replaceState({}, '', url);
-          }
         }, 120);
       });
 
@@ -765,9 +766,6 @@ import Fuse from 'fuse.js';
     suggestBtn = suggestPanel ? suggestPanel.querySelector('[data-search-suggest]') : null;
     recentPanel = document.getElementById('search-palette-recent');
     recentList = document.getElementById('search-palette-recent-list');
-    isEmbedded =
-      document.body.classList.contains('search-palette-page') ||
-      /^\/search\/?$/.test(window.location.pathname);
 
     initKbdLabels();
     bindPalette();
@@ -779,30 +777,14 @@ import Fuse from 'fuse.js';
         e.preventDefault();
         activeCategory = null;
         activeCategorySlug = null;
-        if (isOpen && !isEmbedded) close({ force: true });
+        if (isOpen) close({ force: true });
         else open('');
         return;
       }
-      if (e.key === 'Escape' && isOpen && !isEmbedded) close({ force: true });
+      if (e.key === 'Escape' && isOpen) close({ force: true });
     });
 
-    if (isEmbedded) {
-      palette.removeAttribute('hidden');
-      palette.hidden = false;
-      palette.classList.add('is-visible', 'search-palette--embedded');
-      isOpen = true;
-      var params = new URLSearchParams(window.location.search);
-      activeCategory = params.get('category') || null;
-      activeCategorySlug = params.get('category_slug') || null;
-      var q = params.get('q') || '';
-      if (input) {
-        input.value = q;
-        runSearch(q);
-        focusSearchInput();
-      }
-    }
-
-    window.cfdSearchPalette = { open: open, close: close, goToSearchPage: goToSearchPage };
+    window.cfdSearchPalette = { open: open, close: close };
     if (pendingOpen) {
       pendingOpen = false;
       open('');
@@ -817,7 +799,6 @@ import Fuse from 'fuse.js';
     close: function (opts) {
       close(opts);
     },
-    goToSearchPage: goToSearchPage,
   };
 
   function boot() {

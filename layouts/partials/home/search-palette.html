@@ -43,22 +43,46 @@
         </div>
         <p class="search-palette__section-label">{{ i18n "search_popular" }}</p>
         <ul id="search-palette-suggestions" class="search-palette__list" role="listbox" aria-label="{{ i18n "search_popular_tools" }}">
-          {{- $n := 0 -}}
+          {{- $popular := slice -}}
+          {{- $limit := 6 -}}
           {{- range $cat := $data.home.categories -}}
+            {{- if ge (len $popular) $limit -}}{{- break -}}{{- end -}}
             {{- range $cat.items -}}
-              {{- if and .featured (lt $n 6) -}}
+              {{- if and .featured (lt (len $popular) $limit) -}}
+                {{- $popular = $popular | append (dict "item" . "category" $cat.name) -}}
+                {{- break -}}
+              {{- end -}}
+            {{- end -}}
+          {{- end -}}
+          {{- if lt (len $popular) $limit -}}
+            {{- range $cat := $data.home.categories -}}
+              {{- if ge (len $popular) $limit -}}{{- break -}}{{- end -}}
+              {{- range $item := $cat.items -}}
+                {{- if and $item.featured (lt (len $popular) $limit) -}}
+                  {{- $seen := false -}}
+                  {{- range $popular -}}
+                    {{- if eq .item.url $item.url -}}{{- $seen = true -}}{{- end -}}
+                  {{- end -}}
+                  {{- if not $seen -}}
+                    {{- $popular = $popular | append (dict "item" $item "category" $cat.name) -}}
+                  {{- end -}}
+                {{- end -}}
+              {{- end -}}
+            {{- end -}}
+          {{- end -}}
+          {{- range $popular -}}
               <li role="option">
-                <a href="{{ .url }}" class="search-palette__result" data-search-suggestion>
+                <a href="{{ .item.url }}" class="search-palette__result" data-search-suggestion>
                   <span class="search-palette__result-text">
-                    <span class="search-palette__result-name">{{ .name }}</span>
-                    <span class="search-palette__result-meta">{{ $cat.name }}</span>
+                    <span class="search-palette__result-name">{{ .item.name }}</span>
+                    {{- with .item.description -}}
+                    <span class="search-palette__result-desc">{{ . }}</span>
+                    {{- end -}}
+                    <span class="search-palette__result-meta">{{ .category }}</span>
                   </span>
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" class="search-palette__result-arrow" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
                 </a>
               </li>
-              {{- $n = add $n 1 -}}
-              {{- end -}}
-            {{- end -}}
           {{- end -}}
         </ul>
       </div>

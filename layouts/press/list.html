@@ -1,8 +1,15 @@
 {{ partial "home/modern-page-start.html" (dict "page" . "navActive" "" "headExtra" `<meta name="keywords" content="CodeFryDev press, media kit, press kit, logo, contact">`) }}
-    <article class="max-w-3xl mx-auto px-4 py-12 w-full">
-      <h1 class="text-4xl font-bold text-slate-900 mb-8 m-0">Press &amp; Media</h1>
-      <div class="prose prose-slate max-w-none text-slate-600 bg-white rounded-2xl border border-gray-100 p-8 md:p-10 shadow-sm">
-        {{ .Content }}
-      </div>
-    </article>
+
+{{ partial "home/subpage-hero.html" (dict "page" . "bannerKey" "press" "heroContext" "page_press") }}
+
+<section class="browse-index pt-8 pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+  {{- .Scratch.Set "breadcrumbLabel" .Title -}}
+
+  <div class="browse-index__section max-w-3xl mx-auto w-full">
+    <div class="prose prose-slate max-w-none text-slate-600 bg-white rounded-2xl border border-gray-100 p-6 md:p-8 shadow-sm">
+      {{ .Content }}
+    </div>
+  </div>
+</section>
+
 {{ partial "home/modern-page-end.html" (dict "page" .) }}

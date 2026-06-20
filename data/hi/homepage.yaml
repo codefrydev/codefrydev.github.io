@@ -17,9 +17,6 @@ nav:
     - label: स्टोर
       url: "/store/"
       icon: shopping-bag
-    - label: सभी टूल खोजें
-      url: "/search/"
-      icon: magnifying-glass
 why:
   title: CodeFryDev क्यों चुनें?
   intro: यह एक मंच है जहाँ हम सीखते, प्रयोग करते, गेम खेलते, नए विचार बनाते और बहुत कुछ…

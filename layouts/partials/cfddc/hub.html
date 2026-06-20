@@ -3,45 +3,51 @@
 {{- $latest := .Scratch.Get "cfddcLatestYear" -}}
 {{- $latestCard := index (where $yearCards "year" $latest) 0 -}}
 
-<div class="cfddc-root max-w-5xl mx-auto px-4 w-full pt-8 pb-16">
-  <section class="cfddc-hero-panel cfddc-hub-hero" aria-labelledby="cfddc-hub-title">
-    <div class="cfddc-hub-hero__inner">
-      <p class="cfddc-hub-hero__eyebrow m-0">CodeFryDev Developer Conference</p>
-      <h1 id="cfddc-hub-title" class="cfddc-hub-hero__title m-0">{{ .Title | default "CFDDC" }}</h1>
-      {{- if .Content -}}
-      <div class="cfddc-hub-hero__lead m-0">{{ .Content }}</div>
-      {{- else -}}
-      <p class="cfddc-hub-hero__lead m-0">Year-by-year announcements pulled from our project timeline. Pick a conference edition to see everything we shipped that year.</p>
-      {{- end -}}
-      {{- if $latestCard -}}
-      <a href="/cfddc/{{ $latest }}/" class="cfddc-btn cfddc-btn--primary mt-8 inline-flex no-underline" data-cfd-cta="cfddc_latest">
-        Watch CFDDC {{ $latestCard.shortYear }} →
+<section class="browse-index pt-8 pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+  {{- if $latestCard -}}
+  <div class="browse-index__section">
+    <div class="browse-category__header">
+      <h2 class="browse-index__section-title m-0">Latest edition</h2>
+      <a href="/cfddc/{{ $latest }}/" class="text-sm font-semibold text-brand no-underline hover:text-brand/80" data-cfd-cta="cfddc_latest">
+        CFDDC {{ $latestCard.shortYear }} →
       </a>
+    </div>
+    <div class="browse-category__grid mt-2 max-w-xl">
+      {{ partial "home/tool-card.html" (dict
+        "item" (dict
+          "name" (printf "CFDDC %s" $latestCard.shortYear)
+          "url" (printf "/cfddc/%s/" $latest)
+          "description" (printf "%d %s" $latestCard.count (cond (eq $latestCard.count 1) "announcement" "announcements"))
+          "iconEmoji" "🎤"
+        )
+        "categoryName" "CFDDC"
+        "headingLevel" 2
+        "source" "cfddc_latest"
+      ) }}
+    </div>
+  </div>
+  {{- end -}}
+
+  <div class="browse-index__section browse-index__section--hubs">
+    <h2 class="browse-index__section-title">Conference editions</h2>
+    <p class="browse-index__section-desc m-0">Pick a year to see everything we shipped that edition.</p>
+    <div class="browse-category__grid mt-2">
+      {{- range $yearCards -}}
+      {{ partial "home/tool-card.html" (dict
+        "item" (dict
+          "name" (printf "CFDDC %s" .shortYear)
+          "url" (printf "/cfddc/%s/" .year)
+          "description" (printf "%d %s · %s" .count (cond (eq .count 1) "announcement" "announcements") .year)
+          "iconEmoji" "📅"
+        )
+        "categoryName" "CFDDC"
+        "headingLevel" 2
+        "source" (printf "cfddc_%s" .year)
+      ) }}
       {{- end -}}
     </div>
-  </section>
-
-  <section class="cfddc-hub-years pb-4" aria-labelledby="cfddc-years-heading">
-    <h2 id="cfddc-years-heading" class="cfddc-section-title m-0 mb-6 text-center">Conference editions</h2>
-    <ul class="cfddc-year-grid list-none m-0 p-0" role="list">
-      {{- range $yearCards -}}
-      <li>
-        <a href="/cfddc/{{ .year }}/" class="cfddc-year-card group no-underline{{ if eq .year $latest }} cfddc-year-card--latest{{ end }}" data-cfd-cta="cfddc_year_{{ .year }}">
-          <span class="cfddc-year-card__logo" aria-hidden="true">
-            <span class="cfddc-year-card__name">CFDDC</span>
-            <span class="cfddc-year-card__digits">{{ .shortYear }}</span>
-          </span>
-          <span class="cfddc-year-card__meta">
-            <span class="cfddc-year-card__full">{{ .year }}</span>
-            <span class="cfddc-year-card__count">{{ .count }} {{ if eq .count 1 }}announcement{{ else }}announcements{{ end }}</span>
-          </span>
-          <span class="cfddc-year-card__cta">View edition →</span>
-        </a>
-      </li>
-      {{- end -}}
-    </ul>
-    <p class="text-center mt-10 mb-0">
-      <a href="/history/" class="cfddc-link no-underline">View full timeline →</a>
+    <p class="mt-8 mb-0">
+      <a href="/history/" class="text-sm font-semibold text-brand no-underline hover:text-brand/80">View full timeline →</a>
     </p>
-  </section>
-</div>
+  </div>
+</section>

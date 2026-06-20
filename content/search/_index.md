@@ -1,6 +1,0 @@
----
-translationKey: "search"
-title: "Search"
-date: 2025-01-20T00:00:00Z
----
-

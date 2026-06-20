@@ -2,188 +2,133 @@
 
 {{- $data := partial "get-data.html" . -}}
 {{- $why := $data.homepage.why -}}
-{{- $totalTools := 0 -}}
-{{- range $data.home.categories }}{{ $totalTools = add $totalTools (len .items) }}{{ end -}}
-{{- $aiCount := 0 }}{{ with $data.ai.data }}{{ $aiCount = len . }}{{ end -}}
-{{- $gamesCount := 0 }}{{ with $data.games.data }}{{ $gamesCount = len . }}{{ end -}}
-{{- $designCount := 0 }}{{ with $data.designlab.data }}{{ $designCount = len . }}{{ end -}}
 {{- $members := .Site.GetPage "/about/users" -}}
 
-<article class="about-page pt-6 pb-20 sm:pt-10 sm:pb-24">
-  <header class="about-hero max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-14 sm:mb-16">
-    <div class="about-hero__panel">
-      <div class="about-hero__glow" aria-hidden="true"></div>
-      <div class="about-hero__inner">
-        <div class="about-hero__content">
-          <h1 class="about-hero__title m-0">{{ .Title }}</h1>
-          <p class="about-hero__quote m-0">{{ .Description }}</p>
-        </div>
-        <div class="about-hero__actions">
-          <a href="{{ "/browse/" | relLangURL }}" class="about-btn about-btn--primary no-underline">
-            {{ i18n "about_browse_tools" }}
-          </a>
-          <a href="{{ "/press/" | relLangURL }}" class="about-btn about-btn--ghost no-underline">{{ i18n "about_press_media" }}</a>
-        </div>
-      </div>
+{{ partial "home/subpage-hero.html" (dict "page" . "bannerKey" "about-us" "heroContext" "page_about_us") }}
+
+<section class="browse-index pt-8 pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+  {{- .Scratch.Set "breadcrumbLabel" .Title -}}
+
+  {{- if .Content -}}
+  <div class="browse-index__section max-w-3xl">
+    <h2 id="about-mission-heading" class="browse-index__section-title">{{ i18n "about_mission_heading" }}</h2>
+    <div class="prose prose-slate max-w-none text-slate-600 bg-white rounded-2xl border border-gray-100 p-6 md:p-8 shadow-sm mt-2">
+      {{ .Content }}
     </div>
-  </header>
-
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-    <section class="about-mission mb-14 sm:mb-16" aria-labelledby="about-mission-heading">
-      {{- if .Content -}}
-      <div class="about-mission__story">
-        <h2 id="about-mission-heading" class="about-heading m-0">{{ i18n "about_mission_heading" }}</h2>
-        <div class="about-prose about-prose--mission text-slate-600">
-          {{ .Content }}
-        </div>
-      </div>
-      {{- end -}}
-
-      {{- with $why.bullets -}}
-      <ul class="about-mission-perks list-none m-0 p-0" aria-label="{{ i18n "about_mission_aria" }}">
-        {{- range . -}}
-        <li class="about-mission-perk">
-          <span class="about-mission-perk__icon" aria-hidden="true">✓</span>
-          <span class="about-mission-perk__text">{{ . }}</span>
-        </li>
-        {{- end -}}
-      </ul>
-      {{- end -}}
-    </section>
-
-    <section class="about-stats mb-14 sm:mb-16" aria-labelledby="about-stats-heading">
-      <div class="about-section-head about-section-head--stack">
-        <div>
-          <h2 id="about-stats-heading" class="about-heading m-0">{{ i18n "about_stats_heading" }}</h2>
-          <p class="about-subhead m-0">{{ i18n "about_stats_subhead" }}</p>
-        </div>
-      </div>
-      <ul class="about-stats__grid list-none m-0 p-0">
-        <li class="about-stat">
-          <span class="about-stat__icon" aria-hidden="true">🖥️</span>
-          <span class="about-stat__body">
-            <span class="about-stat__value">{{ $totalTools }}+</span>
-            <span class="about-stat__label">{{ i18n "about_stat_tools" }}</span>
-          </span>
-        </li>
-        <li class="about-stat">
-          <span class="about-stat__icon" aria-hidden="true">🤖</span>
-          <span class="about-stat__body">
-            <span class="about-stat__value">{{ $aiCount }}</span>
-            <span class="about-stat__label">{{ i18n "about_stat_ai" }}</span>
-          </span>
-        </li>
-        <li class="about-stat">
-          <span class="about-stat__icon" aria-hidden="true">🎮</span>
-          <span class="about-stat__body">
-            <span class="about-stat__value">{{ $gamesCount }}</span>
-            <span class="about-stat__label">{{ i18n "about_stat_games" }}</span>
-          </span>
-        </li>
-        <li class="about-stat">
-          <span class="about-stat__icon" aria-hidden="true">🎨</span>
-          <span class="about-stat__body">
-            <span class="about-stat__value">{{ $designCount }}</span>
-            <span class="about-stat__label">{{ i18n "about_stat_design" }}</span>
-          </span>
-        </li>
-      </ul>
-    </section>
-
-    {{- if $members -}}
-    <section class="about-team mb-14 sm:mb-16" aria-labelledby="about-team-heading">
-      <div class="about-section-head">
-        <div>
-          <h2 id="about-team-heading" class="about-heading m-0">{{ i18n "about_team_heading" }}</h2>
-          <p class="about-subhead m-0">{{ i18n "about_team_subhead" }}</p>
-        </div>
-        <a href="{{ $members.RelPermalink }}" class="about-link-arrow no-underline">
-          {{ i18n "about_all_members" }}
-        </a>
-      </div>
-      <ul class="about-team-grid list-none m-0 p-0">
-        {{- range sort $members.Pages "Weight" -}}
-        <li>
-          <a href="{{ .RelPermalink }}" class="about-team-card no-underline group">
-            <span class="about-team-card__avatar-wrap">
-              <img src="{{ .Params.listProfile_image }}" alt="{{ .Title }}" width="64" height="64" class="about-team-card__avatar" loading="lazy">
-            </span>
-            <span class="about-team-card__body">
-              <span class="about-team-card__name">{{ .Title }}</span>
-              {{- with .Params.subtitle -}}
-              <span class="about-team-card__role">{{ . }}</span>
-              {{- end -}}
-            </span>
-            <span class="about-team-card__arrow" aria-hidden="true">→</span>
-          </a>
-        </li>
-        {{- end -}}
-      </ul>
-    </section>
-    {{- end -}}
-
-    {{- with $data.about.cards -}}
-    <section class="about-connect mb-14 sm:mb-16" aria-labelledby="about-connect-heading">
-      <div class="about-section-head about-section-head--stack">
-        <div>
-          <h2 id="about-connect-heading" class="about-heading m-0">{{ i18n "about_connect_heading" }}</h2>
-          <p class="about-subhead m-0">{{ i18n "about_connect_subhead" }}</p>
-        </div>
-      </div>
-      <ul class="about-connect-grid list-none m-0 p-0">
-        {{- range . -}}
-        {{- $isExternal := strings.HasPrefix .url "http" -}}
-        {{- $cardUrl := .url -}}
-        {{- if and (not $isExternal) (hasPrefix $cardUrl "/") -}}
-          {{- $cardUrl = $cardUrl | relLangURL -}}
-        {{- end -}}
-        {{- $iconName := .phosphorIcon | default "link" -}}
-        {{- $iconWeight := "fill" -}}
-        {{- if eq $iconName "palette" -}}
-          {{- $iconWeight = "duotone" -}}
-        {{- else if eq $iconName "envelope" -}}
-          {{- $iconName = "link" -}}
-          {{- $iconWeight = "duotone" -}}
-        {{- end -}}
-        <li>
-          <a
-            href="{{ $cardUrl }}"
-            class="about-connect-card no-underline group"
-            {{- with .accent_color -}}style="--about-accent: {{ . }}"{{- end -}}
-            {{- if $isExternal -}} target="_blank" rel="noopener noreferrer"{{- end -}}
-          >
-            <span class="about-connect-card__icon" aria-hidden="true">
-              {{ partial "icon.html" (dict "name" $iconName "weight" $iconWeight "class" "about-connect-card__glyph") }}
-            </span>
-            <span class="about-connect-card__text">
-              <span class="about-connect-card__title">{{ .title }}</span>
-              <span class="about-connect-card__desc">{{ .content }}</span>
-            </span>
-            <span class="about-connect-card__arrow" aria-hidden="true">{{ if $isExternal }}↗{{ else }}→{{ end }}</span>
-          </a>
-        </li>
-        {{- end -}}
-      </ul>
-    </section>
-    {{- end -}}
-
-    <section class="about-cta" aria-labelledby="about-cta-heading">
-      <div class="about-cta__panel">
-        <div class="about-cta__glow" aria-hidden="true"></div>
-        <div class="about-cta__inner">
-          <div class="about-cta__content">
-            <p class="about-cta__eyebrow m-0">{{ i18n "about_cta_eyebrow" }}</p>
-            <h2 id="about-cta-heading" class="about-cta__title m-0">{{ i18n "about_cta_title" }}</h2>
-            <p class="about-cta__text m-0">{{ i18n "about_cta_text" }}</p>
-          </div>
-          <div class="about-cta__actions">
-            <a href="{{ "/" | relLangURL }}" class="about-btn about-btn--primary no-underline">{{ i18n "about_cta_home" }}</a>
-            <a href="{{ "/history/" | relLangURL }}" class="about-btn about-btn--ghost no-underline">{{ i18n "about_cta_timeline" }}</a>
-          </div>
-        </div>
-      </div>
-    </section>
   </div>
-</article>
+  {{- end -}}
+
+  {{- with $why.highlights -}}
+  <div class="browse-index__section">
+    <h2 class="browse-index__section-title">{{ i18n "about_mission_aria" }}</h2>
+    <div class="browse-category__grid mt-2">
+      {{- range . -}}
+      <article class="home-why__card h-full min-h-[140px]">
+        <h3 class="home-why__card-title m-0">{{ .title }}</h3>
+        <p class="home-why__card-text m-0">{{ .text | markdownify }}</p>
+      </article>
+      {{- end -}}
+    </div>
+  </div>
+  {{- end -}}
+
+  {{- if $members -}}
+  <div class="browse-index__section">
+    <div class="browse-category__header">
+      <h2 class="browse-index__section-title m-0">{{ i18n "about_team_heading" }}</h2>
+      <a href="{{ $members.RelPermalink }}" class="text-sm font-semibold text-brand no-underline hover:text-brand/80">
+        {{ i18n "about_all_members" }}
+      </a>
+    </div>
+    <p class="browse-index__section-desc">{{ i18n "about_team_subhead" }}</p>
+    <div class="browse-category__grid mt-2">
+      {{- range sort $members.Pages "Weight" -}}
+      {{ partial "home/tool-card.html" (dict
+        "item" (dict
+          "name" .Title
+          "url" .RelPermalink
+          "description" (.Params.subtitle | default "")
+          "imageUrl" .Params.listProfile_image
+          "imageRounded" true
+          "iconAlt" (printf "%s profile photo" .Title)
+        )
+        "categoryName" "About team"
+        "headingLevel" 2
+        "source" "about_team"
+      ) }}
+      {{- end -}}
+    </div>
+  </div>
+  {{- end -}}
+
+  {{- with $data.about.cards -}}
+  <div class="browse-index__section browse-index__section--hubs">
+    <h2 class="browse-index__section-title">{{ i18n "about_connect_heading" }}</h2>
+    <p class="browse-index__section-desc m-0">{{ i18n "about_connect_subhead" }}</p>
+    <div class="browse-category__grid mt-2">
+      {{- range . -}}
+      {{- $isExternal := strings.HasPrefix .url "http" -}}
+      {{- $cardUrl := .url -}}
+      {{- if and (not $isExternal) (hasPrefix $cardUrl "/") -}}
+        {{- $cardUrl = $cardUrl | relLangURL -}}
+      {{- end -}}
+      {{- $iconName := .phosphorIcon | default "link" -}}
+      {{- $iconWeight := "fill" -}}
+      {{- if eq $iconName "palette" -}}
+        {{- $iconWeight = "duotone" -}}
+      {{- else if eq $iconName "envelope" -}}
+        {{- $iconName = "link" -}}
+        {{- $iconWeight = "duotone" -}}
+      {{- end -}}
+      {{ partial "home/tool-card.html" (dict
+        "item" (dict "name" .title "url" $cardUrl "description" .content)
+        "phosphorIcon" $iconName
+        "phosphorWeight" $iconWeight
+        "categoryName" "About connect"
+        "headingLevel" 2
+        "source" "about_connect"
+      ) }}
+      {{- end -}}
+    </div>
+  </div>
+  {{- end -}}
+
+  <div class="browse-index__section browse-index__section--hubs">
+    <h2 class="browse-index__section-title">{{ i18n "about_cta_title" }}</h2>
+    <p class="browse-index__section-desc m-0">{{ i18n "about_cta_text" }}</p>
+    <div class="browse-category__grid mt-2">
+      {{ partial "home/tool-card.html" (dict
+        "item" (dict "name" (i18n "about_cta_home") "url" ("/" | relLangURL) "description" "" "iconEmoji" "🏠")
+        "categoryName" "About"
+        "headingLevel" 2
+        "source" "about_cta"
+      ) }}
+      {{ partial "home/tool-card.html" (dict
+        "item" (dict "name" (i18n "about_browse_tools") "url" ("/browse/" | relLangURL) "description" "")
+        "phosphorIcon" "squares-four"
+        "phosphorWeight" "duotone"
+        "categoryName" "About"
+        "headingLevel" 2
+        "source" "about_cta"
+      ) }}
+      {{ partial "home/tool-card.html" (dict
+        "item" (dict "name" (i18n "about_cta_timeline") "url" ("/history/" | relLangURL) "description" "")
+        "phosphorIcon" "clock-counter-clockwise"
+        "phosphorWeight" "fill"
+        "categoryName" "About"
+        "headingLevel" 2
+        "source" "about_cta"
+      ) }}
+      {{ partial "home/tool-card.html" (dict
+        "item" (dict "name" (i18n "about_press_media") "url" ("/press/" | relLangURL) "description" "")
+        "phosphorIcon" "article"
+        "phosphorWeight" "fill"
+        "categoryName" "About"
+        "headingLevel" 2
+        "source" "about_cta"
+      ) }}
+    </div>
+  </div>
+</section>
 
 {{ partial "home/modern-page-end.html" (dict "page" .) }}

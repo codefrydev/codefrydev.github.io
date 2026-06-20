@@ -1,0 +1,42 @@
+{{- $page := .page -}}
+{{- $bannerKey := .bannerKey -}}
+{{- $sectionId := .sectionId | default (printf "page-hero-%s" $bannerKey) -}}
+{{- $heroContext := .heroContext | default (printf "page_%s" $bannerKey) -}}
+{{- $title := .title | default $page.Title -}}
+{{- $subtitle := .subtitle | default $page.Description -}}
+{{- $searchPlaceholder := .searchPlaceholder | default "" -}}
+{{- $data := partial "get-data.html" $page -}}
+{{- $banner := index $data.homepage.pageBanners $bannerKey | default dict -}}
+{{- $slides := .slides | default $banner.slides -}}
+{{- if not $slides -}}
+  {{- $slides = slice (dict
+    "image" ($banner.image | default "/images/hero/browse/browse-index-1.webp")
+    "imageAlt" ($banner.imageAlt | default $title)
+    "imageTitle" ($banner.imageTitle | default $title)
+    "title" $title
+    "description" $subtitle
+  ) -}}
+{{- end -}}
+{{- $autoplay := $banner.autoplayMs | default 6000 -}}
+{{- with index $slides 0 -}}
+  {{- if not .image -}}
+    {{- $slides = slice (dict
+      "image" ($banner.image | default "/images/hero/browse/browse-index-1.webp")
+      "imageAlt" ($banner.imageAlt | default $title)
+      "imageTitle" ($banner.imageTitle | default $title)
+      "title" $title
+      "description" $subtitle
+    ) -}}
+  {{- end -}}
+{{- end -}}
+{{- $page.Scratch.Set "loadHeroCarousel" true -}}
+{{ partial "home/hero-carousel.html" (dict
+  "slides" $slides
+  "sectionId" $sectionId
+  "variant" "subpage"
+  "autoplayMs" $autoplay
+  "ariaLabel" $title
+  "heroContext" $heroContext
+  "searchPlaceholder" $searchPlaceholder
+  "searchSize" "md"
+) }}

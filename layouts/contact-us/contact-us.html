@@ -4,167 +4,86 @@
 {{- $sf := $data.contact.smartform -}}
 {{- $v := $data.contact.validation -}}
 
-<article class="contact-page pt-6 pb-20 sm:pt-10 sm:pb-24">
-  <header class="about-hero max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-10 sm:mb-14">
-    <div class="about-hero__panel">
-      <div class="about-hero__glow" aria-hidden="true"></div>
-      <div class="about-hero__inner md:max-w-2xl">
-        <p class="about-hero__eyebrow">Get in touch</p>
-        <h1 class="about-hero__title m-0">{{ .Title }}</h1>
-        {{- if .Content -}}
-        <div class="about-hero__quote contact-hero__intro m-0">{{ .Content }}</div>
-        {{- end -}}
+{{ partial "home/subpage-hero.html" (dict "page" . "bannerKey" "contact-us" "heroContext" "page_contact_us") }}
+
+<section class="browse-index pt-8 pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+  {{- .Scratch.Set "breadcrumbLabel" .Title -}}
+
+  <div class="browse-index__section max-w-3xl mx-auto w-full">
+    <section class="bg-white rounded-2xl border border-gray-100 p-6 shadow-sm sm:p-8 md:p-10" aria-labelledby="contact-form-heading">
+      <div class="mb-7 border-b border-slate-100 pb-6">
+        <h2 id="contact-form-heading" class="text-xl font-bold tracking-tight text-slate-900 sm:text-2xl m-0">Send us a message</h2>
+        <p class="mt-2 text-sm leading-relaxed text-slate-500 sm:text-[15px] m-0">Support, feedback, partnerships, or press—we read every note.</p>
       </div>
-    </div>
-  </header>
 
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="contact-layout">
-      <section class="contact-form-card" aria-labelledby="contact-form-heading">
-        <div class="contact-form-card__head">
-          <h2 id="contact-form-heading" class="contact-form-card__title m-0">Send us a message</h2>
-          <p class="contact-form-card__lead m-0">Support, feedback, partnerships, or press—we read every note.</p>
-        </div>
+      <form
+        id="contact-form"
+        class="contact-form"
+        novalidate
+        data-bss-recipient="{{ $sf.recipient }}"
+        data-bss-subject="{{ $sf.subject }}"
+        data-bss-success-message="{{ $sf.successMessage }}"
+        data-name-min="{{ $v.name.minLength }}"
+        data-name-max="{{ $v.name.maxLength }}"
+        data-email-max="{{ $v.email.maxLength }}"
+        data-message-min="{{ $v.message.minLength }}"
+        data-message-max="{{ $v.message.maxLength }}"
+      >
+        <div id="contact-form-summary" class="contact-form__summary" role="alert" aria-live="polite" hidden></div>
 
-        <form
-          id="contact-form"
-          class="contact-form"
-          novalidate
-          data-bss-recipient="{{ $sf.recipient }}"
-          data-bss-subject="{{ $sf.subject }}"
-          data-bss-success-message="{{ $sf.successMessage }}"
-          data-name-min="{{ $v.name.minLength }}"
-          data-name-max="{{ $v.name.maxLength }}"
-          data-email-max="{{ $v.email.maxLength }}"
-          data-message-min="{{ $v.message.minLength }}"
-          data-message-max="{{ $v.message.maxLength }}"
-        >
-          <div
-            id="contact-form-summary"
-            class="contact-form__summary"
-            role="alert"
-            aria-live="polite"
-            hidden
-          ></div>
-
-          <div class="contact-form__grid">
-            <div class="contact-field">
-              <div class="contact-field__label-row">
-                <label for="name" class="contact-field__label m-0">Name</label>
-                <span class="contact-field__required" aria-hidden="true">Required</span>
-              </div>
-              <input
-                class="contact-field__input"
-                type="text"
-                id="name"
-                name="name"
-                placeholder="Your name"
-                autocomplete="name"
-                minlength="{{ $v.name.minLength }}"
-                maxlength="{{ $v.name.maxLength }}"
-                aria-describedby="name-error"
-                required
-              >
-              <p id="name-error" class="contact-field__error m-0" role="alert" hidden></p>
+        <div class="contact-form__grid">
+          <div class="contact-field">
+            <div class="contact-field__label-row">
+              <label for="name" class="contact-field__label m-0">Name</label>
+              <span class="contact-field__required" aria-hidden="true">Required</span>
             </div>
-
-            <div class="contact-field">
-              <div class="contact-field__label-row">
-                <label for="email" class="contact-field__label m-0">Email</label>
-                <span class="contact-field__required" aria-hidden="true">Required</span>
-              </div>
-              <input
-                class="contact-field__input"
-                type="email"
-                id="email"
-                name="email"
-                placeholder="you@example.com"
-                autocomplete="email"
-                inputmode="email"
-                maxlength="{{ $v.email.maxLength }}"
-                spellcheck="false"
-                aria-describedby="email-error"
-                required
-              >
-              <p id="email-error" class="contact-field__error m-0" role="alert" hidden></p>
-            </div>
-
-            <div class="contact-field contact-field--full">
-              <div class="contact-field__label-row">
-                <label for="message" class="contact-field__label m-0">Message</label>
-                <span class="contact-field__required" aria-hidden="true">Required</span>
-              </div>
-              <textarea
-                class="contact-field__input contact-field__input--textarea"
-                id="message"
-                name="message"
-                rows="6"
-                placeholder="How can we help?"
-                minlength="{{ $v.message.minLength }}"
-                maxlength="{{ $v.message.maxLength }}"
-                aria-describedby="message-error message-count"
-                required
-              ></textarea>
-              <div class="contact-field__meta">
-                <p id="message-error" class="contact-field__error m-0" role="alert" hidden></p>
-                <p id="message-count" class="contact-field__count m-0" aria-live="polite">0 / {{ $v.message.maxLength }}</p>
-              </div>
-            </div>
+            <input class="contact-field__input" type="text" id="name" name="name" placeholder="Your name" autocomplete="name" minlength="{{ $v.name.minLength }}" maxlength="{{ $v.name.maxLength }}" aria-describedby="name-error" required>
+            <p id="name-error" class="contact-field__error m-0" role="alert" hidden></p>
           </div>
 
-          <div class="contact-form__actions">
-            <button type="submit" class="contact-submit about-btn about-btn--primary">
-              Send message
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-            </button>
-            <p class="contact-form__note m-0">Your message is sent securely with spam protection.</p>
+          <div class="contact-field">
+            <div class="contact-field__label-row">
+              <label for="email" class="contact-field__label m-0">Email</label>
+              <span class="contact-field__required" aria-hidden="true">Required</span>
+            </div>
+            <input class="contact-field__input" type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" inputmode="email" maxlength="{{ $v.email.maxLength }}" spellcheck="false" aria-describedby="email-error" required>
+            <p id="email-error" class="contact-field__error m-0" role="alert" hidden></p>
           </div>
-        </form>
-      </section>
 
-      <aside class="contact-aside" aria-label="Contact information">
-        <div class="contact-info-card">
-          <p class="contact-info-card__eyebrow m-0">Response time</p>
-          <p class="contact-info-card__title m-0">We usually reply within 2–3 business days.</p>
-          <p class="contact-info-card__text m-0">For urgent issues, include as much detail as you can so we can help faster.</p>
+          <div class="contact-field contact-field--full">
+            <div class="contact-field__label-row">
+              <label for="message" class="contact-field__label m-0">Message</label>
+              <span class="contact-field__required" aria-hidden="true">Required</span>
+            </div>
+            <textarea class="contact-field__input contact-field__input--textarea" id="message" name="message" rows="6" placeholder="How can we help?" minlength="{{ $v.message.minLength }}" maxlength="{{ $v.message.maxLength }}" aria-describedby="message-error message-count" required></textarea>
+            <div class="contact-field__meta">
+              <p id="message-error" class="contact-field__error m-0" role="alert" hidden></p>
+              <p id="message-count" class="contact-field__count m-0" aria-live="polite">0 / {{ $v.message.maxLength }}</p>
+            </div>
+          </div>
         </div>
 
-        <ul class="contact-links list-none m-0 p-0">
-          <li>
-            <a href="/press/" class="contact-link no-underline group">
-              <span class="contact-link__icon" aria-hidden="true">📰</span>
-              <span class="contact-link__body">
-                <span class="contact-link__title">Press &amp; media</span>
-                <span class="contact-link__desc">Boilerplate, logo, and media kit</span>
-              </span>
-              <span class="contact-link__arrow" aria-hidden="true">→</span>
-            </a>
-          </li>
-          <li>
-            <a href="/faq/" class="contact-link no-underline group">
-              <span class="contact-link__icon" aria-hidden="true">❓</span>
-              <span class="contact-link__body">
-                <span class="contact-link__title">FAQ</span>
-                <span class="contact-link__desc">Common questions about our tools</span>
-              </span>
-              <span class="contact-link__arrow" aria-hidden="true">→</span>
-            </a>
-          </li>
-          <li>
-            <a href="/about-us/" class="contact-link no-underline group">
-              <span class="contact-link__icon" aria-hidden="true">👋</span>
-              <span class="contact-link__body">
-                <span class="contact-link__title">About us</span>
-                <span class="contact-link__desc">Team, mission, and platform story</span>
-              </span>
-              <span class="contact-link__arrow" aria-hidden="true">→</span>
-            </a>
-          </li>
-        </ul>
-      </aside>
+        <div class="contact-form__actions">
+          <p class="contact-form__note m-0">Your message is sent securely with spam protection.</p>
+          <button type="submit" class="contact-submit inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold border border-transparent bg-brand text-white shadow-sm hover:bg-brand/90 hover:shadow-md">
+            Send message
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          </button>
+        </div>
+      </form>
+    </section>
+  </div>
+
+  <div class="browse-index__section browse-index__section--hubs mt-10">
+    <h2 class="browse-index__section-title">Elsewhere on the site</h2>
+    <p class="browse-index__section-desc m-0">You might find what you need without waiting for a reply.</p>
+    <div class="browse-category__grid mt-2">
+      {{ partial "home/tool-card.html" (dict "item" (dict "name" "Press & media" "url" ("/press/" | relLangURL) "description" "Boilerplate, logo, and media kit") "phosphorIcon" "article" "phosphorWeight" "fill" "categoryName" "Contact" "headingLevel" 2 "source" "contact_links") }}
+      {{ partial "home/tool-card.html" (dict "item" (dict "name" "FAQ" "url" ("/faq/" | relLangURL) "description" "Common questions about our tools") "phosphorIcon" "chat-circle" "phosphorWeight" "fill" "categoryName" "Contact" "headingLevel" 2 "source" "contact_links") }}
+      {{ partial "home/tool-card.html" (dict "item" (dict "name" "About us" "url" ("/about-us/" | relLangURL) "description" "Team, mission, and platform story") "phosphorIcon" "users" "phosphorWeight" "fill" "categoryName" "Contact" "headingLevel" 2 "source" "contact_links") }}
     </div>
   </div>
-</article>
+</section>
 
 <script src="/js/contact-form.js"></script>
 <script src="/js/smartform.min.js"></script>

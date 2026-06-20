@@ -1,20 +1,41 @@
 {{ partial "home/modern-page-start.html" (dict "page" . "navActive" "about" "headExtra" `<meta name="keywords" content="codefrydev team, developers, designers, contributors, about team">`) }}
-    <section class="pt-8 pb-16 max-w-5xl mx-auto px-4 w-full">
-      <div class="text-center mb-10">
-        <h1 class="text-4xl font-bold text-slate-900 mb-3 m-0">{{ .Title }}</h1>
-        <p class="text-lg text-slate-500 m-0">Meet the talented folks who contribute to CodeFryDev. <a href="/about-us/" class="text-blue-600 hover:text-blue-700 font-medium no-underline">About us</a></p>
-      </div>
-      <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 list-none m-0 p-0">
-        {{- range sort .Pages "Weight" -}}
-        <li>
-          <a href="{{ .RelPermalink }}" class="bg-white border border-gray-100 rounded-2xl p-8 text-center hover:-translate-y-1 hover:shadow-md transition-all no-underline block group">
-            <img src="{{ .Params.listProfile_image }}" alt="{{ .Title }}" width="120" height="120" class="w-[120px] h-[120px] rounded-full object-cover border-4 border-gray-100 mx-auto mb-4 group-hover:border-blue-100 transition-colors" loading="lazy">
-            <h2 class="text-xl font-bold text-slate-900 m-0 mb-2">{{ .Title }}</h2>
-            <p class="text-sm text-slate-500 m-0 mb-4">{{ .Params.subtitle }}</p>
-            <span class="inline-block text-xs font-semibold uppercase tracking-wide text-blue-600 bg-blue-50 px-3 py-1 rounded-full">View profile</span>
-          </a>
-        </li>
-        {{- end -}}
-      </ul>
-    </section>
+
+{{ partial "home/subpage-hero.html" (dict "page" . "bannerKey" "about-users" "heroContext" "page_about_users") }}
+
+<section class="browse-index pt-8 pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+  {{- .Scratch.Set "breadcrumbLabel" .Title -}}
+
+  <div class="browse-index__section">
+    <div class="browse-category__header">
+      <h2 class="browse-index__section-title m-0">{{ i18n "about_team_heading" }}</h2>
+      <a href="{{ "/about-us/" | relLangURL }}" class="text-sm font-semibold text-brand no-underline hover:text-brand/80">
+        {{ i18n "about_mission_heading" }}
+      </a>
+    </div>
+    <p class="browse-index__section-desc m-0">{{ i18n "about_team_subhead" }}</p>
+
+    {{- if gt (len .Pages) 0 -}}
+    <div class="browse-category__grid mt-2">
+      {{- range sort .Pages "Weight" -}}
+      {{ partial "home/tool-card.html" (dict
+        "item" (dict
+          "name" .Title
+          "url" .RelPermalink
+          "description" (.Params.subtitle | default "")
+          "imageUrl" .Params.listProfile_image
+          "imageRounded" true
+          "iconAlt" (printf "%s profile photo" .Title)
+        )
+        "categoryName" "Team"
+        "headingLevel" 2
+        "source" "about_users"
+      ) }}
+      {{- end -}}
+    </div>
+    {{- else -}}
+    <p class="text-slate-500 mt-4 m-0">{{ i18n "about_team_subhead" }}</p>
+    {{- end -}}
+  </div>
+</section>
+
 {{ partial "home/modern-page-end.html" (dict "page" .) }}

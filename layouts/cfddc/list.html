@@ -1,6 +1,7 @@
-{{ partial "home/modern-page-start.html" (dict "page" . "navActive" "" "mainClass" "min-h-screen" "headExtra" `<link rel="stylesheet" href="/css/cfddc.css"><script src="/js/cfddc.min.js" defer></script>`) }}
-{{- if eq .RelPermalink "/cfddc/" -}}
+{{ partial "home/modern-page-start.html" (dict "page" . "navActive" "" "mainClass" "min-h-screen" "headExtra" (cond (not .Params.year) "" `<link rel="stylesheet" href="/css/cfddc.css"><script src="/js/cfddc.min.js" defer></script>`)) }}
+{{- if not .Params.year -}}
   {{- .Scratch.Set "breadcrumbLabel" "CFDDC" -}}
+  {{ partial "home/subpage-hero.html" (dict "page" . "bannerKey" "cfddc" "heroContext" "page_cfddc") }}
   {{ partial "cfddc/hub.html" . }}
 {{- else -}}
   {{ partial "cfddc/year.html" . }}

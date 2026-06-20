@@ -72,14 +72,6 @@
       "publisher": {
         "@id": "{{ .Site.BaseURL }}#organization"
       },
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": {
-          "@type": "EntryPoint",
-          "urlTemplate": "{{ .Site.BaseURL }}search?q={search_term_string}"
-        },
-        "query-input": "required name=search_term_string"
-      },
       "inLanguage": "{{ .Site.Language.Locale | default "en-US" }}",
       "copyrightYear": "{{ now.Format "2006" }}",
       "copyrightHolder": {

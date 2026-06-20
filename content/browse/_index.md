@@ -4,4 +4,6 @@ title: "Browse all categories"
 url: /browse/
 description: "Free tools, games, and AI apps—organized by category. Pick a collection or jump to a hub."
 keywords: ["browse tools", "tool categories", "free online tools", "codefrydev browse"]
+aliases:
+  - /search/
 ---
