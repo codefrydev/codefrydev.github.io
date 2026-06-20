@@ -349,6 +349,14 @@
     @apply bg-amber-100 text-amber-800;
   }
 
+  .search-palette__badge--blog {
+    @apply bg-indigo-100 text-indigo-700;
+  }
+
+  .search-palette__badge--updates {
+    @apply bg-rose-100 text-rose-700;
+  }
+
   .search-palette__result-arrow {
     @apply text-slate-300 shrink-0 text-sm;
   }

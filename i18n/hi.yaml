@@ -139,6 +139,10 @@
   translation: "🎨 डिज़ाइन लैब"
 - id: search_chip_browse
   translation: "⊞ ब्राउज़"
+- id: search_remote_blog
+  translation: "CFD ब्लॉग"
+- id: search_remote_updates
+  translation: "अपडेट"
 
 - id: hub_search_designlab
   translation: "डिज़ाइन टूल और क्रिएटिव संसाधन खोजें…"

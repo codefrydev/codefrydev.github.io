@@ -19,6 +19,13 @@ import Fuse from 'fuse.js';
   var RECENT_KEY = 'cfd_recent_searches';
   var RECENT_MAX = 5;
   var SUGGEST_SCORE_THRESHOLD = 0.35;
+  var REMOTE_CACHE_KEY = 'cfd_remote_search_v1';
+  var REMOTE_CACHE_VERSION = 1;
+  var REMOTE_CACHE_TTL_MS = 30 * 60 * 1000;
+  var REMOTE_DESCRIPTION_MAX = 200;
+  var REMOTE_CONTENT_EXCERPT = 300;
+  var indexByUrl = new Map();
+  var remoteLoadStarted = false;
 
   var FUSE_OPTIONS = {
     keys: [
@@ -171,51 +178,200 @@ import Fuse from 'fuse.js';
     return item;
   }
 
-  function buildIndex(data) {
-    var items = [];
-    var indexByUrl = new Map();
-
-    function push(item) {
-      if (item.hidden) return;
-      var key = normalizeUrl(item.url);
-      if (!key) return;
-      if (indexByUrl.has(key)) {
-        mergeItemMetadata(indexByUrl.get(key), item);
-        return;
-      }
-      indexByUrl.set(key, item);
-      items.push(item);
+  function pushItem(item) {
+    if (!item || item.hidden) return;
+    var key = normalizeUrl(item.url);
+    if (!key) return;
+    if (indexByUrl.has(key)) {
+      mergeItemMetadata(indexByUrl.get(key), item);
+      return;
     }
+    indexByUrl.set(key, item);
+    allItems.push(item);
+  }
+
+  function stripHtml(html) {
+    return String(html || '')
+      .replace(/<[^>]+>/g, ' ')
+      .replace(/&(?:#x?[\da-f]+|\w+);/gi, ' ')
+      .replace(/\s+/g, ' ')
+      .trim();
+  }
+
+  function mapRemotePost(post, source) {
+    if (!post || !post.title || !post.permalink) return null;
+    var summary = stripHtml(post.summary || '');
+    var excerpt = summary || stripHtml(post.content || '').slice(0, REMOTE_CONTENT_EXCERPT);
+    var description = excerpt.slice(0, REMOTE_DESCRIPTION_MAX);
+    return mapItem(
+      {
+        name: post.title,
+        url: post.permalink,
+        description: description,
+        phosphorIcon: source.icon || 'article',
+        external: false,
+      },
+      source.category,
+      source.type
+    );
+  }
+
+  function itemFromCache(raw) {
+    var item = {
+      name: raw.name,
+      url: raw.url,
+      category: raw.category,
+      type: raw.type,
+      description: raw.description || '',
+      phosphorIcon: raw.phosphorIcon || 'article',
+      external: false,
+      aliases: raw.aliases || [],
+      searchText: raw.searchText || '',
+    };
+    if (!item.searchText) item.searchText = buildSearchText(item);
+    return item;
+  }
+
+  function slimRemoteItem(item) {
+    return {
+      name: item.name,
+      url: item.url,
+      category: item.category,
+      type: item.type,
+      description: item.description,
+      phosphorIcon: item.phosphorIcon,
+      aliases: item.aliases,
+      searchText: item.searchText,
+    };
+  }
+
+  function readRemoteCache() {
+    try {
+      var raw = sessionStorage.getItem(REMOTE_CACHE_KEY);
+      if (!raw) return null;
+      var parsed = JSON.parse(raw);
+      if (!parsed || parsed.v !== REMOTE_CACHE_VERSION) return null;
+      if (Date.now() - parsed.fetchedAt > REMOTE_CACHE_TTL_MS) return null;
+      if (!Array.isArray(parsed.items)) return null;
+      return parsed.items;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function writeRemoteCache(items) {
+    try {
+      sessionStorage.setItem(
+        REMOTE_CACHE_KEY,
+        JSON.stringify({
+          v: REMOTE_CACHE_VERSION,
+          fetchedAt: Date.now(),
+          items: items.map(slimRemoteItem),
+        })
+      );
+    } catch (e) {
+      /* ignore quota errors */
+    }
+  }
+
+  function rebuildFuse() {
+    fuse = allItems.length ? buildFuseIndex(allItems) : null;
+  }
+
+  function refreshSearchIfOpen() {
+    if (isOpen && input && input.value.trim()) {
+      runSearch(input.value);
+    }
+  }
+
+  function mergeRemoteItems(items) {
+    if (!items || !items.length) return;
+    items.forEach(function (item) {
+      pushItem(item);
+    });
+    rebuildFuse();
+    refreshSearchIfOpen();
+  }
+
+  function fetchRemoteSource(source) {
+    return fetch(source.url, { credentials: 'same-origin' })
+      .then(function (response) {
+        return response.ok ? response.json() : [];
+      })
+      .then(function (rows) {
+        return (rows || [])
+          .map(function (post) {
+            return mapRemotePost(post, source);
+          })
+          .filter(Boolean);
+      })
+      .catch(function () {
+        return [];
+      });
+  }
+
+  function loadRemoteSources(sources) {
+    if (!sources || !sources.length || remoteLoadStarted) return;
+    remoteLoadStarted = true;
+
+    var cached = readRemoteCache();
+    if (cached && cached.length) {
+      mergeRemoteItems(
+        cached.map(function (raw) {
+          return itemFromCache(raw);
+        })
+      );
+    }
+
+    Promise.all(
+      sources.map(function (source) {
+        return fetchRemoteSource(source);
+      })
+    ).then(function (groups) {
+      var remoteItems = [];
+      groups.forEach(function (group) {
+        remoteItems = remoteItems.concat(group);
+      });
+      if (remoteItems.length) {
+        writeRemoteCache(remoteItems);
+        mergeRemoteItems(remoteItems);
+      }
+    });
+  }
+
+  function buildIndex(data) {
+    allItems = [];
+    indexByUrl = new Map();
 
     if (data.home && data.home.categories) {
       data.home.categories.forEach(function (cat) {
         (cat.items || []).forEach(function (item) {
-          push(mapItem(item, cat.name, 'tool'));
+          pushItem(mapItem(item, cat.name, 'tool'));
         });
       });
     }
     if (data.ai && data.ai.data) {
       data.ai.data.forEach(function (item) {
-        push(mapItem(item, 'AI Tools', 'ai'));
+        pushItem(mapItem(item, 'AI Tools', 'ai'));
       });
     }
     if (data.games && data.games.data) {
       data.games.data.forEach(function (item) {
-        push(mapItem(item, 'Games', 'game'));
+        pushItem(mapItem(item, 'Games', 'game'));
       });
     }
     if (data.designlab && data.designlab.data) {
       data.designlab.data.forEach(function (item) {
-        push(mapItem(item, 'Design Lab', 'design'));
+        pushItem(mapItem(item, 'Design Lab', 'design'));
       });
     }
     if (data.store && data.store.data) {
       data.store.data.forEach(function (item) {
-        push(mapItem(item, 'Store', 'store'));
+        pushItem(mapItem(item, 'Store', 'store'));
       });
     }
 
-    return items;
+    return allItems;
   }
 
   function buildFuseIndex(items) {
@@ -746,12 +902,15 @@ import Fuse from 'fuse.js';
     }
 
     if (window.CFD_SEARCH && window.CFD_SEARCH.data) {
-      allItems = buildIndex(window.CFD_SEARCH.data);
-      fuse = buildFuseIndex(allItems);
+      buildIndex(window.CFD_SEARCH.data);
+      rebuildFuse();
     } else {
       allItems = [];
+      indexByUrl = new Map();
       fuse = null;
     }
+
+    loadRemoteSources(window.CFD_SEARCH && window.CFD_SEARCH.remoteSources);
 
     mountPaletteToBody();
     initialized = true;

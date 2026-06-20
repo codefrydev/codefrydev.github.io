@@ -107,6 +107,10 @@ window.CFD_SEARCH = {{- dict
     "designlab" $data.designlab
     "store" $data.store
   )
+  "remoteSources" (slice
+    (dict "id" "blog" "url" "/blog/index.json" "category" (i18n "search_remote_blog") "type" "blog" "icon" "article")
+    (dict "id" "updates" "url" "/Updates/index.json" "category" (i18n "search_remote_updates") "type" "updates" "icon" "code")
+  )
 | jsonify | safeJS -}};
 </script>
 <script src="/js/search-palette.min.js" defer></script>

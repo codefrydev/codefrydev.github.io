@@ -84,6 +84,8 @@ module.exports = {
     'search-palette__badge--game',
     'search-palette__badge--design',
     'search-palette__badge--store',
+    'search-palette__badge--blog',
+    'search-palette__badge--updates',
     'nav-mega',
     'nav-mega__panel',
     'nav-mega__grid',
