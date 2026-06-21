@@ -97,7 +97,7 @@ data:
   - puzzle
 - name: Snake
   icon: cfd-snake
-  url: "/Snake"
+  url: "/Snake/"
   description: क्लासिक Snake गेम — खाएँ, बढ़ें और दीवारों से बचें।
   date: '2024-06-08'
   phosphorIcon: snake

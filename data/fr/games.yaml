@@ -98,7 +98,7 @@ data:
   - puzzle
 - name: Snake
   icon: cfd-snake
-  url: "/Snake"
+  url: "/Snake/"
   description: Jeu Snake classique — mangez, grandissez et évitez les murs.
   date: '2024-06-08'
   phosphorIcon: snake

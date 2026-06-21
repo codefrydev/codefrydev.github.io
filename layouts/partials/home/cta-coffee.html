@@ -16,7 +16,7 @@
       </a>
       {{- end -}}
       {{- with $cta.secondaryUrl -}}
-      {{- $secUrl := . -}}
+      {{- $secUrl := partial "home/ensure-trailing-slash.html" . -}}
       {{- if hasPrefix $secUrl "/" -}}
         {{- $secUrl = $secUrl | relLangURL -}}
       {{- end -}}

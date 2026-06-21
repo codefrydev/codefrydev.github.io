@@ -231,7 +231,7 @@ cta:
     buttonText: आज हमारा समर्थन करें
     buttonUrl: "/donate"
     secondaryText: हमारे मिशन के बारे में
-    secondaryUrl: "/about-us"
+    secondaryUrl: "/about-us/"
 marquee:
   enabled: true
   label: दुनिया भर के मेकर्स के लिए

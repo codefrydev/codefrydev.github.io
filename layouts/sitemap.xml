@@ -71,17 +71,9 @@
 {{- $data := partial "get-data.html" . -}}
 {{- range $data.home.categories -}}
   {{- range .items -}}
-    {{- $url := .url -}}
-    {{- $absoluteURL := "" -}}
-    {{- if hasPrefix $url "/" -}}
-      {{- $absoluteURL = printf "%s%s" $baseURL (strings.TrimPrefix "/" $url) -}}
-    {{- else if or (hasPrefix $url "http://") (hasPrefix $url "https://") -}}
-      {{- $absoluteURL = $url -}}
-    {{- else -}}
-      {{- $absoluteURL = printf "%s%s" $baseURL $url -}}
-    {{- end -}}
+    {{- $absoluteURL := partial "home/sitemap-url.html" (dict "url" .url "baseURL" $baseURL) -}}
     {{- /* Only include internal URLs in sitemap */ -}}
-    {{- if hasPrefix $absoluteURL $baseURL -}}
+    {{- if and $absoluteURL (hasPrefix $absoluteURL $baseURL) -}}
   <url>
     <loc>{{ $absoluteURL }}</loc>
     <lastmod>{{ $currentDate }}</lastmod>
@@ -96,16 +88,8 @@
   {{- if $data.ai.data -}}
     {{- range $data.ai.data -}}
       {{- if .url -}}
-        {{- $url := .url -}}
-        {{- $absoluteURL := "" -}}
-        {{- if hasPrefix $url "/" -}}
-          {{- $absoluteURL = printf "%s%s" $baseURL (strings.TrimPrefix "/" $url) -}}
-        {{- else if or (hasPrefix $url "http://") (hasPrefix $url "https://") -}}
-          {{- $absoluteURL = $url -}}
-        {{- else -}}
-          {{- $absoluteURL = printf "%s%s" $baseURL $url -}}
-        {{- end -}}
-        {{- if hasPrefix $absoluteURL $baseURL -}}
+        {{- $absoluteURL := partial "home/sitemap-url.html" (dict "url" .url "baseURL" $baseURL) -}}
+        {{- if and $absoluteURL (hasPrefix $absoluteURL $baseURL) -}}
   <url>
     <loc>{{ $absoluteURL }}</loc>
     <lastmod>{{ $currentDate }}</lastmod>
@@ -122,16 +106,8 @@
   {{- if $data.games.data -}}
     {{- range $data.games.data -}}
       {{- if .url -}}
-        {{- $url := .url -}}
-        {{- $absoluteURL := "" -}}
-        {{- if hasPrefix $url "/" -}}
-          {{- $absoluteURL = printf "%s%s" $baseURL (strings.TrimPrefix "/" $url) -}}
-        {{- else if or (hasPrefix $url "http://") (hasPrefix $url "https://") -}}
-          {{- $absoluteURL = $url -}}
-        {{- else -}}
-          {{- $absoluteURL = printf "%s%s" $baseURL $url -}}
-        {{- end -}}
-        {{- if hasPrefix $absoluteURL $baseURL -}}
+        {{- $absoluteURL := partial "home/sitemap-url.html" (dict "url" .url "baseURL" $baseURL) -}}
+        {{- if and $absoluteURL (hasPrefix $absoluteURL $baseURL) -}}
   <url>
     <loc>{{ $absoluteURL }}</loc>
     <lastmod>{{ $currentDate }}</lastmod>
@@ -148,16 +124,8 @@
   {{- if $data.designlab.data -}}
     {{- range $data.designlab.data -}}
       {{- if .url -}}
-        {{- $url := .url -}}
-        {{- $absoluteURL := "" -}}
-        {{- if hasPrefix $url "/" -}}
-          {{- $absoluteURL = printf "%s%s" $baseURL (strings.TrimPrefix "/" $url) -}}
-        {{- else if or (hasPrefix $url "http://") (hasPrefix $url "https://") -}}
-          {{- $absoluteURL = $url -}}
-        {{- else -}}
-          {{- $absoluteURL = printf "%s%s" $baseURL $url -}}
-        {{- end -}}
-        {{- if hasPrefix $absoluteURL $baseURL -}}
+        {{- $absoluteURL := partial "home/sitemap-url.html" (dict "url" .url "baseURL" $baseURL) -}}
+        {{- if and $absoluteURL (hasPrefix $absoluteURL $baseURL) -}}
   <url>
     <loc>{{ $absoluteURL }}</loc>
     <lastmod>{{ $currentDate }}</lastmod>
@@ -174,16 +142,8 @@
   {{- if $data.store.data -}}
     {{- range $data.store.data -}}
       {{- if .url -}}
-        {{- $url := .url -}}
-        {{- $absoluteURL := "" -}}
-        {{- if hasPrefix $url "/" -}}
-          {{- $absoluteURL = printf "%s%s" $baseURL (strings.TrimPrefix "/" $url) -}}
-        {{- else if or (hasPrefix $url "http://") (hasPrefix $url "https://") -}}
-          {{- $absoluteURL = $url -}}
-        {{- else -}}
-          {{- $absoluteURL = printf "%s%s" $baseURL $url -}}
-        {{- end -}}
-        {{- if hasPrefix $absoluteURL $baseURL -}}
+        {{- $absoluteURL := partial "home/sitemap-url.html" (dict "url" .url "baseURL" $baseURL) -}}
+        {{- if and $absoluteURL (hasPrefix $absoluteURL $baseURL) -}}
   <url>
     <loc>{{ $absoluteURL }}</loc>
     <lastmod>{{ $currentDate }}</lastmod>

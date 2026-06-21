@@ -10,11 +10,12 @@
 {{- if and (not $desc) $item.name -}}
   {{- $desc = printf (i18n "tool_default_description") $item.name -}}
 {{- end -}}
+{{- $href := partial "home/ensure-trailing-slash.html" ($item.url | default "") -}}
 {{- $isExternal := false -}}
 {{- if isset $item "external" -}}
   {{- $isExternal = $item.external -}}
 {{- else -}}
-  {{- $isExternal = or (hasPrefix $item.url "http://") (hasPrefix $item.url "https://") -}}
+  {{- $isExternal = or (hasPrefix $href "http://") (hasPrefix $href "https://") -}}
 {{- end -}}
 {{- $titleClass := "text-lg xl:text-xl font-semibold text-slate-900 tracking-tight leading-tight truncate m-0 min-w-0" -}}
 {{- $linkClass := "tool-card__link text-inherit no-underline hover:text-brand after:absolute after:inset-0 after:rounded-2xl after:z-10 after:content-['']" -}}
@@ -36,7 +37,7 @@
     <div class="shrink-0">
         {{- if eq $headingLevel 2 -}}
         <h2 class="{{ $titleClass }}">
-          <a href="{{ $item.url }}" class="{{ $linkClass }}"{{ if $isExternal }} target="_blank" rel="noopener noreferrer"{{ end }}>
+          <a href="{{ $href }}" class="{{ $linkClass }}"{{ if $isExternal }} target="_blank" rel="noopener noreferrer"{{ end }}>
             {{ $item.name }}
             {{- if $isExternal -}}
             <span class="sr-only"> {{ i18n "tool_opens_new_tab" }}</span>
@@ -45,7 +46,7 @@
         </h2>
         {{- else -}}
         <h3 class="{{ $titleClass }}">
-          <a href="{{ $item.url }}" class="{{ $linkClass }}"{{ if $isExternal }} target="_blank" rel="noopener noreferrer"{{ end }}>
+          <a href="{{ $href }}" class="{{ $linkClass }}"{{ if $isExternal }} target="_blank" rel="noopener noreferrer"{{ end }}>
             {{ $item.name }}
             {{- if $isExternal -}}
             <span class="sr-only"> {{ i18n "tool_opens_new_tab" }}</span>

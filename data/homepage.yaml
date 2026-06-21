@@ -310,7 +310,7 @@ cta:
     buttonText: "Support us today"
     buttonUrl: "/donate"
     secondaryText: "Learn about our mission"
-    secondaryUrl: "/about-us"
+    secondaryUrl: "/about-us/"
 
 marquee:
   enabled: true

@@ -64,7 +64,7 @@ data:
     aliases: [word game, 5 letter, guess, puzzle]
   - name: Snake
     icon: cfd-snake
-    url: /Snake
+    url: /Snake/
     description: Classic snake game—eat, grow, and avoid the walls.
     date: "2024-06-08"
     phosphorIcon: snake

@@ -72,7 +72,7 @@
           {{- end -}}
           {{- range $popular -}}
               <li role="option">
-                <a href="{{ .item.url }}" class="search-palette__result" data-search-suggestion>
+                <a href="{{ partial "home/ensure-trailing-slash.html" .item.url }}" class="search-palette__result" data-search-suggestion>
                   <span class="search-palette__result-text">
                     <span class="search-palette__result-name">{{ .item.name }}</span>
                     {{- with .item.description -}}

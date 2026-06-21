@@ -1,0 +1,18 @@
+{{- /*
+  Builds a canonical absolute URL for sitemap entries.
+  Dict: url (string), baseURL (string)
+*/ -}}
+{{- $url := .url | default "" -}}
+{{- $baseURL := .baseURL -}}
+{{- $absoluteURL := "" -}}
+{{- if hasPrefix $url "/" -}}
+  {{- $absoluteURL = printf "%s%s" $baseURL (strings.TrimPrefix "/" $url) -}}
+{{- else if or (hasPrefix $url "http://") (hasPrefix $url "https://") -}}
+  {{- $absoluteURL = $url -}}
+{{- else if $url -}}
+  {{- $absoluteURL = printf "%s%s" $baseURL $url -}}
+{{- end -}}
+{{- if and $absoluteURL (hasPrefix $absoluteURL $baseURL) -}}
+  {{- $absoluteURL = partial "home/ensure-trailing-slash.html" $absoluteURL -}}
+{{- end -}}
+{{- return $absoluteURL -}}

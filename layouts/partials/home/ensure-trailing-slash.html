@@ -1,0 +1,24 @@
+{{- /*
+  Ensures directory-style URLs include a trailing slash (Hugo/GitHub Pages convention).
+  Pass a URL string; returns the normalized URL.
+*/ -}}
+{{- $url := strings.TrimSpace (. | default "") -}}
+{{- $out := $url -}}
+{{- if $out -}}
+  {{- $hasExtension := findRE `\.[a-zA-Z0-9]+$` $out -}}
+  {{- if not $hasExtension -}}
+    {{- if or (hasPrefix $out "http://") (hasPrefix $out "https://") -}}
+      {{- with urls.Parse $out -}}
+        {{- $path := .Path | default "/" -}}
+        {{- if and (ne $path "/") (not (hasSuffix $path "/")) -}}
+          {{- $out = printf "%s://%s%s/" .Scheme .Host (strings.TrimPrefix "/" (strings.TrimSuffix "/" $path)) -}}
+          {{- if .RawQuery -}}{{- $out = printf "%s?%s" $out .RawQuery -}}{{- end -}}
+          {{- if .Fragment -}}{{- $out = printf "%s#%s" $out .Fragment -}}{{- end -}}
+        {{- end -}}
+      {{- end -}}
+    {{- else if and (hasPrefix $out "/") (not (hasSuffix $out "/")) -}}
+      {{- $out = printf "%s/" (strings.TrimSuffix "/" $out) -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- return $out -}}

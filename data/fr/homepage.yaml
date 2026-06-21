@@ -231,7 +231,7 @@ cta:
     buttonText: Soutenez-nous aujourd'hui
     buttonUrl: "/donate"
     secondaryText: Découvrez notre mission
-    secondaryUrl: "/about-us"
+    secondaryUrl: "/about-us/"
 marquee:
   enabled: true
   label: Conçu pour les makers du monde entier

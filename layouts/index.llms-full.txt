@@ -23,7 +23,10 @@
 {{- $url := .url -}}
 {{- if not (or (hasPrefix $url "http://") (hasPrefix $url "https://")) -}}
   {{- if not (hasPrefix $url "/") -}}{{- $url = printf "/%s" $url -}}{{- end -}}
+  {{- $url = partial "home/ensure-trailing-slash.html" $url -}}
   {{- $url = printf "%s%s" $.Site.BaseURL (strings.TrimPrefix "/" $url) -}}
+{{- else -}}
+  {{- $url = partial "home/ensure-trailing-slash.html" $url -}}
 {{- end -}}
 | {{ .name }} | {{ $url }} | {{ .description | default "" }} |
 {{ end -}}
@@ -41,7 +44,10 @@
 {{- $url := .url -}}
 {{- if not (or (hasPrefix $url "http://") (hasPrefix $url "https://")) -}}
   {{- if not (hasPrefix $url "/") -}}{{- $url = printf "/%s" $url -}}{{- end -}}
+  {{- $url = partial "home/ensure-trailing-slash.html" $url -}}
   {{- $url = printf "%s%s" $.Site.BaseURL (strings.TrimPrefix "/" $url) -}}
+{{- else -}}
+  {{- $url = partial "home/ensure-trailing-slash.html" $url -}}
 {{- end -}}
 | {{ .name }} | {{ $url }} |
 {{ end -}}
@@ -57,7 +63,10 @@
 {{- $url := .url -}}
 {{- if not (or (hasPrefix $url "http://") (hasPrefix $url "https://")) -}}
   {{- if not (hasPrefix $url "/") -}}{{- $url = printf "/%s" $url -}}{{- end -}}
+  {{- $url = partial "home/ensure-trailing-slash.html" $url -}}
   {{- $url = printf "%s%s" $.Site.BaseURL (strings.TrimPrefix "/" $url) -}}
+{{- else -}}
+  {{- $url = partial "home/ensure-trailing-slash.html" $url -}}
 {{- end -}}
 | {{ .name }} | {{ $url }} |
 {{ end -}}
@@ -73,7 +82,10 @@
 {{- $url := .url -}}
 {{- if not (or (hasPrefix $url "http://") (hasPrefix $url "https://")) -}}
   {{- if not (hasPrefix $url "/") -}}{{- $url = printf "/%s" $url -}}{{- end -}}
+  {{- $url = partial "home/ensure-trailing-slash.html" $url -}}
   {{- $url = printf "%s%s" $.Site.BaseURL (strings.TrimPrefix "/" $url) -}}
+{{- else -}}
+  {{- $url = partial "home/ensure-trailing-slash.html" $url -}}
 {{- end -}}
 | {{ .name }} | {{ $url }} |
 {{ end -}}

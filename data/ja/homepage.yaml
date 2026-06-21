@@ -231,7 +231,7 @@ cta:
     buttonText: 今日サポートする
     buttonUrl: "/donate"
     secondaryText: 私たちのミッションについて
-    secondaryUrl: "/about-us"
+    secondaryUrl: "/about-us/"
 marquee:
   enabled: true
   label: 世界中のメーカーのために

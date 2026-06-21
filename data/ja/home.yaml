@@ -632,7 +632,7 @@ categories:
     - climate
   - name: AI
     icon: cfd-brain
-    url: "/ai"
+    url: "/ai/"
     description: AIツールを閲覧 — ミーム、要約、チャットなど。
     date: '2025-06-24'
     phosphorIcon: brain
@@ -717,7 +717,7 @@ categories:
   items:
   - name: Game
     icon: cfd-games
-    url: "/games"
+    url: "/games/"
     description: フルゲームハブ — パズル、クラシック、アーケードの定番。
     date: '2024-06-08'
     phosphorIcon: game-controller
@@ -730,7 +730,7 @@ categories:
     - puzzles
   - name: Overdose
     icon: cfd-overdose
-    url: "/Overdose"
+    url: "/Overdose/"
     description: テンポの速いアーケードゲーム — 反射神経を試す。
     date: '2026-03-01'
     phosphorIcon: pill
@@ -852,7 +852,7 @@ categories:
     - tom jerry
   - name: Snake
     icon: cfd-snake
-    url: "/Snake"
+    url: "/Snake/"
     description: クラシックSnakeゲーム — 食べて成長し、壁を避ける。
     date: '2024-06-08'
     phosphorIcon: snake
@@ -976,7 +976,7 @@ categories:
   items:
   - name: About us
     icon: cfd-about
-    url: "/about-us"
+    url: "/about-us/"
     description: CodeFryDevとツールを支えるチームについて学ぶ。
     date: '2024-03-01'
     phosphorIcon: users
@@ -989,7 +989,7 @@ categories:
     - who we are
   - name: Timeline
     icon: cfd-history
-    url: "/history"
+    url: "/history/"
     description: 私たちの歴史とプロジェクトのマイルストーンを探索。
     date: '2024-03-01'
     phosphorIcon: clock-counter-clockwise
@@ -1087,7 +1087,7 @@ categories:
     - google play
   - name: T&C Privacy
     icon: cfd-privacy
-    url: "/tncprivacy"
+    url: "/tncprivacy/"
     description: 利用規約、プライバシーポリシー、連絡先情報。
     date: '2024-03-01'
     phosphorIcon: shield-check

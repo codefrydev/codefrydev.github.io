@@ -439,7 +439,7 @@ categories:
         aliases: [mausam, forecast, temperature, climate]
       - name: AI
         icon: cfd-brain
-        url: /ai
+        url: /ai/
         description: Browse AI-powered tools—memes, summarizers, chat, and more.
         date: "2025-06-24"
         phosphorIcon: brain
@@ -500,7 +500,7 @@ categories:
     items:
       - name: Game
         icon: cfd-games
-        url: /games
+        url: /games/
         description: Full games hub—puzzles, classics, and arcade favorites.
         date: "2024-06-08"
         phosphorIcon: game-controller
@@ -509,7 +509,7 @@ categories:
         aliases: [games hub, play games, arcade, puzzles]
       - name: Overdose
         icon: cfd-overdose
-        url: /Overdose
+        url: /Overdose/
         description: Fast-paced arcade game—test your reflexes.
         date: "2026-03-01"
         phosphorIcon: pill
@@ -590,7 +590,7 @@ categories:
         aliases: [chase game, cartoon, cat mouse, tom jerry]
       - name: Snake
         icon: cfd-snake
-        url: /Snake
+        url: /Snake/
         description: Classic snake game—eat, grow, and avoid the walls.
         date: "2024-06-08"
         phosphorIcon: snake
@@ -678,7 +678,7 @@ categories:
     items:
       - name: About us
         icon: cfd-about
-        url: /about-us
+        url: /about-us/
         description: Learn about CodeFryDev and the team behind the tools.
         date: "2024-03-01"
         phosphorIcon: users
@@ -687,7 +687,7 @@ categories:
         aliases: [about, team, codefrydev, who we are]
       - name: Timeline
         icon: cfd-history
-        url: /history
+        url: /history/
         description: Explore our history and project milestones.
         date: "2024-03-01"
         phosphorIcon: clock-counter-clockwise
@@ -756,7 +756,7 @@ categories:
         aliases: [apps, download, mobile apps, google play]
       - name: T&C Privacy
         icon: cfd-privacy
-        url: /tncprivacy
+        url: /tncprivacy/
         description: Terms, privacy policy, and contact information.
         date: "2024-03-01"
         phosphorIcon: shield-check

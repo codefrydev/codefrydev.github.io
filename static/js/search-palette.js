@@ -58,6 +58,25 @@ import Fuse from 'fuse.js';
     return (url || '').replace(/\/$/, '').toLowerCase();
   }
 
+  function ensureTrailingSlash(url) {
+    if (!url) return url;
+    if (/\.[a-zA-Z0-9]+$/.test(url.split(/[?#]/)[0])) return url;
+    if (/^https?:\/\//.test(url)) {
+      try {
+        var parsed = new URL(url);
+        if (parsed.pathname !== '/' && !parsed.pathname.endsWith('/')) {
+          parsed.pathname = parsed.pathname + '/';
+          return parsed.toString();
+        }
+      } catch (e) {
+        return url;
+      }
+      return url;
+    }
+    if (url.charAt(0) === '/' && !url.endsWith('/')) return url + '/';
+    return url;
+  }
+
   function normalizeQuery(q) {
     var lang = (window.CFD_SEARCH && window.CFD_SEARCH.lang) || 'en';
     var raw = (q || '').toLowerCase();
@@ -164,7 +183,7 @@ import Fuse from 'fuse.js';
     var aliases = uniqueTerms(manualAliases.concat(derivedTerms));
     var item = {
       name: raw.name,
-      url: raw.url,
+      url: ensureTrailingSlash(raw.url),
       category: category,
       type: type,
       description: raw.description || '',
@@ -381,9 +400,15 @@ import Fuse from 'fuse.js';
   function absUrl(url, base) {
     if (!url) return '#';
     var root = (base || '/').replace(/"/g, '').replace(/\/+$/, '');
-    if (/^https?:\/\//.test(url)) return url;
-    if (url.charAt(0) === '/') return root + url;
-    return root + '/' + url;
+    var resolved = url;
+    if (/^https?:\/\//.test(url)) {
+      resolved = url;
+    } else if (url.charAt(0) === '/') {
+      resolved = root + url;
+    } else {
+      resolved = root + '/' + url;
+    }
+    return ensureTrailingSlash(resolved);
   }
 
   function highlight(text, q) {
