@@ -80,8 +80,8 @@ disableKinds = ["taxonomy", "term"]
     weight = 2
     contentDir = "content-ja"
     [languages.ja.params]
-      description = "学び、実験的なプロジェクト、ゲーム、アイデアづくりができるプラットフォーム。ブラウザで無料のツール、ゲーム、AIアプリをお楽しみください。"
-      footer_tagline = "学び、実験、ゲーム、アイデアづくり——無料のブラウザツールとゲームのプラットフォーム。"
+      description = "学び、実験プロジェクト、ゲーム、アイデア創出などを行うプラットフォーム…"
+      footer_tagline = "学び、実験プロジェクト、ゲーム、アイデア創出などを行うプラットフォーム…"
 
   [languages.fr]
     locale = "fr-FR"
@@ -89,8 +89,8 @@ disableKinds = ["taxonomy", "term"]
     weight = 3
     contentDir = "content-fr"
     [languages.fr.params]
-      description = "Une plateforme pour apprendre, expérimenter, jouer et innover — outils, jeux et apps IA gratuits dans votre navigateur."
-      footer_tagline = "Apprendre, expérimenter, jouer et innover — outils et jeux gratuits dans le navigateur."
+      description = "Une plateforme où nous apprenons, expérimentons, jouons, inventons des idées innovantes et bien plus encore…"
+      footer_tagline = "Une plateforme où nous apprenons, expérimentons, jouons, inventons des idées innovantes et bien plus encore…"
 
   [languages.hi]
     locale = "hi-IN"
@@ -98,8 +98,8 @@ disableKinds = ["taxonomy", "term"]
     weight = 4
     contentDir = "content-hi"
     [languages.hi.params]
-      description = "सीखने, प्रयोग करने, गेम खेलने और नए विचार बनाने का मंच — ब्राउज़र में मुफ़्त टूल, गेम और AI ऐप।"
-      footer_tagline = "सीखें, प्रयोग करें, खेलें और बनाएं — ब्राउज़र में मुफ़्त टूल और गेम।"
+      description = "यह एक मंच है जहाँ हम सीखते, प्रयोग करते, गेम खेलते, नए विचार बनाते और बहुत कुछ…"
+      footer_tagline = "यह एक मंच है जहाँ हम सीखते, प्रयोग करते, गेम खेलते, नए विचार बनाते और बहुत कुछ…"
 
 [module]
   [[module.mounts]]

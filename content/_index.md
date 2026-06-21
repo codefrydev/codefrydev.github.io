@@ -2,7 +2,7 @@
 translationKey: "home"
 title: "CodeFryDev"
 date: 2024-03-01T00:00:00Z
-description: "Free browser tools, games, and AI apps by CodeFryDev. No signup or install—JSON utilities, design lab, puzzles, and more. Open and use instantly."
+description: "This is a platform where we learn, work on experimental projects, play games, come up with innovative ideas, and build many more..."
 ---
 
 Homepage content is driven by `data/home.yaml` and `data/homepage.yaml`.

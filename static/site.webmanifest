@@ -1,7 +1,7 @@
 {
   "name": "CodeFryDev",
   "short_name": "CodeFryDev",
-  "description": "Free browser tools, games, and AI apps by CodeFryDev.",
+  "description": "This is a platform where we learn, work on experimental projects, play games, come up with innovative ideas, and build many more...",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#edf2f8",
