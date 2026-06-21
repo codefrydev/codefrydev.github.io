@@ -1,4 +1,9 @@
 history:
+- date: 21 June 2026
+  title: Site Audit
+  description: 開発者向けSEOクロールと監査を/SEO/で公開 — セルフホスト型サイトクロール、Lighthouseとアクセシビリティチェック、Search Console & GA4連携、IDEエージェント向けMCPツール；ホームページのツール & ユーティリティに追加。
+  link: "/SEO/"
+  accent_color: "#2563eb"
 - date: 18 June 2026
   title: CFD blog
   description: CFDブログをcodefrydev.in/blog/で公開 — アップデート、オープンソース、エンジニアリングノート；ホームページのクリエイティブ & アセットとサイト & 外部リンクに追加。

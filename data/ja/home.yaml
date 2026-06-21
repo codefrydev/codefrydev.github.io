@@ -361,6 +361,20 @@ categories:
     - website profiling
     - analyze site
     - audit
+  - name: Site Audit
+    icon: cfd-website-profiling
+    url: "/SEO/"
+    description: セルフホスト型のテクニカルSEOクロールと監査 — Lighthouse、アクセシビリティチェック、開発者向けレポート。
+    date: '2026-06-21'
+    phosphorIcon: magnifying-glass
+    featured: true
+    external: false
+    aliases:
+    - site audit
+    - seo crawl
+    - technical seo
+    - lighthouse audit
+    - seo audit tool
   - name: Resolution Tester
     icon: cfd-resolutiontester
     url: "/WebsiteResolutionTester/"

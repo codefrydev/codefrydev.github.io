@@ -1,4 +1,11 @@
 history:
+- date: 21 June 2026
+  title: Site Audit
+  description: >-
+    Crawl et audit SEO orienté développeurs sur /SEO/ — crawl auto-hébergé, Lighthouse et accessibilité, intégrations Search
+    Console & GA4, outils MCP pour agents IDE ; ajouté à Outils & utilitaires sur l'accueil.
+  link: "/SEO/"
+  accent_color: "#2563eb"
 - date: 18 June 2026
   title: CFD blog
   description: >-

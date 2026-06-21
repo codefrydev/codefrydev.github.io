@@ -1,4 +1,9 @@
 history:
+- date: 21 June 2026
+  title: Site Audit
+  description: /SEO/ पर डेवलपर-अनुकूल SEO क्रॉल और ऑडिट — सेल्फ-होस्टेड साइट क्रॉल, Lighthouse और एक्सेसिबिलिटी जाँच, Search Console & GA4 इंटीग्रेशन, IDE एजेंट के लिए MCP टूल; होम पेज पर Tools & Utilities में जोड़ा गया।
+  link: "/SEO/"
+  accent_color: "#2563eb"
 - date: 18 June 2026
   title: CFD blog
   description: CFD ब्लॉग codefrydev.in/blog/ पर लॉन्च — अपडेट, ओपन-सोर्स प्रोजेक्ट और इंजीनियरिंग नोट्स; होम पेज पर Creative & Assets और Site & External Links में जोड़ा गया।

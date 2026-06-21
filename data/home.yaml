@@ -251,6 +251,15 @@ categories:
         featured: true
         external: false
         aliases: [seo, website profiling, analyze site, audit]
+      - name: Site Audit
+        icon: cfd-website-profiling
+        url: /SEO/
+        description: Self-hosted technical SEO crawl and audit—Lighthouse, accessibility checks, and actionable reports for developers.
+        date: "2026-06-21"
+        phosphorIcon: magnifying-glass
+        featured: true
+        external: false
+        aliases: [site audit, seo crawl, technical seo, lighthouse audit, seo audit tool]
       - name: Resolution Tester
         icon: cfd-resolutiontester
         url: /WebsiteResolutionTester/
