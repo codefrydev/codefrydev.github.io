@@ -1,4 +1,9 @@
 history:
+- date: "18 July 2026"
+  title: "Qr Code"
+  description: "सूचनाओं तक त्वरित एक्सेस के लिए QR कोड उत्पन्न करें और स्कैन करें।"
+  link: "/QrCode/"
+  accent_color: "#3b82f6"
 - date: 21 June 2026
   title: Site Audit
   description: /SEO/ पर डेवलपर-अनुकूल SEO क्रॉल और ऑडिट — सेल्फ-होस्टेड साइट क्रॉल, Lighthouse और एक्सेसिबिलिटी जाँच, Search Console & GA4 इंटीग्रेशन, IDE एजेंट के लिए MCP टूल; होम पेज पर Tools & Utilities में जोड़ा गया।

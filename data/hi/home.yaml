@@ -198,6 +198,18 @@ categories:
     - database
     - sql
     - db
+  - name: QrCode
+    icon: cfd-qrcode
+    url: "/QrCode/"
+    description: ब्राउज़र में QR कोड उत्पन्न करें और स्कैन करें।
+    date: '2026-07-18'
+    phosphorIcon: qr-code
+    featured: false
+    external: false
+    aliases:
+    - qr code
+    - scan
+    - generate
   - name: Art
     icon: cfd-art
     url: "/designlab/"

@@ -1,4 +1,9 @@
 history:
+- date: "18 July 2026"
+  title: "Qr Code"
+  description: "Générez et scannez des codes QR pour un accès rapide aux informations."
+  link: "/QrCode/"
+  accent_color: "#3b82f6"
 - date: 21 June 2026
   title: Site Audit
   description: >-

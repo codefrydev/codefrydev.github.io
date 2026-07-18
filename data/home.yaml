@@ -136,6 +136,15 @@ categories:
         featured: false
         external: false
         aliases: [sqlite, database, sql, db]
+      - name: QRCode
+        icon: cfd-qrcode
+        url: /QrCode/
+        description: Generate and scan QR codes for quick access to information.
+        date: "2026-07-18"
+        phosphorIcon: qr-code
+        featured: false
+        external: false
+        aliases: [qr code, scan, generate]
       - name: Art
         icon: cfd-art
         url: /designlab/

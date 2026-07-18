@@ -1,4 +1,9 @@
 history:
+  - date: "18 July 2026"
+    title: "Qr Code"
+    description: "Generate and scan QR codes for quick access to information."
+    link: "/QrCode/"
+    accent_color: "#3b82f6"
   - date: "21 June 2026"
     title: "Site Audit"
     description: "Developer-friendly SEO crawl and audit at /SEO/—self-hosted site crawl, Lighthouse and accessibility checks, Search Console & GA4 integrations, and MCP tools for IDE agents; added to Tools & Utilities on the home page."
