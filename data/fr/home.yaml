@@ -185,6 +185,20 @@ categories:
     - flowchart
     - diagram
     - workflow
+  - name: Draw
+    icon: cfd-draw
+    url: /Draw/
+    description: Canevas de dessin et carnet de croquis numérique gratuit en ligne—dessinez, croquez et concevez dans votre navigateur.
+    date: "2026-07-22"
+    phosphorIcon: paint-brush
+    featured: true
+    external: true
+    aliases:
+    - draw
+    - paint
+    - sketch
+    - canvas
+    - drawing tool
   - name: SqLite
     icon: cfd-sql
     url: "/SqLite/"

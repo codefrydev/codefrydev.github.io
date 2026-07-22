@@ -185,6 +185,20 @@ categories:
     - flowchart
     - diagram
     - workflow
+  - name: Draw
+    icon: cfd-draw
+    url: /Draw/
+    description: मुफ्त ऑनलाइन ड्रॉइंग कैनवास और डिजिटल स्केचपैड—अपने ब्राउज़र में ड्रॉ करें, स्केच करें और डिज़ाइन बनाएं।
+    date: "2026-07-22"
+    phosphorIcon: paint-brush
+    featured: true
+    external: true
+    aliases:
+    - draw
+    - paint
+    - sketch
+    - canvas
+    - drawing tool
   - name: SqLite
     icon: cfd-sql
     url: "/SqLite/"

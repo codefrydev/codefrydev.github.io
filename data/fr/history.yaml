@@ -90,6 +90,11 @@ history:
     listé dans Créatif & Assets.
   link: "/svgengine/"
   accent_color: "#8b5cf6"
+- date: "22 July 2026"
+  title: "Draw"
+  description: "Canevas de dessin et carnet de croquis numérique gratuit en ligne—dessinez, croquez, concevez et exportez vos dessins dans votre navigateur sur codefrydev.in/Draw/ ; ajouté à Créatif & Assets sur la page d'accueil."
+  link: "/Draw/"
+  accent_color: "#f43f5e"
 - date: 28 April 2026
   title: Know Your Size
   description: >-

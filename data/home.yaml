@@ -127,6 +127,15 @@ categories:
         featured: false
         external: false
         aliases: [node editor, flowchart, diagram, workflow]
+      - name: Draw
+        icon: cfd-draw
+        url: /Draw/
+        description: Free online drawing canvas and digital sketchpad—draw, sketch, and design in your browser.
+        date: "2026-07-22"
+        phosphorIcon: paint-brush
+        featured: true
+        external: true
+        aliases: [draw, paint, sketch, canvas, drawing tool]
       - name: SqLite
         icon: cfd-sql
         url: /SqLite/

@@ -72,6 +72,11 @@ history:
   description: शुरू से बनाया कस्टम SVG Engine — अपरंपरागत एडिटर फ़्लो; /svgengine/ पर उपलब्ध, क्रिएटिव & एसेट में सूचीबद्ध।
   link: "/svgengine/"
   accent_color: "#8b5cf6"
+- date: "22 July 2026"
+  title: "Draw"
+  description: "मुफ़्त ऑनलाइन ड्रॉइंग कैनवास और डिजिटल स्केचपैड—अपने ब्राउज़र में codefrydev.in/Draw/ पर चित्र बनाएं, स्केच बनाएं, डिज़ाइन करें और उन्हें निर्यात करें; होम पेज पर क्रिएटिव & एसेट में जोड़ा गया।"
+  link: "/Draw/"
+  accent_color: "#f43f5e"
 - date: 28 April 2026
   title: Know Your Size
   description: "/KnowYourSize/ में टेक्स्ट आकार, वर्ण संख्या, फ़ाइलें आदि की तुलना — सरल साइड-बाय-साइड दृश्य; होम टूल ग्रिड
