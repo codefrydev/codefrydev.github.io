@@ -102,3 +102,13 @@
   filter: invert(1) brightness(1.1);
   transition: filter 0.3s ease;
 }
+
+/* Home page scrollbar hide */
+body.home-page {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+body.home-page::-webkit-scrollbar {
+  display: none;
+}
+
