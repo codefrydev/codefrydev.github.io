@@ -134,7 +134,7 @@ categories:
         date: "2026-07-22"
         phosphorIcon: paint-brush
         featured: true
-        external: true
+        external: false
         aliases: [draw, paint, sketch, canvas, drawing tool]
       - name: SqLite
         icon: cfd-sql
