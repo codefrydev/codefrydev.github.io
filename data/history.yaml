@@ -1,5 +1,10 @@
 history:
   - date: "08 August 2026"
+    title: "SchemaBuilder"
+    description: "Visually build and manage your database schemas online. Added to Tools & Utilities."
+    link: "/SchemaBuilder/"
+    accent_color: "#10b981"
+  - date: "08 August 2026"
     title: "DontQuit"
     description: "A simple motivational site that reminds you to never give up. Added to Tools & Utilities."
     link: "/DontQuit/"

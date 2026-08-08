@@ -251,15 +251,6 @@ categories:
     previewCount: 12
     phosphorIcon: wrench
     items:
-      - name: DontQuit
-        icon: cfd-dontquit
-        url: /DontQuit/
-        description: A simple motivational site that reminds you to never give up.
-        date: "2026-08-08"
-        phosphorIcon: fire
-        featured: true
-        external: false
-        aliases: [motivation, dont quit, inspire, never give up]
       - name: BetterUnderstandClients
         icon: cfd-betterunderstandclients
         url: /BetterUnderstandClients/
@@ -269,6 +260,15 @@ categories:
         featured: true
         external: false
         aliases: [ai chat, desktop overlay, speech to text, notes]
+      - name: SchemaBuilder
+        icon: cfd-schemabuilder
+        url: /SchemaBuilder/
+        description: Visually build and manage your database schemas online.
+        date: "2026-08-08"
+        phosphorIcon: database
+        featured: true
+        external: false
+        aliases: [schema, database, builder, online, diagram]
       - name: SqLiteTable
         icon: cfd-sqlitetable
         url: /SqLiteTable/
@@ -410,6 +410,15 @@ categories:
         featured: false
         external: false
         aliases: [corporate id, business lookup, company search, cin number]
+      - name: DontQuit
+        icon: cfd-dontquit
+        url: /DontQuit/
+        description: A simple motivational site that reminds you to never give up.
+        date: "2026-08-08"
+        phosphorIcon: fire
+        featured: false
+        external: false
+        aliases: [motivation, dont quit, inspire, never give up]
       - name: Tier List Maker
         icon: cfd-tierlistmaker
         url: /TierListMaker/

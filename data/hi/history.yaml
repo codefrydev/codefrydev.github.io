@@ -1,5 +1,10 @@
 history:
   - date: '2026-08-08'
+    title: SchemaBuilder
+    description: 'अपने ब्राउज़र में विज़ुअल रूप से डेटाबेस स्कीमा बनाएं और प्रबंधित करें। Tools & Utilities में जोड़ा गया।'
+    link: "/SchemaBuilder/"
+    accent_color: "#10b981"
+  - date: '2026-08-08'
     title: DontQuit
     description: "एक सरल प्रेरक साइट जो आपको कभी हार न मानने की याद दिलाती है।"
     link: "/DontQuit/"

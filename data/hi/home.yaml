@@ -379,6 +379,15 @@ categories:
     featured: true
     external: false
     aliases: [ai chat, desktop overlay, speech to text, notes]
+  - name: SchemaBuilder
+    icon: cfd-schemabuilder
+    url: /SchemaBuilder/
+    description: अपने ब्राउज़र में विज़ुअल रूप से डेटाबेस स्कीमा बनाएं और प्रबंधित करें।
+    date: '2026-08-08'
+    phosphorIcon: database
+    featured: true
+    external: false
+    aliases: [schema, database, builder, online, diagram]
   - name: SqLiteTable
     icon: cfd-sqlitetable
     url: /SqLiteTable/

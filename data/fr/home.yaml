@@ -379,6 +379,15 @@ categories:
     featured: true
     external: false
     aliases: [ai chat, desktop overlay, speech to text, notes]
+  - name: SchemaBuilder
+    icon: cfd-schemabuilder
+    url: /SchemaBuilder/
+    description: Construisez et gérez visuellement des schémas de base de données dans votre navigateur.
+    date: '2026-08-08'
+    phosphorIcon: database
+    featured: true
+    external: false
+    aliases: [schema, database, builder, online, diagram]
   - name: SqLiteTable
     icon: cfd-sqlitetable
     url: /SqLiteTable/

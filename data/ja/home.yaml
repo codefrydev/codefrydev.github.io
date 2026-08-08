@@ -379,6 +379,15 @@ categories:
     featured: true
     external: false
     aliases: [ai chat, desktop overlay, speech to text, notes]
+  - name: SchemaBuilder
+    icon: cfd-schemabuilder
+    url: /SchemaBuilder/
+    description: ブラウザ上で視覚的にデータベーススキーマを構築・管理します。
+    date: '2026-08-08'
+    phosphorIcon: database
+    featured: true
+    external: false
+    aliases: [schema, database, builder, online, diagram]
   - name: SqLiteTable
     icon: cfd-sqlitetable
     url: /SqLiteTable/
