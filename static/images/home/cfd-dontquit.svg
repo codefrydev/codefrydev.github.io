@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+<defs>
+<linearGradient id="dontquit_bg" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0%" stop-color="#ef4444"/>
+<stop offset="100%" stop-color="#eab308"/>
+</linearGradient>
+</defs>
+<path d="M15 95 L55 35 L80 70 L95 50 L115 95 Z" fill="none" stroke="url(#dontquit_bg)" stroke-width="8" stroke-linejoin="round"/>
+<!-- Flag -->
+<line x1="55" y1="35" x2="55" y2="15" stroke="url(#dontquit_bg)" stroke-width="4" stroke-linecap="round"/>
+<path d="M55 15 L75 22 L55 29 Z" fill="url(#dontquit_bg)"/>
+</svg>

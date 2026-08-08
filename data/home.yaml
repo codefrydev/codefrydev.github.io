@@ -251,6 +251,33 @@ categories:
     previewCount: 12
     phosphorIcon: wrench
     items:
+      - name: DontQuit
+        icon: cfd-dontquit
+        url: /DontQuit/
+        description: A simple motivational site that reminds you to never give up.
+        date: "2026-08-08"
+        phosphorIcon: fire
+        featured: true
+        external: false
+        aliases: [motivation, dont quit, inspire, never give up]
+      - name: BetterUnderstandClients
+        icon: cfd-betterunderstandclients
+        url: /BetterUnderstandClients/
+        description: A small always-on-top desktop overlay for AI chat, live speech-to-text, and notes.
+        date: "2026-08-08"
+        phosphorIcon: picture-in-picture
+        featured: true
+        external: false
+        aliases: [ai chat, desktop overlay, speech to text, notes]
+      - name: SqLiteTable
+        icon: cfd-sqlitetable
+        url: /SqLiteTable/
+        description: Upload SQLite files to view schema, add rows, and execute queries.
+        date: "2026-08-08"
+        phosphorIcon: table
+        featured: true
+        external: false
+        aliases: [sqlite, database, table, query, db]
       - name: CFD's Penney
         icon: cfd-cfdpenney
         url: /CFDPenney/

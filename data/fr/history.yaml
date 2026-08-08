@@ -1,4 +1,19 @@
 history:
+  - date: '2026-08-08'
+    title: DontQuit
+    description: "Un site de motivation simple qui vous rappelle de ne jamais abandonner. Ajouté aux Outils & Utilitaires."
+    link: "/DontQuit/"
+    accent_color: "#ef4444"
+  - date: '2026-08-08'
+    title: BetterUnderstandClients
+    description: 'Une petite superposition de bureau toujours au premier plan qui offre un chat IA, une synthèse vocale en direct et une liste de notes sans changer de fenêtre.'
+    link: "/BetterUnderstandClients/"
+    accent_color: "#f59e0b"
+  - date: '2026-08-08'
+    title: SqLiteTable
+    description: 'Uploadez des fichiers SQLite pour voir le schéma, ajouter des lignes et exécuter des requêtes. Ajouté aux Outils & Utilitaires.'
+    link: "/SqLiteTable/"
+    accent_color: "#3b82f6"
 - date: "22 July 2026"
   title: "Draw"
   description: "Canevas de dessin et carnet de croquis numérique gratuit en ligne—dessinez, croquez, concevez et exportez vos dessins dans votre navigateur sur codefrydev.in/Draw/ ; ajouté à Créatif & Assets sur la page d'accueil."

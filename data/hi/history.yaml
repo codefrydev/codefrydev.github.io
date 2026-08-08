@@ -1,4 +1,19 @@
 history:
+  - date: '2026-08-08'
+    title: DontQuit
+    description: "एक सरल प्रेरक साइट जो आपको कभी हार न मानने की याद दिलाती है।"
+    link: "/DontQuit/"
+    accent_color: "#ef4444"
+  - date: '2026-08-08'
+    title: BetterUnderstandClients
+    description: 'एक छोटा ऑलवेज़-ऑन-टॉप डेस्कटॉप ओवरले जो बिना विंडो बदले एआई चैट, लाइव स्पीच-टू-टेक्स्ट और नोट्स सूची प्रदान करता है।'
+    link: "/BetterUnderstandClients/"
+    accent_color: "#f59e0b"
+  - date: '2026-08-08'
+    title: SqLiteTable
+    description: 'SQLite फ़ाइलें अपलोड करें और सीधे ब्राउज़र में स्कीमा देखें, पंक्तियां जोड़ें और क्वेरी चलाएं।'
+    link: "/SqLiteTable/"
+    accent_color: "#3b82f6"
 - date: "22 July 2026"
   title: "Draw"
   description: "मुफ़्त ऑनलाइन ड्रॉइंग कैनवास और डिजिटल स्केचपैड—अपने ब्राउज़र में codefrydev.in/Draw/ पर चित्र बनाएं, स्केच बनाएं, डिज़ाइन करें और उन्हें निर्यात करें; होम पेज पर क्रिएटिव & एसेट में जोड़ा गया।"

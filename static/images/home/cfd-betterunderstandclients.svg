@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+<defs>
+<linearGradient id="bg_overlay" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0%" stop-color="#f59e0b"/>
+<stop offset="100%" stop-color="#d97706"/>
+</linearGradient>
+</defs>
+
+<rect x="25" y="25" width="70" height="70" rx="6" fill="url(#bg_overlay)" opacity="0.15"/>
+<rect x="25" y="25" width="70" height="70" rx="6" fill="none" stroke="url(#bg_overlay)" stroke-width="5"/>
+<line x1="25" y1="40" x2="95" y2="40" stroke="url(#bg_overlay)" stroke-width="3"/>
+
+<path d="M45 55 h30 M45 65 h20 M45 75 h25" stroke="url(#bg_overlay)" stroke-width="4" stroke-linecap="round"/>
+<circle cx="80" cy="70" r="8" fill="url(#bg_overlay)"/>
+<circle cx="90" cy="80" r="4" fill="url(#bg_overlay)"/>
+</svg>

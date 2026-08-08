@@ -1,4 +1,19 @@
 history:
+  - date: '2026-08-08'
+    title: DontQuit
+    description: "決して諦めないことを思い出させてくれるシンプルなモチベーションサイト。"
+    link: "/DontQuit/"
+    accent_color: "#ef4444"
+  - date: '2026-08-08'
+    title: BetterUnderstandClients
+    description: 'ウィンドウを切り替えることなく、AIチャット、ライブの音声テキスト変換、メモリストを提供する小さな常に手前に表示されるデスクトップオーバーレイ。'
+    link: "/BetterUnderstandClients/"
+    accent_color: "#f59e0b"
+  - date: '2026-08-08'
+    title: SqLiteTable
+    description: 'SQLiteファイルをアップロードしてスキーマを表示し、行を追加し、クエリを実行します。'
+    link: "/SqLiteTable/"
+    accent_color: "#3b82f6"
 - date: "22 July 2026"
   title: "Draw"
   description: "無料のオンライン描画キャンバスとデジタルスケッチパッド。ブラウザ（codefrydev.in/Draw/）で描画、スケッチ、デザイン、書き出しができます。ホームページの「クリエイティブ & アセット」に追加されました。"
