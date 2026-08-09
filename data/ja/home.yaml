@@ -370,6 +370,15 @@ categories:
     featured: true
     external: false
     aliases: [motivation, dont quit, inspire, never give up]
+  - name: Nirmaan
+    icon: cfd-nirmaan
+    url: /Nirmaan/
+    description: 労働者、資材、財務を追跡するための包括的な建設・現場管理アプリケーション。
+    date: '2026-08-09'
+    phosphorIcon: building
+    featured: true
+    external: false
+    aliases: [construction, management, builder, site, contractors]
   - name: BetterUnderstandClients
     icon: cfd-betterunderstandclients
     url: /BetterUnderstandClients/
