@@ -37,7 +37,7 @@
         {{- end -}}
 
         <li><a href="{{ "/games/" | relLangURL }}" class="{{ if eq $navActive "games" }}{{ $linkActive }}{{ else }}{{ $linkIdle }}{{ end }}">{{ i18n "nav_games" }}</a></li>
-        <li><a href="{{ "/ai/" | relLangURL }}" class="{{ if eq $navActive "ai" }}{{ $linkActive }}{{ else }}{{ $linkIdle }}{{ end }}">{{ i18n "nav_ai" }}</a></li>
+        <li><a href="{{ "/store/" | relLangURL }}" class="{{ if eq $navActive "store" }}{{ $linkActive }}{{ else }}{{ $linkIdle }}{{ end }}">{{ i18n "nav_store" }}</a></li>
         <li><a href="{{ "/designlab/" | relLangURL }}" class="{{ if eq $navActive "designlab" }}{{ $linkActive }}{{ else }}{{ $linkIdle }}{{ end }}">{{ i18n "nav_design" }}</a></li>
 
         <li>
@@ -168,7 +168,7 @@
     <p class="text-[11px] font-bold tracking-widest text-slate-400 uppercase mb-2 px-4 m-0">{{ i18n "nav_more" }}</p>
     <ul class="flex flex-col gap-0.5 list-none m-0 p-0">
       <li><a href="{{ "/games/" | relLangURL }}" class="block px-4 py-3 rounded-xl font-medium text-slate-800 hover:bg-slate-50 no-underline">{{ i18n "nav_games" }}</a></li>
-      <li><a href="{{ "/ai/" | relLangURL }}" class="block px-4 py-3 rounded-xl font-medium text-slate-800 hover:bg-slate-50 no-underline">{{ i18n "nav_ai" }}</a></li>
+      <li><a href="{{ "/store/" | relLangURL }}" class="block px-4 py-3 rounded-xl font-medium text-slate-800 hover:bg-slate-50 no-underline">{{ i18n "nav_store" }}</a></li>
       <li><a href="{{ "/designlab/" | relLangURL }}" class="block px-4 py-3 rounded-xl font-medium text-slate-800 hover:bg-slate-50 no-underline">{{ i18n "nav_design" }}</a></li>
       <li><a href="{{ "/about-us/" | relLangURL }}" class="block px-4 py-3 rounded-xl font-medium text-slate-800 hover:bg-slate-50 no-underline">{{ i18n "nav_about" }}</a></li>
       <li><a href="{{ "/faq/" | relLangURL }}" class="block px-4 py-3 rounded-xl font-medium text-slate-800 hover:bg-slate-50 no-underline">{{ i18n "nav_faq" }}</a></li>

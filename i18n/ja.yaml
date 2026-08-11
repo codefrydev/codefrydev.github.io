@@ -4,8 +4,8 @@
   translation: "閲覧"
 - id: nav_games
   translation: "ゲーム"
-- id: nav_ai
-  translation: "AI"
+- id: nav_store
+  translation: "ストア"
 - id: nav_design
   translation: "デザイン"
 - id: nav_about

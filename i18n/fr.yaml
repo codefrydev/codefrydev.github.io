@@ -4,8 +4,8 @@
   translation: "Parcourir"
 - id: nav_games
   translation: "Jeux"
-- id: nav_ai
-  translation: "IA"
+- id: nav_store
+  translation: "Boutique"
 - id: nav_design
   translation: "Design"
 - id: nav_about

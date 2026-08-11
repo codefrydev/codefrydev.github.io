@@ -4,8 +4,8 @@
   translation: "ब्राउज़"
 - id: nav_games
   translation: "गेम"
-- id: nav_ai
-  translation: "AI"
+- id: nav_store
+  translation: "स्टोर"
 - id: nav_design
   translation: "डिज़ाइन"
 - id: nav_about
