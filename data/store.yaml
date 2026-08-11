@@ -37,7 +37,7 @@ data:
     aliases: [space shooter, arcade, android game, galactic]
   - name: Nirmaan
     icon: cfd-nirmaan
-    url: https://apps.microsoft.com/detail/9nzr99j6hxz7?hl=en-US&gl=IN
+    url: https://apps.microsoft.com/detail/9nzr99j6hxz7
     description: Construction and site management app—available on Microsoft Store.
     date: "2026-08-11"
     phosphorIcon: toolbox
