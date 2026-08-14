@@ -370,9 +370,9 @@ categories:
     featured: true
     external: false
     aliases: [motivation, dont quit, inspire, never give up]
-  - name: Nirmaan
+  - name: NirmaanAdvert
     icon: cfd-nirmaan
-    url: /Nirmaan/
+    url: /NirmaanAdvert/
     description: Une application complète de gestion de construction et de chantier pour suivre les travailleurs, les matériaux et les finances.
     date: '2026-08-09'
     phosphorIcon: building

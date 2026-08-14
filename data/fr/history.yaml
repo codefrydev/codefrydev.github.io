@@ -1,8 +1,8 @@
 history:
   - date: '2026-08-09'
-    title: Nirmaan
+    title: NirmaanAdvert
     description: "Une application complète de gestion de construction et de chantier pour suivre les travailleurs, les matériaux et les finances."
-    link: "/Nirmaan/"
+    link: "/NirmaanAdvert/"
     accent_color: "#0284c7"
   - date: '2026-08-08'
     title: SchemaBuilder

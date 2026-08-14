@@ -251,9 +251,9 @@ categories:
     previewCount: 12
     phosphorIcon: wrench
     items:
-      - name: Nirmaan
+      - name: NirmaanAdvert
         icon: cfd-nirmaan
-        url: /Nirmaan/
+        url: /NirmaanAdvert/
         description: A comprehensive construction and site management application to track workers, materials, and finances.
         date: "2026-08-09"
         phosphorIcon: building

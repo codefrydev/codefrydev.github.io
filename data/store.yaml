@@ -35,7 +35,7 @@ data:
     featured: true
     external: true
     aliases: [space shooter, arcade, android game, galactic]
-  - name: Nirmaan
+  - name: NirmaanAdvert
     icon: cfd-nirmaan
     url: https://apps.microsoft.com/detail/9nzr99j6hxz7
     description: Construction and site management app—available on Microsoft Store.

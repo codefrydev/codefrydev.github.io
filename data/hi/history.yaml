@@ -1,8 +1,8 @@
 history:
   - date: '2026-08-09'
-    title: Nirmaan
+    title: NirmaanAdvert
     description: "मजदूरों, सामग्रियों और वित्त को ट्रैक करने के लिए एक व्यापक निर्माण और साइट प्रबंधन एप्लिकेशन।"
-    link: "/Nirmaan/"
+    link: "/NirmaanAdvert/"
     accent_color: "#0284c7"
   - date: '2026-08-08'
     title: SchemaBuilder
