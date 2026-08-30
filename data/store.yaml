@@ -44,3 +44,13 @@ data:
     featured: true
     external: true
     aliases: [construction, management, microsoft store, windows app]
+  - name: FryPDF
+    icon: cfd-frypdf
+    url: /frypdf/
+    description: Desktop PDF creator and editor studio for macOS & Windows (early development stage).
+    date: "2026-08-31"
+    phosphorIcon: files
+    featured: true
+    external: false
+    aliases: [pdf editor, pdf studio, desktop app, macos, windows, avalonia]
+

@@ -1,0 +1,29 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Drop Shadow Filter -->
+    <filter id="docShadow" x="0" y="0" width="1024" height="1024" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#000000" flood-opacity="0.22"/>
+    </filter>
+  </defs>
+
+  <!-- 1. Document Sheet with Folded Corner -->
+  <g filter="url(#docShadow)">
+    <path d="M 268 180 L 664 180 L 804 320 L 804 796 A 48 48 0 0 1 756 844 L 268 844 A 48 48 0 0 1 220 796 L 220 228 A 48 48 0 0 1 268 180 Z" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="4"/>
+    <!-- Folded Corner Triangle -->
+    <path d="M 664 180 L 664 320 L 804 320 Z" fill="#E2E8F0" stroke="#CBD5E1" stroke-width="4"/>
+  </g>
+
+  <!-- 2. Tech Circle Badge -->
+  <circle cx="512" cy="440" r="130" fill="#0F172A" stroke="#38BDF8" stroke-width="6"/>
+
+  <!-- 3. CodeFryDev Flame & Pan -->
+  <path d="M 442 450 A 70 70 0 0 0 582 450 Z" fill="#38BDF8"/>
+  <polygon points="482,450 497,375 512,450" fill="#F59E0B"/>
+  <polygon points="502,450 512,355 527,450" fill="#EF4444"/>
+  <polygon points="512,450 532,385 547,450" fill="#F59E0B"/>
+
+  <!-- 4. FryPDF Typographic Badge -->
+  <rect x="290" y="640" width="444" height="120" rx="28" fill="#E11D48" stroke="#F43F5E" stroke-width="3"/>
+  <text x="512" y="726" fill="#FFFFFF" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="74" font-weight="bold" text-anchor="middle">FryPDF</text>
+</svg>
+

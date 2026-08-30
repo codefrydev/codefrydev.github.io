@@ -251,6 +251,15 @@ categories:
     previewCount: 12
     phosphorIcon: wrench
     items:
+      - name: FryPDF
+        icon: cfd-frypdf
+        url: /frypdf/
+        description: Privacy-first desktop PDF creator and editor studio built with Avalonia UI & QuestPDF (early stage of development).
+        date: "2026-08-31"
+        phosphorIcon: files
+        featured: true
+        external: false
+        aliases: [pdf editor, pdf creator, pdf reader, desktop pdf, avalonia, questpdf, pdf studio, acroforms, bates numbering]
       - name: NirmaanAdvert
         icon: cfd-nirmaan
         url: /NirmaanAdvert/

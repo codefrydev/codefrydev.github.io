@@ -361,6 +361,21 @@ categories:
   previewCount: 12
   phosphorIcon: wrench
   items:
+  - name: FryPDF
+    icon: cfd-frypdf
+    url: /frypdf/
+    description: Avalonia UIとQuestPDFで構築された、プライバシー重視のデスクトップPDF作成・編集スタジオ（開発初期段階）。
+    date: '2026-08-31'
+    phosphorIcon: files
+    featured: true
+    external: false
+    aliases:
+    - pdf editor
+    - pdf creator
+    - pdf reader
+    - desktop pdf
+    - avalonia
+    - questpdf
   - name: DontQuit
     icon: cfd-dontquit
     url: /DontQuit/

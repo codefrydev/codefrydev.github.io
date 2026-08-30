@@ -1,4 +1,9 @@
 history:
+  - date: '2026-08-31'
+    title: FryPDF
+    description: "Un studio de création et d'édition de PDF de bureau professionnel et axé sur la confidentialité, conçu avec Avalonia UI et QuestPDF (actuellement à un stade précoce de développement)."
+    link: "/frypdf/"
+    accent_color: "#e11d48"
   - date: '2026-08-09'
     title: NirmaanAdvert
     description: "Une application complète de gestion de construction et de chantier pour suivre les travailleurs, les matériaux et les finances."

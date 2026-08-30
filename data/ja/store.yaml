@@ -51,3 +51,32 @@ data:
   - arcade
   - android game
   - galactic
+- name: NirmaanAdvert
+  icon: cfd-nirmaan
+  url: https://apps.microsoft.com/detail/9nzr99j6hxz7
+  description: 建設・現場管理アプリ — Microsoft Storeで利用可能。
+  date: '2026-08-11'
+  phosphorIcon: toolbox
+  featured: true
+  external: true
+  aliases:
+  - construction
+  - management
+  - microsoft store
+  - windows app
+- name: FryPDF
+  icon: cfd-frypdf
+  url: /frypdf/
+  description: macOSおよびWindows用デスクトップPDF作成・編集スタジオ（開発初期段階）。
+  date: '2026-08-31'
+  phosphorIcon: files
+  featured: true
+  external: false
+  aliases:
+  - pdf editor
+  - pdf studio
+  - desktop app
+  - macos
+  - windows
+  - avalonia
+

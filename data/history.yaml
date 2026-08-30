@@ -1,4 +1,9 @@
 history:
+  - date: "31 August 2026"
+    title: "FryPDF"
+    description: "A privacy-first, professional desktop PDF creator and editor studio built with Avalonia UI & QuestPDF (currently in very early stage of development). Features a dedicated PDF reader, universal file editing, AcroForms, Signature Studio, 13 dynamic charts, 20+ vector shapes, Bates numbering, security & redaction, preflight audits, and document comparison."
+    link: "/frypdf/"
+    accent_color: "#e11d48"
   - date: "09 August 2026"
     title: "NirmaanAdvert"
     description: "A comprehensive construction and site management application to track workers, materials, and finances."

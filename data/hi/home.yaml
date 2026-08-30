@@ -361,6 +361,21 @@ categories:
   previewCount: 12
   phosphorIcon: wrench
   items:
+  - name: FryPDF
+    icon: cfd-frypdf
+    url: /frypdf/
+    description: Avalonia UI और QuestPDF के साथ निर्मित प्राइवेसी-फर्स्ट डेस्कटॉप PDF क्रिएटर और एडिटर स्टूडियो (प्रारंभिक विकास चरण में)।
+    date: '2026-08-31'
+    phosphorIcon: files
+    featured: true
+    external: false
+    aliases:
+    - pdf editor
+    - pdf creator
+    - pdf reader
+    - desktop pdf
+    - avalonia
+    - questpdf
   - name: DontQuit
     icon: cfd-dontquit
     url: /DontQuit/
