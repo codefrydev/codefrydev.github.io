@@ -66,17 +66,18 @@ data:
   - windows app
 - name: FryPDF
   icon: cfd-frypdf
-  url: /frypdf/
-  description: macOS और Windows के लिए डेस्कटॉप PDF क्रिएटर और एडिटर स्टूडियो (प्रारंभिक विकास चरण)।
+  url: https://apps.microsoft.com/store/detail/9P5GW2Q81B33?cid=DevShareMCLPCS
+  description: डेस्कटॉप PDF क्रिएटर और एडिटर स्टूडियो — Microsoft Store पर उपलब्ध (प्रारंभिक विकास चरण)।
   date: '2026-08-31'
   phosphorIcon: files
   featured: true
-  external: false
+  external: true
   aliases:
   - pdf editor
   - pdf studio
+  - microsoft store
+  - windows app
   - desktop app
-  - macos
-  - windows
   - avalonia
+
 
