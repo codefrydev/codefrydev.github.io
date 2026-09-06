@@ -2,7 +2,7 @@ history:
   - date: '2026-08-31'
     title: FryPDF
     description: "Avalonia UIとQuestPDFで構築された、プライバシー重視のプロフェッショナルなデスクトップPDF作成・編集スタジオ（現在、開発の初期段階）。"
-    link: "/frypdf/"
+    link: "/frypdfs/"
     accent_color: "#e11d48"
   - date: '2026-08-09'
     title: NirmaanAdvert

@@ -363,7 +363,7 @@ categories:
   items:
   - name: FryPDF
     icon: cfd-frypdf
-    url: /frypdf/
+    url: /frypdfs/
     description: Avalonia UIとQuestPDFで構築された、プライバシー重視のデスクトップPDF作成・編集スタジオ（開発初期段階）。
     date: '2026-08-31'
     phosphorIcon: files

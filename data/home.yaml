@@ -253,7 +253,7 @@ categories:
     items:
       - name: FryPDF
         icon: cfd-frypdf
-        url: /frypdf/
+        url: /frypdfs/
         description: Privacy-first desktop PDF creator and editor studio built with Avalonia UI & QuestPDF (early stage of development).
         date: "2026-08-31"
         phosphorIcon: files

@@ -363,7 +363,7 @@ categories:
   items:
   - name: FryPDF
     icon: cfd-frypdf
-    url: /frypdf/
+    url: /frypdfs/
     description: Studio de création et d'édition de PDF de bureau axé sur la confidentialité, conçu avec Avalonia UI et QuestPDF (stade précoce de développement).
     date: '2026-08-31'
     phosphorIcon: files
