@@ -12,7 +12,9 @@
       <ul class="history-timeline" role="list">
         {{- $data := partial "get-data.html" . -}}
         {{- range $data.history.history -}}
-        <li style="--accent-color: {{ .accent_color | default "#6366f1" }}" role="listitem">
+        {{- $info := partial "home/history-month-info.html" .date -}}
+        {{- $inlineStyle := printf "--accent-color: %s; --accent-mid: %s; --accent-glow: %s;" $info.color $info.mid $info.glow -}}
+        <li style="{{ $inlineStyle | safeCSS }}" role="listitem">
           <a href="{{ partial "home/ensure-trailing-slash.html" .link }}" class="history-item-link group" aria-label="History item: {{ .title }}">
             <div class="date">{{ .date }}</div>
             <div class="title">{{ .title }}</div>

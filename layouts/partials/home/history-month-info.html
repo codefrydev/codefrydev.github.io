@@ -1,0 +1,59 @@
+{{- /* Returns a dict with color tokens (color, mid, glow) from a date string */ -}}
+{{- $date := lower (string .) -}}
+{{- $m := 0 -}}
+{{- if or (findRE `january` $date) (findRE `-01-` $date) (findRE `\bjan\b` $date) -}}
+  {{- $m = 1 -}}
+{{- else if or (findRE `february` $date) (findRE `-02-` $date) (findRE `\bfeb\b` $date) -}}
+  {{- $m = 2 -}}
+{{- else if or (findRE `march` $date) (findRE `-03-` $date) (findRE `\bmar\b` $date) -}}
+  {{- $m = 3 -}}
+{{- else if or (findRE `april` $date) (findRE `-04-` $date) (findRE `\bapr\b` $date) -}}
+  {{- $m = 4 -}}
+{{- else if or (findRE `may` $date) (findRE `-05-` $date) -}}
+  {{- $m = 5 -}}
+{{- else if or (findRE `june` $date) (findRE `-06-` $date) (findRE `\bjun\b` $date) -}}
+  {{- $m = 6 -}}
+{{- else if or (findRE `july` $date) (findRE `-07-` $date) (findRE `\bjul\b` $date) -}}
+  {{- $m = 7 -}}
+{{- else if or (findRE `august` $date) (findRE `-08-` $date) (findRE `\baug\b` $date) -}}
+  {{- $m = 8 -}}
+{{- else if or (findRE `sept` $date) (findRE `-09-` $date) (findRE `\bsep\b` $date) -}}
+  {{- $m = 9 -}}
+{{- else if or (findRE `october` $date) (findRE `-10-` $date) (findRE `\boct\b` $date) -}}
+  {{- $m = 10 -}}
+{{- else if or (findRE `november` $date) (findRE `-11-` $date) (findRE `\bnov\b` $date) -}}
+  {{- $m = 11 -}}
+{{- else if or (findRE `december` $date) (findRE `-12-` $date) (findRE `\bdec\b` $date) -}}
+  {{- $m = 12 -}}
+{{- end -}}
+
+{{- /* Extract Day (1-31) from date string */ -}}
+{{- $day := 15 -}}
+{{- with findRE `^\d{1,2}` $date -}}
+  {{- $raw := strings.TrimLeft "0" (index . 0) -}}
+  {{- with $raw -}}{{- $day = int . -}}{{- end -}}
+{{- else -}}
+  {{- with findRE `-\d{2}$` $date -}}
+    {{- $raw := strings.TrimLeft "0" (strings.TrimPrefix "-" (index . 0)) -}}
+    {{- with $raw -}}{{- $day = int . -}}{{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- if or (lt $day 1) (gt $day 31) -}}{{- $day = 15 -}}{{- end -}}
+
+{{- /* Default month values */ -}}
+{{- $color := "#6366f1" -}}
+{{- $mid := "#818cf8" -}}
+{{- $glow := "rgba(99, 102, 241, 0.28)" -}}
+
+{{- /* Look up day-interpolated colors from data/history_day_colors.json */ -}}
+{{- with hugo.Data.history_day_colors -}}
+  {{- with index . (string $m) -}}
+    {{- with index . (string $day) -}}
+      {{- $color = .accent -}}
+      {{- $mid = .mid -}}
+      {{- $glow = .glow -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- return dict "num" $m "day" $day "color" $color "mid" $mid "glow" $glow -}}
