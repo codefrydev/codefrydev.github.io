@@ -1,4 +1,8 @@
 history:
+  - date: '2026-09-21'
+    title: FrySharp
+    description: "FrySharp लॉन्च किया गया — एक इंटरएक्टिव C# कोड स्टूडियो और नोटबुक प्लेग्राउंड, Jupyter और LINQPad के समान, C#, Python, C++, Rust, Go, JavaScript, Java, SQL सपोर्ट के साथ। Microsoft Store और वेब पर उपलब्ध।"
+    link: "https://apps.microsoft.com/detail/9mx55lk7c843?hl=en-US&gl=IN"
   - date: '2026-08-31'
     title: FryPDF
     description: "Avalonia UI और QuestPDF के साथ निर्मित एक प्राइवेसी-फर्स्ट, प्रोफेशनल डेस्कटॉप PDF क्रिएटर और एडिटर स्टूडियो (वर्तमान में प्रारंभिक विकास चरण में)।"

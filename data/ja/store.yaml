@@ -1,4 +1,31 @@
 data:
+- name: FrySharp
+  icon: cfd-frysharp
+  url: https://apps.microsoft.com/detail/9mx55lk7c843?hl=en-US&gl=IN
+  description: 最新のC#開発ワークスペースと対話型ノートブック、JupyterやLINQPadと同様の機能、多言語対応（C#、Python、C++、Rust、Go、JS、Java、SQL）— Microsoft Storeで利用可能。
+  date: '2026-09-21'
+  phosphorIcon: code
+  featured: true
+  external: true
+  aliases:
+  - frysharp
+  - csharp
+  - c#
+  - notebook
+  - jupyter
+  - linqpad
+  - code studio
+  - roslyn
+  - script automation
+  - python
+  - rust
+  - go
+  - javascript
+  - java
+  - sql
+  - microsoft store
+  - windows app
+  - desktop app
 - name: Water Reminder
   icon: cfd-waterreminder
   url: https://play.google.com/store/apps/details?id=com.codefrydev.waterreminder

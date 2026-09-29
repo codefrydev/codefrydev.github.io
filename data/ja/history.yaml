@@ -1,4 +1,8 @@
 history:
+  - date: '2026-09-21'
+    title: FrySharp
+    description: "FrySharpをリリース — 対話型C#コードスタジオ＆ノートブック、JupyterやLINQPadと同様の機能、多言語対応（C#、Python、C++、Rust、Go、JavaScript、Java、SQL）。Microsoft StoreおよびWebで利用可能。"
+    link: "https://apps.microsoft.com/detail/9mx55lk7c843?hl=en-US&gl=IN"
   - date: '2026-08-31'
     title: FryPDF
     description: "Avalonia UIとQuestPDFで構築された、プライバシー重視のプロフェッショナルなデスクトップPDF作成・編集スタジオ（現在、開発の初期段階）。"

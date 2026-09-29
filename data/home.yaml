@@ -251,6 +251,15 @@ categories:
     previewCount: 12
     phosphorIcon: wrench
     items:
+      - name: FrySharp
+        icon: cfd-frysharp
+        url: https://prashant.codefrydev.in/CSharpPlayground/
+        description: Interactive C# code studio and notebook playground, similar to Jupyter and LINQPad, with multi-language support (C#, Python, C++, Rust, Go, JavaScript, Java, SQL).
+        date: "2026-09-21"
+        phosphorIcon: code
+        featured: true
+        external: true
+        aliases: [frysharp, csharp, c#, notebook, jupyter, linqpad, csharp playground, code studio, roslyn, script automation, python, rust, go, javascript, java, sql]
       - name: FryPDF
         icon: cfd-frypdf
         url: /frypdfs/

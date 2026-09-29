@@ -1,4 +1,8 @@
 history:
+  - date: '2026-09-21'
+    title: FrySharp
+    description: "Lancement de FrySharp — un studio de code C# interactif et carnets de notes, similaire à Jupyter et LINQPad, avec support multilingue (C#, Python, C++, Rust, Go, JavaScript, Java, SQL). Disponible sur le Microsoft Store et le Web."
+    link: "https://apps.microsoft.com/detail/9mx55lk7c843?hl=en-US&gl=IN"
   - date: '2026-08-31'
     title: FryPDF
     description: "Un studio de création et d'édition de PDF de bureau professionnel et axé sur la confidentialité, conçu avec Avalonia UI et QuestPDF (actuellement à un stade précoce de développement)."

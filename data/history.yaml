@@ -1,4 +1,8 @@
 history:
+  - date: "21 September 2026"
+    title: "FrySharp"
+    description: "Launched FrySharp—an interactive C# code studio and notebook playground, similar to Jupyter and LINQPad, with multi-language support (C#, Python, C++, Rust, Go, JavaScript, Java, SQL). Available on Microsoft Store and web."
+    link: "https://apps.microsoft.com/detail/9mx55lk7c843?hl=en-US&gl=IN"
   - date: "31 August 2026"
     title: "FryPDF"
     description: "A privacy-first, professional desktop PDF creator and editor studio built with Avalonia UI & QuestPDF (currently in very early stage of development). Features a dedicated PDF reader, universal file editing, AcroForms, Signature Studio, 13 dynamic charts, 20+ vector shapes, Bates numbering, security & redaction, preflight audits, and document comparison."
