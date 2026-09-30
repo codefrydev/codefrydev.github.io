@@ -1,4 +1,8 @@
 history:
+  - date: '2026-09-30'
+    title: Little PDF
+    description: "Lancement de Little PDF — une suite d'outils PDF légère et 100% axée sur la confidentialité qui s'exécute entièrement dans votre navigateur sans téléversement sur serveur. Comprend la fusion, division, organisation de pages, extraction, signature électronique, numérotation, filigrane, suppression de métadonnées et conversion."
+    link: "/LittlePdf/"
   - date: '2026-09-21'
     title: FrySharp
     description: "Lancement de FrySharp — un studio de code C# interactif et carnets de notes, similaire à Jupyter et LINQPad, avec support multilingue (C#, Python, C++, Rust, Go, JavaScript, Java, SQL). Disponible sur le Microsoft Store et le Web."

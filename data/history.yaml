@@ -1,4 +1,8 @@
 history:
+  - date: "30 September 2026"
+    title: "Little PDF"
+    description: "Launched Little PDF—a lightweight, privacy-first PDF utility suite running entirely in your browser with zero server uploads. Features merge, split, page organizer, extractor, digital signature, page numbering, watermark, metadata sanitizer, and image/text converters."
+    link: "/LittlePdf/"
   - date: "21 September 2026"
     title: "FrySharp"
     description: "Launched FrySharp—an interactive C# code studio and notebook playground, similar to Jupyter and LINQPad, with multi-language support (C#, Python, C++, Rust, Go, JavaScript, Java, SQL). Available on Microsoft Store and web."

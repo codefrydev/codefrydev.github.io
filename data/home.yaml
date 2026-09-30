@@ -251,6 +251,15 @@ categories:
     previewCount: 12
     phosphorIcon: wrench
     items:
+      - name: Little PDF
+        icon: cfd-littlepdf
+        url: /LittlePdf/
+        description: Lightweight, 100% private in-browser PDF suite—merge, split, organize, sign, watermark, and convert documents with zero server uploads.
+        date: "2026-09-30"
+        phosphorIcon: files
+        featured: true
+        external: false
+        aliases: [little pdf, pdf tools, merge pdf, split pdf, sign pdf, organize pdf, extract pdf, watermark pdf, convert pdf, pdf to images, images to pdf, pdf to text, private pdf, client-side pdf]
       - name: FrySharp
         icon: cfd-frysharp
         url: https://prashant.codefrydev.in/CSharpPlayground/

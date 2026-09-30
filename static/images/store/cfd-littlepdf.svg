@@ -1,0 +1,47 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="docShadow" x="140" y="110" width="744" height="804" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="14" stdDeviation="20" flood-color="#0F172A" flood-opacity="0.08"/>
+    </filter>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1024" y2="1024" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FAFAFA"/>
+      <stop offset="100%" stop-color="#F1F5F9"/>
+    </linearGradient>
+    <linearGradient id="badgeGrad" x1="250" y1="630" x2="774" y2="760" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#334155"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Base Canvas Rounded Background -->
+  <rect width="1024" height="1024" rx="224" fill="url(#bgGrad)" stroke="#E2E8F0" stroke-width="6"/>
+
+  <!-- Back Layered Document Sheet (multi-page / lightweight stack) -->
+  <path d="M 330 150 L 710 150 L 810 250 L 810 770 A 36 36 0 0 1 774 806 L 330 806 A 36 36 0 0 1 294 770 L 294 186 A 36 36 0 0 1 330 150 Z" fill="#E2E8F0" opacity="0.8"/>
+
+  <!-- Main Document Sheet with Shadow -->
+  <g filter="url(#docShadow)">
+    <path d="M 250 190 L 640 190 L 774 324 L 774 810 A 40 40 0 0 1 734 850 L 250 850 A 40 40 0 0 1 210 810 L 210 230 A 40 40 0 0 1 250 190 Z" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="4"/>
+    <!-- Folded Corner -->
+    <path d="M 640 190 L 640 324 L 774 324 Z" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="4"/>
+  </g>
+
+  <!-- Document Line Hints -->
+  <rect x="290" y="380" width="220" height="18" rx="9" fill="#94A3B8"/>
+  <rect x="290" y="424" width="380" height="16" rx="8" fill="#E2E8F0"/>
+  <rect x="290" y="464" width="320" height="16" rx="8" fill="#E2E8F0"/>
+
+  <!-- Privacy Shield Badge (Light Grey / Slate) -->
+  <g transform="translate(620, 480)">
+    <circle cx="48" cy="48" r="44" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="3"/>
+    <path d="M 48 26 L 68 34 V 48 C 68 60 59 70 48 74 C 37 70 28 60 28 48 V 34 Z" fill="#475569"/>
+    <path d="M 43 48 L 47 52 L 55 42" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Little PDF Badge (Sleek Charcoal Slate) -->
+  <rect x="250" y="630" width="524" height="130" rx="32" fill="url(#badgeGrad)"/>
+  <!-- "Little" subtitle -->
+  <text x="512" y="678" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="34" font-weight="600" letter-spacing="4" text-anchor="middle">LITTLE</text>
+  <!-- "PDF" main text -->
+  <text x="512" y="738" fill="#FFFFFF" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="64" font-weight="900" letter-spacing="2" text-anchor="middle">PDF</text>
+</svg>
