@@ -361,6 +361,22 @@ categories:
   previewCount: 12
   phosphorIcon: wrench
   items:
+  - name: Little SVG
+    icon: cfd-littlesvg
+    url: /littlesvg/
+    description: इन-ब्राउज़र SVG से इमेज स्टूडियो और बैच कन्वर्टर — 100% प्राइवेसी के साथ वेक्टर SVG को हाई-रिज़ॉल्यूशन PNG, JPEG और WebP में बदलें।
+    date: '2026-10-04'
+    phosphorIcon: file-svg
+    featured: true
+    external: false
+    aliases:
+    - little svg
+    - svg converter
+    - svg to png
+    - svg to jpeg
+    - svg to webp
+    - batch svg converter
+    - vector converter
   - name: Little PDF
     icon: cfd-littlepdf
     url: /LittlePdf/

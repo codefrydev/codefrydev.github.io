@@ -1,4 +1,8 @@
 history:
+  - date: '2026-10-04'
+    title: Little SVG
+    description: "Lancement de Little SVG — studio de création et convertisseur par lots SVG vers image. Convertissez, stylisez et exportez des SVG vectoriels en images haute résolution PNG, JPEG et WebP directement dans votre navigateur avec une confidentialité 100% côté client."
+    link: "/littlesvg/"
   - date: '2026-09-30'
     title: Little PDF
     description: "Lancement de Little PDF — une suite d'outils PDF légère et 100% axée sur la confidentialité qui s'exécute entièrement dans votre navigateur sans téléversement sur serveur. Comprend la fusion, division, organisation de pages, extraction, signature électronique, numérotation, filigrane, suppression de métadonnées et conversion."

@@ -1,4 +1,8 @@
 history:
+  - date: '2026-10-04'
+    title: Little SVG
+    description: "Little SVGをリリース — SVGから画像への変換スタジオ＆一括コンバーター。完全にブラウザ内で動作し、100%クライアント側のプライバシーを保ちながら、ベクターSVGを高解像度PNG、JPEG、WebP画像に変換・スタイリング・レンダリング。"
+    link: "/littlesvg/"
   - date: '2026-09-30'
     title: Little PDF
     description: "Little PDFをリリース — サーバーへのファイル送信が一切ない、完全にブラウザ上で動作する軽量かつ100%プライバシー重視のPDFツール。マージ、分割、ページ整理、抽出、電子署名、ページ番号付与、透かし、メタデータ消去、画像・テキスト変換に対応。"

@@ -1,4 +1,8 @@
 history:
+  - date: "04 October 2026"
+    title: "Little SVG"
+    description: "Launched Little SVG—an SVG to image studio and batch converter. Convert, style, and render vector SVGs into high-resolution PNG, JPEG, and WebP images directly in your browser with 100% client-side privacy."
+    link: "/littlesvg/"
   - date: "30 September 2026"
     title: "Little PDF"
     description: "Launched Little PDF—a lightweight, privacy-first PDF utility suite running entirely in your browser with zero server uploads. Features merge, split, page organizer, extractor, digital signature, page numbering, watermark, metadata sanitizer, and image/text converters."

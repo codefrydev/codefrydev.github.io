@@ -361,6 +361,22 @@ categories:
   previewCount: 12
   phosphorIcon: wrench
   items:
+  - name: Little SVG
+    icon: cfd-littlesvg
+    url: /littlesvg/
+    description: ブラウザ内SVG画像変換スタジオ＆一括コンバーター — 100%ローカル実行でベクターSVGを高画質PNG、JPEG、WebP画像に変換・レンダリング。
+    date: '2026-10-04'
+    phosphorIcon: file-svg
+    featured: true
+    external: false
+    aliases:
+    - little svg
+    - svg converter
+    - svg to png
+    - svg to jpeg
+    - svg to webp
+    - batch svg converter
+    - vector converter
   - name: Little PDF
     icon: cfd-littlepdf
     url: /LittlePdf/

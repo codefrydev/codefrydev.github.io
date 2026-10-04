@@ -361,6 +361,22 @@ categories:
   previewCount: 12
   phosphorIcon: wrench
   items:
+  - name: Little SVG
+    icon: cfd-littlesvg
+    url: /littlesvg/
+    description: Studio et convertisseur par lots SVG vers image dans le navigateur — convertissez, stylisez et exportez des SVG vectoriels en PNG, JPEG et WebP avec une confidentialité totale.
+    date: '2026-10-04'
+    phosphorIcon: file-svg
+    featured: true
+    external: false
+    aliases:
+    - little svg
+    - svg converter
+    - svg to png
+    - svg to jpeg
+    - svg to webp
+    - batch svg converter
+    - vector converter
   - name: Little PDF
     icon: cfd-littlepdf
     url: /LittlePdf/

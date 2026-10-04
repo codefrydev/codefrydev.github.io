@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <defs>
+    <linearGradient id="lsvg_bg" x1="0" y1="0" x2="120" y2="120" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#e2e8f0"/>
+    </linearGradient>
+    <linearGradient id="lsvg_badge" x1="22" y1="72" x2="98" y2="94" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#334155"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background rounded squircle with inner safety margin -->
+  <rect width="120" height="120" rx="26" fill="url(#lsvg_bg)" stroke="#cbd5e1" stroke-width="2"/>
+
+  <!-- Left: Vector SVG Card -->
+  <rect x="20" y="24" width="32" height="38" rx="5" fill="#ffffff" stroke="#94a3b8" stroke-width="1.6"/>
+  <!-- Vector Bézier curve & nodes -->
+  <path d="M26 47 C29 33, 39 33, 46 47" stroke="#475569" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+  <circle cx="26" cy="47" r="2" fill="#ffffff" stroke="#334155" stroke-width="1.4"/>
+  <circle cx="46" cy="47" r="2" fill="#ffffff" stroke="#334155" stroke-width="1.4"/>
+  <rect x="34.5" y="35" width="3" height="3" fill="#334155"/>
+  <line x1="25" y1="54" x2="37" y2="54" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round"/>
+
+  <!-- Center: Convert Arrow -->
+  <path d="M55 43 H62" stroke="#64748b" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M60 40.5 L63.5 43 L60 45.5" stroke="#64748b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Right: Image Output Card -->
+  <rect x="68" y="24" width="32" height="38" rx="5" fill="#ffffff" stroke="#94a3b8" stroke-width="1.6"/>
+  <!-- Sun dot in image -->
+  <circle cx="91" cy="32" r="2.2" fill="#94a3b8"/>
+  <!-- Mountains in photo -->
+  <path d="M72 53 L79 43 L86 50 L91 46 L96 53 Z" fill="#e2e8f0" stroke="#64748b" stroke-width="1.2" stroke-linejoin="round"/>
+
+  <!-- Little SVG Badge (Comfortably inset) -->
+  <rect x="22" y="72" width="76" height="22" rx="6" fill="url(#lsvg_badge)"/>
+  <text x="60" y="86.5" fill="#f8fafc" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="9" font-weight="700" letter-spacing="0.6" text-anchor="middle">Little SVG</text>
+</svg>
