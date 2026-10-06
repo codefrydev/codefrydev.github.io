@@ -1,4 +1,13 @@
 data:
+  - name: Color
+    icon: cfd-color
+    url: /color/
+    description: Live design system & palette generator—scales, harmonic rules, and semantic tokens.
+    date: "2026-10-06"
+    phosphorIcon: palette
+    featured: true
+    external: false
+    aliases: [color, palette generator, design system, colors, harmony]
   - name: Design
     icon: cfd-design
     url: /design/
