@@ -52,15 +52,15 @@
 
   <div data-hero-content class="relative z-10 transition-opacity duration-500 ease-in-out opacity-100" aria-live="polite">
     {{- if .ladybugH1 -}}
-    <h1 id="ladybug-h1-bite-target" class="max-w-4xl mx-auto text-5xl md:text-6xl font-bold tracking-tight text-[#0B162C] mb-6 m-0">
+    <h1 id="ladybug-h1-bite-target" class="max-w-4xl mx-auto text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[#0B162C] mb-3 sm:mb-6 m-0">
       <span data-hero-title class="hero-slide-title block">{{ $firstSlide.title }}</span>
     </h1>
     {{- else -}}
-    <h1 class="max-w-4xl mx-auto text-4xl md:text-5xl font-bold tracking-tight text-[#0B162C] mb-6 m-0">
+    <h1 class="max-w-4xl mx-auto text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[#0B162C] mb-3 sm:mb-6 m-0">
       <span data-hero-title class="hero-slide-title block">{{ $firstSlide.title }}</span>
     </h1>
     {{- end -}}
-    <p data-hero-desc class="max-w-2xl mx-auto text-lg text-slate-600 mb-10 leading-relaxed font-medium m-0">
+    <p data-hero-desc class="max-w-2xl mx-auto text-sm sm:text-base md:text-lg text-slate-600 mb-6 sm:mb-10 leading-relaxed font-medium m-0">
       {{ $firstSlide.description }}
     </p>
   </div>

@@ -20,8 +20,9 @@
     })();
   </script>
 
-  <main id="main-content" class="home-sections" tabindex="-1">
+  <main id="main-content" class="home-sections pb-20 lg:pb-0" tabindex="-1">
     {{ partial "home/hero.html" . }}
+    {{ partial "home/category-nav-rail.html" . }}
     {{ partial "home/favorites-section.html" . }}
     {{ partial "home/popular-tools-section.html" . }}
     {{- $data := partial "get-data.html" . -}}
@@ -36,6 +37,7 @@
   </main>
 
   {{ partial "home/footer.html" . }}
+  {{ partial "home/mobile-dock.html" . }}
   {{ partial "ladybug.html" . }}
   {{ partial "cookie-consent.html" . }}
   {{ partial "home/search-palette.html" . }}

@@ -899,6 +899,46 @@
   }
 }
 
+/* ── Mobile Dock & Category Rail (Glass Theme) ── */
+[data-theme="glass"] body .cfd-mobile-dock__inner {
+  background-color: rgba(255, 255, 255, 0.85) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(var(--glass-saturate));
+  backdrop-filter: blur(16px) saturate(var(--glass-saturate));
+  border-color: var(--glass-border) !important;
+  box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.8) !important;
+}
+
+[data-theme="glass"] body .cfd-mobile-dock__btn {
+  color: #475569 !important;
+}
+
+[data-theme="glass"] body .cfd-mobile-dock__btn:hover,
+[data-theme="glass"] body .cfd-mobile-dock__btn:active {
+  color: #0f172a !important;
+}
+
+[data-theme="glass"] body .cfd-mobile-dock__btn.is-active {
+  color: #0284c7 !important;
+}
+
+[data-theme="glass"] body #cfd-cat-rail-wrap {
+  background-color: var(--glass-bar-bg) !important;
+  -webkit-backdrop-filter: blur(var(--glass-blur-bar)) saturate(var(--glass-saturate));
+  backdrop-filter: blur(var(--glass-blur-bar)) saturate(var(--glass-saturate));
+  border-color: var(--glass-border) !important;
+}
+
+[data-theme="glass"] body .cfd-cat-rail-pill {
+  background-color: rgba(255, 255, 255, 0.6) !important;
+  border-color: var(--glass-border) !important;
+  color: #334155 !important;
+}
+
+[data-theme="glass"] body .cfd-cat-rail-pill.is-active {
+  background-color: #0284c7 !important;
+  color: #ffffff !important;
+}
+
 /* ── Reduced transparency (user pref) ── */
 @media (prefers-reduced-transparency: reduce) {
   [data-theme="glass"] body > header.nav-shell,

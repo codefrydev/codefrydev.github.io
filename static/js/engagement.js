@@ -96,6 +96,18 @@
         btn.title = 'Save to my tools';
       }
     }
+
+    var dockBadge = document.getElementById('cfd-dock-fav-badge');
+    if (dockBadge) {
+      dockBadge.textContent = favs.length;
+      if (favs.length > 0) {
+        dockBadge.classList.remove('hidden');
+        dockBadge.hidden = false;
+      } else {
+        dockBadge.classList.add('hidden');
+        dockBadge.hidden = true;
+      }
+    }
   }
 
   /* -------------------------------------------------------------------------
@@ -357,6 +369,17 @@
         return;
       }
 
+      // Mobile Dock Favorite Link Click
+      var dockFavLink = e.target.closest('#cfd-dock-fav-link');
+      if (dockFavLink) {
+        var currentFavs = getFavorites();
+        if (currentFavs.length === 0) {
+          e.preventDefault();
+          showToast('No saved tools yet. Tap the bookmark star on any tool!', '⭐');
+          return;
+        }
+      }
+
       // Track clicks on tool cards into Recents
       var toolLink = e.target.closest('.tool-card a');
       if (toolLink) {
@@ -498,6 +521,63 @@
   }
 
   /* -------------------------------------------------------------------------
+   * Category Quick Jump Rail (Homepage)
+   * ------------------------------------------------------------------------- */
+  function initCategoryRail() {
+    var rail = document.getElementById('cfd-cat-rail-wrap');
+    if (!rail) return;
+    var pills = rail.querySelectorAll('[data-cfd-rail-target]');
+    if (pills.length === 0) return;
+
+    pills.forEach(function (pill) {
+      pill.addEventListener('click', function (e) {
+        var targetId = pill.getAttribute('data-cfd-rail-target');
+        var targetEl = document.getElementById(targetId);
+        if (targetEl) {
+          e.preventDefault();
+          var headerOffset = 135;
+          var elementPosition = targetEl.getBoundingClientRect().top;
+          var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+          pills.forEach(function (p) { p.classList.remove('is-active'); });
+          pill.classList.add('is-active');
+        }
+      });
+    });
+
+    if ('IntersectionObserver' in window) {
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            var id = entry.target.id;
+            pills.forEach(function (p) {
+              if (p.getAttribute('data-cfd-rail-target') === id) {
+                p.classList.add('is-active');
+                if (p.scrollIntoView) {
+                  p.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                }
+              } else {
+                p.classList.remove('is-active');
+              }
+            });
+          }
+        });
+      }, {
+        rootMargin: '-20% 0px -60% 0px'
+      });
+
+      pills.forEach(function (p) {
+        var id = p.getAttribute('data-cfd-rail-target');
+        var el = document.getElementById(id);
+        if (el) observer.observe(el);
+      });
+    }
+  }
+
+  /* -------------------------------------------------------------------------
    * Initialization
    * ------------------------------------------------------------------------- */
   function init() {
@@ -507,6 +587,7 @@
     renderRecentsTray();
     initFilterPills();
     initBrowseView();
+    initCategoryRail();
   }
 
   if (document.readyState === 'loading') {

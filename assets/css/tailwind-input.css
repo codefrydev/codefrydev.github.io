@@ -821,7 +821,7 @@
   }
 
   .tool-card {
-    @apply h-[140px] xl:h-[148px];
+    @apply min-h-[124px] sm:h-[140px] xl:h-[148px];
   }
 
   .tool-card__body {
@@ -829,7 +829,7 @@
   }
 
   .tool-card__desc {
-    @apply m-0 mt-2 min-h-[2.0625rem] text-xs leading-snug text-slate-500 line-clamp-2 xl:min-h-[2.25rem] xl:text-[13px];
+    @apply m-0 mt-1 min-h-[2.0625rem] text-xs leading-snug text-slate-500 line-clamp-2 xl:min-h-[2.25rem] xl:text-[13px];
   }
 
   .tool-card__meta {
@@ -870,6 +870,21 @@
     opacity: 1;
     transform: translateY(0) scale(1);
     pointer-events: auto;
+  }
+
+  @media (max-width: 639px) {
+    .cfd-toast {
+      right: auto;
+      left: 50%;
+      bottom: calc(76px + env(safe-area-inset-bottom, 0px));
+      transform: translateX(-50%) translateY(16px) scale(0.96);
+      width: max-content;
+      max-width: calc(100vw - 32px);
+    }
+
+    .cfd-toast.cfd-toast--visible {
+      transform: translateX(-50%) translateY(0) scale(1);
+    }
   }
 
   .cfd-card--highlight {
@@ -928,6 +943,114 @@
     transform: translateY(-1px);
   }
 
+  /* Category Jump Rail */
+  .cfd-cat-rail-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 12px;
+    border-radius: 9999px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #475569;
+    background: #f1f5f9;
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    text-decoration: none;
+    transition: all 0.15s ease-in-out;
+    white-space: nowrap;
+    touch-action: manipulation;
+  }
+
+  .cfd-cat-rail-pill:hover {
+    color: #0f172a;
+    background: #e2e8f0;
+  }
+
+  .cfd-cat-rail-pill.is-active {
+    background: #0284c7;
+    color: #ffffff;
+    border-color: #0284c7;
+    box-shadow: 0 1px 3px rgba(2, 132, 199, 0.3);
+  }
+
+  .cfd-cat-rail-pill--all {
+    background: #ffffff;
+    color: #0284c7;
+    border-color: rgba(2, 132, 199, 0.3);
+  }
+
+  /* Mobile Bottom Dock */
+  .cfd-mobile-dock {
+    bottom: calc(0.75rem + env(safe-area-inset-bottom, 0px));
+    transform: translateZ(0);
+    will-change: transform;
+  }
+
+  .cfd-mobile-dock__inner {
+    border-radius: 20px;
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.1);
+  }
+
+  .cfd-mobile-dock__btn {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    padding: 6px 10px;
+    border-radius: 14px;
+    min-width: 52px;
+    color: #94a3b8;
+    font-size: 10px;
+    font-weight: 500;
+    text-decoration: none;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    touch-action: manipulation;
+    transition: all 0.15s ease;
+  }
+
+  .cfd-mobile-dock__btn:hover,
+  .cfd-mobile-dock__btn:active {
+    color: #ffffff;
+  }
+
+  .cfd-mobile-dock__btn.is-active {
+    color: #38bdf8;
+  }
+
+  .cfd-mobile-dock__btn:active {
+    transform: scale(0.92);
+  }
+
+  .cfd-mobile-dock__badge {
+    position: absolute;
+    top: 2px;
+    right: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 16px;
+    height: 16px;
+    padding: 0 4px;
+    border-radius: 9999px;
+    font-size: 9px;
+    font-weight: 700;
+    background: #f43f5e;
+    color: #ffffff;
+    box-shadow: 0 0 6px rgba(244, 63, 94, 0.6);
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
   [data-theme="dark"] .cfd-filter-pill {
     background: #1e293b;
     border-color: #334155;
@@ -950,6 +1073,25 @@
   [data-theme="dark"] .cfd-recent-chip:hover {
     background: #334155;
     color: #fff;
+  }
+  [data-theme="dark"] .cfd-cat-rail-pill {
+    background: #1e293b;
+    border-color: #334155;
+    color: #94a3b8;
+  }
+  [data-theme="dark"] .cfd-cat-rail-pill:hover {
+    color: #ffffff;
+    background: #334155;
+  }
+  [data-theme="dark"] .cfd-cat-rail-pill.is-active {
+    background: #38bdf8;
+    color: #0f172a;
+    border-color: #38bdf8;
+  }
+  [data-theme="dark"] .cfd-cat-rail-pill--all {
+    background: #0f172a;
+    color: #38bdf8;
+    border-color: #0369a1;
   }
 
   /* About us (/about-us/) */

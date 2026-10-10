@@ -1,0 +1,22 @@
+{{- $data := partial "get-data.html" . -}}
+{{- $iconEmoji := dict "palette" "🎨" "wrench" "🔧" "game-controller" "🎮" "link" "🔗" "package" "📦" "squares-four" "⊞" -}}
+<div id="cfd-cat-rail-wrap" class="sticky top-[73px] z-30 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-gray-200/80 dark:border-slate-800 shadow-sm transition-all py-2 px-3 sm:px-4">
+  <nav class="max-w-7xl mx-auto flex items-center gap-1.5 sm:gap-2 overflow-x-auto no-scrollbar scroll-smooth -mx-3 px-3 sm:mx-0 sm:px-0" aria-label="Quick category jumps">
+    <a href="#popular-tools" class="cfd-cat-rail-pill is-active" data-cfd-rail-target="popular-tools">
+      <span aria-hidden="true">🔥</span>
+      <span>Popular</span>
+    </a>
+    {{- range $data.home.categories -}}
+    {{- $slug := .slug | default (.name | anchorize) -}}
+    {{- $catEmoji := index $iconEmoji (.phosphorIcon | default "squares-four") | default "•" -}}
+    <a href="#{{ $slug }}" class="cfd-cat-rail-pill" data-cfd-rail-target="{{ $slug }}">
+      <span aria-hidden="true">{{ $catEmoji }}</span>
+      <span>{{ .name }}</span>
+    </a>
+    {{- end -}}
+    <a href="{{ "/browse/" | relLangURL }}" class="cfd-cat-rail-pill cfd-cat-rail-pill--all" title="Explore complete directory">
+      <span aria-hidden="true">⚡</span>
+      <span>All (100+)</span>
+    </a>
+  </nav>
+</div>

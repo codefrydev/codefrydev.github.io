@@ -17,7 +17,7 @@
 {{- else -}}
   {{- $isExternal = or (hasPrefix $href "http://") (hasPrefix $href "https://") -}}
 {{- end -}}
-{{- $titleClass := "text-lg xl:text-xl font-semibold text-slate-900 tracking-tight leading-tight truncate m-0 min-w-0" -}}
+{{- $titleClass := "text-base sm:text-lg xl:text-xl font-semibold text-slate-900 tracking-tight leading-snug truncate m-0 min-w-0" -}}
 {{- $linkClass := "tool-card__link text-inherit no-underline hover:text-brand after:absolute after:inset-0 after:rounded-2xl after:z-10 after:content-['']" -}}
 {{- $iconAlt := $item.iconAlt | default (printf "%s icon" $item.name) -}}
 {{- $imageSrc := $item.imageUrl | default "" -}}
@@ -28,14 +28,14 @@
 {{- $iconEmoji := $item.iconEmoji | default "" -}}
 
 <article
-  class="tool-card relative bg-white border border-gray-100 p-3.5 rounded-2xl flex items-center gap-3 hover:-translate-y-1 hover:shadow-md transition-all group"
+  class="tool-card relative bg-white border border-gray-100 p-3 sm:p-3.5 rounded-2xl flex items-center gap-2.5 sm:gap-3 hover:-translate-y-1 hover:shadow-md active:scale-[0.99] transition-all group"
   data-cfd-tool="{{ $item.name }}"
   data-cfd-category="{{ $categoryName }}"
   data-cfd-source="{{ $source }}"
   data-cfd-external="{{ $isExternal }}"
   data-cfd-tags="{{ delimit ($item.aliases | default slice) "," | lower }}"
   data-cfd-url="{{ $href }}">
-  <div class="tool-card__body flex-1 flex flex-col min-w-0 min-h-0 self-stretch">
+  <div class="tool-card__body flex-1 flex flex-col min-w-0 min-h-0 self-stretch justify-between">
     <div class="shrink-0">
         {{- if eq $headingLevel 2 -}}
         <h2 class="{{ $titleClass }}">
@@ -58,9 +58,9 @@
         {{- end -}}
     </div>
     {{- if $desc -}}
-    <p class="tool-card__desc">{{ $desc }}</p>
+    <p class="tool-card__desc m-0 mt-1 sm:mt-2 text-xs leading-snug text-slate-500 line-clamp-2">{{ $desc }}</p>
     {{- end -}}
-    <div class="tool-card__meta flex items-center justify-between">
+    <div class="tool-card__meta flex items-center justify-between mt-auto pt-1">
       <div class="tool-card__meta-date">
         {{- with $item.dateLabel -}}
         <span class="inline-block bg-gray-50 px-2 py-0.5 rounded-md text-[10px] xl:text-[11px] font-medium text-slate-500 border border-gray-100">{{ . }}</span>
@@ -70,33 +70,33 @@
         {{- end -}}
         {{- end -}}
       </div>
-      <div class="tool-card__actions flex items-center gap-1 relative z-20">
+      <div class="tool-card__actions flex items-center gap-1 sm:gap-1.5 relative z-20">
         <button
           type="button"
-          class="tool-card__fav-btn p-1 rounded-md text-slate-400 hover:text-rose-500 hover:bg-slate-100 transition-colors cursor-pointer border-0 bg-transparent flex items-center justify-center"
+          class="tool-card__fav-btn h-8 w-8 sm:h-7 sm:w-7 p-1 rounded-lg text-slate-400 hover:text-rose-500 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors cursor-pointer border-0 bg-transparent flex items-center justify-center touch-manipulation"
           data-cfd-fav-btn="{{ $item.name }}"
           aria-label="Save {{ $item.name }} to favorites"
           title="Save to favorites">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="13" height="13" class="fav-icon-svg" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15" class="fav-icon-svg" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
         </button>
         <button
           type="button"
-          class="tool-card__share-btn p-1 rounded-md text-slate-400 hover:text-sky-600 hover:bg-slate-100 transition-colors cursor-pointer border-0 bg-transparent flex items-center justify-center"
+          class="tool-card__share-btn h-8 w-8 sm:h-7 sm:w-7 p-1 rounded-lg text-slate-400 hover:text-sky-600 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors cursor-pointer border-0 bg-transparent flex items-center justify-center touch-manipulation"
           data-cfd-share-btn
           data-tool-url="{{ $href }}"
           data-tool-name="{{ $item.name }}"
           aria-label="Copy link to {{ $item.name }}"
           title="Copy link">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="13" height="13" class="share-icon-svg" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15" class="share-icon-svg" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
         </button>
       </div>
     </div>
   </div>
-  <div class="w-20 h-20 xl:w-[104px] xl:h-[104px] bg-gray-50/80 rounded-xl shrink-0 flex items-center justify-center p-2 border border-gray-50 group-hover:border-gray-100 transition-colors relative z-0{{ if $imageRounded }} overflow-hidden{{ end }}">
+  <div class="w-16 h-16 sm:w-20 sm:h-20 xl:w-[104px] xl:h-[104px] bg-gray-50/80 rounded-xl shrink-0 flex items-center justify-center p-2 border border-gray-50 group-hover:border-gray-100 transition-colors relative z-0{{ if $imageRounded }} overflow-hidden{{ end }}">
     {{- if $phosphorIcon -}}
-      {{ partial "icon.html" (dict "name" $phosphorIcon "weight" $phosphorWeight "class" "h-10 w-10 xl:h-12 xl:w-12 text-sky-600 opacity-80 group-hover:opacity-100 transition-opacity") }}
+      {{ partial "icon.html" (dict "name" $phosphorIcon "weight" $phosphorWeight "class" "h-8 w-8 sm:h-10 sm:w-10 xl:h-12 xl:w-12 text-sky-600 opacity-80 group-hover:opacity-100 transition-opacity") }}
     {{- else if $iconEmoji -}}
-      <span class="text-3xl xl:text-4xl leading-none opacity-80 group-hover:opacity-100 transition-opacity" aria-hidden="true">{{ $iconEmoji }}</span>
+      <span class="text-2xl sm:text-3xl xl:text-4xl leading-none opacity-80 group-hover:opacity-100 transition-opacity" aria-hidden="true">{{ $iconEmoji }}</span>
     {{- else if $imageSrc -}}
       <img
         src="{{ $imageSrc }}"
