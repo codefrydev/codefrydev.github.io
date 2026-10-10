@@ -22,6 +22,16 @@
         <div class="site-footer__mast-meta">
           <span class="site-footer__stat">{{ $totalTools }}{{ i18n "footer_free_count" }}</span>
           {{ partial "home/language-switcher.html" . }}
+          <button
+            type="button"
+            id="footer-random-theme-btn"
+            class="footer-random-theme-btn inline-flex items-center gap-1.5 rounded-full border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-1.5 text-xs font-medium text-slate-700 dark:text-slate-200 shadow-sm transition-colors hover:border-slate-400 dark:hover:border-slate-600 hover:bg-slate-50 dark:hover:bg-slate-700 cursor-pointer"
+            aria-label="Random Theme"
+            title="Random Theme"
+          >
+            <span class="text-sm leading-none" aria-hidden="true">🎲</span>
+            <span>Random Theme</span>
+          </button>
         </div>
       </div>
     </div>
@@ -86,4 +96,37 @@
       </ul>
     </div>
   </div>
+  <script>
+  (function () {
+    var btn = document.getElementById('footer-random-theme-btn');
+    if (!btn) return;
+    var loading = false;
+    btn.addEventListener('click', function () {
+      if (window.CFDRandomTheme) {
+        window.CFDRandomTheme.randomize();
+        return;
+      }
+      if (loading) return;
+      loading = true;
+      var origHTML = btn.innerHTML;
+      btn.innerHTML = '<span class="text-sm leading-none inline-block animate-spin" aria-hidden="true">🎲</span><span>Loading...</span>';
+      var script = document.createElement('script');
+      script.src = '/js/random-theme.min.js';
+      script.async = true;
+      script.onload = function () {
+        loading = false;
+        btn.innerHTML = origHTML;
+        if (window.CFDRandomTheme) {
+          window.CFDRandomTheme.randomize();
+        }
+      };
+      script.onerror = function () {
+        loading = false;
+        btn.innerHTML = origHTML;
+        console.error('Failed to load random-theme.min.js');
+      };
+      document.body.appendChild(script);
+    });
+  })();
+  </script>
 </footer>

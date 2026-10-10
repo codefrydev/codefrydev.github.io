@@ -52,6 +52,10 @@ const BUNDLES = [
     out: 'cfddc.min.js',
     files: ['cfddc.js'],
   },
+  {
+    out: 'random-theme.min.js',
+    files: ['random-theme.js'],
+  },
 ];
 
 let totalIn = 0;
