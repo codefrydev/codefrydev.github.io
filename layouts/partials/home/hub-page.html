@@ -55,8 +55,26 @@
       {{- $page.Scratch.Set "breadcrumbLabel" $title -}}
 
       {{- if gt (len $items) 0 -}}
-      <div class="browse-category__header">
-        <p class="browse-category__count m-0">{{ len $items }} {{ $countLabel }}</p>
+      <div class="browse-category__header flex flex-wrap items-center justify-between gap-4 mb-6 pb-2 border-b border-gray-100">
+        <p class="browse-category__count m-0 text-slate-500 font-medium">{{ len $items }} {{ $countLabel }}</p>
+        <div class="cfd-filters flex flex-wrap items-center gap-1.5" data-cfd-filters data-cfd-target=".browse-category__grid" data-cfd-count=".browse-category__count" role="tablist" aria-label="Filter tools">
+          <button type="button" class="cfd-filter-pill is-active" data-cfd-filter="all" role="tab" aria-selected="true">All</button>
+          <button type="button" class="cfd-filter-pill" data-cfd-filter="favorites" role="tab" aria-selected="false">⭐ Saved</button>
+          {{- if eq $hubSlug "games" -}}
+          <button type="button" class="cfd-filter-pill" data-cfd-filter="multiplayer" role="tab" aria-selected="false">Multiplayer</button>
+          <button type="button" class="cfd-filter-pill" data-cfd-filter="strategy" role="tab" aria-selected="false">Strategy</button>
+          <button type="button" class="cfd-filter-pill" data-cfd-filter="puzzle" role="tab" aria-selected="false">Puzzles</button>
+          <button type="button" class="cfd-filter-pill" data-cfd-filter="arcade" role="tab" aria-selected="false">Arcade</button>
+          {{- else if eq $hubSlug "ai" -}}
+          <button type="button" class="cfd-filter-pill" data-cfd-filter="chat" role="tab" aria-selected="false">Chat & Text</button>
+          <button type="button" class="cfd-filter-pill" data-cfd-filter="generator" role="tab" aria-selected="false">Generators</button>
+          <button type="button" class="cfd-filter-pill" data-cfd-filter="image" role="tab" aria-selected="false">Image & Media</button>
+          {{- else if eq $hubSlug "designlab" -}}
+          <button type="button" class="cfd-filter-pill" data-cfd-filter="svg" role="tab" aria-selected="false">SVG & Vector</button>
+          <button type="button" class="cfd-filter-pill" data-cfd-filter="font" role="tab" aria-selected="false">Typography</button>
+          <button type="button" class="cfd-filter-pill" data-cfd-filter="color" role="tab" aria-selected="false">Colors</button>
+          {{- end -}}
+        </div>
       </div>
       {{- end -}}
 

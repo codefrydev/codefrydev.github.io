@@ -1,21 +1,38 @@
 {{- $rankingsData := index site.Data "tool-rankings" | default dict -}}
-{{- if and $rankingsData.enabled (eq $rankingsData.source "ga4") -}}
-
-{{- $rankings := $rankingsData.rankings | default dict -}}
 {{- $catalog := partial "home/collect-all-tools.html" . -}}
-{{- $scored := slice -}}
+{{- $top := slice -}}
 
-{{- range $catalog -}}
-  {{- $clicks := index $rankings .urlKey | default 0 | int -}}
-  {{- if gt $clicks 0 -}}
-    {{- $scored = $scored | append (dict "entry" . "clicks" $clicks) -}}
+{{- if and $rankingsData.enabled (eq $rankingsData.source "ga4") -}}
+  {{- $rankings := $rankingsData.rankings | default dict -}}
+  {{- $scored := slice -}}
+  {{- range $catalog -}}
+    {{- $clicks := index $rankings .urlKey | default 0 | int -}}
+    {{- if gt $clicks 0 -}}
+      {{- $scored = $scored | append (dict "entry" . "clicks" $clicks) -}}
+    {{- end -}}
+  {{- end -}}
+  {{- if ge (len $scored) 1 -}}
+    {{- $sorted := sort $scored "clicks" "desc" -}}
+    {{- range (first 12 $sorted) -}}
+      {{- $top = $top | append .entry -}}
+    {{- end -}}
   {{- end -}}
 {{- end -}}
 
-{{- if ge (len $scored) 1 -}}
-{{- $sorted := sort $scored "clicks" "desc" -}}
+{{- /* Fallback to featured tools when GA4 rankings are absent or empty */ -}}
+{{- if eq (len $top) 0 -}}
+  {{- range $catalog -}}
+    {{- if and .item.featured (lt (len $top) 12) -}}
+      {{- $top = $top | append . -}}
+    {{- end -}}
+  {{- end -}}
+  {{- if eq (len $top) 0 -}}
+    {{- $top = first 12 $catalog -}}
+  {{- end -}}
+{{- end -}}
+
+{{- if ge (len $top) 1 -}}
 {{- $previewCount := 12 -}}
-{{- $top := first $previewCount $sorted -}}
 {{- $seeAll := "/browse/" | relLangURL -}}
 {{- $headingId := "popular-tools-heading" -}}
 
@@ -36,7 +53,7 @@
 
     <div class="browse-category__grid flex-1 min-h-0 items-start md:content-center">
       {{- range $i, $row := $top -}}
-      {{- $entry := $row.entry -}}
+      {{- $entry := $row.entry | default $row -}}
       <div class="{{ if ge $i 6 }}hidden md:block{{ end }} min-h-0">
         {{ partial "home/tool-card.html" (dict "item" $entry.item "iconDir" $entry.iconDir "defaultPhosphorIcon" "app-window" "categoryName" $entry.categoryName "source" "home_popular") }}
       </div>
@@ -50,5 +67,4 @@
     </p>
   </div>
 </section>
-{{- end -}}
 {{- end -}}

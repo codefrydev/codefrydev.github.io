@@ -80,6 +80,14 @@
       "mainEntity": {
         "@id": "{{ .Site.BaseURL }}#organization"
       },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "{{ .Site.BaseURL }}search/?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      },
       "sitemap": "{{ .Site.BaseURL }}sitemap.xml"
     }
   ]

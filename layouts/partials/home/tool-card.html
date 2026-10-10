@@ -32,7 +32,9 @@
   data-cfd-tool="{{ $item.name }}"
   data-cfd-category="{{ $categoryName }}"
   data-cfd-source="{{ $source }}"
-  data-cfd-external="{{ $isExternal }}">
+  data-cfd-external="{{ $isExternal }}"
+  data-cfd-tags="{{ delimit ($item.aliases | default slice) "," | lower }}"
+  data-cfd-url="{{ $href }}">
   <div class="tool-card__body flex-1 flex flex-col min-w-0 min-h-0 self-stretch">
     <div class="shrink-0">
         {{- if eq $headingLevel 2 -}}
@@ -58,14 +60,36 @@
     {{- if $desc -}}
     <p class="tool-card__desc">{{ $desc }}</p>
     {{- end -}}
-    <div class="tool-card__meta">
-      {{- with $item.dateLabel -}}
-      <span class="inline-block bg-gray-50 px-2 py-0.5 rounded-md text-[10px] xl:text-[11px] font-medium text-slate-500 border border-gray-100">{{ . }}</span>
-      {{- else -}}
-      {{- with $item.date -}}
-      <span class="inline-block bg-gray-50 px-2 py-0.5 rounded-md text-[10px] xl:text-[11px] font-medium text-slate-500 border border-gray-100">{{ . | time.Format "02 Jan 2006" }}</span>
-      {{- end -}}
-      {{- end -}}
+    <div class="tool-card__meta flex items-center justify-between">
+      <div class="tool-card__meta-date">
+        {{- with $item.dateLabel -}}
+        <span class="inline-block bg-gray-50 px-2 py-0.5 rounded-md text-[10px] xl:text-[11px] font-medium text-slate-500 border border-gray-100">{{ . }}</span>
+        {{- else -}}
+        {{- with $item.date -}}
+        <span class="inline-block bg-gray-50 px-2 py-0.5 rounded-md text-[10px] xl:text-[11px] font-medium text-slate-500 border border-gray-100">{{ . | time.Format "02 Jan 2006" }}</span>
+        {{- end -}}
+        {{- end -}}
+      </div>
+      <div class="tool-card__actions flex items-center gap-1 relative z-20">
+        <button
+          type="button"
+          class="tool-card__fav-btn p-1 rounded-md text-slate-400 hover:text-rose-500 hover:bg-slate-100 transition-colors cursor-pointer border-0 bg-transparent flex items-center justify-center"
+          data-cfd-fav-btn="{{ $item.name }}"
+          aria-label="Save {{ $item.name }} to favorites"
+          title="Save to favorites">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="13" height="13" class="fav-icon-svg" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+        </button>
+        <button
+          type="button"
+          class="tool-card__share-btn p-1 rounded-md text-slate-400 hover:text-sky-600 hover:bg-slate-100 transition-colors cursor-pointer border-0 bg-transparent flex items-center justify-center"
+          data-cfd-share-btn
+          data-tool-url="{{ $href }}"
+          data-tool-name="{{ $item.name }}"
+          aria-label="Copy link to {{ $item.name }}"
+          title="Copy link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="13" height="13" class="share-icon-svg" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+        </button>
+      </div>
     </div>
   </div>
   <div class="w-20 h-20 xl:w-[104px] xl:h-[104px] bg-gray-50/80 rounded-xl shrink-0 flex items-center justify-center p-2 border border-gray-50 group-hover:border-gray-100 transition-colors relative z-0{{ if $imageRounded }} overflow-hidden{{ end }}">

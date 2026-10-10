@@ -1,7 +1,6 @@
 {{- $page := .page -}}
 {{- $data := partial "get-data.html" (dict "page" $page) -}}
 {{- $browseIndex := $data.homepage.browseIndex | default dict -}}
-{{- $hubs := .hubs | default (index $data.homepage "nav" "megaMenu" "hubs") | default slice -}}
 {{- $totalTools := 0 -}}
 {{- range $data.home.categories -}}
   {{- $totalTools = add $totalTools (len (where .items "hidden" "!=" true)) -}}
@@ -31,79 +30,279 @@
 ) }}
 
 <section class="browse-index pt-8 pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full" aria-labelledby="browse-index-heading">
-  <div class="browse-index__meta flex flex-wrap gap-3 mb-10">
-    <span class="browse-index__stat">⊞ {{ $catCount }} categories</span>
-    <span class="browse-index__stat">🖥️ {{ $totalTools }}+ tools</span>
+  <!-- Interactive View Controls Toolbar -->
+  <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8 pb-4 border-b border-gray-200/80 dark:border-slate-800">
+    <div class="flex flex-wrap items-center gap-3">
+      <div class="browse-view-switch" role="tablist" aria-label="Browse view mode">
+        <button type="button" class="browse-view-btn is-active" data-browse-view="cats" role="tab" aria-selected="true">
+          <span>📂</span>
+          <span>Categories</span>
+        </button>
+        <button type="button" class="browse-view-btn" data-browse-view="all" role="tab" aria-selected="false">
+          <span>⚡</span>
+          <span>All Tools Directory</span>
+        </button>
+      </div>
+      <button type="button" data-cfd-lucky-btn class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold text-sky-800 dark:text-sky-200 bg-white/90 dark:bg-slate-800/90 border border-sky-200/90 dark:border-slate-700 shadow-sm hover:shadow hover:bg-white dark:hover:bg-slate-800 transition-all cursor-pointer" title="Discover a random tool or game">
+        <span aria-hidden="true">🎲</span>
+        <span>Surprise Me</span>
+      </button>
+    </div>
+    <div class="browse-index__meta flex flex-wrap items-center gap-2 m-0">
+      <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 shadow-sm">
+        <span aria-hidden="true">⊞</span> {{ $catCount }} categories
+      </span>
+      <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 shadow-sm">
+        <span aria-hidden="true">🖥️</span> {{ $totalTools }}+ tools & apps
+      </span>
+    </div>
   </div>
 
-  <div class="browse-index__section">
-    <h2 id="browse-index-heading" class="browse-index__section-title">Categories</h2>
-    <ul class="browse-category-grid list-none m-0 p-0" role="list">
+  <!-- PANEL 1: Categories & Hubs View (Default) -->
+  <div id="browse-categories-panel" class="browse-tab-panel">
+    <!-- Featured Hubs Showcase -->
+    <div class="mb-14">
+      <div class="flex items-center justify-between mb-5">
+        <div>
+          <h2 class="text-xl md:text-2xl font-bold text-slate-900 dark:text-white m-0">Curated Hubs</h2>
+          <p class="text-xs sm:text-sm font-medium text-slate-500 dark:text-slate-400 m-0 mt-0.5">Explore by specialty collections and dedicated playgrounds</p>
+        </div>
+      </div>
+      <div class="browse-hubs-showcase">
+        <!-- Hub 1: Games -->
+        <a href="{{ "/games/" | relLangURL }}" class="browse-hub-feature-card group">
+          <div class="browse-hub-feature-card__img-wrap">
+            <img src="/images/hero/browse/games-fun-1.webp" alt="Games on CodeFryDev" width="400" height="225" class="browse-hub-feature-card__img" loading="lazy">
+            <span class="browse-hub-feature-card__badge">🎮 Arcade & Play</span>
+          </div>
+          <div class="browse-hub-feature-card__body">
+            <h3 class="browse-hub-feature-card__title">Games Hub</h3>
+            <p class="browse-hub-feature-card__desc">Wordle, Snake, Chain Reaction Online & Chess—play instantly in your browser.</p>
+            <span class="browse-hub-feature-card__cta">Play games <span>→</span></span>
+          </div>
+        </a>
+
+        <!-- Hub 2: AI Tools -->
+        <a href="{{ "/ai/" | relLangURL }}" class="browse-hub-feature-card group">
+          <div class="browse-hub-feature-card__img-wrap">
+            <img src="/images/hero/hub/ai-hub-1.webp" alt="AI Tools on CodeFryDev" width="400" height="225" class="browse-hub-feature-card__img" loading="lazy">
+            <span class="browse-hub-feature-card__badge">🤖 AI Utilities</span>
+          </div>
+          <div class="browse-hub-feature-card__body">
+            <h3 class="browse-hub-feature-card__title">AI Tools Hub</h3>
+            <p class="browse-hub-feature-card__desc">Meme generators, site summarizers, and AI helpers with zero signup required.</p>
+            <span class="browse-hub-feature-card__cta">Explore AI tools <span>→</span></span>
+          </div>
+        </a>
+
+        <!-- Hub 3: Design Lab -->
+        <a href="{{ "/designlab/" | relLangURL }}" class="browse-hub-feature-card group">
+          <div class="browse-hub-feature-card__img-wrap">
+            <img src="/images/hero/hub/designlab-hub-1.webp" alt="Design Lab on CodeFryDev" width="400" height="225" class="browse-hub-feature-card__img" loading="lazy">
+            <span class="browse-hub-feature-card__badge">🎨 Creative Lab</span>
+          </div>
+          <div class="browse-hub-feature-card__body">
+            <h3 class="browse-hub-feature-card__title">Design Lab</h3>
+            <p class="browse-hub-feature-card__desc">Vector SVG editor, 3D printing tools, visualizers, and typography suites.</p>
+            <span class="browse-hub-feature-card__cta">Open Design Lab <span>→</span></span>
+          </div>
+        </a>
+
+        <!-- Hub 4: Store -->
+        <a href="{{ "/store/" | relLangURL }}" class="browse-hub-feature-card group">
+          <div class="browse-hub-feature-card__img-wrap">
+            <img src="/images/hero/hub/store-hub-1.webp" alt="Mobile Store on CodeFryDev" width="400" height="225" class="browse-hub-feature-card__img" loading="lazy">
+            <span class="browse-hub-feature-card__badge">🛍️ Google Play</span>
+          </div>
+          <div class="browse-hub-feature-card__body">
+            <h3 class="browse-hub-feature-card__title">App Store</h3>
+            <p class="browse-hub-feature-card__desc">Free Android mobile apps for productivity, games, and everyday utilities.</p>
+            <span class="browse-hub-feature-card__cta">View mobile apps <span>→</span></span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Main Categories Grid -->
+    <div class="browse-index__section">
+      <div class="mb-5">
+        <h2 id="browse-index-heading" class="text-xl md:text-2xl font-bold text-slate-900 dark:text-white m-0">All Categories</h2>
+        <p class="text-xs sm:text-sm font-medium text-slate-500 dark:text-slate-400 m-0 mt-0.5">Browse the complete library organized by discipline and purpose</p>
+      </div>
+
+      <ul class="browse-category-grid list-none m-0 p-0" role="list">
+        {{- range $data.home.categories -}}
+        {{- $slug := .slug | default (.name | anchorize) -}}
+        {{- $url := .seeAllUrl | default (printf "/browse/%s/" $slug) -}}
+        {{- $visible := where .items "hidden" "!=" true -}}
+        {{- $featured := where $visible "featured" true -}}
+        {{- $previews := cond (gt (len $featured) 0) ($featured | first 6) ($visible | first 6) -}}
+        {{- $topItems := cond (gt (len $featured) 0) ($featured | first 3) ($visible | first 3) -}}
+        {{- $banner := index $data.homepage.categoryBanners $slug | default dict -}}
+        {{- $cardImage := $banner.image -}}
+        {{- with $banner.slides -}}
+          {{- with index . 0 -}}
+            {{- with .image -}}
+              {{- $cardImage = . -}}
+            {{- end -}}
+          {{- end -}}
+        {{- end -}}
+        {{- $catEmoji := index $iconEmoji (.phosphorIcon | default "squares-four") | default "•" -}}
+        <li role="listitem">
+          <a href="{{ $url | relLangURL }}" class="browse-category-card group no-underline" data-cfd-cta="browse_card_{{ $slug }}">
+            {{- with $cardImage -}}
+            <span class="browse-category-card__accent" style="background-image: url('{{ . }}');" aria-hidden="true"></span>
+            {{- end -}}
+            <span class="browse-category-card__body">
+              <span class="browse-category-card__top">
+                <span class="browse-category-card__icon" aria-hidden="true">{{ $catEmoji }}</span>
+                <span class="browse-category-card__heading">
+                  <span class="browse-category-card__name">{{ .name }}</span>
+                  <span class="browse-category-card__subtitle">{{ .subtitle }}</span>
+                </span>
+                <span class="browse-category-card__count">{{ len $visible }} tools</span>
+              </span>
+              {{- if gt (len $previews) 0 -}}
+              <span class="browse-category-card__previews" aria-hidden="true">
+                {{- range $previews -}}
+                <span class="browse-category-card__preview" title="{{ .name }}">
+                  <img src="/images/home/{{ .icon }}.svg" alt="{{ .iconAlt | default (printf "%s icon" .name) }}" width="32" height="32" loading="lazy"{{- with .iconTitle }} title="{{ . }}"{{ end }}>
+                </span>
+                {{- end -}}
+              </span>
+              {{- end -}}
+              <!-- Highlights preview chips -->
+              <span class="flex flex-wrap items-center gap-1.5 pt-1" aria-hidden="true">
+                {{- range $topItems -}}
+                <span class="inline-flex items-center text-[11px] font-medium text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-slate-700/60 px-2 py-0.5 rounded-md">
+                  {{ .name }}
+                </span>
+                {{- end -}}
+                {{- if gt (len $visible) 3 -}}
+                <span class="text-[11px] font-medium text-slate-400 dark:text-slate-500 py-0.5 px-1">
+                  +{{ sub (len $visible) 3 }} more
+                </span>
+                {{- end -}}
+              </span>
+              <span class="browse-category-card__cta">
+                View category →
+              </span>
+            </span>
+          </a>
+        </li>
+        {{- end -}}
+      </ul>
+    </div>
+  </div>
+
+  <!-- PANEL 2: All Tools Directory (Searchable Grid) -->
+  <div id="browse-all-tools-panel" class="browse-tab-panel" hidden style="display: none;">
+    <!-- Live Search & Filter Bar -->
+    <div class="bg-white dark:bg-slate-800/90 rounded-2xl border border-gray-200/90 dark:border-slate-700 p-4 sm:p-5 mb-8 shadow-sm">
+      <div class="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4">
+        <div class="relative flex-1 max-w-md">
+          <svg class="absolute left-3.5 top-3.5 h-4 w-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <input
+            type="search"
+            id="browse-live-search"
+            class="w-full pl-10 pr-4 py-2.5 rounded-xl border border-gray-200 dark:border-slate-600 text-sm bg-slate-50 dark:bg-slate-700 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand"
+            placeholder="Type tool name, alias or keyword..."
+            autocomplete="off"
+            aria-label="Filter all tools"
+          >
+        </div>
+        <div class="flex items-center justify-between gap-3 shrink-0">
+          <div class="cfd-filters flex flex-wrap items-center gap-1.5" data-cfd-filters data-cfd-target="#browse-all-tools-grid" data-cfd-count="#browse-all-tools-count">
+            <button type="button" class="cfd-filter-pill is-active" data-cfd-filter="all">All</button>
+            <button type="button" class="cfd-filter-pill" data-cfd-filter="favorites">⭐ Saved</button>
+            <button type="button" class="cfd-filter-pill" data-cfd-filter="game">Games</button>
+            <button type="button" class="cfd-filter-pill" data-cfd-filter="ai">AI</button>
+            <button type="button" class="cfd-filter-pill" data-cfd-filter="svg">Design</button>
+            <button type="button" class="cfd-filter-pill" data-cfd-filter="online">Online</button>
+          </div>
+          <span id="browse-all-tools-count" class="text-xs font-semibold text-slate-500 bg-slate-100 dark:bg-slate-700 px-3 py-1 rounded-full whitespace-nowrap">
+            {{ $totalTools }} tools
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Empty State for Live Search -->
+    <div id="browse-empty-state" class="hidden text-center py-16 px-4 bg-white dark:bg-slate-800/60 rounded-2xl border border-gray-200/80 dark:border-slate-700/80 my-6" hidden>
+      <div class="text-4xl mb-3">🔍</div>
+      <h3 class="text-base font-bold text-slate-800 dark:text-white mb-1">No matching tools found</h3>
+      <p class="text-xs text-slate-500 dark:text-slate-400 max-w-sm mx-auto mb-4">Try checking your spelling or clearing the current filter.</p>
+      <button type="button" id="browse-clear-search-btn" class="px-4 py-2 text-xs font-semibold text-brand bg-brand/10 hover:bg-brand/20 rounded-xl transition-colors cursor-pointer">
+        Clear search & filters
+      </button>
+    </div>
+
+    <!-- All Tools Full Grid -->
+    <div id="browse-all-tools-grid" class="browse-category__grid">
       {{- range $data.home.categories -}}
-      {{- $slug := .slug | default (.name | anchorize) -}}
-      {{- $url := .seeAllUrl | default (printf "/browse/%s/" $slug) -}}
-      {{- $visible := where .items "hidden" "!=" true -}}
-      {{- $featured := where $visible "featured" true -}}
-      {{- $previews := cond (gt (len $featured) 0) ($featured | first 6) ($visible | first 6) -}}
-      {{- $banner := index $data.homepage.categoryBanners $slug | default dict -}}
-      {{- $cardImage := $banner.image -}}
-      {{- with $banner.slides -}}
-        {{- with index . 0 -}}
-          {{- with .image -}}
-            {{- $cardImage = . -}}
+        {{- $catName := .name -}}
+        {{- $catIcon := .phosphorIcon | default "app-window" -}}
+        {{- range .items -}}
+          {{- if ne .hidden true -}}
+            {{ partial "home/tool-card.html" (dict "item" . "defaultPhosphorIcon" $catIcon "categoryName" $catName "source" "browse_all") }}
           {{- end -}}
         {{- end -}}
       {{- end -}}
-      {{- $catEmoji := index $iconEmoji (.phosphorIcon | default "squares-four") | default "•" -}}
-      <li role="listitem">
-        <a href="{{ $url | relLangURL }}" class="browse-category-card group no-underline" data-cfd-cta="browse_card_{{ $slug }}">
-          {{- with $cardImage -}}
-          <span class="browse-category-card__accent" style="background-image: url('{{ . }}');" aria-hidden="true"></span>
-          {{- end -}}
-          <span class="browse-category-card__body">
-            <span class="browse-category-card__top">
-              <span class="browse-category-card__icon" aria-hidden="true">{{ $catEmoji }}</span>
-              <span class="browse-category-card__heading">
-                <span class="browse-category-card__name">{{ .name }}</span>
-                <span class="browse-category-card__subtitle">{{ .subtitle }}</span>
-              </span>
-              <span class="browse-category-card__count">{{ len $visible }} tools</span>
-            </span>
-            {{- if gt (len $previews) 0 -}}
-            <span class="browse-category-card__previews" aria-hidden="true">
-              {{- range $previews -}}
-              <span class="browse-category-card__preview" title="{{ .name }}">
-                <img src="/images/home/{{ .icon }}.svg" alt="{{ .iconAlt | default (printf "%s icon" .name) }}" width="32" height="32" loading="lazy"{{- with .iconTitle }} title="{{ . }}"{{ end }}>
-              </span>
-              {{- end -}}
-            </span>
-            {{- end -}}
-            <span class="browse-category-card__cta">
-              View category →
-            </span>
-          </span>
-        </a>
-      </li>
-      {{- end -}}
-    </ul>
+    </div>
   </div>
 
-  {{- if gt (len $hubs) 0 -}}
-  <div class="browse-index__section browse-index__section--hubs">
-    <h2 class="browse-index__section-title">Hubs</h2>
-    <p class="browse-index__section-desc m-0">Curated collections for games, AI, design, and more.</p>
-    <ul class="browse-hub-grid list-none m-0 p-0" role="list">
-      {{- range $hubs -}}
-      {{- $hubEmoji := index $iconEmoji (.icon | default "arrow-right") | default "→" -}}
-      <li role="listitem">
-        <a href="{{ .url | relLangURL }}" class="browse-hub-card no-underline group">
-          <span aria-hidden="true">{{ $hubEmoji }}</span>
-          <span class="browse-hub-card__label">{{ .label }}</span>
-          <span class="browse-hub-card__arrow" aria-hidden="true">→</span>
-        </a>
-      </li>
-      {{- end -}}
-    </ul>
+  <!-- AEO / FAQ Knowledge Section -->
+  <div class="mt-16 pt-10 border-t border-gray-200/80 dark:border-slate-800">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-xl md:text-2xl font-bold text-slate-900 dark:text-white text-center mb-2">Frequently Asked Questions</h2>
+      <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 text-center mb-8">Everything you need to know about browsing and using CodeFryDev tools</p>
+      <div class="space-y-3.5">
+        <details class="browse-faq-item bg-white dark:bg-slate-800/80 rounded-2xl border border-gray-200/80 dark:border-slate-700/80 p-5 shadow-sm transition-all group">
+          <summary class="font-semibold text-sm sm:text-base text-slate-900 dark:text-white cursor-pointer flex items-center justify-between select-none">
+            <span>Are all tools and games on CodeFryDev free to use?</span>
+            <span class="text-slate-400 text-lg transition-transform duration-200 group-open:rotate-180">▾</span>
+          </summary>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-3 leading-relaxed">
+            Yes, 100% of the tools, browser games, and AI applications on CodeFryDev are completely free to use. There are no paywalls, subscriptions, or hidden charges.
+          </p>
+        </details>
+        <details class="browse-faq-item bg-white dark:bg-slate-800/80 rounded-2xl border border-gray-200/80 dark:border-slate-700/80 p-5 shadow-sm transition-all group">
+          <summary class="font-semibold text-sm sm:text-base text-slate-900 dark:text-white cursor-pointer flex items-center justify-between select-none">
+            <span>Do I need to create an account or sign in?</span>
+            <span class="text-slate-400 text-lg transition-transform duration-200 group-open:rotate-180">▾</span>
+          </summary>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-3 leading-relaxed">
+            No signup is required for any tool. You can open any tool or game in your browser and start working or playing instantly.
+          </p>
+        </details>
+        <details class="browse-faq-item bg-white dark:bg-slate-800/80 rounded-2xl border border-gray-200/80 dark:border-slate-700/80 p-5 shadow-sm transition-all group">
+          <summary class="font-semibold text-sm sm:text-base text-slate-900 dark:text-white cursor-pointer flex items-center justify-between select-none">
+            <span>How does the Saved Tools feature work?</span>
+            <span class="text-slate-400 text-lg transition-transform duration-200 group-open:rotate-180">▾</span>
+          </summary>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-3 leading-relaxed">
+            Click the bookmark star icon on any tool card to save it. Your favorites are stored directly in your local browser window so they are instantly accessible whenever you return to CodeFryDev.
+          </p>
+        </details>
+        <details class="browse-faq-item bg-white dark:bg-slate-800/80 rounded-2xl border border-gray-200/80 dark:border-slate-700/80 p-5 shadow-sm transition-all group">
+          <summary class="font-semibold text-sm sm:text-base text-slate-900 dark:text-white cursor-pointer flex items-center justify-between select-none">
+            <span>Can I use CodeFryDev tools on mobile devices?</span>
+            <span class="text-slate-400 text-lg transition-transform duration-200 group-open:rotate-180">▾</span>
+          </summary>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-3 leading-relaxed">
+            Yes! All tools, calculators, formatters, and browser games are fully responsive and work seamlessly on mobile browsers (Chrome, Safari, Firefox), tablets, and desktop computers alike.
+          </p>
+        </details>
+        <details class="browse-faq-item bg-white dark:bg-slate-800/80 rounded-2xl border border-gray-200/80 dark:border-slate-700/80 p-5 shadow-sm transition-all group">
+          <summary class="font-semibold text-sm sm:text-base text-slate-900 dark:text-white cursor-pointer flex items-center justify-between select-none">
+            <span>Are my inputs and files private when using these tools?</span>
+            <span class="text-slate-400 text-lg transition-transform duration-200 group-open:rotate-180">▾</span>
+          </summary>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-3 leading-relaxed">
+            Yes. Client-side utilities (such as SVG vector editors, JSON playgrounds, calculators, and image formatters) process data locally within your browser sandbox. None of your inputs, code snippets, or uploaded images are sent to or stored on remote servers.
+          </p>
+        </details>
+      </div>
+    </div>
   </div>
-  {{- end -}}
 </section>

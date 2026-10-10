@@ -223,6 +223,8 @@
 /* ── Cards & panels (card tier + sheen) ── */
 [data-theme="glass"] body .browse-category-card,
 [data-theme="glass"] body .browse-hub-card,
+[data-theme="glass"] body .browse-hub-feature-card,
+[data-theme="glass"] body .browse-faq-item,
 [data-theme="glass"] body .about-card,
 [data-theme="glass"] body .contact-form-card,
 [data-theme="glass"] body .contact-link,
@@ -283,6 +285,7 @@
 
 [data-theme="glass"] body .browse-category-card:hover,
 [data-theme="glass"] body .browse-hub-card:hover,
+[data-theme="glass"] body .browse-hub-feature-card:hover,
 [data-theme="glass"] body .contact-form-card:hover,
 [data-theme="glass"] body .contact-link:hover,
 [data-theme="glass"] body .faq-main-card:hover,

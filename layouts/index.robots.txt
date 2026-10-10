@@ -30,3 +30,7 @@ User-agent: Applebot-Extended
 Allow: /
 
 Sitemap: {{ .Site.BaseURL }}sitemap.xml
+
+# LLM discovery (https://llmstxt.org)
+# LLMS: {{ .Site.BaseURL }}llms.txt
+# LLMS-Full: {{ .Site.BaseURL }}llms-full.txt

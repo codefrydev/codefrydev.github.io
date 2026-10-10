@@ -43,8 +43,14 @@
 ) }}
 
 <section class="browse-category pt-8 pb-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-  <div class="browse-category__header">
-    <p class="browse-category__count m-0">{{ printf (i18n "category_tool_count") (len $items) }}</p>
+  <div class="browse-category__header flex flex-wrap items-center justify-between gap-4 mb-6 pb-2 border-b border-gray-100">
+    <p class="browse-category__count m-0 text-slate-500 font-medium">{{ printf (i18n "category_tool_count") (len $items) }}</p>
+    <div class="cfd-filters flex flex-wrap items-center gap-1.5" data-cfd-filters data-cfd-target=".browse-category__grid" data-cfd-count=".browse-category__count" role="tablist" aria-label="Filter tools">
+      <button type="button" class="cfd-filter-pill is-active" data-cfd-filter="all" role="tab" aria-selected="true">All</button>
+      <button type="button" class="cfd-filter-pill" data-cfd-filter="favorites" role="tab" aria-selected="false">⭐ Saved</button>
+      <button type="button" class="cfd-filter-pill" data-cfd-filter="online" role="tab" aria-selected="false">Online</button>
+      <button type="button" class="cfd-filter-pill" data-cfd-filter="free" role="tab" aria-selected="false">Free</button>
+    </div>
   </div>
 
   <div class="browse-category__grid">

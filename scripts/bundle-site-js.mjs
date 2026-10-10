@@ -29,6 +29,7 @@ const BUNDLES = [
       'cookie-consent.js',
       'analytics.js',
       'site-footer.js',
+      'engagement.js',
     ],
   },
   {

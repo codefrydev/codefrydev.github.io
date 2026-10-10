@@ -34,6 +34,9 @@
 <link rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }} Feed" href="{{ .Permalink }}">
 {{- end -}}
 
+{{- /* LLM Discovery */ -}}
+<link rel="alternate" type="text/plain" href="{{ .Site.BaseURL }}llms.txt" title="llms.txt">
+
 {{- /* Language and locale (BCP 47); single source for og:locale and hreflang */ -}}
 {{- $localeRaw := .Site.Language.Locale | default "en-US" -}}
 {{- $localeNorm := $localeRaw | replace "_" "-" -}}

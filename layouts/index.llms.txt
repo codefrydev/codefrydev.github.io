@@ -3,34 +3,33 @@
 > {{ .Site.Params.description }}
 
 ## About
-{{ .Site.Params.description }}
+CodeFryDev is a free, privacy-focused platform offering 100+ browser-based tools, arcade games, AI apps, and creative design utilities. All web tools run client-side in the user's browser with no installation or account required.
 
-## Website
-- URL: {{ .Site.BaseURL }}
-- Built with: Hugo static site generator
-- Language: {{ .Site.Language.Locale | default "en-US" }}
-- Full documentation: {{ .Site.BaseURL }}llms-full.txt
-
-## Main Sections
+## Main Hubs
 {{ range where site.Pages "Kind" "section" -}}
 {{ if and (ne .Section "search") (ne .Draft true) -}}
-- {{ .Title | default (.Section | title) }} ({{ .RelPermalink }}): {{ .Description | default "..." }}
+- [{{ .Title | default (.Section | title) }}]({{ .Permalink }}): {{ .Description | default "Free browser tools and resources on CodeFryDev" }}
 {{ end -}}
 {{ end -}}
 
 ## Browse Categories
-{{- $data := partial "get-data.html" . -}}
-{{ range $index, $cat := $data.home.categories -}}
-{{ $index | add 1 }}. **{{ $cat.name }}** ({{ $cat.seeAllUrl | default (printf "/browse/%s/" ($cat.slug | default ($cat.name | anchorize))) }}): {{ $cat.subtitle }}
-{{ end -}}
 
-## Highlights
-- 100% free — most tools need no signup
-- Runs in your browser — no install required
-- Privacy-focused — most tools process data locally
+{{ $data := partial "get-data.html" . }}
+{{ range $data.home.categories -}}
+{{- $url := .seeAllUrl | default (printf "/browse/%s/" (.slug | default (.name | anchorize))) -}}
+{{- $absUrl := printf "%s%s" $.Site.BaseURL (strings.TrimPrefix "/" $url) -}}
+- [{{ .name }}]({{ $absUrl }}): {{ .subtitle }}
+{{ end }}
+
+## Key Features
+- 100% free with no login or account required
+- Runs directly in your browser — zero install
+- Privacy-focused — local client-side data processing
+- Multi-language support: English, Japanese, French, Hindi
 
 ## Optional
-- Sitemap: {{ .Site.BaseURL }}sitemap.xml
-- Robots: {{ .Site.BaseURL }}robots.txt
+- [Full Documentation]({{ .Site.BaseURL }}llms-full.txt): Complete structured index of all tools, games, and endpoints
+- [Sitemap]({{ .Site.BaseURL }}sitemap.xml): Machine-readable XML sitemap
+- [Robots]({{ .Site.BaseURL }}robots.txt): Crawler rules and discovery endpoints
 
 Last Updated: {{ now.Format "January 2006" }}
