@@ -1,4 +1,8 @@
 history:
+  - date: "25 October 2026"
+    title: "Shopfloor Calc"
+    description: "Launched Shopfloor Calc—free engineering and manufacturing calculators for cycle times, takt time, OEE, line balancing, machine speeds and feeds, Cp/Cpk, and production planning at codefrydev.in/shopfloorcalc/; added to Tools & Utilities on the home page."
+    link: "https://codefrydev.in/shopfloorcalc/"
   - date: "04 October 2026"
     title: "Little SVG"
     description: "Launched Little SVG—an SVG to image studio and batch converter. Convert, style, and render vector SVGs into high-resolution PNG, JPEG, and WebP images directly in your browser with 100% client-side privacy."

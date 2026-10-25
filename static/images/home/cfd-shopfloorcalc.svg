@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <defs>
+    <!-- macOS Icon Drop Shadow -->
+    <filter id="mac_shadow" x="0" y="0" width="512" height="512" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#000000" flood-opacity="0.22"/>
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.12"/>
+    </filter>
+
+    <!-- Glyph Drop Shadow -->
+    <filter id="glyph_shadow" x="100" y="100" width="312" height="312" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#042f2e" flood-opacity="0.35"/>
+    </filter>
+
+    <!-- macOS Squircle Teal Gradient -->
+    <linearGradient id="mac_bg" x1="48" y1="48" x2="464" y2="464" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#14b8a6"/>
+      <stop offset="40%" stop-color="#0b7a6c"/>
+      <stop offset="100%" stop-color="#04443c"/>
+    </linearGradient>
+
+    <!-- Squircle Border Highlight -->
+    <linearGradient id="mac_border" x1="48" y1="48" x2="48" y2="464" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.4"/>
+      <stop offset="30%" stop-color="#ffffff" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.25"/>
+    </linearGradient>
+
+    <!-- Gear Body Gradient -->
+    <linearGradient id="gear_body" x1="124" y1="124" x2="388" y2="388" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#e6f4f1"/>
+    </linearGradient>
+  </defs>
+
+  <!-- macOS App Squircle Container -->
+  <g filter="url(#mac_shadow)">
+    <rect x="48" y="48" width="416" height="416" rx="96" fill="url(#mac_bg)"/>
+    <rect x="48" y="48" width="416" height="416" rx="96" fill="none" stroke="url(#mac_border)" stroke-width="2.5"/>
+  </g>
+
+  <!-- Simple Central Glyph: Industrial Gear + Calculator Keypad -->
+  <g filter="url(#glyph_shadow)">
+    <!-- 8 Gear Teeth -->
+    <g fill="url(#gear_body)">
+      <rect x="238" y="124" width="36" height="42" rx="10"/>
+      <rect x="238" y="124" width="36" height="42" rx="10" transform="rotate(45 256 256)"/>
+      <rect x="238" y="124" width="36" height="42" rx="10" transform="rotate(90 256 256)"/>
+      <rect x="238" y="124" width="36" height="42" rx="10" transform="rotate(135 256 256)"/>
+      <rect x="238" y="124" width="36" height="42" rx="10" transform="rotate(180 256 256)"/>
+      <rect x="238" y="124" width="36" height="42" rx="10" transform="rotate(225 256 256)"/>
+      <rect x="238" y="124" width="36" height="42" rx="10" transform="rotate(270 256 256)"/>
+      <rect x="238" y="124" width="36" height="42" rx="10" transform="rotate(315 256 256)"/>
+
+      <!-- Main Gear Outer Ring -->
+      <circle cx="256" cy="256" r="114"/>
+    </g>
+
+    <!-- Gear Hub Outer Rim -->
+    <circle cx="256" cy="256" r="76" fill="#0b7a6c" opacity="0.3"/>
+
+    <!-- Central Calculator Display / Hub -->
+    <circle cx="256" cy="256" r="70" fill="#0f172a" stroke="#ffffff" stroke-width="3"/>
+
+    <!-- Quadrant Grid Divider Lines -->
+    <line x1="256" y1="194" x2="256" y2="318" stroke="#1e293b" stroke-width="2.5"/>
+    <line x1="194" y1="256" x2="318" y2="256" stroke="#1e293b" stroke-width="2.5"/>
+
+    <!-- 4 Clean Math Operators (+, −, ×, =) -->
+    <!-- Top-Left: Plus [+] -->
+    <g fill="#2dd4bf">
+      <rect x="222" y="211" width="6" height="26" rx="3"/>
+      <rect x="212" y="221" width="26" height="6" rx="3"/>
+    </g>
+
+    <!-- Top-Right: Minus [−] -->
+    <rect x="274" y="221" width="26" height="6" rx="3" fill="#2dd4bf"/>
+
+    <!-- Bottom-Left: Multiply [×] -->
+    <g transform="rotate(45 225 287)" fill="#2dd4bf">
+      <rect x="222" y="274" width="6" height="26" rx="3"/>
+      <rect x="212" y="284" width="26" height="6" rx="3"/>
+    </g>
+
+    <!-- Bottom-Right: Equals [=] (Highlighted Amber) -->
+    <g fill="#f59e0b">
+      <rect x="274" y="279" width="26" height="5.5" rx="2.5"/>
+      <rect x="274" y="290" width="26" height="5.5" rx="2.5"/>
+    </g>
+  </g>
+</svg>

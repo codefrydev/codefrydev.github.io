@@ -1,4 +1,8 @@
 history:
+  - date: '2026-10-25'
+    title: Shopfloor Calc
+    description: "Shopfloor Calcをリリース — サイクルタイム、タクトタイム、OEE、ラインバランシング、切削条件（速度・送り）、Cp/Cpk、生産計画に対応した無料のエンジニアリング＆製造業向け計算ツールスイート。ホームページのツール＆ユーティリティに追加。"
+    link: "https://codefrydev.in/shopfloorcalc/"
   - date: '2026-10-04'
     title: Little SVG
     description: "Little SVGをリリース — SVGから画像への変換スタジオ＆一括コンバーター。完全にブラウザ内で動作し、100%クライアント側のプライバシーを保ちながら、ベクターSVGを高解像度PNG、JPEG、WebP画像に変換・スタイリング・レンダリング。"

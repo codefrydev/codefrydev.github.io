@@ -1,4 +1,8 @@
 history:
+  - date: '2026-10-25'
+    title: Shopfloor Calc
+    description: "Lancement de Shopfloor Calc — calculateurs d'ingénierie et de fabrication gratuits pour les temps de cycle, le takt time, le TRS/OEE, l'équilibrage de ligne, les vitesses et avances d'usinage, Cp/Cpk et la planification de production ; ajouté aux Outils & Utilitaires sur la page d'accueil."
+    link: "https://codefrydev.in/shopfloorcalc/"
   - date: '2026-10-04'
     title: Little SVG
     description: "Lancement de Little SVG — studio de création et convertisseur par lots SVG vers image. Convertissez, stylisez et exportez des SVG vectoriels en images haute résolution PNG, JPEG et WebP directement dans votre navigateur avec une confidentialité 100% côté client."

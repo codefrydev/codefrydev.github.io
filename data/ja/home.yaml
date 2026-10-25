@@ -361,6 +361,25 @@ categories:
   previewCount: 12
   phosphorIcon: wrench
   items:
+  - name: Shopfloor Calc
+    icon: cfd-shopfloorcalc
+    url: https://codefrydev.in/shopfloorcalc/
+    description: サイクルタイム、タクトタイム、OEE（総合設備効率）、ラインバランシング、切削速度・送り速度、Cp/Cpk、生産計画のための無料エンジニアリング＆製造計算ツール。
+    date: '2026-10-25'
+    phosphorIcon: gauge
+    featured: true
+    external: true
+    aliases:
+    - shopfloor calc
+    - manufacturing calculator
+    - engineering calculator
+    - takt time
+    - oee
+    - cycle time
+    - speeds and feeds
+    - line balancing
+    - cp cpk
+    - production planning
   - name: Little SVG
     icon: cfd-littlesvg
     url: /littlesvg/

@@ -361,6 +361,25 @@ categories:
   previewCount: 12
   phosphorIcon: wrench
   items:
+  - name: Shopfloor Calc
+    icon: cfd-shopfloorcalc
+    url: https://codefrydev.in/shopfloorcalc/
+    description: Calculateurs d'ingénierie et de fabrication gratuits pour les temps de cycle, le takt time, le TRS (OEE), l'équilibrage de ligne, les vitesses et avances, Cp/Cpk et la planification de production.
+    date: '2026-10-25'
+    phosphorIcon: gauge
+    featured: true
+    external: true
+    aliases:
+    - shopfloor calc
+    - manufacturing calculator
+    - engineering calculator
+    - takt time
+    - oee
+    - cycle time
+    - speeds and feeds
+    - line balancing
+    - cp cpk
+    - production planning
   - name: Little SVG
     icon: cfd-littlesvg
     url: /littlesvg/

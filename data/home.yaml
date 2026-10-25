@@ -251,6 +251,15 @@ categories:
     previewCount: 12
     phosphorIcon: wrench
     items:
+      - name: Shopfloor Calc
+        icon: cfd-shopfloorcalc
+        url: https://codefrydev.in/shopfloorcalc/
+        description: Free engineering and manufacturing calculators for cycle times, takt time, OEE, line balancing, machine speeds and feeds, Cp/Cpk, and production planning.
+        date: "2026-10-25"
+        phosphorIcon: gauge
+        featured: true
+        external: true
+        aliases: [shopfloor calc, manufacturing calculator, engineering calculator, takt time, oee, cycle time, speeds and feeds, line balancing, cp cpk, production planning, machine calculator, industrial engineering]
       - name: Color
         icon: cfd-color
         url: /color/
