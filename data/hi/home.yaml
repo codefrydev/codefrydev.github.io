@@ -361,6 +361,34 @@ categories:
   previewCount: 12
   phosphorIcon: wrench
   items:
+  - name: FryCircuit
+    icon: cfd-frycircuit
+    url: https://codefrydev.in/FryCircuit/
+    description: रियल-टाइम SPICE सर्किट सिमुलेशन और स्कीमेटिक कैप्चर स्टूडियो — ब्राउज़र में इंटरएक्टिव MNA सॉल्विंग के साथ एनालॉग व डिजिटल कंपोनेंट्स।
+    date: '2026-10-25'
+    phosphorIcon: cpu
+    featured: true
+    external: true
+    aliases:
+    - frycircuit
+    - circuit simulator
+    - spice simulation
+    - schematic capture
+    - electronics
+  - name: FryMath
+    icon: cfd-frymath
+    url: https://codefrydev.in/FryMath/
+    description: इंटरएक्टिव मैथमेटिक्स और कंप्यूटर अलजेब्रा सिस्टम (CAS) स्टूडियो — सिम्बॉलिक कंप्यूटेशन, कैलकुलस, ग्राफिंग और विजुअल फिजिक्स।
+    date: '2026-10-25'
+    phosphorIcon: pi
+    featured: true
+    external: true
+    aliases:
+    - frymath
+    - math studio
+    - cas
+    - computer algebra system
+    - calculus
   - name: Shopfloor Calc
     icon: cfd-shopfloorcalc
     url: https://codefrydev.in/shopfloorcalc/

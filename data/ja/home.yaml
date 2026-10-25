@@ -361,6 +361,38 @@ categories:
   previewCount: 12
   phosphorIcon: wrench
   items:
+  - name: FryCircuit
+    icon: cfd-frycircuit
+    url: https://codefrydev.in/FryCircuit/
+    description: リアルタイムSPICE回路シミュレーション＆回路図キャプチャスタジオ — ブラウザ内でインタラクティブなMNA解析を備えたアナログ・デジタル回路設計。
+    date: '2026-10-25'
+    phosphorIcon: cpu
+    featured: true
+    external: true
+    aliases:
+    - frycircuit
+    - circuit simulator
+    - spice simulation
+    - schematic capture
+    - mna solver
+    - electronics
+    - circuit editor
+  - name: FryMath
+    icon: cfd-frymath
+    url: https://codefrydev.in/FryMath/
+    description: インタラクティブ数学＆数式処理システム（CAS）スタジオ — 数式処理、微積分、グラフ描画、物理シミュレーションをブラウザ上で実行。
+    date: '2026-10-25'
+    phosphorIcon: pi
+    featured: true
+    external: true
+    aliases:
+    - frymath
+    - math studio
+    - cas
+    - computer algebra system
+    - symbolic math
+    - calculus
+    - graphing
   - name: Shopfloor Calc
     icon: cfd-shopfloorcalc
     url: https://codefrydev.in/shopfloorcalc/

@@ -1,5 +1,13 @@
 history:
   - date: '2026-10-25'
+    title: FryCircuit
+    description: "FryCircuit Studio लॉन्च किया गया — ब्राउज़र में इंटरएक्टिव MNA सॉल्विंग के साथ रियल-टाइम SPICE सर्किट सिमुलेशन और स्कीमेटिक कैप्चर स्टूडियो; होम पेज पर टूल & यूटिलिटी में जोड़ा गया।"
+    link: "https://codefrydev.in/FryCircuit/"
+  - date: '2026-10-25'
+    title: FryMath
+    description: "FryMath Studio लॉन्च किया गया — इंटरएक्टिव मैथमेटिक्स, कंप्यूटर अलजेब्रा सिस्टम (CAS) और विज़ुअल फ़िज़िक्स वर्कस्पेस; होम पेज पर टूल & यूटिलिटी में जोड़ा गया।"
+    link: "https://codefrydev.in/FryMath/"
+  - date: '2026-10-25'
     title: Shopfloor Calc
     description: "Shopfloor Calc लॉन्च किया गया — साइकिल टाइम, टैक्ट टाइम, OEE, लाइन बैलेंसिंग, मशीन स्पीड्स और फीड्स, Cp/Cpk और प्रोडक्शन प्लानिंग के लिए मुफ़्त इंजीनियरिंग व मैन्युफैक्चरिंग कैलकुलेटर; होम पेज पर टूल & यूटिलिटी में जोड़ा गया।"
     link: "https://codefrydev.in/shopfloorcalc/"

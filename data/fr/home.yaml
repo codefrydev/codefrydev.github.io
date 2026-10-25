@@ -361,6 +361,34 @@ categories:
   previewCount: 12
   phosphorIcon: wrench
   items:
+  - name: FryCircuit
+    icon: cfd-frycircuit
+    url: https://codefrydev.in/FryCircuit/
+    description: Studio de simulation de circuits SPICE en temps réel et de saisie de schémas — composants analogiques et numériques avec résolution MNA interactive dans votre navigateur.
+    date: '2026-10-25'
+    phosphorIcon: cpu
+    featured: true
+    external: true
+    aliases:
+    - frycircuit
+    - circuit simulator
+    - spice simulation
+    - schematic capture
+    - electronics
+  - name: FryMath
+    icon: cfd-frymath
+    url: https://codefrydev.in/FryMath/
+    description: Studio interactif de mathématiques et système de calcul formel (CAS) — calcul formel, analyse, graphiques et physique visuelle dans votre navigateur.
+    date: '2026-10-25'
+    phosphorIcon: pi
+    featured: true
+    external: true
+    aliases:
+    - frymath
+    - math studio
+    - cas
+    - computer algebra system
+    - calculus
   - name: Shopfloor Calc
     icon: cfd-shopfloorcalc
     url: https://codefrydev.in/shopfloorcalc/

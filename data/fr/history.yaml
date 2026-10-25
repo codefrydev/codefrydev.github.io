@@ -1,5 +1,13 @@
 history:
   - date: '2026-10-25'
+    title: FryCircuit
+    description: "Lancement de FryCircuit Studio sur codefrydev.in/FryCircuit/ — simulation de circuits SPICE en temps réel et saisie de schémas avec résolution MNA interactive dans le navigateur ; ajouté aux Outils & Utilitaires sur la page d'accueil."
+    link: "https://codefrydev.in/FryCircuit/"
+  - date: '2026-10-25'
+    title: FryMath
+    description: "Lancement de FryMath Studio sur codefrydev.in/FryMath/ — espace de travail interactif de mathématiques, calcul formel (CAS) et physique visuelle ; ajouté aux Outils & Utilitaires sur la page d'accueil."
+    link: "https://codefrydev.in/FryMath/"
+  - date: '2026-10-25'
     title: Shopfloor Calc
     description: "Lancement de Shopfloor Calc — calculateurs d'ingénierie et de fabrication gratuits pour les temps de cycle, le takt time, le TRS/OEE, l'équilibrage de ligne, les vitesses et avances d'usinage, Cp/Cpk et la planification de production ; ajouté aux Outils & Utilitaires sur la page d'accueil."
     link: "https://codefrydev.in/shopfloorcalc/"

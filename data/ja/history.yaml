@@ -1,5 +1,13 @@
 history:
   - date: '2026-10-25'
+    title: FryCircuit
+    description: "FryCircuit Studioをリリース — ブラウザ内でリアルタイムSPICE MNA解析と回路図キャプチャを提供する回路シミュレーションスタジオ。ホームページのツール＆ユーティリティに追加。"
+    link: "https://codefrydev.in/FryCircuit/"
+  - date: '2026-10-25'
+    title: FryMath
+    description: "FryMath Studioをリリース — インタラクティブな数学、数式処理システム（CAS）、視覚的物理シミュレーションワークスペース。ホームページのツール＆ユーティリティに追加。"
+    link: "https://codefrydev.in/FryMath/"
+  - date: '2026-10-25'
     title: Shopfloor Calc
     description: "Shopfloor Calcをリリース — サイクルタイム、タクトタイム、OEE、ラインバランシング、切削条件（速度・送り）、Cp/Cpk、生産計画に対応した無料のエンジニアリング＆製造業向け計算ツールスイート。ホームページのツール＆ユーティリティに追加。"
     link: "https://codefrydev.in/shopfloorcalc/"
